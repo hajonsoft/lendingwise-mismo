@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:LMR="https://www.lendingwise.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.datamodelextension.org/Schema/ULAD ULAD_ExtensionV3_4.xsd">
+  <ABOUT_VERSIONS>
+    <ABOUT_VERSION>
+      <CreatedDatetime>2020-12-30T23:12:30Z</CreatedDatetime>
+      <DataVersionName>Purchase Example</DataVersionName>
+    </ABOUT_VERSION>
+  </ABOUT_VERSIONS>
+  <DEAL_SETS>
+    <DEAL_SET>
+      <DEAL>
+        <ASSETS>
+          <ASSET SquenceNumber="1" xlink:label="ASSET_1">
+            <ASSET_DETAIL>
+              <AssetAccountIdentifier>6310064</AssetAccountIdentifier>
+              <AssetCashOrMarketValueAmount>20000</AssetCashOrMarketValueAmount>
+              <AssetType>Checking</AssetType>
+            </ASSET_DETAIL>
+            <ASSET_HOLDER>
+              <NAME>
+                <FullName>me and my wife</FullName>
+              </NAME>
+            </ASSET_HOLDER>
+          </ASSET>
+          <ASSET SquenceNumber="2" xlink:label="ASSET_2">
+            <ASSET_DETAIL>
+              <AssetAccountIdentifier>6310064</AssetAccountIdentifier>
+              <AssetCashOrMarketValueAmount>9000000</AssetCashOrMarketValueAmount>
+              <AssetType>Savings</AssetType>
+            </ASSET_DETAIL>
+            <ASSET_HOLDER>
+              <NAME>
+                <FullName>my name on the account</FullName>
+              </NAME>
+            </ASSET_HOLDER>
+          </ASSET>
+          <ASSET SquenceNumber="3" xlink:label="ASSET_3">
+            <ASSET_DETAIL>
+              <AssetAccountIdentifier>6310064</AssetAccountIdentifier>
+              <AssetCashOrMarketValueAmount>3223244</AssetCashOrMarketValueAmount>
+              <AssetType>CD</AssetType>
+            </ASSET_DETAIL>
+            <ASSET_HOLDER>
+              <NAME>
+                <FullName>my name on the CD</FullName>
+              </NAME>
+            </ASSET_HOLDER>
+          </ASSET>
+          <ASSET SquenceNumber="4" xlink:label="ASSET_4">
+            <OWNED_PROPERTY>
+              <PROPERTY>
+                <ADDRESS>
+                  <AddressLineText>property address1</AddressLineText>
+                  <AddressUnitIdentifier/>
+                  <CityName>city 1</CityName>
+                  <StateCode>CA</StateCode>
+                  <PostalCode>92604</PostalCode>
+                  <CountryCode>USA</CountryCode>
+                </ADDRESS>
+                <PROPERTY_DETAIL>
+                  <PropertyEstimatedValueAmount>100000</PropertyEstimatedValueAmount>
+                  <PropertyCurrentUsageType/>
+                  <PropertyUsageType/>
+                  <PropertyUsageTypeOtherDescription/>
+                </PROPERTY_DETAIL>
+              </PROPERTY>
+              <OWNED_PROPERTY_DETAIL>
+                <OwnedPropertyDispositionStatusType>Retained</OwnedPropertyDispositionStatusType>
+                <OwnedPropertyMaintenanceExpenseAmount>0</OwnedPropertyMaintenanceExpenseAmount>
+                <OwnedPropertyRentalIncomeGrossAmount>0</OwnedPropertyRentalIncomeGrossAmount>
+                <OwnedPropertyRentalIncomeNetAmount>0</OwnedPropertyRentalIncomeNetAmount>
+                <OwnedPropertyLienUPBAmount>0.00</OwnedPropertyLienUPBAmount>
+              </OWNED_PROPERTY_DETAIL>
+            </OWNED_PROPERTY>
+          </ASSET>
+          <ASSET SquenceNumber="5" xlink:label="ASSET_5">
+            <OWNED_PROPERTY>
+              <PROPERTY>
+                <ADDRESS>
+                  <AddressLineText>property 3 did not come</AddressLineText>
+                  <AddressUnitIdentifier/>
+                  <CityName>city 3</CityName>
+                  <StateCode>AL</StateCode>
+                  <PostalCode/>
+                  <CountryCode>USA</CountryCode>
+                </ADDRESS>
+                <PROPERTY_DETAIL>
+                  <PropertyEstimatedValueAmount>0</PropertyEstimatedValueAmount>
+                  <PropertyCurrentUsageType/>
+                  <PropertyUsageType/>
+                  <PropertyUsageTypeOtherDescription/>
+                </PROPERTY_DETAIL>
+              </PROPERTY>
+              <OWNED_PROPERTY_DETAIL>
+                <OwnedPropertyDispositionStatusType>Pending Sale</OwnedPropertyDispositionStatusType>
+                <OwnedPropertyMaintenanceExpenseAmount>0</OwnedPropertyMaintenanceExpenseAmount>
+                <OwnedPropertyRentalIncomeGrossAmount>0</OwnedPropertyRentalIncomeGrossAmount>
+                <OwnedPropertyRentalIncomeNetAmount>0</OwnedPropertyRentalIncomeNetAmount>
+                <OwnedPropertyLienUPBAmount>0.00</OwnedPropertyLienUPBAmount>
+              </OWNED_PROPERTY_DETAIL>
+            </OWNED_PROPERTY>
+          </ASSET>
+        </ASSETS>
+        <COLLATERALS>
+          <COLLATERAL>
+            <SUBJECT_PROPERTY>
+              <ADDRESS>
+                <AddressLineText>subjectaddress</AddressLineText>
+                <CityName>subjectcity</CityName>
+                <PostalCode>92604</PostalCode>
+                <StateCode>CA</StateCode>
+              </ADDRESS>
+              <PROPERTY_DETAIL>
+                <FinancedUnitCount>1</FinancedUnitCount>
+                <PropertyEstateType/>
+                <PropertyEstimatedValueAmount/>
+                <PropertyMixedUsageIndicator>0</PropertyMixedUsageIndicator>
+              </PROPERTY_DETAIL>
+              <SALES_CONTRACTS>
+                <SALES_CONTRACT>
+                  <SALES_CONTRACT_DETAIL>
+                    <SalesContractAmount>unknown</SalesContractAmount>
+                  </SALES_CONTRACT_DETAIL>
+                </SALES_CONTRACT>
+              </SALES_CONTRACTS>
+            </SUBJECT_PROPERTY>
+          </COLLATERAL>
+        </COLLATERALS>
+        <LIABILITIES>
+          <LIABILITY SquenceNumber="1" xlink:label="LIABILITY_1">
+            <LIABILITY_DETAIL>
+              <LiabilityAccountIdentifier>3363</LiabilityAccountIdentifier>
+              <LiabilityMonthlyPaymentAmount>100.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+              <LiabilityType>Revolving</LiabilityType>
+              <LiabilityUnpaidBalanceAmount>5,000.00</LiabilityUnpaidBalanceAmount>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>irs</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+        </LIABILITIES>
+      </DEAL>
+    </DEAL_SET>
+  </DEAL_SETS>
+</MESSAGE>
