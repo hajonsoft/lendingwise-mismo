@@ -1,0 +1,16 @@
+{
+  "name": "mismo",
+  "version": "1.0.0",
+  "description": "- Mismo file. This file can have sample values or empty nodes\r - Mapping array that associates an xpath with a mapping function. The mapping function can either replace the target xpath. Example to such file is below\r   - [CREATEDATE]=>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.1",
+    "xmlbuilder2": "^2.4.0"
+  }
+}
