@@ -1,4 +1,4 @@
-const loan = require('./loan.json');
+const loan = require('./assets/loan.json');
 const { create } = require('xmlbuilder2');
 const moment = require('moment')
 const fs = require('fs');
@@ -69,5 +69,5 @@ doc = doc.up()
 // Document Sets
 
 const xml = doc.end({ prettyPrint: true })
-fs.writeFileSync('loan.xml',xml,{encoding:'utf8',flag:'w'})
+fs.writeFileSync('./output/mismo_loan.xml',xml,{encoding:'utf8',flag:'w'})
 // console.log(xml);
