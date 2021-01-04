@@ -6,14 +6,14 @@ function assets(doc, data) {
     {
       path: ["ASSET_DETAIL"],
       nodes: [
-        { AssetAccountIdentifier: (row, index) => row.fileID },
-        { AssetCashOrMarketValueAmount: (row, index) => row.balance },
-        { AssetType: (row, index) => row.accType },
+        { AssetAccountIdentifier: (row) => row.fileID },
+        { AssetCashOrMarketValueAmount: (row) => row.balance },
+        { AssetType: (row) => row.accType },
       ],
     },
     {
       path: ["ASSET_HOLDER", "NAME"],
-      nodes: [{ FullName: (row, index) => row.accountTitledAs }],
+      nodes: [{ FullName: (row) => row.accountTitledAs }],
     },
   ]);
 }
@@ -24,36 +24,36 @@ function ownedProperty(doc, data, startIndex) {
       path: ["OWNED_PROPERTY", "OWNED_PROPERTY_DETAIL"],
       goBack: 1,
       nodes: [
-        { OwnedPropertySubjectIndicator: (row, index) => "" },
+        { OwnedPropertySubjectIndicator: (row) => "" },
         {
-          OwnedPropertyDispositionStatusType: (row, index) =>
+          OwnedPropertyDispositionStatusType: (row) =>
             row.scheduleStatus,
         },
         {
-          OwnedPropertyMaintenanceExpenseAmount: (row, index) =>
+          OwnedPropertyMaintenanceExpenseAmount: (row) =>
             row.insMaintTaxMisc,
         },
         {
-          OwnedPropertyRentalIncomeGrossAmount: (row, index) =>
+          OwnedPropertyRentalIncomeGrossAmount: (row) =>
             row.grossRentalIncome,
         },
         {
-          OwnedPropertyRentalIncomeNetAmount: (row, index) =>
+          OwnedPropertyRentalIncomeNetAmount: (row) =>
             row.netRentalIncome,
         },
-        { OwnedPropertyLienUPBAmount: (row, index) => row.unpaidBalance },
+        { OwnedPropertyLienUPBAmount: (row) => row.unpaidBalance },
       ],
     },
     {
       path: ["PROPERTY", "ADDRESS"],
       goBack: 1,
       nodes: [
-        { AddressLineText: (row, index) => row.schedulePropAddr },
-        { AddressUnitIdentifier: (row, index) => "" },
-        { CityName: (row, index) => row.schedulePropCity },
-        { StateCode: (row, index) => row.schedulePropState },
-        { PostalCode: (row, index) => row.schedulePropZip },
-        { CountryCode: (row, index) => "USA" },
+        { AddressLineText: (row) => row.schedulePropAddr },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => row.schedulePropCity },
+        { StateCode: (row) => row.schedulePropState },
+        { PostalCode: (row) => row.schedulePropZip },
+        { CountryCode: (row) => "USA" },
       ],
     },
     {
@@ -61,12 +61,12 @@ function ownedProperty(doc, data, startIndex) {
       goBack: "ASSETS",
       nodes: [
         {
-          PropertyEstimatedValueAmount: (row, index) => row.presentMarketValue,
+          PropertyEstimatedValueAmount: (row) => row.presentMarketValue,
         },
-        { PropertyCurrentUsageType: (row, index) => row.intendedOccupancy },
-        { PropertyUsageType: (row, index) => row.intendedOccupancy },
+        { PropertyCurrentUsageType: (row) => row.intendedOccupancy },
+        { PropertyUsageType: (row) => row.intendedOccupancy },
         {
-          PropertyUsageTypeOtherDescription: (row, index) =>
+          PropertyUsageTypeOtherDescription: (row) =>
             JSON.stringify(row),
         },
       ],
@@ -79,34 +79,34 @@ function collaterals(doc, data) {
       path: ["SUBJECT_PROPERTY", "ADDRESS"],
       goBack: 1,
       nodes: [
-        { AddressLineText: (row, index) => row.propertyAddress },
+        { AddressLineText: (row) => row.propertyAddress },
         {
-          AddressUnitIdentifier: (row, index) => "",
+          AddressUnitIdentifier: (row) => "",
         },
         {
-          CityName: (row, index) => row.propertyCity,
+          CityName: (row) => row.propertyCity,
         },
         {
-          StateCode: (row, index) => row.propertyState,
+          StateCode: (row) => row.propertyState,
         },
         {
-          PostalCode: (row, index) => row.propertyZip,
+          PostalCode: (row) => row.propertyZip,
         },
-        { CountyName: (row, index) => JSON.stringify(row) },
+        { CountyName: (row) => JSON.stringify(row) },
       ],
     },
     {
       path: ["PROPERTY_DETAIL"],
       goBack: "ASSETS",
       nodes: [
-        { FinancedUnitCount: (row, index) => JSON.stringify(row) },
-        { PropertyEstimatedValueAmount: (row, index) => JSON.stringify(row) },
-        { PropertyUsageType: (row, index) => JSON.stringify(row) },
-        { FHASecondaryResidenceIndicator: (row, index) => JSON.stringify(row) },
-        { PropertyMixedUsageIndicator: (row, index) => JSON.stringify(row) },
-        { ConstructionMethodType: (row, index) => JSON.stringify(row) },
+        { FinancedUnitCount: (row) => JSON.stringify(row) },
+        { PropertyEstimatedValueAmount: (row) => JSON.stringify(row) },
+        { PropertyUsageType: (row) => JSON.stringify(row) },
+        { FHASecondaryResidenceIndicator: (row) => JSON.stringify(row) },
+        { PropertyMixedUsageIndicator: (row) => JSON.stringify(row) },
+        { ConstructionMethodType: (row) => JSON.stringify(row) },
         {
-          ConstructionMethodTypeOtherDescription: (row, index) =>
+          ConstructionMethodTypeOtherDescription: (row) =>
             JSON.stringify(row),
         },
       ],
@@ -118,30 +118,30 @@ function liabilities(doc, data, startIndex) {
     {
       path: ["LIABILITY_DETAIL"],
       nodes: [
-        { LiabilityType: (row, index) => JSON.stringify(row) },
+        { LiabilityType: (row) => JSON.stringify(row) },
         {
-          LiabilityTypeOtherDescription: (row, index) => JSON.stringify(row),
+          LiabilityTypeOtherDescription: (row) => JSON.stringify(row),
         },
         {
-          LiabilityAccountIdentifier: (row, index) => row.PCID,
+          LiabilityAccountIdentifier: (row) => row.PCID,
         },
         {
-          LiabilityUnpaidBalanceAmount: (row, index) => row.clBalance,
+          LiabilityUnpaidBalanceAmount: (row) => row.clBalance,
         },
         {
-          LiabilityPayoffStatusIndicator: (row, index) => JSON.stringify(row),
+          LiabilityPayoffStatusIndicator: (row) => JSON.stringify(row),
         },
-        { LiabilityMonthlyPaymentAmount: (row, index) => row.monthlyPayment },
+        { LiabilityMonthlyPaymentAmount: (row) => row.monthlyPayment },
         {
-          LiabilityRemainingTermMonthsCount: (row, index) =>
+          LiabilityRemainingTermMonthsCount: (row) =>
             JSON.stringify(row),
         },
-        { LiabilityExclusionIndicator: (row, index) => JSON.stringify(row) },
+        { LiabilityExclusionIndicator: (row) => JSON.stringify(row) },
       ],
     },
     {
       path: ["LIABILITY_HOLDER", "NAME"],
-      nodes: [{ FullName: (row, index) => row.nameOfCompany }],
+      nodes: [{ FullName: (row) => row.nameOfCompany }],
     },
   ]);
 }
@@ -150,25 +150,25 @@ function loans(doc, data, startIndex) {
     {
       path: ["LOAN_IDENTIFIERS", "LOAN_IDENTIFIER"],
       nodes: [
-        { LoanIdentifier: (row, index) => JSON.stringify(row) },
+        { LoanIdentifier: (row) => JSON.stringify(row) },
         {
-          LoanIdentifierType: (row, index) => JSON.stringify(row),
+          LoanIdentifierType: (row) => JSON.stringify(row),
         },
       ],
     },
     {
       path: ["AMORTIZATION", "AMORTIZATION_RULE"],
       nodes: [
-        { AmortizationType: (row, index) => JSON.stringify(row) },
-        { LoanAmortizationPeriodCount: (row, index) => JSON.stringify(row) },
-        { LoanAmortizationPeriodType: (row, index) => JSON.stringify(row) },
+        { AmortizationType: (row) => JSON.stringify(row) },
+        { LoanAmortizationPeriodCount: (row) => JSON.stringify(row) },
+        { LoanAmortizationPeriodType: (row) => JSON.stringify(row) },
       ],
     },
     {
       path: ["CLOSING_INFORMATION", "CLOSING_INFORMATION_DETAIL"],
       nodes: [
         {
-          CashFromBorrowerAtClosingAmount: (row, index) => JSON.stringify(row),
+          CashFromBorrowerAtClosingAmount: (row) => JSON.stringify(row),
         },
       ],
     },
@@ -181,8 +181,8 @@ function loans(doc, data, startIndex) {
       ],
       goBack: 1,
       nodes: [
-        { BorrowerRequestedLoanAmount: (row, index) => JSON.stringify(row) },
-        { EstimatedClosingCostsAmount: (row, index) => JSON.stringify(row) },
+        { BorrowerRequestedLoanAmount: (row) => JSON.stringify(row) },
+        { EstimatedClosingCostsAmount: (row) => JSON.stringify(row) },
       ],
     },
     {
@@ -190,24 +190,24 @@ function loans(doc, data, startIndex) {
       goBack: 4,
       nodes: [
         {
-          URLATotalDueFromBorrowerAtClosingAmount: (row, index) =>
+          URLATotalDueFromBorrowerAtClosingAmount: (row) =>
             JSON.stringify(row),
         },
       ],
     },
     {
       path: ["LOAN_DETAIL"],
-      nodes: [{ BorrowerCount: (row, index) => JSON.stringify(row) }],
+      nodes: [{ BorrowerCount: (row) => JSON.stringify(row) }],
     },
     {
       path: ["TERMS_OF_LOAN"],
       nodes: [
-        { BaseLoanAmount: (row, index) => JSON.stringify(row) },
-        { LienPriorityType: (row, index) => JSON.stringify(row) },
-        { LoanPurposeType: (row, index) => JSON.stringify(row) },
-        { MortgageType: (row, index) => JSON.stringify(row) },
-        { NoteAmount: (row, index) => JSON.stringify(row) },
-        { NoteRatePercent: (row, index) => JSON.stringify(row) },
+        { BaseLoanAmount: (row) => JSON.stringify(row) },
+        { LienPriorityType: (row) => JSON.stringify(row) },
+        { LoanPurposeType: (row) => JSON.stringify(row) },
+        { MortgageType: (row) => JSON.stringify(row) },
+        { NoteAmount: (row) => JSON.stringify(row) },
+        { NoteRatePercent: (row) => JSON.stringify(row) },
       ],
     },
   ]);
@@ -217,9 +217,9 @@ function parties(doc, data) {
     {
       path: ["TAXPAYER_IDENTIFIERS", "TAXPAYER_IDENTIFIER"],
       nodes: [
-        { TaxpayerIdentifierType: (row, index) => "SocialSecurityNumber" },
+        { TaxpayerIdentifierType: (row) => "SocialSecurityNumber" },
         {
-          TaxpayerIdentifierValue: (row, index) => row.ssnNumber,
+          TaxpayerIdentifierValue: (row) => row.ssnNumber,
         },
       ],
     },
@@ -227,85 +227,85 @@ function parties(doc, data) {
       path: ["ADDRESSES", "ADDRESS"],
       goBack: 1,
       nodes: [
-        { AddressType: (row, index) => "HOME" },
+        { AddressType: (row) => "HOME" },
         {
-          AddressLineText: (row, index) => loanGlobal.file2Info.presentAddress,
+          AddressLineText: (row) => loanGlobal.file2Info.presentAddress,
         },
-        { AddressUnitIdentifier: (row, index) => "" },
-        { CityName: (row, index) => loanGlobal.file2Info.presentCity },
-        { StateCode: (row, index) => loanGlobal.file2Info.presentState },
-        { PostalCode: (row, index) => row.previousZip },
-        { CountryCode: (row, index) => "USA" },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => loanGlobal.file2Info.presentCity },
+        { StateCode: (row) => loanGlobal.file2Info.presentState },
+        { PostalCode: (row) => row.previousZip },
+        { CountryCode: (row) => "USA" },
       ],
     },
     {
       path: ["ADDRESS"],
       goBack: 2,
       nodes: [
-        { AddressType: (row, index) => "MAILING" },
+        { AddressType: (row) => "MAILING" },
         {
-          AddressLineText: (row, index) => row.mailingAddress,
+          AddressLineText: (row) => row.mailingAddress,
         },
-        { AddressUnitIdentifier: (row, index) => "" },
-        { CityName: (row, index) => row.mailingCity },
-        { StateCode: (row, index) => row.mailingState },
-        { PostalCode: (row, index) => row.mailingZip },
-        { CountryCode: (row, index) => "USA" },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => row.mailingCity },
+        { StateCode: (row) => row.mailingState },
+        { PostalCode: (row) => row.mailingZip },
+        { CountryCode: (row) => "USA" },
       ],
     },
     {
       path: ["INDIVIDUAL", "ALIASES", "ALIAS", "NAME"],
       goBack: 3,
       nodes: [
-        { FirstName: (row, index) => row.borrowerFName },
+        { FirstName: (row) => row.borrowerFName },
         {
-          LastName: (row, index) => row.borrowerLName,
+          LastName: (row) => row.borrowerLName,
         },
-        { MiddleName: (row, index) => "" },
+        { MiddleName: (row) => "" },
       ],
     },
     {
       path: ["CONTACT_POINTS", "CONTACT_POINT", "CONTACT_POINT_EMAIL"],
       goBack: 2,
-      nodes: [{ ContactPointEmailValue: (row, index) => row.borrowerEmail }],
+      nodes: [{ ContactPointEmailValue: (row) => row.borrowerEmail }],
     },
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row, index) => row.phoneNumber }],
+      nodes: [{ ContactPointTelephoneValue: (row) => row.phoneNumber }],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
       goBack: 2,
-      nodes: [{ ContactPointRoleType: (row, index) => "HOME" }],
+      nodes: [{ ContactPointRoleType: (row) => "HOME" }],
     },
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row, index) => row.cellNo }],
+      nodes: [{ ContactPointTelephoneValue: (row) => row.cellNo }],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
       goBack: 2,
-      nodes: [{ ContactPointRoleType: (row, index) => "MOBILE" }],
+      nodes: [{ ContactPointRoleType: (row) => "MOBILE" }],
     },
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row, index) => row.workNumber }],
+      nodes: [{ ContactPointTelephoneValue: (row) => row.workNumber }],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
       goBack: 2,
-      nodes: [{ ContactPointRoleType: (row, index) => "WORK" }],
+      nodes: [{ ContactPointRoleType: (row) => "WORK" }],
     },
     {
       path: ["NAME"],
       goBack: 3,
       nodes: [
-        { FirstName: (row, index) => row.borrowerFName },
-        { LastName: (row, index) => row.borrowerLName },
-        { MiddleName: (row, index) => "" },
+        { FirstName: (row) => row.borrowerFName },
+        { LastName: (row) => row.borrowerLName },
+        { MiddleName: (row) => "" },
       ],
     },
     {
@@ -313,18 +313,18 @@ function parties(doc, data) {
       goBack: 1,
       nodes: [
         {
-          BorrowerBirthDate: (row, index) =>
+          BorrowerBirthDate: (row) =>
             loanGlobal.fileHMLOInfo.borrowerDOB,
         },
         {
-          DependentCount: (row, index) =>
+          DependentCount: (row) =>
             loanGlobal.fileHMLOInfo.agesOfDependent
               ? loanGlobal.fileHMLOInfo.agesOfDependent.split(",").length
               : loanGlobal.fileHMLOInfo.numberOfDependents,
         },
-        { MaritalStatusType: (row, index) => row.maritalStatus },
+        { MaritalStatusType: (row) => row.maritalStatus },
         {
-          SelfDeclaredMilitaryServiceIndicator: (row, index) =>
+          SelfDeclaredMilitaryServiceIndicator: (row) =>
             JSON.stringify(row),
         },
       ],
@@ -334,7 +334,7 @@ function parties(doc, data) {
       goBack: 1,
       nodes: [
         {
-          URLABorrowerTotalOtherIncomeAmount: (row, index) =>
+          URLABorrowerTotalOtherIncomeAmount: (row) =>
             JSON.stringify(row),
         },
       ],
@@ -348,10 +348,10 @@ function parties(doc, data) {
       goBack: 3,
       nodes: [
         {
-          CurrentIncomeMonthlyTotalAmount: (row, index) => JSON.stringify(row),
+          CurrentIncomeMonthlyTotalAmount: (row) => JSON.stringify(row),
         },
-        { EmploymentIncomeIndicator: (row, index) => JSON.stringify(row) },
-        { IncomeType: (row, index) => JSON.stringify(row) },
+        { EmploymentIncomeIndicator: (row) => JSON.stringify(row) },
+        { IncomeType: (row) => JSON.stringify(row) },
       ],
     },
   ]);
