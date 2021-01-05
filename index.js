@@ -6,6 +6,7 @@ const {
   liabilities,
   loans,
   parties,
+  previousEmployment,
 } = require("./lendingWise");
 const loan = require("./assets/loan.json");
 const { create } = require("xmlbuilder2");
@@ -54,6 +55,9 @@ doc = loans(doc, loanData);
 
 const partyData = [loan["LMRInfo"]];
 doc = parties(doc, partyData);
+
+const previousEmploymentData = loan["borEmploymentInfo"];
+doc = previousEmployment(doc, previousEmploymentData);
 
 const xml = doc.end({ prettyPrint: true });
 fs.writeFileSync("./output/mismo_loan.xml", xml, {
