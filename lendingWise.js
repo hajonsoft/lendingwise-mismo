@@ -107,18 +107,26 @@ function collaterals(doc, data) {
       path: ["PROPERTY_DETAIL"],
       goBack: "ASSETS",
       nodes: [
-        { FinancedUnitCount: (row) => '' },
+        { FinancedUnitCount: (row) => "" },
         { PropertyEstimatedValueAmount: (row) => row.homeValue },
-        { PropertyUsageType: (row) => '' },
-        { FHASecondaryResidenceIndicator: (row) => '' },
-        { PropertyMixedUsageIndicator: (row) => 
-          row.propertyType === "Apartment Complex" || 
-          row.propertyType === "Assisted Living Facility" || 
-          row.propertyType === "Commercial Lot/Land" ? '1': '0'
-      },
-        { ConstructionMethodType: (row) => loanGlobal["FileProInfo"].propConstructionMethod === 'Manufactured' ? '1' : '0' },
+        { PropertyUsageType: (row) => "" },
+        { FHASecondaryResidenceIndicator: (row) => "" },
         {
-          ConstructionMethodTypeOtherDescription: (row) => '',
+          PropertyMixedUsageIndicator: (row) =>
+            row.propertyType === "Apartment Complex" ||
+            row.propertyType === "Assisted Living Facility" ||
+            row.propertyType === "Commercial Lot/Land"
+              ? "1"
+              : "0",
+        },
+        {
+          ConstructionMethodType: (row) =>
+            loanGlobal["FileProInfo"].propConstructionMethod === "Manufactured"
+              ? "1"
+              : "0",
+        },
+        {
+          ConstructionMethodTypeOtherDescription: (row) => "",
         },
       ],
     },
@@ -170,7 +178,8 @@ function loans(doc, data, startIndex) {
       path: ["CLOSING_INFORMATION", "CLOSING_INFORMATION_DETAIL"],
       nodes: [
         {
-          CashFromBorrowerAtClosingAmount: (row) => loanGlobal["fileLOPropInfo"].estimatedClosingCosts,
+          CashFromBorrowerAtClosingAmount: (row) =>
+            loanGlobal["fileLOPropInfo"].estimatedClosingCosts,
         },
       ],
     },
@@ -183,8 +192,14 @@ function loans(doc, data, startIndex) {
       ],
       goBack: 1,
       nodes: [
-        { BorrowerRequestedLoanAmount: (row) => loanGlobal["fileHMLOPropertyInfo"].requiredLoanAmount },
-        { EstimatedClosingCostsAmount: (row) => loanGlobal["fileLOPropInfo"].estimatedClosingCosts },
+        {
+          BorrowerRequestedLoanAmount: (row) =>
+            loanGlobal["fileHMLOPropertyInfo"].requiredLoanAmount,
+        },
+        {
+          EstimatedClosingCostsAmount: (row) =>
+            loanGlobal["fileLOPropInfo"].estimatedClosingCosts,
+        },
       ],
     },
     {
@@ -192,13 +207,19 @@ function loans(doc, data, startIndex) {
       goBack: 4,
       nodes: [
         {
-          URLATotalDueFromBorrowerAtClosingAmount: (row) => loanGlobal["fileLOPropInfo"].estimatedClosingCosts,
+          URLATotalDueFromBorrowerAtClosingAmount: (row) =>
+            loanGlobal["fileLOPropInfo"].estimatedClosingCosts,
         },
       ],
     },
     {
       path: ["LOAN_DETAIL"],
-      nodes: [{ BorrowerCount: (row) => loanGlobal["LMRInfo"].isCoBorrower ? '2': '1' }],
+      nodes: [
+        {
+          BorrowerCount: (row) =>
+            loanGlobal["LMRInfo"].isCoBorrower ? "2" : "1",
+        },
+      ],
     },
     {
       path: ["TERMS_OF_LOAN"],
@@ -330,6 +351,89 @@ function parties(doc, data) {
       ],
     },
     {
+      path: [
+        "GOVERNMENT_MONITORING",
+        "HMDA_ETHNICITY_ORIGINS",
+        "HMDA_ETHNICITY_ORIGIN",
+      ],
+      goBack: 2,
+      nodes: [
+        {
+          HMDAEthnicityOriginType: (row) => {
+            switch (loanGlobal["QAInfo"].BEthnicity) {
+              case "2":
+                return "Hispanic or Latino";
+              case "1":
+                return "Not Hispanic or Latino";
+              case "3":
+                return "Not Disclosed";
+              default:
+                return "";
+            }
+          },
+        },
+        {
+          HMDAEthnicityOriginTypeOtherDescription: (row) =>
+            loanGlobal["QAInfo"].bFiEthnicitySubOther,
+        },
+      ],
+    },
+    {
+      path: ["HMDA_RACES", "HMDA_RACE", "HMDA_RACE_DETAIL"],
+      goBack: 3,
+      nodes: [
+        {
+          HMDARaceType: (row) => {
+            switch (loanGlobal["QAInfo"].BRace) {
+              case "1":
+                return "American Indian or Alaska Native";
+              case "2":
+                return "Asian";
+              case "3":
+                return "Black or African American";
+              case "4":
+                return "Native Hawaiian or Other Pacific Islander";
+              case "5":
+                return "White";
+              case "6":
+                return "Not Disclosed";
+              default:
+                return "";
+            }
+          },
+        },
+        {
+          HMDARaceTypeAddtionalDescription: (row) =>'',
+        },
+      ],
+    },
+    {
+      path: [
+        "GOVERNMENT_MONITORING_DETAIL",
+        "EXTENSION",
+        "OTHER",
+        "ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION",
+      ],
+      goBack: 4,
+      comment: "extra go back to get to Borrower",
+      nodes: [
+        {
+          "ULAD:HMDAGenderType": (row) => {
+            switch (loanGlobal["QAInfo"].BGender) {
+              case "1":
+                return "Female";
+              case "2":
+                return "Male";
+              case "3":
+                return "Not Disclosed";
+              default:
+                return "";
+            }
+          },
+        },
+      ],
+    },
+    {
       path: ["DECLARATION", "DECLARATION_DETAIL"],
       goBack: 2,
       nodes: [
@@ -367,8 +471,7 @@ function parties(doc, data) {
         { PriorPropertyShortSaleCompletedIndicator: (row) => "" },
         { PriorPropertyForeclosureCompletedIndicator: (row) => "" },
         {
-          BankruptcyIndicator: (row) =>
-            loanGlobal["fileHMLOBackGroundInfo"].isBorDecalredBankruptPastYears,
+          BankruptcyIndicator: (row) => "", //Removed as per Dave email Jan 7, 2021
         },
       ],
     },
@@ -377,7 +480,7 @@ function parties(doc, data) {
       goBack: 1,
       nodes: [
         {
-          URLABorrowerTotalOtherIncomeAmount: (row) => '',
+          URLABorrowerTotalOtherIncomeAmount: (row) => "",
         },
       ],
     },
@@ -390,10 +493,11 @@ function parties(doc, data) {
       goBack: 4,
       nodes: [
         {
-          CurrentIncomeMonthlyTotalAmount: (row) => loanGlobal["LMRInfo"].borrowerMonthlyIncome,
+          CurrentIncomeMonthlyTotalAmount: (row) =>
+            loanGlobal["LMRInfo"].borrowerMonthlyIncome,
         },
-        { EmploymentIncomeIndicator: (row) => '' },
-        { IncomeType: (row) => '' },
+        { EmploymentIncomeIndicator: (row) => "" },
+        { IncomeType: (row) => "" },
       ],
     },
     {

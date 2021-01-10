@@ -2,7 +2,7 @@
 <MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:LMR="https://www.lendingwise.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.datamodelextension.org/Schema/ULAD ULAD_ExtensionV3_4.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
-      <CreatedDatetime>2021-01-05T03:14:31Z</CreatedDatetime>
+      <CreatedDatetime>2021-01-10T23:12:53Z</CreatedDatetime>
       <DataVersionName>Purchase Example</DataVersionName>
     </ABOUT_VERSION>
   </ABOUT_VERSIONS>
@@ -296,105 +296,130 @@
                     <DependentCount>2</DependentCount>
                     <MaritalStatusType>Single</MaritalStatusType>
                   </BORROWER_DETAIL>
-                  <DECLARATION>
-                    <DECLARATION_DETAIL>
-                      <CitizenshipResidencyType>U.S. Citizen</CitizenshipResidencyType>
-                      <IntentToOccupyType>NA</IntentToOccupyType>
-                      <HomeownerPastThreeYearsType/>
-                      <PriorPropertyUsageType/>
-                      <FHASecondaryResidenceIndicator/>
-                      <PriorPropertyTitleType/>
-                      <UndisclosedBorrowedFundsIndicator/>
-                      <UndisclosedBorrowedFundsAmount/>
-                      <UndisclosedMortgageApplicationIndicator/>
-                      <UndisclosedCreditApplicationIndicator/>
-                      <PropertyProposedCleanEnergyLienIndicator/>
-                      <UndisclosedComakerOfNoteIndicator/>
-                      <OutstandingJudgmentsIndicator>Yes</OutstandingJudgmentsIndicator>
-                      <PresentlyDelinquentIndicator>Yes</PresentlyDelinquentIndicator>
-                      <PartyToLawsuitIndicator>No</PartyToLawsuitIndicator>
-                      <PriorPropertyDeedInLieuConveyedIndicator/>
-                      <PriorPropertyShortSaleCompletedIndicator/>
-                      <PriorPropertyForeclosureCompletedIndicator/>
-                      <BankruptcyIndicator>Yes</BankruptcyIndicator>
-                    </DECLARATION_DETAIL>
-                  </DECLARATION>
-                  <CURRENT_INCOME>
-                    <CURRENT_INCOME_DETAIL>
-                      <URLABorrowerTotalOtherIncomeAmount/>
-                    </CURRENT_INCOME_DETAIL>
-                    <CURRENT_INCOME_ITEMS>
-                      <CURRENT_INCOME_ITEM>
-                        <CURRENT_INCOME_ITEM_DETAIL>
-                          <CurrentIncomeMonthlyTotalAmount>0</CurrentIncomeMonthlyTotalAmount>
-                          <EmploymentIncomeIndicator/>
-                          <IncomeType/>
-                        </CURRENT_INCOME_ITEM_DETAIL>
-                      </CURRENT_INCOME_ITEM>
-                    </CURRENT_INCOME_ITEMS>
-                  </CURRENT_INCOME>
-                  <EMPLOYERS>
-                    <EMPLOYER>
-                      <ADDRESS>
-                        <AddressLineText>employe 1 address</AddressLineText>
-                        <AddressUnitIdentifier/>
-                        <CityName/>
-                        <StateCode/>
-                        <PostalCode/>
-                        <CountryCode>USA</CountryCode>
-                      </ADDRESS>
-                      <EMPLOYMENT>
-                        <EmploymentStatusType>Salary W-2</EmploymentStatusType>
-                        <EmploymentClassificationType>Salary W-2</EmploymentClassificationType>
-                        <EmploymentPositionDescription>employer 1 occupation</EmploymentPositionDescription>
-                        <EmploymentStartDate>2010-01-05</EmploymentStartDate>
-                        <EmploymentTimeInLineOfWorkMonthsCount>2</EmploymentTimeInLineOfWorkMonthsCount>
-                        <EmploymentBorrowerSelfEmployedIndicator>0</EmploymentBorrowerSelfEmployedIndicator>
-                        <OwnershipInterestType/>
-                        <EmploymentMonthlyIncomeAmount/>
-                      </EMPLOYMENT>
-                    </EMPLOYER>
-                    <EMPLOYER SequenceNumber="1" xlink:label="EMPLOYER_1">
-                      <ADDRESS>
-                        <AddressLineText>employer 2 address</AddressLineText>
-                        <AddressUnitIdentifier/>
-                        <CityName/>
-                        <StateCode/>
-                        <PostalCode/>
-                        <CountryCode>USA</CountryCode>
-                      </ADDRESS>
-                      <EMPLOYMENT>
-                        <EmploymentStatusType>Salary W-2</EmploymentStatusType>
-                        <EmploymentClassificationType>Salary W-2</EmploymentClassificationType>
-                        <EmploymentPositionDescription>position 2 title</EmploymentPositionDescription>
-                        <EmploymentStartDate>2020-01-01</EmploymentStartDate>
-                        <EmploymentTimeInLineOfWorkMonthsCount/>
-                        <EmploymentBorrowerSelfEmployedIndicator>0</EmploymentBorrowerSelfEmployedIndicator>
-                        <OwnershipInterestType/>
-                        <EmploymentMonthlyIncomeAmount>3000</EmploymentMonthlyIncomeAmount>
-                      </EMPLOYMENT>
-                    </EMPLOYER>
-                    <EMPLOYER SequenceNumber="2" xlink:label="EMPLOYER_2">
-                      <ADDRESS>
-                        <AddressLineText>employer 3 address</AddressLineText>
-                        <AddressUnitIdentifier/>
-                        <CityName/>
-                        <StateCode/>
-                        <PostalCode/>
-                        <CountryCode>USA</CountryCode>
-                      </ADDRESS>
-                      <EMPLOYMENT>
-                        <EmploymentStatusType>Self-Employed</EmploymentStatusType>
-                        <EmploymentClassificationType>Self-Employed</EmploymentClassificationType>
-                        <EmploymentPositionDescription>founder</EmploymentPositionDescription>
-                        <EmploymentStartDate>2020-01-01</EmploymentStartDate>
-                        <EmploymentTimeInLineOfWorkMonthsCount/>
-                        <EmploymentBorrowerSelfEmployedIndicator>1</EmploymentBorrowerSelfEmployedIndicator>
-                        <OwnershipInterestType>lessthan25</OwnershipInterestType>
-                        <EmploymentMonthlyIncomeAmount>2000</EmploymentMonthlyIncomeAmount>
-                      </EMPLOYMENT>
-                    </EMPLOYER>
-                  </EMPLOYERS>
+                  <GOVERNMENT_MONITORING>
+                    <HMDA_ETHNICITY_ORIGINS>
+                      <HMDA_ETHNICITY_ORIGIN>
+                        <HMDAEthnicityOriginType>Hispanic or Latino</HMDAEthnicityOriginType>
+                        <HMDAEthnicityOriginTypeOtherDescription>Colombian</HMDAEthnicityOriginTypeOtherDescription>
+                      </HMDA_ETHNICITY_ORIGIN>
+                    </HMDA_ETHNICITY_ORIGINS>
+                    <HMDA_RACES>
+                      <HMDA_RACE>
+                        <HMDA_RACE_DETAIL>
+                          <HMDARaceType>Black or African American</HMDARaceType>
+                          <HMDARaceTypeAddtionalDescription/>
+                        </HMDA_RACE_DETAIL>
+                      </HMDA_RACE>
+                    </HMDA_RACES>
+                    <GOVERNMENT_MONITORING_DETAIL>
+                      <EXTENSION>
+                        <OTHER>
+                          <ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+                            <ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
+                          </ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+                        </OTHER>
+                      </EXTENSION>
+                    </GOVERNMENT_MONITORING_DETAIL>
+                    <DECLARATION>
+                      <DECLARATION_DETAIL>
+                        <CitizenshipResidencyType>U.S. Citizen</CitizenshipResidencyType>
+                        <IntentToOccupyType>NA</IntentToOccupyType>
+                        <HomeownerPastThreeYearsType/>
+                        <PriorPropertyUsageType/>
+                        <FHASecondaryResidenceIndicator/>
+                        <PriorPropertyTitleType/>
+                        <UndisclosedBorrowedFundsIndicator/>
+                        <UndisclosedBorrowedFundsAmount/>
+                        <UndisclosedMortgageApplicationIndicator/>
+                        <UndisclosedCreditApplicationIndicator/>
+                        <PropertyProposedCleanEnergyLienIndicator/>
+                        <UndisclosedComakerOfNoteIndicator/>
+                        <OutstandingJudgmentsIndicator>Yes</OutstandingJudgmentsIndicator>
+                        <PresentlyDelinquentIndicator>Yes</PresentlyDelinquentIndicator>
+                        <PartyToLawsuitIndicator>No</PartyToLawsuitIndicator>
+                        <PriorPropertyDeedInLieuConveyedIndicator/>
+                        <PriorPropertyShortSaleCompletedIndicator/>
+                        <PriorPropertyForeclosureCompletedIndicator/>
+                        <BankruptcyIndicator/>
+                      </DECLARATION_DETAIL>
+                    </DECLARATION>
+                    <CURRENT_INCOME>
+                      <CURRENT_INCOME_DETAIL>
+                        <URLABorrowerTotalOtherIncomeAmount/>
+                      </CURRENT_INCOME_DETAIL>
+                      <CURRENT_INCOME_ITEMS>
+                        <CURRENT_INCOME_ITEM>
+                          <CURRENT_INCOME_ITEM_DETAIL>
+                            <CurrentIncomeMonthlyTotalAmount>0</CurrentIncomeMonthlyTotalAmount>
+                            <EmploymentIncomeIndicator/>
+                            <IncomeType/>
+                          </CURRENT_INCOME_ITEM_DETAIL>
+                        </CURRENT_INCOME_ITEM>
+                      </CURRENT_INCOME_ITEMS>
+                    </CURRENT_INCOME>
+                    <EMPLOYERS>
+                      <EMPLOYER>
+                        <ADDRESS>
+                          <AddressLineText>employe 1 address</AddressLineText>
+                          <AddressUnitIdentifier/>
+                          <CityName/>
+                          <StateCode/>
+                          <PostalCode/>
+                          <CountryCode>USA</CountryCode>
+                        </ADDRESS>
+                        <EMPLOYMENT>
+                          <EmploymentStatusType>Salary W-2</EmploymentStatusType>
+                          <EmploymentClassificationType>Salary W-2</EmploymentClassificationType>
+                          <EmploymentPositionDescription>employer 1 occupation</EmploymentPositionDescription>
+                          <EmploymentStartDate>2010-01-05</EmploymentStartDate>
+                          <EmploymentTimeInLineOfWorkMonthsCount>2</EmploymentTimeInLineOfWorkMonthsCount>
+                          <EmploymentBorrowerSelfEmployedIndicator>0</EmploymentBorrowerSelfEmployedIndicator>
+                          <OwnershipInterestType/>
+                          <EmploymentMonthlyIncomeAmount/>
+                        </EMPLOYMENT>
+                      </EMPLOYER>
+                      <EMPLOYER SequenceNumber="1" xlink:label="EMPLOYER_1">
+                        <ADDRESS>
+                          <AddressLineText>employer 2 address</AddressLineText>
+                          <AddressUnitIdentifier/>
+                          <CityName/>
+                          <StateCode/>
+                          <PostalCode/>
+                          <CountryCode>USA</CountryCode>
+                        </ADDRESS>
+                        <EMPLOYMENT>
+                          <EmploymentStatusType>Salary W-2</EmploymentStatusType>
+                          <EmploymentClassificationType>Salary W-2</EmploymentClassificationType>
+                          <EmploymentPositionDescription>position 2 title</EmploymentPositionDescription>
+                          <EmploymentStartDate>2020-01-01</EmploymentStartDate>
+                          <EmploymentTimeInLineOfWorkMonthsCount/>
+                          <EmploymentBorrowerSelfEmployedIndicator>0</EmploymentBorrowerSelfEmployedIndicator>
+                          <OwnershipInterestType/>
+                          <EmploymentMonthlyIncomeAmount>3000</EmploymentMonthlyIncomeAmount>
+                        </EMPLOYMENT>
+                      </EMPLOYER>
+                      <EMPLOYER SequenceNumber="2" xlink:label="EMPLOYER_2">
+                        <ADDRESS>
+                          <AddressLineText>employer 3 address</AddressLineText>
+                          <AddressUnitIdentifier/>
+                          <CityName/>
+                          <StateCode/>
+                          <PostalCode/>
+                          <CountryCode>USA</CountryCode>
+                        </ADDRESS>
+                        <EMPLOYMENT>
+                          <EmploymentStatusType>Self-Employed</EmploymentStatusType>
+                          <EmploymentClassificationType>Self-Employed</EmploymentClassificationType>
+                          <EmploymentPositionDescription>founder</EmploymentPositionDescription>
+                          <EmploymentStartDate>2020-01-01</EmploymentStartDate>
+                          <EmploymentTimeInLineOfWorkMonthsCount/>
+                          <EmploymentBorrowerSelfEmployedIndicator>1</EmploymentBorrowerSelfEmployedIndicator>
+                          <OwnershipInterestType>lessthan25</OwnershipInterestType>
+                          <EmploymentMonthlyIncomeAmount>2000</EmploymentMonthlyIncomeAmount>
+                        </EMPLOYMENT>
+                      </EMPLOYER>
+                    </EMPLOYERS>
+                  </GOVERNMENT_MONITORING>
                 </BORROWER>
               </ROLE>
             </ROLES>

@@ -3,8 +3,8 @@ Array
     [LMRInfo] => Array
         (
             [LMRId] => 6310064
-            [brokerNumber] => 34939
-            [secondaryBrokerNumber] => 
+            [brokerNumber] => 37499
+            [secondaryBrokerNumber] => 37875
             [FBRID] => 5288
             [FPCID] => 3363
             [borrowerName] => Ayman
@@ -55,8 +55,8 @@ Array
             [closedDate] => 
             [loanNumber] => 7657
             [ssnNumber] => 111111111
-            [receiveNotice] => No
-            [salesDate] => 
+            [receiveNotice] => 
+            [salesDate] => 0000-00-00
             [negotiatorName] => 
             [negotiatorPhoneNumber] => 
             [negotiatorNotes] => 
@@ -75,7 +75,7 @@ Array
             [loanNumber3] => 
             [mailingAddressAsProp] => 
             [monthsBehind] => 
-            [receiveModification] => NA
+            [receiveModification] => 
             [receiveModificationNotes] => 
             [userType] => Employee
             [createdBy] => 11189
@@ -182,7 +182,7 @@ Array
             [mortgageOwner1_copy] => 
             [mortgageOwner2_copy] => 
             [coBServiceProvider] => 
-            [lastUpdatedDate] => 2021-01-04 21:51:27
+            [lastUpdatedDate] => 2021-01-10 17:50:35
             [updatedBy] => Ayman Ali
             [borrowerPinNo] => 
             [coBorrowerPinNo] => 
@@ -332,22 +332,22 @@ Array
 
     [BrokerInfo] => Array
         (
-            [userNumber] => 34939
+            [userNumber] => 37499
             [userName] => 
-            [firstName] => Micky
-            [lastName] => Mouse
-            [email] => mickyagent@usa.com
-            [addr] => 
-            [city] => 
-            [state] => 
-            [zipCode] => 
+            [firstName] => Richard
+            [lastName] => 
+            [email] => rbranson@lendingwise.com
+            [addr] => 123 branson st
+            [city] => Ga City
+            [state] => GA
+            [zipCode] => 45654
             [externalBroker] => 0
-            [phoneNumber] => 
-            [cellNumber] => 
+            [phoneNumber] => 800222222255
+            [cellNumber] => 3056062360
             [fax] => 
             [promoCode] => 
-            [company] => USA Private
-            [registerDate] => 2017-04-03
+            [company] => Branch company
+            [registerDate] => 2018-11-23
             [expireDate] => 0000-00-00
             [planType] => 
             [status] => 1
@@ -355,11 +355,11 @@ Array
             [dateOfUpdate] => 
             [emailStatus] => 0
             [referralID] => BR
-            [agreedTC] => 0
-            [position] => 0
+            [agreedTC] => 1
+            [position] => 
             [mgrID] => 0
             [eStatus] => 0
-            [lastLogin] => 
+            [lastLogin] => 2021-01-07
             [suiteNumber] => 
             [surveyPosition] => 
             [surveyExp] => 
@@ -382,7 +382,7 @@ Array
             [paymentStatus] => Unpaid
             [ARBSubscriptionStatus] => 
             [AEPartnerCode] => 0
-            [referralCode] => 0
+            [referralCode] => 1
             [receiveUpdates] => 1
             [receiveNews] => 1
             [hearAbout] => 
@@ -394,15 +394,15 @@ Array
             [LMRView] => 0
             [receiveLMInfo] => 0
             [LMRAEID] => 0
-            [regFrom] => TLP
+            [regFrom] => LM
             [privateBroker] => 0
-            [allowAgentToAccessLMRDocs] => 1
+            [allowAgentToAccessLMRDocs] => 0
             [allowFreeLMR] => 0
             [url] => 
             [calendarUrl] => 
             [allowAgentToSendHomeownerLink] => 1
-            [allowAgentToEditLMRFile] => 0
-            [allowAgentToLogin] => 0
+            [allowAgentToEditLMRFile] => 2
+            [allowAgentToLogin] => 1
             [serviceProvider] => 
             [allowedToUpdateFiles] => 0
             [allowToAccessPrivateNotes] => 0
@@ -418,7 +418,7 @@ Array
             [allowedToEditOwnNotes] => 1
             [agentNotes] => 
             [seeBilling] => 1
-            [permissionToREST] => 0
+            [permissionToREST] => 1
             [allowedToExcelReport] => 0
             [changeDIYPlan] => 1
             [isPrimary] => 0
@@ -456,13 +456,140 @@ Array
             [NMLSLicense] => 
             [DRE] => 
             [allowToupdateFileAndClient] => 
-            [shareThisFile] => 0
-            [allowToSubmitOffer] => 0
+            [shareThisFile] => 1
+            [allowToSubmitOffer] => 1
         )
 
     [dummyBrokerId] => 37983
     [SecondaryBrokerInfo] => Array
         (
+            [userNumber] => 37875
+            [userName] => 
+            [pwd] => simple
+            [firstName] => dave
+            [lastName] => esch
+            [email] => myemail@gmaildd.com
+            [addr] => 123 bugs st
+            [city] => miami
+            [state] => FL
+            [zipCode] => 33156
+            [externalBroker] => 1
+            [phoneNumber] => 44455566667
+            [cellNumber] => 1112223333
+            [fax] => 8889991010
+            [promoCode] => 
+            [company] => lw
+            [registerDate] => 2020-05-26
+            [expireDate] => 0000-00-00
+            [planType] => 
+            [status] => 1
+            [dateOfInvite] => 
+            [dateOfUpdate] => 
+            [emailStatus] => 0
+            [referralID] => BR
+            [agreedTC] => 1
+            [position] => 
+            [mgrID] => 0
+            [eStatus] => 0
+            [lastLogin] => 2021-01-07
+            [suiteNumber] => 7
+            [surveyPosition] => 
+            [surveyExp] => 
+            [noOfMortgageBropkers] => 
+            [surveyCompDesc] => 
+            [surveyPrefPerson] => 
+            [significantPerson] => 
+            [surveyAEProb] => 
+            [surveyOnlineTool] => 
+            [surveyAltaPgm] => 
+            [totNoOfLenders] => 0
+            [conformingLenders] => 
+            [AltLenders] => 
+            [subPrimeLenders] => 
+            [hardMoneyLenders] => 
+            [commercialLenders] => 
+            [optArmLenders] => 
+            [noDocLoanLenders] => 
+            [membership] => B
+            [paymentStatus] => Unpaid
+            [ARBSubscriptionStatus] => 
+            [AEPartnerCode] => 0
+            [referralCode] => 1
+            [receiveUpdates] => 0
+            [receiveNews] => 1
+            [hearAbout] => 
+            [sendHighlights] => 1
+            [surveyMonthlyLoan] => 
+            [FHAApproved] => 
+            [principalBroker] => 0
+            [reminderScheduleDate] => 
+            [LMRView] => 0
+            [receiveLMInfo] => 0
+            [LMRAEID] => 0
+            [regFrom] => LM
+            [privateBroker] => 0
+            [allowAgentToAccessLMRDocs] => 1
+            [allowFreeLMR] => 0
+            [url] => 
+            [calendarUrl] => 
+            [allowAgentToSendHomeownerLink] => 1
+            [allowAgentToEditLMRFile] => 2
+            [allowAgentToLogin] => 1
+            [serviceProvider] => att
+            [allowedToUpdateFiles] => 0
+            [allowToAccessPrivateNotes] => 0
+            [timeZone] => EST
+            [sendNewDealAlert] => 1
+            [userIPAddress] => 
+            [allowToSendMassEmail] => 1
+            [allowAgentToCreateFiles] => 1
+            [allowAgentToCreateTasks] => 1
+            [allowAgentToSeeDashboard] => 1
+            [accessRestriction] => 0
+            [allowedToDeleteUplodedDocs] => 1
+            [allowedToEditOwnNotes] => 1
+            [agentNotes] => 
+            [seeBilling] => 1
+            [permissionToREST] => 1
+            [allowedToExcelReport] => 0
+            [changeDIYPlan] => 1
+            [isPrimary] => 0
+            [fluidLayout] => 0
+            [subscribeToHOME] => 0
+            [allowToLASubmit] => 0
+            [allowEmailCampaign] => 1
+            [allowToSendFax] => 0
+            [allowAgentToEditCommission] => 1
+            [allowAgentToSeeCommission] => 1
+            [allowToSendFileDesignation] => 1
+            [allowAgentToSeePublicNotes] => 1
+            [allowToCFPBSubmit] => 0
+            [allowToViewCFPBPipeline] => 0
+            [allowToAccessRAM] => 0
+            [allowToSendMarketingEmailForBRBO] => 0
+            [TAC] => 
+            [thankMsg] => 
+            [thankMsgSV] => 
+            [allowToSeeWebForms] => 0
+            [license] => 55667
+            [eniNumber] => 
+            [brokerPartnerType] => 
+            [prefCommunication] => email
+            [allowToEditCCInfo] => 0
+            [allowEditToIR] => 1
+            [allowWorkflowEdit] => 1
+            [allowAgentToGetBorrowerUploadDocsNotification] => 1
+            [allowToOverRideLockOnLoanAgent] => 1
+            [allowToLockLoanFileAgent] => 1
+            [allowToViewMarketPlace] => 1
+            [allowToCreateAloware] => 0
+            [thirdPartyServices] => 0
+            [website] => www.website.com
+            [NMLSLicense] => 564564
+            [DRE] => 
+            [allowToupdateFileAndClient] => 
+            [shareThisFile] => 0
+            [allowToSubmitOffer] => 0
         )
 
     [BranchInfo] => Array
@@ -612,8 +739,8 @@ Array
                     [AID] => 10924
                     [processorName] => Andrew Test
                     [allowToListIn3PartyForm] => 1
-                    [role] => Manager
-                    [email] => andrewtest@lendingwise.com
+                    [role] => Account Manager
+                    [email] => andrewtest@dummyemail.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -906,7 +1033,7 @@ Array
                     [LMRAEId] => 0
                     [processingCompanyId] => 3363
                     [empCreatedDate] => 2020-12-18
-                    [empLastLoginDate] => 2021-01-04 19:47:34
+                    [empLastLoginDate] => 2021-01-10 17:49:15
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => 
                     [timeZone] => PST
@@ -980,7 +1107,7 @@ Array
 
     [listingRealtorInfo] => Array
         (
-            [SSID] => 491
+            [SSID] => 495
             [LMRId] => 6310064
             [unPaidTax] => 
             [liens] => 
@@ -1120,16 +1247,16 @@ Array
             [buyer3AttorneyEmail] => 
             [appraisalNotes] => 
             [attorneyNotes] => 
-            [costBasis] => 700000.00
-            [dateObtained] => 0000-00-00
+            [costBasis] => 
+            [dateObtained] => 
             [rehabValue] => 
-            [dateObtained2] => 0000-00-00
+            [dateObtained2] => 
             [rehabValue2] => 
-            [dateObtained3] => 0000-00-00
+            [dateObtained3] => 
             [rehabValue3] => 
-            [dateObtained4] => 0000-00-00
+            [dateObtained4] => 
             [rehabValue4] => 
-            [dateObtained5] => 0000-00-00
+            [dateObtained5] => 
             [rehabValue5] => 
             [buyer1Notes] => 
             [buyer2Notes] => 
@@ -1209,7 +1336,7 @@ Array
             [twentyFourMonthRent] => 
             [assessedValue] => 
             [quickSaleValue] => 
-            [zillowValue] => 1000.00
+            [zillowValue] => 
             [zillowRentValue] => 
             [updateEmailStatus] => 
             [offerAmount] => 
@@ -1784,14 +1911,14 @@ Array
             [HOAOrCOAFeeAmt] => 
             [saleForHowLong] => 
             [attorneyEmail] => 
-            [PublishBInfo] => 3
-            [BEthnicity] => 
-            [BRace] => 
-            [BGender] => 
-            [BVeteran] => 
+            [PublishBInfo] => 2
+            [BEthnicity] => 2
+            [BRace] => 3
+            [BGender] => 2
+            [BVeteran] => 4
             [bFiEthnicity] => 
-            [bFiEthnicitySub] => 
-            [bFiEthnicitySubOther] => 
+            [bFiEthnicitySub] => 4
+            [bFiEthnicitySubOther] => Colombian
             [bFiSex] => 
             [bFiRace] => 
             [bFiRaceSub] => 
@@ -1799,8 +1926,8 @@ Array
             [bFiRacePacificOther] => 
             [bDemoInfo] => 
             [PublishCBInfo] => 3
-            [CBEthnicity] => 
-            [CBRace] => 
+            [CBEthnicity] => 0
+            [CBRace] => 0
             [CBGender] => 0
             [HAMPPrincipalResidence] => NA
             [permanentHAMPModification] => NA
@@ -1960,6 +2087,112 @@ Array
         (
             [0] => Array
                 (
+                    [serialNumber] => 6427
+                    [executiveId] => 0
+                    [brokerNumber] => 0
+                    [employeeId] => 11078
+                    [processorComments] => Broker changed to Richard
+                    [notesType] => 
+                    [private] => 0
+                    [notesDate] => 2021-01-06 22:32:58
+                    [signExecutiveName] => 
+                    [displayIn] => NH
+                    [sendTo] => 
+                    [clientId] => 0
+                    [isSysNotes] => 1
+                    [fileID] => 6310064
+                    [processorName] => 
+                    [updatedUserType] => 
+                )
+
+            [1] => Array
+                (
+                    [serialNumber] => 6420
+                    [executiveId] => 0
+                    [brokerNumber] => 0
+                    [employeeId] => 11078
+                    [processorComments] => Broker changed to Micky Mouse
+                    [notesType] => 
+                    [private] => 0
+                    [notesDate] => 2021-01-06 22:28:40
+                    [signExecutiveName] => 
+                    [displayIn] => NH
+                    [sendTo] => 
+                    [clientId] => 0
+                    [isSysNotes] => 1
+                    [fileID] => 6310064
+                    [processorName] => 
+                    [updatedUserType] => 
+                )
+
+            [2] => Array
+                (
+                    [serialNumber] => 6413
+                    [executiveId] => 0
+                    [brokerNumber] => 0
+                    [employeeId] => 11078
+                    [processorComments] => Loan Officer changed to dave esch
+                    [notesType] => 
+                    [private] => 0
+                    [notesDate] => 2021-01-06 22:28:10
+                    [signExecutiveName] => 
+                    [displayIn] => NH
+                    [sendTo] => 
+                    [clientId] => 0
+                    [isSysNotes] => 1
+                    [fileID] => 6310064
+                    [processorName] => 
+                    [updatedUserType] => 
+                )
+
+            [3] => Array
+                (
+                    [serialNumber] => 6402
+                    [executiveId] => 0
+                    [brokerNumber] => 0
+                    [employeeId] => 11078
+                    [processorComments] => Workflow : 
+
+trt etrt ert ret et t er
+hj fuy fd
+y thjfg
+                    [notesType] => WFN
+                    [private] => 0
+                    [notesDate] => 2021-01-06 09:51:25
+                    [signExecutiveName] => 
+                    [displayIn] => NH
+                    [sendTo] => 
+                    [clientId] => 0
+                    [isSysNotes] => 1
+                    [fileID] => 6310064
+                    [processorName] => 
+                    [updatedUserType] => 
+                )
+
+            [4] => Array
+                (
+                    [serialNumber] => 6401
+                    [executiveId] => 0
+                    [brokerNumber] => 0
+                    [employeeId] => 11078
+                    [processorComments] => Workflow : drips
+cGF1bCB3b3JrIGZsb3c=
+trt etrt ert ret et t er
+                    [notesType] => WFN
+                    [private] => 0
+                    [notesDate] => 2021-01-06 09:50:52
+                    [signExecutiveName] => 
+                    [displayIn] => NH
+                    [sendTo] => 
+                    [clientId] => 0
+                    [isSysNotes] => 1
+                    [fileID] => 6310064
+                    [processorName] => 
+                    [updatedUserType] => 
+                )
+
+            [5] => Array
+                (
                     [serialNumber] => 6400
                     [executiveId] => 0
                     [brokerNumber] => 0
@@ -1978,7 +2211,7 @@ Array
                     [updatedUserType] => Employee
                 )
 
-            [1] => Array
+            [6] => Array
                 (
                     [serialNumber] => 6398
                     [executiveId] => 0
@@ -2525,6 +2758,17 @@ Array
 
     [LMRWFArray] => Array
         (
+            [6310064] => Array
+                (
+                    [0] => Array
+                        (
+                            [LMRID] => 6310064
+                            [LWID] => 14272
+                            [WFID] => 12
+                        )
+
+                )
+
         )
 
     [HUDBasicInfo] => Array
@@ -2922,10 +3166,40 @@ Array
 
     [LMRWFHistoryInfo] => Array
         (
+            [0] => Array
+                (
+                    [WFSID] => 1430
+                    [docStatus] => 2
+                    [LMRID] => 6310064
+                    [steps] => paul work flow
+                    [WFName] => drips
+                    [WFID] => 12
+                    [updatedBy] => 11078
+                    [updatedUserType] => Employee
+                    [updatedOn] => 2021-01-06 09:51:57
+                )
+
         )
 
     [WFListArray] => Array
         (
+            [6310064] => Array
+                (
+                    [0] => Array
+                        (
+                            [LMRID] => 6310064
+                            [docStatus] => 2
+                            [steps] => paul work flow
+                            [WFName] => drips
+                            [WFID] => 12
+                            [WFSID] => 1430
+                            [updatedBy] => 11078
+                            [updatedUserType] => Employee
+                            [updatedOn] => 2021-01-06 09:51:57
+                        )
+
+                )
+
         )
 
     [AdditionalLienContactInfo] => Array
@@ -2958,6 +3232,15 @@ Array
 
     [empWFInfo] => Array
         (
+            [11078] => Array
+                (
+                    [AID] => 11078
+                    [processorName] => dave lw111
+                    [employeeNames] => dave lw111 (Manager)
+                    [myKey] => 11078
+                    [myOpt] => empWFInfo
+                )
+
         )
 
     [branchWFInfo] => Array
@@ -2983,6 +3266,15 @@ Array
 
     [notesEmpInfo] => Array
         (
+            [11078] => Array
+                (
+                    [AID] => 11078
+                    [processorName] => dave lw111
+                    [employeeNames] => dave lw111 (Manager)
+                    [myKey] => 11078
+                    [myOpt] => notesEmpInfo
+                )
+
             [11189] => Array
                 (
                     [AID] => 11189
@@ -3024,6 +3316,19 @@ Array
 
     [fileWFNotesInfo] => Array
         (
+            [1430] => Array
+                (
+                    [fileID] => 6310064
+                    [WFSID] => 1430
+                    [notes] => trt etrt ert ret et t er
+hj fuy fd
+y thjfg
+                    [SID] => 9
+                    [UID] => 11078
+                    [UType] => Employee
+                    [recordDate] => 2021-01-06 09:51:25
+                )
+
         )
 
     [fileChecklistNotesInfo] => Array
@@ -4846,7 +5151,7 @@ Array
             [typeOfHMLOLoanRequesting] => Purchase
             [maxAmtToPutDown] => 0.00
             [rehabCost] => 0.00
-            [costBasis] => 700000.00
+            [costBasis] => 0.00
             [extensionRatePercentage] => 0.00
             [survey] => 0.00
             [wholeSaleAdminFee] => 0.00
@@ -5148,6 +5453,13 @@ Array
 
     [WFNEmpInfo] => Array
         (
+            [11078] => Array
+                (
+                    [AID] => 11078
+                    [processorName] => dave lw111
+                    [employeeNames] => dave lw111 (Manager)
+                )
+
         )
 
     [WFNBranchInfo] => Array
