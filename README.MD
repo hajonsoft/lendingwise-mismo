@@ -30,5 +30,5 @@ online php array converter  https://www.nestforms.com/php-print_r-to-json-online
 
 online php to javascript converter https://wtools.io/javascript-to-php-converter
 
-PLEDGED_ASSETS
-OWNED_PROPERTIES
+php and javascript https://www.youtube.com/watch?v=-3LGsHOSTec
+browserify index.js -o bundle.js
