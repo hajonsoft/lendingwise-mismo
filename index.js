@@ -14,9 +14,7 @@ const { container } = require("./util");
 const moment = require("moment");
 const fs = require("fs");
 
-
 function createMismo(loan) {
-
   let doc = create({
     version: "1.0",
     encoding: "UTF-8",
@@ -34,8 +32,6 @@ function createMismo(loan) {
     .ele("CreatedDatetime")
     .txt(moment().utc().format())
     .up()
-    .ele("DataVersionName")
-    .txt("Purchase Example");
 
   doc = doc.root();
   doc = container(doc, ["DEAL_SETS", "DEAL_SET", "DEAL", "ASSETS"]);
@@ -43,7 +39,9 @@ function createMismo(loan) {
   const loanAssets = loan["fileLOChekingSavingInfo"];
   doc = assets(doc, loanAssets);
 
-  const ownedPropertyData = loanOwnedPropertyData(loan["fileLOScheduleRealInfo"]);
+  const ownedPropertyData = loanOwnedPropertyData(
+    loan["fileLOScheduleRealInfo"]
+  );
   doc = ownedProperty(doc, ownedPropertyData, loanAssets.length);
 
   const collateralData = [loan["LMRInfo"]];
@@ -64,18 +62,18 @@ function createMismo(loan) {
   const xml = doc.end({ prettyPrint: true });
 
   return xml;
-
-
 }
 
 function createMismoTest() {
-  const mismo = createMismo(lwLoan)
-  // fs.writeFileSync("./output/mismo_loan.xml", mismo, {
-  //   encoding: "utf8",
-  //   flag: "w",
-  // });
+  const mismo = createMismo(lwLoan);
+  fs.writeFileSync("./output/mismo_loan.xml", mismo, {
+    encoding: "utf8",
+    flag: "w",
+  });
   console.log(mismo);
-    return mismo;
+  return mismo;
 }
 
-global.createLendingWiseMismo = createMismoTest
+global.createLendingWiseMismo = createMismoTest;
+
+createMismoTest()

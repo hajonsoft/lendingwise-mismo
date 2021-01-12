@@ -2,12 +2,12 @@ Array
 (
     [LMRInfo] => Array
         (
-            [LMRId] => 6310064
-            [brokerNumber] => 37499
-            [secondaryBrokerNumber] => 37875
-            [FBRID] => 5288
-            [FPCID] => 3363
-            [borrowerName] => Ayman
+            [LMRId] => 6833894
+            [brokerNumber] => 39017
+            [secondaryBrokerNumber] => 
+            [FBRID] => 6722
+            [FPCID] => 1652
+            [borrowerName] => bobby
             [occupancy] => 
             [borrowerLoanRate] => 
             [loanType] => 
@@ -17,8 +17,8 @@ Array
             [lates2] => 0
             [lates3] => 0
             [lates4] => 0
-            [lien1Rate] => 2.3
-            [lien1Payment] => 1,341.67
+            [lien1Rate] => 
+            [lien1Payment] => 
             [lien1Amount] => 
             [servicer1] => 
             [lien2Rate] => 
@@ -29,105 +29,105 @@ Array
             [lien3Payment] => 
             [lien3Amount] => 
             [servicer3] => 
-            [homeValue] => 
+            [homeValue] => 154,900.00
             [borrowerMonthlyIncome] => 0
             [description] => 
             [doneLMR] => No
             [activeStatus] => 1
-            [recordDate] => 2020-12-29
+            [recordDate] => 2021-01-11
             [doneAdjustableRate] => No
             [initialRate] => 
             [totalMonthlyExpenses] => 0
-            [borrowerLName] => Loan
-            [propertyAddress] => subjectaddress
-            [phoneNumber] => 9495221879
-            [cellNumber] => 
-            [borrowerEmail] => alialiayman@gmail.com
+            [borrowerLName] => borrower
+            [propertyAddress] => 6075 sw 106 st
+            [phoneNumber] => 1112223333
+            [cellNumber] => 4445556666
+            [borrowerEmail] => bobbyloan1@hshhsd.com
             [borrowerSecondaryEmail] => 
-            [coBorrowerFName] => coborrowerfirst
-            [coBorrowerLName] => coborrowerlast
-            [coBPhoneNumber] => 9495221879
-            [coBCellNumber] => 
-            [coBorrowerEmail] => alialiayman@gmail.com
-            [mailingAddress] => borrower address
-            [receivedDate] => 2020-12-29
+            [coBorrowerFName] => Michelle
+            [coBorrowerLName] => Abraham
+            [coBPhoneNumber] => 1234567890
+            [coBCellNumber] => 0987654321
+            [coBorrowerEmail] => coborrower@dummyemail.com
+            [mailingAddress] => 345 mailing address st
+            [receivedDate] => 2021-01-14
             [missedMonthOfMortPay] => 
             [closedDate] => 
-            [loanNumber] => 7657
-            [ssnNumber] => 111111111
-            [receiveNotice] => 
-            [salesDate] => 0000-00-00
+            [loanNumber] => 700121
+            [ssnNumber] => 593125444
+            [receiveNotice] => No
+            [salesDate] => 
             [negotiatorName] => 
             [negotiatorPhoneNumber] => 
             [negotiatorNotes] => 
             [isCoBorrower] => 1
             [coBLoanNumber] => 
-            [coBSsnNumber] => 
-            [fax] => 949 - 522 - 1879
-            [coBFax] => 
-            [propertyCity] => subjectcity
-            [propertyState] => CA
-            [propertyZip] => 92604
-            [mailingCity] => borrower city
+            [coBSsnNumber] => 798645654
+            [fax] => 
+            [coBFax] => 4154544634
+            [propertyCity] => Miami
+            [propertyState] => FL
+            [propertyZip] => 33156
+            [mailingCity] => san anselmo
             [mailingState] => CA
-            [mailingZip] => 92604
+            [mailingZip] => 94960
             [loanNumber2] => 
             [loanNumber3] => 
             [mailingAddressAsProp] => 
             [monthsBehind] => 
-            [receiveModification] => 
+            [receiveModification] => NA
             [receiveModificationNotes] => 
             [userType] => Employee
-            [createdBy] => 11189
+            [createdBy] => 8722
             [createdUserType] => Employee
             [lien1BalanceDue] => 
             [lien2BalanceDue] => 
             [lien3BalanceDue] => 
-            [propertyType] => Apartment Complex
+            [propertyType] => Condo
             [loanType2] => 
             [lien1Terms] => Interest Only
             [lien2Terms] => 
             [checkingAndSavings] => 
-            [borrowerDOB] => 1926-01-14
+            [borrowerDOB] => 1972-10-06
             [borrowerPOB] => 
             [noOfPeopleInProperty] => 0
             [mortgageNotes] => 
             [areTaxesInsuranceEscrowed] => 0
-            [workNumber] => 
+            [workNumber] => 777 - 888 - 9999
             [coBorrowerWorkNumber] => 
-            [enc_borrowerName] => 8dac28258c7bf90d
-            [enc_borrowerLName] => 051f32f407cc532c
-            [enc_ssnNumber] => 6ae1b209f02cd988413b29a920cc605b
-            [enc_borrowerDOB] => 919749a069447ba5be8ac73cc53bd9fa
+            [enc_borrowerName] => 84d9f52d7c42fd65
+            [enc_borrowerLName] => 0782788467c6671a
+            [enc_ssnNumber] => a62aaca808f2c154c72219a9c140220e
+            [enc_borrowerDOB] => 5367f0edaea42eecfa8e2039d8819f9b
             [enc_loanNumber] => 
             [enc_loanNumber2] => 
-            [enc_borrowerEmail] => f6500ef835a4b40c588e506df6c7e16c9d793b2b1844933a
-            [enc_propertyAddress] => b5861fa469ff3d79fb5047d0d98ab238
-            [enc_propertyCity] => 9d9039ba625e8b01485864f334eaff38
-            [enc_propertyState] => 20398bd958f5b633
-            [enc_propertyZip] => f94d298484c32ef8
+            [enc_borrowerEmail] => 34c9676146ff8e5d6b913c027b5f89b01f3e677d3c1dfd7a
+            [enc_propertyAddress] => a606c7432add400853a6d18778991127
+            [enc_propertyCity] => 63b6d2696c9a2c12
+            [enc_propertyState] => 0a3c07c5aa4479a1
+            [enc_propertyZip] => d07e45f5c1d0384d
             [fileSubmissionStatus] => 
             [altPhoneNumber] => 
             [coBAltPhoneNumber] => 
             [LMREmailSent] => 0
-            [clientId] => 5862143
+            [clientId] => 6374184
             [packageViewed] => 0
-            [coBorrowerDOB] => 0000-00-00
+            [coBorrowerDOB] => 1976-01-06
             [coborrowerPOB] => 
             [dummyId] => 
             [referralCode1_del] => 0
             [LMRAffiliateCode1_del] => 0
             [executiveId1_del] => 0
-            [propertyCounty] => Orange
-            [maritalStatus] => Single
-            [marriageDate] => 0000-00-00
-            [divorceDate] => 0000-00-00
+            [propertyCounty] => Miami-Dade
+            [maritalStatus] => Married
+            [marriageDate] => 
+            [divorceDate] => 
             [maidenName] => 
-            [mailingAddressAsBorrower] => 1
-            [coBorrowerMailingAddress] => borrower address
-            [coBorrowerMailingCity] => borrower city
-            [coBorrowerMailingState] => CA
-            [coBorrowerMailingZip] => 92604
+            [mailingAddressAsBorrower] => 
+            [coBorrowerMailingAddress] => 5454 coborMailing st
+            [coBorrowerMailingCity] => cobMailingCity
+            [coBorrowerMailingState] => KS
+            [coBorrowerMailingZip] => 78656
             [lien1OriginalBalance] => 
             [lien2OriginalBalance] => 
             [spouseName] => 
@@ -140,15 +140,15 @@ Array
             [trueRetainerPayment1] => 0
             [trueRetainerPayment2] => 0
             [previousAddrAsMailing] => 0
-            [previousAddress] => 
-            [previousCity] => 
-            [previousState] => 
-            [previousZip] => 
+            [previousAddress] => 234 previous address st
+            [previousCity] => prevcity
+            [previousState] => DE
+            [previousZip] => 34456
             [coBorPreviousAddrAsMailing] => 0
-            [coBorPreviousAddress] => 
-            [coBorPreviousCity] => 
-            [coBorPreviousState] => 
-            [coBorPreviousZip] => 
+            [coBorPreviousAddress] => 845 cobprevious address st
+            [coBorPreviousCity] => cobprevcity
+            [coBorPreviousState] => GA
+            [coBorPreviousZip] => 86766
             [originalLender1] => 
             [originalLender2] => 
             [howManyBedRoom] => 
@@ -182,27 +182,27 @@ Array
             [mortgageOwner1_copy] => 
             [mortgageOwner2_copy] => 
             [coBServiceProvider] => 
-            [lastUpdatedDate] => 2021-01-10 17:50:35
-            [updatedBy] => Ayman Ali
+            [lastUpdatedDate] => 2021-01-11 14:18:48
+            [updatedBy] => John Closer
             [borrowerPinNo] => 
             [coBorrowerPinNo] => 
             [fileCopied] => 0
             [remainingMonths] => 0
-            [oldFPCID] => 3363
-            [driverLicenseState] => CA
-            [driverLicenseNumber] => dL00011
+            [oldFPCID] => 1652
+            [driverLicenseState] => 
+            [driverLicenseNumber] => 
             [coBorDriverLicenseState] => 
             [coBorDriverLicenseNumber] => 
-            [maritalStatusCoBor] => 
-            [noOfDaysStale] => -10
-            [borrowerFName] => Ayman
+            [maritalStatusCoBor] => Married
+            [noOfDaysStale] => -9
+            [borrowerFName] => bobby
         )
 
     [addedToFav] => 0
     [file2Info] => Array
         (
-            [F2ID] => 1854954
-            [LMRID] => 6310064
+            [F2ID] => 2049232
+            [LMRID] => 6833894
             [worldPhone] => 
             [worldPhoneCoB] => 
             [borrowerTypeSS] => 
@@ -213,9 +213,9 @@ Array
             [driverLicenseNo] => 
             [borrowerMaidenName] => 
             [noticeAccelerationDate] => 0000-00-00
-            [driverLicenseState] => CA
+            [driverLicenseState] => 
             [gender] => 
-            [methodOfContact] => phone
+            [methodOfContact] => 
             [timeToContact] => 
             [bestTime] => 
             [transferOfServicingDate] => 
@@ -238,38 +238,38 @@ Array
             [nonBorrowerName] => 
             [nonBorrowerEmail] => 
             [nonBorrowerSSN] => 
-            [nonBorrowerDOB] => 0000-00-00
+            [nonBorrowerDOB] => 
             [monthlyContribution] => 
             [isNonBorrower] => 0
             [IPAddress] => 
-            [presentAddress] => borrower address
-            [presentCity] => borrower city
-            [presentState] => CA
-            [presentZip] => 92604
-            [coBPresentAddress] => borrower address
-            [coBPresentCity] => borrower city
-            [coBPresentState] => CA
-            [coBPresentZip] => 92604
+            [presentAddress] => 123 current address st
+            [presentCity] => currentcity
+            [presentState] => FL
+            [presentZip] => 33156
+            [coBPresentAddress] => 123 coborcurrent addr
+            [coBPresentCity] => omaha
+            [coBPresentState] => NE
+            [coBPresentZip] => 64355
             [coBNoOfDependent] => 0
             [borPresentPropType] => Rent
             [borMailingPropType] => 
-            [borFormerPropType] => 
+            [borFormerPropType] => Rent
             [coBPresentPropType] => Rent
-            [presentPropLengthTimeCoBor] => 
+            [presentPropLengthTimeCoBor] => 1 year
             [coBMailingPropType] => 
-            [coBFormerPropType] => 
-            [mailingAddrAsPresent] => 1
-            [coBorMailingAddrAsPresent] => 1
+            [coBFormerPropType] => Rent
+            [mailingAddrAsPresent] => 0
+            [coBorMailingAddrAsPresent] => 0
             [paidStatus] => 1
             [guarantorNotes] => 
-            [presentPropLengthTime] => 5
-            [previousPropLengthTime] => 
+            [presentPropLengthTime] => 3 months
+            [previousPropLengthTime] => 2 years
         )
 
     [ResponseInfo] => Array
         (
-            [LMRResponseId] => 8875177
-            [LMRId] => 6310064
+            [LMRResponseId] => 9398845
+            [LMRId] => 6833894
             [LMRExecutive] => 
             [activeStatus] => 1
             [LMRResponseStatus] => New
@@ -285,8 +285,8 @@ Array
             [QCId] => 0
             [negotiatorId] => 0
             [fileNumber] => 
-            [executiveId] => 5288
-            [leadSource] => Banner Ad
+            [executiveId] => 6722
+            [leadSource] => 
             [closedBy] => 0
             [closedByUserType] => 
             [fileClosedDate] => 
@@ -298,8 +298,8 @@ Array
             [managerId] => 0
             [trialModReceivedDate] => 
             [firstTrialPaymentDate] => 
-            [primeStatusId] => 56006
-            [borrowerCallBack] => 2020-12-29
+            [primeStatusId] => 14197
+            [borrowerCallBack] => 2021-01-01
             [lenderCallBack] => 
             [lenderSubmissionDate] => 
             [resolutionType] => 
@@ -309,7 +309,7 @@ Array
             [lawSuiteFileDate] => 
             [HAFADate] => 
             [appealDate] => 
-            [welcomeCallDate] => 
+            [welcomeCallDate] => 0000-00-00
             [bankCallCompleted] => 0000-00-00
             [attorneyReviewDate] => 
             [trialPaymentDate1] => 0000-00-00
@@ -322,32 +322,32 @@ Array
             [totalCallsPlaced] => 0
             [ANINo] => 
             [screenerName] => 
-            [projectName] => ayman loan
+            [projectName] => ayman1
             [CID] => 
-            [totalLoanAmount] => 700000
+            [totalLoanAmount] => 154900
             [lenderInternalNotes] => 
             [noOfDaysStale] => 
-            [loanTermExpireDate] => 0000-00-00
+            [loanTermExpireDate] => 
         )
 
     [BrokerInfo] => Array
         (
-            [userNumber] => 37499
+            [userNumber] => 39017
             [userName] => 
-            [firstName] => Richard
+            [firstName] => daves
             [lastName] => 
-            [email] => rbranson@lendingwise.com
-            [addr] => 123 branson st
-            [city] => Ga City
-            [state] => GA
-            [zipCode] => 45654
+            [email] => davetest@lendingwise.com
+            [addr] => 
+            [city] => 
+            [state] => 
+            [zipCode] => 
             [externalBroker] => 0
-            [phoneNumber] => 800222222255
-            [cellNumber] => 3056062360
+            [phoneNumber] => 
+            [cellNumber] => 
             [fax] => 
             [promoCode] => 
-            [company] => Branch company
-            [registerDate] => 2018-11-23
+            [company] => daves
+            [registerDate] => 2019-06-25
             [expireDate] => 0000-00-00
             [planType] => 
             [status] => 1
@@ -359,7 +359,7 @@ Array
             [position] => 
             [mgrID] => 0
             [eStatus] => 0
-            [lastLogin] => 2021-01-07
+            [lastLogin] => 
             [suiteNumber] => 
             [surveyPosition] => 
             [surveyExp] => 
@@ -396,17 +396,16 @@ Array
             [LMRAEID] => 0
             [regFrom] => LM
             [privateBroker] => 0
-            [allowAgentToAccessLMRDocs] => 0
+            [allowAgentToAccessLMRDocs] => 1
             [allowFreeLMR] => 0
             [url] => 
-            [calendarUrl] => 
             [allowAgentToSendHomeownerLink] => 1
-            [allowAgentToEditLMRFile] => 2
-            [allowAgentToLogin] => 1
+            [allowAgentToEditLMRFile] => 0
+            [allowAgentToLogin] => 0
             [serviceProvider] => 
             [allowedToUpdateFiles] => 0
             [allowToAccessPrivateNotes] => 0
-            [timeZone] => EST
+            [timeZone] => 
             [sendNewDealAlert] => 1
             [userIPAddress] => 
             [allowToSendMassEmail] => 1
@@ -447,165 +446,36 @@ Array
             [allowEditToIR] => 0
             [allowWorkflowEdit] => 1
             [allowAgentToGetBorrowerUploadDocsNotification] => 1
-            [allowToOverRideLockOnLoanAgent] => 1
             [allowToLockLoanFileAgent] => 1
-            [allowToViewMarketPlace] => 1
+            [allowToViewMarketPlace] => 0
             [allowToCreateAloware] => 0
-            [thirdPartyServices] => 0
+            [allowToupdateFileAndClient] => 
             [website] => 
             [NMLSLicense] => 
             [DRE] => 
-            [allowToupdateFileAndClient] => 
-            [shareThisFile] => 1
-            [allowToSubmitOffer] => 1
-        )
-
-    [dummyBrokerId] => 37983
-    [SecondaryBrokerInfo] => Array
-        (
-            [userNumber] => 37875
-            [userName] => 
-            [pwd] => simple
-            [firstName] => dave
-            [lastName] => esch
-            [email] => myemail@gmaildd.com
-            [addr] => 123 bugs st
-            [city] => miami
-            [state] => FL
-            [zipCode] => 33156
-            [externalBroker] => 1
-            [phoneNumber] => 44455566667
-            [cellNumber] => 1112223333
-            [fax] => 8889991010
-            [promoCode] => 
-            [company] => lw
-            [registerDate] => 2020-05-26
-            [expireDate] => 0000-00-00
-            [planType] => 
-            [status] => 1
-            [dateOfInvite] => 
-            [dateOfUpdate] => 
-            [emailStatus] => 0
-            [referralID] => BR
-            [agreedTC] => 1
-            [position] => 
-            [mgrID] => 0
-            [eStatus] => 0
-            [lastLogin] => 2021-01-07
-            [suiteNumber] => 7
-            [surveyPosition] => 
-            [surveyExp] => 
-            [noOfMortgageBropkers] => 
-            [surveyCompDesc] => 
-            [surveyPrefPerson] => 
-            [significantPerson] => 
-            [surveyAEProb] => 
-            [surveyOnlineTool] => 
-            [surveyAltaPgm] => 
-            [totNoOfLenders] => 0
-            [conformingLenders] => 
-            [AltLenders] => 
-            [subPrimeLenders] => 
-            [hardMoneyLenders] => 
-            [commercialLenders] => 
-            [optArmLenders] => 
-            [noDocLoanLenders] => 
-            [membership] => B
-            [paymentStatus] => Unpaid
-            [ARBSubscriptionStatus] => 
-            [AEPartnerCode] => 0
-            [referralCode] => 1
-            [receiveUpdates] => 0
-            [receiveNews] => 1
-            [hearAbout] => 
-            [sendHighlights] => 1
-            [surveyMonthlyLoan] => 
-            [FHAApproved] => 
-            [principalBroker] => 0
-            [reminderScheduleDate] => 
-            [LMRView] => 0
-            [receiveLMInfo] => 0
-            [LMRAEID] => 0
-            [regFrom] => LM
-            [privateBroker] => 0
-            [allowAgentToAccessLMRDocs] => 1
-            [allowFreeLMR] => 0
-            [url] => 
-            [calendarUrl] => 
-            [allowAgentToSendHomeownerLink] => 1
-            [allowAgentToEditLMRFile] => 2
-            [allowAgentToLogin] => 1
-            [serviceProvider] => att
-            [allowedToUpdateFiles] => 0
-            [allowToAccessPrivateNotes] => 0
-            [timeZone] => EST
-            [sendNewDealAlert] => 1
-            [userIPAddress] => 
-            [allowToSendMassEmail] => 1
-            [allowAgentToCreateFiles] => 1
-            [allowAgentToCreateTasks] => 1
-            [allowAgentToSeeDashboard] => 1
-            [accessRestriction] => 0
-            [allowedToDeleteUplodedDocs] => 1
-            [allowedToEditOwnNotes] => 1
-            [agentNotes] => 
-            [seeBilling] => 1
-            [permissionToREST] => 1
-            [allowedToExcelReport] => 0
-            [changeDIYPlan] => 1
-            [isPrimary] => 0
-            [fluidLayout] => 0
-            [subscribeToHOME] => 0
-            [allowToLASubmit] => 0
-            [allowEmailCampaign] => 1
-            [allowToSendFax] => 0
-            [allowAgentToEditCommission] => 1
-            [allowAgentToSeeCommission] => 1
-            [allowToSendFileDesignation] => 1
-            [allowAgentToSeePublicNotes] => 1
-            [allowToCFPBSubmit] => 0
-            [allowToViewCFPBPipeline] => 0
-            [allowToAccessRAM] => 0
-            [allowToSendMarketingEmailForBRBO] => 0
-            [TAC] => 
-            [thankMsg] => 
-            [thankMsgSV] => 
-            [allowToSeeWebForms] => 0
-            [license] => 55667
-            [eniNumber] => 
-            [brokerPartnerType] => 
-            [prefCommunication] => email
-            [allowToEditCCInfo] => 0
-            [allowEditToIR] => 1
-            [allowWorkflowEdit] => 1
-            [allowAgentToGetBorrowerUploadDocsNotification] => 1
-            [allowToOverRideLockOnLoanAgent] => 1
-            [allowToLockLoanFileAgent] => 1
-            [allowToViewMarketPlace] => 1
-            [allowToCreateAloware] => 0
             [thirdPartyServices] => 0
-            [website] => www.website.com
-            [NMLSLicense] => 564564
-            [DRE] => 
-            [allowToupdateFileAndClient] => 
             [shareThisFile] => 0
             [allowToSubmitOffer] => 0
         )
 
+    [dummyBrokerId] => 46774
+    [SecondaryBrokerInfo] => Array
+        (
+        )
+
     [BranchInfo] => Array
         (
-            [executiveId] => 5288
-            [LMRExecutive] => Branch Two
-            [executiveEmail] => branch2@company.com
+            [executiveId] => 6722
+            [LMRExecutive] => daves
+            [executiveEmail] => davetest@lendingwise.com
             [activeStatus] => 1
-            [company] => Company.com
+            [company] => daves
             [LMRBccEmail] => 
             [LMRCcEmail] => 
-            [tollFree] => 2222222222222
-            [fax] => 344434334
+            [tollFree] => 
+            [fax] => 
             [website] => 
-            [calendarUrl] => 
-            [logo] => logo_LMR_5288_logo_PC_3580_logo_PC_3580.jpg
+            [logo] => 
             [cellNumber] => 
             [signCellNumber] => 
             [address] => 
@@ -620,7 +490,7 @@ Array
             [disclosure] => 
             [paymentToCompany] => 
             [rescissionPhNo] => 
-            [processingCompanyId] => 3363
+            [processingCompanyId] => 1652
             [packageId] => 
             [brokerProcessingFee] => 
             [loanModificationFee] => 
@@ -629,10 +499,10 @@ Array
             [userType] => 
             [tcUrl] => 
             [paymentGateway] => Authorize.net
-            [executiveCreatedDate] => 2018-12-11
-            [executiveLastLoginDate] => 2020-09-22 10:38:12
+            [executiveCreatedDate] => 2020-08-14
+            [executiveLastLoginDate] => 
             [addHearAbout] => 0
-            [allowLMRAEToEditFile] => 1
+            [allowLMRAEToEditFile] => 0
             [APILoginId] => 
             [transactionKey] => 
             [paypalEmailId] => 
@@ -643,15 +513,15 @@ Array
             [branchAELoginUrl] => 
             [demoVideoLink] => 
             [allowLMRAEToAccessDocs] => 1
-            [allowLMRToOnOffAgentLogin] => 1
+            [allowLMRToOnOffAgentLogin] => 0
             [eBookLink] => 
             [linkToSpanishVersion] => 0
             [askPaymentBeforeLMR] => 1
-            [allowLMRAEToEditCommission] => 1
+            [allowLMRAEToEditCommission] => 0
             [showPoweredByTMPLink] => 1
             [sslScript] => 
             [allowToViewSslScript] => 0
-            [serviceProvider] => att
+            [serviceProvider] => 
             [simLogin] => 0
             [allowAddOn] => 0
             [timeZone] => EST
@@ -659,18 +529,18 @@ Array
             [redirectUrlForQA] => 
             [subscriberID] => 
             [googleTrackingCode] => 
-            [TAC] => By submitting this application, you acknowledge that everything is true and correct to the best of your knowledge. If Pre-approved, you authorize us to pull your credit report. Certain fees, like an appraisal fee may not be refundable in the event your loan does not close with us.
-            [TACQA] => By submitting this application, you acknowledge that everything is true and correct to the best of your knowledge. If Pre-approved, you authorize us to pull your credit report. Certain fees, like an appraisal fee may not be refundable in the event your loan does not close with us.
-            [allowToUpdateFileAdminSection] => 1
+            [TAC] => 
+            [TACQA] => 
+            [allowToUpdateFileAdminSection] => 0
             [sendMarketingEmail] => 1
             [allowClientToUploadDocs] => 0
             [displayLinkToFICO] => 1
-            [allowBranchToLogin] => 1
-            [addBranchHearAbout] => 1
-            [allowLMRToEditAgentProfile] => 1
+            [allowBranchToLogin] => 0
+            [addBranchHearAbout] => 0
+            [allowLMRToEditAgentProfile] => 0
             [customMessage] => 
             [directPhone] => 
-            [allowToAddAgent] => 1
+            [allowToAddAgent] => 0
             [useMyServerSetting] => 0
             [allowBranchToCreateFiles] => 1
             [allowBranchToCreateTasks] => 1
@@ -680,7 +550,7 @@ Array
             [allowedToDeleteUplodedDocs] => 1
             [allowedToEditOwnNotes] => 1
             [permissionToREST] => 1
-            [allowedToExcelReport] => 1
+            [allowedToExcelReport] => 0
             [RESTApproval] => 0
             [RESTFee] => 0
             [ReadyForAnalysis] => No
@@ -694,10 +564,10 @@ Array
             [allowToLASubmit] => 0
             [agentFileAccess] => 1
             [allowEmailCampaign] => 1
-            [allowToSendFax] => 1
+            [allowToSendFax] => 0
             [allowBranchToSeeCommission] => 1
             [allowClientToAccessDocs] => 0
-            [allowToSendFileDesignation] => 0
+            [allowToSendFileDesignation] => 1
             [allowBranchToSeePublicNotes] => 1
             [mailingAddress] => 
             [mailingCity] => 
@@ -711,24 +581,23 @@ Array
             [allowToViewCFPBPipeline] => 0
             [allowToAccessRAM] => 0
             [allowBranchManagerToLogin] => 0
-            [thankMsg] => %3Ch1+style%3D%22text-align%3A+center%3B%22%3EThank+you+for+submitting+the+request.%3C%2Fh1%3E%0D%0A%3Ch2+style%3D%22text-align%3A+center%3B%22%3EYour+questionnaire+has+been+received+and+an+electronic+notification+has+been+sent+in+to+our+office.+Please+expect+a+call+from+our+office+in+the+next+24+hrs.%3C%2Fh2%3E
-            [thankMsgSV] => %3Ch1+style%3D%22text-align%3A+center%3B%22%3EThank+you+for+submitting+the+request.%3C%2Fh1%3E%0D%0A%3Ch2+style%3D%22text-align%3A+center%3B%22%3EYour+questionnaire+has+been+received+and+an+electronic+notification+has+been+sent+in+to+our+office.+Please+expect+a+call+from+our+office+in+the+next+24+hrs.%3C%2Fh2%3E
+            [thankMsg] => 
+            [thankMsgSV] => 
             [defaultPrimaryStatus] => 
             [defaultPrimaryStatusForFA] => 
             [googleTrackingCodeQA] => 
-            [allowToEditCCInfo] => 1
-            [allowEditToIR] => 1
-            [allowWorkflowEdit] => 1
+            [allowToEditCCInfo] => 0
+            [allowEditToIR] => 0
+            [allowWorkflowEdit] => 0
             [allowBranchToGetBorrowerUploadDocsNotification] => 1
-            [allowToOverRideLockOnLoanBranch] => 1
             [allowToLockLoanFileBranch] => 1
-            [allowToViewMarketPlace] => 1
+            [allowToViewMarketPlace] => 0
             [AllowToCreateAloware] => 0
-            [thirdPartyServices] => 1
             [allowToupdateFileAndClient] => 
-            [allowcaptcha] => 1
+            [thirdPartyServices] => 0
+            [allowcaptcha] => 0
             [LMRExecutiveLastName] => 
-            [shareThisFile] => 0
+            [shareThisFile] => 1
             [allowToSubmitOffer] => 0
         )
 
@@ -736,11 +605,11 @@ Array
         (
             [0] => Array
                 (
-                    [AID] => 10924
-                    [processorName] => Andrew Test
+                    [AID] => 13096
+                    [processorName] => Ayman Ali
                     [allowToListIn3PartyForm] => 1
-                    [role] => Account Manager
-                    [email] => andrewtest@dummyemail.com
+                    [role] => Processing Manager
+                    [email] => alialiayman@gmail.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -748,11 +617,11 @@ Array
 
             [1] => Array
                 (
-                    [AID] => 11189
-                    [processorName] => Ayman Ali
+                    [AID] => 8721
+                    [processorName] => Bob Underwriter
                     [allowToListIn3PartyForm] => 1
-                    [role] => Manager
-                    [email] => alialiayman@gmail.com
+                    [role] => Underwriter
+                    [email] => underwriter@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -760,23 +629,23 @@ Array
 
             [2] => Array
                 (
-                    [AID] => 10964
-                    [processorName] => Betty BackOffice
+                    [AID] => 8649
+                    [processorName] => Chris Fuelling
                     [allowToListIn3PartyForm] => 1
-                    [role] => Processor
-                    [email] => bettybo@lendingwise.com
+                    [role] => Manager
+                    [email] => cfuelling@lendingwise.com
                     [seePrivate] => 1
-                    [fax] => 
+                    [fax] => 3056948921
                     [allowEmpToSeePublicNotes] => 1
                 )
 
             [3] => Array
                 (
-                    [AID] => 11132
-                    [processorName] => Chengze Yin
+                    [AID] => 12827
+                    [processorName] => Dave Test
                     [allowToListIn3PartyForm] => 1
                     [role] => Manager
-                    [email] => pushdevelop23@gmail.com
+                    [email] => davetest@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -784,11 +653,11 @@ Array
 
             [4] => Array
                 (
-                    [AID] => 11009
-                    [processorName] => Cheryl Escrow
+                    [AID] => 8719
+                    [processorName] => Demo User
                     [allowToListIn3PartyForm] => 1
-                    [role] => Escrow Rep
-                    [email] => CherlyEscrow@lendingwise.com
+                    [role] => Account Manager
+                    [email] => demo@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -796,11 +665,11 @@ Array
 
             [5] => Array
                 (
-                    [AID] => 9697
-                    [processorName] => Chris Example
+                    [AID] => 10685
+                    [processorName] => Dev Team
                     [allowToListIn3PartyForm] => 1
                     [role] => Manager
-                    [email] => chris@lendingwise.com
+                    [email] => devteam@awatasoftsys.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -808,23 +677,23 @@ Array
 
             [6] => Array
                 (
-                    [AID] => 11010
-                    [processorName] => Courtney FundingCoor
+                    [AID] => 9667
+                    [processorName] => Ed Johnson
                     [allowToListIn3PartyForm] => 1
-                    [role] => Funding Coordinator
-                    [email] => CourtneyFC@lendingwise.com
-                    [seePrivate] => 1
-                    [fax] => 
+                    [role] => Investor
+                    [email] => ed@lendingwise.com
+                    [seePrivate] => 0
+                    [fax] => 3057356460
                     [allowEmpToSeePublicNotes] => 1
                 )
 
             [7] => Array
                 (
-                    [AID] => 11078
-                    [processorName] => dave lw111
+                    [AID] => 10888
+                    [processorName] => Elliott Levine
                     [allowToListIn3PartyForm] => 1
                     [role] => Manager
-                    [email] => dave@lendingwise.com
+                    [email] => elliott@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -832,11 +701,11 @@ Array
 
             [8] => Array
                 (
-                    [AID] => 11084
-                    [processorName] => David closer
+                    [AID] => 10001
+                    [processorName] => Jane SMith
                     [allowToListIn3PartyForm] => 1
-                    [role] => Closer
-                    [email] => deschmeyer@gmail.com
+                    [role] => Manager
+                    [email] => jane@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -844,11 +713,11 @@ Array
 
             [9] => Array
                 (
-                    [AID] => 11085
-                    [processorName] => David lawclerk
+                    [AID] => 8722
+                    [processorName] => John Closer
                     [allowToListIn3PartyForm] => 1
-                    [role] => Law Clerk
-                    [email] => deschmeyer1@gmail.com
+                    [role] => Manager
+                    [email] => closer@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -856,11 +725,11 @@ Array
 
             [10] => Array
                 (
-                    [AID] => 11008
-                    [processorName] => Ernie Attorney
+                    [AID] => 9668
+                    [processorName] => Liz Smith
                     [allowToListIn3PartyForm] => 1
-                    [role] => Attorney
-                    [email] => ErnieEsq@lendingwise.com
+                    [role] => Processing Manager
+                    [email] => liz@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -868,11 +737,11 @@ Array
 
             [11] => Array
                 (
-                    [AID] => 11194
-                    [processorName] => ffffff ffffffffffd
+                    [AID] => 12826
+                    [processorName] => miguel feal
                     [allowToListIn3PartyForm] => 1
                     [role] => Manager
-                    [email] => hhfgfgd@qweerfqwe.com
+                    [email] => migueltest@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -880,11 +749,11 @@ Array
 
             [12] => Array
                 (
-                    [AID] => 11007
-                    [processorName] => Frasier Appraiser
+                    [AID] => 11034
+                    [processorName] => Mike Smith
                     [allowToListIn3PartyForm] => 1
-                    [role] => Appraiser
-                    [email] => FrasierAppraiser@lendingwise.com
+                    [role] => Account Manager
+                    [email] => accountmanager@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -892,11 +761,11 @@ Array
 
             [13] => Array
                 (
-                    [AID] => 11011
-                    [processorName] => Harry OriginationHead
+                    [AID] => 9670
+                    [processorName] => Mike Tutor
                     [allowToListIn3PartyForm] => 1
-                    [role] => Head of Origination
-                    [email] => HarryOG@lendingwise.com
+                    [role] => QC
+                    [email] => mike@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -904,11 +773,11 @@ Array
 
             [14] => Array
                 (
-                    [AID] => 11139
-                    [processorName] => loan processor
+                    [AID] => 9669
+                    [processorName] => Olga Fuelling
                     [allowToListIn3PartyForm] => 1
-                    [role] => Manager
-                    [email] => loanprocessor305@gmail.com
+                    [role] => Senior Underwriter
+                    [email] => Olga@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -916,11 +785,11 @@ Array
 
             [15] => Array
                 (
-                    [AID] => 11013
-                    [processorName] => Manny Manager
+                    [AID] => 12260
+                    [processorName] => Sainath Chris
                     [allowToListIn3PartyForm] => 1
-                    [role] => Processing Manager
-                    [email] => MannyPro@lendingwise.com
+                    [role] => Manager
+                    [email] => sainath_chris@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -928,11 +797,11 @@ Array
 
             [16] => Array
                 (
-                    [AID] => 11012
-                    [processorName] => Ned Network
+                    [AID] => 8720
+                    [processorName] => Stephanie Processor
                     [allowToListIn3PartyForm] => 1
-                    [role] => Network Coordinator
-                    [email] => NedNC@lendingwise.com
+                    [role] => Processor
+                    [email] => processor@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -940,71 +809,23 @@ Array
 
             [17] => Array
                 (
-                    [AID] => 10916
-                    [processorName] => Richard Branson
+                    [AID] => 12028
+                    [processorName] => Suresh Kammam
                     [allowToListIn3PartyForm] => 1
                     [role] => Manager
-                    [email] => rbranson@lendingwise.com
+                    [email] => suresh@suresh.com
                     [seePrivate] => 1
-                    [fax] => 
+                    [fax] => 8972384723
                     [allowEmpToSeePublicNotes] => 1
                 )
 
             [18] => Array
                 (
-                    [AID] => 11014
-                    [processorName] => Sally Sales
+                    [AID] => 11587
+                    [processorName] => Tommy Title
                     [allowToListIn3PartyForm] => 1
-                    [role] => Sales Manager
-                    [email] => SallySales@lendingwise.com
-                    [seePrivate] => 1
-                    [fax] => 
-                    [allowEmpToSeePublicNotes] => 1
-                )
-
-            [19] => Array
-                (
-                    [AID] => 11188
-                    [processorName] => test rocksdomain
-                    [allowToListIn3PartyForm] => 1
-                    [role] => Attorney
-                    [email] => rachael@ddddd.rocks
-                    [seePrivate] => 1
-                    [fax] => 
-                    [allowEmpToSeePublicNotes] => 1
-                )
-
-            [20] => Array
-                (
-                    [AID] => 11015
-                    [processorName] => Tom Transaction
-                    [allowToListIn3PartyForm] => 1
-                    [role] => Transaction Coordinator
-                    [email] => TomTC@lendingwise.com
-                    [seePrivate] => 1
-                    [fax] => 
-                    [allowEmpToSeePublicNotes] => 1
-                )
-
-            [21] => Array
-                (
-                    [AID] => 11016
-                    [processorName] => Unice Under
-                    [allowToListIn3PartyForm] => 1
-                    [role] => Underwriter
-                    [email] => UniceUW@lendingwise.com
-                    [seePrivate] => 1
-                    [fax] => 
-                    [allowEmpToSeePublicNotes] => 1
-                )
-
-            [22] => Array
-                (
-                    [AID] => 11017
-                    [processorName] => Vincent ViPoS
-                    [allowToListIn3PartyForm] => 1
-                    [role] => VP of Sales
-                    [email] => VinnyVPS@lendingwise.com
+                    [role] => Title Rep
+                    [email] => Title@lendingwise.com
                     [seePrivate] => 1
                     [fax] => 
                     [allowEmpToSeePublicNotes] => 1
@@ -1020,23 +841,22 @@ Array
         (
             [0] => Array
                 (
-                    [AID] => 11189
-                    [email] => alialiayman@gmail.com
-                    [processorName] => Ayman Ali
-                    [processorLName] => Ali
+                    [AID] => 8722
+                    [email] => closer@lendingwise.com
+                    [processorName] => John Closer
+                    [processorLName] => Closer
                     [tollFree] => 
-                    [cellNumber] => 
+                    [cellNumber] => 8326711600
                     [fax] => 
-                    [calendarUrl] => 
                     [role] => Manager
                     [activeStatus] => 1
                     [LMRAEId] => 0
-                    [processingCompanyId] => 3363
-                    [empCreatedDate] => 2020-12-18
-                    [empLastLoginDate] => 2021-01-10 17:49:15
+                    [processingCompanyId] => 1652
+                    [empCreatedDate] => 2017-05-01
+                    [empLastLoginDate] => 2021-01-11 12:49:14
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => 
-                    [timeZone] => PST
+                    [timeZone] => EST
                     [simLogin] => 0
                     [allowExcelDownload] => 1
                     [sendMarketingEmail] => 1
@@ -1055,7 +875,7 @@ Array
                     [allowedToDeleteUplodedDocs] => 1
                     [allowedToEditOwnNotes] => 1
                     [seeBilling] => 1
-                    [alternatePC] => LendingWise-Demo 2
+                    [alternatePC] => Lendingwise
                     [permissionToREST] => 0
                     [allowEmailCampaign] => 1
                     [allowBOToEditLMRFile] => 1
@@ -1063,7 +883,87 @@ Array
                     [allowToSendHomeownerLink] => 1
                     [allowToUpdateFileAdminSection] => 1
                     [fluidLayout] => 0
-                    [subscribeToHOME] => 1
+                    [subscribeToHOME] => 0
+                    [allowToLASubmit] => 0
+                    [allowToSendFax] => 1
+                    [allowEmployeeToEditCommission] => 1
+                    [allowEmployeeToSeeCommission] => 1
+                    [allowToSendFileDesignation] => 1
+                    [barNo] => 
+                    [allowEmpToSeePublicNotes] => 1
+                    [paralegalRate] => 
+                    [attorneyRate] => 
+                    [empAddress] => 
+                    [empCity] => 
+                    [empState] => 
+                    [empZip] => 
+                    [allowToChangeOrAssignBranchForFile] => 1
+                    [allowToCFPBSubmit] => 0
+                    [allowToViewCFPBPipeline] => 0
+                    [empCounty] => 
+                    [serviceFeeRate] => 
+                    [allowToAccessRAM] => 0
+                    [allowEmpToCreateBranch] => 1
+                    [convertNewBRIntoEmpOwnBR] => 1
+                    [allowToSeeBillingSectionForFile] => 0
+                    [allowEmpToCreateAgent] => 1
+                    [allowToGetBorrowerUploadDocsNotification] => 1
+                    [allowToLockLoanFileEmpl] => 1
+                    [allowToViewMarketPlace] => 1
+                    [allowEmpToCreateAloware] => 1
+                    [allowToupdateFileAndClient] => 
+                    [thirdPartyServices] => 0
+                    [allowToViewContactsList] => 1
+                    [shareThisFile] => 1
+                    [allowToSubmitOffer] => 1
+                    [employeeName] => John Closer
+                )
+
+            [1] => Array
+                (
+                    [AID] => 13096
+                    [email] => alialiayman@gmail.com
+                    [processorName] => Ayman Ali
+                    [processorLName] => Ali
+                    [tollFree] => 
+                    [cellNumber] => 
+                    [fax] => 
+                    [role] => Processing Manager
+                    [activeStatus] => 1
+                    [LMRAEId] => 0
+                    [processingCompanyId] => 1652
+                    [empCreatedDate] => 2021-01-11
+                    [empLastLoginDate] => 2021-01-12 10:51:32
+                    [allowToViewAllFiles] => 1
+                    [serviceProvider] => 
+                    [timeZone] => EST
+                    [simLogin] => 0
+                    [allowExcelDownload] => 0
+                    [sendMarketingEmail] => 1
+                    [forensicAuditService] => 0
+                    [forensicAuditInterest] => 0
+                    [feedbackOfFAS] => 
+                    [allowToListIn3PartyForm] => 1
+                    [allowEmpToLogin] => 1
+                    [showLAMsg] => 1
+                    [directPhone] => 
+                    [allowEmpToCreateFiles] => 1
+                    [allowEmpToCreateTasks] => 1
+                    [allowEmpToSeeDashboard] => 1
+                    [accessRestriction] => 0
+                    [seePrivate] => 1
+                    [allowedToDeleteUplodedDocs] => 1
+                    [allowedToEditOwnNotes] => 1
+                    [seeBilling] => 1
+                    [alternatePC] => Lendingwise
+                    [permissionToREST] => 0
+                    [allowEmailCampaign] => 1
+                    [allowBOToEditLMRFile] => 1
+                    [changeDIYPlan] => 1
+                    [allowToSendHomeownerLink] => 1
+                    [allowToUpdateFileAdminSection] => 1
+                    [fluidLayout] => 0
+                    [subscribeToHOME] => 0
                     [allowToLASubmit] => 0
                     [allowToSendFax] => 1
                     [allowEmployeeToEditCommission] => 1
@@ -1088,16 +988,12 @@ Array
                     [allowToSeeBillingSectionForFile] => 0
                     [allowEmpToCreateAgent] => 0
                     [allowToGetBorrowerUploadDocsNotification] => 1
-                    [allowToOverRideLockOnLoanEmpl] => 1
                     [allowToLockLoanFileEmpl] => 1
                     [allowToViewMarketPlace] => 1
                     [allowEmpToCreateAloware] => 0
+                    [allowToupdateFileAndClient] => 
                     [thirdPartyServices] => 0
                     [allowToViewContactsList] => 1
-                    [allowToupdateFileAndClient] => 
-                    [eTransPermission] => 0
-                    [sbaUsername] => 
-                    [sbaPassword] => 
                     [shareThisFile] => 1
                     [allowToSubmitOffer] => 1
                     [employeeName] => Ayman Ali
@@ -1107,8 +1003,8 @@ Array
 
     [listingRealtorInfo] => Array
         (
-            [SSID] => 495
-            [LMRId] => 6310064
+            [SSID] => 299693
+            [LMRId] => 6833894
             [unPaidTax] => 
             [liens] => 
             [lender1RepName] => 
@@ -1403,188 +1299,16 @@ Array
 
     [PCCheckListInfo] => Array
         (
-            [HMLO] => Array
-                (
-                    [0] => Array
-                        (
-                            [PCMID] => 11936
-                            [PCID] => 3363
-                            [docName] => agent branch
-                            [dStatus] => 1
-                            [serviceType] => C
-                            [moduleType] => HMLO
-                            [createdDate] => 2020-10-23 15:48:38
-                            [displayOrder] => 0
-                            [MFCID] => 0
-                            [requiredFor] => 
-                            [PCMID_X] => 
-                            [description] => 
-                            [coBorrowerRelatedReqdoc] => 0
-                            [rehabRelatedReqdoc] => 0
-                            [noCrossCollRelatedReqdoc] => 0
-                            [usCitizenRelatedReqdoc] => 0
-                            [refDocName] => 
-                            [refDocUrl] => 
-                            [PRID] => 47855
-                            [requiredBy] => Branch
-                            [UID] => 11078
-                            [URole] => Employee
-                            [recordDate] => 2020-10-23 15:48:54
-                            [activeStatus] => 1
-                        )
-
-                    [1] => Array
-                        (
-                            [PCMID] => 11905
-                            [PCID] => 3363
-                            [docName] => agent only
-                            [dStatus] => 1
-                            [serviceType] => C
-                            [moduleType] => HMLO
-                            [createdDate] => 2020-10-23 15:47:41
-                            [displayOrder] => 0
-                            [MFCID] => 0
-                            [requiredFor] => 
-                            [PCMID_X] => 
-                            [description] => 
-                            [coBorrowerRelatedReqdoc] => 0
-                            [rehabRelatedReqdoc] => 0
-                            [noCrossCollRelatedReqdoc] => 0
-                            [usCitizenRelatedReqdoc] => 0
-                            [refDocName] => 
-                            [refDocUrl] => 
-                            [PRID] => 47789
-                            [requiredBy] => Broker
-                            [UID] => 11078
-                            [URole] => Employee
-                            [recordDate] => 2020-10-23 15:47:57
-                            [activeStatus] => 1
-                        )
-
-                    [2] => Array
-                        (
-                            [PCMID] => 11874
-                            [PCID] => 3363
-                            [docName] => branch only bridge
-                            [dStatus] => 1
-                            [serviceType] => C
-                            [moduleType] => HMLO
-                            [createdDate] => 2020-10-23 15:46:57
-                            [displayOrder] => 0
-                            [MFCID] => 0
-                            [requiredFor] => 
-                            [PCMID_X] => 
-                            [description] => 
-                            [coBorrowerRelatedReqdoc] => 0
-                            [rehabRelatedReqdoc] => 0
-                            [noCrossCollRelatedReqdoc] => 0
-                            [usCitizenRelatedReqdoc] => 0
-                            [refDocName] => 
-                            [refDocUrl] => 
-                            [PRID] => 47727
-                            [requiredBy] => Branch
-                            [UID] => 11078
-                            [URole] => Employee
-                            [recordDate] => 2020-10-23 15:47:13
-                            [activeStatus] => 1
-                        )
-
-                    [3] => Array
-                        (
-                            [PCMID] => 8721
-                            [PCID] => 3363
-                            [docName] => test sai
-                            [dStatus] => 1
-                            [serviceType] => C
-                            [moduleType] => HMLO
-                            [createdDate] => 2020-06-22 13:41:26
-                            [displayOrder] => 0
-                            [MFCID] => 0
-                            [requiredFor] => 
-                            [PCMID_X] => 
-                            [description] => 
-                            [coBorrowerRelatedReqdoc] => 0
-                            [rehabRelatedReqdoc] => 0
-                            [noCrossCollRelatedReqdoc] => 0
-                            [usCitizenRelatedReqdoc] => 0
-                            [refDocName] => 
-                            [refDocUrl] => 
-                            [PRID] => 47944
-                            [requiredBy] => Borrower
-                            [UID] => 11078
-                            [URole] => Employee
-                            [recordDate] => 2020-10-23 16:06:15
-                            [activeStatus] => 1
-                        )
-
-                    [4] => Array
-                        (
-                            [PCMID] => 6891
-                            [PCID] => 3363
-                            [docName] => drivers lic
-                            [dStatus] => 1
-                            [serviceType] => C
-                            [moduleType] => HMLO
-                            [createdDate] => 2020-04-28 17:35:38
-                            [displayOrder] => 2
-                            [MFCID] => 0
-                            [requiredFor] => 
-                            [PCMID_X] => 
-                            [description] => 
-                            [coBorrowerRelatedReqdoc] => 0
-                            [rehabRelatedReqdoc] => 0
-                            [noCrossCollRelatedReqdoc] => 0
-                            [usCitizenRelatedReqdoc] => 0
-                            [refDocName] => 
-                            [refDocUrl] => 
-                            [PRID] => 48090
-                            [requiredBy] => Borrower
-                            [UID] => 11078
-                            [URole] => Employee
-                            [recordDate] => 2020-10-23 16:08:32
-                            [activeStatus] => 1
-                        )
-
-                    [5] => Array
-                        (
-                            [PCMID] => 11967
-                            [PCID] => 3363
-                            [docName] => testing requd docs
-                            [dStatus] => 1
-                            [serviceType] => C
-                            [moduleType] => HMLO
-                            [createdDate] => 2020-10-23 16:07:02
-                            [displayOrder] => 5
-                            [MFCID] => 0
-                            [requiredFor] => 
-                            [PCMID_X] => 
-                            [description] => 
-                            [coBorrowerRelatedReqdoc] => 0
-                            [rehabRelatedReqdoc] => 0
-                            [noCrossCollRelatedReqdoc] => 0
-                            [usCitizenRelatedReqdoc] => 0
-                            [refDocName] => 
-                            [refDocUrl] => 
-                            [PRID] => 48026
-                            [requiredBy] => Borrower
-                            [UID] => 11078
-                            [URole] => Employee
-                            [recordDate] => 2020-10-23 16:07:17
-                            [activeStatus] => 1
-                        )
-
-                )
-
         )
 
     [LMRClientTypeInfo] => Array
         (
-            [6310064] => Array
+            [6833894] => Array
                 (
                     [0] => Array
                         (
-                            [LMRId] => 6310064
-                            [ClientType] => C
+                            [LMRId] => 6833894
+                            [ClientType] => 100393
                         )
 
                 )
@@ -1597,17 +1321,17 @@ Array
 
     [incomeInfo] => Array
         (
-            [IID] => 583913
-            [LMRId] => 6310064
-            [occupation1] => employer 1 occupation
-            [occupation2] => 
+            [IID] => 694052
+            [LMRId] => 6833894
+            [occupation1] => programmer
+            [occupation2] => butterfly milker
             [employedInfo1] => Salary W-2
-            [employedInfo2] => 
-            [grossIncome1] => 
-            [grossIncome2] => 
-            [commissionOrBonus1] => 
+            [employedInfo2] => 1099
+            [grossIncome1] => 60,000.00
+            [grossIncome2] => 30,000.00
+            [commissionOrBonus1] => 1,500.00
             [commissionOrBonus2] => 
-            [overtime1] => 
+            [overtime1] => 2,500.00
             [overtime2] => 
             [tipsMiscIncome1] => 
             [tipsMiscIncome2] => 
@@ -1629,7 +1353,7 @@ Array
             [parents2] => 
             [unemployment1] => 
             [unemployment2] => 
-            [otherHouseHold1] => 
+            [otherHouseHold1] => 200.00
             [otherHouseHold2] => 
             [primTotalHouseHoldIncome] => 
             [coTotalHouseHoldIncome] => 
@@ -1641,17 +1365,17 @@ Array
             [taxes2] => 
             [insurance1] => 
             [insurance2] => 
-            [otherMortgage1] => 
-            [otherMortgage2] => 
-            [creditCards1] => 
-            [creditCards2] => 
+            [otherMortgage1] => 750.00
+            [otherMortgage2] => 300.00
+            [creditCards1] => 1,000.00
+            [creditCards2] => 400.00
             [autoLoan1] => 
             [autoLoan2] => 
             [unsecuredLoans1] => 
             [unsecuredLoans2] => 
-            [studentLoans1] => 
-            [studentLoans2] => 
-            [childSupportOrAlimonyMonthly1] => 
+            [studentLoans1] => 700.00
+            [studentLoans2] => 500.00
+            [childSupportOrAlimonyMonthly1] => 1,000.00
             [childSupportOrAlimonyMonthly2] => 
             [careAmt1] => 
             [careAmt2] => 
@@ -1695,10 +1419,10 @@ Array
             [currntPmntTaxAndIns1] => 
             [columnmortgageInsurance1] => 
             [mortgageInsurance1] => 
-            [employer1] => employer 1 name
-            [employer2] => 
-            [yearsAtJob1] => 2
-            [yearsAtJob2] => 
+            [employer1] => citi bank
+            [employer2] => butterflies r us
+            [yearsAtJob1] => 1
+            [yearsAtJob2] => 5
             [employmentHistory] => 
             [federalTaxFICA1] => 
             [federalTaxFICA2] => 
@@ -1706,17 +1430,17 @@ Array
             [otherDeductions2] => 
             [foodStampWelfare1] => 
             [foodStampWelfare2] => 
-            [employer1Add] => employe 1 address
-            [employer1Phone] => 9491111111
-            [employer2Add] => 
-            [employer2Phone] => 
+            [employer1Add] => 123 employer st, miami fl 33333
+            [employer1Phone] => 
+            [employer2Add] => 123 butterfly st, miami fl 33176
+            [employer2Phone] => 676767456611
             [creditCardsBalance1] => 
             [creditCardsBalance2] => 
             [autoLoanBalance1] => 
             [autoLoanBalance2] => 
             [unsecuredLoanBalance1] => 
             [unsecuredLoanBalance2] => 
-            [otherMortgageBalance1] => 
+            [otherMortgageBalance1] => 10,000.00
             [otherMortgageBalance2] => 
             [studentLoansBalance1] => 
             [studentLoansBalance2] => 
@@ -1742,9 +1466,9 @@ Array
             [netPensionOrRetirement2] => 
             [netDisability1] => 
             [netDisability2] => 
-            [netRental1] => 
+            [netRental1] => 1,200.00
             [netRental2] => 
-            [netEarnedInterest1] => 
+            [netEarnedInterest1] => 3,400.00
             [netEarnedInterest2] => 
             [netRoomRental1] => 
             [netRoomRental2] => 
@@ -1753,8 +1477,8 @@ Array
             [netUnemployment1] => 
             [netUnemployment2] => 
             [floodInsurance1] => 
-            [borrowerHireDate] => 2010-01-05
-            [coBorrowerHireDate] => 0000-00-00
+            [borrowerHireDate] => 2020-01-01
+            [coBorrowerHireDate] => 2015-01-09
             [includeNotesToPDF] => 0
             [rentalExp1] => 
             [rentalExp2] => 
@@ -1766,8 +1490,8 @@ Array
             [secondJobStDate2] => 
             [addGrossedUp1] => 0
             [addGrossedUp2] => 0
-            [paidOften] => monthly
-            [paidOften1] => 
+            [paidOften] => every2Weeks
+            [paidOften1] => weekly
             [pastDueMtg] => 
             [pastDueHOA] => 
             [escrowAdvances] => 
@@ -1778,36 +1502,30 @@ Array
             [childSupportOrAlimonyMonthlyBalance2] => 
             [otherBalance1] => 
             [otherBalance2] => 
-            [employer1City] => 
-            [employer1State] => 
-            [employer1Zip] => 
-            [employer2City] => 
-            [employer2State] => 
-            [employer2Zip] => 
             [emptypeshare1] => 
             [empmonthlyincome1] => 
             [emptypeshare2] => 
             [empmonthlyincome2] => 
-            [capitalGains1] => 
-            [partnership1] => 
-            [otherIncomeDescription1] => 
-            [capitalGains2] => 
-            [partnership2] => 
+            [capitalGains1] => 2,000.00
+            [partnership1] => 12,000.00
+            [otherIncomeDescription1] => candy bar sales
+            [capitalGains2] => 0.00
+            [partnership2] => 0.00
             [otherIncomeDescription2] => 
             [borSocialSecurity] => 
             [coBSocialSecurity] => 
-            [borrowerTotalMonthlyIncome] => 0
-            [coborrowerTotalMonthlyIncome] => 0
-            [borrowerTotalMonthlyExpenses] => 1341.67
-            [coborrowerTotalMonthlyExpenses] => 0
-            [totalMonthlyExpensesBorrowerAndCoborrower] => 1341.67
-            [totalMonthlyIncomeBorrowerAndCoborrower] => 0
+            [borrowerTotalMonthlyIncome] => 82800
+            [coborrowerTotalMonthlyIncome] => 30000
+            [borrowerTotalMonthlyExpenses] => 3450
+            [coborrowerTotalMonthlyExpenses] => 1200
+            [totalMonthlyExpensesBorrowerAndCoborrower] => 4650
+            [totalMonthlyIncomeBorrowerAndCoborrower] => 112800
         )
 
     [QAInfo] => Array
         (
-            [QAID] => 501
-            [LMRId] => 6310064
+            [QAID] => 517691
+            [LMRId] => 6833894
             [noOfPeopleDependent] => 
             [stayInHome] => NA
             [homeListedForSale] => NA
@@ -1912,23 +1630,23 @@ Array
             [saleForHowLong] => 
             [attorneyEmail] => 
             [PublishBInfo] => 2
-            [BEthnicity] => 2
-            [BRace] => 3
+            [BEthnicity] => 1
+            [BRace] => 2
             [BGender] => 2
-            [BVeteran] => 4
-            [bFiEthnicity] => 
-            [bFiEthnicitySub] => 4
-            [bFiEthnicitySubOther] => Colombian
-            [bFiSex] => 
-            [bFiRace] => 
-            [bFiRaceSub] => 
+            [BVeteran] => 2
+            [bFiEthnicity] => Yes
+            [bFiEthnicitySub] => 
+            [bFiEthnicitySubOther] => 
+            [bFiSex] => No
+            [bFiRace] => Yes
+            [bFiRaceSub] => 3
             [bFiRaceAsianOther] => 
             [bFiRacePacificOther] => 
-            [bDemoInfo] => 
-            [PublishCBInfo] => 3
-            [CBEthnicity] => 0
-            [CBRace] => 0
-            [CBGender] => 0
+            [bDemoInfo] => 1
+            [PublishCBInfo] => 2
+            [CBEthnicity] => 2
+            [CBRace] => 4
+            [CBGender] => 1
             [HAMPPrincipalResidence] => NA
             [permanentHAMPModification] => NA
             [howManyPermanentHAMP] => 
@@ -1987,19 +1705,19 @@ Array
             [QACoBorSSN] => 
             [QACoBorSpouseName] => 
             [QACoBorSpouseSSN] => 
-            [YRF4506TDate1] => 0000-00-00
-            [YRF4506TDate2] => 0000-00-00
-            [YRF4506TDate3] => 0000-00-00
-            [YRF4506TDate4] => 0000-00-00
+            [YRF4506TDate1] => 
+            [YRF4506TDate2] => 
+            [YRF4506TDate3] => 
+            [YRF4506TDate4] => 
             [foreClosureNotes] => 
-            [CBVeteran] => 
-            [CBFiEthnicity] => 
-            [CBFiGender] => 
-            [CBFiRace] => 
-            [CBDDemoInfo] => 
-            [CBEthnicitySub] => 
+            [CBVeteran] => 4
+            [CBFiEthnicity] => No
+            [CBFiGender] => Yes
+            [CBFiRace] => No
+            [CBDDemoInfo] => 2
+            [CBEthnicitySub] => 3
             [CBEthnicitySubOther] => 
-            [CBRaceSub] => 
+            [CBRaceSub] => 9
             [CBRaceAsianOther] => 
             [CBRacePacificOther] => 
             [HOA2Email] => 
@@ -2007,20 +1725,20 @@ Array
 
     [AssetsInfo] => Array
         (
-            [assetID] => 102239
-            [LMRID] => 6310064
-            [assetCheckingAccounts] => 50000.00
-            [assetSavingMoneyMarket] => 40000.00
-            [assetStocks] => 
-            [assetIRAAccounts] => 
-            [assetESPOAccounts] => 
+            [assetID] => 163678
+            [LMRID] => 6833894
+            [assetCheckingAccounts] => 0.00
+            [assetSavingMoneyMarket] => 0.00
+            [assetStocks] => 0.00
+            [assetIRAAccounts] => 0.00
+            [assetESPOAccounts] => 0.00
             [assetHome] => 
             [assetORE] => 
             [assetCars] => 
-            [assetLifeInsurance] => 
+            [assetLifeInsurance] => 0.00
             [assetOther] => 
             [activeStatus] => 1
-            [assetCash] => 100000.00
+            [assetCash] => 0.00
             [assetCashOwed_del] => 
             [assetCheckingAccountsOwed_del] => 
             [assetSavingMoneyMarketOwed_del] => 
@@ -2033,14 +1751,14 @@ Array
             [assetLifeInsuranceOwed_del] => 
             [assetOtherOwed_del] => 
             [otherAmtOwed] => 
-            [assetTotalCashBankAcc] => 
-            [assetTotalRetirementValue] => 
+            [assetTotalCashBankAcc] => 0.00
+            [assetTotalRetirementValue] => 0.00
             [assetAvailabilityLinesCredit] => 
             [assetSR] => 
             [assetSROwed] => 
-            [assetAccount] => 
+            [assetAccount] => 0.00
             [assetAccountOwd] => 
-            [assetNonMarketableSecurities] => 
+            [assetNonMarketableSecurities] => 0.00
             [assetNonMarketableSecuritiesOwd] => 
             [assetStocksOwed] => 
             [assetIRAAccountsOwed] => 
@@ -2087,146 +1805,40 @@ Array
         (
             [0] => Array
                 (
-                    [serialNumber] => 6427
+                    [serialNumber] => 21285581
                     [executiveId] => 0
                     [brokerNumber] => 0
-                    [employeeId] => 11078
-                    [processorComments] => Broker changed to Richard
-                    [notesType] => 
-                    [private] => 0
-                    [notesDate] => 2021-01-06 22:32:58
-                    [signExecutiveName] => 
+                    [employeeId] => 8722
+                    [processorComments] => File assigned to Ayman Ali (Processing Manager)
+                    [notesType] => GE
+                    [private] => 1
+                    [notesDate] => 2021-01-11 14:10:39
+                    [signExecutiveName] => John Closer
                     [displayIn] => NH
                     [sendTo] => 
                     [clientId] => 0
                     [isSysNotes] => 1
-                    [fileID] => 6310064
+                    [fileID] => 6833894
                     [processorName] => 
                     [updatedUserType] => 
                 )
 
             [1] => Array
                 (
-                    [serialNumber] => 6420
+                    [serialNumber] => 21284926
                     [executiveId] => 0
                     [brokerNumber] => 0
-                    [employeeId] => 11078
-                    [processorComments] => Broker changed to Micky Mouse
-                    [notesType] => 
-                    [private] => 0
-                    [notesDate] => 2021-01-06 22:28:40
-                    [signExecutiveName] => 
-                    [displayIn] => NH
-                    [sendTo] => 
-                    [clientId] => 0
-                    [isSysNotes] => 1
-                    [fileID] => 6310064
-                    [processorName] => 
-                    [updatedUserType] => 
-                )
-
-            [2] => Array
-                (
-                    [serialNumber] => 6413
-                    [executiveId] => 0
-                    [brokerNumber] => 0
-                    [employeeId] => 11078
-                    [processorComments] => Loan Officer changed to dave esch
-                    [notesType] => 
-                    [private] => 0
-                    [notesDate] => 2021-01-06 22:28:10
-                    [signExecutiveName] => 
-                    [displayIn] => NH
-                    [sendTo] => 
-                    [clientId] => 0
-                    [isSysNotes] => 1
-                    [fileID] => 6310064
-                    [processorName] => 
-                    [updatedUserType] => 
-                )
-
-            [3] => Array
-                (
-                    [serialNumber] => 6402
-                    [executiveId] => 0
-                    [brokerNumber] => 0
-                    [employeeId] => 11078
-                    [processorComments] => Workflow : 
-
-trt etrt ert ret et t er
-hj fuy fd
-y thjfg
-                    [notesType] => WFN
-                    [private] => 0
-                    [notesDate] => 2021-01-06 09:51:25
-                    [signExecutiveName] => 
-                    [displayIn] => NH
-                    [sendTo] => 
-                    [clientId] => 0
-                    [isSysNotes] => 1
-                    [fileID] => 6310064
-                    [processorName] => 
-                    [updatedUserType] => 
-                )
-
-            [4] => Array
-                (
-                    [serialNumber] => 6401
-                    [executiveId] => 0
-                    [brokerNumber] => 0
-                    [employeeId] => 11078
-                    [processorComments] => Workflow : drips
-cGF1bCB3b3JrIGZsb3c=
-trt etrt ert ret et t er
-                    [notesType] => WFN
-                    [private] => 0
-                    [notesDate] => 2021-01-06 09:50:52
-                    [signExecutiveName] => 
-                    [displayIn] => NH
-                    [sendTo] => 
-                    [clientId] => 0
-                    [isSysNotes] => 1
-                    [fileID] => 6310064
-                    [processorName] => 
-                    [updatedUserType] => 
-                )
-
-            [5] => Array
-                (
-                    [serialNumber] => 6400
-                    [executiveId] => 0
-                    [brokerNumber] => 0
-                    [employeeId] => 11189
-                    [processorComments] =>  Interest Rate has been updated to 2.3  %
-                    [notesType] => GE
-                    [private] => 1
-                    [notesDate] => 2021-01-04 21:15:58
-                    [signExecutiveName] => 
-                    [displayIn] => NH
-                    [sendTo] => 
-                    [clientId] => 0
-                    [isSysNotes] => 1
-                    [fileID] => 6310064
-                    [processorName] => Ayman Ali
-                    [updatedUserType] => Employee
-                )
-
-            [6] => Array
-                (
-                    [serialNumber] => 6398
-                    [executiveId] => 0
-                    [brokerNumber] => 0
-                    [employeeId] => 11189
+                    [employeeId] => 8722
                     [processorComments] => Created via Back Office
                     [notesType] => 
                     [private] => 1
-                    [notesDate] => 2020-12-29 20:10:41
+                    [notesDate] => 2021-01-11 13:04:59
                     [signExecutiveName] => 
                     [displayIn] => NH
                     [sendTo] => 
                     [clientId] => 0
                     [isSysNotes] => 1
-                    [fileID] => 6310064
+                    [fileID] => 6833894
                     [processorName] => 
                     [updatedUserType] => 
                 )
@@ -2235,24 +1847,24 @@ trt etrt ert ret et t er
 
     [clientInfo] => Array
         (
-            [CID] => 5862143
-            [clientFName] => Ayman
-            [clientLName] => Loan
-            [clientPhone] => 9495221879
-            [clientCell] => 
-            [clientEmail] => alialiayman@gmail.com
+            [CID] => 6374184
+            [clientFName] => bobby
+            [clientLName] => borrower
+            [clientPhone] => 1112223333
+            [clientCell] => 4445556666
+            [clientEmail] => bobbyloan1@hshhsd.com
             [clientSecondaryEmail] => 
-            [registerDate] => 2020-12-29
+            [registerDate] => 2021-01-11
             [lastLogin] => 
             [referralCode] => 
             [hearAbout] => 
             [activeStatus] => 1
             [agreedTC] => 0
             [emailAuthOpt] => 0
-            [clientAddress] => borrower address
-            [clientCity] => borrower city
-            [clientState] => CA
-            [clientZip] => 92604
+            [clientAddress] => 123 current address st
+            [clientCity] => currentcity
+            [clientState] => FL
+            [clientZip] => 33156
             [paymentStatus] => Unpaid
             [membership] => B
             [LMRAffiliateCode] => 0
@@ -2266,40 +1878,39 @@ trt etrt ert ret et t er
             [altPhoneNumber] => 
             [refId] => 0
             [allowToLogin] => 1
-            [publishBInfo] => 3
-            [race] => 
-            [ethnicity] => 
-            [gender] => 
-            [veteran] => 
-            [FIEthnicity] => 
+            [publishBInfo] => 2
+            [race] => 2
+            [ethnicity] => 1
+            [gender] => 2
+            [veteran] => 2
+            [FIEthnicity] => Yes
             [FIEthnicitySub] => 
             [FIEthnicitySubOther] => 
-            [FISex] => 
-            [FIRace] => 
-            [FIRaceSub] => 
+            [FISex] => No
+            [FIRace] => Yes
+            [FIRaceSub] => 3
             [FIRaceAsianOther] => 
             [FIRacePacificOther] => 
-            [DemoInfo] => 
-            [PCID] => 3363
-            [methodOfContact] => phone
+            [DemoInfo] => 1
+            [PCID] => 1652
+            [methodOfContact] => 
             [internalInfoTags] => 
             [internalInfoStatus] => 
             [internalInfoCreditLine] => 
-            [borrowerDOB] => 1926-01-14
-            [borrowerPOB] => placeofbirth
-            [ssnNumber] => 111111111
+            [borrowerDOB] => 1972-10-06
+            [borrowerPOB] => 
+            [ssnNumber] => 593125444
             [clientMaxAcqusitionLTV] => 
             [clientMaxRehabBudget] => 
             [clientMaxAllowedARV] => 
             [clientInternalInfoLoanTerms] => 
             [clientInternalInfoAddTerms] => 
-            [allowToOverRideLockOnLoanClient] => 1
             [allowToLockLoanFileClient] => 1
-            [driverLicenseState] => CA
-            [driverLicenseNumber] => dL00011
+            [driverLicenseState] => 
+            [driverLicenseNumber] => 
             [coBorDriverLicenseState] => 
             [coBorDriverLicenseNumber] => 
-            [allowToViewMarketPlace] => 1
+            [allowToViewMarketPlace] => 0
             [allowToSubmitOffer] => 0
         )
 
@@ -2307,24 +1918,8 @@ trt etrt ert ret et t er
         (
             [0] => Array
                 (
-                    [PSID] => 58703
-                    [PCID] => 3363
-                    [primaryStatus] => Sai Test
-                    [activeStatus] => 1
-                    [statusDesc] => Disable Test
-                    [displayOrder] => 0
-                    [moduleName] => Commercial/Residential Real Estate
-                    [allowAgentToEditFile] => 0
-                    [allowClientToEditFile] => 0
-                    [allowBOToEditFile] => 1
-                    [allowOthersToUpdate] => 0
-                    [allowLoanOfficerToEditFile] => 0
-                )
-
-            [1] => Array
-                (
-                    [PSID] => 56017
-                    [PCID] => 3363
+                    [PSID] => 14197
+                    [PCID] => 1652
                     [primaryStatus] => Lead
                     [activeStatus] => 1
                     [statusDesc] => Leads can be borrowers or brokers interested in doing business, but may not have a deal yet. Make sure to update the sub status, make notes, and set a call back date and/or reminder/task to follow up.
@@ -2337,14 +1932,30 @@ trt etrt ert ret et t er
                     [allowLoanOfficerToEditFile] => 1
                 )
 
+            [1] => Array
+                (
+                    [PSID] => 39800
+                    [PCID] => 1652
+                    [primaryStatus] => Application Started
+                    [activeStatus] => 1
+                    [statusDesc] => These are files that have successfully completed the quick app, either via webform or manually created by a user. Make sure to send a link to the full app to finish the application.
+                    [displayOrder] => 2
+                    [moduleName] => Commercial/Residential Real Estate
+                    [allowAgentToEditFile] => 1
+                    [allowClientToEditFile] => 1
+                    [allowBOToEditFile] => 1
+                    [allowOthersToUpdate] => 1
+                    [allowLoanOfficerToEditFile] => 1
+                )
+
             [2] => Array
                 (
-                    [PSID] => 56019
-                    [PCID] => 3363
-                    [primaryStatus] => New
+                    [PSID] => 14212
+                    [PCID] => 1652
+                    [primaryStatus] => Completed App
                     [activeStatus] => 1
-                    [statusDesc] => 
-                    [displayOrder] => 2
+                    [statusDesc] => These are borrowers that have completed the full loan application. Make sure to review and pre-approve, restructure, or deny the application. If pre-approved, send via E-sign the term sheet, full loan app, & payment authorization for appraisal.
+                    [displayOrder] => 3
                     [moduleName] => Commercial/Residential Real Estate
                     [allowAgentToEditFile] => 1
                     [allowClientToEditFile] => 1
@@ -2355,15 +1966,15 @@ trt etrt ert ret et t er
 
             [3] => Array
                 (
-                    [PSID] => 56006
-                    [PCID] => 3363
-                    [primaryStatus] => Application Started
+                    [PSID] => 14401
+                    [PCID] => 1652
+                    [primaryStatus] => Pre-Approved
                     [activeStatus] => 1
-                    [statusDesc] => These are files that have successfully completed the quick app, either via webform or manually created by a user. Make sure to send a link to the full app to finish the application.
-                    [displayOrder] => 3
+                    [statusDesc] => These are loan files that have been sent a term sheet/LOI & other initial docs to move forward. Once completed, loan is ready for processing.
+                    [displayOrder] => 4
                     [moduleName] => Commercial/Residential Real Estate
                     [allowAgentToEditFile] => 1
-                    [allowClientToEditFile] => 1
+                    [allowClientToEditFile] => 0
                     [allowBOToEditFile] => 1
                     [allowOthersToUpdate] => 1
                     [allowLoanOfficerToEditFile] => 1
@@ -2371,60 +1982,60 @@ trt etrt ert ret et t er
 
             [4] => Array
                 (
-                    [PSID] => 56011
-                    [PCID] => 3363
-                    [primaryStatus] => Completed App
+                    [PSID] => 14198
+                    [PCID] => 1652
+                    [primaryStatus] => Processing
                     [activeStatus] => 1
-                    [statusDesc] => These are borrowers that have completed the full loan application. Make sure to review and pre-approve, restructure, or deny the application. If pre-approved, send via E-sign the term sheet, full loan app, & payment authorization for appraisal.
-                    [displayOrder] => 4
+                    [statusDesc] => All required docs must be uploaded before the loan is moved to underwriting, unless manager approves fast tracking the loan
+                    [displayOrder] => 5
                     [moduleName] => Commercial/Residential Real Estate
-                    [allowAgentToEditFile] => 1
-                    [allowClientToEditFile] => 1
+                    [allowAgentToEditFile] => 0
+                    [allowClientToEditFile] => 0
                     [allowBOToEditFile] => 1
-                    [allowOthersToUpdate] => 1
-                    [allowLoanOfficerToEditFile] => 1
+                    [allowOthersToUpdate] => 0
+                    [allowLoanOfficerToEditFile] => 0
                 )
 
             [5] => Array
                 (
-                    [PSID] => 56021
-                    [PCID] => 3363
-                    [primaryStatus] => Pre-Approved
+                    [PSID] => 14208
+                    [PCID] => 1652
+                    [primaryStatus] => Underwriting
                     [activeStatus] => 1
-                    [statusDesc] => These are loan files that have been sent a term sheet/LOI & other initial docs to move forward. Once completed, loan is ready for processing.
-                    [displayOrder] => 5
-                    [moduleName] => Commercial/Residential Real Estate
-                    [allowAgentToEditFile] => 1
-                    [allowClientToEditFile] => 0
-                    [allowBOToEditFile] => 1
-                    [allowOthersToUpdate] => 1
-                    [allowLoanOfficerToEditFile] => 1
-                )
-
-            [6] => Array
-                (
-                    [PSID] => 56022
-                    [PCID] => 3363
-                    [primaryStatus] => Processing
-                    [activeStatus] => 1
-                    [statusDesc] => All required docs must be uploaded before the loan is moved to underwriting, unless manager approves fast tracking the loan
+                    [statusDesc] => These are loan files with required docs uploaded and/or processing workflow completed. Underwriting workflow steps should be in progress verifying borrower background, property valuation, & other pertinent loan details.
                     [displayOrder] => 6
                     [moduleName] => Commercial/Residential Real Estate
                     [allowAgentToEditFile] => 0
                     [allowClientToEditFile] => 0
                     [allowBOToEditFile] => 1
-                    [allowOthersToUpdate] => 1
+                    [allowOthersToUpdate] => 0
+                    [allowLoanOfficerToEditFile] => 0
+                )
+
+            [6] => Array
+                (
+                    [PSID] => 14213
+                    [PCID] => 1652
+                    [primaryStatus] => Clear to Close
+                    [activeStatus] => 1
+                    [statusDesc] => These loan files have all conditions met, loan docs prepared, and are awaiting a closing date.
+                    [displayOrder] => 7
+                    [moduleName] => Commercial/Residential Real Estate
+                    [allowAgentToEditFile] => 0
+                    [allowClientToEditFile] => 0
+                    [allowBOToEditFile] => 1
+                    [allowOthersToUpdate] => 0
                     [allowLoanOfficerToEditFile] => 0
                 )
 
             [7] => Array
                 (
-                    [PSID] => 56029
-                    [PCID] => 3363
-                    [primaryStatus] => Underwriting
+                    [PSID] => 14200
+                    [PCID] => 1652
+                    [primaryStatus] => Closed Loans
                     [activeStatus] => 1
-                    [statusDesc] => These are loan files with required docs uploaded and/or processing workflow completed. Underwriting workflow steps should be in progress verifying borrower background, property valuation, & other pertinent loan details.
-                    [displayOrder] => 7
+                    [statusDesc] => These loans files have been closed and funded for the current month, quarter, YTD- (Your choice)
+                    [displayOrder] => 8
                     [moduleName] => Commercial/Residential Real Estate
                     [allowAgentToEditFile] => 0
                     [allowClientToEditFile] => 0
@@ -2435,12 +2046,12 @@ trt etrt ert ret et t er
 
             [8] => Array
                 (
-                    [PSID] => 56008
-                    [PCID] => 3363
-                    [primaryStatus] => Clear to Close
+                    [PSID] => 50576
+                    [PCID] => 1652
+                    [primaryStatus] => Servicing
                     [activeStatus] => 1
-                    [statusDesc] => These loan files have all conditions met, loan docs prepared, and are awaiting a closing date.
-                    [displayOrder] => 8
+                    [statusDesc] => These are loans currently being serviced. The sub status will indicate if loan is current, past due, draw pending, etc...
+                    [displayOrder] => 9
                     [moduleName] => Commercial/Residential Real Estate
                     [allowAgentToEditFile] => 0
                     [allowClientToEditFile] => 0
@@ -2451,12 +2062,12 @@ trt etrt ert ret et t er
 
             [9] => Array
                 (
-                    [PSID] => 56010
-                    [PCID] => 3363
-                    [primaryStatus] => Closed- this month
+                    [PSID] => 51022
+                    [PCID] => 1652
+                    [primaryStatus] => Active Draws
                     [activeStatus] => 1
-                    [statusDesc] => These loans files have been closed and funded for the current month, quarter, YTD- (Your choice)
-                    [displayOrder] => 9
+                    [statusDesc] => These are loan files with an active draw request
+                    [displayOrder] => 10
                     [moduleName] => Commercial/Residential Real Estate
                     [allowAgentToEditFile] => 0
                     [allowClientToEditFile] => 0
@@ -2467,27 +2078,11 @@ trt etrt ert ret et t er
 
             [10] => Array
                 (
-                    [PSID] => 56013
-                    [PCID] => 3363
-                    [primaryStatus] => Draws
+                    [PSID] => 67316
+                    [PCID] => 1652
+                    [primaryStatus] => Extensions
                     [activeStatus] => 1
-                    [statusDesc] => These are loan files with an active draw request
-                    [displayOrder] => 10
-                    [moduleName] => Commercial/Residential Real Estate
-                    [allowAgentToEditFile] => 0
-                    [allowClientToEditFile] => 0
-                    [allowBOToEditFile] => 0
-                    [allowOthersToUpdate] => 0
-                    [allowLoanOfficerToEditFile] => 0
-                )
-
-            [11] => Array
-                (
-                    [PSID] => 56025
-                    [PCID] => 3363
-                    [primaryStatus] => Servicing
-                    [activeStatus] => 1
-                    [statusDesc] => These are loans currently being serviced. The sub status will indicate if loan is current, past due, draw pending, etc...
+                    [statusDesc] => These are loans that are about to mature and need extension approval
                     [displayOrder] => 11
                     [moduleName] => Commercial/Residential Real Estate
                     [allowAgentToEditFile] => 0
@@ -2497,14 +2092,62 @@ trt etrt ert ret et t er
                     [allowLoanOfficerToEditFile] => 0
                 )
 
-            [12] => Array
+            [11] => Array
                 (
-                    [PSID] => 56007
-                    [PCID] => 3363
-                    [primaryStatus] => Archived
+                    [PSID] => 74237
+                    [PCID] => 1652
+                    [primaryStatus] => In Default
                     [activeStatus] => 1
                     [statusDesc] => 
                     [displayOrder] => 12
+                    [moduleName] => Commercial/Residential Real Estate
+                    [allowAgentToEditFile] => 1
+                    [allowClientToEditFile] => 0
+                    [allowBOToEditFile] => 1
+                    [allowOthersToUpdate] => 1
+                    [allowLoanOfficerToEditFile] => 1
+                )
+
+            [12] => Array
+                (
+                    [PSID] => 74238
+                    [PCID] => 1652
+                    [primaryStatus] => In Foreclosure
+                    [activeStatus] => 1
+                    [statusDesc] => 
+                    [displayOrder] => 13
+                    [moduleName] => Commercial/Residential Real Estate
+                    [allowAgentToEditFile] => 1
+                    [allowClientToEditFile] => 0
+                    [allowBOToEditFile] => 1
+                    [allowOthersToUpdate] => 1
+                    [allowLoanOfficerToEditFile] => 1
+                )
+
+            [13] => Array
+                (
+                    [PSID] => 72767
+                    [PCID] => 1652
+                    [primaryStatus] => Sold
+                    [activeStatus] => 1
+                    [statusDesc] => These are loans that have been sold to other investors
+                    [displayOrder] => 14
+                    [moduleName] => Commercial/Residential Real Estate
+                    [allowAgentToEditFile] => 0
+                    [allowClientToEditFile] => 0
+                    [allowBOToEditFile] => 0
+                    [allowOthersToUpdate] => 0
+                    [allowLoanOfficerToEditFile] => 0
+                )
+
+            [14] => Array
+                (
+                    [PSID] => 39976
+                    [PCID] => 1652
+                    [primaryStatus] => Archived
+                    [activeStatus] => 1
+                    [statusDesc] => These are historic loans that are inactive, previously closed, canceled, denied, etc.. that are being saved for statistical purposes. You can also delete loan files, that remove files, but archive them in a deleted pipeline
+                    [displayOrder] => 15
                     [moduleName] => Commercial/Residential Real Estate
                     [allowAgentToEditFile] => 0
                     [allowClientToEditFile] => 0
@@ -2513,47 +2156,893 @@ trt etrt ert ret et t er
                     [allowLoanOfficerToEditFile] => 0
                 )
 
+            [15] => Array
+                (
+                    [PSID] => 74239
+                    [PCID] => 1652
+                    [primaryStatus] => REO
+                    [activeStatus] => 1
+                    [statusDesc] => 
+                    [displayOrder] => 16
+                    [moduleName] => Commercial/Residential Real Estate
+                    [allowAgentToEditFile] => 1
+                    [allowClientToEditFile] => 0
+                    [allowBOToEditFile] => 1
+                    [allowOthersToUpdate] => 1
+                    [allowLoanOfficerToEditFile] => 1
+                )
+
         )
 
     [PCSubStatusInfo] => Array
         (
             [0] => Array
                 (
-                    [PFSID] => 286179
-                    [PCID] => 3363
-                    [substatus] => 2
+                    [PFSID] => 274398
+                    [PCID] => 1652
+                    [substatus] => Background check auth
                     [moduleCode] => HMLO
-                    [category] => Other
+                    [category] => Application
                     [moduleName] => Commercial/Residential Real Estate
                 )
 
             [1] => Array
                 (
-                    [PFSID] => 286180
-                    [PCID] => 3363
-                    [substatus] => 3
+                    [PFSID] => 274393
+                    [PCID] => 1652
+                    [substatus] => Borrower Not Qualified
                     [moduleCode] => HMLO
-                    [category] => Other
+                    [category] => Application
                     [moduleName] => Commercial/Residential Real Estate
                 )
 
             [2] => Array
                 (
-                    [PFSID] => 286181
-                    [PCID] => 3363
-                    [substatus] => 4
+                    [PFSID] => 274394
+                    [PCID] => 1652
+                    [substatus] => Borrower Unreachable
                     [moduleCode] => HMLO
-                    [category] => Other
+                    [category] => Application
                     [moduleName] => Commercial/Residential Real Estate
                 )
 
             [3] => Array
                 (
-                    [PFSID] => 286182
-                    [PCID] => 3363
-                    [substatus] => 5
+                    [PFSID] => 274399
+                    [PCID] => 1652
+                    [substatus] => Credit Pull Auth
                     [moduleCode] => HMLO
-                    [category] => Other
+                    [category] => Application
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [4] => Array
+                (
+                    [PFSID] => 274400
+                    [PCID] => 1652
+                    [substatus] => Needs Loan Term Signature
+                    [moduleCode] => HMLO
+                    [category] => Application
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [5] => Array
+                (
+                    [PFSID] => 274395
+                    [PCID] => 1652
+                    [substatus] => Other - See Notes
+                    [moduleCode] => HMLO
+                    [category] => Application
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [6] => Array
+                (
+                    [PFSID] => 274396
+                    [PCID] => 1652
+                    [substatus] => Property Not Qualified
+                    [moduleCode] => HMLO
+                    [category] => Application
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [7] => Array
+                (
+                    [PFSID] => 274405
+                    [PCID] => 1652
+                    [substatus] => Title / Seller Delays
+                    [moduleCode] => HMLO
+                    [category] => Application
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [8] => Array
+                (
+                    [PFSID] => 274401
+                    [PCID] => 1652
+                    [substatus] => Waiting on Past Deals Sheet
+                    [moduleCode] => HMLO
+                    [category] => Application
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [9] => Array
+                (
+                    [PFSID] => 274397
+                    [PCID] => 1652
+                    [substatus] => Waiting on Purchase Contract
+                    [moduleCode] => HMLO
+                    [category] => Application
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [10] => Array
+                (
+                    [PFSID] => 274402
+                    [PCID] => 1652
+                    [substatus] => Waiting on Rehab Budget
+                    [moduleCode] => HMLO
+                    [category] => Application
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [11] => Array
+                (
+                    [PFSID] => 278662
+                    [PCID] => 1652
+                    [substatus] => In Legal Review
+                    [moduleCode] => HMLO
+                    [category] => Closing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [12] => Array
+                (
+                    [PFSID] => 278660
+                    [PCID] => 1652
+                    [substatus] => Needs Loan Committee Review
+                    [moduleCode] => HMLO
+                    [category] => Closing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [13] => Array
+                (
+                    [PFSID] => 274403
+                    [PCID] => 1652
+                    [substatus] => Other - See Notes
+                    [moduleCode] => HMLO
+                    [category] => Closing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [14] => Array
+                (
+                    [PFSID] => 274404
+                    [PCID] => 1652
+                    [substatus] => Waiting on Closing Date
+                    [moduleCode] => HMLO
+                    [category] => Closing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [15] => Array
+                (
+                    [PFSID] => 278661
+                    [PCID] => 1652
+                    [substatus] => Waiting on Loan Docs
+                    [moduleCode] => HMLO
+                    [category] => Closing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [16] => Array
+                (
+                    [PFSID] => 344344
+                    [PCID] => 1652
+                    [substatus] => District 1
+                    [moduleCode] => HMLO
+                    [category] => Commission District
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [17] => Array
+                (
+                    [PFSID] => 344345
+                    [PCID] => 1652
+                    [substatus] => District 2
+                    [moduleCode] => HMLO
+                    [category] => Commission District
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [18] => Array
+                (
+                    [PFSID] => 344346
+                    [PCID] => 1652
+                    [substatus] => District 3
+                    [moduleCode] => HMLO
+                    [category] => Commission District
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [19] => Array
+                (
+                    [PFSID] => 344347
+                    [PCID] => 1652
+                    [substatus] => District 4
+                    [moduleCode] => HMLO
+                    [category] => Commission District
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [20] => Array
+                (
+                    [PFSID] => 344348
+                    [PCID] => 1652
+                    [substatus] => District 5
+                    [moduleCode] => HMLO
+                    [category] => Commission District
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [21] => Array
+                (
+                    [PFSID] => 280452
+                    [PCID] => 1652
+                    [substatus] => General Partnership
+                    [moduleCode] => HMLO
+                    [category] => Funding Source
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [22] => Array
+                (
+                    [PFSID] => 280450
+                    [PCID] => 1652
+                    [substatus] => Mortgage Fund
+                    [moduleCode] => HMLO
+                    [category] => Funding Source
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [23] => Array
+                (
+                    [PFSID] => 280448
+                    [PCID] => 1652
+                    [substatus] => Peak
+                    [moduleCode] => HMLO
+                    [category] => Funding Source
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [24] => Array
+                (
+                    [PFSID] => 306839
+                    [PCID] => 1652
+                    [substatus] => Peer Street
+                    [moduleCode] => HMLO
+                    [category] => Funding Source
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [25] => Array
+                (
+                    [PFSID] => 280451
+                    [PCID] => 1652
+                    [substatus] => Private Funds
+                    [moduleCode] => HMLO
+                    [category] => Funding Source
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [26] => Array
+                (
+                    [PFSID] => 306840
+                    [PCID] => 1652
+                    [substatus] => Roc Capital
+                    [moduleCode] => HMLO
+                    [category] => Funding Source
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [27] => Array
+                (
+                    [PFSID] => 110814
+                    [PCID] => 1652
+                    [substatus] => Appointment Set
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [28] => Array
+                (
+                    [PFSID] => 110823
+                    [PCID] => 1652
+                    [substatus] => Asked for Referral
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [29] => Array
+                (
+                    [PFSID] => 110810
+                    [PCID] => 1652
+                    [substatus] => Bad Lead
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [30] => Array
+                (
+                    [PFSID] => 110811
+                    [PCID] => 1652
+                    [substatus] => Cold lead
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [31] => Array
+                (
+                    [PFSID] => 110815
+                    [PCID] => 1652
+                    [substatus] => Contacted
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [32] => Array
+                (
+                    [PFSID] => 110821
+                    [PCID] => 1652
+                    [substatus] => Contract Sent
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [33] => Array
+                (
+                    [PFSID] => 110816
+                    [PCID] => 1652
+                    [substatus] => Discussing with Partner
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [34] => Array
+                (
+                    [PFSID] => 110825
+                    [PCID] => 1652
+                    [substatus] => Follow up Set
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [35] => Array
+                (
+                    [PFSID] => 110812
+                    [PCID] => 1652
+                    [substatus] => Hot Lead
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [36] => Array
+                (
+                    [PFSID] => 110817
+                    [PCID] => 1652
+                    [substatus] => Left Message
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [37] => Array
+                (
+                    [PFSID] => 110818
+                    [PCID] => 1652
+                    [substatus] => Not Interested
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [38] => Array
+                (
+                    [PFSID] => 110824
+                    [PCID] => 1652
+                    [substatus] => Sent Referral
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [39] => Array
+                (
+                    [PFSID] => 110819
+                    [PCID] => 1652
+                    [substatus] => Unavailable
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [40] => Array
+                (
+                    [PFSID] => 110813
+                    [PCID] => 1652
+                    [substatus] => Warm Lead
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [41] => Array
+                (
+                    [PFSID] => 110822
+                    [PCID] => 1652
+                    [substatus] => Welcome Pack Sent
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [42] => Array
+                (
+                    [PFSID] => 110820
+                    [PCID] => 1652
+                    [substatus] => Wrong Number
+                    [moduleCode] => HMLO
+                    [category] => Lead Status
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [43] => Array
+                (
+                    [PFSID] => 280066
+                    [PCID] => 1652
+                    [substatus] => Construction Loan
+                    [moduleCode] => HMLO
+                    [category] => Lead Type
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [44] => Array
+                (
+                    [PFSID] => 280063
+                    [PCID] => 1652
+                    [substatus] => Fix & Flip
+                    [moduleCode] => HMLO
+                    [category] => Lead Type
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [45] => Array
+                (
+                    [PFSID] => 280064
+                    [PCID] => 1652
+                    [substatus] => Rental Loan
+                    [moduleCode] => HMLO
+                    [category] => Lead Type
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [46] => Array
+                (
+                    [PFSID] => 110826
+                    [PCID] => 1652
+                    [substatus] => Application In Review
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [47] => Array
+                (
+                    [PFSID] => 110847
+                    [PCID] => 1652
+                    [substatus] => Appraisal Pending
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [48] => Array
+                (
+                    [PFSID] => 110835
+                    [PCID] => 1652
+                    [substatus] => Authorization Sent
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [49] => Array
+                (
+                    [PFSID] => 246761
+                    [PCID] => 1652
+                    [substatus] => Background  Under Review
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [50] => Array
+                (
+                    [PFSID] => 260475
+                    [PCID] => 1652
+                    [substatus] => Borrower Unreachable
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [51] => Array
+                (
+                    [PFSID] => 110833
+                    [PCID] => 1652
+                    [substatus] => In Legal Review
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [52] => Array
+                (
+                    [PFSID] => 110837
+                    [PCID] => 1652
+                    [substatus] => In Process
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [53] => Array
+                (
+                    [PFSID] => 110834
+                    [PCID] => 1652
+                    [substatus] => Missing Documents
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [54] => Array
+                (
+                    [PFSID] => 110838
+                    [PCID] => 1652
+                    [substatus] => on hold
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [55] => Array
+                (
+                    [PFSID] => 110844
+                    [PCID] => 1652
+                    [substatus] => Pending client feedback
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [56] => Array
+                (
+                    [PFSID] => 110842
+                    [PCID] => 1652
+                    [substatus] => Pending Insurance Coverage
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [57] => Array
+                (
+                    [PFSID] => 110832
+                    [PCID] => 1652
+                    [substatus] => Pending Manager Review
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [58] => Array
+                (
+                    [PFSID] => 110830
+                    [PCID] => 1652
+                    [substatus] => Pending QC
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [59] => Array
+                (
+                    [PFSID] => 110827
+                    [PCID] => 1652
+                    [substatus] => Verifying Funds
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [60] => Array
+                (
+                    [PFSID] => 110843
+                    [PCID] => 1652
+                    [substatus] => Welcome pack sent
+                    [moduleCode] => HMLO
+                    [category] => Processing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [61] => Array
+                (
+                    [PFSID] => 110862
+                    [PCID] => 1652
+                    [substatus] => 120 day past due
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [62] => Array
+                (
+                    [PFSID] => 110858
+                    [PCID] => 1652
+                    [substatus] => 15 day past due
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [63] => Array
+                (
+                    [PFSID] => 110859
+                    [PCID] => 1652
+                    [substatus] => 30 day past due
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [64] => Array
+                (
+                    [PFSID] => 110860
+                    [PCID] => 1652
+                    [substatus] => 60 day past due
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [65] => Array
+                (
+                    [PFSID] => 110861
+                    [PCID] => 1652
+                    [substatus] => 90 day past due
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [66] => Array
+                (
+                    [PFSID] => 110849
+                    [PCID] => 1652
+                    [substatus] => Broker commission owed
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [67] => Array
+                (
+                    [PFSID] => 110850
+                    [PCID] => 1652
+                    [substatus] => Broker commission paid
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [68] => Array
+                (
+                    [PFSID] => 110854
+                    [PCID] => 1652
+                    [substatus] => Chargeback Dispute
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [69] => Array
+                (
+                    [PFSID] => 110857
+                    [PCID] => 1652
+                    [substatus] => Invoice Sent
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [70] => Array
+                (
+                    [PFSID] => 110856
+                    [PCID] => 1652
+                    [substatus] => Money Owed
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [71] => Array
+                (
+                    [PFSID] => 110855
+                    [PCID] => 1652
+                    [substatus] => Past Due
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [72] => Array
+                (
+                    [PFSID] => 110851
+                    [PCID] => 1652
+                    [substatus] => Pending refund
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [73] => Array
+                (
+                    [PFSID] => 110852
+                    [PCID] => 1652
+                    [substatus] => Refund denied
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [74] => Array
+                (
+                    [PFSID] => 110853
+                    [PCID] => 1652
+                    [substatus] => Refund Issued
+                    [moduleCode] => HMLO
+                    [category] => Servicing
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [75] => Array
+                (
+                    [PFSID] => 110872
+                    [PCID] => 1652
+                    [substatus] => Asset Verification Review
+                    [moduleCode] => HMLO
+                    [category] => Underwriting
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [76] => Array
+                (
+                    [PFSID] => 260474
+                    [PCID] => 1652
+                    [substatus] => Borrower Unreachable
+                    [moduleCode] => HMLO
+                    [category] => Underwriting
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [77] => Array
+                (
+                    [PFSID] => 110876
+                    [PCID] => 1652
+                    [substatus] => Construction Budget InReview
+                    [moduleCode] => HMLO
+                    [category] => Underwriting
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [78] => Array
+                (
+                    [PFSID] => 110873
+                    [PCID] => 1652
+                    [substatus] => Entity review
+                    [moduleCode] => HMLO
+                    [category] => Underwriting
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [79] => Array
+                (
+                    [PFSID] => 110874
+                    [PCID] => 1652
+                    [substatus] => In Legal Review
+                    [moduleCode] => HMLO
+                    [category] => Underwriting
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [80] => Array
+                (
+                    [PFSID] => 110869
+                    [PCID] => 1652
+                    [substatus] => Property Valuation Review
+                    [moduleCode] => HMLO
+                    [category] => Underwriting
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [81] => Array
+                (
+                    [PFSID] => 110871
+                    [PCID] => 1652
+                    [substatus] => Purchase Agreement Review
+                    [moduleCode] => HMLO
+                    [category] => Underwriting
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [82] => Array
+                (
+                    [PFSID] => 110875
+                    [PCID] => 1652
+                    [substatus] => Rehab Cost In Review
+                    [moduleCode] => HMLO
+                    [category] => Underwriting
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [83] => Array
+                (
+                    [PFSID] => 110870
+                    [PCID] => 1652
+                    [substatus] => Title Review
+                    [moduleCode] => HMLO
+                    [category] => Underwriting
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [84] => Array
+                (
+                    [PFSID] => 281471
+                    [PCID] => 1652
+                    [substatus] => Property Unacceptable
+                    [moduleCode] => HMLO
+                    [category] => zDenial Reasons
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [85] => Array
+                (
+                    [PFSID] => 281342
+                    [PCID] => 1652
+                    [substatus] => Rate too high
+                    [moduleCode] => HMLO
+                    [category] => zDenial Reasons
+                    [moduleName] => Commercial/Residential Real Estate
+                )
+
+            [86] => Array
+                (
+                    [PFSID] => 285186
+                    [PCID] => 1652
+                    [substatus] => Unreachable
+                    [moduleCode] => HMLO
+                    [category] => zDenial Reasons
                     [moduleName] => Commercial/Residential Real Estate
                 )
 
@@ -2561,18 +3050,6 @@ trt etrt ert ret et t er
 
     [fileSubstatusInfo] => Array
         (
-            [0] => Array
-                (
-                    [substatus] => 2
-                    [fileID] => 6310064
-                    [substatusId] => 286179
-                    [dateChecked] => 2020-12-29 20:10:42
-                    [dateUnchecked] => 
-                    [UID] => 11189
-                    [URole] => Employee
-                    [notes] => 
-                )
-
         )
 
     [lenderNotes] => Array
@@ -2581,8 +3058,8 @@ trt etrt ert ret et t er
 
     [billingUrlInfo] => Array
         (
-            [RUID] => 77611
-            [LMRId] => 6310064
+            [RUID] => 155975
+            [LMRId] => 6833894
             [billingRemoteUrl] => 
             [paymentMethod] => 
         )
@@ -2595,57 +3072,54 @@ trt etrt ert ret et t er
         (
             [0] => Array
                 (
-                    [FPID] => 112222
-                    [LMRId] => 6310064
-                    [propertyLocation] => Suburban
-                    [municipality] => Municipilicy
+                    [FPID] => 187828
+                    [LMRId] => 6833894
+                    [propertyLocation] => 
+                    [municipality] => 
                     [schoolDistrict] => 
                     [propertyURLLink1] => 
                     [propertyURLLink2] => 
-                    [parcelNo] => PARCEL001
+                    [parcelNo] => 
                     [lockbox] => 
                     [taxYear] => 
-                    [legalDescription] => legal+description
+                    [legalDescription] => 
                     [propertySqFt] => 
                     [yearBuilt] => 
                     [waterFront] => 
                     [acres] => 
                     [propertyFeatures] => 
                     [occupancyNotes] => 
-                    [propertyCondition] => Excellent
+                    [propertyCondition] => 
                     [conditionNotes] => 
                     [titleName] => 
-                    [titleOrderedOn] => 0000-00-00
-                    [titleUpdatedOn] => 0000-00-00
+                    [titleOrderedOn] => 
+                    [titleUpdatedOn] => 
                     [titleOfHome] => 
                     [adjustedSqFt] => 
                     [LBInfo] => 
                     [LBContactName] => 
-                    [isHouseProperty] => 
-                    [propConstructionType] => Manufactured
+                    [isHouseProperty] => Owner Occupied
+                    [propConstructionType] => 
                     [propConstructionMethod] => 
                     [LBContactPhone] => 
                     [titleEscrowNo] => 
                     [titleSeller] => 
-                    [titleReportDate] => 0000-00-00
+                    [titleReportDate] => 
                     [annualPropTaxes1] => 
-                    [presentOccupancy] => Rented
+                    [presentOccupancy] => 
                     [LBContactEmail] => 
                     [titleOrderNumber] => 
                     [escrowOfficer] => 
                     [HMLOmlsnumber] => 
                     [propertyTaxDueDate] => 0000-00-00
-                    [district] => District
-                    [section] => section
-                    [block] => block1
-                    [lot] => 5000
+                    [district] => 
+                    [section] => 
+                    [block] => 
+                    [lot] => 
                     [propAnnualInsurancePremiums] => 
-                    [estimatedPropertyValue] => 1,000,000.00
+                    [estimatedPropertyValue] => 
                     [obtainInteriorAccess] => 
-                    [rehabToComplete] => 0
-                    [yearRenovated] => 
-                    [pastDuePropertyTaxes] => 
-                    [estimatedAnnualInsurance] => 
+                    [rehabToComplete] => 
                     [addRentableSqFt] => 
                     [noOfParking] => 
                     [currentCommercialTenantOccupancyRate] => 
@@ -2656,64 +3130,62 @@ trt etrt ert ret et t er
                     [propertyClass] => 
                     [addNoOfStories] => 
                     [leaseType] => 
-                    [zoningType] => 
+                    [yearRenovated] => 
+                    [pastDuePropertyTaxes] => 
                 )
 
         )
 
     [FilePropInfo] => Array
         (
-            [FPID] => 112222
-            [LMRId] => 6310064
-            [propertyLocation] => Suburban
-            [municipality] => Municipilicy
+            [FPID] => 187828
+            [LMRId] => 6833894
+            [propertyLocation] => 
+            [municipality] => 
             [schoolDistrict] => 
             [propertyURLLink1] => 
             [propertyURLLink2] => 
-            [parcelNo] => PARCEL001
+            [parcelNo] => 
             [lockbox] => 
             [taxYear] => 
-            [legalDescription] => legal+description
+            [legalDescription] => 
             [propertySqFt] => 
             [yearBuilt] => 
             [waterFront] => 
             [acres] => 
             [propertyFeatures] => 
             [occupancyNotes] => 
-            [propertyCondition] => Excellent
+            [propertyCondition] => 
             [conditionNotes] => 
             [titleName] => 
-            [titleOrderedOn] => 0000-00-00
-            [titleUpdatedOn] => 0000-00-00
+            [titleOrderedOn] => 
+            [titleUpdatedOn] => 
             [titleOfHome] => 
             [adjustedSqFt] => 
             [LBInfo] => 
             [LBContactName] => 
-            [isHouseProperty] => 
-            [propConstructionType] => Manufactured
+            [isHouseProperty] => Owner Occupied
+            [propConstructionType] => 
             [propConstructionMethod] => 
             [LBContactPhone] => 
             [titleEscrowNo] => 
             [titleSeller] => 
-            [titleReportDate] => 0000-00-00
+            [titleReportDate] => 
             [annualPropTaxes1] => 
-            [presentOccupancy] => Rented
+            [presentOccupancy] => 
             [LBContactEmail] => 
             [titleOrderNumber] => 
             [escrowOfficer] => 
             [HMLOmlsnumber] => 
             [propertyTaxDueDate] => 0000-00-00
-            [district] => District
-            [section] => section
-            [block] => block1
-            [lot] => 5000
+            [district] => 
+            [section] => 
+            [block] => 
+            [lot] => 
             [propAnnualInsurancePremiums] => 
-            [estimatedPropertyValue] => 1,000,000.00
+            [estimatedPropertyValue] => 
             [obtainInteriorAccess] => 
-            [rehabToComplete] => 0
-            [yearRenovated] => 
-            [pastDuePropertyTaxes] => 
-            [estimatedAnnualInsurance] => 
+            [rehabToComplete] => 
             [addRentableSqFt] => 
             [noOfParking] => 
             [currentCommercialTenantOccupancyRate] => 
@@ -2724,17 +3196,12 @@ trt etrt ert ret et t er
             [propertyClass] => 
             [addNoOfStories] => 
             [leaseType] => 
-            [zoningType] => 
+            [yearRenovated] => 
+            [pastDuePropertyTaxes] => 
         )
 
     [principalResInfo] => Array
         (
-            [SID] => 11544
-            [principalResServicer1] => 
-            [principalResPhone] => 
-            [principalResMortPaid] => 
-            [principalPastDueMonths] => 
-            [LMRId] => 6310064
         )
 
     [propertyCountyInfo] => 
@@ -2758,17 +3225,6 @@ trt etrt ert ret et t er
 
     [LMRWFArray] => Array
         (
-            [6310064] => Array
-                (
-                    [0] => Array
-                        (
-                            [LMRID] => 6310064
-                            [LWID] => 14272
-                            [WFID] => 12
-                        )
-
-                )
-
         )
 
     [HUDBasicInfo] => Array
@@ -2817,6 +3273,100 @@ trt etrt ert ret et t er
 
     [creditorInfo] => Array
         (
+            [0] => Array
+                (
+                    [CIID] => 4681
+                    [LMRId] => 6833894
+                    [creditorName] => alimonycompany
+                    [creditorAcctNumber] => alimoney123
+                    [creditorType] => 0
+                    [creditorAcctType] => Closed
+                    [creditorMinPayment] => 1,100.00
+                    [creditorMonthsBehind] => 
+                    [creditorAcctBalance] => 12,000.00
+                    [creditorRepName] => 
+                    [creditorRepAddress] => 
+                    [creditorRepPhoneNo] => 
+                    [creditorRepFax] => 
+                    [creditorRepEmail] => 
+                    [creditorRepNotes] => 
+                    [creditorAgentName] => 
+                    [creditorAgentPhoneNo] => 
+                    [creditorAgentFax] => 
+                    [creditorAgentEmail] => 
+                    [creditorAgentNotes] => 
+                    [activeStatus] => 1
+                    [creditorRate] => 
+                    [accDesc] => 
+                    [notificationDate] => 0000-00-00
+                    [creditorAddress] => 
+                    [creditorCity] => 
+                    [creditorState] => 
+                    [creditorZip] => 
+                    [creditorAgentAddress] => 
+                    [creditorAgentCity] => 
+                    [creditorAgentState] => 
+                    [creditorAgentZip] => 
+                    [collectionAgencyName] => 
+                    [alternateName] => 
+                    [monthsLeftToPay] => 
+                    [otherLiabilityNotes] => 
+                    [unpaidTaxNotes] => 
+                    [payAtBeforeClosing] => Yes
+                    [originalBalance] => 
+                    [creditorIsItSecured] => 
+                    [creditorAcctStatus] => 
+                    [creditorMaturityDate] => 
+                    [creditorPhone] => 
+                )
+
+            [1] => Array
+                (
+                    [CIID] => 4682
+                    [LMRId] => 6833894
+                    [creditorName] => creditcardAmex
+                    [creditorAcctNumber] => ccardamex6345
+                    [creditorType] => 4
+                    [creditorAcctType] => Open
+                    [creditorMinPayment] => 900.00
+                    [creditorMonthsBehind] => 
+                    [creditorAcctBalance] => 11,000.00
+                    [creditorRepName] => 
+                    [creditorRepAddress] => 
+                    [creditorRepPhoneNo] => 
+                    [creditorRepFax] => 
+                    [creditorRepEmail] => 
+                    [creditorRepNotes] => 
+                    [creditorAgentName] => 
+                    [creditorAgentPhoneNo] => 
+                    [creditorAgentFax] => 
+                    [creditorAgentEmail] => 
+                    [creditorAgentNotes] => 
+                    [activeStatus] => 1
+                    [creditorRate] => 
+                    [accDesc] => 
+                    [notificationDate] => 0000-00-00
+                    [creditorAddress] => 
+                    [creditorCity] => 
+                    [creditorState] => 
+                    [creditorZip] => 
+                    [creditorAgentAddress] => 
+                    [creditorAgentCity] => 
+                    [creditorAgentState] => 
+                    [creditorAgentZip] => 
+                    [collectionAgencyName] => 
+                    [alternateName] => 
+                    [monthsLeftToPay] => 
+                    [otherLiabilityNotes] => 
+                    [unpaidTaxNotes] => 
+                    [payAtBeforeClosing] => Yes
+                    [originalBalance] => 
+                    [creditorIsItSecured] => 
+                    [creditorAcctStatus] => 
+                    [creditorMaturityDate] => 
+                    [creditorPhone] => 
+                )
+
         )
 
     [creditorInfoStatus] => Array
@@ -2877,125 +3427,104 @@ trt etrt ert ret et t er
 
     [PCWFHistoryInfo] => Array
         (
-            [12] => Array
+            [5074] => Array
                 (
-                    [1430] => Array
+                    [46977] => Array
                         (
-                            [WFName] => drips
-                            [WFSID] => 1430
-                            [WFID] => 12
-                            [steps] => paul work flow
+                            [WFName] => Automated Drip
+                            [WFSID] => 46977
+                            [WFID] => 5074
+                            [steps] => Activate/Deactivate Processing Drip
                             [showWorkFlowborrower] => 0
-                            [description] => wk
+                            [description] => This activates the update docs- needs list automated sequence for up to 5 days
                             [coBorrowerRelatedWfstep] => 0
                             [rehabRelatedWfstep] => 0
                             [noCrossCollRelatedWfstep] => 0
                             [usCitizenRelatedWfstep] => 0
-                            [allowWorkflowEditForBranch] => 0
-                            [allowWorkflowEditForAgent] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
                             [LMRID] => 0
                             [createdBy] => 
                             [createdUserType] => 
                             [createdUser] => 
-                            [recordDate] => 2019-12-31 05:40:15
+                            [recordDate] => 2018-06-21 17:24:02
                         )
 
-                    [21] => Array
+                    [45438] => Array
                         (
-                            [WFName] => drips
-                            [WFSID] => 21
-                            [WFID] => 12
-                            [steps] => 1st backslash test
-                            [showWorkFlowborrower] => 0
-                            [description] => rtgsd
-                            [coBorrowerRelatedWfstep] => 0
-                            [rehabRelatedWfstep] => 0
-                            [noCrossCollRelatedWfstep] => 0
-                            [usCitizenRelatedWfstep] => 0
-                            [allowWorkflowEditForBranch] => 0
-                            [allowWorkflowEditForAgent] => 0
-                            [LMRID] => 0
-                            [createdBy] => 
-                            [createdUserType] => 
-                            [createdUser] => 
-                            [recordDate] => 2019-05-03 15:53:28
-                        )
-
-                    [90] => Array
-                        (
-                            [WFName] => drips
-                            [WFSID] => 90
-                            [WFID] => 12
-                            [steps] => 2nd test of "daves" single quote
+                            [WFName] => Automated Drip
+                            [WFSID] => 45438
+                            [WFID] => 5074
+                            [steps] => Activate/Deactivate Sales Drip
                             [showWorkFlowborrower] => 0
                             [description] => 
                             [coBorrowerRelatedWfstep] => 0
                             [rehabRelatedWfstep] => 0
                             [noCrossCollRelatedWfstep] => 0
                             [usCitizenRelatedWfstep] => 0
-                            [allowWorkflowEditForBranch] => 0
-                            [allowWorkflowEditForAgent] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
                             [LMRID] => 0
                             [createdBy] => 
                             [createdUserType] => 
                             [createdUser] => 
-                            [recordDate] => 2019-06-07 14:52:00
+                            [recordDate] => 2018-05-15 13:27:18
                         )
 
-                    [91] => Array
+                    [120893] => Array
                         (
-                            [WFName] => drips
-                            [WFSID] => 91
-                            [WFID] => 12
-                            [steps] => 3 send now
+                            [WFName] => Automated Drip
+                            [WFSID] => 120893
+                            [WFID] => 5074
+                            [steps] => Servicing Related Alerts
+                            [showWorkFlowborrower] => 0
+                            [description] => This drip sequence will send auto alerts  to borrower, & admin level personnel regarding insurance expiration, taxes due
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2019-05-07 16:37:13
+                        )
+
+                    [46978] => Array
+                        (
+                            [WFName] => Automated Drip
+                            [WFSID] => 46978
+                            [WFID] => 5074
+                            [steps] => Activate/Deactivate Payment Reminder Drip
                             [showWorkFlowborrower] => 0
                             [description] => 
                             [coBorrowerRelatedWfstep] => 0
                             [rehabRelatedWfstep] => 0
                             [noCrossCollRelatedWfstep] => 0
                             [usCitizenRelatedWfstep] => 0
-                            [allowWorkflowEditForBranch] => 0
-                            [allowWorkflowEditForAgent] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
                             [LMRID] => 0
                             [createdBy] => 
                             [createdUserType] => 
                             [createdUser] => 
-                            [recordDate] => 2019-06-07 14:57:34
-                        )
-
-                    [1429] => Array
-                        (
-                            [WFName] => drips
-                            [WFSID] => 1429
-                            [WFID] => 12
-                            [steps] => 4th
-                            [showWorkFlowborrower] => 0
-                            [description] => Miguels Test
-                            [coBorrowerRelatedWfstep] => 0
-                            [rehabRelatedWfstep] => 0
-                            [noCrossCollRelatedWfstep] => 0
-                            [usCitizenRelatedWfstep] => 0
-                            [allowWorkflowEditForBranch] => 0
-                            [allowWorkflowEditForAgent] => 0
-                            [LMRID] => 0
-                            [createdBy] => 
-                            [createdUserType] => 
-                            [createdUser] => 
-                            [recordDate] => 2019-12-30 14:14:30
+                            [recordDate] => 2018-06-21 17:24:24
                         )
 
                 )
 
-            [271] => Array
+            [9913] => Array
                 (
-                    [2303] => Array
+                    [139035] => Array
                         (
-                            [WFName] => bridge, internal and 2nd lien
-                            [WFSID] => 2303
-                            [WFID] => 271
-                            [steps] => bridge step1
+                            [WFName] => Testing Workflows
+                            [WFSID] => 139035
+                            [WFID] => 9913
+                            [steps] => Test 1-From Loan Officer
                             [showWorkFlowborrower] => 0
-                            [description] => 
+                            [description] => From Loan Officer... To everyone
                             [coBorrowerRelatedWfstep] => 0
                             [rehabRelatedWfstep] => 0
                             [noCrossCollRelatedWfstep] => 0
@@ -3003,18 +3532,18 @@ trt etrt ert ret et t er
                             [allowWorkflowEditForBranch] => 0
                             [allowWorkflowEditForAgent] => 0
                             [LMRID] => 0
-                            [createdBy] => 11078
-                            [createdUserType] => Employee
-                            [createdUser] => dave lw111
-                            [recordDate] => 2020-08-20 10:30:08
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2019-12-05 11:14:31
                         )
 
-                    [2305] => Array
+                    [139036] => Array
                         (
-                            [WFName] => bridge, internal and 2nd lien
-                            [WFSID] => 2305
-                            [WFID] => 271
-                            [steps] => internal step
+                            [WFName] => Testing Workflows
+                            [WFSID] => 139036
+                            [WFID] => 9913
+                            [steps] => Test 2- From branch to Everyone
                             [showWorkFlowborrower] => 0
                             [description] => 
                             [coBorrowerRelatedWfstep] => 0
@@ -3024,18 +3553,18 @@ trt etrt ert ret et t er
                             [allowWorkflowEditForBranch] => 0
                             [allowWorkflowEditForAgent] => 0
                             [LMRID] => 0
-                            [createdBy] => 11078
-                            [createdUserType] => Employee
-                            [createdUser] => dave lw111
-                            [recordDate] => 2020-08-20 10:55:07
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2019-12-05 11:16:33
                         )
 
-                    [2304] => Array
+                    [139037] => Array
                         (
-                            [WFName] => bridge, internal and 2nd lien
-                            [WFSID] => 2304
-                            [WFID] => 271
-                            [steps] => non bridge step
+                            [WFName] => Testing Workflows
+                            [WFSID] => 139037
+                            [WFID] => 9913
+                            [steps] => Test 3- From Acting User to Everyone
                             [showWorkFlowborrower] => 0
                             [description] => 
                             [coBorrowerRelatedWfstep] => 0
@@ -3045,18 +3574,18 @@ trt etrt ert ret et t er
                             [allowWorkflowEditForBranch] => 0
                             [allowWorkflowEditForAgent] => 0
                             [LMRID] => 0
-                            [createdBy] => 11078
-                            [createdUserType] => Employee
-                            [createdUser] => dave lw111
-                            [recordDate] => 2020-08-20 10:30:55
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2019-12-05 11:17:53
                         )
 
-                    [2306] => Array
+                    [139038] => Array
                         (
-                            [WFName] => bridge, internal and 2nd lien
-                            [WFSID] => 2306
-                            [WFID] => 271
-                            [steps] => buy and hold
+                            [WFName] => Testing Workflows
+                            [WFSID] => 139038
+                            [WFID] => 9913
+                            [steps] => Test 4- From Specific Processing Manager to Everyone
                             [showWorkFlowborrower] => 0
                             [description] => 
                             [coBorrowerRelatedWfstep] => 0
@@ -3066,24 +3595,45 @@ trt etrt ert ret et t er
                             [allowWorkflowEditForBranch] => 0
                             [allowWorkflowEditForAgent] => 0
                             [LMRID] => 0
-                            [createdBy] => 11078
-                            [createdUserType] => Employee
-                            [createdUser] => dave lw111
-                            [recordDate] => 2020-08-24 16:04:49
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2019-12-05 11:19:12
+                        )
+
+                    [139039] => Array
+                        (
+                            [WFName] => Testing Workflows
+                            [WFSID] => 139039
+                            [WFID] => 9913
+                            [steps] => Test 5- From Assigned Processor to Everyone
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2019-12-05 11:21:49
                         )
 
                 )
 
-            [49] => Array
+            [10485] => Array
                 (
-                    [2162] => Array
+                    [144220] => Array
                         (
-                            [WFName] => blanket and bridge workflow
-                            [WFSID] => 2162
-                            [WFID] => 49
-                            [steps] => step1 no lps
+                            [WFName] => SBA-Payroll Protection
+                            [WFSID] => 144220
+                            [WFID] => 10485
+                            [steps] => Verify Signed App(s) from all members
                             [showWorkFlowborrower] => 0
-                            [description] => 
+                            [description] => Make sure there is a signed completed app for all entity members with 20% or more ownership
                             [coBorrowerRelatedWfstep] => 0
                             [rehabRelatedWfstep] => 0
                             [noCrossCollRelatedWfstep] => 0
@@ -3091,20 +3641,22 @@ trt etrt ert ret et t er
                             [allowWorkflowEditForBranch] => 0
                             [allowWorkflowEditForAgent] => 0
                             [LMRID] => 0
-                            [createdBy] => 11078
+                            [createdBy] => 8649
                             [createdUserType] => Employee
-                            [createdUser] => dave lw111
-                            [recordDate] => 2020-07-01 15:58:31
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-04-03 15:43:30
                         )
 
-                    [2163] => Array
+                    [144221] => Array
                         (
-                            [WFName] => blanket and bridge workflow
-                            [WFSID] => 2163
-                            [WFID] => 49
-                            [steps] => step2 for bridge only
+                            [WFName] => SBA-Payroll Protection
+                            [WFSID] => 144221
+                            [WFID] => 10485
+                            [steps] => Review all disclosures on applications
                             [showWorkFlowborrower] => 0
-                            [description] => 
+                            [description] => Make sure if any disqualifying questions are answered with YES, to mark loans as disqualified and send denial letter. 
+
+For question that need additional infio, make sure borrower uploads supporting docs for additional businesses owned or details about previous SBA loans.
                             [coBorrowerRelatedWfstep] => 0
                             [rehabRelatedWfstep] => 0
                             [noCrossCollRelatedWfstep] => 0
@@ -3112,20 +3664,20 @@ trt etrt ert ret et t er
                             [allowWorkflowEditForBranch] => 0
                             [allowWorkflowEditForAgent] => 0
                             [LMRID] => 0
-                            [createdBy] => 11078
+                            [createdBy] => 8649
                             [createdUserType] => Employee
-                            [createdUser] => dave lw111
-                            [recordDate] => 2020-07-01 15:58:55
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-04-03 15:45:21
                         )
 
-                    [2164] => Array
+                    [144222] => Array
                         (
-                            [WFName] => blanket and bridge workflow
-                            [WFSID] => 2164
-                            [WFID] => 49
-                            [steps] => step3 blanket and bridge
+                            [WFName] => SBA-Payroll Protection
+                            [WFSID] => 144222
+                            [WFID] => 10485
+                            [steps] => Verify Business Formation
                             [showWorkFlowborrower] => 0
-                            [description] => 
+                            [description] => Verify the business formation docs are uploaded and lookup in State registry.
                             [coBorrowerRelatedWfstep] => 0
                             [rehabRelatedWfstep] => 0
                             [noCrossCollRelatedWfstep] => 0
@@ -3133,18 +3685,60 @@ trt etrt ert ret et t er
                             [allowWorkflowEditForBranch] => 0
                             [allowWorkflowEditForAgent] => 0
                             [LMRID] => 0
-                            [createdBy] => 11078
+                            [createdBy] => 8649
                             [createdUserType] => Employee
-                            [createdUser] => dave lw111
-                            [recordDate] => 2020-07-01 15:59:09
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-04-03 15:45:45
                         )
 
-                    [2165] => Array
+                    [144223] => Array
                         (
-                            [WFName] => blanket and bridge workflow
-                            [WFSID] => 2165
-                            [WFID] => 49
-                            [steps] => step4
+                            [WFName] => SBA-Payroll Protection
+                            [WFSID] => 144223
+                            [WFID] => 10485
+                            [steps] => Verify Amount & Payroll docs uploaded (941 forms)
+                            [showWorkFlowborrower] => 0
+                            [description] => Verify last 4 quarters of 941 forms are uploaded.
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 8649
+                            [createdUserType] => Employee
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-04-03 15:46:15
+                        )
+
+                    [144224] => Array
+                        (
+                            [WFName] => SBA-Payroll Protection
+                            [WFSID] => 144224
+                            [WFID] => 10485
+                            [steps] => Verify Payroll amount excludes amount over 100K salary
+                            [showWorkFlowborrower] => 0
+                            [description] => When adding up payroll amounts, do not include salary amounts greater than 100K
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 8649
+                            [createdUserType] => Employee
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-04-03 15:46:46
+                        )
+
+                    [144225] => Array
+                        (
+                            [WFName] => SBA-Payroll Protection
+                            [WFSID] => 144225
+                            [WFID] => 10485
+                            [steps] => Get Promissory Note E-Signed
                             [showWorkFlowborrower] => 0
                             [description] => 
                             [coBorrowerRelatedWfstep] => 0
@@ -3154,10 +3748,941 @@ trt etrt ert ret et t er
                             [allowWorkflowEditForBranch] => 0
                             [allowWorkflowEditForAgent] => 0
                             [LMRID] => 0
-                            [createdBy] => 11078
+                            [createdBy] => 8649
                             [createdUserType] => Employee
-                            [createdUser] => dave lw111
-                            [recordDate] => 2020-07-01 16:00:46
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-04-03 15:47:07
+                        )
+
+                    [144226] => Array
+                        (
+                            [WFName] => SBA-Payroll Protection
+                            [WFSID] => 144226
+                            [WFID] => 10485
+                            [steps] => Issue Funding Check
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 8649
+                            [createdUserType] => Employee
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-04-03 15:47:28
+                        )
+
+                )
+
+            [11158] => Array
+                (
+                    [150130] => Array
+                        (
+                            [WFName] => Borrower Actions Required
+                            [WFSID] => 150130
+                            [WFID] => 11158
+                            [steps] => Provide updated Rehab Budget
+                            [showWorkFlowborrower] => 1
+                            [description] => g sfghis fgeighf igh idghf
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 1
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 8649
+                            [createdUserType] => Employee
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-06-04 12:18:58
+                        )
+
+                )
+
+            [4857] => Array
+                (
+                    [43731] => Array
+                        (
+                            [WFName] => Application Workflow
+                            [WFSID] => 43731
+                            [WFID] => 4857
+                            [steps] => Upload Executed Contract
+                            [showWorkFlowborrower] => 0
+                            [description] => Upload fully executed contract signed by all parties
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:11:02
+                        )
+
+                    [43732] => Array
+                        (
+                            [WFName] => Application Workflow
+                            [WFSID] => 43732
+                            [WFID] => 4857
+                            [steps] => Upload Signed Rehab Budget
+                            [showWorkFlowborrower] => 0
+                            [description] => Rehab budget must be complete before ordering appraisal
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:11:22
+                        )
+
+                    [106366] => Array
+                        (
+                            [WFName] => Application Workflow
+                            [WFSID] => 106366
+                            [WFID] => 4857
+                            [steps] => Send Term Sheet
+                            [showWorkFlowborrower] => 0
+                            [description] => After entering loan terms, send term sheet with esign.
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2018-12-02 11:54:43
+                        )
+
+                    [43733] => Array
+                        (
+                            [WFName] => Application Workflow
+                            [WFSID] => 43733
+                            [WFID] => 4857
+                            [steps] => Run Payment for BPO or Appraisal
+                            [showWorkFlowborrower] => 0
+                            [description] => Make sure payment clears prior to ordering BPO or Appraisal
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:11:52
+                        )
+
+                    [43734] => Array
+                        (
+                            [WFName] => Application Workflow
+                            [WFSID] => 43734
+                            [WFID] => 4857
+                            [steps] => Order Appraisal
+                            [showWorkFlowborrower] => 0
+                            [description] => Appraisal can be ordered once borrowers payment clears
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:12:10
+                        )
+
+                    [43735] => Array
+                        (
+                            [WFName] => Application Workflow
+                            [WFSID] => 43735
+                            [WFID] => 4857
+                            [steps] => Complete Full Application & have it signed
+                            [showWorkFlowborrower] => 0
+                            [description] => Make sure app is complete and signed by borrower
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:12:52
+                        )
+
+                    [43736] => Array
+                        (
+                            [WFName] => Application Workflow
+                            [WFSID] => 43736
+                            [WFID] => 4857
+                            [steps] => Complete Background & Experience Review
+                            [showWorkFlowborrower] => 0
+                            [description] => Run Background and verify borrower experience
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:13:22
+                        )
+
+                    [43737] => Array
+                        (
+                            [WFName] => Application Workflow
+                            [WFSID] => 43737
+                            [WFID] => 4857
+                            [steps] => Send update-required doc status
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:14:07
+                        )
+
+                )
+
+            [2770] => Array
+                (
+                    [24962] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 24962
+                            [WFID] => 2770
+                            [steps] => If Distressed sale- check for restrictions
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-04-04 16:31:31
+                        )
+
+                    [143813] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 143813
+                            [WFID] => 2770
+                            [steps] => Review the Rehab Budget
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 1
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 8649
+                            [createdUserType] => Employee
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-03-24 13:47:18
+                        )
+
+                    [157471] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 157471
+                            [WFID] => 2770
+                            [steps] => Order payoff from existing mortgage holders
+                            [showWorkFlowborrower] => 0
+                            [description] => Please use the standard pay off template form 1407
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 8649
+                            [createdUserType] => Employee
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2021-01-08 11:49:14
+                        )
+
+                    [24963] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 24963
+                            [WFID] => 2770
+                            [steps] => Run Title-Lien Search
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-04-04 16:31:31
+                        )
+
+                    [24964] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 24964
+                            [WFID] => 2770
+                            [steps] => Perform Legal Review of entity & authorized signers
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-04-04 16:31:31
+                        )
+
+                    [24965] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 24965
+                            [WFID] => 2770
+                            [steps] => Upload title commitment
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-04-04 16:31:31
+                        )
+
+                    [24966] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 24966
+                            [WFID] => 2770
+                            [steps] => Order or update property insurance coverage
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-04-04 16:31:31
+                        )
+
+                    [24967] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 24967
+                            [WFID] => 2770
+                            [steps] => Underwrite loan and place with correct investor or lender
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-04-04 16:31:31
+                        )
+
+                    [24968] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 24968
+                            [WFID] => 2770
+                            [steps] => Prepare Loan Docs
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-04-04 16:31:31
+                        )
+
+                    [44328] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 44328
+                            [WFID] => 2770
+                            [steps] => Review full loan file
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2018-02-15 07:00:27
+                        )
+
+                    [24969] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 24969
+                            [WFID] => 2770
+                            [steps] => Prepare & Send Closing Instructions
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-04-04 16:31:31
+                        )
+
+                    [24970] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 24970
+                            [WFID] => 2770
+                            [steps] => Confirm Loan Closing Date and Time
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-04-04 16:31:31
+                        )
+
+                    [24971] => Array
+                        (
+                            [WFName] => Processing & Underwriting Workflow
+                            [WFSID] => 24971
+                            [WFID] => 2770
+                            [steps] => Review & Approve Preliminary HUD
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 1
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-04-04 16:31:31
+                        )
+
+                )
+
+            [4370] => Array
+                (
+                    [39319] => Array
+                        (
+                            [WFName] => Closing Workflow
+                            [WFSID] => 39319
+                            [WFID] => 4370
+                            [steps] => Prepare Closing Docs
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-10-17 13:16:00
+                        )
+
+                    [145344] => Array
+                        (
+                            [WFName] => Closing Workflow
+                            [WFSID] => 145344
+                            [WFID] => 4370
+                            [steps] => Test WorkFlowSteps
+                            [showWorkFlowborrower] => 0
+                            [description] => Test WorkFlowSteps Description
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 12260
+                            [createdUserType] => Employee
+                            [createdUser] => Sainath Chris
+                            [recordDate] => 2020-04-16 07:31:42
+                        )
+
+                    [39324] => Array
+                        (
+                            [WFName] => Closing Workflow
+                            [WFSID] => 39324
+                            [WFID] => 4370
+                            [steps] => Confirm Closing day, time, place with all parties
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-10-17 13:20:17
+                        )
+
+                    [39325] => Array
+                        (
+                            [WFName] => Closing Workflow
+                            [WFSID] => 39325
+                            [WFID] => 4370
+                            [steps] => Prepare & Send Closing Instructions
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-10-17 13:20:45
+                        )
+
+                    [39320] => Array
+                        (
+                            [WFName] => Closing Workflow
+                            [WFSID] => 39320
+                            [WFID] => 4370
+                            [steps] => Complete funding conditions checklist
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-10-17 13:18:17
+                        )
+
+                    [39321] => Array
+                        (
+                            [WFName] => Closing Workflow
+                            [WFSID] => 39321
+                            [WFID] => 4370
+                            [steps] => Send Final HUD
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-10-17 13:19:04
+                        )
+
+                    [39322] => Array
+                        (
+                            [WFName] => Closing Workflow
+                            [WFSID] => 39322
+                            [WFID] => 4370
+                            [steps] => Review & Approve executed loan package
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-10-17 13:19:32
+                        )
+
+                    [39323] => Array
+                        (
+                            [WFName] => Closing Workflow
+                            [WFSID] => 39323
+                            [WFID] => 4370
+                            [steps] => Initiate & Confirm Wire received
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-10-17 13:19:44
+                        )
+
+                    [39326] => Array
+                        (
+                            [WFName] => Closing Workflow
+                            [WFSID] => 39326
+                            [WFID] => 4370
+                            [steps] => Check on recording of mortgage note
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-10-17 13:21:22
+                        )
+
+                )
+
+            [4858] => Array
+                (
+                    [43738] => Array
+                        (
+                            [WFName] => Post Closing Workflow
+                            [WFSID] => 43738
+                            [WFID] => 4858
+                            [steps] => Create & Stack loan package Recorded mortgage, Note, Deed, etc...
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:27:15
+                        )
+
+                    [156897] => Array
+                        (
+                            [WFName] => Post Closing Workflow
+                            [WFSID] => 156897
+                            [WFID] => 4858
+                            [steps] => workflow step 1Sai
+                            [showWorkFlowborrower] => 0
+                            [description] => dd
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 12260
+                            [createdUserType] => Employee
+                            [createdUser] => Sainath Chris
+                            [recordDate] => 2020-12-22 04:47:08
+                        )
+
+                    [43739] => Array
+                        (
+                            [WFName] => Post Closing Workflow
+                            [WFSID] => 43739
+                            [WFID] => 4858
+                            [steps] => Upload Original Title Policy
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:27:39
+                        )
+
+                    [43740] => Array
+                        (
+                            [WFName] => Post Closing Workflow
+                            [WFSID] => 43740
+                            [WFID] => 4858
+                            [steps] => Onboard Loan Servicer
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:28:02
+                        )
+
+                    [43741] => Array
+                        (
+                            [WFName] => Post Closing Workflow
+                            [WFSID] => 43741
+                            [WFID] => 4858
+                            [steps] => Send stacked loan package to lender or investor custodian
+                            [showWorkFlowborrower] => 0
+                            [description] => 
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 1
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2017-11-30 08:28:40
+                        )
+
+                )
+
+            [7859] => Array
+                (
+                    [120640] => Array
+                        (
+                            [WFName] => Draws
+                            [WFSID] => 120640
+                            [WFID] => 7859
+                            [steps] => Review Draw Request
+                            [showWorkFlowborrower] => 1
+                            [description] => Verify items in draw have not been requested previously.
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2019-04-17 13:31:57
+                        )
+
+                    [120641] => Array
+                        (
+                            [WFName] => Draws
+                            [WFSID] => 120641
+                            [WFID] => 7859
+                            [steps] => Order Property Inspection
+                            [showWorkFlowborrower] => 1
+                            [description] => This step will auto-send
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2019-04-17 13:32:19
+                        )
+
+                    [120642] => Array
+                        (
+                            [WFName] => Draws
+                            [WFSID] => 120642
+                            [WFID] => 7859
+                            [steps] => Schedule Wire for draw
+                            [showWorkFlowborrower] => 1
+                            [description] => Verify inspection is complete
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 
+                            [createdUserType] => 
+                            [createdUser] => 
+                            [recordDate] => 2019-04-17 13:32:32
+                        )
+
+                )
+
+            [10438] => Array
+                (
+                    [143816] => Array
+                        (
+                            [WFName] => Loss Mitigation
+                            [WFSID] => 143816
+                            [WFID] => 10438
+                            [steps] => Get Valuation
+                            [showWorkFlowborrower] => 0
+                            [description] => Order BPO or Appraisal if estimated value is higher than $500K
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 8649
+                            [createdUserType] => Employee
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-03-25 14:51:26
+                        )
+
+                    [143817] => Array
+                        (
+                            [WFName] => Loss Mitigation
+                            [WFSID] => 143817
+                            [WFID] => 10438
+                            [steps] => File Lis Pendens
+                            [showWorkFlowborrower] => 0
+                            [description] => Get with legal to file pre-foreclosure paper work
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 8649
+                            [createdUserType] => Employee
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-03-25 14:54:02
+                        )
+
+                    [143818] => Array
+                        (
+                            [WFName] => Loss Mitigation
+                            [WFSID] => 143818
+                            [WFID] => 10438
+                            [steps] => Submit Credit Bid
+                            [showWorkFlowborrower] => 0
+                            [description] => Verify reserve level requirement for foreclosure auction.
+                            [coBorrowerRelatedWfstep] => 0
+                            [rehabRelatedWfstep] => 0
+                            [noCrossCollRelatedWfstep] => 0
+                            [usCitizenRelatedWfstep] => 0
+                            [allowWorkflowEditForBranch] => 0
+                            [allowWorkflowEditForAgent] => 0
+                            [LMRID] => 0
+                            [createdBy] => 8649
+                            [createdUserType] => Employee
+                            [createdUser] => Chris Fuelling
+                            [recordDate] => 2020-03-25 14:55:17
                         )
 
                 )
@@ -3166,40 +4691,10 @@ trt etrt ert ret et t er
 
     [LMRWFHistoryInfo] => Array
         (
-            [0] => Array
-                (
-                    [WFSID] => 1430
-                    [docStatus] => 2
-                    [LMRID] => 6310064
-                    [steps] => paul work flow
-                    [WFName] => drips
-                    [WFID] => 12
-                    [updatedBy] => 11078
-                    [updatedUserType] => Employee
-                    [updatedOn] => 2021-01-06 09:51:57
-                )
-
         )
 
     [WFListArray] => Array
         (
-            [6310064] => Array
-                (
-                    [0] => Array
-                        (
-                            [LMRID] => 6310064
-                            [docStatus] => 2
-                            [steps] => paul work flow
-                            [WFName] => drips
-                            [WFID] => 12
-                            [WFSID] => 1430
-                            [updatedBy] => 11078
-                            [updatedUserType] => Employee
-                            [updatedOn] => 2021-01-06 09:51:57
-                        )
-
-                )
-
         )
 
     [AdditionalLienContactInfo] => Array
@@ -3232,15 +4727,6 @@ trt etrt ert ret et t er
 
     [empWFInfo] => Array
         (
-            [11078] => Array
-                (
-                    [AID] => 11078
-                    [processorName] => dave lw111
-                    [employeeNames] => dave lw111 (Manager)
-                    [myKey] => 11078
-                    [myOpt] => empWFInfo
-                )
-
         )
 
     [branchWFInfo] => Array
@@ -3266,21 +4752,12 @@ trt etrt ert ret et t er
 
     [notesEmpInfo] => Array
         (
-            [11078] => Array
+            [8722] => Array
                 (
-                    [AID] => 11078
-                    [processorName] => dave lw111
-                    [employeeNames] => dave lw111 (Manager)
-                    [myKey] => 11078
-                    [myOpt] => notesEmpInfo
-                )
-
-            [11189] => Array
-                (
-                    [AID] => 11189
-                    [processorName] => Ayman Ali
-                    [employeeNames] => Ayman Ali (Manager)
-                    [myKey] => 11189
+                    [AID] => 8722
+                    [processorName] => John Closer
+                    [employeeNames] => John Closer (Manager)
+                    [myKey] => 8722
                     [myOpt] => notesEmpInfo
                 )
 
@@ -3316,19 +4793,6 @@ trt etrt ert ret et t er
 
     [fileWFNotesInfo] => Array
         (
-            [1430] => Array
-                (
-                    [fileID] => 6310064
-                    [WFSID] => 1430
-                    [notes] => trt etrt ert ret et t er
-hj fuy fd
-y thjfg
-                    [SID] => 9
-                    [UID] => 11078
-                    [UType] => Employee
-                    [recordDate] => 2021-01-06 09:51:25
-                )
-
         )
 
     [fileChecklistNotesInfo] => Array
@@ -3405,11 +4869,6 @@ y thjfg
 
     [PCWFServiceType] => Array
         (
-            [12] => Array
-                (
-                    [0] => C
-                )
-
         )
 
     [PCClientWFServiceType] => Array
@@ -3556,33 +5015,33 @@ y thjfg
         (
             [0] => Array
                 (
-                    [BMID] => 27133
-                    [branchID] => 5288
-                    [moduleCode] => HMLO
+                    [BMID] => 40429
+                    [branchID] => 6722
+                    [moduleCode] => loc
                     [activeStatus] => 1
-                    [recordDate] => 2020-11-05 16:34:30
-                    [moduleName] => Commercial/Residential Real Estate
+                    [recordDate] => 2021-01-11 12:53:36
+                    [moduleName] => Business Funding
                 )
 
             [1] => Array
                 (
-                    [BMID] => 27134
-                    [branchID] => 5288
-                    [moduleCode] => EF
+                    [BMID] => 40428
+                    [branchID] => 6722
+                    [moduleCode] => HMLO
                     [activeStatus] => 1
-                    [recordDate] => 2020-11-05 16:34:30
-                    [moduleName] => Equipment Financing
+                    [recordDate] => 2021-01-11 12:53:36
+                    [moduleName] => Commercial/Residential Real Estate
                 )
 
         )
 
     [fileModuleInfo] => Array
         (
-            [6310064] => Array
+            [6833894] => Array
                 (
                     [0] => Array
                         (
-                            [fileID] => 6310064
+                            [fileID] => 6833894
                             [moduleCode] => HMLO
                             [moduleName] => Commercial/Residential Real Estate
                         )
@@ -3703,17 +5162,6 @@ y thjfg
 
                 )
 
-            [EM] => Array
-                (
-                    [0] => Array
-                        (
-                            [tabName] => EM
-                            [moduleCode] => HMLO
-                            [moduleName] => Commercial/Residential Real Estate
-                        )
-
-                )
-
             [EXP] => Array
                 (
                     [0] => Array
@@ -3774,17 +5222,6 @@ y thjfg
                     [0] => Array
                         (
                             [tabName] => LI
-                            [moduleCode] => HMLO
-                            [moduleName] => Commercial/Residential Real Estate
-                        )
-
-                )
-
-            [LSTPGE] => Array
-                (
-                    [0] => Array
-                        (
-                            [tabName] => LSTPGE
                             [moduleCode] => HMLO
                             [moduleName] => Commercial/Residential Real Estate
                         )
@@ -3922,78 +5359,31 @@ y thjfg
 
     [LOExplanationInfo] => Array
         (
-            [EID] => 8364
-            [fileID] => 6310064
-            [borOutstandingJudgements] => NA
-            [borBankruptWithinThePast] => NA
-            [borPropertyForeclosed] => NA
-            [borPartyToLawsuit] => NA
-            [borTransferOfTitleLieuOfForeclosure] => NA
-            [isBorrowerPresentlyDelinquent] => NA
-            [isBorrowerObligatedPayAlimony] => NA
-            [borDownPaymentBorrowed] => NA
-            [borEndorserOnNote] => NA
-            [isBorrowerUSCitizen] => NA
-            [borPermanentResidentAlien] => NA
-            [borIntendToOccupyTheProperty] => NA
-            [borOwnershipInterestInProperty] => NA
-            [propertyTypeBorrowerOwn] => 
-            [borrowerHoldTitleHome] => 
-            [cobOutstandingJudgements] => NA
-            [cobBankruptWithinThePast] => NA
-            [cobPropertyForeclosed] => NA
-            [cobPartyToLawsuit] => NA
-            [cobTransferOfTitleLieuOfForeclosure] => NA
-            [isCoBorrowerPresentlyDelinquent] => NA
-            [isCoBorrowerObligatedPayAlimony] => NA
-            [cobDownPaymentBorrowed] => NA
-            [cobEndorserOnNote] => NA
-            [isCoBorrowerUSCitizen] => NA
-            [cobPermanentResidentAlien] => NA
-            [cobIntendToOccupyTheProperty] => NA
-            [cobOwnershipInterestInProperty] => NA
-            [propertyTypeCoBorrowerOwn] => 
-            [coBorrowerHoldTitleHome] => 
-            [typeOfLoanRequesteing] => 
-            [inventmentRehabProjected] => 0
-            [investmentPropertiesHasAcquired] => 0
-            [borrowerPlanForThisProperty] => 
-            [borrowerAnticipateHoldTime] => 0
-            [estimatedMonthlyRentalIncome] => 
-            [intendToRepayLoan] => 
-            [otherExplanation] => 
-            [doesBorrowerIntendUseFunds] => 
-            [propertyRequireRehab] => 
-            [explainRehabPlans] => 
-            [recordDate] => 2020-12-29 20:10:42
-            [activeStatus] => 1
-            [borComment] => 
-            [coBorComment] => 
         )
 
     [fileLoanOriginationInfo] => Array
         (
-            [LOID] => 10205
-            [fileID] => 6310064
+            [LOID] => 51405
+            [fileID] => 6833894
             [borYearsOfSchool] => 0
             [dependentsNotListed] => 0
             [dependentsAges] => 
             [borNoOfYrAtMailingAddr] => 0
-            [borResidedPresentAddr] => No
+            [borResidedPresentAddr] => Yes
             [borNoOfYrAtPrevAddr] => 0
             [coBYearsOfSchool] => 0
             [coBNoOfYrAtMailingAddr] => 0
-            [coBResidedPresentAddr] => No
+            [coBResidedPresentAddr] => Yes
             [coBNoOfYrAtPrevAddr] => 0
-            [recordDate] => 2020-12-29 20:10:42
+            [recordDate] => 2021-01-11 13:05:00
         )
 
     [fileLOAssetsInfo] => Array
         (
-            [LOAID] => 6164
-            [fileID] => 6310064
+            [LOAID] => 42566
+            [fileID] => 6833894
             [vestedInterest] => 0
-            [networthOfBusinessOwned] => 10000
+            [networthOfBusinessOwned] => 0
             [automobilesOwned3x] => 
             [stocksBondsComNameNumberDesc] => 
             [faceAmount] => 0
@@ -4001,7 +5391,7 @@ y thjfg
             [alimonyChildSupportSeparatePayments] => 0
             [owedTo] => 
             [jobRelatedExpense] => 0
-            [recordDate] => 2020-12-29 20:10:42
+            [recordDate] => 2021-01-11 13:05:01
             [automobilesOwned3x1] => 
             [automobilesOwned3x2] => 
             [automobilesOwned1] => 0
@@ -4011,69 +5401,276 @@ y thjfg
         (
             [0] => Array
                 (
-                    [LOCSID] => 318
-                    [fileID] => 6310064
-                    [nameAddrOfBank] => Bank of America
-                    [accountNumber] => Account-001
-                    [balance] => 10000
-                    [recordDate] => 2020-12-29 20:10:42
+                    [LOCSID] => 648
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => wells fargo checking
+                    [accountNumber] => ou812
+                    [balance] => 12000
+                    [recordDate] => 2021-01-11 13:27:00
                     [accType] => Checking
-                    [accountTitledAs] => Account Name 001
-                    [description] => Main checking account
-                    [shareValueInBond] => 0.00
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
                     [nameofSecurity] => 
                     [cost] => 
                     [marketValueQuote] => 
                     [dateofQuote] => 
                     [typeofPolicy] => 
-                    [faceAmount] => 0.00
-                    [amountBorrowed] => 0.00
+                    [faceAmount] => 
+                    [amountBorrowed] => 
                     [beneficiaries] => 
-                    [pledged] => No
+                    [pledged] => 
                 )
 
             [1] => Array
                 (
-                    [LOCSID] => 319
-                    [fileID] => 6310064
-                    [nameAddrOfBank] => Wells Fargo
-                    [accountNumber] => Account-002
-                    [balance] => 20000
-                    [recordDate] => 2020-12-29 22:52:47
+                    [LOCSID] => 649
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => wellsf savings
+                    [accountNumber] => 34242wfsavings
+                    [balance] => 23000
+                    [recordDate] => 2021-01-11 13:27:00
                     [accType] => Savings
-                    [accountTitledAs] => Account Name 002
+                    [accountTitledAs] => 
                     [description] => 
-                    [shareValueInBond] => 0.00
+                    [shareValueInBond] => 
                     [nameofSecurity] => 
                     [cost] => 
                     [marketValueQuote] => 
                     [dateofQuote] => 
                     [typeofPolicy] => 
-                    [faceAmount] => 0.00
-                    [amountBorrowed] => 0.00
+                    [faceAmount] => 
+                    [amountBorrowed] => 
                     [beneficiaries] => 
-                    [pledged] => No
+                    [pledged] => 
                 )
 
             [2] => Array
                 (
-                    [LOCSID] => 320
-                    [fileID] => 6310064
-                    [nameAddrOfBank] => Ally Bank
-                    [accountNumber] => Account-003
-                    [balance] => 30000
-                    [recordDate] => 2020-12-29 22:52:47
-                    [accType] => retirement
-                    [accountTitledAs] => Retirement Name 003
+                    [LOCSID] => 650
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => moneymarketinstitution
+                    [accountNumber] => moneymarket534535
+                    [balance] => 21000
+                    [recordDate] => 2021-01-11 13:27:00
+                    [accType] => Money Market
+                    [accountTitledAs] => 
                     [description] => 
-                    [shareValueInBond] => 0.00
+                    [shareValueInBond] => 
                     [nameofSecurity] => 
                     [cost] => 
                     [marketValueQuote] => 
                     [dateofQuote] => 
                     [typeofPolicy] => 
-                    [faceAmount] => 0.00
-                    [amountBorrowed] => 0.00
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [3] => Array
+                (
+                    [LOCSID] => 651
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => cd account
+                    [accountNumber] => cd4564235
+                    [balance] => 500
+                    [recordDate] => 2021-01-11 13:27:00
+                    [accType] => CD
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [4] => Array
+                (
+                    [LOCSID] => 652
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => stockinstit
+                    [accountNumber] => stock453234
+                    [balance] => 5000
+                    [recordDate] => 2021-01-11 13:27:00
+                    [accType] => stocks
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [5] => Array
+                (
+                    [LOCSID] => 653
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => bondinstitution
+                    [accountNumber] => bond67545423
+                    [balance] => 11500
+                    [recordDate] => 2021-01-11 13:27:00
+                    [accType] => bonds
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [6] => Array
+                (
+                    [LOCSID] => 654
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => trustinstitution
+                    [accountNumber] => trust654564
+                    [balance] => 4500
+                    [recordDate] => 2021-01-11 13:27:00
+                    [accType] => trust account
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [7] => Array
+                (
+                    [LOCSID] => 655
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => cashvalinsuranceInstitution
+                    [accountNumber] => cashcalins856754
+                    [balance] => 3400
+                    [recordDate] => 2021-01-11 13:27:00
+                    [accType] => cash value of insurance
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [8] => Array
+                (
+                    [LOCSID] => 656
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => bridgeproceedsinstit
+                    [accountNumber] => bridgeproc746534
+                    [balance] => 3500
+                    [recordDate] => 2021-01-11 13:27:00
+                    [accType] => bridge loan proceeds
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [9] => Array
+                (
+                    [LOCSID] => 657
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => retirementInstitution
+                    [accountNumber] => retir654674
+                    [balance] => 45000
+                    [recordDate] => 2021-01-11 13:27:00
+                    [accType] => retirement
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [10] => Array
+                (
+                    [LOCSID] => 658
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => non-marketableInstitution
+                    [accountNumber] => nonmar7565445
+                    [balance] => 3100
+                    [recordDate] => 2021-01-11 13:27:00
+                    [accType] => Non-Marketable Securities
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [11] => Array
+                (
+                    [LOCSID] => 659
+                    [fileID] => 6833894
+                    [nameAddrOfBank] => otherInstit
+                    [accountNumber] => otherinstit64456
+                    [balance] => 5211
+                    [recordDate] => 2021-01-11 13:27:00
+                    [accType] => Other
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
                     [beneficiaries] => 
                     [pledged] => 
                 )
@@ -4086,150 +5683,12 @@ y thjfg
 
     [fileLOScheduleRealInfo] => Array
         (
-            [0] => Array
-                (
-                    [LOSRID] => 451
-                    [fileID] => 6310064
-                    [schedulePropAddr] => 1 Owned st
-                    [scheduleStatus] => Retained
-                    [propType] => 48
-                    [presentMarketValue] => 700000
-                    [amountOfMortgages] => 430000
-                    [grossRentalIncome] => 2500
-                    [mortgagePayments] => 2900
-                    [insMaintTaxMisc] => 1200
-                    [netRentalIncome] => 2100
-                    [recordDate] => 2020-12-30 16:09:46
-                    [schedulePropCity] => city 1
-                    [schedulePropState] => CA
-                    [schedulePropZip] => 92604
-                    [propertyDesc] => 
-                    [titledUnder] => 
-                    [datePurchased] => 12/02/2011
-                    [purchasePrice] => 500000.00
-                    [valueofImprovementsMade] => 0.00
-                    [intendedOccupancy] => Investment
-                    [anyMortgagesLiens] => Yes
-                    [creditorName] => Bank of the West
-                    [accountNumber] => Owned-ACC-001
-                    [loanStatus] => Current
-                    [unpaidBalance] => 53000.00
-                    [monthlyPayment] => 4000.00
-                    [mortgageType] => Conventional
-                    [creditLimit] => 90000.00
-                    [anyOtherMortgagesLiens] => No
-                    [creditorNameAnother] => 
-                    [accountNumberAnother] => 
-                    [loanStatusAnother] => 
-                    [unpaidBalanceAnother] => 0.00
-                    [monthlyPaymentAnother] => 0.00
-                    [typeAnother] => 
-                    [creditLimitAnother] => 0.00
-                    [maturityDateSchedule] => //
-                    [maturityDateAnother] => //
-                    [ownership] => 100
-                    [salesDate] => //
-                    [salesPrice] => 0.00
-                )
-
-            [1] => Array
-                (
-                    [LOSRID] => 452
-                    [fileID] => 6310064
-                    [schedulePropAddr] => property 2
-                    [scheduleStatus] => Sold
-                    [propType] => 
-                    [presentMarketValue] => 0
-                    [amountOfMortgages] => 0
-                    [grossRentalIncome] => 0
-                    [mortgagePayments] => 0
-                    [insMaintTaxMisc] => 0
-                    [netRentalIncome] => 10000
-                    [recordDate] => 2020-12-30 16:10:42
-                    [schedulePropCity] => city 2
-                    [schedulePropState] => AZ
-                    [schedulePropZip] => 43234
-                    [propertyDesc] => 
-                    [titledUnder] => 
-                    [datePurchased] => 12/12/2003
-                    [purchasePrice] => 89797.00
-                    [valueofImprovementsMade] => 0.00
-                    [intendedOccupancy] => Investment
-                    [anyMortgagesLiens] => No
-                    [creditorName] => 
-                    [accountNumber] => 
-                    [loanStatus] => 
-                    [unpaidBalance] => 0.00
-                    [monthlyPayment] => 0.00
-                    [mortgageType] => 
-                    [creditLimit] => 0.00
-                    [anyOtherMortgagesLiens] => No
-                    [creditorNameAnother] => 
-                    [accountNumberAnother] => 
-                    [loanStatusAnother] => 
-                    [unpaidBalanceAnother] => 0.00
-                    [monthlyPaymentAnother] => 0.00
-                    [typeAnother] => 
-                    [creditLimitAnother] => 0.00
-                    [maturityDateSchedule] => //
-                    [maturityDateAnother] => //
-                    [ownership] => 
-                    [salesDate] => //
-                    [salesPrice] => 0.00
-                )
-
-            [2] => Array
-                (
-                    [LOSRID] => 453
-                    [fileID] => 6310064
-                    [schedulePropAddr] => 2 owned st
-                    [scheduleStatus] => Pending Sale
-                    [propType] => 3
-                    [presentMarketValue] => 800000
-                    [amountOfMortgages] => 530000
-                    [grossRentalIncome] => 2700
-                    [mortgagePayments] => 4000
-                    [insMaintTaxMisc] => 600
-                    [netRentalIncome] => 1700
-                    [recordDate] => 2020-12-30 16:11:04
-                    [schedulePropCity] => city 2
-                    [schedulePropState] => AL
-                    [schedulePropZip] => 92605
-                    [propertyDesc] => 
-                    [titledUnder] => 
-                    [datePurchased] => //
-                    [purchasePrice] => 0.00
-                    [valueofImprovementsMade] => 0.00
-                    [intendedOccupancy] => Second Home
-                    [anyMortgagesLiens] => No
-                    [creditorName] => 
-                    [accountNumber] => 
-                    [loanStatus] => 
-                    [unpaidBalance] => 0.00
-                    [monthlyPayment] => 0.00
-                    [mortgageType] => 
-                    [creditLimit] => 0.00
-                    [anyOtherMortgagesLiens] => No
-                    [creditorNameAnother] => 
-                    [accountNumberAnother] => 
-                    [loanStatusAnother] => 
-                    [unpaidBalanceAnother] => 0.00
-                    [monthlyPaymentAnother] => 0.00
-                    [typeAnother] => 
-                    [creditLimitAnother] => 0.00
-                    [maturityDateSchedule] => //
-                    [maturityDateAnother] => //
-                    [ownership] => 100
-                    [salesDate] => //
-                    [salesPrice] => 0.00
-                )
-
         )
 
     [fileLOPropInfo] => Array
         (
-            [LOPID] => 1169
-            [fileID] => 6310064
+            [LOPID] => 37679
+            [fileID] => 6833894
             [typeOfMortgage] => 
             [otherExplanation] => 
             [amorizationType] => 
@@ -4262,7 +5721,7 @@ y thjfg
             [borCloCostPaidSeller] => 0
             [loanAmountExclude] => 0
             [PMIMIPFundingFeeFin] => 0
-            [recordDate] => 2020-12-29 20:10:42
+            [recordDate] => 2021-01-11 13:05:00
         )
 
     [OtherCreditsInfo] => Array
@@ -4271,40 +5730,6 @@ y thjfg
 
     [borEmploymentInfo] => Array
         (
-            [0] => Array
-                (
-                    [LOBEID] => 13
-                    [fileID] => 6310064
-                    [nameOfEmployer] => employer 2 name
-                    [addrOfEmployer] => employer 2 address
-                    [employmentType] => Salary W-2
-                    [employedFrom] => 2020-01-01
-                    [employedTo] => 0000-00-00
-                    [monthlyIncome] => 3000
-                    [position] => position 2 title
-                    [businessPhone] => 9492222222
-                    [recordDate] => 2021-01-04 19:47:18
-                    [emptypeshare] => 
-                    [empmonthlyincome] => 
-                )
-
-            [1] => Array
-                (
-                    [LOBEID] => 14
-                    [fileID] => 6310064
-                    [nameOfEmployer] => employer 3 name
-                    [addrOfEmployer] => employer 3 address
-                    [employmentType] => Self-Employed
-                    [employedFrom] => 2020-01-01
-                    [employedTo] => 0000-00-00
-                    [monthlyIncome] => 2000
-                    [position] => founder
-                    [businessPhone] => 9493333333
-                    [recordDate] => 2021-01-04 19:55:15
-                    [emptypeshare] => lessthan25
-                    [empmonthlyincome] => 2000
-                )
-
         )
 
     [coBEmploymentInfo] => Array
@@ -4342,16 +5767,16 @@ y thjfg
 
     [fileHMLOInfo] => Array
         (
-            [HMLOID] => 16629
-            [fileID] => 6310064
+            [HMLOID] => 81818
+            [fileID] => 6833894
             [borCompanyName] => 
-            [borCreditScoreRange] => 720 +
-            [midFicoScore] => 770
+            [borCreditScoreRange] => 
+            [midFicoScore] => 
             [borCreditScore] => 0
             [coBorCompanyName] => 
             [coBorCreditScoreRange] => 
             [coBorCreditScore] => 0
-            [recordDate] => 2021-01-04 21:21:34
+            [recordDate] => 2021-01-11 13:05:00
             [afterRepairValue] => 0.00
             [targetClosingDate] => 
             [ownThisProperty] => No
@@ -4360,21 +5785,21 @@ y thjfg
             [rehabCost] => 0.00
             [purchaseDate] => 
             [REBroker] => No
-            [borExperianScore] => 770
-            [borEquifaxScore] => 770
-            [borTransunionScore] => 770
+            [borExperianScore] => 
+            [borEquifaxScore] => 
+            [borTransunionScore] => 
             [coBorExperianScore] => 
             [coBorEquifaxScore] => 
             [midFicoScoreCoBor] => 
             [coBorTransunionScore] => 
             [rehabDuration] => 
             [borrowerCitizenship] => U.S. Citizen
-            [isServicingMember] => No
-            [servicingMemberInfo] => 
-            [agesOfDependent] => 2,1
-            [numberOfDependents] => 2
-            [maritalStatusCoBor] => 
-            [coBorrowerCitizenship] => 
+            [isServicingMember] => Yes
+            [servicingMemberInfo] => 0
+            [agesOfDependent] => 4, 6, 7
+            [numberOfDependents] => 3
+            [maritalStatusCoBor] => Married
+            [coBorrowerCitizenship] => Perm Resident Alien
         )
 
     [collateralPropertyInfo] => Array
@@ -4383,10 +5808,10 @@ y thjfg
 
     [fileHMLOAssetsInfo] => Array
         (
-            [HMLOAID] => 5640
-            [fileID] => 6310064
+            [HMLOAID] => 34099
+            [fileID] => 6833894
             [otherDesc] => 
-            [recordDate] => 2020-12-29 20:10:42
+            [recordDate] => 2021-01-11 13:05:01
             [activeStatus] => 1
             [unpaidPayableTaxesDesc] => 
             [otherLiabilityDetails] => 
@@ -4394,13 +5819,13 @@ y thjfg
 
     [fileHMLOPropertyInfo] => Array
         (
-            [HMLOPID] => 28588
-            [fileID] => 6310064
+            [HMLOPID] => 144030
+            [fileID] => 6833894
             [typeOfHMLOLoanRequesting] => Purchase
             [purchaseCloseDate] => 
             [acceptedPurchase] => 
             [requiredLoanAmount] => 
-            [exitStrategy] => 
+            [exitStrategy] => Fix & Flip
             [propertyNeedRehab] => 
             [rehabStrategyPlans] => 
             [proInsName] => 
@@ -4413,12 +5838,12 @@ y thjfg
             [proIncFax] => 
             [proIncEmail] => 
             [proIncWebsite] => 
-            [recordDate] => 2020-12-29 20:10:42
+            [recordDate] => 2021-01-11 13:05:00
             [activeStatus] => 1
-            [loanTerm] => 360 Months
+            [loanTerm] => 
             [prePaymentPenalty] => 
-            [lienPosition] => 1
-            [annualPremium] => 0.00
+            [lienPosition] => 
+            [annualPremium] => 
             [isHiredPerformRehab] => 
             [GCCompanyName] => 
             [GCFirstName] => 
@@ -4427,30 +5852,30 @@ y thjfg
             [approvedLoanAmt] => 
             [propIncNotes] => 
             [propEquity] => 
-            [maxAmtToPutDown] => 0.00
+            [maxAmtToPutDown] => 
             [HMLOEstateHeldIn] => 
             [paymentReserves] => 0
-            [requiredConstruction] => 0
-            [contingencyReserve] => 0
-            [isBlanketLoan] => 
+            [requiredConstruction] => 
+            [contingencyReserve] => 
+            [isBlanketLoan] => Yes
             [serviceLenderType] => 
             [typeOfRecordingJurisdiction] => 
             [nameOfRecordingJurisdiction] => 
             [dateNoteSigned] => 
             [riders] => 
-            [maturityDate] => 0000-00-00
+            [maturityDate] => 
             [typeOfSale] => 
             [latePayemntAppliedOn] => 
             [lateChargeAmt] => 
             [proInsPolicyNo] => 
-            [proInsPolicyExpDate] => 0000-00-00
-            [propDetailsProcess] => Identified a Property
+            [proInsPolicyExpDate] => 
+            [propDetailsProcess] => 
             [propertyTaxDueDate] => 0000-00-00
             [assetCollateralized] => 
             [lenderNotes] => 
             [checkDisplayTermSheet] => No
             [involvedPurchase] => 
-            [wholesaleFee] => 0
+            [wholesaleFee] => 
             [seekingCashRefinance] => 
             [seekingCash] => 
             [seekingFund] => 
@@ -4467,11 +5892,11 @@ y thjfg
             [loanSigning] => 
             [courtOrderNecessary] => 
             [loanPurpose] => 
-            [expectForDueDiligence] => %3Cbr%3E%2A+Receipt+and+review+of+background+and+credit+for+borrower%2Fguarantor%2C+and+contractor%2C+if+applicable.%3Cbr%3E%3Cbr%3E%2A+Lender+to+verify+that+Borrower%28s%29+has+acceptable+cash+to+close.%3Cbr%3E%3Cbr%3E%2A+Borrower+to+provide+%28and+lender+to+review%29+most+recent+acceptable+purchase+contract+or+sale+agreement+for+property.%3Cbr%3E%3Cbr%3E%2A+Borrower+to+provide+%28and+lender+to+review%29+rehab+plans+and+budget.%3Cbr%3E%3Cbr%3E%2A+Acceptable+%28to+Lender%29+third+party+broker%26%2339%3Bs+price+opinion+%28BPO%29+and%2For+appraisal%2C+ordered+by+Lender%2C+evidencing+as-is+value%3Cbr%3Eand+after-repair-value+%28%26quot%3BARV%26quot%3B%29.%3Cbr%3E%3Cbr%3E%2A+Adequate+project%2C+property+and+title+insurance%2C+as+determined+by+Lender.%3Cbr%3E%3Cbr%3E%2A+Lender+to+utilize+third+party+services+to+determine+that+all+parties+involved+in+transaction+have+no+history+of+criminal+and%2For+fraudulent+behavior.%3Cbr%3E%3Cbr%3E%2A+Lender+to+determine+if+transaction+conforms+to+federal+and+state+regulations.%3Cbr%3E%3Cbr%3E%2A+Lender+to+determine+if+transaction+conforms+to+investor+requirements.%3Cbr%3E%3Cbr%3E%2A+Lender+to+review+estimated+and+final+closing+statements+prior+to+closing+transaction.
+            [expectForDueDiligence] => 
             [referringParty] => 
             [hereAbout] => 
-            [proInsPolicyEffDate] => 0000-00-00
-            [userName] => 
+            [proInsPolicyEffDate] => 
+            [userName] => John Closer
             [userType] => 
             [recordingDate] => 
             [payOffDate] => 
@@ -4487,29 +5912,27 @@ y thjfg
             [taxInsuranceEscrowsIncluded] => 
             [requiredConstructionReservesFinanced] => 
             [proInsCarrier] => 
-            [proInsType] => 5
+            [proInsType] => 
             [reqValuationMethod] => 
             [amountPastDueOrOwed] => 
             [prePayExcessOf20percent] => 
             [loanMadeWholly] => 
             [limitedOrNot] => 
             [balloonPayment] => 
-            [desiredFundingAmount] => 0.00
-            [purposeOfLoan] => 
-            [useOfFunds] => 
-            [haveCurrentLoanBal] => 
-            [balance] => 0.00
-            [heldWith] => 
-            [haveInvoiceToFactor] => 
-            [amount] => 0.00
             [noteSalePrice] => 
             [BPieceAmount] => 
             [securityInstrument] => 
+            [desiredFundingAmount] => 
+            [purposeOfLoan] => 
+            [useOfFunds] => 
+            [haveCurrentLoanBal] => 
+            [balance] => 
+            [heldWith] => 
+            [haveInvoiceToFactor] => 
+            [amount] => 0.00
             [displayNotes] => 
-            [fundingDate] => 0000-00-00
-            [projectCompletionDate] => 
-            [escrowStmntAnalysisDate] => 
-            [selInsNames] => Builders Risk
+            [fundingDate] => 
+            [selInsNames] => 
             [reqValMethodNames] => 
         )
 
@@ -4519,8 +5942,8 @@ y thjfg
 
     [fileHMLOEntityInfo] => Array
         (
-            [HMLOBEID] => 11483
-            [fileID] => 6310064
+            [HMLOBEID] => 78412
+            [fileID] => 6833894
             [entityName] => 
             [entityType] => 
             [ENINo] => 
@@ -4539,7 +5962,7 @@ y thjfg
             [member3Name] => 
             [member3Title] => 
             [member3Ownership] => 0
-            [recordDate] => 2020-12-29 20:10:42
+            [recordDate] => 2021-01-11 13:05:00
             [activeStatus] => 1
             [member4Name] => 
             [member4Title] => 
@@ -4570,7 +5993,7 @@ y thjfg
             [entityBillState] => 
             [entityBillZip] => 
             [entityLocation] => 
-            [CID] => 5862143
+            [CID] => 6374184
             [businessTypeEF] => 
             [member1Address] => 
             [member1Phone] => 
@@ -4671,7 +6094,7 @@ y thjfg
             [member9CreditScore] => 
             [member10CreditScore] => 
             [organizationalRef] => 
-            [dateOfFormation] => 0000-00-00
+            [dateOfFormation] => 
             [CBEID] => 0
             [dateOfOperatingAgreement] => 
             [businessCategory] => 
@@ -4737,35 +6160,35 @@ y thjfg
 
     [fileHMLOBackGroundInfo] => Array
         (
-            [HMLOBGID] => 9982
-            [fileID] => 6310064
-            [isBorUSCitizen] => Yes
+            [HMLOBGID] => 65349
+            [fileID] => 6833894
+            [isBorUSCitizen] => NA
             [isBorDecalredBankruptPastYears] => Yes
-            [isAnyBorOutstandingJudgements] => Yes
-            [hasBorAnyActiveLawsuits] => No
-            [hasBorPropertyTaxLiens] => No
-            [hasBorObligatedInForeclosure] => Yes
-            [isBorPresenltyDelinquent] => Yes
-            [isBorBorrowedDownPayment] => NA
-            [isBorIntendToOccupyPropAsPRI] => NA
-            [haveBorOtherFraudRelatedCrimes] => No
+            [isAnyBorOutstandingJudgements] => No
+            [hasBorAnyActiveLawsuits] => Yes
+            [hasBorPropertyTaxLiens] => NA
+            [hasBorObligatedInForeclosure] => NA
+            [isBorPresenltyDelinquent] => No
+            [isBorBorrowedDownPayment] => Yes
+            [isBorIntendToOccupyPropAsPRI] => Yes
+            [haveBorOtherFraudRelatedCrimes] => NA
             [isBorPersonallyGuaranteeLoan] => NA
-            [isCoBorUSCitizen] => Yes
+            [isCoBorUSCitizen] => NA
             [isCoBorDecalredBankruptPastYears] => No
-            [isAnyCoBorOutstandingJudgements] => No
+            [isAnyCoBorOutstandingJudgements] => NA
             [hasCoBorAnyActiveLawsuits] => No
-            [hasCoBorPropertyTaxLiens] => No
-            [hasCoBorObligatedInForeclosure] => No
+            [hasCoBorPropertyTaxLiens] => Yes
+            [hasCoBorObligatedInForeclosure] => NA
             [isCoBorPresenltyDelinquent] => No
             [isCoBorBorrowedDownPayment] => NA
-            [isCoBorIntendToOccupyPropAsPRI] => No
-            [haveCoBorOtherFraudRelatedCrimes] => No
+            [isCoBorIntendToOccupyPropAsPRI] => Yes
+            [haveCoBorOtherFraudRelatedCrimes] => NA
             [isCoBorPersonallyGuaranteeLoan] => NA
-            [recordDate] => 2020-12-29 20:10:42
+            [recordDate] => 2021-01-11 13:05:00
             [activeStatus] => 1
             [borBackgroundExplanation] => 
             [coBorBackgroundExplanation] => 
-            [borDecalredBankruptExpln] => 
+            [borDecalredBankruptExpln] => i declared bankruptcy
             [borOutstandingJudgementsExpln] => 
             [borActiveLawsuitsExpln] => 
             [borPropertyTaxLiensExpln] => 
@@ -4781,21 +6204,21 @@ y thjfg
             [coBorDelinquentExpln] => 
             [coBorOtherFraudRelatedCrimesExpln] => 
             [coBorBorrowedDownPaymentExpln] => 
-            [CID] => 5862143
+            [CID] => 6374184
             [borOrigin] => 
             [borVisaStatus] => 
-            [borDesignatedBeneficiaryAgreement] => No
+            [borDesignatedBeneficiaryAgreement] => 
             [borDesignatedBeneficiaryAgreementExpln] => 
-            [coBorDesignatedBeneficiaryAgreement] => No
+            [coBorDesignatedBeneficiaryAgreement] => Yes
             [coBorDesignatedBeneficiaryAgreementExpln] => 
             [marriedToBor] => 
         )
 
     [SBABackground] => Array
         (
-            [SBAID] => 244
-            [fileID] => 6310064
-            [CID] => 5862143
+            [SBAID] => 47909
+            [fileID] => 6833894
+            [CID] => 6374184
             [areyouIndictmentCriminal] => 
             [areyouIndictmentCriminalExpl] => 
             [haveYouArrested] => 
@@ -4848,10 +6271,10 @@ y thjfg
             [sbaEconomicInjuryLoanAmt] => 
             [purposeOfTheLoan] => 
             [purposeOfTheLoanOtherExpl] => 
-            [avgMonthlyPayroll] => 0.00
+            [avgMonthlyPayroll] => 
             [monthlyLoanAmount] => 0.00
             [activeStatus] => 1
-            [recordDate] => 2020-12-29 20:10:42
+            [recordDate] => 2021-01-11 13:05:00
             [applicantsPayrollCalculation] => 
             [applicantsPayrollCalculationExpl] => 
             [estimatedMonthlyPayroll] => 
@@ -4862,29 +6285,29 @@ y thjfg
 
     [fileHMLOExperienceInfo] => Array
         (
-            [HMLOEID] => 14118
-            [fileID] => 6310064
-            [haveBorREInvestmentExperience] => No
-            [borNoOfFlippingExperience] => 0
-            [borNoOfREPropertiesCompleted] => 0
-            [haveBorRehabConstructionExperience] => No
-            [borNoOfYearRehabExperience] => 0
-            [borRehabPropCompleted] => 0
-            [haveBorProjectCurrentlyInProgress] => No
-            [borNoOfProjectCurrently] => 0
-            [haveBorOwnInvestmentProperties] => No
-            [borNoOfOwnProp] => 0
-            [areBorMemberOfInvestmentClub] => No
+            [HMLOEID] => 104529
+            [fileID] => 6833894
+            [haveBorREInvestmentExperience] => NA
+            [borNoOfFlippingExperience] => 
+            [borNoOfREPropertiesCompleted] => 
+            [haveBorRehabConstructionExperience] => NA
+            [borNoOfYearRehabExperience] => 
+            [borRehabPropCompleted] => 
+            [haveBorProjectCurrentlyInProgress] => NA
+            [borNoOfProjectCurrently] => 
+            [haveBorOwnInvestmentProperties] => NA
+            [borNoOfOwnProp] => 
+            [areBorMemberOfInvestmentClub] => NA
             [borClubName] => 
             [haveCoBorREInvestmentExperience] => NA
             [coBorNoOfREPropertiesCompleted] => 0
             [haveCoBorRehabConstructionExperience] => NA
-            [coBorNoOfYearRehabExperience] => 0
-            [coBorRehabPropCompleted] => 0
+            [coBorNoOfYearRehabExperience] => 
+            [coBorRehabPropCompleted] => 
             [haveCoBorProjectCurrentlyInProgress] => NA
-            [coBorNoOfProjectCurrently] => 0
+            [coBorNoOfProjectCurrently] => 
             [haveCoBorOwnInvestmentProperties] => NA
-            [coBorNoOfOwnProp] => 0
+            [coBorNoOfOwnProp] => 
             [areCoBorMemberOfInvestmentClub] => NA
             [coBorClubName] => 
             [borREAddress1] => 
@@ -4899,7 +6322,7 @@ y thjfg
             [coBorOutcomeRE2] => 
             [coBorREAddress3] => 
             [coBorOutcomeRE3] => 
-            [recordDate] => 2020-12-29 20:10:42
+            [recordDate] => 2021-01-11 13:05:00
             [activeStatus] => 1
             [borRCAddress1] => 
             [borRCOutcome1] => 
@@ -4913,43 +6336,43 @@ y thjfg
             [coBorRCOutcome2] => 
             [coBorRCAddress3] => 
             [coBorRCOutcome3] => 
-            [CID] => 5862143
+            [CID] => 6374184
             [haveBorSquareFootage] => 
             [borNoOfSquareFeet] => 
-            [coBorNoOfFlippingExperience] => 0
-            [liquidAssets] => 0
-            [haveBorProfLicences] => No
+            [coBorNoOfFlippingExperience] => 
+            [liquidAssets] => 100000
+            [haveBorProfLicences] => 
             [borProfLicence] => 
-            [haveCoBorProfLicences] => No
+            [haveCoBorProfLicences] => 
             [coBorProfLicence] => 
-            [fullTimeRealEstateInvestor] => No
+            [fullTimeRealEstateInvestor] => 
             [coFullTimeRealEstateInvestor] => 
             [areBuilderDeveloper] => 
             [amountOfFinancing] => 
-            [amountOfFinancingTo] => 
+            [amountOfFinancingTo] => 0
             [typicalPurchasePrice] => 
-            [typicalPurchasePriceTo] => 
+            [typicalPurchasePriceTo] => 0
             [typicalConstructionCosts] => 
-            [typicalConstructionCostsTo] => 
+            [typicalConstructionCostsTo] => 0
             [typicalSalePrice] => 
-            [typicalSalePriceTo] => 
+            [typicalSalePriceTo] => 0
             [constructionDrawsPerProject] => 
-            [constructionDrawsPerProjectTo] => 
+            [constructionDrawsPerProjectTo] => 0
             [monthsPurchaseDateToFirstConst] => 
-            [monthsPurchaseDateToFirstConstTo] => 
+            [monthsPurchaseDateToFirstConstTo] => 0
             [monthsPurchaseDateUntilConst] => 
-            [monthsPurchaseDateUntilConstTo] => 
+            [monthsPurchaseDateUntilConstTo] => 0
             [monthsPurchaseDateToSaleDate] => 
-            [monthsPurchaseDateToSaleDateTo] => 
+            [monthsPurchaseDateToSaleDateTo] => 0
             [NoOfSuchProjects] => 
-            [NoOfSuchProjectsTo] => 
-            [haveBorSellPropertie] => No
-            [borNoOfProSellExperience] => 0
-            [borNoOfProSellCompleted] => 0
+            [NoOfSuchProjectsTo] => 0
+            [haveBorSellPropertie] => 
+            [borNoOfProSellExperience] => 
+            [borNoOfProSellCompleted] => 
             [borPrimaryInvestmentStrategy] => 
             [borPrimaryInvestmentStrategyExplain] => 
             [haveCoBorSellPropertie] => 
-            [coBorNoOfProSellExperience] => 0
+            [coBorNoOfProSellExperience] => 
             [coBorNoOfProSellCompleted] => 0
             [coBorPrimaryInvestmentStrategy] => 
             [coBorPrimaryInvestmentStrategyExplain] => 
@@ -4965,7 +6388,7 @@ y thjfg
             [sellPropCompletedLifetime] => 
             [geographicAreas] => 
             [overallRealEstateInvesExp] => 
-            [coBorliquidReserves] => 0
+            [coBorliquidReserves] => 
             [coBorLicenseNo] => 
         )
 
@@ -5007,10 +6430,10 @@ y thjfg
 
     [fileHMLONewLoanInfo] => Array
         (
-            [HMLIID] => 29144
-            [fileID] => 6310064
+            [HMLIID] => 155077
+            [fileID] => 6833894
             [extensionOption] => 0
-            [loanTermExpireDate] => 0000-00-00
+            [loanTermExpireDate] => 
             [isTaxesInsEscrowed] => 
             [assumability] => 
             [applicationFee] => 0.00
@@ -5018,20 +6441,20 @@ y thjfg
             [appraisalFee] => 0.00
             [drawsSetUpFee] => 0.00
             [miscellaneousFee] => 0.00
-            [estdTitleClosingFee] => 0.00
-            [originationPointsRate] => 2.000000
-            [originationPointsValue] => 14000.00
-            [brokerPointsRate] => 1.000000
-            [brokerPointsValue] => 7000.00
+            [estdTitleClosingFee] => 0
+            [originationPointsRate] => 
+            [originationPointsValue] => 0.00
+            [brokerPointsRate] => 
+            [brokerPointsValue] => 0.00
             [closingCostFinanced] => 0.00
             [rehabCostFinanced] => 0.00
-            [HMLOLender] => LendingWise-Demo 2
+            [HMLOLender] => 
             [recordDate] => 0000-00-00 00:00:00
             [interestReserves] => 0
             [percentageOfBudget] => 0.00
             [drawsFee] => 0.00
-            [originalPurchaseDate] => 0000-00-00
-            [originalPurchasePrice] => 0.00
+            [originalPurchaseDate] => 
+            [originalPurchasePrice] => 0
             [costOfImprovementsMade] => 
             [payOffMortgage1] => 0.00
             [payOffMortgage2] => 0.00
@@ -5041,23 +6464,23 @@ y thjfg
             [refinanceCurrentRate] => 0.00
             [refinanceMonthlyPayment] => 0.00
             [CashOut] => 
-            [additionalPropertyRestrictions] => 
+            [additionalPropertyRestrictions] => Yes
             [restrictionsExplain] => 
-            [actualRentsInPlace] => 0.00
+            [actualRentsInPlace] => 1000.00
             [lessActualExpenses] => 0.00
-            [grossAnnualRentLargestTenant] => 0.00
+            [grossAnnualRentLargestTenant] => 0
             [prePaymentPenaltyPercentage] => 0.00
-            [amortizationType] => Fixed
+            [amortizationType] => 
             [noUnitsOccupied] => 0
             [noOfBuildings] => 0
             [ownerOccupancyPercentage] => 0.00
-            [noOfPropertiesAcquiring] => 0
+            [noOfPropertiesAcquiring] => 2
             [cashOutAmt] => 0.00
             [datesigned] => 
             [resalePrice] => 0.00
-            [resaleClosingDate] => 0000-00-00
+            [resaleClosingDate] => 
             [initialAdvance] => 0.00
-            [secondaryFinancingAmount] => 0.00
+            [secondaryFinancingAmount] => 45000.00
             [valuationBPOFee] => 0.00
             [valuationCMAFee] => 0.00
             [valuationAVEFee] => 0.00
@@ -5077,40 +6500,40 @@ y thjfg
             [constructionHoldbackFee] => 0.00
             [thirdPartyFees] => 0.00
             [otherFee] => 0.00
-            [taxImpoundsMonth] => 0
+            [taxImpoundsMonth] => 
             [taxImpoundsMonthAmt] => 0.00
             [taxImpoundsFee] => 0.00
             [insImpoundsMonth] => 
             [insImpoundsMonthAmt] => 0.00
             [insImpoundsFee] => 0.00
-            [interestChargedFromDate] => 0000-00-00
-            [interestChargedEndDate] => 0000-00-00
+            [interestChargedFromDate] => 
+            [interestChargedEndDate] => 
             [costOfImprovementsToBeMade] => 
             [LOCTotalLoanAmt] => 0.00
-            [rehabCostPercentageFinanced] => 100
-            [downPaymentPercentage] => 0
-            [yieldSpread] => 0
+            [rehabCostPercentageFinanced] => 
+            [downPaymentPercentage] => 
+            [yieldSpread] => 
             [CORTotalLoanAmt] => 0.00
-            [CORefiLTVPercentage] => 0.00
-            [costOfCapital] => 2.300
-            [stabilizedRate] => 0.000
+            [CORefiLTVPercentage] => 
+            [costOfCapital] => 
+            [stabilizedRate] => 
             [includeCCF] => 0
-            [landValue] => 0.00
+            [landValue] => 
             [isOwnLand] => 
-            [PAExpirationDate] => 0000-00-00
-            [totalLoanAmount] => 700000.00
+            [PAExpirationDate] => 
+            [totalLoanAmount] => 154900.00
             [finalLoanAmt] => 0.00
-            [inspectionFees] => 0.00
-            [projectFeasibility] => 0.00
-            [dueDiligence] => 0.00
-            [UccLienSearch] => 0.00
-            [isFeeUpdated] => 1
+            [inspectionFees] => 
+            [projectFeasibility] => 
+            [dueDiligence] => 
+            [UccLienSearch] => 
+            [isFeeUpdated] => 
             [haveBorSquareFootage] => 
-            [borNoOfSquareFeet] => 0
+            [borNoOfSquareFeet] => 
             [haveInterestreserve] => 
-            [prepaidInterestReserve] => 0.00
-            [noOfMonthsPrepaid] => 0
-            [closingCostFinancingFee] => 0.00
+            [prepaidInterestReserve] => 
+            [noOfMonthsPrepaid] => 
+            [closingCostFinancingFee] => 
             [lien1MaturityDate] => 
             [lien2MaturityDate] => 
             [lean1CurrentDefault] => 
@@ -5120,53 +6543,49 @@ y thjfg
             [brokerDealFee] => 
             [brokerQuotedinterestRate] => 
             [accessWholesalePricing] => 
-            [desiredLoanAmount] => 900000.00
-            [attorneyFee] => 22.00
-            [extensionOptionPercentage] => 0.00
-            [escrowFees] => 0.00
-            [recordingFee] => 0.00
-            [prePaidInterest] => 0.00
-            [realEstateTaxes] => 0.00
-            [insurancePremium] => 0.00
-            [bufferAndMessengerFee] => 0.00
-            [travelNotaryFee] => 0.00
-            [underwritingFees] => 0.00
-            [propertyTax] => 0.00
-            [payOffLiensCreditors] => 0.00
-            [wireTransferFeeToTitle] => 123.00
-            [wireTransferFeeToEscrow] => 456.00
-            [pastDuePropertyTaxes] => 0.00
-            [earnestDeposit] => 0.00
-            [otherDownPayment] => 0.00
+            [desiredLoanAmount] => 
+            [attorneyFee] => 
+            [extensionOptionPercentage] => 
+            [escrowFees] => 
+            [recordingFee] => 
+            [prePaidInterest] => 
+            [realEstateTaxes] => 
+            [insurancePremium] => 
+            [bufferAndMessengerFee] => 
+            [travelNotaryFee] => 
+            [underwritingFees] => 
+            [propertyTax] => 
+            [payOffLiensCreditors] => 
+            [wireTransferFeeToTitle] => 
+            [wireTransferFeeToEscrow] => 
+            [pastDuePropertyTaxes] => 
+            [earnestDeposit] => 
+            [otherDownPayment] => 
             [isLoanPaymentAmt] => TLA
             [ownedFreeAndClear] => 
             [ownedSameEntity] => 
             [autoCalcTLAARV] => No
             [maxArvPer] => 70.00
-            [refinanceCurrentLoanBalance] => 0
-            [updatedBy] => Ayman Ali
+            [refinanceCurrentLoanBalance] => 
+            [updatedBy] => John Closer
             [updatedUserType] => Employee
-            [UID] => 11189
+            [UID] => 8722
             [approvedAcquisition] => 
             [typeOfHMLOLoanRequesting] => Purchase
-            [maxAmtToPutDown] => 0.00
+            [maxAmtToPutDown] => 
             [rehabCost] => 0.00
             [costBasis] => 0.00
-            [extensionRatePercentage] => 0.00
-            [survey] => 0.00
-            [wholeSaleAdminFee] => 0.00
-            [peerstreetPointsRate] => 0.00
-            [peerstreetPointsValue] => 0.00
+            [extensionRatePercentage] => 
+            [survey] => 
+            [wholeSaleAdminFee] => 
             [cityCountyTaxStamps] => 
-            [checkOriginationPt] => No
-            [checkBrokerPt] => No
+            [origination_based_on_total_loan_amt] => 
+            [broker_based_on_total_loan_amt] => 
             [calcInrBasedOnMonthlyPayment] => 
             [InrBasedOnMonthlyPayment] => 
             [paymentFrequency] => 
-            [origination_based_on_total_loan_amt] => 0
-            [broker_based_on_total_loan_amt] => 0
-            [vacancyFactor] => 0.00
-            [reserveFactor] => 0.00
+            [vacancyFactor] => 
+            [reserveFactor] => 
             [reserveFactoron] => 1
             [desiredInterestRateRangeFrom] => 
             [desiredInterestRateRangeTo] => 
@@ -5194,60 +6613,6 @@ y thjfg
 
     [HMLOPCPropertyType] => Array
         (
-            [0] => Array
-                (
-                    [propertyType] => 1000
-                    [myOpt] => HMLOPCPropertyType
-                )
-
-            [1] => Array
-                (
-                    [propertyType] => 1
-                    [myOpt] => HMLOPCPropertyType
-                )
-
-            [2] => Array
-                (
-                    [propertyType] => 48
-                    [myOpt] => HMLOPCPropertyType
-                )
-
-            [3] => Array
-                (
-                    [propertyType] => 4
-                    [myOpt] => HMLOPCPropertyType
-                )
-
-            [4] => Array
-                (
-                    [propertyType] => 5
-                    [myOpt] => HMLOPCPropertyType
-                )
-
-            [5] => Array
-                (
-                    [propertyType] => 1001
-                    [myOpt] => HMLOPCPropertyType
-                )
-
-            [6] => Array
-                (
-                    [propertyType] => 62
-                    [myOpt] => HMLOPCPropertyType
-                )
-
-            [7] => Array
-                (
-                    [propertyType] => 70
-                    [myOpt] => HMLOPCPropertyType
-                )
-
-            [8] => Array
-                (
-                    [propertyType] => 73
-                    [myOpt] => HMLOPCPropertyType
-                )
-
         )
 
     [HMLOPCExtnOption] => Array
@@ -5276,88 +6641,6 @@ y thjfg
 
     [HMLOPCBasicLoanInfo] => Array
         (
-            [0] => Array
-                (
-                    [BLID] => 119
-                    [PCID] => 3363
-                    [minLoanAmount] => 0
-                    [minRate] => 0.00
-                    [minPoints] => 3
-                    [maxLoanAmount] => 0
-                    [maxRate] => 0.00
-                    [maxPoints] => 0
-                    [originationPointsRate] => 2.00
-                    [originationPointsValue] => 0
-                    [brokerPointsRate] => 1.00
-                    [brokerPointsValue] => 0
-                    [applicationFee] => 0
-                    [estdTitleClosingFee] => 0
-                    [processingFee] => 0
-                    [appraisalFee] => 0
-                    [drawsSetUpFee] => 0
-                    [drawsFee] => 0
-                    [miscellaneousFee] => 0
-                    [closingCostFinanced] => 0
-                    [UID] => 11078
-                    [UType] => Employee
-                    [activeStatus] => 1
-                    [recordDate] => 2020-08-06 19:45:53
-                    [loanPgmDetails] => commercial
-                    [PCBorrCreditScoreRange] => 
-                    [valuationBPOFee] => 0
-                    [valuationAVMFee] => 0
-                    [creditReportFee] => 0
-                    [backgroundCheckFee] => 0
-                    [floodCertificateFee] => 0
-                    [documentPreparationFee] => 0
-                    [wireFee] => 0
-                    [servicingSetUpFee] => 0
-                    [taxServiceFee] => 0
-                    [floodServiceFee] => 0
-                    [inspectionFees] => 0
-                    [projectFeasibility] => 0
-                    [dueDiligence] => 0
-                    [UccLienSearch] => 0
-                    [otherFee] => 0
-                    [taxImpoundsMonth] => 0
-                    [taxImpoundsFee] => 0
-                    [taxImpoundsMonthAmt] => 0
-                    [thirdPartyFees] => 0
-                    [insImpoundsMonth] => 0
-                    [insImpoundsFee] => 0
-                    [insImpoundsMonthAmt] => 0
-                    [downPaymentPercentage] => 
-                    [rehabCostPercentageFinanced] => 
-                    [reqForLoanProUnderwriting] => %2A+Receipt+and+review+of+background+and+credit+for+borrower%2Fguarantor%2C+and+contractor%2C+if+applicable.%0D%0A%2A+Lender+to+verify+that+Borrower%28s%29+has+acceptable+cash+to+close.%0D%0A%2A+Borrower+to+provide+%28and+lender+to+review%29+most+recent+acceptable+purchase+contract+or+sale+agreement+for+property.%0D%0A%2A+Borrower+to+provide+%28and+lender+to+review%29+rehab+plans+and+budget.%0D%0A%2A+Acceptable++%28to++Lender%29++third++party++broker%27s++price++opinion++%28BPO%29++and%2For++appraisal%2C++ordered++by++Lender%2C++evidencing++as-is++value+and+after-repair-value+%28%22ARV%22%29.%0D%0A%2A+Adequate+project%2C+property+and+title+insurance%2C+as+determined+by+Lender.%0D%0A%2A+Lender++to++utilize++third++party++services++to++determine++that++all++parties++involved++in++transaction++have++no++history++of++criminal++and%2For+fraudulent+behavior.%0D%0A%2A+Lender+to+determine+if+transaction+conforms+to+federal+and+state+regulations.%0D%0A%2A+Lender+to+determine+if+transaction+conforms+to+investor+requirements.%0D%0A%2A+Lender+to+review+estimated+and+final+closing+statements+prior+to+closing+transaction.
-                    [closingCostFinancingFee] => 0
-                    [liquidAssets] => 
-                    [attorneyFee] => 22
-                    [prePaidInterest] => 0
-                    [realEstateTaxes] => 0
-                    [insurancePremium] => 0
-                    [bufferAndMessengerFee] => 0
-                    [travelNotaryFee] => 0
-                    [underwritingFees] => 0
-                    [propertyTax] => 0
-                    [escrowFees] => 0
-                    [recordingFee] => 0
-                    [payOffLiensCreditors] => 0
-                    [wireTransferFeeToTitle] => 123
-                    [wireTransferFeeToEscrow] => 456
-                    [pastDuePropertyTaxes] => 0
-                    [totalLTC] => 4
-                    [minMidFico] => 0
-                    [maxMidFico] => 850
-                    [minPropertyForFixFlop] => 0
-                    [maxPropertyForFixFlop] => 0
-                    [minPropertyForGrndConst] => 0
-                    [maxPropertyForGrndConst] => 0
-                    [enableRehabConstruction] => 1
-                    [survey] => 0
-                    [wholeSaleAdminFee] => 0
-                    [myOpt] => HMLOPCBasicLoanInfo
-                )
-
         )
 
     [PCBasicLoanTabFileIdExists] => Array
@@ -5370,73 +6653,6 @@ y thjfg
 
     [listingRealtorInfo2] => Array
         (
-            [SID] => 9979
-            [LMRId] => 6310064
-            [transAttorneyName] => 
-            [transFirmName] => 
-            [transPhone1] => 
-            [transPhone2] => 
-            [transEmail] => 
-            [transAttorneyFee] => 
-            [buyerAttorneyName] => 
-            [buyerAttorneyFname] => 
-            [buyerAttorneyPhone1] => 
-            [buyerAttorneyPhone2] => 
-            [buyerAttorneyEmail] => 
-            [buyerAttorneyFee] => 
-            [BPOContactName] => 
-            [BPOContactEmail] => 
-            [BPOPhone1] => 
-            [BPOPhone2] => 
-            [lienCompany] => 
-            [lienStatus] => 
-            [lienDate] => 
-            [lienFee] => 0
-            [titleStatus] => 
-            [titleDate] => 
-            [titleFee] => 0
-            [contractStatus] => 
-            [contractClosingDate] => 
-            [contractPrice] => 
-            [servicePrice] => 
-            [bankOfferStatus] => 
-            [mortgageCompany] => 
-            [mortgageContactName] => 
-            [mortgageEmail] => 
-            [mortgagePhone] => 
-            [mortgageClosingDate] => 
-            [relocationPayment] => 
-            [relocationFeeStatus] => 
-            [relocationPaidBy] => 
-            [appointmentDate] => 
-            [auctionDate] => 
-            [appointmentDeed] => 
-            [appointmentMortgage] => 
-            [caller] => 
-            [appraiser1MonthlyRent] => 
-            [appraiser2MonthlyRent] => 
-            [AVM1MonthlyRent] => 
-            [AVM2MonthlyRent] => 
-            [AVM3MonthlyRent] => 
-            [assessedRentValue] => 
-            [totalJudgement] => 
-            [listingType] => 
-            [houseStyle] => 
-            [openHouseDate] => 
-            [notSheduledReason] => 
-            [noOfOpenHouses] => 
-            [priceAdjusted] => 
-            [occupied] => 
-            [haveSign] => 
-            [bankNumber] => 
-            [lienAmount] => 
-            [BPOExpirationDate] => 0000-00-00
-            [intAssAppraiserName] => 
-            [intAssPhone] => 
-            [intAssEmail] => 
-            [intAssRehabBudget] => 
-            [intAssRehabbedValue] => 
-            [intAssRecommendedOffer] => 
         )
 
     [fileFUEntityInfo] => Array
@@ -5453,13 +6669,6 @@ y thjfg
 
     [WFNEmpInfo] => Array
         (
-            [11078] => Array
-                (
-                    [AID] => 11078
-                    [processorName] => dave lw111
-                    [employeeNames] => dave lw111 (Manager)
-                )
-
         )
 
     [WFNBranchInfo] => Array
@@ -5478,8 +6687,8 @@ y thjfg
         (
             [0] => Array
                 (
-                    [EIID] => 1397
-                    [LMRId] => 6310064
+                    [EIID] => 118715
+                    [LMRId] => 6833894
                     [vendorName] => 
                     [vendorPhone] => 
                     [vendorContact] => 
@@ -5498,8 +6707,8 @@ y thjfg
                     [equipmentDescription] => 
                     [term] => 
                     [userType] => Manager
-                    [createdBy] => 11189
-                    [recordDate] => 2020-12-30 16:01:02
+                    [createdBy] => 8722
+                    [recordDate] => 2021-01-11 14:18:48
                 )
 
         )
@@ -5513,8 +6722,8 @@ y thjfg
         (
             [0] => Array
                 (
-                    [AGID] => 18920
-                    [LMRId] => 6310064
+                    [AGID] => 216499
+                    [LMRId] => 6833894
                     [guarantorFName] => 
                     [guarantorLName] => 
                     [guarantorPhone] => 
@@ -5526,7 +6735,7 @@ y thjfg
                     [guarantorCity] => 
                     [guarantorState] => 
                     [guarantorZip] => 
-                    [recordDate] => 2021-01-04 21:21:35
+                    [recordDate] => 2021-01-11 14:18:48
                     [guarantorEmail] => 
                     [guarantorNote] => 
                 )
@@ -5539,8 +6748,8 @@ y thjfg
                 (
                     [0] => Array
                         (
-                            [FFGID] => 229254
-                            [LMRId] => 6310064
+                            [FFGID] => 2781725
+                            [LMRId] => 6833894
                             [userType] => B
                             [expType] => Flip
                             [propertyType] => 
@@ -5560,13 +6769,13 @@ y thjfg
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-04 21:21:34
+                            [recordDate] => 2021-01-11 14:18:47
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 229255
-                            [LMRId] => 6310064
+                            [FFGID] => 2781726
+                            [LMRId] => 6833894
                             [userType] => B
                             [expType] => Flip
                             [propertyType] => 
@@ -5586,13 +6795,13 @@ y thjfg
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-04 21:21:34
+                            [recordDate] => 2021-01-11 14:18:47
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 229256
-                            [LMRId] => 6310064
+                            [FFGID] => 2781727
+                            [LMRId] => 6833894
                             [userType] => B
                             [expType] => Flip
                             [propertyType] => 
@@ -5612,7 +6821,7 @@ y thjfg
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-04 21:21:34
+                            [recordDate] => 2021-01-11 14:18:47
                         )
 
                 )
@@ -5621,8 +6830,8 @@ y thjfg
                 (
                     [0] => Array
                         (
-                            [FFGID] => 229257
-                            [LMRId] => 6310064
+                            [FFGID] => 2781728
+                            [LMRId] => 6833894
                             [userType] => B
                             [expType] => Gup
                             [propertyType] => 
@@ -5642,13 +6851,13 @@ y thjfg
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-04 21:21:34
+                            [recordDate] => 2021-01-11 14:18:47
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 229258
-                            [LMRId] => 6310064
+                            [FFGID] => 2781729
+                            [LMRId] => 6833894
                             [userType] => B
                             [expType] => Gup
                             [propertyType] => 
@@ -5668,13 +6877,13 @@ y thjfg
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-04 21:21:34
+                            [recordDate] => 2021-01-11 14:18:47
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 229259
-                            [LMRId] => 6310064
+                            [FFGID] => 2781730
+                            [LMRId] => 6833894
                             [userType] => B
                             [expType] => Gup
                             [propertyType] => 
@@ -5694,7 +6903,7 @@ y thjfg
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-04 21:21:34
+                            [recordDate] => 2021-01-11 14:18:47
                         )
 
                 )
@@ -5703,8 +6912,8 @@ y thjfg
                 (
                     [0] => Array
                         (
-                            [FFGID] => 229260
-                            [LMRId] => 6310064
+                            [FFGID] => 2781731
+                            [LMRId] => 6833894
                             [userType] => B
                             [expType] => Sell
                             [propertyType] => 
@@ -5724,13 +6933,13 @@ y thjfg
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-04 21:21:34
+                            [recordDate] => 2021-01-11 14:18:47
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 229261
-                            [LMRId] => 6310064
+                            [FFGID] => 2781732
+                            [LMRId] => 6833894
                             [userType] => B
                             [expType] => Sell
                             [propertyType] => 
@@ -5750,13 +6959,13 @@ y thjfg
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-04 21:21:34
+                            [recordDate] => 2021-01-11 14:18:47
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 229262
-                            [LMRId] => 6310064
+                            [FFGID] => 2781733
+                            [LMRId] => 6833894
                             [userType] => B
                             [expType] => Sell
                             [propertyType] => 
@@ -5776,7 +6985,7 @@ y thjfg
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-04 21:21:34
+                            [recordDate] => 2021-01-11 14:18:47
                         )
 
                 )
@@ -5789,25 +6998,15 @@ y thjfg
 
     [sellerInfo] => Array
         (
-            [SID] => 995
-            [LMRId] => 6310064
-            [sellerinfoFirstName] => 
-            [sellerinfoLastName] => 
-            [sellerinfoEmail] => 
-            [sellerinfoPhone] => 
-            [sellerinfoAddress] => 
-            [sellerinfoCity] => 
-            [sellerinfoState] => 
-            [sellerinfoZip] => 
         )
 
     [budgetAndDrawsInfo] => Array
         (
             [0] => Array
                 (
-                    [BDID] => 6856
-                    [LMRId] => 6310064
-                    [dateRequested] => 2020-12-29
+                    [BDID] => 118182
+                    [LMRId] => 6833894
+                    [dateRequested] => 2021-01-11
                     [drawRequest] => 0
                     [drawStatus] => 
                     [drawApproved] => 0
@@ -5816,7 +7015,7 @@ y thjfg
                     [completionPer] => 0
                     [createdBy] => 
                     [userType] => 
-                    [recordDate] => 2020-12-29 20:10:43
+                    [recordDate] => 2021-01-11 13:05:01
                     [draw_notes] => 
                 )
 
@@ -5841,6 +7040,7 @@ y thjfg
             [7] => Lava
             [8] => Environmental
             [9] => Other (See Notes)
+
             [10] => None (Waiver Required)
         )
 
@@ -5856,26 +7056,6 @@ y thjfg
 
     [getInsuranceDtls] => Array
         (
-            [0] => Array
-                (
-                    [insDtlId] => 32939
-                    [fileID] => 6310064
-                    [policyType] => 
-                    [policyCarrier] => 
-                    [policyName] => 
-                    [policyNumber] => 
-                    [policyExpDate] => 
-                    [policyEffDate] => 
-                    [policyAnnualPremium] => 0
-                    [policyNote] => 
-                    [policyCoverage] => 
-                    [ckecked] => Array
-                        (
-                            [0] => 
-                        )
-
-                )
-
         )
 
     [peerStreet] => Array
@@ -5909,86 +7089,17 @@ y thjfg
 
     [contingentLiabilities] => Array
         (
-            [0] => Array
-                (
-                    [id] => 469
-                    [PCID] => 3363
-                    [lmrid] => 6310064
-                    [typeOfLiability] => Other
-                    [nameOfCompany] => IRS
-                    [monthlyPayment] => 500.00
-                    [monthsLeftToPay] => 2
-                    [clBalance] => 1,000.00
-                    [clAccount] => LIABILITY-ACC-001
-                    [clDescription] => 
-                    [status] => 1
-                    [created_by] => 11189
-                    [created_on] => 2021-01-04 00:00:00
-                )
-
-            [1] => Array
-                (
-                    [id] => 470
-                    [PCID] => 3363
-                    [lmrid] => 6310064
-                    [typeOfLiability] => Other
-                    [nameOfCompany] => HONDA
-                    [monthlyPayment] => 600.00
-                    [monthsLeftToPay] => 3
-                    [clBalance] => 1,800.00
-                    [clAccount] => LIABILITY-ACC-002
-                    [clDescription] => 
-                    [status] => 1
-                    [created_by] => 11189
-                    [created_on] => 2021-01-04 00:00:00
-                )
-
         )
 
     [estimatedProjectCost] => Array
         (
-            [id] => 109
-            [PCID] => 3363
-            [lmrid] => 6310064
-            [branchId] => 5288
-            [agentId] => 34939
-            [clientId] => 
-            [UID] => 11189
-            [URole] => Manager
-            [userName] => Ayman Ali
-            [userGroup] => Employee
-            [publicUser] => 0
-            [landAcquisition] => 
-            [newBuildingConstruction] => 
-            [constructionContingency] => 
-            [businessAcquisition] => 
-            [landAndBusinessAcquisition] => 
-            [buildingOrLeasehold] => 
-            [acquisitionOfMachineryEquipment] => 
-            [acquisitionOfFurnitureFixtures] => 
-            [inventoryPurchase] => 
-            [workingCapital] => 
-            [refinancingExistingBusinessDebt] => 
-            [franchiseFee] => 
-            [closingCost] => 
-            [otherCostText] => 
-            [otherCost] => 
-            [otherCost2] => 
-            [otherCostText2] => 
-            [estimatedProjectCost] => 
-            [lessOwnerEquityToBeInjected] => 
-            [lessSellerCarryBack] => 
-            [loanRequestedForProject] => 
-            [STATUS] => 1
-            [created_by] => 11189
-            [created_on] => 2020-12-29 20:10:41
         )
 
     [collateralArray] => Array
         (
-            [id] => 128
-            [PCID] => 3363
-            [lmrid] => 6310064
+            [id] => 20146
+            [PCID] => 1652
+            [lmrid] => 6833894
             [commercialRealEstate] => 0
             [furnitureFixtures] => 0
             [residentialRealEstate] => 0
@@ -6005,7 +7116,7 @@ y thjfg
             [other] => 0
             [noneField] => 0
             [collateralDescription] => 
-            [createdDate] => 2020-12-29 20:10:42
+            [createdDate] => 2021-01-11 13:05:00
         )
 
     [offerArray] => Array
@@ -6026,15 +7137,15 @@ y thjfg
 
     [propMgmtArray] => Array
         (
-            [id] => 33
-            [PCID] => 3363
-            [LMRId] => 6310064
-            [branchId] => 5288
-            [agentId] => 34939
+            [id] => 10955
+            [PCID] => 1652
+            [LMRId] => 6833894
+            [branchId] => 6722
+            [agentId] => 39017
             [clientId] => 
-            [UID] => 11189
+            [UID] => 8722
             [URole] => Manager
-            [userName] => Ayman Ali
+            [userName] => John Closer
             [userGroup] => Employee
             [publicUser] => 0
             [pmSubjectMarketArea] => 
@@ -6070,8 +7181,8 @@ y thjfg
             [pmPracticesActExpl] => 
             [pmOverallExperienceDesc] => 
             [activeStatus] => 1
-            [created_on] => 2020-12-29 20:10:42
-            [created_by] => 11189
+            [created_on] => 2021-01-11 13:05:00
+            [created_by] => 8722
         )
 
     [propMgmtDocsArray] => Array
