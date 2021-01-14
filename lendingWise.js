@@ -240,7 +240,7 @@ function loans(doc, data, startIndex) {
     },
   ]);
 }
-function parties(doc, data) {
+function partyBorrower(doc, data) {
   return buildMismoNodes(doc, data, "PARTIES", "PARTY", 0, [
     {
       path: ["TAXPAYER_IDENTIFIERS", "TAXPAYER_IDENTIFIER"],
@@ -262,6 +262,21 @@ function parties(doc, data) {
         { AddressUnitIdentifier: (row) => "" },
         { CityName: (row) => loanGlobal.file2Info.presentCity },
         { StateCode: (row) => loanGlobal.file2Info.presentState },
+        { PostalCode: (row) => row.previousZip },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["ADDRESS"],
+      goBack: 1,
+      nodes: [
+        { AddressType: (row) => "HOME" },
+        {
+          AddressLineText: (row) => row.previousAddress,
+        },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => row.previousCity },
+        { StateCode: (row) => row.previousState },
         { PostalCode: (row) => row.previousZip },
         { CountryCode: (row) => "USA" },
       ],
@@ -299,7 +314,7 @@ function parties(doc, data) {
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row) => row.phoneNumber }],
+      nodes: [{ ContactPointTelephoneValue: (row) => row.phoneNumber && row.phoneNumber.replace(/[^0-9]/g, '') }],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
@@ -309,7 +324,7 @@ function parties(doc, data) {
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row) => row.cellNo }],
+      nodes: [{ ContactPointTelephoneValue: (row) => row.cellNumber && row.cellNumber.replace(/[^0-9]/g, '')  }],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
@@ -319,7 +334,7 @@ function parties(doc, data) {
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row) => row.workNumber }],
+      nodes: [{ ContactPointTelephoneValue: (row) => row.workNumber && row.workNumber.replace(/[^0-9]/g, '')  }],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
@@ -553,6 +568,126 @@ function parties(doc, data) {
     },
   ]);
 }
+function partyCoBorrower(doc, data, startingIndex) {
+  return buildMismoNodes(doc, data, "PARTIES", "PARTY", startingIndex, [
+    {
+      path: ["TAXPAYER_IDENTIFIERS", "TAXPAYER_IDENTIFIER"],
+      nodes: [
+        { TaxpayerIdentifierType: (row) => "SocialSecurityNumber" },
+        {
+          TaxpayerIdentifierValue: (row) => row.coBSsnNumber,
+        },
+      ],
+    },
+    {
+      path: ["ADDRESSES", "ADDRESS"],
+      goBack: 1,
+      nodes: [
+        { AddressType: (row) => "HOME" },
+        {
+          AddressLineText: (row) => loanGlobal.file2Info.coBPresentAddress,
+        },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => loanGlobal.file2Info.coBPresentCity },
+        { StateCode: (row) => loanGlobal.file2Info.coBPresentState },
+        { PostalCode: (row) => row.coBPresentZip },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["ADDRESS"],
+      goBack: 1,
+      nodes: [
+        { AddressType: (row) => "HOME" },
+        {
+          AddressLineText: (row) => row.coBorPreviousAddress,
+        },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => row.coBorPreviousCity },
+        { StateCode: (row) => row.coBorPreviousState },
+        { PostalCode: (row) => row.coBorPreviousZip },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["ADDRESS"],
+      goBack: 2,
+      nodes: [
+        { AddressType: (row) => "MAILING" },
+        {
+          AddressLineText: (row) => row.coBorrowerMailingAddress,
+        },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => row.coBorrowerMailingCity },
+        { StateCode: (row) => row.coBorrowerMailingState },
+        { PostalCode: (row) => row.coBorrowerMailingZip },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["INDIVIDUAL", "ALIASES", "ALIAS", "NAME"],
+      goBack: 3,
+      nodes: [
+        { FirstName: (row) => row.coBorrowerFName },
+        {
+          LastName: (row) => row.coBorrowerLName,
+        },
+      ],
+    },
+    {
+      path: ["CONTACT_POINTS", "CONTACT_POINT", "CONTACT_POINT_EMAIL"],
+      goBack: 2,
+      nodes: [{ ContactPointEmailValue: (row) => row.coBorrowerEmail }],
+    },
+    {
+      path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
+      goBack: 1,
+      nodes: [{ ContactPointTelephoneValue: (row) => row.coBPhoneNumber && row.coBPhoneNumber.replace(/[^0-9]/g, '') }],
+    },
+    {
+      path: ["CONTACT_POINT_DETAIL"],
+      goBack: 2,
+      nodes: [{ ContactPointRoleType: (row) => "HOME" }],
+    },
+    {
+      path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
+      goBack: 1,
+      nodes: [{ ContactPointTelephoneValue: (row) => row.coBCellNumber && row.coBCellNumber.replace(/[^0-9]/g, '')  }],
+    },
+    {
+      path: ["CONTACT_POINT_DETAIL"],
+      goBack: 2,
+      nodes: [{ ContactPointRoleType: (row) => "MOBILE" }],
+    },
+    {
+      path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
+      goBack: 1,
+      nodes: [{ ContactPointTelephoneValue: (row) => row.coBFax && row.coBFax.replace(/[^0-9]/g, '')  }],
+    },
+    {
+      path: ["CONTACT_POINT_DETAIL"],
+      goBack: 2,
+      nodes: [{ ContactPointRoleType: (row) => "WORK" }],
+    },
+    {
+      path: ["NAME"],
+      goBack: 3,
+      nodes: [
+        { FirstName: (row) => row.coBorrowerFName },
+        { LastName: (row) => row.coBorrowerLName },
+      ],
+    },
+    {
+      path: ["ROLES", "ROLE", "ROLE_DETAIL"],
+      goBack: 1,
+      nodes: [
+        {
+          PartyRoleType: (row) => 'Cosigner',
+        },
+      ],
+    }
+  ]);
+}
 function previousEmployment(doc, data) {
   return buildMismoNodes(doc, data, "EMPLOYERS", "EMPLOYER", 0, [
     {
@@ -655,6 +790,7 @@ module.exports = {
   collaterals,
   liabilities,
   loans,
-  parties,
+  partyBorrower,
+  partyCoBorrower,
   previousEmployment,
 };

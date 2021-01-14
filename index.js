@@ -5,7 +5,8 @@ const {
   collaterals,
   liabilities,
   loans,
-  parties,
+  partyBorrower,
+  partyCoBorrower,
   previousEmployment,
 } = require("./lendingWise");
 const lwLoan = require("./assets/loan.json");
@@ -54,7 +55,11 @@ function createMismo(loan) {
   doc = loans(doc, loanData);
 
   const partyData = [loan["LMRInfo"]];
-  doc = parties(doc, partyData);
+  doc = partyBorrower(doc, partyData);
+
+  if (partyData[0].coBorrowerFName){
+    doc = partyCoBorrower(doc,partyData,1);
+  }
 
   const previousEmploymentData = loan["borEmploymentInfo"];
   doc = previousEmployment(doc, previousEmploymentData);

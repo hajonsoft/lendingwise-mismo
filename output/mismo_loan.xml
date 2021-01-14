@@ -2,8 +2,7 @@
 <MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:LMR="https://www.lendingwise.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.datamodelextension.org/Schema/ULAD ULAD_ExtensionV3_4.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
-      <CreatedDatetime>2021-01-12T16:06:17Z</CreatedDatetime>
-      <DataVersionName>Purchase Example</DataVersionName>
+      <CreatedDatetime>2021-01-14T00:29:39Z</CreatedDatetime>
     </ABOUT_VERSION>
   </ABOUT_VERSIONS>
   <DEAL_SETS>
@@ -236,6 +235,15 @@
                 <CountryCode>USA</CountryCode>
               </ADDRESS>
               <ADDRESS>
+                <AddressType>HOME</AddressType>
+                <AddressLineText>234 previous address st</AddressLineText>
+                <AddressUnitIdentifier/>
+                <CityName>prevcity</CityName>
+                <StateCode>DE</StateCode>
+                <PostalCode>34456</PostalCode>
+                <CountryCode>USA</CountryCode>
+              </ADDRESS>
+              <ADDRESS>
                 <AddressType>MAILING</AddressType>
                 <AddressLineText>345 mailing address st</AddressLineText>
                 <AddressUnitIdentifier/>
@@ -270,7 +278,7 @@
                 </CONTACT_POINT>
                 <CONTACT_POINT>
                   <CONTACT_POINT_TELEPHONE>
-                    <ContactPointTelephoneValue/>
+                    <ContactPointTelephoneValue>4445556666</ContactPointTelephoneValue>
                   </CONTACT_POINT_TELEPHONE>
                   <CONTACT_POINT_DETAIL>
                     <ContactPointRoleType>MOBILE</ContactPointRoleType>
@@ -278,7 +286,7 @@
                 </CONTACT_POINT>
                 <CONTACT_POINT>
                   <CONTACT_POINT_TELEPHONE>
-                    <ContactPointTelephoneValue>777 - 888 - 9999</ContactPointTelephoneValue>
+                    <ContactPointTelephoneValue>7778889999</ContactPointTelephoneValue>
                   </CONTACT_POINT_TELEPHONE>
                   <CONTACT_POINT_DETAIL>
                     <ContactPointRoleType>WORK</ContactPointRoleType>
@@ -383,6 +391,95 @@
                     </EMPLOYERS>
                   </GOVERNMENT_MONITORING>
                 </BORROWER>
+              </ROLE>
+            </ROLES>
+          </PARTY>
+          <PARTY SequenceNumber="2" xlink:label="PARTY_2">
+            <TAXPAYER_IDENTIFIERS>
+              <TAXPAYER_IDENTIFIER>
+                <TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
+                <TaxpayerIdentifierValue>798645654</TaxpayerIdentifierValue>
+              </TAXPAYER_IDENTIFIER>
+            </TAXPAYER_IDENTIFIERS>
+            <ADDRESSES>
+              <ADDRESS>
+                <AddressType>HOME</AddressType>
+                <AddressLineText>123 coborcurrent addr</AddressLineText>
+                <AddressUnitIdentifier/>
+                <CityName>omaha</CityName>
+                <StateCode>NE</StateCode>
+                <PostalCode/>
+                <CountryCode>USA</CountryCode>
+              </ADDRESS>
+              <ADDRESS>
+                <AddressType>HOME</AddressType>
+                <AddressLineText>845 cobprevious address st</AddressLineText>
+                <AddressUnitIdentifier/>
+                <CityName>cobprevcity</CityName>
+                <StateCode>GA</StateCode>
+                <PostalCode>86766</PostalCode>
+                <CountryCode>USA</CountryCode>
+              </ADDRESS>
+              <ADDRESS>
+                <AddressType>MAILING</AddressType>
+                <AddressLineText>5454 coborMailing st</AddressLineText>
+                <AddressUnitIdentifier/>
+                <CityName>cobMailingCity</CityName>
+                <StateCode>KS</StateCode>
+                <PostalCode>78656</PostalCode>
+                <CountryCode>USA</CountryCode>
+              </ADDRESS>
+            </ADDRESSES>
+            <INDIVIDUAL>
+              <ALIASES>
+                <ALIAS>
+                  <NAME>
+                    <FirstName>Michelle</FirstName>
+                    <LastName>Abraham</LastName>
+                  </NAME>
+                </ALIAS>
+              </ALIASES>
+              <CONTACT_POINTS>
+                <CONTACT_POINT>
+                  <CONTACT_POINT_EMAIL>
+                    <ContactPointEmailValue>coborrower@dummyemail.com</ContactPointEmailValue>
+                  </CONTACT_POINT_EMAIL>
+                </CONTACT_POINT>
+                <CONTACT_POINT>
+                  <CONTACT_POINT_TELEPHONE>
+                    <ContactPointTelephoneValue>1234567890</ContactPointTelephoneValue>
+                  </CONTACT_POINT_TELEPHONE>
+                  <CONTACT_POINT_DETAIL>
+                    <ContactPointRoleType>HOME</ContactPointRoleType>
+                  </CONTACT_POINT_DETAIL>
+                </CONTACT_POINT>
+                <CONTACT_POINT>
+                  <CONTACT_POINT_TELEPHONE>
+                    <ContactPointTelephoneValue>0987654321</ContactPointTelephoneValue>
+                  </CONTACT_POINT_TELEPHONE>
+                  <CONTACT_POINT_DETAIL>
+                    <ContactPointRoleType>MOBILE</ContactPointRoleType>
+                  </CONTACT_POINT_DETAIL>
+                </CONTACT_POINT>
+                <CONTACT_POINT>
+                  <CONTACT_POINT_TELEPHONE>
+                    <ContactPointTelephoneValue>4154544634</ContactPointTelephoneValue>
+                  </CONTACT_POINT_TELEPHONE>
+                  <CONTACT_POINT_DETAIL>
+                    <ContactPointRoleType>WORK</ContactPointRoleType>
+                  </CONTACT_POINT_DETAIL>
+                </CONTACT_POINT>
+                <NAME>
+                  <FirstName>Michelle</FirstName>
+                  <LastName>Abraham</LastName>
+                </NAME>
+              </CONTACT_POINTS>
+            </INDIVIDUAL>
+            <ROLES>
+              <ROLE>
+                <ROLE_DETAIL>
+                  <PartyRoleType>Cosigner</PartyRoleType>
+                </ROLE_DETAIL>
               </ROLE>
             </ROLES>
           </PARTY>
