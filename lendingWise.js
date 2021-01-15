@@ -314,7 +314,12 @@ function partyBorrower(doc, data) {
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row) => row.phoneNumber && row.phoneNumber.replace(/[^0-9]/g, '') }],
+      nodes: [
+        {
+          ContactPointTelephoneValue: (row) =>
+            row.phoneNumber && row.phoneNumber.replace(/[^0-9]/g, ""),
+        },
+      ],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
@@ -324,7 +329,12 @@ function partyBorrower(doc, data) {
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row) => row.cellNumber && row.cellNumber.replace(/[^0-9]/g, '')  }],
+      nodes: [
+        {
+          ContactPointTelephoneValue: (row) =>
+            row.cellNumber && row.cellNumber.replace(/[^0-9]/g, ""),
+        },
+      ],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
@@ -334,7 +344,12 @@ function partyBorrower(doc, data) {
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row) => row.workNumber && row.workNumber.replace(/[^0-9]/g, '')  }],
+      nodes: [
+        {
+          ContactPointTelephoneValue: (row) =>
+            row.workNumber && row.workNumber.replace(/[^0-9]/g, ""),
+        },
+      ],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
@@ -418,7 +433,7 @@ function partyBorrower(doc, data) {
           },
         },
         {
-          HMDARaceTypeAddtionalDescription: (row) =>'',
+          HMDARaceTypeAddtionalDescription: (row) => "",
         },
       ],
     },
@@ -454,7 +469,7 @@ function partyBorrower(doc, data) {
       nodes: [
         {
           CitizenshipResidencyType: (row) =>
-            loanGlobal["fileHMLOInfo"].borrowerCitizenship,
+            mapValue(loanGlobal["fileHMLOInfo"].borrowerCitizenship, citizenshipDiagram),
         },
         {
           IntentToOccupyType: (row) =>
@@ -642,7 +657,12 @@ function partyCoBorrower(doc, data, startingIndex) {
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row) => row.coBPhoneNumber && row.coBPhoneNumber.replace(/[^0-9]/g, '') }],
+      nodes: [
+        {
+          ContactPointTelephoneValue: (row) =>
+            row.coBPhoneNumber && row.coBPhoneNumber.replace(/[^0-9]/g, ""),
+        },
+      ],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
@@ -652,7 +672,12 @@ function partyCoBorrower(doc, data, startingIndex) {
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row) => row.coBCellNumber && row.coBCellNumber.replace(/[^0-9]/g, '')  }],
+      nodes: [
+        {
+          ContactPointTelephoneValue: (row) =>
+            row.coBCellNumber && row.coBCellNumber.replace(/[^0-9]/g, ""),
+        },
+      ],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
@@ -662,7 +687,12 @@ function partyCoBorrower(doc, data, startingIndex) {
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row) => row.coBFax && row.coBFax.replace(/[^0-9]/g, '')  }],
+      nodes: [
+        {
+          ContactPointTelephoneValue: (row) =>
+            row.coBFax && row.coBFax.replace(/[^0-9]/g, ""),
+        },
+      ],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
@@ -682,10 +712,10 @@ function partyCoBorrower(doc, data, startingIndex) {
       goBack: 1,
       nodes: [
         {
-          PartyRoleType: (row) => 'Cosigner',
+          PartyRoleType: (row) => "Cosigner",
         },
       ],
-    }
+    },
   ]);
 }
 function previousEmployment(doc, data) {
@@ -794,3 +824,19 @@ module.exports = {
   partyCoBorrower,
   previousEmployment,
 };
+
+const citizenshipDiagram = [
+  { lw: "U.S. Citizen", mismo: "USCitizen" },
+  { lw: "Perm Resident Alien", mismo: "PermanentResidentAlien" },
+  { lw: "Non-Perm Resident Alien", mismo: "NonPermanentResidentAlien" },
+];
+
+function mapValue(value, diagram) {
+  if (diagram && value) {
+    const mismo = diagram.find((x) => x.lw === value);
+    if (mismo) {
+      return mismo.mismo;
+    }
+  }
+  return "";
+}

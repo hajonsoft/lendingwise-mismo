@@ -2,7 +2,7 @@
 <MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:LMR="https://www.lendingwise.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.datamodelextension.org/Schema/ULAD ULAD_ExtensionV3_4.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
-      <CreatedDatetime>2021-01-14T00:29:39Z</CreatedDatetime>
+      <CreatedDatetime>2021-01-15T23:01:31Z</CreatedDatetime>
     </ABOUT_VERSION>
   </ABOUT_VERSIONS>
   <DEAL_SETS>
@@ -332,7 +332,7 @@
                     </GOVERNMENT_MONITORING_DETAIL>
                     <DECLARATION>
                       <DECLARATION_DETAIL>
-                        <CitizenshipResidencyType>U.S. Citizen</CitizenshipResidencyType>
+                        <CitizenshipResidencyType>USCitizen</CitizenshipResidencyType>
                         <IntentToOccupyType>Yes</IntentToOccupyType>
                         <HomeownerPastThreeYearsType/>
                         <PriorPropertyUsageType/>

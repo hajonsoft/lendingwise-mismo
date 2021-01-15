@@ -18,10 +18,13 @@ Mismo specs https://singlefamily.fanniemae.com/media/7571/display
 
 Lending wise website  https://staging.lendingwise.com/backoffice/admin.php
 
+
 login: alialiayman@gmail.com
 pass:  password123
-FileId 6310064
-suresh 
+
+
+https://www.theloanpost.com/backoffice/admin.php
+
 
 Lendingwise assets walk through  https://share.vidyard.com/watch/teMPw61LFmzdBpctUGMZX1
 
@@ -33,4 +36,5 @@ online php to javascript converter https://wtools.io/javascript-to-php-converter
 Mismo enums https://modelviewers.pilotfishtechnology.com/modelviewers/MISMO/index.html?page=https%3A//modelviewers.pilotfishtechnology.com/modelviewers/MISMO/model/Format.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.ROLES.ROLE.ROLE_DETAIL.PartyRoleType.html
 
 php and javascript https://www.youtube.com/watch?v=-3LGsHOSTec
+
 browserify index.js -o bundle.js

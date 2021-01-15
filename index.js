@@ -75,7 +75,7 @@ function createMismoTest() {
     encoding: "utf8",
     flag: "w",
   });
-  console.log(mismo);
+  // console.log(mismo);
   return mismo;
 }
 
