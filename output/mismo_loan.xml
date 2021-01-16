@@ -2,7 +2,7 @@
 <MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:LMR="https://www.lendingwise.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.datamodelextension.org/Schema/ULAD ULAD_ExtensionV3_4.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
-      <CreatedDatetime>2021-01-15T23:01:31Z</CreatedDatetime>
+      <CreatedDatetime>2021-01-16T01:08:00Z</CreatedDatetime>
     </ABOUT_VERSION>
   </ABOUT_VERSIONS>
   <DEAL_SETS>
@@ -360,35 +360,63 @@
                       <CURRENT_INCOME_ITEMS>
                         <CURRENT_INCOME_ITEM>
                           <CURRENT_INCOME_ITEM_DETAIL>
-                            <CurrentIncomeMonthlyTotalAmount>0</CurrentIncomeMonthlyTotalAmount>
-                            <EmploymentIncomeIndicator/>
-                            <IncomeType/>
+                            <CurrentIncomeMonthlyTotalAmount>5000</CurrentIncomeMonthlyTotalAmount>
+                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+                            <IncomeType>Base</IncomeType>
+                          </CURRENT_INCOME_ITEM_DETAIL>
+                        </CURRENT_INCOME_ITEM>
+                        <CURRENT_INCOME_ITEM>
+                          <CURRENT_INCOME_ITEM_DETAIL>
+                            <CurrentIncomeMonthlyTotalAmount>125</CurrentIncomeMonthlyTotalAmount>
+                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+                            <IncomeType>Bonus</IncomeType>
+                          </CURRENT_INCOME_ITEM_DETAIL>
+                        </CURRENT_INCOME_ITEM>
+                        <CURRENT_INCOME_ITEM>
+                          <CURRENT_INCOME_ITEM_DETAIL>
+                            <CurrentIncomeMonthlyTotalAmount>16</CurrentIncomeMonthlyTotalAmount>
+                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+                            <IncomeType>Other</IncomeType>
+                          </CURRENT_INCOME_ITEM_DETAIL>
+                        </CURRENT_INCOME_ITEM>
+                        <CURRENT_INCOME_ITEM>
+                          <CURRENT_INCOME_ITEM_DETAIL>
+                            <CurrentIncomeMonthlyTotalAmount>208</CurrentIncomeMonthlyTotalAmount>
+                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+                            <IncomeType>Overtime</IncomeType>
+                          </CURRENT_INCOME_ITEM_DETAIL>
+                        </CURRENT_INCOME_ITEM>
+                        <CURRENT_INCOME_ITEM>
+                          <CURRENT_INCOME_ITEM_DETAIL>
+                            <CurrentIncomeMonthlyTotalAmount>5349</CurrentIncomeMonthlyTotalAmount>
+                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+                            <IncomeType>BorrowerEstimatedTotalMonthlyIncome</IncomeType>
                           </CURRENT_INCOME_ITEM_DETAIL>
                         </CURRENT_INCOME_ITEM>
                       </CURRENT_INCOME_ITEMS>
+                      <EMPLOYERS>
+                        <EMPLOYER>
+                          <ADDRESS>
+                            <AddressLineText>123 employer st, miami fl 33333</AddressLineText>
+                            <AddressUnitIdentifier/>
+                            <CityName/>
+                            <StateCode/>
+                            <PostalCode/>
+                            <CountryCode>USA</CountryCode>
+                          </ADDRESS>
+                          <EMPLOYMENT>
+                            <EmploymentStatusType>Salary W-2</EmploymentStatusType>
+                            <EmploymentClassificationType>Salary W-2</EmploymentClassificationType>
+                            <EmploymentPositionDescription>programmer</EmploymentPositionDescription>
+                            <EmploymentStartDate>2020-01-01</EmploymentStartDate>
+                            <EmploymentTimeInLineOfWorkMonthsCount>1</EmploymentTimeInLineOfWorkMonthsCount>
+                            <EmploymentBorrowerSelfEmployedIndicator>0</EmploymentBorrowerSelfEmployedIndicator>
+                            <OwnershipInterestType/>
+                            <EmploymentMonthlyIncomeAmount/>
+                          </EMPLOYMENT>
+                        </EMPLOYER>
+                      </EMPLOYERS>
                     </CURRENT_INCOME>
-                    <EMPLOYERS>
-                      <EMPLOYER>
-                        <ADDRESS>
-                          <AddressLineText>123 employer st, miami fl 33333</AddressLineText>
-                          <AddressUnitIdentifier/>
-                          <CityName/>
-                          <StateCode/>
-                          <PostalCode/>
-                          <CountryCode>USA</CountryCode>
-                        </ADDRESS>
-                        <EMPLOYMENT>
-                          <EmploymentStatusType>Salary W-2</EmploymentStatusType>
-                          <EmploymentClassificationType>Salary W-2</EmploymentClassificationType>
-                          <EmploymentPositionDescription>programmer</EmploymentPositionDescription>
-                          <EmploymentStartDate>2020-01-01</EmploymentStartDate>
-                          <EmploymentTimeInLineOfWorkMonthsCount>1</EmploymentTimeInLineOfWorkMonthsCount>
-                          <EmploymentBorrowerSelfEmployedIndicator>0</EmploymentBorrowerSelfEmployedIndicator>
-                          <OwnershipInterestType/>
-                          <EmploymentMonthlyIncomeAmount/>
-                        </EMPLOYMENT>
-                      </EMPLOYER>
-                    </EMPLOYERS>
                   </GOVERNMENT_MONITORING>
                 </BORROWER>
               </ROLE>

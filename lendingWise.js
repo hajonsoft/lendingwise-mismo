@@ -469,7 +469,10 @@ function partyBorrower(doc, data) {
       nodes: [
         {
           CitizenshipResidencyType: (row) =>
-            mapValue(loanGlobal["fileHMLOInfo"].borrowerCitizenship, citizenshipDiagram),
+            mapValue(
+              loanGlobal["fileHMLOInfo"].borrowerCitizenship,
+              citizenshipDiagram
+            ),
         },
         {
           IntentToOccupyType: (row) =>
@@ -520,14 +523,85 @@ function partyBorrower(doc, data) {
         "CURRENT_INCOME_ITEM",
         "CURRENT_INCOME_ITEM_DETAIL",
       ],
-      goBack: 4,
+      goBack: 2,
       nodes: [
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
-            loanGlobal["LMRInfo"].borrowerMonthlyIncome,
+            loanGlobal["incomeInfo"].grossIncome1 &&
+            Math.floor(
+              parseInt(
+                loanGlobal["incomeInfo"].grossIncome1.replace(/,/g, "")
+              ) / 12
+            ),
         },
-        { EmploymentIncomeIndicator: (row) => "" },
-        { IncomeType: (row) => "" },
+        { EmploymentIncomeIndicator: (row) => "true" },
+        { IncomeType: (row) => "Base" },
+      ],
+    },
+    {
+      path: ["CURRENT_INCOME_ITEM", "CURRENT_INCOME_ITEM_DETAIL"],
+      goBack: 2,
+      nodes: [
+        {
+          CurrentIncomeMonthlyTotalAmount: (row) =>
+            loanGlobal["incomeInfo"].commissionOrBonus1 &&
+            Math.floor(parseInt(
+              loanGlobal["incomeInfo"].commissionOrBonus1.replace(/,/g, "")
+            ) / 12),
+        },
+        { EmploymentIncomeIndicator: (row) => "true" },
+        { IncomeType: (row) => "Bonus" },
+      ],
+    },
+    {
+      path: ["CURRENT_INCOME_ITEM", "CURRENT_INCOME_ITEM_DETAIL"],
+      goBack: 2,
+      nodes: [
+        {
+          CurrentIncomeMonthlyTotalAmount: (row) =>
+            loanGlobal["incomeInfo"].otherHouseHold1 &&
+            Math.floor(parseInt(
+              loanGlobal["incomeInfo"].otherHouseHold1.replace(/,/g, "")
+            ) / 12),
+        },
+        { EmploymentIncomeIndicator: (row) => "true" },
+        { IncomeType: (row) => "Other" },
+      ],
+    },
+    {
+      path: ["CURRENT_INCOME_ITEM", "CURRENT_INCOME_ITEM_DETAIL"],
+      goBack: 2,
+      nodes: [
+        {
+          CurrentIncomeMonthlyTotalAmount: (row) =>
+            loanGlobal["incomeInfo"].overtime1 &&
+            Math.floor(
+              parseInt(loanGlobal["incomeInfo"].overtime1.replace(/,/g, "")) /
+                12
+            ),
+        },
+        { EmploymentIncomeIndicator: (row) => "true" },
+        { IncomeType: (row) => "Overtime" },
+      ],
+    },
+    {
+      path: ["CURRENT_INCOME_ITEM", "CURRENT_INCOME_ITEM_DETAIL"],
+      goBack: 3,
+      nodes: [
+        {
+          CurrentIncomeMonthlyTotalAmount: (row) =>
+            totalMonthlyIncome(
+              [
+                loanGlobal["incomeInfo"].overtime1,
+                loanGlobal["incomeInfo"].otherHouseHold1,
+                loanGlobal["incomeInfo"].commissionOrBonus1,
+                loanGlobal["incomeInfo"].grossIncome1,
+              ],
+              [loanGlobal["incomeInfo"].empmonthlyincome1]
+            ),
+        },
+        { EmploymentIncomeIndicator: (row) => "true" },
+        { IncomeType: (row) => "BorrowerEstimatedTotalMonthlyIncome" },
       ],
     },
     {
@@ -573,7 +647,10 @@ function partyBorrower(doc, data) {
         },
         {
           OwnershipInterestType: (row) =>
-            loanGlobal["incomeInfo"].emptypeshare1,
+            mapValue(
+              loanGlobal["incomeInfo"].emptypeshare1,
+              ownershipInterestDiagram
+            ),
         },
         {
           EmploymentMonthlyIncomeAmount: (row) =>
@@ -831,6 +908,10 @@ const citizenshipDiagram = [
   { lw: "Non-Perm Resident Alien", mismo: "NonPermanentResidentAlien" },
 ];
 
+const ownershipInterestDiagram = [
+  { lw: "eqmorethan25", mismo: "GreaterThanOrEqualTo25Percent" },
+  { lw: "lessthan25", mismo: "LessThan25Percent" },
+];
 function mapValue(value, diagram) {
   if (diagram && value) {
     const mismo = diagram.find((x) => x.lw === value);
@@ -839,4 +920,21 @@ function mapValue(value, diagram) {
     }
   }
   return "";
+}
+
+function totalMonthlyIncome(yearlyIncomeArray, monthlyIncomeArray) {
+  let total = 0;
+  yearlyIncomeArray.forEach((i) => {
+    if (i) {
+      total += Math.floor(parseInt(i.replace(/,/g, "")) / 12);
+    }
+  });
+
+  monthlyIncomeArray.forEach((i) => {
+    if (i) {
+      total += parseInt(i.replace(/,/g, ""));
+    }
+  });
+
+  return total;
 }
