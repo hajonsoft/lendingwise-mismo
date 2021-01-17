@@ -7,6 +7,7 @@ const {
   loans,
   partyBorrower,
   partyCoBorrower,
+  partyBroker,
   previousEmployment,
 } = require("./lendingWise");
 const lwLoan = require("./assets/loan.json");
@@ -14,6 +15,7 @@ const { create } = require("xmlbuilder2");
 const { container } = require("./util");
 const moment = require("moment");
 const fs = require("fs");
+const { argv } = require("process");
 
 function createMismo(loan) {
   let doc = create({
@@ -60,6 +62,11 @@ function createMismo(loan) {
   if (partyData[0].coBorrowerFName){
     doc = partyCoBorrower(doc,partyData,1);
   }
+const brokerInfo = loan["BrokerInfo"]
+  if (brokerInfo.firstName){
+    doc = partyBroker(doc,[brokerInfo],2);
+  }
+
 
   const previousEmploymentData = loan["borEmploymentInfo"];
   doc = previousEmployment(doc, previousEmploymentData);
@@ -81,4 +88,10 @@ function createMismoTest() {
 
 global.createLendingWiseMismo = createMismoTest;
 
-createMismoTest()
+if (process.argv[2]){
+  const jsonFile = fs.readFileSync('./assets/' + process.argv[2] + '.json', 'utf-8');
+  const xml = createMismo(JSON.parse(jsonFile));
+  fs.writeFileSync('./output/' + process.argv[2] + '.xml', xml)
+} else {
+  createMismoTest()
+}

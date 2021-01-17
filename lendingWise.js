@@ -8,7 +8,7 @@ function assets(doc, data) {
       nodes: [
         { AssetAccountIdentifier: (row) => row.accountNumber },
         { AssetCashOrMarketValueAmount: (row) => row.balance },
-        { AssetType: (row) => row.accType },
+        { AssetType: (row) => mapValue(row.accType,assetTypeDiagram) },
       ],
     },
     {
@@ -60,7 +60,7 @@ function ownedProperty(doc, data, startIndex) {
           PropertyEstimatedValueAmount: (row) => row.presentMarketValue,
         },
         { PropertyCurrentUsageType: (row) => row.intendedOccupancy },
-        { PropertyUsageType: (row) => row.intendedOccupancy },
+        { PropertyUsageType: (row) => mapValue(row.intendedOccupancy,occupancyDiagram) },
         {
           PropertyUsageTypeOtherDescription: (row) => "",
         },
@@ -231,8 +231,7 @@ function loans(doc, data, startIndex) {
             loanGlobal["fileHMLONewLoanInfo"].typeOfHMLOLoanRequesting,
         },
         {
-          MortgageType: (row) =>
-            loanGlobal["fileHMLONewLoanInfo"].typeOfHMLOLoanRequesting,
+          MortgageType: (row) => "",
         },
         { NoteAmount: (row) => "" },
         { NoteRatePercent: (row) => loanGlobal["LMRInfo"].lien1Rate },
@@ -478,16 +477,16 @@ function partyBorrower(doc, data) {
           IntentToOccupyType: (row) =>
             loanGlobal["fileHMLOBackGroundInfo"].isBorIntendToOccupyPropAsPRI,
         },
-        { HomeownerPastThreeYearsType: (row) => "" },
+        { HomeownerPastThreeYearsType: (row) => "No" },
         { PriorPropertyUsageType: (row) => "" },
-        { FHASecondaryResidenceIndicator: (row) => "" },
+        { FHASecondaryResidenceIndicator: (row) => "No" },
         { PriorPropertyTitleType: (row) => "" },
-        { UndisclosedBorrowedFundsIndicator: (row) => "" },
-        { UndisclosedBorrowedFundsAmount: (row) => "" },
-        { UndisclosedMortgageApplicationIndicator: (row) => "" },
-        { UndisclosedCreditApplicationIndicator: (row) => "" },
-        { PropertyProposedCleanEnergyLienIndicator: (row) => "" },
-        { UndisclosedComakerOfNoteIndicator: (row) => "" },
+        { UndisclosedBorrowedFundsIndicator: (row) => "No" },
+        { UndisclosedBorrowedFundsAmount: (row) => "0" },
+        { UndisclosedMortgageApplicationIndicator: (row) => "No" },
+        { UndisclosedCreditApplicationIndicator: (row) => "No" },
+        { PropertyProposedCleanEnergyLienIndicator: (row) => "No" },
+        { UndisclosedComakerOfNoteIndicator: (row) => "No" },
         {
           OutstandingJudgmentsIndicator: (row) =>
             loanGlobal["fileHMLOBackGroundInfo"].isAnyBorOutstandingJudgements,
@@ -500,11 +499,11 @@ function partyBorrower(doc, data) {
           PartyToLawsuitIndicator: (row) =>
             loanGlobal["fileHMLOBackGroundInfo"].hasBorAnyActiveLawsuits,
         },
-        { PriorPropertyDeedInLieuConveyedIndicator: (row) => "" },
-        { PriorPropertyShortSaleCompletedIndicator: (row) => "" },
-        { PriorPropertyForeclosureCompletedIndicator: (row) => "" },
+        { PriorPropertyDeedInLieuConveyedIndicator: (row) => "No" },
+        { PriorPropertyShortSaleCompletedIndicator: (row) => "No" },
+        { PriorPropertyForeclosureCompletedIndicator: (row) => "No" },
         {
-          BankruptcyIndicator: (row) => "", //Removed as per Dave email Jan 7, 2021
+          BankruptcyIndicator: (row) => loanGlobal["fileHMLOBackGroundInfo"].isBorDecalredBankruptPastYears , 
         },
       ],
     },
@@ -795,6 +794,73 @@ function partyCoBorrower(doc, data, startingIndex) {
     },
   ]);
 }
+function partyBroker(doc, data, startingIndex) {
+  return buildMismoNodes(doc, data, "PARTIES", "PARTY", startingIndex, [
+    {
+      path: ["ADDRESSES", "ADDRESS"],
+      nodes: [
+        { AddressType: (row) => "WORK" },
+        {
+          AddressLineText: (row) => row.addr,
+        },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => row.city },
+        { StateCode: (row) => row.state },
+        { PostalCode: (row) => row.zipCode },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["LEGAL_ENTITY", "LEGAL_ENTITY_DETAIL"],
+      nodes: [
+        { FullName: (row) => row.company },
+      ],
+    },
+    {
+      path: ["INDIVIDUAL", "NAME"],
+      goBack:1,
+      nodes: [
+        { FirstName: (row) => row.firstName },
+        {
+          LastName: (row) => row.lastName,
+        },
+      ],
+    },
+    {
+      path: ["CONTACT_POINTS", "CONTACT_POINT", "CONTACT_POINT_EMAIL"],
+      goBack: 1,
+      nodes: [{ ContactPointEmailValue: (row) => row.email }],
+    },
+    {
+      path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
+      goBack: 5,
+      nodes: [
+        {
+          ContactPointTelephoneValue: (row) =>
+            row.phoneNumber && row.phoneNumber.replace(/[^0-9]/g, ""),
+        },
+      ],
+    },
+    {
+      path: ["ROLES", "ROLE", "ROLE_DETAIL"],
+      goBack: 1,
+      nodes: [
+        {
+          PartyRoleType: (row) => "LoanOriginator",
+        },
+      ],
+    },
+    {
+      path: ["LICENSES", "LICENSE", "LICENSE_DETAIL"],
+      nodes: [
+        {
+          LicenseIdentifier: (row) => row.NMLSLicense,
+          LicenseAuthorityLevelType: (row) => "Other",
+        },
+      ],
+    }
+  ]);
+}
 function previousEmployment(doc, data) {
   return buildMismoNodes(doc, data, "EMPLOYERS", "EMPLOYER", 0, [
     {
@@ -890,17 +956,6 @@ const loanOwnedPropertyData = (data) => {
     );
   }
 };
-module.exports = {
-  assets,
-  loanOwnedPropertyData,
-  ownedProperty,
-  collaterals,
-  liabilities,
-  loans,
-  partyBorrower,
-  partyCoBorrower,
-  previousEmployment,
-};
 
 const citizenshipDiagram = [
   { lw: "U.S. Citizen", mismo: "USCitizen" },
@@ -912,14 +967,26 @@ const ownershipInterestDiagram = [
   { lw: "eqmorethan25", mismo: "GreaterThanOrEqualTo25Percent" },
   { lw: "lessthan25", mismo: "LessThan25Percent" },
 ];
+
+const assetTypeDiagram = [
+  { lw: "cd", mismo: "Certificate of Deposit" },
+  { lw: "cash value of insurance", mismo: "Cash Value of Life Insurance" },
+];
+
+const occupancyDiagram = [
+  { lw: "primary", mismo: "PrimaryResidence" },
+  { lw: "2nd Home", mismo: "SecondHome" },
+];
+
+
 function mapValue(value, diagram) {
   if (diagram && value) {
-    const mismo = diagram.find((x) => x.lw === value);
+    const mismo = diagram.find((x) => x.lw.toLowerCase() === value.toLowerCase());
     if (mismo) {
       return mismo.mismo;
     }
   }
-  return "";
+  return value;
 }
 
 function totalMonthlyIncome(yearlyIncomeArray, monthlyIncomeArray) {
@@ -938,3 +1005,17 @@ function totalMonthlyIncome(yearlyIncomeArray, monthlyIncomeArray) {
 
   return total;
 }
+
+
+module.exports = {
+  assets,
+  loanOwnedPropertyData,
+  ownedProperty,
+  collaterals,
+  liabilities,
+  loans,
+  partyBorrower,
+  partyCoBorrower,
+  partyBroker,
+  previousEmployment,
+};

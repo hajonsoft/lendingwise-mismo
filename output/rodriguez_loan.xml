@@ -2,7 +2,7 @@
 <MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:LMR="https://www.lendingwise.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.datamodelextension.org/Schema/ULAD ULAD_ExtensionV3_4.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
-      <CreatedDatetime>2021-01-17T00:06:14Z</CreatedDatetime>
+      <CreatedDatetime>2021-01-17T00:28:32Z</CreatedDatetime>
     </ABOUT_VERSION>
   </ABOUT_VERSIONS>
   <DEAL_SETS>
@@ -10,164 +10,55 @@
       <DEAL>
         <ASSETS>
           <ASSET SequenceNumber="1" xlink:label="ASSET_1">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>ou812</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>12000</AssetCashOrMarketValueAmount>
-              <AssetType>Checking</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="2" xlink:label="ASSET_2">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>34242wfsavings</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>23000</AssetCashOrMarketValueAmount>
-              <AssetType>Savings</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="3" xlink:label="ASSET_3">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>moneymarket534535</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>21000</AssetCashOrMarketValueAmount>
-              <AssetType>Money Market</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="4" xlink:label="ASSET_4">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>cd4564235</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>500</AssetCashOrMarketValueAmount>
-              <AssetType>Certificate of Deposit</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="5" xlink:label="ASSET_5">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>stock453234</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>5000</AssetCashOrMarketValueAmount>
-              <AssetType>stocks</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="6" xlink:label="ASSET_6">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>bond67545423</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>11500</AssetCashOrMarketValueAmount>
-              <AssetType>bonds</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="7" xlink:label="ASSET_7">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>trust654564</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>4500</AssetCashOrMarketValueAmount>
-              <AssetType>trust account</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="8" xlink:label="ASSET_8">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>cashcalins856754</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>3400</AssetCashOrMarketValueAmount>
-              <AssetType>Cash Value of Life Insurance</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="9" xlink:label="ASSET_9">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>bridgeproc746534</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>3500</AssetCashOrMarketValueAmount>
-              <AssetType>bridge loan proceeds</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="10" xlink:label="ASSET_10">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>retir654674</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>45000</AssetCashOrMarketValueAmount>
-              <AssetType>retirement</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="11" xlink:label="ASSET_11">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>nonmar7565445</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>3100</AssetCashOrMarketValueAmount>
-              <AssetType>Non-Marketable Securities</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="12" xlink:label="ASSET_12">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>otherinstit64456</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>5211</AssetCashOrMarketValueAmount>
-              <AssetType>Other</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
+            <OWNED_PROPERTY>
+              <OWNED_PROPERTY_DETAIL>
+                <OwnedPropertySubjectIndicator>0</OwnedPropertySubjectIndicator>
+                <OwnedPropertyDispositionStatusType>Rental</OwnedPropertyDispositionStatusType>
+                <OwnedPropertyMaintenanceExpenseAmount>918</OwnedPropertyMaintenanceExpenseAmount>
+                <OwnedPropertyRentalIncomeGrossAmount>2983</OwnedPropertyRentalIncomeGrossAmount>
+                <OwnedPropertyRentalIncomeNetAmount>919</OwnedPropertyRentalIncomeNetAmount>
+                <OwnedPropertyLienUPBAmount>0.00</OwnedPropertyLienUPBAmount>
+              </OWNED_PROPERTY_DETAIL>
+              <PROPERTY>
+                <ADDRESS>
+                  <AddressLineText>829 SW 91 ST</AddressLineText>
+                  <AddressUnitIdentifier/>
+                  <CityName>Miami</CityName>
+                  <StateCode>FL</StateCode>
+                  <PostalCode>39398</PostalCode>
+                  <CountryCode>USA</CountryCode>
+                </ADDRESS>
+                <PROPERTY_DETAIL>
+                  <PropertyEstimatedValueAmount>2000</PropertyEstimatedValueAmount>
+                  <PropertyCurrentUsageType>Primary</PropertyCurrentUsageType>
+                  <PropertyUsageType>PrimaryResidence</PropertyUsageType>
+                  <PropertyUsageTypeOtherDescription/>
+                </PROPERTY_DETAIL>
+                <PROPERTY_VALUATIONS>
+                  <PROPERTY_VALUATION>
+                    <PROPERTY_VALUATION_DETAIL>
+                      <PropertyValuationAmount>2000</PropertyValuationAmount>
+                    </PROPERTY_VALUATION_DETAIL>
+                  </PROPERTY_VALUATION>
+                </PROPERTY_VALUATIONS>
+              </PROPERTY>
+            </OWNED_PROPERTY>
           </ASSET>
         </ASSETS>
         <COLLATERALS>
           <COLLATERAL SequenceNumber="1" xlink:label="COLLATERAL_1">
             <SUBJECT_PROPERTY>
               <ADDRESS>
-                <AddressLineText>6075 sw 106 st</AddressLineText>
+                <AddressLineText>9382 sw 18 st</AddressLineText>
                 <AddressUnitIdentifier/>
                 <CityName>Miami</CityName>
-                <StateCode>FL</StateCode>
-                <PostalCode>33156</PostalCode>
-                <CountyName>Miami-Dade</CountyName>
+                <StateCode>AZ</StateCode>
+                <PostalCode>54355</PostalCode>
+                <CountyName>Apache</CountyName>
               </ADDRESS>
               <PROPERTY_DETAIL>
                 <FinancedUnitCount/>
-                <PropertyEstimatedValueAmount>154,900.00</PropertyEstimatedValueAmount>
+                <PropertyEstimatedValueAmount>220,900.00</PropertyEstimatedValueAmount>
                 <PropertyUsageType/>
                 <FHASecondaryResidenceIndicator/>
                 <PropertyMixedUsageIndicator>0</PropertyMixedUsageIndicator>
@@ -181,7 +72,7 @@
           <LOAN SequenceNumber="1" xlink:label="LOAN_1">
             <LOAN_IDENTIFIERS>
               <LOAN_IDENTIFIER>
-                <LoanIdentifier>6833894</LoanIdentifier>
+                <LoanIdentifier>6836781</LoanIdentifier>
                 <LoanIdentifierType/>
               </LOAN_IDENTIFIER>
             </LOAN_IDENTIFIERS>
@@ -257,8 +148,8 @@
               <ALIASES>
                 <ALIAS>
                   <NAME>
-                    <FirstName>bobby</FirstName>
-                    <LastName>borrower</LastName>
+                    <FirstName>Jane</FirstName>
+                    <LastName>Rodriguez</LastName>
                   </NAME>
                 </ALIAS>
               </ALIASES>
@@ -270,7 +161,7 @@
                 </CONTACT_POINT>
                 <CONTACT_POINT>
                   <CONTACT_POINT_TELEPHONE>
-                    <ContactPointTelephoneValue>1112223333</ContactPointTelephoneValue>
+                    <ContactPointTelephoneValue>3424234234</ContactPointTelephoneValue>
                   </CONTACT_POINT_TELEPHONE>
                   <CONTACT_POINT_DETAIL>
                     <ContactPointRoleType>HOME</ContactPointRoleType>
@@ -278,7 +169,7 @@
                 </CONTACT_POINT>
                 <CONTACT_POINT>
                   <CONTACT_POINT_TELEPHONE>
-                    <ContactPointTelephoneValue>4445556666</ContactPointTelephoneValue>
+                    <ContactPointTelephoneValue>3424324244</ContactPointTelephoneValue>
                   </CONTACT_POINT_TELEPHONE>
                   <CONTACT_POINT_DETAIL>
                     <ContactPointRoleType>MOBILE</ContactPointRoleType>
@@ -286,15 +177,15 @@
                 </CONTACT_POINT>
                 <CONTACT_POINT>
                   <CONTACT_POINT_TELEPHONE>
-                    <ContactPointTelephoneValue>7778889999</ContactPointTelephoneValue>
+                    <ContactPointTelephoneValue>3243242342</ContactPointTelephoneValue>
                   </CONTACT_POINT_TELEPHONE>
                   <CONTACT_POINT_DETAIL>
                     <ContactPointRoleType>WORK</ContactPointRoleType>
                   </CONTACT_POINT_DETAIL>
                 </CONTACT_POINT>
                 <NAME>
-                  <FirstName>bobby</FirstName>
-                  <LastName>borrower</LastName>
+                  <FirstName>Jane</FirstName>
+                  <LastName>Rodriguez</LastName>
                 </NAME>
               </CONTACT_POINTS>
             </INDIVIDUAL>
@@ -422,116 +313,27 @@
               </ROLE>
             </ROLES>
           </PARTY>
-          <PARTY SequenceNumber="2" xlink:label="PARTY_2">
-            <TAXPAYER_IDENTIFIERS>
-              <TAXPAYER_IDENTIFIER>
-                <TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
-                <TaxpayerIdentifierValue>798645654</TaxpayerIdentifierValue>
-              </TAXPAYER_IDENTIFIER>
-            </TAXPAYER_IDENTIFIERS>
-            <ADDRESSES>
-              <ADDRESS>
-                <AddressType>HOME</AddressType>
-                <AddressLineText>123 coborcurrent addr</AddressLineText>
-                <AddressUnitIdentifier/>
-                <CityName>omaha</CityName>
-                <StateCode>NE</StateCode>
-                <PostalCode/>
-                <CountryCode>USA</CountryCode>
-              </ADDRESS>
-              <ADDRESS>
-                <AddressType>HOME</AddressType>
-                <AddressLineText>845 cobprevious address st</AddressLineText>
-                <AddressUnitIdentifier/>
-                <CityName>cobprevcity</CityName>
-                <StateCode>GA</StateCode>
-                <PostalCode>86766</PostalCode>
-                <CountryCode>USA</CountryCode>
-              </ADDRESS>
-              <ADDRESS>
-                <AddressType>MAILING</AddressType>
-                <AddressLineText>5454 coborMailing st</AddressLineText>
-                <AddressUnitIdentifier/>
-                <CityName>cobMailingCity</CityName>
-                <StateCode>KS</StateCode>
-                <PostalCode>78656</PostalCode>
-                <CountryCode>USA</CountryCode>
-              </ADDRESS>
-            </ADDRESSES>
-            <INDIVIDUAL>
-              <ALIASES>
-                <ALIAS>
-                  <NAME>
-                    <FirstName>Michelle</FirstName>
-                    <LastName>Abraham</LastName>
-                  </NAME>
-                </ALIAS>
-              </ALIASES>
-              <CONTACT_POINTS>
-                <CONTACT_POINT>
-                  <CONTACT_POINT_EMAIL>
-                    <ContactPointEmailValue>coborrower@dummyemail.com</ContactPointEmailValue>
-                  </CONTACT_POINT_EMAIL>
-                </CONTACT_POINT>
-                <CONTACT_POINT>
-                  <CONTACT_POINT_TELEPHONE>
-                    <ContactPointTelephoneValue>1234567890</ContactPointTelephoneValue>
-                  </CONTACT_POINT_TELEPHONE>
-                  <CONTACT_POINT_DETAIL>
-                    <ContactPointRoleType>HOME</ContactPointRoleType>
-                  </CONTACT_POINT_DETAIL>
-                </CONTACT_POINT>
-                <CONTACT_POINT>
-                  <CONTACT_POINT_TELEPHONE>
-                    <ContactPointTelephoneValue>0987654321</ContactPointTelephoneValue>
-                  </CONTACT_POINT_TELEPHONE>
-                  <CONTACT_POINT_DETAIL>
-                    <ContactPointRoleType>MOBILE</ContactPointRoleType>
-                  </CONTACT_POINT_DETAIL>
-                </CONTACT_POINT>
-                <CONTACT_POINT>
-                  <CONTACT_POINT_TELEPHONE>
-                    <ContactPointTelephoneValue>4154544634</ContactPointTelephoneValue>
-                  </CONTACT_POINT_TELEPHONE>
-                  <CONTACT_POINT_DETAIL>
-                    <ContactPointRoleType>WORK</ContactPointRoleType>
-                  </CONTACT_POINT_DETAIL>
-                </CONTACT_POINT>
-                <NAME>
-                  <FirstName>Michelle</FirstName>
-                  <LastName>Abraham</LastName>
-                </NAME>
-              </CONTACT_POINTS>
-            </INDIVIDUAL>
-            <ROLES>
-              <ROLE>
-                <ROLE_DETAIL>
-                  <PartyRoleType>Cosigner</PartyRoleType>
-                </ROLE_DETAIL>
-              </ROLE>
-            </ROLES>
-          </PARTY>
           <PARTY SequenceNumber="3" xlink:label="PARTY_3">
             <ADDRESSES>
               <ADDRESS>
                 <AddressType>WORK</AddressType>
-                <AddressLineText>dasdas</AddressLineText>
+                <AddressLineText/>
                 <AddressUnitIdentifier/>
-                <CityName>da</CityName>
+                <CityName/>
                 <StateCode/>
-                <PostalCode>1111</PostalCode>
+                <PostalCode/>
                 <CountryCode>USA</CountryCode>
               </ADDRESS>
             </ADDRESSES>
             <LEGAL_ENTITY>
               <LEGAL_ENTITY_DETAIL>
-                <FullName>daves company</FullName>
+                <FullName>daves</FullName>
               </LEGAL_ENTITY_DETAIL>
             </LEGAL_ENTITY>
             <INDIVIDUAL>
               <NAME>
                 <FirstName>daves</FirstName>
-                <LastName>smith</LastName>
+                <LastName/>
               </NAME>
               <CONTACT_POINTS>
                 <CONTACT_POINT>
@@ -540,7 +342,7 @@
                   </CONTACT_POINT_EMAIL>
                   <CONTACT_POINT>
                     <CONTACT_POINT_TELEPHONE>
-                      <ContactPointTelephoneValue>989323232</ContactPointTelephoneValue>
+                      <ContactPointTelephoneValue/>
                     </CONTACT_POINT_TELEPHONE>
                   </CONTACT_POINT>
                 </CONTACT_POINT>
@@ -554,7 +356,7 @@
                 <LICENSES>
                   <LICENSE>
                     <LICENSE_DETAIL>
-                      <LicenseIdentifier>testNMLS</LicenseIdentifier>
+                      <LicenseIdentifier/>
                     </LICENSE_DETAIL>
                   </LICENSE>
                 </LICENSES>
