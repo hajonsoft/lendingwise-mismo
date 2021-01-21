@@ -18,7 +18,7 @@ Array
             [lates3] => 0
             [lates4] => 0
             [lien1Rate] => 7.000
-            [lien1Payment] => 910.00
+            [lien1Payment] => 1,166.67
             [lien1Amount] => 
             [servicer1] => 
             [lien2Rate] => 
@@ -77,9 +77,9 @@ Array
             [monthsBehind] => 
             [receiveModification] => NA
             [receiveModificationNotes] => 
-            [userType] => Employee
-            [createdBy] => 12827
-            [createdUserType] => Employee
+            [userType] => Super
+            [createdBy] => 4217
+            [createdUserType] => Super
             [lien1BalanceDue] => 
             [lien2BalanceDue] => 
             [lien3BalanceDue] => 
@@ -182,8 +182,8 @@ Array
             [mortgageOwner1_copy] => 
             [mortgageOwner2_copy] => 
             [coBServiceProvider] => 
-            [lastUpdatedDate] => 2021-01-13 10:56:51
-            [updatedBy] => Dave Test
+            [lastUpdatedDate] => 2021-01-21 11:30:33
+            [updatedBy] => Admin
             [borrowerPinNo] => 
             [coBorrowerPinNo] => 
             [fileCopied] => 0
@@ -194,7 +194,7 @@ Array
             [coBorDriverLicenseState] => 
             [coBorDriverLicenseNumber] => 
             [maritalStatusCoBor] => Married
-            [noOfDaysStale] => -7
+            [noOfDaysStale] => -10
             [borrowerFName] => Jane
         )
 
@@ -326,7 +326,7 @@ Array
             [CID] => 
             [totalLoanAmount] => 200000
             [lenderInternalNotes] => 
-            [noOfDaysStale] => -7
+            [noOfDaysStale] => -2
             [loanTermExpireDate] => 2021-01-15
         )
 
@@ -978,7 +978,7 @@ Array
                     [LMRAEId] => 0
                     [processingCompanyId] => 1652
                     [empCreatedDate] => 2017-05-01
-                    [empLastLoginDate] => 2021-01-14 21:38:51
+                    [empLastLoginDate] => 2021-01-19 11:02:00
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => 
                     [timeZone] => EST
@@ -1058,7 +1058,7 @@ Array
                     [LMRAEId] => 0
                     [processingCompanyId] => 1652
                     [empCreatedDate] => 2021-01-11
-                    [empLastLoginDate] => 2021-01-16 17:35:35
+                    [empLastLoginDate] => 2021-01-21 11:48:53
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => 
                     [timeZone] => EST
@@ -1905,9 +1905,9 @@ Array
             [coBSocialSecurity] => 
             [borrowerTotalMonthlyIncome] => 82800
             [coborrowerTotalMonthlyIncome] => 
-            [borrowerTotalMonthlyExpenses] => 4397
+            [borrowerTotalMonthlyExpenses] => 4653.67
             [coborrowerTotalMonthlyExpenses] => 
-            [totalMonthlyExpensesBorrowerAndCoborrower] => 4397
+            [totalMonthlyExpensesBorrowerAndCoborrower] => 4653.67
             [totalMonthlyIncomeBorrowerAndCoborrower] => 82800
         )
 
@@ -2319,7 +2319,7 @@ Array
             [CID] => 6374184
             [clientFName] => bobby
             [clientLName] => borrower
-            [clientPhone] => 3424234234
+            [clientPhone] => 1112223333
             [clientCell] => 4445556666
             [clientEmail] => bobbyloan1@hshhsd.com
             [clientSecondaryEmail] => 
@@ -3750,7 +3750,7 @@ Array
         (
             [0] => Array
                 (
-                    [CIID] => 4697
+                    [CIID] => 4710
                     [LMRId] => 6836781
                     [creditorName] => alimonycompany
                     [creditorAcctNumber] => alimoney123
@@ -3797,7 +3797,7 @@ Array
 
             [1] => Array
                 (
-                    [CIID] => 4698
+                    [CIID] => 4711
                     [LMRId] => 6836781
                     [creditorName] => creditcardAmex
                     [creditorAcctNumber] => ccardamex6345
@@ -3835,6 +3835,147 @@ Array
                     [otherLiabilityNotes] => 
                     [unpaidTaxNotes] => 
                     [payAtBeforeClosing] => Yes
+                    [originalBalance] => 
+                    [creditorIsItSecured] => 
+                    [creditorAcctStatus] => 
+                    [creditorMaturityDate] => 
+                    [creditorPhone] => 
+                )
+
+            [2] => Array
+                (
+                    [CIID] => 4712
+                    [LMRId] => 6836781
+                    [creditorName] => testing
+                    [creditorAcctNumber] => 324324
+                    [creditorType] => 9
+                    [creditorAcctType] => Open
+                    [creditorMinPayment] => 23,423.00
+                    [creditorMonthsBehind] => 
+                    [creditorAcctBalance] => 24,234.00
+                    [creditorRepName] => 
+                    [creditorRepAddress] => 
+                    [creditorRepPhoneNo] => 
+                    [creditorRepFax] => 
+                    [creditorRepEmail] => 
+                    [creditorRepNotes] => 
+                    [creditorAgentName] => 
+                    [creditorAgentPhoneNo] => 
+                    [creditorAgentFax] => 
+                    [creditorAgentEmail] => 
+                    [creditorAgentNotes] => 
+                    [activeStatus] => 1
+                    [creditorRate] => 
+                    [accDesc] => 
+                    [notificationDate] => 0000-00-00
+                    [creditorAddress] => 
+                    [creditorCity] => 
+                    [creditorState] => 
+                    [creditorZip] => 
+                    [creditorAgentAddress] => 
+                    [creditorAgentCity] => 
+                    [creditorAgentState] => 
+                    [creditorAgentZip] => 
+                    [collectionAgencyName] => 
+                    [alternateName] => 
+                    [monthsLeftToPay] => 
+                    [otherLiabilityNotes] => 
+                    [unpaidTaxNotes] => 
+                    [payAtBeforeClosing] => No
+                    [originalBalance] => 
+                    [creditorIsItSecured] => 
+                    [creditorAcctStatus] => 
+                    [creditorMaturityDate] => 
+                    [creditorPhone] => 
+                )
+
+            [3] => Array
+                (
+                    [CIID] => 4713
+                    [LMRId] => 6836781
+                    [creditorName] => child test
+                    [creditorAcctNumber] => 43242
+                    [creditorType] => 3
+                    [creditorAcctType] => Open
+                    [creditorMinPayment] => 432.00
+                    [creditorMonthsBehind] => 
+                    [creditorAcctBalance] => 32.00
+                    [creditorRepName] => 
+                    [creditorRepAddress] => 
+                    [creditorRepPhoneNo] => 
+                    [creditorRepFax] => 
+                    [creditorRepEmail] => 
+                    [creditorRepNotes] => 
+                    [creditorAgentName] => 
+                    [creditorAgentPhoneNo] => 
+                    [creditorAgentFax] => 
+                    [creditorAgentEmail] => 
+                    [creditorAgentNotes] => 
+                    [activeStatus] => 1
+                    [creditorRate] => 
+                    [accDesc] => 
+                    [notificationDate] => 0000-00-00
+                    [creditorAddress] => 
+                    [creditorCity] => 
+                    [creditorState] => 
+                    [creditorZip] => 
+                    [creditorAgentAddress] => 
+                    [creditorAgentCity] => 
+                    [creditorAgentState] => 
+                    [creditorAgentZip] => 
+                    [collectionAgencyName] => 
+                    [alternateName] => 
+                    [monthsLeftToPay] => 
+                    [otherLiabilityNotes] => 
+                    [unpaidTaxNotes] => 
+                    [payAtBeforeClosing] => No
+                    [originalBalance] => 
+                    [creditorIsItSecured] => 
+                    [creditorAcctStatus] => 
+                    [creditorMaturityDate] => 
+                    [creditorPhone] => 
+                )
+
+            [4] => Array
+                (
+                    [CIID] => 4714
+                    [LMRId] => 6836781
+                    [creditorName] => chase
+                    [creditorAcctNumber] => 4242
+                    [creditorType] => 13
+                    [creditorAcctType] => Open
+                    [creditorMinPayment] => 432,423.00
+                    [creditorMonthsBehind] => 
+                    [creditorAcctBalance] => 432.00
+                    [creditorRepName] => 
+                    [creditorRepAddress] => 
+                    [creditorRepPhoneNo] => 
+                    [creditorRepFax] => 
+                    [creditorRepEmail] => 
+                    [creditorRepNotes] => 
+                    [creditorAgentName] => 
+                    [creditorAgentPhoneNo] => 
+                    [creditorAgentFax] => 
+                    [creditorAgentEmail] => 
+                    [creditorAgentNotes] => 
+                    [activeStatus] => 1
+                    [creditorRate] => 
+                    [accDesc] => 
+                    [notificationDate] => 0000-00-00
+                    [creditorAddress] => 
+                    [creditorCity] => 
+                    [creditorState] => 
+                    [creditorZip] => 
+                    [creditorAgentAddress] => 
+                    [creditorAgentCity] => 
+                    [creditorAgentState] => 
+                    [creditorAgentZip] => 
+                    [collectionAgencyName] => 
+                    [alternateName] => 
+                    [monthsLeftToPay] => 
+                    [otherLiabilityNotes] => 
+                    [unpaidTaxNotes] => 
+                    [payAtBeforeClosing] => No
                     [originalBalance] => 
                     [creditorIsItSecured] => 
                     [creditorAcctStatus] => 
@@ -6134,7 +6275,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [referringParty] => 
             [hereAbout] => 
             [proInsPolicyEffDate] => 0000-00-00
-            [userName] => 
+            [userName] => Admin
             [userType] => 
             [recordingDate] => 
             [payOffDate] => 
@@ -6749,7 +6890,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [costOfImprovementsToBeMade] => 
             [LOCTotalLoanAmt] => 0.00
             [rehabCostPercentageFinanced] => 
-            [downPaymentPercentage] => 
+            [downPaymentPercentage] => 20
             [yieldSpread] => 4.000
             [CORTotalLoanAmt] => 200000.00
             [CORefiLTVPercentage] => 
@@ -6805,9 +6946,9 @@ For question that need additional infio, make sure borrower uploads supporting d
             [autoCalcTLAARV] => No
             [maxArvPer] => 70.00
             [refinanceCurrentLoanBalance] => 
-            [updatedBy] => Dave Test
-            [updatedUserType] => Employee
-            [UID] => 12827
+            [updatedBy] => Admin 
+            [updatedUserType] => Super
+            [UID] => 4217
             [approvedAcquisition] => 
             [typeOfHMLOLoanRequesting] => Cash-Out / Refinance
             [maxAmtToPutDown] => 0.00
@@ -7065,7 +7206,7 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [EIID] => 119390
+                    [EIID] => 122008
                     [LMRId] => 6836781
                     [vendorName] => 
                     [vendorPhone] => 
@@ -7084,9 +7225,9 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [mileage] => 
                     [equipmentDescription] => 
                     [term] => 
-                    [userType] => Manager
-                    [createdBy] => 12827
-                    [recordDate] => 2021-01-13 10:56:23
+                    [userType] => Super
+                    [createdBy] => 4217
+                    [recordDate] => 2021-01-21 11:30:33
                 )
 
         )
@@ -7100,7 +7241,7 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [AGID] => 217298
+                    [AGID] => 220392
                     [LMRId] => 6836781
                     [guarantorFName] => 
                     [guarantorLName] => 
@@ -7113,7 +7254,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [guarantorCity] => 
                     [guarantorState] => 
                     [guarantorZip] => 
-                    [recordDate] => 2021-01-13 10:56:23
+                    [recordDate] => 2021-01-21 11:30:33
                     [guarantorEmail] => 
                     [guarantorNote] => 
                 )
@@ -7126,7 +7267,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2791340
+                            [FFGID] => 2828341
                             [LMRId] => 6836781
                             [userType] => B
                             [expType] => Flip
@@ -7147,12 +7288,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-13 10:56:21
+                            [recordDate] => 2021-01-21 11:30:33
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2791341
+                            [FFGID] => 2828342
                             [LMRId] => 6836781
                             [userType] => B
                             [expType] => Flip
@@ -7173,12 +7314,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-13 10:56:21
+                            [recordDate] => 2021-01-21 11:30:33
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2791342
+                            [FFGID] => 2828343
                             [LMRId] => 6836781
                             [userType] => B
                             [expType] => Flip
@@ -7199,7 +7340,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-13 10:56:21
+                            [recordDate] => 2021-01-21 11:30:33
                         )
 
                 )
@@ -7208,7 +7349,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2791343
+                            [FFGID] => 2828344
                             [LMRId] => 6836781
                             [userType] => B
                             [expType] => Gup
@@ -7229,12 +7370,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-13 10:56:21
+                            [recordDate] => 2021-01-21 11:30:33
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2791344
+                            [FFGID] => 2828345
                             [LMRId] => 6836781
                             [userType] => B
                             [expType] => Gup
@@ -7255,12 +7396,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-13 10:56:21
+                            [recordDate] => 2021-01-21 11:30:33
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2791345
+                            [FFGID] => 2828346
                             [LMRId] => 6836781
                             [userType] => B
                             [expType] => Gup
@@ -7281,7 +7422,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-13 10:56:21
+                            [recordDate] => 2021-01-21 11:30:33
                         )
 
                 )
@@ -7290,7 +7431,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2791346
+                            [FFGID] => 2828347
                             [LMRId] => 6836781
                             [userType] => B
                             [expType] => Sell
@@ -7311,12 +7452,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-13 10:56:21
+                            [recordDate] => 2021-01-21 11:30:33
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2791347
+                            [FFGID] => 2828348
                             [LMRId] => 6836781
                             [userType] => B
                             [expType] => Sell
@@ -7337,12 +7478,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-13 10:56:21
+                            [recordDate] => 2021-01-21 11:30:33
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2791348
+                            [FFGID] => 2828349
                             [LMRId] => 6836781
                             [userType] => B
                             [expType] => Sell
@@ -7363,7 +7504,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-13 10:56:21
+                            [recordDate] => 2021-01-21 11:30:33
                         )
 
                 )
@@ -7497,6 +7638,40 @@ For question that need additional infio, make sure borrower uploads supporting d
 
     [contingentLiabilities] => Array
         (
+            [0] => Array
+                (
+                    [id] => 199
+                    [PCID] => 1652
+                    [lmrid] => 6836781
+                    [typeOfLiability] => endorserOrCoMaker
+                    [nameOfCompany] => ljka
+                    [monthlyPayment] => 321.00
+                    [monthsLeftToPay] => 93
+                    [clBalance] => 9,329.00
+                    [clAccount] => 9293
+                    [clDescription] => testing
+                    [status] => 1
+                    [created_by] => 4217
+                    [created_on] => 2021-01-21 00:00:00
+                )
+
+            [1] => Array
+                (
+                    [id] => 200
+                    [PCID] => 1652
+                    [lmrid] => 6836781
+                    [typeOfLiability] => legalClaimsJudgement
+                    [nameOfCompany] => mdsak
+                    [monthlyPayment] => 9,393.00
+                    [monthsLeftToPay] => 93
+                    [clBalance] => 290.00
+                    [clAccount] => 90320
+                    [clDescription] => testing2
+                    [status] => 1
+                    [created_by] => 4217
+                    [created_on] => 2021-01-21 00:00:00
+                )
+
         )
 
     [estimatedProjectCost] => Array

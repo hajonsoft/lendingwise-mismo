@@ -2,7 +2,7 @@
 <MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:LMR="https://www.lendingwise.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.datamodelextension.org/Schema/ULAD ULAD_ExtensionV3_4.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
-      <CreatedDatetime>2021-01-17T00:28:32Z</CreatedDatetime>
+      <CreatedDatetime>2021-01-21T17:04:32Z</CreatedDatetime>
     </ABOUT_VERSION>
   </ABOUT_VERSIONS>
   <DEAL_SETS>
@@ -31,7 +31,7 @@
                 <PROPERTY_DETAIL>
                   <PropertyEstimatedValueAmount>2000</PropertyEstimatedValueAmount>
                   <PropertyCurrentUsageType>Primary</PropertyCurrentUsageType>
-                  <PropertyUsageType>PrimaryResidence</PropertyUsageType>
+                  <PropertyUsageType>Primary</PropertyUsageType>
                   <PropertyUsageTypeOtherDescription/>
                 </PROPERTY_DETAIL>
                 <PROPERTY_VALUATIONS>
@@ -68,6 +68,127 @@
             </SUBJECT_PROPERTY>
           </COLLATERAL>
         </COLLATERALS>
+        <LIABILITIES>
+          <LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Other</LiabilityType>
+              <LiabilityTypeOtherDescription>testing</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>9293</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>9,329.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>321.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount>93</LiabilityRemainingTermMonthsCount>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>ljka</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+          <LIABILITY SequenceNumber="2" xlink:label="LIABILITY_2">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Other</LiabilityType>
+              <LiabilityTypeOtherDescription>testing2</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>90320</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>290.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>9,393.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount>93</LiabilityRemainingTermMonthsCount>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>mdsak</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+          <LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Revolving</LiabilityType>
+              <LiabilityTypeOtherDescription>Alimony</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>alimoney123</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>12,000.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>1,100.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount/>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>alimonycompany</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+          <LIABILITY SequenceNumber="2" xlink:label="LIABILITY_2">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Revolving</LiabilityType>
+              <LiabilityTypeOtherDescription>Credit card</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>ccardamex6345</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>11,000.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>900.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount/>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>creditcardAmex</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+          <LIABILITY SequenceNumber="3" xlink:label="LIABILITY_3">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Installment</LiabilityType>
+              <LiabilityTypeOtherDescription>Medical</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>324324</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>24,234.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>23,423.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount/>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>testing</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+          <LIABILITY SequenceNumber="4" xlink:label="LIABILITY_4">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Revolving</LiabilityType>
+              <LiabilityTypeOtherDescription>Child Care</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>43242</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>32.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>432.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount/>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>child test</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+          <LIABILITY SequenceNumber="5" xlink:label="LIABILITY_5">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Installment</LiabilityType>
+              <LiabilityTypeOtherDescription>Student Loan</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>4242</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>432.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>432,423.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount/>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>chase</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+        </LIABILITIES>
         <LOANS>
           <LOAN SequenceNumber="1" xlink:label="LOAN_1">
             <LOAN_IDENTIFIERS>

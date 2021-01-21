@@ -77,9 +77,9 @@ Array
             [monthsBehind] => 
             [receiveModification] => NA
             [receiveModificationNotes] => 
-            [userType] => Employee
-            [createdBy] => 13096
-            [createdUserType] => Employee
+            [userType] => Super
+            [createdBy] => 4217
+            [createdUserType] => Super
             [lien1BalanceDue] => 
             [lien2BalanceDue] => 
             [lien3BalanceDue] => 
@@ -182,8 +182,8 @@ Array
             [mortgageOwner1_copy] => 
             [mortgageOwner2_copy] => 
             [coBServiceProvider] => 
-            [lastUpdatedDate] => 2021-01-20 18:11:17
-            [updatedBy] => Ayman Ali
+            [lastUpdatedDate] => 2021-01-21 11:32:02
+            [updatedBy] => Admin
             [borrowerPinNo] => 
             [coBorrowerPinNo] => 
             [fileCopied] => 0
@@ -1058,7 +1058,7 @@ Array
                     [LMRAEId] => 0
                     [processingCompanyId] => 1652
                     [empCreatedDate] => 2021-01-11
-                    [empLastLoginDate] => 2021-01-20 18:08:09
+                    [empLastLoginDate] => 2021-01-21 11:48:53
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => 
                     [timeZone] => EST
@@ -3600,7 +3600,7 @@ Array
         (
             [0] => Array
                 (
-                    [CIID] => 4699
+                    [CIID] => 4719
                     [LMRId] => 6833894
                     [creditorName] => alimonycompany
                     [creditorAcctNumber] => alimoney123
@@ -3647,7 +3647,7 @@ Array
 
             [1] => Array
                 (
-                    [CIID] => 4700
+                    [CIID] => 4720
                     [LMRId] => 6833894
                     [creditorName] => creditcardAmex
                     [creditorAcctNumber] => ccardamex6345
@@ -6037,7 +6037,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [referringParty] => 
             [hereAbout] => 
             [proInsPolicyEffDate] => 
-            [userName] => Ayman Ali
+            [userName] => Admin
             [userType] => 
             [recordingDate] => 
             [payOffDate] => 
@@ -6708,9 +6708,9 @@ For question that need additional infio, make sure borrower uploads supporting d
             [autoCalcTLAARV] => No
             [maxArvPer] => 70.00
             [refinanceCurrentLoanBalance] => 
-            [updatedBy] => Ayman Ali
-            [updatedUserType] => Employee
-            [UID] => 13096
+            [updatedBy] => Admin 
+            [updatedUserType] => Super
+            [UID] => 4217
             [approvedAcquisition] => 
             [typeOfHMLOLoanRequesting] => Purchase
             [maxAmtToPutDown] => -154900.00
@@ -6828,7 +6828,7 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [EIID] => 121893
+                    [EIID] => 122011
                     [LMRId] => 6833894
                     [vendorName] => 
                     [vendorPhone] => 
@@ -6847,9 +6847,9 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [mileage] => 
                     [equipmentDescription] => 
                     [term] => 
-                    [userType] => Processing Manager
-                    [createdBy] => 13096
-                    [recordDate] => 2021-01-20 18:11:17
+                    [userType] => Super
+                    [createdBy] => 4217
+                    [recordDate] => 2021-01-21 11:32:02
                 )
 
         )
@@ -6863,7 +6863,7 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [AGID] => 220238
+                    [AGID] => 220395
                     [LMRId] => 6833894
                     [guarantorFName] => 
                     [guarantorLName] => 
@@ -6876,7 +6876,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [guarantorCity] => 
                     [guarantorState] => 
                     [guarantorZip] => 
-                    [recordDate] => 2021-01-20 18:11:17
+                    [recordDate] => 2021-01-21 11:32:02
                     [guarantorEmail] => 
                     [guarantorNote] => 
                 )
@@ -6889,7 +6889,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2826490
+                            [FFGID] => 2828377
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Flip
@@ -6910,12 +6910,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-20 18:11:17
+                            [recordDate] => 2021-01-21 11:32:01
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2826491
+                            [FFGID] => 2828378
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Flip
@@ -6936,12 +6936,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-20 18:11:17
+                            [recordDate] => 2021-01-21 11:32:01
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2826492
+                            [FFGID] => 2828379
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Flip
@@ -6962,7 +6962,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-20 18:11:17
+                            [recordDate] => 2021-01-21 11:32:01
                         )
 
                 )
@@ -6971,7 +6971,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2826493
+                            [FFGID] => 2828380
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Gup
@@ -6992,12 +6992,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-20 18:11:17
+                            [recordDate] => 2021-01-21 11:32:01
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2826494
+                            [FFGID] => 2828381
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Gup
@@ -7018,12 +7018,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-20 18:11:17
+                            [recordDate] => 2021-01-21 11:32:01
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2826495
+                            [FFGID] => 2828382
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Gup
@@ -7044,7 +7044,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-20 18:11:17
+                            [recordDate] => 2021-01-21 11:32:01
                         )
 
                 )
@@ -7053,7 +7053,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2826496
+                            [FFGID] => 2828383
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Sell
@@ -7074,12 +7074,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-20 18:11:17
+                            [recordDate] => 2021-01-21 11:32:01
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2826497
+                            [FFGID] => 2828384
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Sell
@@ -7100,12 +7100,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-20 18:11:17
+                            [recordDate] => 2021-01-21 11:32:01
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2826498
+                            [FFGID] => 2828385
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Sell
@@ -7126,7 +7126,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-20 18:11:17
+                            [recordDate] => 2021-01-21 11:32:01
                         )
 
                 )
@@ -7230,6 +7230,40 @@ For question that need additional infio, make sure borrower uploads supporting d
 
     [contingentLiabilities] => Array
         (
+            [0] => Array
+                (
+                    [id] => 203
+                    [PCID] => 1652
+                    [lmrid] => 6833894
+                    [typeOfLiability] => ProvisionforFederalIncomeTax
+                    [nameOfCompany] => wells
+                    [monthlyPayment] => 234.00
+                    [monthsLeftToPay] => 234
+                    [clBalance] => 234.00
+                    [clAccount] => 234
+                    [clDescription] => wells1
+                    [status] => 1
+                    [created_by] => 4217
+                    [created_on] => 2021-01-21 00:00:00
+                )
+
+            [1] => Array
+                (
+                    [id] => 204
+                    [PCID] => 1652
+                    [lmrid] => 6833894
+                    [typeOfLiability] => legalClaimsJudgement
+                    [nameOfCompany] => legal1
+                    [monthlyPayment] => 3,213.00
+                    [monthsLeftToPay] => 2
+                    [clBalance] => 321.00
+                    [clAccount] => 213
+                    [clDescription] => legal1
+                    [status] => 1
+                    [created_by] => 4217
+                    [created_on] => 2021-01-21 00:00:00
+                )
+
         )
 
     [estimatedProjectCost] => Array

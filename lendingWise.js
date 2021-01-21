@@ -140,7 +140,7 @@ function contingentLiabilities(doc, data, startIndex) {
     {
       path: ["LIABILITY_DETAIL"],
       nodes: [
-        { LiabilityType: (row) => row.typeOfLiability },
+        { LiabilityType: (row) => mapValue(row.typeOfLiability,contingentLiabilityDiagram) },
         {
           LiabilityTypeOtherDescription: (row) => row.clDescription,
         },
@@ -1034,6 +1034,12 @@ const creditTypeDiagram = [
   { lw: "15", mismo: "Other" },
 ];
 
+const contingentLiabilityDiagram = [
+  { lw: "ProvisionforFederalIncomeTax", mismo: "Other" },
+  { lw: "endorserOrCoMaker", mismo: "Other" },
+  { lw: "legalClaimsJudgement", mismo: "Other" },
+  { lw: "Other", mismo: "Other" },
+];
 const liabilityOtherDescriptionDiagram = [
   { lw: "0", mismo: "Alimony" },
   { lw: "1", mismo: "Auto Loan" },

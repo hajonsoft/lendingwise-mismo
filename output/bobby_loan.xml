@@ -2,7 +2,7 @@
 <MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:LMR="https://www.lendingwise.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.datamodelextension.org/Schema/ULAD ULAD_ExtensionV3_4.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
-      <CreatedDatetime>2021-01-21T00:30:05Z</CreatedDatetime>
+      <CreatedDatetime>2021-01-21T17:04:12Z</CreatedDatetime>
     </ABOUT_VERSION>
   </ABOUT_VERSIONS>
   <DEAL_SETS>
@@ -82,6 +82,40 @@
           </COLLATERAL>
         </COLLATERALS>
         <LIABILITIES>
+          <LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Other</LiabilityType>
+              <LiabilityTypeOtherDescription>wells1</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>234</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>234.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>234.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount>234</LiabilityRemainingTermMonthsCount>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>wells</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+          <LIABILITY SequenceNumber="2" xlink:label="LIABILITY_2">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Other</LiabilityType>
+              <LiabilityTypeOtherDescription>legal1</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>213</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>321.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>3,213.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount>2</LiabilityRemainingTermMonthsCount>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>legal1</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
           <LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
             <LIABILITY_DETAIL>
               <LiabilityType>Revolving</LiabilityType>
