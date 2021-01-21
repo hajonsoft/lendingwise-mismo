@@ -2,7 +2,7 @@
 <MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:LMR="https://www.lendingwise.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.datamodelextension.org/Schema/ULAD ULAD_ExtensionV3_4.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
-      <CreatedDatetime>2021-01-17T00:28:15Z</CreatedDatetime>
+      <CreatedDatetime>2021-01-21T00:30:05Z</CreatedDatetime>
     </ABOUT_VERSION>
   </ABOUT_VERSIONS>
   <DEAL_SETS>
@@ -11,8 +11,8 @@
         <ASSETS>
           <ASSET SequenceNumber="1" xlink:label="ASSET_1">
             <ASSET_DETAIL>
-              <AssetAccountIdentifier>ou812</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>12000</AssetCashOrMarketValueAmount>
+              <AssetAccountIdentifier>Ayman001</AssetAccountIdentifier>
+              <AssetCashOrMarketValueAmount>1000</AssetCashOrMarketValueAmount>
               <AssetType>Checking</AssetType>
             </ASSET_DETAIL>
             <ASSET_HOLDER>
@@ -23,8 +23,8 @@
           </ASSET>
           <ASSET SequenceNumber="2" xlink:label="ASSET_2">
             <ASSET_DETAIL>
-              <AssetAccountIdentifier>34242wfsavings</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>23000</AssetCashOrMarketValueAmount>
+              <AssetAccountIdentifier>ayman002</AssetAccountIdentifier>
+              <AssetCashOrMarketValueAmount>1500</AssetCashOrMarketValueAmount>
               <AssetType>Savings</AssetType>
             </ASSET_DETAIL>
             <ASSET_HOLDER>
@@ -35,9 +35,9 @@
           </ASSET>
           <ASSET SequenceNumber="3" xlink:label="ASSET_3">
             <ASSET_DETAIL>
-              <AssetAccountIdentifier>moneymarket534535</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>21000</AssetCashOrMarketValueAmount>
-              <AssetType>Money Market</AssetType>
+              <AssetAccountIdentifier>ayman003</AssetAccountIdentifier>
+              <AssetCashOrMarketValueAmount>2000</AssetCashOrMarketValueAmount>
+              <AssetType>Certificate of Deposit</AssetType>
             </ASSET_DETAIL>
             <ASSET_HOLDER>
               <NAME>
@@ -47,105 +47,9 @@
           </ASSET>
           <ASSET SequenceNumber="4" xlink:label="ASSET_4">
             <ASSET_DETAIL>
-              <AssetAccountIdentifier>cd4564235</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>500</AssetCashOrMarketValueAmount>
-              <AssetType>Certificate of Deposit</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="5" xlink:label="ASSET_5">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>stock453234</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>5000</AssetCashOrMarketValueAmount>
-              <AssetType>stocks</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="6" xlink:label="ASSET_6">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>bond67545423</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>11500</AssetCashOrMarketValueAmount>
-              <AssetType>bonds</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="7" xlink:label="ASSET_7">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>trust654564</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>4500</AssetCashOrMarketValueAmount>
-              <AssetType>trust account</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="8" xlink:label="ASSET_8">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>cashcalins856754</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>3400</AssetCashOrMarketValueAmount>
-              <AssetType>Cash Value of Life Insurance</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="9" xlink:label="ASSET_9">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>bridgeproc746534</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>3500</AssetCashOrMarketValueAmount>
-              <AssetType>bridge loan proceeds</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="10" xlink:label="ASSET_10">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>retir654674</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>45000</AssetCashOrMarketValueAmount>
-              <AssetType>retirement</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="11" xlink:label="ASSET_11">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>nonmar7565445</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>3100</AssetCashOrMarketValueAmount>
-              <AssetType>Non-Marketable Securities</AssetType>
-            </ASSET_DETAIL>
-            <ASSET_HOLDER>
-              <NAME>
-                <FullName/>
-              </NAME>
-            </ASSET_HOLDER>
-          </ASSET>
-          <ASSET SequenceNumber="12" xlink:label="ASSET_12">
-            <ASSET_DETAIL>
-              <AssetAccountIdentifier>otherinstit64456</AssetAccountIdentifier>
-              <AssetCashOrMarketValueAmount>5211</AssetCashOrMarketValueAmount>
-              <AssetType>Other</AssetType>
+              <AssetAccountIdentifier>ayman004</AssetAccountIdentifier>
+              <AssetCashOrMarketValueAmount>2500</AssetCashOrMarketValueAmount>
+              <AssetType>Money Market</AssetType>
             </ASSET_DETAIL>
             <ASSET_HOLDER>
               <NAME>
@@ -177,6 +81,42 @@
             </SUBJECT_PROPERTY>
           </COLLATERAL>
         </COLLATERALS>
+        <LIABILITIES>
+          <LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Revolving</LiabilityType>
+              <LiabilityTypeOtherDescription>Alimony</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>alimoney123</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>12,000.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>1,100.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount/>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>alimonycompany</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+          <LIABILITY SequenceNumber="2" xlink:label="LIABILITY_2">
+            <LIABILITY_DETAIL>
+              <LiabilityType>Revolving</LiabilityType>
+              <LiabilityTypeOtherDescription>Credit card</LiabilityTypeOtherDescription>
+              <LiabilityAccountIdentifier>ccardamex6345</LiabilityAccountIdentifier>
+              <LiabilityUnpaidBalanceAmount>11,000.00</LiabilityUnpaidBalanceAmount>
+              <LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
+              <LiabilityMonthlyPaymentAmount>900.00</LiabilityMonthlyPaymentAmount>
+              <LiabilityRemainingTermMonthsCount/>
+              <LiabilityExclusionIndicator>true</LiabilityExclusionIndicator>
+            </LIABILITY_DETAIL>
+            <LIABILITY_HOLDER>
+              <NAME>
+                <FullName>creditcardAmex</FullName>
+              </NAME>
+            </LIABILITY_HOLDER>
+          </LIABILITY>
+        </LIABILITIES>
         <LOANS>
           <LOAN SequenceNumber="1" xlink:label="LOAN_1">
             <LOAN_IDENTIFIERS>
@@ -515,23 +455,23 @@
             <ADDRESSES>
               <ADDRESS>
                 <AddressType>WORK</AddressType>
-                <AddressLineText>dasdas</AddressLineText>
+                <AddressLineText/>
                 <AddressUnitIdentifier/>
-                <CityName>da</CityName>
+                <CityName/>
                 <StateCode/>
-                <PostalCode>1111</PostalCode>
+                <PostalCode/>
                 <CountryCode>USA</CountryCode>
               </ADDRESS>
             </ADDRESSES>
             <LEGAL_ENTITY>
               <LEGAL_ENTITY_DETAIL>
-                <FullName>daves company</FullName>
+                <FullName>daves</FullName>
               </LEGAL_ENTITY_DETAIL>
             </LEGAL_ENTITY>
             <INDIVIDUAL>
               <NAME>
                 <FirstName>daves</FirstName>
-                <LastName>smith</LastName>
+                <LastName/>
               </NAME>
               <CONTACT_POINTS>
                 <CONTACT_POINT>
@@ -540,7 +480,7 @@
                   </CONTACT_POINT_EMAIL>
                   <CONTACT_POINT>
                     <CONTACT_POINT_TELEPHONE>
-                      <ContactPointTelephoneValue>989323232</ContactPointTelephoneValue>
+                      <ContactPointTelephoneValue/>
                     </CONTACT_POINT_TELEPHONE>
                   </CONTACT_POINT>
                 </CONTACT_POINT>
@@ -554,7 +494,7 @@
                 <LICENSES>
                   <LICENSE>
                     <LICENSE_DETAIL>
-                      <LicenseIdentifier>testNMLS</LicenseIdentifier>
+                      <LicenseIdentifier/>
                     </LICENSE_DETAIL>
                   </LICENSE>
                 </LICENSES>

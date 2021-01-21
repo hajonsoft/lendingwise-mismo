@@ -4,7 +4,7 @@ Array
         (
             [LMRId] => 6833894
             [brokerNumber] => 39017
-            [secondaryBrokerNumber] => 
+            [secondaryBrokerNumber] => 46661
             [FBRID] => 6722
             [FPCID] => 1652
             [borrowerName] => bobby
@@ -78,7 +78,7 @@ Array
             [receiveModification] => NA
             [receiveModificationNotes] => 
             [userType] => Employee
-            [createdBy] => 8722
+            [createdBy] => 13096
             [createdUserType] => Employee
             [lien1BalanceDue] => 
             [lien2BalanceDue] => 
@@ -182,8 +182,8 @@ Array
             [mortgageOwner1_copy] => 
             [mortgageOwner2_copy] => 
             [coBServiceProvider] => 
-            [lastUpdatedDate] => 2021-01-11 14:18:48
-            [updatedBy] => John Closer
+            [lastUpdatedDate] => 2021-01-20 18:11:17
+            [updatedBy] => Ayman Ali
             [borrowerPinNo] => 
             [coBorrowerPinNo] => 
             [fileCopied] => 0
@@ -194,7 +194,7 @@ Array
             [coBorDriverLicenseState] => 
             [coBorDriverLicenseNumber] => 
             [maritalStatusCoBor] => Married
-            [noOfDaysStale] => -9
+            [noOfDaysStale] => -10
             [borrowerFName] => bobby
         )
 
@@ -215,7 +215,7 @@ Array
             [noticeAccelerationDate] => 0000-00-00
             [driverLicenseState] => 
             [gender] => 
-            [methodOfContact] => 
+            [methodOfContact] => phone
             [timeToContact] => 
             [bestTime] => 
             [transferOfServicingDate] => 
@@ -324,7 +324,7 @@ Array
             [screenerName] => 
             [projectName] => ayman1
             [CID] => 
-            [totalLoanAmount] => 154900
+            [totalLoanAmount] => -154900
             [lenderInternalNotes] => 
             [noOfDaysStale] => 
             [loanTermExpireDate] => 
@@ -461,6 +461,131 @@ Array
     [dummyBrokerId] => 46774
     [SecondaryBrokerInfo] => Array
         (
+            [userNumber] => 46661
+            [userName] => 
+            [pwd] => 123456
+            [firstName] => Sainath
+            [lastName] => Loanofficer
+            [email] => sainathloanofficer@lendingwise.com
+            [addr] => Hyderabad
+            [city] => City
+            [state] => HI
+            [zipCode] => 500031
+            [externalBroker] => 1
+            [phoneNumber] => 12345678901234
+            [cellNumber] => 1232345344
+            [fax] => 2342345234
+            [promoCode] => 
+            [company] => Lenidngwise
+            [registerDate] => 2020-12-08
+            [expireDate] => 0000-00-00
+            [planType] => 
+            [status] => 1
+            [dateOfInvite] => 
+            [dateOfUpdate] => 
+            [emailStatus] => 0
+            [referralID] => BR
+            [agreedTC] => 1
+            [position] => 
+            [mgrID] => 0
+            [eStatus] => 0
+            [lastLogin] => 
+            [suiteNumber] => 34534
+            [surveyPosition] => 
+            [surveyExp] => 
+            [noOfMortgageBropkers] => 
+            [surveyCompDesc] => 
+            [surveyPrefPerson] => 
+            [significantPerson] => 
+            [surveyAEProb] => 
+            [surveyOnlineTool] => 
+            [surveyAltaPgm] => 
+            [totNoOfLenders] => 0
+            [conformingLenders] => 
+            [AltLenders] => 
+            [subPrimeLenders] => 
+            [hardMoneyLenders] => 
+            [commercialLenders] => 
+            [optArmLenders] => 
+            [noDocLoanLenders] => 
+            [membership] => B
+            [paymentStatus] => Unpaid
+            [ARBSubscriptionStatus] => 
+            [AEPartnerCode] => 0
+            [referralCode] => 1
+            [receiveUpdates] => 1
+            [receiveNews] => 1
+            [hearAbout] => 
+            [sendHighlights] => 1
+            [surveyMonthlyLoan] => 
+            [FHAApproved] => 
+            [principalBroker] => 0
+            [reminderScheduleDate] => 
+            [LMRView] => 0
+            [receiveLMInfo] => 0
+            [LMRAEID] => 0
+            [regFrom] => LM
+            [privateBroker] => 0
+            [allowAgentToAccessLMRDocs] => 1
+            [allowFreeLMR] => 0
+            [url] => 
+            [allowAgentToSendHomeownerLink] => 1
+            [allowAgentToEditLMRFile] => 0
+            [allowAgentToLogin] => 0
+            [serviceProvider] => 
+            [allowedToUpdateFiles] => 0
+            [allowToAccessPrivateNotes] => 0
+            [timeZone] => HST
+            [sendNewDealAlert] => 1
+            [userIPAddress] => 
+            [allowToSendMassEmail] => 1
+            [allowAgentToCreateFiles] => 1
+            [allowAgentToCreateTasks] => 1
+            [allowAgentToSeeDashboard] => 1
+            [accessRestriction] => 0
+            [allowedToDeleteUplodedDocs] => 1
+            [allowedToEditOwnNotes] => 1
+            [agentNotes] => 
+            [seeBilling] => 1
+            [permissionToREST] => 1
+            [allowedToExcelReport] => 0
+            [changeDIYPlan] => 1
+            [isPrimary] => 0
+            [fluidLayout] => 0
+            [subscribeToHOME] => 0
+            [allowToLASubmit] => 0
+            [allowEmailCampaign] => 1
+            [allowToSendFax] => 0
+            [allowAgentToEditCommission] => 1
+            [allowAgentToSeeCommission] => 1
+            [allowToSendFileDesignation] => 1
+            [allowAgentToSeePublicNotes] => 1
+            [allowToCFPBSubmit] => 0
+            [allowToViewCFPBPipeline] => 0
+            [allowToAccessRAM] => 0
+            [allowToSendMarketingEmailForBRBO] => 0
+            [TAC] => 
+            [thankMsg] => 
+            [thankMsgSV] => 
+            [allowToSeeWebForms] => 1
+            [license] => 123
+            [eniNumber] => 
+            [brokerPartnerType] => 
+            [prefCommunication] => email
+            [allowToEditCCInfo] => 0
+            [allowEditToIR] => 0
+            [allowWorkflowEdit] => 0
+            [allowAgentToGetBorrowerUploadDocsNotification] => 1
+            [allowToLockLoanFileAgent] => 0
+            [allowToViewMarketPlace] => 1
+            [allowToCreateAloware] => 0
+            [allowToupdateFileAndClient] => 
+            [website] => www.durgaprasad.com
+            [NMLSLicense] => 
+            [DRE] => 
+            [thirdPartyServices] => 0
+            [shareThisFile] => 0
+            [allowToSubmitOffer] => 1
         )
 
     [BranchInfo] => Array
@@ -853,7 +978,7 @@ Array
                     [LMRAEId] => 0
                     [processingCompanyId] => 1652
                     [empCreatedDate] => 2017-05-01
-                    [empLastLoginDate] => 2021-01-11 12:49:14
+                    [empLastLoginDate] => 2021-01-19 11:02:00
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => 
                     [timeZone] => EST
@@ -933,7 +1058,7 @@ Array
                     [LMRAEId] => 0
                     [processingCompanyId] => 1652
                     [empCreatedDate] => 2021-01-11
-                    [empLastLoginDate] => 2021-01-12 10:51:32
+                    [empLastLoginDate] => 2021-01-20 18:08:09
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => 
                     [timeZone] => EST
@@ -1299,6 +1424,206 @@ Array
 
     [PCCheckListInfo] => Array
         (
+            [HMLO] => Array
+                (
+                    [0] => Array
+                        (
+                            [PCMID] => 1271544
+                            [PCID] => 1652
+                            [docName] => Borrower-Bank Statements
+                            [dStatus] => 1
+                            [serviceType] => 100393
+                            [moduleType] => HMLO
+                            [createdDate] => 2021-01-13 10:41:22
+                            [displayOrder] => 0
+                            [MFCID] => 0
+                            [requiredFor] => 
+                            [PCMID_X] => 
+                            [description] => We requires last 2 months of statements to show 3 months reserves for the mortgage payment.
+                            [coBorrowerRelatedReqdoc] => 0
+                            [rehabRelatedReqdoc] => 0
+                            [noCrossCollRelatedReqdoc] => 0
+                            [usCitizenRelatedReqdoc] => 0
+                            [refDocName] => 
+                            [refDocUrl] => 
+                            [PRID] => 4963667
+                            [requiredBy] => Borrower
+                            [UID] => 12827
+                            [URole] => Employee
+                            [recordDate] => 2021-01-13 10:41:22
+                            [activeStatus] => 1
+                        )
+
+                    [1] => Array
+                        (
+                            [PCMID] => 1271545
+                            [PCID] => 1652
+                            [docName] => Condo Questionairre
+                            [dStatus] => 1
+                            [serviceType] => 100393
+                            [moduleType] => HMLO
+                            [createdDate] => 2021-01-13 10:41:30
+                            [displayOrder] => 0
+                            [MFCID] => 0
+                            [requiredFor] => 
+                            [PCMID_X] => 
+                            [description] => 
+                            [coBorrowerRelatedReqdoc] => 0
+                            [rehabRelatedReqdoc] => 0
+                            [noCrossCollRelatedReqdoc] => 0
+                            [usCitizenRelatedReqdoc] => 0
+                            [refDocName] => 
+                            [refDocUrl] => 
+                            [PRID] => 4963787
+                            [requiredBy] => Borrower
+                            [UID] => 12827
+                            [URole] => Employee
+                            [recordDate] => 2021-01-13 10:41:30
+                            [activeStatus] => 1
+                        )
+
+                    [2] => Array
+                        (
+                            [PCMID] => 1271546
+                            [PCID] => 1652
+                            [docName] => Drivers License
+                            [dStatus] => 1
+                            [serviceType] => 100393
+                            [moduleType] => HMLO
+                            [createdDate] => 2021-01-13 10:41:37
+                            [displayOrder] => 0
+                            [MFCID] => 0
+                            [requiredFor] => 
+                            [PCMID_X] => 
+                            [description] => 
+                            [coBorrowerRelatedReqdoc] => 0
+                            [rehabRelatedReqdoc] => 0
+                            [noCrossCollRelatedReqdoc] => 0
+                            [usCitizenRelatedReqdoc] => 0
+                            [refDocName] => 
+                            [refDocUrl] => 
+                            [PRID] => 4963915
+                            [requiredBy] => Borrower
+                            [UID] => 12827
+                            [URole] => Employee
+                            [recordDate] => 2021-01-13 10:41:37
+                            [activeStatus] => 1
+                        )
+
+                    [3] => Array
+                        (
+                            [PCMID] => 1271548
+                            [PCID] => 1652
+                            [docName] => Hazard Insurance
+                            [dStatus] => 1
+                            [serviceType] => 100393
+                            [moduleType] => HMLO
+                            [createdDate] => 2021-01-13 10:41:54
+                            [displayOrder] => 0
+                            [MFCID] => 0
+                            [requiredFor] => 
+                            [PCMID_X] => 
+                            [description] => 
+                            [coBorrowerRelatedReqdoc] => 0
+                            [rehabRelatedReqdoc] => 0
+                            [noCrossCollRelatedReqdoc] => 0
+                            [usCitizenRelatedReqdoc] => 0
+                            [refDocName] => 
+                            [refDocUrl] => 
+                            [PRID] => 4964003
+                            [requiredBy] => Borrower
+                            [UID] => 12827
+                            [URole] => Employee
+                            [recordDate] => 2021-01-13 10:41:54
+                            [activeStatus] => 1
+                        )
+
+                    [4] => Array
+                        (
+                            [PCMID] => 1271547
+                            [PCID] => 1652
+                            [docName] => Last 2 Years Tax Returns
+                            [dStatus] => 1
+                            [serviceType] => 100393
+                            [moduleType] => HMLO
+                            [createdDate] => 2021-01-13 10:41:44
+                            [displayOrder] => 0
+                            [MFCID] => 0
+                            [requiredFor] => 
+                            [PCMID_X] => 
+                            [description] => 
+                            [coBorrowerRelatedReqdoc] => 0
+                            [rehabRelatedReqdoc] => 0
+                            [noCrossCollRelatedReqdoc] => 0
+                            [usCitizenRelatedReqdoc] => 0
+                            [refDocName] => 
+                            [refDocUrl] => 
+                            [PRID] => 4963979
+                            [requiredBy] => Borrower
+                            [UID] => 12827
+                            [URole] => Employee
+                            [recordDate] => 2021-01-13 10:41:44
+                            [activeStatus] => 1
+                        )
+
+                    [5] => Array
+                        (
+                            [PCMID] => 1271550
+                            [PCID] => 1652
+                            [docName] => Purchase Contract
+                            [dStatus] => 1
+                            [serviceType] => 100393
+                            [moduleType] => HMLO
+                            [createdDate] => 2021-01-13 10:42:13
+                            [displayOrder] => 0
+                            [MFCID] => 0
+                            [requiredFor] => 
+                            [PCMID_X] => 
+                            [description] => 
+                            [coBorrowerRelatedReqdoc] => 0
+                            [rehabRelatedReqdoc] => 0
+                            [noCrossCollRelatedReqdoc] => 0
+                            [usCitizenRelatedReqdoc] => 0
+                            [refDocName] => 
+                            [refDocUrl] => 
+                            [PRID] => 4964053
+                            [requiredBy] => Borrower
+                            [UID] => 12827
+                            [URole] => Employee
+                            [recordDate] => 2021-01-13 10:42:13
+                            [activeStatus] => 1
+                        )
+
+                    [6] => Array
+                        (
+                            [PCMID] => 1271549
+                            [PCID] => 1652
+                            [docName] => Title
+                            [dStatus] => 1
+                            [serviceType] => 100393
+                            [moduleType] => HMLO
+                            [createdDate] => 2021-01-13 10:42:01
+                            [displayOrder] => 0
+                            [MFCID] => 0
+                            [requiredFor] => 
+                            [PCMID_X] => 
+                            [description] => 
+                            [coBorrowerRelatedReqdoc] => 0
+                            [rehabRelatedReqdoc] => 0
+                            [noCrossCollRelatedReqdoc] => 0
+                            [usCitizenRelatedReqdoc] => 0
+                            [refDocName] => 
+                            [refDocUrl] => 
+                            [PRID] => 4964033
+                            [requiredBy] => Lender
+                            [UID] => 12827
+                            [URole] => Employee
+                            [recordDate] => 2021-01-13 10:42:01
+                            [activeStatus] => 1
+                        )
+
+                )
+
         )
 
     [LMRClientTypeInfo] => Array
@@ -1893,7 +2218,7 @@ Array
             [FIRacePacificOther] => 
             [DemoInfo] => 1
             [PCID] => 1652
-            [methodOfContact] => 
+            [methodOfContact] => phone
             [internalInfoTags] => 
             [internalInfoStatus] => 
             [internalInfoCreditLine] => 
@@ -3275,7 +3600,7 @@ Array
         (
             [0] => Array
                 (
-                    [CIID] => 4681
+                    [CIID] => 4699
                     [LMRId] => 6833894
                     [creditorName] => alimonycompany
                     [creditorAcctNumber] => alimoney123
@@ -3322,7 +3647,7 @@ Array
 
             [1] => Array
                 (
-                    [CIID] => 4682
+                    [CIID] => 4700
                     [LMRId] => 6833894
                     [creditorName] => creditcardAmex
                     [creditorAcctNumber] => ccardamex6345
@@ -5401,12 +5726,12 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [LOCSID] => 648
+                    [LOCSID] => 665
                     [fileID] => 6833894
-                    [nameAddrOfBank] => wells fargo checking
-                    [accountNumber] => ou812
-                    [balance] => 12000
-                    [recordDate] => 2021-01-11 13:27:00
+                    [nameAddrOfBank] => ayman Bank
+                    [accountNumber] => Ayman001
+                    [balance] => 1000
+                    [recordDate] => 2021-01-20 18:11:17
                     [accType] => Checking
                     [accountTitledAs] => 
                     [description] => 
@@ -5424,12 +5749,12 @@ For question that need additional infio, make sure borrower uploads supporting d
 
             [1] => Array
                 (
-                    [LOCSID] => 649
+                    [LOCSID] => 666
                     [fileID] => 6833894
-                    [nameAddrOfBank] => wellsf savings
-                    [accountNumber] => 34242wfsavings
-                    [balance] => 23000
-                    [recordDate] => 2021-01-11 13:27:00
+                    [nameAddrOfBank] => ayman another bank
+                    [accountNumber] => ayman002
+                    [balance] => 1500
+                    [recordDate] => 2021-01-20 18:11:17
                     [accType] => Savings
                     [accountTitledAs] => 
                     [description] => 
@@ -5447,13 +5772,13 @@ For question that need additional infio, make sure borrower uploads supporting d
 
             [2] => Array
                 (
-                    [LOCSID] => 650
+                    [LOCSID] => 667
                     [fileID] => 6833894
-                    [nameAddrOfBank] => moneymarketinstitution
-                    [accountNumber] => moneymarket534535
-                    [balance] => 21000
-                    [recordDate] => 2021-01-11 13:27:00
-                    [accType] => Money Market
+                    [nameAddrOfBank] => ayman yet another bank
+                    [accountNumber] => ayman003
+                    [balance] => 2000
+                    [recordDate] => 2021-01-20 18:11:17
+                    [accType] => CD
                     [accountTitledAs] => 
                     [description] => 
                     [shareValueInBond] => 
@@ -5470,197 +5795,13 @@ For question that need additional infio, make sure borrower uploads supporting d
 
             [3] => Array
                 (
-                    [LOCSID] => 651
+                    [LOCSID] => 668
                     [fileID] => 6833894
-                    [nameAddrOfBank] => cd account
-                    [accountNumber] => cd4564235
-                    [balance] => 500
-                    [recordDate] => 2021-01-11 13:27:00
-                    [accType] => CD
-                    [accountTitledAs] => 
-                    [description] => 
-                    [shareValueInBond] => 
-                    [nameofSecurity] => 
-                    [cost] => 
-                    [marketValueQuote] => 
-                    [dateofQuote] => 
-                    [typeofPolicy] => 
-                    [faceAmount] => 
-                    [amountBorrowed] => 
-                    [beneficiaries] => 
-                    [pledged] => 
-                )
-
-            [4] => Array
-                (
-                    [LOCSID] => 652
-                    [fileID] => 6833894
-                    [nameAddrOfBank] => stockinstit
-                    [accountNumber] => stock453234
-                    [balance] => 5000
-                    [recordDate] => 2021-01-11 13:27:00
-                    [accType] => stocks
-                    [accountTitledAs] => 
-                    [description] => 
-                    [shareValueInBond] => 
-                    [nameofSecurity] => 
-                    [cost] => 
-                    [marketValueQuote] => 
-                    [dateofQuote] => 
-                    [typeofPolicy] => 
-                    [faceAmount] => 
-                    [amountBorrowed] => 
-                    [beneficiaries] => 
-                    [pledged] => 
-                )
-
-            [5] => Array
-                (
-                    [LOCSID] => 653
-                    [fileID] => 6833894
-                    [nameAddrOfBank] => bondinstitution
-                    [accountNumber] => bond67545423
-                    [balance] => 11500
-                    [recordDate] => 2021-01-11 13:27:00
-                    [accType] => bonds
-                    [accountTitledAs] => 
-                    [description] => 
-                    [shareValueInBond] => 
-                    [nameofSecurity] => 
-                    [cost] => 
-                    [marketValueQuote] => 
-                    [dateofQuote] => 
-                    [typeofPolicy] => 
-                    [faceAmount] => 
-                    [amountBorrowed] => 
-                    [beneficiaries] => 
-                    [pledged] => 
-                )
-
-            [6] => Array
-                (
-                    [LOCSID] => 654
-                    [fileID] => 6833894
-                    [nameAddrOfBank] => trustinstitution
-                    [accountNumber] => trust654564
-                    [balance] => 4500
-                    [recordDate] => 2021-01-11 13:27:00
-                    [accType] => trust account
-                    [accountTitledAs] => 
-                    [description] => 
-                    [shareValueInBond] => 
-                    [nameofSecurity] => 
-                    [cost] => 
-                    [marketValueQuote] => 
-                    [dateofQuote] => 
-                    [typeofPolicy] => 
-                    [faceAmount] => 
-                    [amountBorrowed] => 
-                    [beneficiaries] => 
-                    [pledged] => 
-                )
-
-            [7] => Array
-                (
-                    [LOCSID] => 655
-                    [fileID] => 6833894
-                    [nameAddrOfBank] => cashvalinsuranceInstitution
-                    [accountNumber] => cashcalins856754
-                    [balance] => 3400
-                    [recordDate] => 2021-01-11 13:27:00
-                    [accType] => cash value of insurance
-                    [accountTitledAs] => 
-                    [description] => 
-                    [shareValueInBond] => 
-                    [nameofSecurity] => 
-                    [cost] => 
-                    [marketValueQuote] => 
-                    [dateofQuote] => 
-                    [typeofPolicy] => 
-                    [faceAmount] => 
-                    [amountBorrowed] => 
-                    [beneficiaries] => 
-                    [pledged] => 
-                )
-
-            [8] => Array
-                (
-                    [LOCSID] => 656
-                    [fileID] => 6833894
-                    [nameAddrOfBank] => bridgeproceedsinstit
-                    [accountNumber] => bridgeproc746534
-                    [balance] => 3500
-                    [recordDate] => 2021-01-11 13:27:00
-                    [accType] => bridge loan proceeds
-                    [accountTitledAs] => 
-                    [description] => 
-                    [shareValueInBond] => 
-                    [nameofSecurity] => 
-                    [cost] => 
-                    [marketValueQuote] => 
-                    [dateofQuote] => 
-                    [typeofPolicy] => 
-                    [faceAmount] => 
-                    [amountBorrowed] => 
-                    [beneficiaries] => 
-                    [pledged] => 
-                )
-
-            [9] => Array
-                (
-                    [LOCSID] => 657
-                    [fileID] => 6833894
-                    [nameAddrOfBank] => retirementInstitution
-                    [accountNumber] => retir654674
-                    [balance] => 45000
-                    [recordDate] => 2021-01-11 13:27:00
-                    [accType] => retirement
-                    [accountTitledAs] => 
-                    [description] => 
-                    [shareValueInBond] => 
-                    [nameofSecurity] => 
-                    [cost] => 
-                    [marketValueQuote] => 
-                    [dateofQuote] => 
-                    [typeofPolicy] => 
-                    [faceAmount] => 
-                    [amountBorrowed] => 
-                    [beneficiaries] => 
-                    [pledged] => 
-                )
-
-            [10] => Array
-                (
-                    [LOCSID] => 658
-                    [fileID] => 6833894
-                    [nameAddrOfBank] => non-marketableInstitution
-                    [accountNumber] => nonmar7565445
-                    [balance] => 3100
-                    [recordDate] => 2021-01-11 13:27:00
-                    [accType] => Non-Marketable Securities
-                    [accountTitledAs] => 
-                    [description] => 
-                    [shareValueInBond] => 
-                    [nameofSecurity] => 
-                    [cost] => 
-                    [marketValueQuote] => 
-                    [dateofQuote] => 
-                    [typeofPolicy] => 
-                    [faceAmount] => 
-                    [amountBorrowed] => 
-                    [beneficiaries] => 
-                    [pledged] => 
-                )
-
-            [11] => Array
-                (
-                    [LOCSID] => 659
-                    [fileID] => 6833894
-                    [nameAddrOfBank] => otherInstit
-                    [accountNumber] => otherinstit64456
-                    [balance] => 5211
-                    [recordDate] => 2021-01-11 13:27:00
-                    [accType] => Other
+                    [nameAddrOfBank] => ayman yet another bank for money market
+                    [accountNumber] => ayman004
+                    [balance] => 2500
+                    [recordDate] => 2021-01-20 18:11:17
+                    [accType] => Money Market
                     [accountTitledAs] => 
                     [description] => 
                     [shareValueInBond] => 
@@ -5852,7 +5993,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [approvedLoanAmt] => 
             [propIncNotes] => 
             [propEquity] => 
-            [maxAmtToPutDown] => 
+            [maxAmtToPutDown] => -154900.00
             [HMLOEstateHeldIn] => 
             [paymentReserves] => 0
             [requiredConstruction] => 
@@ -5896,7 +6037,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [referringParty] => 
             [hereAbout] => 
             [proInsPolicyEffDate] => 
-            [userName] => John Closer
+            [userName] => Ayman Ali
             [userType] => 
             [recordingDate] => 
             [payOffDate] => 
@@ -6511,7 +6652,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [costOfImprovementsToBeMade] => 
             [LOCTotalLoanAmt] => 0.00
             [rehabCostPercentageFinanced] => 
-            [downPaymentPercentage] => 
+            [downPaymentPercentage] => 20
             [yieldSpread] => 
             [CORTotalLoanAmt] => 0.00
             [CORefiLTVPercentage] => 
@@ -6567,12 +6708,12 @@ For question that need additional infio, make sure borrower uploads supporting d
             [autoCalcTLAARV] => No
             [maxArvPer] => 70.00
             [refinanceCurrentLoanBalance] => 
-            [updatedBy] => John Closer
+            [updatedBy] => Ayman Ali
             [updatedUserType] => Employee
-            [UID] => 8722
+            [UID] => 13096
             [approvedAcquisition] => 
             [typeOfHMLOLoanRequesting] => Purchase
-            [maxAmtToPutDown] => 
+            [maxAmtToPutDown] => -154900.00
             [rehabCost] => 0.00
             [costBasis] => 0.00
             [extensionRatePercentage] => 
@@ -6687,7 +6828,7 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [EIID] => 118715
+                    [EIID] => 121893
                     [LMRId] => 6833894
                     [vendorName] => 
                     [vendorPhone] => 
@@ -6706,9 +6847,9 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [mileage] => 
                     [equipmentDescription] => 
                     [term] => 
-                    [userType] => Manager
-                    [createdBy] => 8722
-                    [recordDate] => 2021-01-11 14:18:48
+                    [userType] => Processing Manager
+                    [createdBy] => 13096
+                    [recordDate] => 2021-01-20 18:11:17
                 )
 
         )
@@ -6722,7 +6863,7 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [AGID] => 216499
+                    [AGID] => 220238
                     [LMRId] => 6833894
                     [guarantorFName] => 
                     [guarantorLName] => 
@@ -6735,7 +6876,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [guarantorCity] => 
                     [guarantorState] => 
                     [guarantorZip] => 
-                    [recordDate] => 2021-01-11 14:18:48
+                    [recordDate] => 2021-01-20 18:11:17
                     [guarantorEmail] => 
                     [guarantorNote] => 
                 )
@@ -6748,7 +6889,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2781725
+                            [FFGID] => 2826490
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Flip
@@ -6769,12 +6910,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-11 14:18:47
+                            [recordDate] => 2021-01-20 18:11:17
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2781726
+                            [FFGID] => 2826491
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Flip
@@ -6795,12 +6936,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-11 14:18:47
+                            [recordDate] => 2021-01-20 18:11:17
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2781727
+                            [FFGID] => 2826492
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Flip
@@ -6821,7 +6962,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-11 14:18:47
+                            [recordDate] => 2021-01-20 18:11:17
                         )
 
                 )
@@ -6830,7 +6971,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2781728
+                            [FFGID] => 2826493
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Gup
@@ -6851,12 +6992,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-11 14:18:47
+                            [recordDate] => 2021-01-20 18:11:17
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2781729
+                            [FFGID] => 2826494
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Gup
@@ -6877,12 +7018,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-11 14:18:47
+                            [recordDate] => 2021-01-20 18:11:17
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2781730
+                            [FFGID] => 2826495
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Gup
@@ -6903,7 +7044,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-11 14:18:47
+                            [recordDate] => 2021-01-20 18:11:17
                         )
 
                 )
@@ -6912,7 +7053,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2781731
+                            [FFGID] => 2826496
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Sell
@@ -6933,12 +7074,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-11 14:18:47
+                            [recordDate] => 2021-01-20 18:11:17
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2781732
+                            [FFGID] => 2826497
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Sell
@@ -6959,12 +7100,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-11 14:18:47
+                            [recordDate] => 2021-01-20 18:11:17
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2781733
+                            [FFGID] => 2826498
                             [LMRId] => 6833894
                             [userType] => B
                             [expType] => Sell
@@ -6985,7 +7126,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-11 14:18:47
+                            [recordDate] => 2021-01-20 18:11:17
                         )
 
                 )

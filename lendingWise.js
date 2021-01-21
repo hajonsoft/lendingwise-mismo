@@ -8,7 +8,7 @@ function assets(doc, data) {
       nodes: [
         { AssetAccountIdentifier: (row) => row.accountNumber },
         { AssetCashOrMarketValueAmount: (row) => row.balance },
-        { AssetType: (row) => mapValue(row.accType,assetTypeDiagram) },
+        { AssetType: (row) => mapValue(row.accType, assetTypeDiagram) },
       ],
     },
     {
@@ -60,7 +60,10 @@ function ownedProperty(doc, data, startIndex) {
           PropertyEstimatedValueAmount: (row) => row.presentMarketValue,
         },
         { PropertyCurrentUsageType: (row) => row.intendedOccupancy },
-        { PropertyUsageType: (row) => mapValue(row.intendedOccupancy,occupancyDiagram) },
+        {
+          PropertyUsageType: (row) =>
+            mapValue(row.intendedOccupancy, occupancyDiagram),
+        },
         {
           PropertyUsageTypeOtherDescription: (row) => "",
         },
@@ -132,7 +135,7 @@ function collaterals(doc, data) {
     },
   ]);
 }
-function liabilities(doc, data, startIndex) {
+function contingentLiabilities(doc, data, startIndex) {
   return buildMismoNodes(doc, data, "LIABILITIES", "LIABILITY", startIndex, [
     {
       path: ["LIABILITY_DETAIL"],
@@ -148,18 +151,52 @@ function liabilities(doc, data, startIndex) {
           LiabilityUnpaidBalanceAmount: (row) => row.clBalance,
         },
         {
-          LiabilityPayoffStatusIndicator: (row) => "0",
+          LiabilityPayoffStatusIndicator: (row) => "false",
         },
         { LiabilityMonthlyPaymentAmount: (row) => row.monthlyPayment },
         {
           LiabilityRemainingTermMonthsCount: (row) => row.monthsLeftToPay,
         },
-        { LiabilityExclusionIndicator: (row) => "0" },
+        { LiabilityExclusionIndicator: (row) => "true" },
       ],
     },
     {
       path: ["LIABILITY_HOLDER", "NAME"],
       nodes: [{ FullName: (row) => row.nameOfCompany }],
+    },
+  ]);
+}
+function liabilities(doc, data, startIndex) {
+  return buildMismoNodes(doc, data, "LIABILITIES", "LIABILITY", startIndex, [
+    {
+      path: ["LIABILITY_DETAIL"],
+      nodes: [
+        {
+          LiabilityType: (row) => mapValue(row.creditorType, creditTypeDiagram),
+        },
+        {
+          LiabilityTypeOtherDescription: (row) =>
+            mapValue(row.creditorType, liabilityOtherDescriptionDiagram),
+        },
+        {
+          LiabilityAccountIdentifier: (row) => row.creditorAcctNumber,
+        },
+        {
+          LiabilityUnpaidBalanceAmount: (row) => row.creditorAcctBalance,
+        },
+        {
+          LiabilityPayoffStatusIndicator: (row) => row.payAtBeforeClosing === "Yes" ? "true": "false" ,
+        },
+        { LiabilityMonthlyPaymentAmount: (row) => row.creditorMinPayment },
+        {
+          LiabilityRemainingTermMonthsCount: (row) => '',
+        },
+        { LiabilityExclusionIndicator: (row) => "true" },
+      ],
+    },
+    {
+      path: ["LIABILITY_HOLDER", "NAME"],
+      nodes: [{ FullName: (row) => row.creditorName }],
     },
   ]);
 }
@@ -503,7 +540,8 @@ function partyBorrower(doc, data) {
         { PriorPropertyShortSaleCompletedIndicator: (row) => "No" },
         { PriorPropertyForeclosureCompletedIndicator: (row) => "No" },
         {
-          BankruptcyIndicator: (row) => loanGlobal["fileHMLOBackGroundInfo"].isBorDecalredBankruptPastYears , 
+          BankruptcyIndicator: (row) =>
+            loanGlobal["fileHMLOBackGroundInfo"].isBorDecalredBankruptPastYears,
         },
       ],
     },
@@ -544,9 +582,11 @@ function partyBorrower(doc, data) {
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
             loanGlobal["incomeInfo"].commissionOrBonus1 &&
-            Math.floor(parseInt(
-              loanGlobal["incomeInfo"].commissionOrBonus1.replace(/,/g, "")
-            ) / 12),
+            Math.floor(
+              parseInt(
+                loanGlobal["incomeInfo"].commissionOrBonus1.replace(/,/g, "")
+              ) / 12
+            ),
         },
         { EmploymentIncomeIndicator: (row) => "true" },
         { IncomeType: (row) => "Bonus" },
@@ -559,9 +599,11 @@ function partyBorrower(doc, data) {
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
             loanGlobal["incomeInfo"].otherHouseHold1 &&
-            Math.floor(parseInt(
-              loanGlobal["incomeInfo"].otherHouseHold1.replace(/,/g, "")
-            ) / 12),
+            Math.floor(
+              parseInt(
+                loanGlobal["incomeInfo"].otherHouseHold1.replace(/,/g, "")
+              ) / 12
+            ),
         },
         { EmploymentIncomeIndicator: (row) => "true" },
         { IncomeType: (row) => "Other" },
@@ -812,13 +854,11 @@ function partyBroker(doc, data, startingIndex) {
     },
     {
       path: ["LEGAL_ENTITY", "LEGAL_ENTITY_DETAIL"],
-      nodes: [
-        { FullName: (row) => row.company },
-      ],
+      nodes: [{ FullName: (row) => row.company }],
     },
     {
       path: ["INDIVIDUAL", "NAME"],
-      goBack:1,
+      goBack: 1,
       nodes: [
         { FirstName: (row) => row.firstName },
         {
@@ -858,7 +898,7 @@ function partyBroker(doc, data, startingIndex) {
           LicenseAuthorityLevelType: (row) => "Other",
         },
       ],
-    }
+    },
   ]);
 }
 function previousEmployment(doc, data) {
@@ -973,15 +1013,51 @@ const assetTypeDiagram = [
   { lw: "cash value of insurance", mismo: "Cash Value of Life Insurance" },
 ];
 
-const occupancyDiagram = [
-  { lw: "primary", mismo: "PrimaryResidence" },
-  { lw: "2nd Home", mismo: "SecondHome" },
+const occupancyDiagram = [{ lw: "", mismo: "" }];
+
+const creditTypeDiagram = [
+  { lw: "0", mismo: "Revolving" },
+  { lw: "1", mismo: "Revolving" },
+  { lw: "2", mismo: "Other" },
+  { lw: "3", mismo: "Revolving" },
+  { lw: "4", mismo: "Revolving" },
+  { lw: "5", mismo: "Other" },
+  { lw: "6", mismo: "Other" },
+  { lw: "7", mismo: "Lease" },
+  { lw: "8", mismo: "Installment" },
+  { lw: "9", mismo: "Installment" },
+  { lw: "10", mismo: "Other" },
+  { lw: "11", mismo: "Other" },
+  { lw: "12", mismo: "Other" },
+  { lw: "13", mismo: "Installment" },
+  { lw: "14", mismo: "Other" },
+  { lw: "15", mismo: "Other" },
 ];
 
+const liabilityOtherDescriptionDiagram = [
+  { lw: "0", mismo: "Alimony" },
+  { lw: "1", mismo: "Auto Loan" },
+  { lw: "2", mismo: "Business Debts" },
+  { lw: "3", mismo: "Child Care" },
+  { lw: "4", mismo: "Credit card" },
+  { lw: "5", mismo: "IRS Tax" },
+  { lw: "6", mismo: "Judgments" },
+  { lw: "7", mismo: "Lease" },
+  { lw: "8", mismo: "Loan on Life Insurance" },
+  { lw: "9", mismo: "Medical" },
+  { lw: "10", mismo: "Other" },
+  { lw: "11", mismo: "Secured loans" },
+  { lw: "12", mismo: "Separation Maintenance" },
+  { lw: "13", mismo: "Student Loan" },
+  { lw: "14", mismo: "Unpaid Property Taxes" },
+  { lw: "15", mismo: "Unsecured loan" },
+];
 
 function mapValue(value, diagram) {
   if (diagram && value) {
-    const mismo = diagram.find((x) => x.lw.toLowerCase() === value.toLowerCase());
+    const mismo = diagram.find(
+      (x) => x.lw.toLowerCase() === value.toLowerCase()
+    );
     if (mismo) {
       return mismo.mismo;
     }
@@ -1006,12 +1082,12 @@ function totalMonthlyIncome(yearlyIncomeArray, monthlyIncomeArray) {
   return total;
 }
 
-
 module.exports = {
   assets,
   loanOwnedPropertyData,
   ownedProperty,
   collaterals,
+  contingentLiabilities,
   liabilities,
   loans,
   partyBorrower,

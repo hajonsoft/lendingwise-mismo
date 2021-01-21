@@ -3,6 +3,7 @@ const {
   loanOwnedPropertyData,
   ownedProperty,
   collaterals,
+  contingentLiabilities,
   liabilities,
   loans,
   partyBorrower,
@@ -50,8 +51,11 @@ function createMismo(loan) {
   const collateralData = [loan["LMRInfo"]];
   doc = collaterals(doc, collateralData);
 
-  const liabilityData = loan["contingentLiabilities"];
-  doc = liabilities(doc, liabilityData);
+  const contingentLiabilityData = loan["contingentLiabilities"];
+  doc = contingentLiabilities(doc, contingentLiabilityData);
+  
+  const creditorInfoData = loan["creditorInfo"];
+  doc = liabilities(doc, creditorInfoData);
 
   const loanData = [loan["LMRInfo"]];
   doc = loans(doc, loanData);
