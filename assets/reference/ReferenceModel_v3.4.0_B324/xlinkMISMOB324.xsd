@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>Version: 3.4.0 Build: B324 Date: 2015-12-17 Iteration: </xs:documentation>
+		<xs:documentation>Copyright 2015 Mortgage Industry Standards Maintenance Organization (MISMO) All rights reserved.&#xD;THIS MISMO STANDARD INCLUDES THE END USER LICENSE AGREEMENT ATTACHED HERETO AT  http://www.mismo.org/AboutMISMO/PoliciesandProcedures.htm  AND IS GOVERNED BY AND SUBJECT TO THE END USER LICENSE AGREEMENT. NO USER OF THIS STANDARD MAY REMOVE THIS REFERENCE TO AND STATEMENT REGARDING THE END USER LICENSE. ANY HARD COPY PUBLICATION OF THIS STANDARD MUST INCLUDE AND ATTACH A HARD COPY PRINT OUT OFTHE END USER LICENSE.  ANY FURTHER ELECTRONIC DISTRIBUTION OF THIS STANDARD MUST INCLUDE A SPECIFIC REFERENCED LINK TO THE END USER LICENSE AGREEMENT OR OTHER MEANS OF ATTACHMENT OF THE END USER LICENSE AGREEMENT.&#xD;DISCLAIMER: THIS MISMO STANDARD IS PROVIDED "AS IS." MISMO, THE MORTGAGE BANKERS ASSOCIATION OF AMERICA ("MBA"), THE COPYRIGHT HOLDER, THE AUTHORS OF THIS MISMO STANDARD AND ANY STANDARD- SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD MAKE NO REPRESENTATIONS OR WARRANTIES (i) EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT; (ii) THAT THE CONTENTS OF SUCH MISMO STANDARD ARE FREE FROM ERROR OR SUITABLE FOR ANY PURPOSE; NOR THAT IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD-PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. IN NO EVENT WILL MISMO, MBA, THE COPYRIGHT HOLDER OR THE STANDARD-SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD BE LIABLE TO ANY PARTY FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES FOR ANY USE OF THIS MISMO STANDARD, INCLUDING, WITHOUT LIMITATION, ANY LOST PROFITS, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR OTHER DATA ON YOUR INFORMATION HANDLING SYSTEM OR OTHERWISE, EVEN IF MISMO, MBA, THE COPYRIGHT HOLDER AND/OR ANY AUTHORS AND/OR ANY STANDARD-SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD ARE EXPRESSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="xlink.xsd"/>
+	<xs:annotation>
+		<xs:documentation>The included xlink.xsd file should match the one defined by the W3C and found at http://www.w3.org/1999/xlink.xsd with the exception that the import for the XML namespace (http://www.w3.org/XML/1998/namespace) uses a relative file path for the schemaLocation (xml.xsd) instead of the fully qualified web based location. Other versions that include toplevel definitions of the standard xlink attributes required by MISMO (label, from, to) could be used as well. The arcrole attribute is only restricted when it is used in the MISMOarcLink group allowing the standard definition to be used elsewhere.</xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="ArcroleAtomic">
+		<xs:union memberTypes="xlink:ArcroleBase xlink:ArcroleFcts"/>
+	</xs:simpleType>
+	<xs:simpleType name="ArcroleBase">
+		<xs:annotation>
+			<xs:documentation>The base set of arcroles defined by MISMO; the uri MUST have the initial version of the LDD (/mismo_n_n_n_0) that included  the definition. Once an LDD version is assigned, it never changes even when a new major version is built.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:anyURI">
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/LOAN_HasLienRelationshipTo_LOAN">
+				<xs:annotation>
+					<xs:documentation>Link a LOAN that has a lien relationship with another LOAN. (LienPriorityType value will define the relationship).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/LOAN_IsConvertedInto_LOAN">
+				<xs:annotation>
+					<xs:documentation>Link the different points in time and loan terms of a convertible LOAN together.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/LOAN_IsModifiedInto_LOAN">
+				<xs:annotation>
+					<xs:documentation>Link the different points in time and loan terms of a modified LOAN together.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/LOAN_IsRefinancedInto_LOAN">
+				<xs:annotation>
+					<xs:documentation>Link the different points in time and loan terms of a refinanced LOAN together.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/LOAN_IsResetInto_LOAN">
+				<xs:annotation>
+					<xs:documentation>Link the different points in time and loan terms of a reset (Balloon) LOAN together.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/ROLE_IsAttorneyInFactFor_ROLE">
+				<xs:annotation>
+					<xs:documentation>Relate a party who is attorney in fact for another party.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/ROLE_IsEmployedBy_ROLE">
+				<xs:annotation>
+					<xs:documentation>Relate a party who is employed by another party.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/ROLE_IsSettlorFor_ROLE">
+				<xs:annotation>
+					<xs:documentation>Relate an individual who has the role of settlor for another party.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/ROLE_IsSupervisedBy_ROLE">
+				<xs:annotation>
+					<xs:documentation>The first party is supervised by the second party.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/ROLE_IsTrusteeFor_ROLE">
+				<xs:annotation>
+					<xs:documentation>Relate an individual who has a role of trustee for another party.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/ROLE_SharesSufficientAssetsAndLiabilitiesWith_ROLE">
+				<xs:annotation>
+					<xs:documentation>Relate two or more parties who share sufficient assets (and liabilities).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/DOCUMENT_AppendsTo_DOCUMENT">
+				<xs:annotation>
+					<xs:documentation>Link a document (e.g. NoteRider) that appends to another document (e.g. Note).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/DOCUMENT_Replaces_DOCUMENT">
+				<xs:annotation>
+					<xs:documentation>Link a document (e.g. final TIL) that replaces another document (e.g. preliminary TIL).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="urn:fdc:mismo.org:2009:residential/VIEW_FIELD_IsDateForSignature_VIEW_FIELD">
+				<xs:annotation>
+					<xs:documentation>The date associated with a signature on a document.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ArcroleFcts">
+		<xs:annotation>
+			<xs:documentation>Two patterns to restrict extensions to be MISMO URIs of a certain type (/mismo_ or /other_), permit new mismo_ values only from future LDD versions, require other_ values to incorporate at least a two-level domain name (lowerLevels.topLevel, and to use the restricted character set for the remaining value. Each new release MUST update the mismo_ pattern to prohibit values from the current or previous releases--sample patterns for major changes are provided in the appinfo.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:anyURI">
+			<xs:pattern value="urn:fdc:mismo.org:2009:residential/[A-Z][A-Z0-9_]{1,78}[A-Z0-9]_IsAssociatedWith_[A-Z][A-Za-z0-9_]{1,78}[A-Za-z0-9]"/>
+			<xs:pattern value="urn:fdc:[A-Za-z0-9_:.()+,-=@;$!*']{1,1991}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="MISMOarcLink">
+		<xs:annotation>
+			<xs:documentation>An xlink set of attributes that identifies two end points and the kind of relationship they have to each other.</xs:documentation>
+			<xs:documentation>term: Arc Link</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="arcrole" type="xlink:ArcroleAtomic"/>
+		<xs:attribute ref="xlink:from"/>
+		<xs:attribute ref="xlink:to"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="MISMOresourceLink">
+		<xs:annotation>
+			<xs:documentation>An xlink attribute group for defining the end point of a relationship.</xs:documentation>
+			<xs:documentation>term: Resource Endpoint</xs:documentation>
+		</xs:annotation>
+		<xs:attribute ref="xlink:label"/>
+	</xs:attributeGroup>
+</xs:schema>

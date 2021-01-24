@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:mismo="http://www.mismo.org/residential/2009/schemas" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation>Version: 3.4.0 Build: B324 Date: 2015-12-17 Iteration: </xsd:documentation>
+		<xsd:documentation>Copyright 2015 Mortgage Industry Standards Maintenance Organization (MISMO) All rights reserved.&#xD;THIS MISMO STANDARD INCLUDES THE END USER LICENSE AGREEMENT ATTACHED HERETO AT  http://www.mismo.org/AboutMISMO/PoliciesandProcedures.htm  AND IS GOVERNED BY AND SUBJECT TO THE END USER LICENSE AGREEMENT. NO USER OF THIS STANDARD MAY REMOVE THIS REFERENCE TO AND STATEMENT REGARDING THE END USER LICENSE. ANY HARD COPY PUBLICATION OF THIS STANDARD MUST INCLUDE AND ATTACH A HARD COPY PRINT OUT OFTHE END USER LICENSE.  ANY FURTHER ELECTRONIC DISTRIBUTION OF THIS STANDARD MUST INCLUDE A SPECIFIC REFERENCED LINK TO THE END USER LICENSE AGREEMENT OR OTHER MEANS OF ATTACHMENT OF THE END USER LICENSE AGREEMENT.&#xD;DISCLAIMER: THIS MISMO STANDARD IS PROVIDED "AS IS." MISMO, THE MORTGAGE BANKERS ASSOCIATION OF AMERICA ("MBA"), THE COPYRIGHT HOLDER, THE AUTHORS OF THIS MISMO STANDARD AND ANY STANDARD- SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD MAKE NO REPRESENTATIONS OR WARRANTIES (i) EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT; (ii) THAT THE CONTENTS OF SUCH MISMO STANDARD ARE FREE FROM ERROR OR SUITABLE FOR ANY PURPOSE; NOR THAT IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD-PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. IN NO EVENT WILL MISMO, MBA, THE COPYRIGHT HOLDER OR THE STANDARD-SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD BE LIABLE TO ANY PARTY FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES FOR ANY USE OF THIS MISMO STANDARD, INCLUDING, WITHOUT LIMITATION, ANY LOST PROFITS, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR OTHER DATA ON YOUR INFORMATION HANDLING SYSTEM OR OTHERWISE, EVEN IF MISMO, MBA, THE COPYRIGHT HOLDER AND/OR ANY AUTHORS AND/OR ANY STANDARD-SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD ARE EXPRESSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="MISMOEnumeratedTypesB324.xsd"/>
+	<xsd:include schemaLocation="MISMOExtensionDetailsB324.xsd"/>
+	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlinkMISMOB324.xsd"/>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xsd:complexType name="MISMOAmount">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Amount SHOULD identify a number value that is an amount of money and MAY have a CurrencyURI attribute. It SHALL NOT contain any punctuation other than the decimal point or sign values. The decimal point is ALWAYS the US nationalization character (.) in the designated character encoding (UTF-8 assumed when not stated )
+It SHOULD be able to contain at least 18 digits.
+EXAMPLE: An Unpaid Principle Balance Amount of $100,000.12 would be expressed as "100000.12".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOAmount_Base">
+				<xsd:attribute name="CurrencyURI" type="MISMOURI_Base">
+					<xsd:annotation>
+						<xsd:documentation>The currency the value represents. Recommend using the form urn:org:iso:www:4217:xxx  where xxx is a three letter code from http://www.iso.org/iso/support/faqs/faqs_widely_used_standards/widely_used_standards_other/currency_codes/currency_codes_list-1.htm</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOCode">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Code SHOULD identify a data point that is a look-up value for an entry in a list of values and explanations and MAY have CodeOwnerURI and CodeEffectiveDate attributes.
+EXAMPLE: A State Code would be expressed as "AL".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOCode_Base">
+				<xsd:attribute name="CodeEffectiveDate" type="MISMODate_Base">
+					<xsd:annotation>
+						<xsd:documentation>The date on which the value represented by the MISMOCode is effective as determined by the issuer or owner as specified by the CodeOwnerURI.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="CodeOwnerURI" type="MISMOURI_Base">
+					<xsd:annotation>
+						<xsd:documentation>Identifies the owner or publisher of the code associated with a MISMO term with the class word of "Code" by means of a URI. This is an XML attribute.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOCount">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Count SHOULD identify a non-negative number value that is a whole number with a maximum value of 2147483647. It SHALL NOT contain any punctuation.
+EXAMPLE: A Total Bathroom Count for a dwelling unit with one full bathroom and one partial bathroom would be expressed as "2".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOCount_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMODate">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Date SHOULD identify a data point that represents numerically a specific year, month and year, or day month and year of the Gregorian Calendar.
+Full dates MUST be represented in the extended format CCYY-MM-DD
+CCYY is a four-digit year, "0001" through "9999"
+MM is a two-digit month of that year, "01" through "12"
+DD is a two-digit day of that month, "01" through "31"
+Padded zeros must be used.
+- is the required separator between CCYY-MM-DD
+if the day or month and day are dropped, the preceding separator is also dropped
+an optional trailing time zone indicator is permitted using either Z (for Coordinated Universal Time UTC) or an offset from UTC using +hh:mm or -hh:mm as in Datetime
+Note that negative or extended (more than 4 digit) years are not permitted.
+EXAMPLE: A Next Escrow Review Date that discloses the year and month would be expressed as "2010-06".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMODate_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMODatetime">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Datetime SHOULD identify a data point that represents numerically a specific day month and year of the Gregorian Calendar plus a time of day expressed in hours, minutes and seconds as related to Coordinated Universal Time (UTC) and MAY have an IgnoreTimeSegmentIndicator attribute.
+Datetimes MUST be represented in the extended format CCYY-MM-DDThh:mm:ssZ
+CCYY is a four-digit year, "0000" through "9999"
+MM is a two-digit month of that year, "01" through "12"
+DD is a two-digit day of that month, "01" through “31”
+- is the required separator between CCYY-MM-DD
+T is the required separator between the date and the time groupings
+hh is a two-digit hour of that day, "00" through "23"
+mm is a two-digit minute of that hour, "00" through "59"
+ss is a two-digit second of that minute, "00" through "59"
+: is the required separator between hh:mm:ss
+Z is a required time zone indicator using either Z (for Coordinated Universal Time UTC) or an offset from UTC using +hh:mm or -hh:mm
+Padded leading zeroes must be used throughout.
+an optional fractional seconds (decimal point and up to 9 digits) is permitted between the seconds and the time zone.
+Note that negative or extended (more than 4 digit) years are not permitted.
+EXAMPLE: An Event Datetime would be expressed as "2010-06-29T14;24:13.124-05:00".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMODatetime_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DisplayTimeZoneText" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field that identifies the specific region where the time value applies. There are several standard lists of time zone name values (IANA, Joda-Time, Olson, POSIX, etc.). Trading partners should agree on which time zone naming standard they will use.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="IgnoreTimeSegmentIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>If for some reason the sender of a message cannot provide an accurate time for a datetime data point they set this indicator true.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMODay">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Day SHOULD identify a data point that represents numerically a specific day of the month of the Gregorian Calendar.
+Days MUST be represented in the extended format ---DD
+DD is a two-digit day of the month, "01" through "31"
+Padded zeros must be used.
+--- is the required prefix for the absent negative, year, and month
+an optional trailing time zone indicator is permitted using either Z (for Coordinated Universal Time UTC) or an offset from UTC using +hh:mm or -hh:mm as in Datetime
+EXAMPLE: The Investor Remittance Day of the 9th of every month would be expressed as "---09".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMODay_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOIdentifier">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Identifier SHOULD identify a data point that provides a unique value for reference purposes and MAY have IdentifierOwnerURI and IdentifierEffectiveDate attributes.
+EXAMPLE: A Loan Identifier could be expressed as "0034567891-A".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOIdentifier_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="IdentifierEffectiveDate" type="MISMODate_Base">
+					<xsd:annotation>
+						<xsd:documentation>The date on which the value represented by the MISMOIdentifier is effective as determined by the issuer or owner as specified by the IdentifierOwnerURI.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="IdentifierOwnerURI" type="MISMOURI_Base">
+					<xsd:annotation>
+						<xsd:documentation>Identifies the owner or publisher of the identifier associated with a MISMO term with the class word of "Identifier" by means or a URI. This is an XML attribute.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOIndicator">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Indicator SHOULD identify a data point that represents a boolean value.
+The value choices SHOULD be "true" or "false" but MAY be "1" or "0".
+EXAMPLE: A Basement Finished Indicator for a basement that qualifies would be expressed as "true".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOIndicator_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOMonth">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Month SHOULD identify a data point that represents numerically a specific month of the year of the Gregorian Calendar.
+Months MUST be represented in the extended format --MM
+MM is a two-digit month of the year, "01" through "12"
+Padded zeros must be used.
+-- is the required prefix for the absent negative and year
+an optional trailing time zone indicator is permitted using either Z (for Coordinated Universal Time UTC) or an offset from UTC using +hh:mm or -hh:mm as in Datetime
+EXAMPLE: The Escrow Account Activity Disbursement Month of the 10th month of the year would be expressed as "--10".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOMonth_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMONumeric">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Numeric SHOULD identify a number value that is in the subset of real numbers expressible by decimal numerals. It MAY contain a single decimal point as punctuation. The decimal point is ALWAYS the US nationalization character (.) in the designated character encoding (UTF-8 assumed when not stated.)
+It SHOULD be able to contain at least 18 digits.
+EXAMPLE: A Field Height Number for a document field expressed in inches that is 3/8 inch high would be expressed as ".375".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMONumeric_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMONumericString">
+		<xsd:annotation>
+			<xsd:documentation>A data type of NumericString SHOULD identify a series of digits that are not number values. It MUST NOT contain any punctuation.
+EXAMPLE: A Taxpayer Identifier Value for a party could be expressed as "011223333".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMONumericString_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOObjectURL">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Object URL SHOULD identify an Object URL that is a MISMO URL that MAY have a ReferenceSigningType attribute.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOURL">
+				<xsd:attribute name="ReferenceSigningType" type="ReferenceSigningBase">
+					<xsd:annotation>
+						<xsd:documentation>This attribute describes how the content of a REFERENCE or ObjectURL element is signed using XML digital signatures. This instructs systems about which transformation, if any, needs to be applied to the REFERENCE or ObjectURL element before validating existing SYSTEM_SIGNATURES or applying new ones and what transformations are prohibited.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOPercent">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Percent SHOULD identify a number value that is in the subset of real numbers expressible by decimal numerals and represents a value that is scaled upward by 100 so that 1/100 is represented by 1. It MAY contain a single decimal point as punctuation. The decimal point is ALWAYS the US nationalization character (.) in the designated character encoding (UTF-8 assumed when not stated.)
+It SHOULD be able to contain at least 18 digits.
+EXAMPLE: A Tax Rate Percent for a rate of .055 be expressed as "5.5".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOPercent_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMORate">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Rate SHOULD identify a number value that is in the subset of real numbers expressible by decimal numerals and represents a value that is a ratio. It MAY contain a single decimal point as punctuation. The decimal point is ALWAYS the US nationalization character (.) in the designated character encoding (UTF-8 assumed when not stated.)
+It SHOULD be able to contain at least 18 digits.
+EXAMPLE: A Tax Rate of 5 percent for computing annual taxes based on a property's value would be expressed as ".05".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMORate_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOSequenceNumber">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Sequence Number SHOULD identify a number value that is a position in a series of positive whole numbers with a maximum value of 2147483647. It SHALL NOT contain any punctuation.
+EXAMPLE: A Sequence Number for the second occurrence of a VIEW container would be expressed as "2".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOSequenceNumber_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOString">
+		<xsd:annotation>
+			<xsd:documentation>A data type of String SHOULD identify a data point that is either a text value consisting of a word, phrase, sentence, paragraph, or formatted (TAB, CR, LF) character content depending on its purpose or a numeric value with a maximum of 16383 characters and MAY have the lang attribute. There is no list of valid values provided.
+EXAMPLE: A Disqualificaton Reason Text for excluding a product from those offered to a borrower could be expressed as "Does not meet income to indebtedness guidelines for down payment support.".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOString_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="lang" type="xsd:language">
+					<xsd:annotation>
+						<xsd:documentation>The ISO 639-1 two character code value representing the langage of the text of the element data point. For example en for English es for spanish. If no ISO639-1 value exists for the language use the ISO639-2 three character  value. For example Philippine languages phi.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOTime">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Time SHOULD identify a data point that represents numerically a time of day expressed in hours, minutes and seconds.
+Times MUST be represented in the hh:mm:ss format
+hh is a two-digit hour of that day, "00" through "23"
+mm is a two-digit minute of that hour, "00" through "59"
+ss is a two-digit second of that minute, "00" through "59"
+: is the required separator between hh:mm:ss
+Padded leading zeroes must be used throughout.
+an optional time zone indicator may be appended using either Z (for Coordinated Universal Time UTC) or an offset from UTC using +hh:mm or -hh:mm
+an optional fractional seconds (decimal point and up to 9 digits) is permitted after the seconds but before any time zone.
+EXAMPLE: An Requested Closing Time of noon EST could be expressed as "12:00:00-05:00".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOTime_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOURI">
+		<xsd:annotation>
+			<xsd:documentation>A data type of URI SHOULD identify a data point that represents a Uniform Resource Identifier that conforms to both the generic syntax of RFC 2396 as amended by RFC 2732 and the specific syntax of the scheme identified by the first component. Note that a URI that is in URL format does not necessarily provide access to a resource at that location.
+EXAMPLE: A Registered Domain Name URI for My Company could be expressed in the http scheme as "http://MyCompany.com".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOURI_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOURL">
+		<xsd:annotation>
+			<xsd:documentation>A data type of URL SHOULD identify a data point that represents a Uniform Resource Identifier (URI) that is a Uniform Resource Location that conforms to both the generic syntax of RFC 2396 as amended by RFC 2732 and the specific syntax of the scheme identified by the first component. Note that a URL provides (or provided) access to a resource at that location via that scheme's mechanism.
+EXAMPLE: An School District URL for the Our Town District 1 schools could be expressed as "http://www.schools.ourtown.org".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOURL_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOValue">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Value SHOULD identify a data point that is a String generated as the result of applying an algorithm to other data and MAY have AlgorithmURI and lang attributes.
+EXAMPLE: A Delivery Point Bar Code Value could be expressed as "20500999901".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOValue_Base">
+				<xsd:attribute name="AlgorithmURI" type="MISMOURI_Base">
+					<xsd:annotation>
+						<xsd:documentation>A value that identifies the algorithm used to calculate digest. For example: http://www.w3.org/2000/09/xmldsig#sha1  </xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="lang" type="xsd:language">
+					<xsd:annotation>
+						<xsd:documentation>The ISO 639-1 two character code value representing the langage of the text of the element data point. For example en for English es for spanish. If no ISO639-1 value exists for the language use the ISO639-2 three character  value. For example Philippine languages phi.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOXML" mixed="true">
+		<xsd:annotation>
+			<xsd:documentation>A data type of XML SHOULD identify a data point that is an XML compatible byte stream in the encoding of the EncodingType that when decoded is a resource of the MediaType using characters from the CharacterEncodingSetType. If a binary EncodingType is not used (e.g. "None" or "EscapedXML") then the CharacterEncodingSetType must be the same as that used for the XML instance document. The content MAY be mixed text and XML.
+EXAMPLE: Embedded Content XML for a print stream (.prn) in Base64 encoding could be expressed as "VGhlb2RvcmUgQWRhbXMNCkdyZWdvcnkgQWx2b3JkDQpMZWVuZGVydCBCaWpuYWd0ZQwNCg==".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+			<xsd:annotation>
+				<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+			<xsd:annotation>
+				<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+			<xsd:annotation>
+				<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+			<xsd:annotation>
+				<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+			<xsd:annotation>
+				<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attributeGroup>
+		<xsd:attributeGroup ref="AttributeExtension">
+			<xsd:annotation>
+				<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attributeGroup>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOXPath">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Xpath SHOULD identify a data point that is a string that complies with a version of the W3C Xpath Language to identify content in an XML document instance.
+EXAMPLE: A Data Item Change Xpath to change the Data Version could be expressed as "//MESSAGE/ABOUT_VERSIONS/ABOUT_VERSION[AboutVersionIdentifier[@IdentifierOwnerURI='http://my.org'] = '3.2']/DataVersionIdentifier".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOXPath_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MISMOYear">
+		<xsd:annotation>
+			<xsd:documentation>A data type of Date SHOULD identify a data point that represents numerically a specific year, of the Gregorian Calendar.
+Years MUST be represented in the extended format CCYY
+CCYY is a four-digit year, "0001" through "9999"
+Padded zeros must be used.
+an optional trailing time zone indicator is permitted using either Z (for Coordinated Universal Time UTC) or an offset from UTC using +hh:mm or -hh:mm as in Datetime
+Note that negative or extended (more than 4 digit) years are not permitted.
+EXAMPLE: The Escrow Account Activity Disbursement Year would be expressed as "2010".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="MISMOYear_Base">
+				<xsd:attribute name="DataNotSuppliedReasonType" type="DataNotSuppliedReasonBase">
+					<xsd:annotation>
+						<xsd:documentation>A value from a MISMO prescribed list that specifies the reason a specific data point is not included in the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeAdditionalDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding the Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="DataNotSuppliedReasonTypeOtherDescription" type="MISMOString_Base">
+					<xsd:annotation>
+						<xsd:documentation>A free-form text field used to capture the enumeration when Other is selected for Data Not Supplied Reason Type.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="SensitiveIndicator" type="MISMOIndicator_Base">
+					<xsd:annotation>
+						<xsd:documentation>Allows producers and consumers of XML instance documents that are valid MISMO V3 documents to mark any data point to be treated as sensitive. MISMO recommends that any use of a data point labeled as "Sensitive Information" in the LDD ALWAYS have this attribute set to "true".</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attributeGroup ref="xlink:MISMOresourceLink">
+					<xsd:annotation>
+						<xsd:documentation>An xlink attribute group for defining the end point of a relationship.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+				<xsd:attributeGroup ref="AttributeExtension">
+					<xsd:annotation>
+						<xsd:documentation>An implementation of the ability to extend an instance document by using any attribute. To change from Lax to make an redefinition restriction of AttributeExtension attribute group.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attributeGroup>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="MISMOAmount_Base">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOCode_Base">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="16383"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOCount_Base">
+		<xsd:restriction base="xsd:int">
+			<xsd:minInclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMODate_Base">
+		<xsd:restriction base="MISMODate_Union">
+			<xsd:pattern value="[0-9]{4}([\-][0-9]{2}){0,2}([Z]|(([+]|[\-])[0-9]{2}[:][0-9]{2}))?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMODate_Union">
+		<xsd:union memberTypes="xsd:gYear xsd:gYearMonth xsd:date"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMODatetime_Base">
+		<xsd:restriction base="xsd:dateTime">
+			<xsd:pattern value="[0-9]{4}\-[0-9]{2}\-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]{1,9})?(Z|([+|\-][0-9]{2}:[0-9]{2}))"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMODay_Base">
+		<xsd:restriction base="xsd:gDay"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOEnum_Base">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="80"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOIdentifier_Base">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="16383"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOIndicator_Base">
+		<xsd:restriction base="xsd:boolean"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOLogicalDataDictionaryIdentifier">
+		<xsd:annotation>
+			<xsd:documentation>Term: MISMO Logical Data Dictionary Identifier Definition: The MISMO Logical Data Dictionary Identifier is a unique value that represents the version of the MISMO LDD section of the reference model to which the containing XML instance document complies. For detailed information, please see MISMO Engineering Guide 006 – “Versioning and Release Schedule”, at http://www.mismo.org/specs/specs-downloads/cat_view/249-mismo-engineering-guidelines.html.
+Term: MISMO Logical Data Dictionary Identifier Definition: The MISMO Logical Data Dictionary Identifier is a unique value that represents the version of the MISMO LDD section of the reference model to which the containing XML instance document complies. For detailed information, please see MISMO Engineering Guide 006 – "Versioning and Release Schedule", at http://www.mismo.org/specs/specs-downloads/cat_view/249-mismo-engineering-guidelines.html.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="3\.\d*((\.\d*)?(\.\d*)?(\[[B]\d*(\-\d*)?\])?)?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOMonth_Base">
+		<xsd:restriction base="xsd:gMonth"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMONumericString_Base">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMONumeric_Base">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOPercent_Base">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMORate_Base">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOReferenceModelIdentifier">
+		<xsd:annotation>
+			<xsd:documentation>Term: MISMO Reference Model Identifier Definition: The MISMO Reference Model Identifier is a unique value that represents the version of the MISMO reference model to which the containing XML instance document complies. For detailed information, please see MISMO Engineering Guide 006 – “Versioning and Release Schedule”, at http://www.mismo.org/specs/specs-downloads/cat_view/249-mismo-engineering-guidelines.html.
+Term: MISMO Reference Model Identifier Definition: The MISMO Reference Model Identifier is a unique value that represents the version of the MISMO reference model to which the containing XML instance document complies. For detailed information, please see MISMO Engineering Guide 006 – "Versioning and Release Schedule", at http://www.mismo.org/specs/specs-downloads/cat_view/249-mismo-engineering-guidelines.html.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="3\.\d*((\.\d*)?(\[[B]\d*(\-\d*)?\])?)?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOSequenceNumber_Base">
+		<xsd:restriction base="xsd:int">
+			<xsd:minInclusive value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOString_Base">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="16383"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOTime_Base">
+		<xsd:restriction base="xsd:time"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOURI_Base">
+		<xsd:restriction base="xsd:anyURI"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOURL_Base">
+		<xsd:restriction base="xsd:anyURI"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOValue_Base">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="16383"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOXPath_Base">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="MISMOYear_Base">
+		<xsd:restriction base="xsd:gYear">
+			<xsd:minInclusive value="0001"/>
+			<xsd:maxInclusive value="9999"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

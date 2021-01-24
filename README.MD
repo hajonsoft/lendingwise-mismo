@@ -4,37 +4,43 @@ This project converts a lendingwise loan to mismo format.
 
 # Getting Started
 
-Node is used to read an input JSON object then write an output mismo file. The input JSON is called loan.json located at ./assets folder. The output is called mismo_loan.xml saved to ./output folder.
+Node is used to convert a lendingwise JSON object into its corresponding MISMO format. 
 
 ## Design
 
-xmlbuilder2 npm package is used to easily create the xml. This is easier than php which I am not so experienced with. Ultimately the logic must be converted to php before delivery to lendingwise.
-
+xmlbuilder2 npm package is used to easily create the xml. This is easier than php which I am not so experienced with. The code is then packages using browserify and then echoed inside php
 
 
 # Credits
 
-Mismo specs https://singlefamily.fanniemae.com/media/7571/display
+Mismo specs 
+https://singlefamily.fanniemae.com/media/7571/display
 
-Lending wise website  https://staging.lendingwise.com/backoffice/admin.php
+Lending wise staging website  
+https://staging.lendingwise.com/backoffice/admin.php
 
-
-login: alialiayman@gmail.com
-pass:  password123
-
-
+Lending wise production website 
 https://www.theloanpost.com/backoffice/admin.php
 
+print_r to JSON converter  
+https://www.nestforms.com/php-print_r-to-json-online
 
-Lendingwise assets walk through  https://share.vidyard.com/watch/teMPw61LFmzdBpctUGMZX1
+Mismo explorer 
+https://modelviewers.pilotfishtechnology.com/modelviewers/MISMO/index.html?page=https%3A//modelviewers.pilotfishtechnology.com/modelviewers/MISMO/model/Format.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.ROLES.ROLE.ROLE_DETAIL.PartyRoleType.html
 
+Mixing php and javascript 
+https://www.youtube.com/watch?v=-3LGsHOSTec
 
-online php array converter  https://www.nestforms.com/php-print_r-to-json-online
+browserify
+browserify index.js -o build/lw_mismo_converter.js
 
-online php to javascript converter https://wtools.io/javascript-to-php-converter
+Learning resources
+https://singlefamily.fanniemae.com/learning-center/uniform-residential-loan-application
 
-Mismo enums https://modelviewers.pilotfishtechnology.com/modelviewers/MISMO/index.html?page=https%3A//modelviewers.pilotfishtechnology.com/modelviewers/MISMO/model/Format.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.ROLES.ROLE.ROLE_DETAIL.PartyRoleType.html
+print_r to array replace strings
+replace to get php arry from print_r
+=> (.*[^,])$
+=> "$1",
 
-php and javascript https://www.youtube.com/watch?v=-3LGsHOSTec
-
-browserify index.js -o bundle.js
+=>([^,])$
+=>$1"",

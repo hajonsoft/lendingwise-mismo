@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:mismo="http://www.mismo.org/residential/2009/schemas" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.mismo.org/residential/2009/schemas" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation>Version: 3.4.0 Build: B324 Date: 2015-12-17 Iteration: </xsd:documentation>
+		<xsd:documentation>Copyright 2015 Mortgage Industry Standards Maintenance Organization (MISMO) All rights reserved.&#xD;THIS MISMO STANDARD INCLUDES THE END USER LICENSE AGREEMENT ATTACHED HERETO AT  http://www.mismo.org/AboutMISMO/PoliciesandProcedures.htm  AND IS GOVERNED BY AND SUBJECT TO THE END USER LICENSE AGREEMENT. NO USER OF THIS STANDARD MAY REMOVE THIS REFERENCE TO AND STATEMENT REGARDING THE END USER LICENSE. ANY HARD COPY PUBLICATION OF THIS STANDARD MUST INCLUDE AND ATTACH A HARD COPY PRINT OUT OFTHE END USER LICENSE.  ANY FURTHER ELECTRONIC DISTRIBUTION OF THIS STANDARD MUST INCLUDE A SPECIFIC REFERENCED LINK TO THE END USER LICENSE AGREEMENT OR OTHER MEANS OF ATTACHMENT OF THE END USER LICENSE AGREEMENT.&#xD;DISCLAIMER: THIS MISMO STANDARD IS PROVIDED "AS IS." MISMO, THE MORTGAGE BANKERS ASSOCIATION OF AMERICA ("MBA"), THE COPYRIGHT HOLDER, THE AUTHORS OF THIS MISMO STANDARD AND ANY STANDARD- SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD MAKE NO REPRESENTATIONS OR WARRANTIES (i) EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT; (ii) THAT THE CONTENTS OF SUCH MISMO STANDARD ARE FREE FROM ERROR OR SUITABLE FOR ANY PURPOSE; NOR THAT IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD-PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. IN NO EVENT WILL MISMO, MBA, THE COPYRIGHT HOLDER OR THE STANDARD-SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD BE LIABLE TO ANY PARTY FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES FOR ANY USE OF THIS MISMO STANDARD, INCLUDING, WITHOUT LIMITATION, ANY LOST PROFITS, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR OTHER DATA ON YOUR INFORMATION HANDLING SYSTEM OR OTHERWISE, EVEN IF MISMO, MBA, THE COPYRIGHT HOLDER AND/OR ANY AUTHORS AND/OR ANY STANDARD-SETTING BODY PARTICIPANTS TO THIS MISMO STANDARD ARE EXPRESSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="MISMOComplexTypesB324.xsd"/>
+	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlinkMISMOB324.xsd"/>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xsd:element name="DEAL" type="DEAL">
+		<xsd:annotation>
+			<xsd:documentation>The root element for all transactions that apply to the use cases of a single deal. A Deal may contain multiple loans or loan applications.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DOCUMENT" type="DOCUMENT">
+		<xsd:annotation>
+			<xsd:documentation>A DOCUMENT element contains or refers to an electronic record that reports one or more aspects of a business transaction. A DOCUMENT element has types, purposes, and uses which are described in the DOCUMENT_CLASSIFICATION element. A DOCUMENT element contains one or more VIEW elements which allow rendering for human consumption, for example on a computer display or printed on paper. A DOCUMENT element may contain a DEAL_SETS element with data related to the DOCUMENT. A DOCUMENT element may also contain a MAP element that relates data in the DOCUMENT to populated fields in one or more VIEW elements. A DOCUMENT may contain SIGNATORY elements used to represent the legally binding signatures of the parties named in the electronic record. A DOCUMENT also supports SYSTEM_SIGNATURE elements to create digital tamper-evident seals over portions or all of the DOCUMENT. Finally, a DOCUMENT may contain one or more AUDIT_TRAIL_ENTRY elements that list events which occurred to the DOCUMENT. A DOCUMENT is also known as a MISMO V3 SMART Doc® electronic document. A DOCUMENT may be delivered within a MISMO V3 MESSAGE, or a DOCUMENT element may be the root element of a standalone resource that may be validated with the model schema.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MESSAGE" type="MESSAGE">
+		<xsd:annotation>
+			<xsd:documentation>MESSAGE is the root node for V3. It represents the message payload of any SOAP or REST transaction. In SOAP MESSAGE is the content of &amp;gt;soap:body&amp;lt;. In REST MESSAGE is the document that is in the PUT, GET or DELETE HTTP protocol methods.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PARTY" type="PARTY">
+		<xsd:annotation>
+			<xsd:documentation>A collection of information about a single party to a transaction. Included direct participants like the borrower and seller as well as indirect participants such as the flood certificate provider.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

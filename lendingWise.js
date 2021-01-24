@@ -1,5 +1,70 @@
 const { container } = require("./util");
-const loanGlobal = require("./assets/loan.json");
+const { create } = require("xmlbuilder2");
+const moment = require("moment");
+
+let loanGlobal;
+
+function createMismo(loan) {
+  if (!loan){
+    return 'Nothing to convert, Please call with a JSON loan'
+  }
+  if (typeof loan === 'string' || loan instanceof String) {
+
+    loanGlobal = JSON.parse(loan);
+  } else {
+    loanGlobal = loan;
+  }
+  let doc = create({
+    version: "1.0",
+    encoding: "UTF-8",
+  }).ele("http://www.mismo.org/residential/2009/schemas", "MESSAGE", {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    MISMOReferenceModelIdentifier: "3.4.032420160128",
+    "xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "xmlns:ULAD": "http://www.datamodelextension.org/Schema/ULAD",
+    "xsi:schemaLocation":
+      "http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd",
+  });
+  doc = container(doc, ["ABOUT_VERSIONS", "ABOUT_VERSION"]);
+  doc = doc.ele("CreatedDatetime").txt(moment().utc().format()).up();
+
+  doc = doc.root();
+  doc = container(doc, ["DEAL_SETS", "DEAL_SET", "DEALS", "DEAL", "ASSETS"]);
+
+  const loanAssets = loanGlobal["fileLOChekingSavingInfo"];
+  doc = assets(doc, loanAssets);
+
+  const ownedPropertyData = loanOwnedPropertyData(
+    loan["fileLOScheduleRealInfo"]
+  );
+  doc = ownedProperty(doc, ownedPropertyData, loanAssets.length);
+
+  const collateralData = [loanGlobal["LMRInfo"]];
+  doc = collaterals(doc, collateralData);
+
+  const contingentLiabilityData = loanGlobal["contingentLiabilities"];
+  doc = contingentLiabilities(doc, contingentLiabilityData);
+
+  const creditorInfoData = loanGlobal["creditorInfo"];
+  doc = liabilities(doc, creditorInfoData);
+
+  const loanData = [loanGlobal["LMRInfo"]];
+  doc = loans(doc, loanData);
+
+  const partyData = [loanGlobal["LMRInfo"]];
+  doc = partyBorrower(doc, partyData);
+
+  if (partyData[0].coBorrowerFName) {
+    doc = partyCoBorrower(doc, partyData, 1);
+  }
+  const brokerInfo = loan["BrokerInfo"];
+  if (brokerInfo && brokerInfo.firstName) {
+    doc = partyBroker(doc, [brokerInfo], 2);
+  }
+
+  const xml = doc.end({ prettyPrint: true });
+  return xml;
+}
 
 function assets(doc, data) {
   return buildMismoNodes(doc, data, "ASSETS", "ASSET", 0, [
@@ -7,7 +72,7 @@ function assets(doc, data) {
       path: ["ASSET_DETAIL"],
       nodes: [
         { AssetAccountIdentifier: (row) => row.accountNumber },
-        { AssetCashOrMarketValueAmount: (row) => row.balance },
+        { AssetCashOrMarketValueAmount: (row) => money(row.balance) },
         { AssetType: (row) => mapValue(row.accType, assetTypeDiagram) },
       ],
     },
@@ -24,20 +89,24 @@ function ownedProperty(doc, data, startIndex) {
       path: ["OWNED_PROPERTY", "OWNED_PROPERTY_DETAIL"],
       goBack: 1,
       nodes: [
-        { OwnedPropertySubjectIndicator: (row) => "0" },
+        { OwnedPropertySubjectIndicator: (row) => "false" },
         {
-          OwnedPropertyDispositionStatusType: (row) => row.scheduleStatus,
+          OwnedPropertyDispositionStatusType: (row) =>
+            mapValue(row.scheduleStatus, scheduleStatusDiagram),
         },
         {
-          OwnedPropertyMaintenanceExpenseAmount: (row) => row.insMaintTaxMisc,
+          OwnedPropertyMaintenanceExpenseAmount: (row) =>
+            money(row.insMaintTaxMisc),
         },
         {
-          OwnedPropertyRentalIncomeGrossAmount: (row) => row.grossRentalIncome,
+          OwnedPropertyRentalIncomeGrossAmount: (row) =>
+            money(row.grossRentalIncome),
         },
         {
-          OwnedPropertyRentalIncomeNetAmount: (row) => row.netRentalIncome,
+          OwnedPropertyRentalIncomeNetAmount: (row) =>
+            money(row.netRentalIncome),
         },
-        { OwnedPropertyLienUPBAmount: (row) => row.unpaidBalance },
+        { OwnedPropertyLienUPBAmount: (row) => money(row.unpaidBalance) },
       ],
     },
     {
@@ -45,7 +114,6 @@ function ownedProperty(doc, data, startIndex) {
       goBack: 1,
       nodes: [
         { AddressLineText: (row) => row.schedulePropAddr },
-        { AddressUnitIdentifier: (row) => "" },
         { CityName: (row) => row.schedulePropCity },
         { StateCode: (row) => row.schedulePropState },
         { PostalCode: (row) => row.schedulePropZip },
@@ -57,15 +125,11 @@ function ownedProperty(doc, data, startIndex) {
       goBack: 1,
       nodes: [
         {
-          PropertyEstimatedValueAmount: (row) => row.presentMarketValue,
+          PropertyEstimatedValueAmount: (row) => money(row.presentMarketValue),
         },
-        { PropertyCurrentUsageType: (row) => row.intendedOccupancy },
         {
           PropertyUsageType: (row) =>
-            mapValue(row.intendedOccupancy, occupancyDiagram),
-        },
-        {
-          PropertyUsageTypeOtherDescription: (row) => "",
+            mapValue(row.intendedOccupancy, intendedOccupancyDiagram),
         },
       ],
     },
@@ -75,10 +139,9 @@ function ownedProperty(doc, data, startIndex) {
         "PROPERTY_VALUATION",
         "PROPERTY_VALUATION_DETAIL",
       ],
-      goBack: "root",
       nodes: [
         {
-          PropertyValuationAmount: (row) => row.presentMarketValue,
+          PropertyValuationAmount: (row) => money(row.presentMarketValue),
         },
       ],
     },
@@ -91,9 +154,6 @@ function collaterals(doc, data) {
       goBack: 1,
       nodes: [
         { AddressLineText: (row) => row.propertyAddress },
-        {
-          AddressUnitIdentifier: (row) => "",
-        },
         {
           CityName: (row) => row.propertyCity,
         },
@@ -108,28 +168,24 @@ function collaterals(doc, data) {
     },
     {
       path: ["PROPERTY_DETAIL"],
-      goBack: "ASSETS",
       nodes: [
-        { FinancedUnitCount: (row) => "" },
-        { PropertyEstimatedValueAmount: (row) => row.homeValue },
+        { FinancedUnitCount: (row) => "1" },
+        { PropertyEstimatedValueAmount: (row) => money(row.homeValue) },
         { PropertyUsageType: (row) => "" },
-        { FHASecondaryResidenceIndicator: (row) => "" },
         {
           PropertyMixedUsageIndicator: (row) =>
             row.propertyType === "Apartment Complex" ||
             row.propertyType === "Assisted Living Facility" ||
             row.propertyType === "Commercial Lot/Land"
-              ? "1"
-              : "0",
+              ? "true"
+              : "false",
         },
         {
           ConstructionMethodType: (row) =>
-            loanGlobal["FileProInfo"].propConstructionMethod === "Manufactured"
-              ? "1"
-              : "0",
-        },
-        {
-          ConstructionMethodTypeOtherDescription: (row) => "",
+            mapValue(
+              loanGlobal["FileProInfo"].propConstructionMethod,
+              constructionMethodDiagram
+            ),
         },
       ],
     },
@@ -140,7 +196,10 @@ function contingentLiabilities(doc, data, startIndex) {
     {
       path: ["LIABILITY_DETAIL"],
       nodes: [
-        { LiabilityType: (row) => mapValue(row.typeOfLiability,contingentLiabilityDiagram) },
+        {
+          LiabilityType: (row) =>
+            mapValue(row.typeOfLiability, contingentLiabilityDiagram),
+        },
         {
           LiabilityTypeOtherDescription: (row) => row.clDescription,
         },
@@ -148,16 +207,16 @@ function contingentLiabilities(doc, data, startIndex) {
           LiabilityAccountIdentifier: (row) => row.clAccount,
         },
         {
-          LiabilityUnpaidBalanceAmount: (row) => row.clBalance,
+          LiabilityUnpaidBalanceAmount: (row) => money(row.clBalance),
         },
         {
           LiabilityPayoffStatusIndicator: (row) => "false",
         },
-        { LiabilityMonthlyPaymentAmount: (row) => row.monthlyPayment },
+        { LiabilityMonthlyPaymentAmount: (row) => money(row.monthlyPayment) },
         {
           LiabilityRemainingTermMonthsCount: (row) => row.monthsLeftToPay,
         },
-        { LiabilityExclusionIndicator: (row) => "true" },
+        { LiabilityExclusionIndicator: (row) => "false" },
       ],
     },
     {
@@ -182,16 +241,19 @@ function liabilities(doc, data, startIndex) {
           LiabilityAccountIdentifier: (row) => row.creditorAcctNumber,
         },
         {
-          LiabilityUnpaidBalanceAmount: (row) => row.creditorAcctBalance,
+          LiabilityUnpaidBalanceAmount: (row) => money(row.creditorAcctBalance),
         },
         {
-          LiabilityPayoffStatusIndicator: (row) => row.payAtBeforeClosing === "Yes" ? "true": "false" ,
+          LiabilityPayoffStatusIndicator: (row) =>
+            indicator(row.payAtBeforeClosing),
         },
-        { LiabilityMonthlyPaymentAmount: (row) => row.creditorMinPayment },
         {
-          LiabilityRemainingTermMonthsCount: (row) => '',
+          LiabilityMonthlyPaymentAmount: (row) => money(row.creditorMinPayment),
         },
-        { LiabilityExclusionIndicator: (row) => "true" },
+        {
+          LiabilityRemainingTermMonthsCount: (row) => "",
+        },
+        { LiabilityExclusionIndicator: (row) => "false" },
       ],
     },
     {
@@ -203,20 +265,11 @@ function liabilities(doc, data, startIndex) {
 function loans(doc, data, startIndex) {
   return buildMismoNodes(doc, data, "LOANS", "LOAN", startIndex, [
     {
-      path: ["LOAN_IDENTIFIERS", "LOAN_IDENTIFIER"],
-      nodes: [
-        { LoanIdentifier: (row) => row.LMRId },
-        {
-          LoanIdentifierType: (row) => row.loanType,
-        },
-      ],
-    },
-    {
       path: ["CLOSING_INFORMATION", "CLOSING_INFORMATION_DETAIL"],
       nodes: [
         {
           CashFromBorrowerAtClosingAmount: (row) =>
-            loanGlobal["fileLOPropInfo"].estimatedClosingCosts,
+            money(loanGlobal["fileLOPropInfo"].estimatedClosingCosts),
         },
       ],
     },
@@ -231,21 +284,21 @@ function loans(doc, data, startIndex) {
       nodes: [
         {
           BorrowerRequestedLoanAmount: (row) =>
-            loanGlobal["fileHMLOPropertyInfo"].requiredLoanAmount,
+            money(loanGlobal["fileHMLOPropertyInfo"].requiredLoanAmount),
         },
         {
           EstimatedClosingCostsAmount: (row) =>
-            loanGlobal["fileLOPropInfo"].estimatedClosingCosts,
+            money(loanGlobal["fileLOPropInfo"].estimatedClosingCosts),
         },
       ],
     },
     {
       path: ["URLA_TOTAL"],
-      goBack: 4,
+      goBack: "LOAN",
       nodes: [
         {
           URLATotalDueFromBorrowerAtClosingAmount: (row) =>
-            loanGlobal["fileLOPropInfo"].estimatedClosingCosts,
+            money(loanGlobal["fileLOPropInfo"].estimatedClosingCosts),
         },
       ],
     },
@@ -259,18 +312,31 @@ function loans(doc, data, startIndex) {
       ],
     },
     {
+      path: ["LOAN_IDENTIFIERS", "LOAN_IDENTIFIER"],
+      nodes: [
+        { LoanIdentifier: (row) => row.LMRId },
+        {
+          LoanIdentifierType: (row) => "LenderLoan",
+        },
+      ],
+    },
+    {
       path: ["TERMS_OF_LOAN"],
       nodes: [
-        { BaseLoanAmount: (row) => loanGlobal["ResponseInfo"].totalLoanAmount },
-        { LienPriorityType: (row) => "" },
+        {
+          BaseLoanAmount: (row) =>
+            money(loanGlobal["ResponseInfo"].totalLoanAmount),
+        },
         {
           LoanPurposeType: (row) =>
-            loanGlobal["fileHMLONewLoanInfo"].typeOfHMLOLoanRequesting,
+            mapValue(
+              loanGlobal["fileHMLONewLoanInfo"].typeOfHMLOLoanRequesting,
+              loanTypeDiagram
+            ),
         },
         {
-          MortgageType: (row) => "",
+          MortgageType: (row) => "Conventional",
         },
-        { NoteAmount: (row) => "" },
         { NoteRatePercent: (row) => loanGlobal["LMRInfo"].lien1Rate },
       ],
     },
@@ -278,60 +344,6 @@ function loans(doc, data, startIndex) {
 }
 function partyBorrower(doc, data) {
   return buildMismoNodes(doc, data, "PARTIES", "PARTY", 0, [
-    {
-      path: ["TAXPAYER_IDENTIFIERS", "TAXPAYER_IDENTIFIER"],
-      nodes: [
-        { TaxpayerIdentifierType: (row) => "SocialSecurityNumber" },
-        {
-          TaxpayerIdentifierValue: (row) => row.ssnNumber,
-        },
-      ],
-    },
-    {
-      path: ["ADDRESSES", "ADDRESS"],
-      goBack: 1,
-      nodes: [
-        { AddressType: (row) => "HOME" },
-        {
-          AddressLineText: (row) => loanGlobal.file2Info.presentAddress,
-        },
-        { AddressUnitIdentifier: (row) => "" },
-        { CityName: (row) => loanGlobal.file2Info.presentCity },
-        { StateCode: (row) => loanGlobal.file2Info.presentState },
-        { PostalCode: (row) => row.previousZip },
-        { CountryCode: (row) => "USA" },
-      ],
-    },
-    {
-      path: ["ADDRESS"],
-      goBack: 1,
-      nodes: [
-        { AddressType: (row) => "HOME" },
-        {
-          AddressLineText: (row) => row.previousAddress,
-        },
-        { AddressUnitIdentifier: (row) => "" },
-        { CityName: (row) => row.previousCity },
-        { StateCode: (row) => row.previousState },
-        { PostalCode: (row) => row.previousZip },
-        { CountryCode: (row) => "USA" },
-      ],
-    },
-    {
-      path: ["ADDRESS"],
-      goBack: 2,
-      nodes: [
-        { AddressType: (row) => "MAILING" },
-        {
-          AddressLineText: (row) => row.mailingAddress,
-        },
-        { AddressUnitIdentifier: (row) => "" },
-        { CityName: (row) => row.mailingCity },
-        { StateCode: (row) => row.mailingState },
-        { PostalCode: (row) => row.mailingZip },
-        { CountryCode: (row) => "USA" },
-      ],
-    },
     {
       path: ["INDIVIDUAL", "ALIASES", "ALIAS", "NAME"],
       goBack: 3,
@@ -360,7 +372,7 @@ function partyBorrower(doc, data) {
     {
       path: ["CONTACT_POINT_DETAIL"],
       goBack: 2,
-      nodes: [{ ContactPointRoleType: (row) => "HOME" }],
+      nodes: [{ ContactPointRoleType: (row) => "Home" }],
     },
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
@@ -375,7 +387,7 @@ function partyBorrower(doc, data) {
     {
       path: ["CONTACT_POINT_DETAIL"],
       goBack: 2,
-      nodes: [{ ContactPointRoleType: (row) => "MOBILE" }],
+      nodes: [{ ContactPointRoleType: (row) => "Mobile" }],
     },
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
@@ -389,15 +401,68 @@ function partyBorrower(doc, data) {
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
-      goBack: 2,
-      nodes: [{ ContactPointRoleType: (row) => "WORK" }],
+      goBack: 3,
+      nodes: [{ ContactPointRoleType: (row) => "Work" }],
     },
     {
       path: ["NAME"],
-      goBack: 3,
+      goBack: 2,
       nodes: [
         { FirstName: (row) => row.borrowerFName },
         { LastName: (row) => row.borrowerLName },
+      ],
+    },
+    {
+      path: ["ADDRESSES", "ADDRESS"],
+      goBack: 1,
+      nodes: [
+        { AddressType: (row) => "Current" },
+        {
+          StreetName: (row) => streetName(loanGlobal.file2Info.presentAddress),
+        },
+        {
+          StreetPrimaryNumberText: (row) =>
+            streetNumber(loanGlobal.file2Info.presentAddress),
+        },
+        { CityName: (row) => loanGlobal.file2Info.presentCity },
+        { StateCode: (row) => loanGlobal.file2Info.presentState },
+        { PostalCode: (row) => row.previousZip },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["ADDRESS"],
+      goBack: 1,
+      nodes: [
+        { AddressType: (row) => "Prior" },
+        {
+          StreetName: (row) => streetName(row.previousAddress),
+        },
+        {
+          StreetPrimaryNumberText: (row) => streetNumber(row.previousAddress),
+        },
+        { CityName: (row) => row.previousCity },
+        { StateCode: (row) => row.previousState },
+        { PostalCode: (row) => row.previousZip },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["ADDRESS"],
+      goBack: 2,
+      nodes: [
+        { AddressType: (row) => "Mailing" },
+        {
+          StreetName: (row) => streetName(row.mailingAddress),
+        },
+        {
+          StreetPrimaryNumberText: (row) => streetNumber(row.mailingAddress),
+        },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => row.mailingCity },
+        { StateCode: (row) => row.mailingState },
+        { PostalCode: (row) => row.mailingZip },
+        { CountryCode: (row) => "USA" },
       ],
     },
     {
@@ -413,135 +478,9 @@ function partyBorrower(doc, data) {
               ? loanGlobal.fileHMLOInfo.agesOfDependent.split(",").length
               : loanGlobal.fileHMLOInfo.numberOfDependents,
         },
-        { MaritalStatusType: (row) => row.maritalStatus },
-      ],
-    },
-    {
-      path: [
-        "GOVERNMENT_MONITORING",
-        "HMDA_ETHNICITY_ORIGINS",
-        "HMDA_ETHNICITY_ORIGIN",
-      ],
-      goBack: 2,
-      nodes: [
         {
-          HMDAEthnicityOriginType: (row) => {
-            switch (loanGlobal["QAInfo"].BEthnicity) {
-              case "2":
-                return "Hispanic or Latino";
-              case "1":
-                return "Not Hispanic or Latino";
-              case "3":
-                return "Not Disclosed";
-              default:
-                return "";
-            }
-          },
-        },
-        {
-          HMDAEthnicityOriginTypeOtherDescription: (row) =>
-            loanGlobal["QAInfo"].bFiEthnicitySubOther,
-        },
-      ],
-    },
-    {
-      path: ["HMDA_RACES", "HMDA_RACE", "HMDA_RACE_DETAIL"],
-      goBack: 3,
-      nodes: [
-        {
-          HMDARaceType: (row) => {
-            switch (loanGlobal["QAInfo"].BRace) {
-              case "1":
-                return "American Indian or Alaska Native";
-              case "2":
-                return "Asian";
-              case "3":
-                return "Black or African American";
-              case "4":
-                return "Native Hawaiian or Other Pacific Islander";
-              case "5":
-                return "White";
-              case "6":
-                return "Not Disclosed";
-              default:
-                return "";
-            }
-          },
-        },
-        {
-          HMDARaceTypeAddtionalDescription: (row) => "",
-        },
-      ],
-    },
-    {
-      path: [
-        "GOVERNMENT_MONITORING_DETAIL",
-        "EXTENSION",
-        "OTHER",
-        "ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION",
-      ],
-      goBack: 4,
-      comment: "extra go back to get to Borrower",
-      nodes: [
-        {
-          "ULAD:HMDAGenderType": (row) => {
-            switch (loanGlobal["QAInfo"].BGender) {
-              case "1":
-                return "Female";
-              case "2":
-                return "Male";
-              case "3":
-                return "Not Disclosed";
-              default:
-                return "";
-            }
-          },
-        },
-      ],
-    },
-    {
-      path: ["DECLARATION", "DECLARATION_DETAIL"],
-      goBack: 2,
-      nodes: [
-        {
-          CitizenshipResidencyType: (row) =>
-            mapValue(
-              loanGlobal["fileHMLOInfo"].borrowerCitizenship,
-              citizenshipDiagram
-            ),
-        },
-        {
-          IntentToOccupyType: (row) =>
-            loanGlobal["fileHMLOBackGroundInfo"].isBorIntendToOccupyPropAsPRI,
-        },
-        { HomeownerPastThreeYearsType: (row) => "No" },
-        { PriorPropertyUsageType: (row) => "" },
-        { FHASecondaryResidenceIndicator: (row) => "No" },
-        { PriorPropertyTitleType: (row) => "" },
-        { UndisclosedBorrowedFundsIndicator: (row) => "No" },
-        { UndisclosedBorrowedFundsAmount: (row) => "0" },
-        { UndisclosedMortgageApplicationIndicator: (row) => "No" },
-        { UndisclosedCreditApplicationIndicator: (row) => "No" },
-        { PropertyProposedCleanEnergyLienIndicator: (row) => "No" },
-        { UndisclosedComakerOfNoteIndicator: (row) => "No" },
-        {
-          OutstandingJudgmentsIndicator: (row) =>
-            loanGlobal["fileHMLOBackGroundInfo"].isAnyBorOutstandingJudgements,
-        },
-        {
-          PresentlyDelinquentIndicator: (row) =>
-            loanGlobal["fileHMLOBackGroundInfo"].isBorPresenltyDelinquent,
-        },
-        {
-          PartyToLawsuitIndicator: (row) =>
-            loanGlobal["fileHMLOBackGroundInfo"].hasBorAnyActiveLawsuits,
-        },
-        { PriorPropertyDeedInLieuConveyedIndicator: (row) => "No" },
-        { PriorPropertyShortSaleCompletedIndicator: (row) => "No" },
-        { PriorPropertyForeclosureCompletedIndicator: (row) => "No" },
-        {
-          BankruptcyIndicator: (row) =>
-            loanGlobal["fileHMLOBackGroundInfo"].isBorDecalredBankruptPastYears,
+          MaritalStatusType: (row) =>
+            mapValue(row.maritalStatus, maritalStatusDiagram),
         },
       ],
     },
@@ -550,7 +489,7 @@ function partyBorrower(doc, data) {
       goBack: 1,
       nodes: [
         {
-          URLABorrowerTotalOtherIncomeAmount: (row) => "",
+          URLABorrowerTotalOtherIncomeAmount: (row) => "0",
         },
       ],
     },
@@ -565,10 +504,12 @@ function partyBorrower(doc, data) {
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
             loanGlobal["incomeInfo"].grossIncome1 &&
-            Math.floor(
-              parseInt(
-                loanGlobal["incomeInfo"].grossIncome1.replace(/,/g, "")
-              ) / 12
+            money(
+              Math.floor(
+                parseInt(
+                  loanGlobal["incomeInfo"].grossIncome1.replace(/,/g, "")
+                ) / 12
+              )
             ),
         },
         { EmploymentIncomeIndicator: (row) => "true" },
@@ -582,10 +523,12 @@ function partyBorrower(doc, data) {
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
             loanGlobal["incomeInfo"].commissionOrBonus1 &&
-            Math.floor(
-              parseInt(
-                loanGlobal["incomeInfo"].commissionOrBonus1.replace(/,/g, "")
-              ) / 12
+            money(
+              Math.floor(
+                parseInt(
+                  loanGlobal["incomeInfo"].commissionOrBonus1.replace(/,/g, "")
+                ) / 12
+              )
             ),
         },
         { EmploymentIncomeIndicator: (row) => "true" },
@@ -616,9 +559,11 @@ function partyBorrower(doc, data) {
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
             loanGlobal["incomeInfo"].overtime1 &&
-            Math.floor(
-              parseInt(loanGlobal["incomeInfo"].overtime1.replace(/,/g, "")) /
-                12
+            money(
+              Math.floor(
+                parseInt(loanGlobal["incomeInfo"].overtime1.replace(/,/g, "")) /
+                  12
+              )
             ),
         },
         { EmploymentIncomeIndicator: (row) => "true" },
@@ -627,7 +572,7 @@ function partyBorrower(doc, data) {
     },
     {
       path: ["CURRENT_INCOME_ITEM", "CURRENT_INCOME_ITEM_DETAIL"],
-      goBack: 3,
+      goBack: 4,
       nodes: [
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
@@ -646,6 +591,60 @@ function partyBorrower(doc, data) {
       ],
     },
     {
+      path: ["DECLARATION", "DECLARATION_DETAIL"],
+      nodes: [
+        {
+          CitizenshipResidencyType: (row) =>
+            mapValue(
+              loanGlobal["fileHMLOInfo"].borrowerCitizenship,
+              citizenshipDiagram
+            ),
+        },
+        {
+          IntentToOccupyType: (row) =>
+            loanGlobal["fileHMLOBackGroundInfo"].isBorIntendToOccupyPropAsPRI,
+        },
+        { HomeownerPastThreeYearsType: (row) => "No" },
+        { PriorPropertyUsageType: (row) => "" },
+        { FHASecondaryResidenceIndicator: (row) => "false" },
+        { PriorPropertyTitleType: (row) => "" },
+        { UndisclosedBorrowedFundsIndicator: (row) => "false" },
+        { UndisclosedBorrowedFundsAmount: (row) => "0" },
+        { UndisclosedMortgageApplicationIndicator: (row) => "false" },
+        { UndisclosedCreditApplicationIndicator: (row) => "false" },
+        { PropertyProposedCleanEnergyLienIndicator: (row) => "false" },
+        { UndisclosedComakerOfNoteIndicator: (row) => "false" },
+        {
+          OutstandingJudgmentsIndicator: (row) =>
+            indicator(
+              loanGlobal["fileHMLOBackGroundInfo"].isAnyBorOutstandingJudgements
+            ),
+        },
+        {
+          PresentlyDelinquentIndicator: (row) =>
+            indicator(
+              loanGlobal["fileHMLOBackGroundInfo"].isBorPresenltyDelinquent
+            ),
+        },
+        {
+          PartyToLawsuitIndicator: (row) =>
+            indicator(
+              loanGlobal["fileHMLOBackGroundInfo"].hasBorAnyActiveLawsuits
+            ),
+        },
+        { PriorPropertyDeedInLieuConveyedIndicator: (row) => "false" },
+        { PriorPropertyShortSaleCompletedIndicator: (row) => "false" },
+        { PriorPropertyForeclosureCompletedIndicator: (row) => "false" },
+        {
+          BankruptcyIndicator: (row) =>
+            indicator(
+              loanGlobal["fileHMLOBackGroundInfo"]
+                .isBorDecalredBankruptPastYears
+            ),
+        },
+      ],
+    },
+    {
       path: ["EMPLOYERS", "EMPLOYER", "ADDRESS"],
       goBack: 1,
       nodes: [
@@ -659,14 +658,17 @@ function partyBorrower(doc, data) {
     },
     {
       path: ["EMPLOYMENT"],
-      goBack: 1,
+      goBack: 3,
       nodes: [
         {
-          EmploymentStatusType: (row) => loanGlobal["incomeInfo"].employedInfo1,
+          EmploymentStatusType: (row) => "Current",
         },
         {
           EmploymentClassificationType: (row) =>
-            loanGlobal["incomeInfo"].employedInfo1,
+            mapValue(
+              loanGlobal["incomeInfo"].employedInfo1,
+              employmentClassificationType
+            ),
         },
         {
           EmploymentPositionDescription: (row) =>
@@ -683,8 +685,8 @@ function partyBorrower(doc, data) {
         {
           EmploymentBorrowerSelfEmployedIndicator: (row) =>
             loanGlobal["incomeInfo"].employedInfo1 === "Self-Employed"
-              ? "1"
-              : "0",
+              ? "true"
+              : "false",
         },
         {
           OwnershipInterestType: (row) =>
@@ -699,64 +701,99 @@ function partyBorrower(doc, data) {
         },
       ],
     },
-  ]);
-}
-function partyCoBorrower(doc, data, startingIndex) {
-  return buildMismoNodes(doc, data, "PARTIES", "PARTY", startingIndex, [
+    {
+      path: [
+        "GOVERNMENT_MONITORING",
+        "HMDA_ETHNICITY_ORIGINS",
+        "HMDA_ETHNICITY_ORIGIN",
+      ],
+      goBack: 2,
+      nodes: [
+        {
+          HMDAEthnicityOriginType: (row) => {
+            switch (loanGlobal["QAInfo"].BEthnicity) {
+              case "2":
+                return "Mexican";
+              case "1":
+                return "Other";
+              case "3":
+                return "Other";
+              default:
+                return "Other";
+            }
+          },
+        },
+        {
+          HMDAEthnicityOriginTypeOtherDescription: (row) =>
+            loanGlobal["QAInfo"].bFiEthnicitySubOther,
+        },
+      ],
+    },
+    {
+      path: ["HMDA_RACES", "HMDA_RACE", "HMDA_RACE_DETAIL"],
+      goBack: 7,
+      nodes: [
+        {
+          HMDARaceType: (row) => {
+            switch (loanGlobal["QAInfo"].BRace) {
+              case "1":
+                return "AmericanIndianOrAlaskaNative";
+              case "2":
+                return "Asian";
+              case "3":
+                return "BlackOrAfricanAmerican";
+              case "4":
+                return "NativeHawaiianOrOtherPacificIslander";
+              case "5":
+                return "White";
+              case "6":
+                return "InformationNotProvidedByApplicantInMailInternetOrTelephoneApplication";
+              default:
+                return "NotApplicable";
+            }
+          },
+        },
+      ],
+    },
+    // {
+    //   path: [
+    //     "GOVERNMENT_MONITORING_DETAIL",
+    //     "EXTENSION",
+    //     "OTHER",
+    //     "ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION",
+    //   ],
+    //   goBack: 4,
+    //   comment: "extra go back to get to Borrower",
+    //   nodes: [
+    //     {
+    //       "ULAD:HMDAGenderType": (row) => {
+    //         switch (loanGlobal["QAInfo"].BGender) {
+    //           case "1":
+    //             return "Female";
+    //           case "2":
+    //             return "Male";
+    //           case "3":
+    //             return "Not Disclosed";
+    //           default:
+    //             return "";
+    //         }
+    //       },
+    //     },
+    //   ],
+    // },
     {
       path: ["TAXPAYER_IDENTIFIERS", "TAXPAYER_IDENTIFIER"],
       nodes: [
         { TaxpayerIdentifierType: (row) => "SocialSecurityNumber" },
         {
-          TaxpayerIdentifierValue: (row) => row.coBSsnNumber,
+          TaxpayerIdentifierValue: (row) => row.ssnNumber,
         },
       ],
     },
-    {
-      path: ["ADDRESSES", "ADDRESS"],
-      goBack: 1,
-      nodes: [
-        { AddressType: (row) => "HOME" },
-        {
-          AddressLineText: (row) => loanGlobal.file2Info.coBPresentAddress,
-        },
-        { AddressUnitIdentifier: (row) => "" },
-        { CityName: (row) => loanGlobal.file2Info.coBPresentCity },
-        { StateCode: (row) => loanGlobal.file2Info.coBPresentState },
-        { PostalCode: (row) => row.coBPresentZip },
-        { CountryCode: (row) => "USA" },
-      ],
-    },
-    {
-      path: ["ADDRESS"],
-      goBack: 1,
-      nodes: [
-        { AddressType: (row) => "HOME" },
-        {
-          AddressLineText: (row) => row.coBorPreviousAddress,
-        },
-        { AddressUnitIdentifier: (row) => "" },
-        { CityName: (row) => row.coBorPreviousCity },
-        { StateCode: (row) => row.coBorPreviousState },
-        { PostalCode: (row) => row.coBorPreviousZip },
-        { CountryCode: (row) => "USA" },
-      ],
-    },
-    {
-      path: ["ADDRESS"],
-      goBack: 2,
-      nodes: [
-        { AddressType: (row) => "MAILING" },
-        {
-          AddressLineText: (row) => row.coBorrowerMailingAddress,
-        },
-        { AddressUnitIdentifier: (row) => "" },
-        { CityName: (row) => row.coBorrowerMailingCity },
-        { StateCode: (row) => row.coBorrowerMailingState },
-        { PostalCode: (row) => row.coBorrowerMailingZip },
-        { CountryCode: (row) => "USA" },
-      ],
-    },
+  ]);
+}
+function partyCoBorrower(doc, data) {
+  return buildMismoNodes(doc, data, "PARTIES", "PARTY", 0, [
     {
       path: ["INDIVIDUAL", "ALIASES", "ALIAS", "NAME"],
       goBack: 3,
@@ -778,14 +815,14 @@ function partyCoBorrower(doc, data, startingIndex) {
       nodes: [
         {
           ContactPointTelephoneValue: (row) =>
-            row.coBPhoneNumber && row.coBPhoneNumber.replace(/[^0-9]/g, ""),
+            row.phoneNumber && row.coBPhoneNumber.replace(/[^0-9]/g, ""),
         },
       ],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
       goBack: 2,
-      nodes: [{ ContactPointRoleType: (row) => "HOME" }],
+      nodes: [{ ContactPointRoleType: (row) => "Home" }],
     },
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
@@ -793,14 +830,14 @@ function partyCoBorrower(doc, data, startingIndex) {
       nodes: [
         {
           ContactPointTelephoneValue: (row) =>
-            row.coBCellNumber && row.coBCellNumber.replace(/[^0-9]/g, ""),
+            row.cellNumber && row.coBCellNumber.replace(/[^0-9]/g, ""),
         },
       ],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
       goBack: 2,
-      nodes: [{ ContactPointRoleType: (row) => "MOBILE" }],
+      nodes: [{ ContactPointRoleType: (row) => "Mobile" }],
     },
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
@@ -808,29 +845,93 @@ function partyCoBorrower(doc, data, startingIndex) {
       nodes: [
         {
           ContactPointTelephoneValue: (row) =>
-            row.coBFax && row.coBFax.replace(/[^0-9]/g, ""),
+            row.workNumber && row.coBFax.replace(/[^0-9]/g, ""),
         },
       ],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
-      goBack: 2,
-      nodes: [{ ContactPointRoleType: (row) => "WORK" }],
+      goBack: 3,
+      nodes: [{ ContactPointRoleType: (row) => "Work" }],
     },
     {
       path: ["NAME"],
-      goBack: 3,
+      goBack: 2,
       nodes: [
         { FirstName: (row) => row.coBorrowerFName },
         { LastName: (row) => row.coBorrowerLName },
       ],
     },
     {
-      path: ["ROLES", "ROLE", "ROLE_DETAIL"],
+      path: ["ADDRESSES", "ADDRESS"],
       goBack: 1,
+      nodes: [
+        { AddressType: (row) => "Current" },
+        {
+          StreetName: (row) =>
+            streetName(loanGlobal.file2Info.coBPresentAddress),
+        },
+        {
+          StreetPrimaryNumberText: (row) =>
+            streetNumber(loanGlobal.file2Info.coBPresentAddress),
+        },
+        { CityName: (row) => loanGlobal.file2Info.coBPresentCity },
+        { StateCode: (row) => loanGlobal.file2Info.coBPresentState },
+        { PostalCode: (row) => row.coBPresentZip },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["ADDRESS"],
+      goBack: 1,
+      nodes: [
+        { AddressType: (row) => "Prior" },
+        {
+          StreetName: (row) => streetName(row.coBorPreviousAddress),
+        },
+        {
+          StreetPrimaryNumberText: (row) =>
+            streetNumber(row.coBorPreviousAddress),
+        },
+        { CityName: (row) => row.coBorPreviousCity },
+        { StateCode: (row) => row.coBorPreviousState },
+        { PostalCode: (row) => row.coBorPreviousZip },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["ADDRESS"],
+      goBack: 2,
+      nodes: [
+        { AddressType: (row) => "Mailing" },
+        {
+          StreetName: (row) => streetName(row.coBorrowerMailingAddress),
+        },
+        {
+          StreetPrimaryNumberText: (row) =>
+            streetNumber(row.coBorrowerMailingAddress),
+        },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => row.coBorrowerMailingCity },
+        { StateCode: (row) => row.coBorrowerMailingState },
+        { PostalCode: (row) => row.coBorrowerMailingZip },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["ROLES", "ROLE", "ROLE_DETAIL"],
       nodes: [
         {
           PartyRoleType: (row) => "Cosigner",
+        },
+      ],
+    },
+    {
+      path: ["TAXPAYER_IDENTIFIERS", "TAXPAYER_IDENTIFIER"],
+      nodes: [
+        { TaxpayerIdentifierType: (row) => "SocialSecurityNumber" },
+        {
+          TaxpayerIdentifierValue: (row) => row.coBSsnNumber,
         },
       ],
     },
@@ -839,41 +940,20 @@ function partyCoBorrower(doc, data, startingIndex) {
 function partyBroker(doc, data, startingIndex) {
   return buildMismoNodes(doc, data, "PARTIES", "PARTY", startingIndex, [
     {
-      path: ["ADDRESSES", "ADDRESS"],
-      nodes: [
-        { AddressType: (row) => "WORK" },
-        {
-          AddressLineText: (row) => row.addr,
-        },
-        { AddressUnitIdentifier: (row) => "" },
-        { CityName: (row) => row.city },
-        { StateCode: (row) => row.state },
-        { PostalCode: (row) => row.zipCode },
-        { CountryCode: (row) => "USA" },
+      path: [
+        "LEGAL_ENTITY",
+        "CONTACTS",
+        "CONTACT",
+        "CONTACT_POINTS",
+        "CONTACT_POINT",
+        "CONTACT_POINT_EMAIL",
       ],
-    },
-    {
-      path: ["LEGAL_ENTITY", "LEGAL_ENTITY_DETAIL"],
-      nodes: [{ FullName: (row) => row.company }],
-    },
-    {
-      path: ["INDIVIDUAL", "NAME"],
-      goBack: 1,
-      nodes: [
-        { FirstName: (row) => row.firstName },
-        {
-          LastName: (row) => row.lastName,
-        },
-      ],
-    },
-    {
-      path: ["CONTACT_POINTS", "CONTACT_POINT", "CONTACT_POINT_EMAIL"],
-      goBack: 1,
+      goBack: 2,
       nodes: [{ ContactPointEmailValue: (row) => row.email }],
     },
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
-      goBack: 5,
+      goBack: 3,
       nodes: [
         {
           ContactPointTelephoneValue: (row) =>
@@ -882,16 +962,39 @@ function partyBroker(doc, data, startingIndex) {
       ],
     },
     {
-      path: ["ROLES", "ROLE", "ROLE_DETAIL"],
-      goBack: 1,
+      path: ["NAME"],
+      goBack: 3,
       nodes: [
+        { FirstName: (row) => row.firstName },
         {
-          PartyRoleType: (row) => "LoanOriginator",
+          LastName: (row) => row.lastName,
         },
       ],
     },
     {
-      path: ["LICENSES", "LICENSE", "LICENSE_DETAIL"],
+      path: ["LEGAL_ENTITY_DETAIL"],
+      goBack: 2,
+      nodes: [{ FullName: (row) => row.company }],
+    },
+    {
+      path: ["ADDRESSES", "ADDRESS"],
+      nodes: [
+        { AddressType: (row) => "CorporateHeadquarters" },
+        {
+          StreetName: (row) => streetName(row.addr),
+        },
+        {
+          StreetPrimaryNumberText: (row) => streetNumber(row.addr),
+        },
+        { CityName: (row) => row.city },
+        { StateCode: (row) => row.state },
+        { PostalCode: (row) => row.zipCode },
+        { CountryCode: (row) => "USA" },
+      ],
+    },
+    {
+      path: ["ROLES", "ROLE", "LICENSES", "LICENSE", "LICENSE_DETAIL"],
+      goBack: 3,
       nodes: [
         {
           LicenseIdentifier: (row) => row.NMLSLicense,
@@ -899,37 +1002,12 @@ function partyBroker(doc, data, startingIndex) {
         },
       ],
     },
-  ]);
-}
-function previousEmployment(doc, data) {
-  return buildMismoNodes(doc, data, "EMPLOYERS", "EMPLOYER", 0, [
     {
-      path: ["ADDRESS"],
-      goBack: 1,
+      path: ["ROLE_DETAIL"],
       nodes: [
-        { AddressLineText: (row) => row.addrOfEmployer },
-        { AddressUnitIdentifier: (row) => "" },
-        { CityName: (row) => "" },
-        { StateCode: (row) => "" },
-        { PostalCode: (row) => "" },
-        { CountryCode: (row) => "USA" },
-      ],
-    },
-    {
-      path: ["EMPLOYMENT"],
-      goBack: 1,
-      nodes: [
-        { EmploymentStatusType: (row) => row.employmentType },
-        { EmploymentClassificationType: (row) => row.employmentType },
-        { EmploymentPositionDescription: (row) => row.position },
-        { EmploymentStartDate: (row) => row.employedFrom },
-        { EmploymentTimeInLineOfWorkMonthsCount: (row) => "" },
         {
-          EmploymentBorrowerSelfEmployedIndicator: (row) =>
-            row.employmentType === "Self-Employed" ? "1" : "0",
+          PartyRoleType: (row) => "LoanOriginator",
         },
-        { OwnershipInterestType: (row) => row.emptypeshare },
-        { EmploymentMonthlyIncomeAmount: (row) => row.monthlyIncome },
       ],
     },
   ]);
@@ -942,6 +1020,9 @@ function buildMismoNodes(
   startIndex = 0,
   config
 ) {
+  if (!data) {
+    console.log('unable to create',repeatingNode, 'in' , rootNode, 'Because no loan data present for this node', 'data = ', data, 'config', config)
+  }
   if (data && Array.isArray(data) && data.length > 0) {
     for (let counter = 0; counter < data.length; counter++) {
       const row = data[counter];
@@ -962,10 +1043,14 @@ function buildMismoNodes(
       });
       config.forEach((element) => {
         doc = container(doc, element.path);
+
+        element.nodes = sortNodes(element.nodes);
         element.nodes.forEach((n) => {
           const key = Object.keys(n)[0];
           const value = n[key](row, counter + 1);
-          doc.ele(key).txt(value).up();
+          if (value) {
+            doc.ele(key).txt(value).up();
+          }
         });
         if (element.goBack) {
           if (Number.isInteger(element.goBack)) {
@@ -973,7 +1058,7 @@ function buildMismoNodes(
               doc = doc.up();
             }
           } else {
-            while (doc.node.nodeName !== rootNode) {
+            while (doc.node.nodeName !== element.goBack) {
               doc = doc.up();
             }
           }
@@ -1009,11 +1094,19 @@ const ownershipInterestDiagram = [
 ];
 
 const assetTypeDiagram = [
-  { lw: "cd", mismo: "Certificate of Deposit" },
-  { lw: "cash value of insurance", mismo: "Cash Value of Life Insurance" },
+  { lw: "cd", mismo: "CertificateOfDepositTimeDeposit" },
+  { lw: "cash value of insurance", mismo: "LifeInsurance" },
+  { lw: "Checking", mismo: "CheckingAccount" },
+  { lw: "Savings", mismo: "SavingsAccount" },
+  { lw: "Money Market", mismo: "MoneyMarketFund" },
+  { lw: "stocks", mismo: "Stock" },
+  { lw: "bonds", mismo: "Bond" },
+  { lw: "trust account", mismo: "TrustAccount" },
+  { lw: "bridge loan proceeds", mismo: "BridgeLoanNotDeposited" },
+  { lw: "retirement", mismo: "RetirementFund" },
+  { lw: "Non-Marketable Securities", mismo: "Other" },
+  { mismo: "Other" },
 ];
-
-const occupancyDiagram = [{ lw: "", mismo: "" }];
 
 const creditTypeDiagram = [
   { lw: "0", mismo: "Revolving" },
@@ -1058,14 +1151,50 @@ const liabilityOtherDescriptionDiagram = [
   { lw: "14", mismo: "Unpaid Property Taxes" },
   { lw: "15", mismo: "Unsecured loan" },
 ];
+const scheduleStatusDiagram = [
+  { lw: "Pending Sale", mismo: "PendingSale" },
+  { mismo: "Retain" },
+];
+
+const intendedOccupancyDiagram = [
+  { lw: "Investment", mismo: "Investment" },
+  { lw: "Primary", mismo: "PrimaryResidence" },
+  { lw: "Second Home", mismo: "SecondHome" },
+  { mismo: "Other" },
+];
+
+const constructionMethodDiagram = [
+  { lw: "Manufactured", mismo: "Manufactured" },
+  { lw: "Mobile Home Park", mismo: "MobileHome" },
+  { mismo: "Other" },
+];
+
+const loanTypeDiagram = [
+  { lw: "Purchase", mismo: "Purchase" },
+  { mismo: "Refinance" },
+];
+const maritalStatusDiagram = [
+  { lw: "Married", mismo: "Married" },
+  { lw: "Separated", mismo: "Separated" },
+  { lw: "Single", mismo: "Unmarried" },
+  { mismo: "Other" },
+];
+const employmentClassificationType = [
+  { lw: "Salary W-2", mismo: "Primary" },
+  { mismo: "Secondary" },
+];
 
 function mapValue(value, diagram) {
   if (diagram && value) {
     const mismo = diagram.find(
-      (x) => x.lw.toLowerCase() === value.toLowerCase()
+      (x) => x.lw && x.lw.toLowerCase() === value.toLowerCase()
     );
     if (mismo) {
       return mismo.mismo;
+    }
+    const defaultElement = diagram.find((x) => !x.lw);
+    if (defaultElement) {
+      return defaultElement.mismo;
     }
   }
   return value;
@@ -1088,16 +1217,47 @@ function totalMonthlyIncome(yearlyIncomeArray, monthlyIncomeArray) {
   return total;
 }
 
+function money(amount) {
+  if (amount) {
+    return amount.toString().replace(/,/g, "");
+  }
+}
+
+function streetName(addressLine) {
+  if (addressLine) {
+    try {
+      return addressLine.split(" ").slice(1).join(" ");
+    } catch {}
+  }
+}
+function streetNumber(addressLine) {
+  if (addressLine) {
+    try {
+      return addressLine.split(" ")[0];
+    } catch {}
+  }
+}
+
+function sortNodes(nodes) {
+  const sortedNodes = nodes.sort((a, b) => {
+    const aKey = Object.keys(a)[0];
+    const bKey = Object.keys(b)[0];
+    if (aKey < bKey) {
+      return -1;
+    } else {
+      return 1;
+    }
+  });
+
+  return sortedNodes;
+}
+
+function indicator(value) {
+  if (value == "Yes") {
+    return "true";
+  }
+  return "false";
+}
 module.exports = {
-  assets,
-  loanOwnedPropertyData,
-  ownedProperty,
-  collaterals,
-  contingentLiabilities,
-  liabilities,
-  loans,
-  partyBorrower,
-  partyCoBorrower,
-  partyBroker,
-  previousEmployment,
+  createMismo,
 };
