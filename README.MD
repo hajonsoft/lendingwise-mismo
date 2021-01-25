@@ -13,6 +13,9 @@ xmlbuilder2 npm package is used to easily create the xml. This is easier than ph
 
 # Credits
 
+xmlbuilder2
+https://oozcitak.github.io/xmlbuilder2/
+
 Mismo specs 
 https://singlefamily.fanniemae.com/media/7571/display
 

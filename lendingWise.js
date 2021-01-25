@@ -2,17 +2,16 @@ const { container } = require("./util");
 const { create } = require("xmlbuilder2");
 const moment = require("moment");
 
-let loanGlobal;
+let loan;
 
-function createMismo(loan) {
-  if (!loan){
-    return 'Nothing to convert, Please call with a JSON loan'
+function createMismo(incomingLoan) {
+  if (!incomingLoan) {
+    return "Nothing to convert, Please pass a loan object or JSON";
   }
-  if (typeof loan === 'string' || loan instanceof String) {
-
-    loanGlobal = JSON.parse(loan);
+  if (typeof incomingLoan === "string" || incomingLoan instanceof String) {
+    loan = JSON.parse(incomingLoan);
   } else {
-    loanGlobal = loan;
+    loan = incomingLoan;
   }
   let doc = create({
     version: "1.0",
@@ -26,12 +25,12 @@ function createMismo(loan) {
       "http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd",
   });
   doc = container(doc, ["ABOUT_VERSIONS", "ABOUT_VERSION"]);
+  doc = doc.ele("AboutVersionIdentifier").txt("MISMO v3.4 standard version").up();
   doc = doc.ele("CreatedDatetime").txt(moment().utc().format()).up();
-
   doc = doc.root();
   doc = container(doc, ["DEAL_SETS", "DEAL_SET", "DEALS", "DEAL", "ASSETS"]);
 
-  const loanAssets = loanGlobal["fileLOChekingSavingInfo"];
+  const loanAssets = loan["fileLOChekingSavingInfo"];
   doc = assets(doc, loanAssets);
 
   const ownedPropertyData = loanOwnedPropertyData(
@@ -39,19 +38,19 @@ function createMismo(loan) {
   );
   doc = ownedProperty(doc, ownedPropertyData, loanAssets.length);
 
-  const collateralData = [loanGlobal["LMRInfo"]];
+  const collateralData = [loan["LMRInfo"]];
   doc = collaterals(doc, collateralData);
 
-  const contingentLiabilityData = loanGlobal["contingentLiabilities"];
+  const contingentLiabilityData = loan["contingentLiabilities"];
   doc = contingentLiabilities(doc, contingentLiabilityData);
 
-  const creditorInfoData = loanGlobal["creditorInfo"];
+  const creditorInfoData = loan["creditorInfo"];
   doc = liabilities(doc, creditorInfoData);
 
-  const loanData = [loanGlobal["LMRInfo"]];
+  const loanData = [loan["LMRInfo"]];
   doc = loans(doc, loanData);
 
-  const partyData = [loanGlobal["LMRInfo"]];
+  const partyData = [loan["LMRInfo"]];
   doc = partyBorrower(doc, partyData);
 
   if (partyData[0].coBorrowerFName) {
@@ -62,6 +61,16 @@ function createMismo(loan) {
     doc = partyBroker(doc, [brokerInfo], 2);
   }
 
+  let anEmptyNode = doc
+  .root()
+  .find((n) => n.node.textContent === '', true, true);
+
+  while(anEmptyNode) {
+    anEmptyNode.remove();
+    anEmptyNode = doc
+  .root()
+  .find((n) => n.node.textContent === '', true, true);
+  }
   const xml = doc.end({ prettyPrint: true });
   return xml;
 }
@@ -183,7 +192,7 @@ function collaterals(doc, data) {
         {
           ConstructionMethodType: (row) =>
             mapValue(
-              loanGlobal["FileProInfo"].propConstructionMethod,
+              loan["FileProInfo"].propConstructionMethod,
               constructionMethodDiagram
             ),
         },
@@ -269,7 +278,7 @@ function loans(doc, data, startIndex) {
       nodes: [
         {
           CashFromBorrowerAtClosingAmount: (row) =>
-            money(loanGlobal["fileLOPropInfo"].estimatedClosingCosts),
+            money(loan["fileLOPropInfo"].estimatedClosingCosts),
         },
       ],
     },
@@ -284,11 +293,11 @@ function loans(doc, data, startIndex) {
       nodes: [
         {
           BorrowerRequestedLoanAmount: (row) =>
-            money(loanGlobal["fileHMLOPropertyInfo"].requiredLoanAmount),
+            money(loan["fileHMLOPropertyInfo"].requiredLoanAmount),
         },
         {
           EstimatedClosingCostsAmount: (row) =>
-            money(loanGlobal["fileLOPropInfo"].estimatedClosingCosts),
+            money(loan["fileLOPropInfo"].estimatedClosingCosts),
         },
       ],
     },
@@ -298,7 +307,7 @@ function loans(doc, data, startIndex) {
       nodes: [
         {
           URLATotalDueFromBorrowerAtClosingAmount: (row) =>
-            money(loanGlobal["fileLOPropInfo"].estimatedClosingCosts),
+            money(loan["fileLOPropInfo"].estimatedClosingCosts),
         },
       ],
     },
@@ -306,8 +315,7 @@ function loans(doc, data, startIndex) {
       path: ["LOAN_DETAIL"],
       nodes: [
         {
-          BorrowerCount: (row) =>
-            loanGlobal["LMRInfo"].isCoBorrower ? "2" : "1",
+          BorrowerCount: (row) => (loan["LMRInfo"].isCoBorrower ? "2" : "1"),
         },
       ],
     },
@@ -324,20 +332,19 @@ function loans(doc, data, startIndex) {
       path: ["TERMS_OF_LOAN"],
       nodes: [
         {
-          BaseLoanAmount: (row) =>
-            money(loanGlobal["ResponseInfo"].totalLoanAmount),
+          BaseLoanAmount: (row) => money(loan["ResponseInfo"].totalLoanAmount),
         },
         {
           LoanPurposeType: (row) =>
             mapValue(
-              loanGlobal["fileHMLONewLoanInfo"].typeOfHMLOLoanRequesting,
+              loan["fileHMLONewLoanInfo"].typeOfHMLOLoanRequesting,
               loanTypeDiagram
             ),
         },
         {
           MortgageType: (row) => "Conventional",
         },
-        { NoteRatePercent: (row) => loanGlobal["LMRInfo"].lien1Rate },
+        { NoteRatePercent: (row) => loan["LMRInfo"].lien1Rate },
       ],
     },
   ]);
@@ -364,8 +371,7 @@ function partyBorrower(doc, data) {
       goBack: 1,
       nodes: [
         {
-          ContactPointTelephoneValue: (row) =>
-            row.phoneNumber && row.phoneNumber.replace(/[^0-9]/g, ""),
+          ContactPointTelephoneValue: (row) => tel(row.phoneNumber),
         },
       ],
     },
@@ -379,8 +385,7 @@ function partyBorrower(doc, data) {
       goBack: 1,
       nodes: [
         {
-          ContactPointTelephoneValue: (row) =>
-            row.cellNumber && row.cellNumber.replace(/[^0-9]/g, ""),
+          ContactPointTelephoneValue: (row) => tel(row.cellNumber),
         },
       ],
     },
@@ -394,8 +399,7 @@ function partyBorrower(doc, data) {
       goBack: 1,
       nodes: [
         {
-          ContactPointTelephoneValue: (row) =>
-            row.workNumber && row.workNumber.replace(/[^0-9]/g, ""),
+          ContactPointTelephoneValue: (row) => tel(row.workNumber),
         },
       ],
     },
@@ -418,15 +422,15 @@ function partyBorrower(doc, data) {
       nodes: [
         { AddressType: (row) => "Current" },
         {
-          StreetName: (row) => streetName(loanGlobal.file2Info.presentAddress),
+          StreetName: (row) => streetName(loan.file2Info.presentAddress),
         },
         {
           StreetPrimaryNumberText: (row) =>
-            streetNumber(loanGlobal.file2Info.presentAddress),
+            streetNumber(loan.file2Info.presentAddress),
         },
-        { CityName: (row) => loanGlobal.file2Info.presentCity },
-        { StateCode: (row) => loanGlobal.file2Info.presentState },
-        { PostalCode: (row) => row.previousZip },
+        { CityName: (row) => loan.file2Info.presentCity },
+        { StateCode: (row) => loan.file2Info.presentState },
+        { PostalCode: (row) => row.presentZip },
         { CountryCode: (row) => "USA" },
       ],
     },
@@ -474,9 +478,9 @@ function partyBorrower(doc, data) {
         },
         {
           DependentCount: (row) =>
-            loanGlobal.fileHMLOInfo.agesOfDependent
-              ? loanGlobal.fileHMLOInfo.agesOfDependent.split(",").length
-              : loanGlobal.fileHMLOInfo.numberOfDependents,
+            loan.fileHMLOInfo.agesOfDependent
+              ? loan.fileHMLOInfo.agesOfDependent.split(",").length
+              : loan.fileHMLOInfo.numberOfDependents,
         },
         {
           MaritalStatusType: (row) =>
@@ -503,12 +507,10 @@ function partyBorrower(doc, data) {
       nodes: [
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
-            loanGlobal["incomeInfo"].grossIncome1 &&
+            loan["incomeInfo"].grossIncome1 &&
             money(
               Math.floor(
-                parseInt(
-                  loanGlobal["incomeInfo"].grossIncome1.replace(/,/g, "")
-                ) / 12
+                parseInt(loan["incomeInfo"].grossIncome1.replace(/,/g, "")) / 12
               )
             ),
         },
@@ -522,11 +524,11 @@ function partyBorrower(doc, data) {
       nodes: [
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
-            loanGlobal["incomeInfo"].commissionOrBonus1 &&
+            loan["incomeInfo"].commissionOrBonus1 &&
             money(
               Math.floor(
                 parseInt(
-                  loanGlobal["incomeInfo"].commissionOrBonus1.replace(/,/g, "")
+                  loan["incomeInfo"].commissionOrBonus1.replace(/,/g, "")
                 ) / 12
               )
             ),
@@ -541,11 +543,10 @@ function partyBorrower(doc, data) {
       nodes: [
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
-            loanGlobal["incomeInfo"].otherHouseHold1 &&
+            loan["incomeInfo"].otherHouseHold1 &&
             Math.floor(
-              parseInt(
-                loanGlobal["incomeInfo"].otherHouseHold1.replace(/,/g, "")
-              ) / 12
+              parseInt(loan["incomeInfo"].otherHouseHold1.replace(/,/g, "")) /
+                12
             ),
         },
         { EmploymentIncomeIndicator: (row) => "true" },
@@ -558,11 +559,10 @@ function partyBorrower(doc, data) {
       nodes: [
         {
           CurrentIncomeMonthlyTotalAmount: (row) =>
-            loanGlobal["incomeInfo"].overtime1 &&
+            loan["incomeInfo"].overtime1 &&
             money(
               Math.floor(
-                parseInt(loanGlobal["incomeInfo"].overtime1.replace(/,/g, "")) /
-                  12
+                parseInt(loan["incomeInfo"].overtime1.replace(/,/g, "")) / 12
               )
             ),
         },
@@ -578,12 +578,12 @@ function partyBorrower(doc, data) {
           CurrentIncomeMonthlyTotalAmount: (row) =>
             totalMonthlyIncome(
               [
-                loanGlobal["incomeInfo"].overtime1,
-                loanGlobal["incomeInfo"].otherHouseHold1,
-                loanGlobal["incomeInfo"].commissionOrBonus1,
-                loanGlobal["incomeInfo"].grossIncome1,
+                loan["incomeInfo"].overtime1,
+                loan["incomeInfo"].otherHouseHold1,
+                loan["incomeInfo"].commissionOrBonus1,
+                loan["incomeInfo"].grossIncome1,
               ],
-              [loanGlobal["incomeInfo"].empmonthlyincome1]
+              [loan["incomeInfo"].empmonthlyincome1]
             ),
         },
         { EmploymentIncomeIndicator: (row) => "true" },
@@ -596,13 +596,13 @@ function partyBorrower(doc, data) {
         {
           CitizenshipResidencyType: (row) =>
             mapValue(
-              loanGlobal["fileHMLOInfo"].borrowerCitizenship,
+              loan["fileHMLOInfo"].borrowerCitizenship,
               citizenshipDiagram
             ),
         },
         {
           IntentToOccupyType: (row) =>
-            loanGlobal["fileHMLOBackGroundInfo"].isBorIntendToOccupyPropAsPRI,
+            loan["fileHMLOBackGroundInfo"].isBorIntendToOccupyPropAsPRI,
         },
         { HomeownerPastThreeYearsType: (row) => "No" },
         { PriorPropertyUsageType: (row) => "" },
@@ -617,20 +617,16 @@ function partyBorrower(doc, data) {
         {
           OutstandingJudgmentsIndicator: (row) =>
             indicator(
-              loanGlobal["fileHMLOBackGroundInfo"].isAnyBorOutstandingJudgements
+              loan["fileHMLOBackGroundInfo"].isAnyBorOutstandingJudgements
             ),
         },
         {
           PresentlyDelinquentIndicator: (row) =>
-            indicator(
-              loanGlobal["fileHMLOBackGroundInfo"].isBorPresenltyDelinquent
-            ),
+            indicator(loan["fileHMLOBackGroundInfo"].isBorPresenltyDelinquent),
         },
         {
           PartyToLawsuitIndicator: (row) =>
-            indicator(
-              loanGlobal["fileHMLOBackGroundInfo"].hasBorAnyActiveLawsuits
-            ),
+            indicator(loan["fileHMLOBackGroundInfo"].hasBorAnyActiveLawsuits),
         },
         { PriorPropertyDeedInLieuConveyedIndicator: (row) => "false" },
         { PriorPropertyShortSaleCompletedIndicator: (row) => "false" },
@@ -638,8 +634,7 @@ function partyBorrower(doc, data) {
         {
           BankruptcyIndicator: (row) =>
             indicator(
-              loanGlobal["fileHMLOBackGroundInfo"]
-                .isBorDecalredBankruptPastYears
+              loan["fileHMLOBackGroundInfo"].isBorDecalredBankruptPastYears
             ),
         },
       ],
@@ -648,7 +643,7 @@ function partyBorrower(doc, data) {
       path: ["EMPLOYERS", "EMPLOYER", "ADDRESS"],
       goBack: 1,
       nodes: [
-        { AddressLineText: (row) => loanGlobal["incomeInfo"].employer1Add },
+        { AddressLineText: (row) => loan["incomeInfo"].employer1Add },
         { AddressUnitIdentifier: (row) => "" },
         { CityName: (row) => "" },
         { StateCode: (row) => "" },
@@ -666,38 +661,37 @@ function partyBorrower(doc, data) {
         {
           EmploymentClassificationType: (row) =>
             mapValue(
-              loanGlobal["incomeInfo"].employedInfo1,
+              loan["incomeInfo"].employedInfo1,
               employmentClassificationType
             ),
         },
         {
           EmploymentPositionDescription: (row) =>
-            loanGlobal["incomeInfo"].occupation1,
+            loan["incomeInfo"].occupation1,
         },
         {
-          EmploymentStartDate: (row) =>
-            loanGlobal["incomeInfo"].borrowerHireDate,
+          EmploymentStartDate: (row) => loan["incomeInfo"].borrowerHireDate,
         },
         {
           EmploymentTimeInLineOfWorkMonthsCount: (row) =>
-            loanGlobal["incomeInfo"].yearsAtJob1,
+            loan["incomeInfo"].yearsAtJob1,
         },
         {
           EmploymentBorrowerSelfEmployedIndicator: (row) =>
-            loanGlobal["incomeInfo"].employedInfo1 === "Self-Employed"
+            loan["incomeInfo"].employedInfo1 === "Self-Employed"
               ? "true"
               : "false",
         },
         {
           OwnershipInterestType: (row) =>
             mapValue(
-              loanGlobal["incomeInfo"].emptypeshare1,
+              loan["incomeInfo"].emptypeshare1,
               ownershipInterestDiagram
             ),
         },
         {
           EmploymentMonthlyIncomeAmount: (row) =>
-            loanGlobal["incomeInfo"].empmonthlyincome1,
+            loan["incomeInfo"].empmonthlyincome1,
         },
       ],
     },
@@ -711,7 +705,7 @@ function partyBorrower(doc, data) {
       nodes: [
         {
           HMDAEthnicityOriginType: (row) => {
-            switch (loanGlobal["QAInfo"].BEthnicity) {
+            switch (loan["QAInfo"].BEthnicity) {
               case "2":
                 return "Mexican";
               case "1":
@@ -725,7 +719,7 @@ function partyBorrower(doc, data) {
         },
         {
           HMDAEthnicityOriginTypeOtherDescription: (row) =>
-            loanGlobal["QAInfo"].bFiEthnicitySubOther,
+            loan["QAInfo"].bFiEthnicitySubOther,
         },
       ],
     },
@@ -735,7 +729,7 @@ function partyBorrower(doc, data) {
       nodes: [
         {
           HMDARaceType: (row) => {
-            switch (loanGlobal["QAInfo"].BRace) {
+            switch (loan["QAInfo"].BRace) {
               case "1":
                 return "AmericanIndianOrAlaskaNative";
               case "2":
@@ -814,8 +808,7 @@ function partyCoBorrower(doc, data) {
       goBack: 1,
       nodes: [
         {
-          ContactPointTelephoneValue: (row) =>
-            row.phoneNumber && row.coBPhoneNumber.replace(/[^0-9]/g, ""),
+          ContactPointTelephoneValue: (row) => tel(row.coBPhoneNumber),
         },
       ],
     },
@@ -829,8 +822,7 @@ function partyCoBorrower(doc, data) {
       goBack: 1,
       nodes: [
         {
-          ContactPointTelephoneValue: (row) =>
-            row.cellNumber && row.coBCellNumber.replace(/[^0-9]/g, ""),
+          ContactPointTelephoneValue: (row) => tel(row.cellNumber),
         },
       ],
     },
@@ -844,8 +836,7 @@ function partyCoBorrower(doc, data) {
       goBack: 1,
       nodes: [
         {
-          ContactPointTelephoneValue: (row) =>
-            row.workNumber && row.coBFax.replace(/[^0-9]/g, ""),
+          ContactPointTelephoneValue: (row) => tel(row.coBFax),
         },
       ],
     },
@@ -868,15 +859,14 @@ function partyCoBorrower(doc, data) {
       nodes: [
         { AddressType: (row) => "Current" },
         {
-          StreetName: (row) =>
-            streetName(loanGlobal.file2Info.coBPresentAddress),
+          StreetName: (row) => streetName(loan.file2Info.coBPresentAddress),
         },
         {
           StreetPrimaryNumberText: (row) =>
-            streetNumber(loanGlobal.file2Info.coBPresentAddress),
+            streetNumber(loan.file2Info.coBPresentAddress),
         },
-        { CityName: (row) => loanGlobal.file2Info.coBPresentCity },
-        { StateCode: (row) => loanGlobal.file2Info.coBPresentState },
+        { CityName: (row) => loan.file2Info.coBPresentCity },
+        { StateCode: (row) => loan.file2Info.coBPresentState },
         { PostalCode: (row) => row.coBPresentZip },
         { CountryCode: (row) => "USA" },
       ],
@@ -956,8 +946,7 @@ function partyBroker(doc, data, startingIndex) {
       goBack: 3,
       nodes: [
         {
-          ContactPointTelephoneValue: (row) =>
-            row.phoneNumber && row.phoneNumber.replace(/[^0-9]/g, ""),
+          ContactPointTelephoneValue: (row) => tel(row.phoneNumber),
         },
       ],
     },
@@ -1020,8 +1009,8 @@ function buildMismoNodes(
   startIndex = 0,
   config
 ) {
-  if (!data) {
-    console.log('unable to create',repeatingNode, 'in' , rootNode, 'Because no loan data present for this node', 'data = ', data, 'config', config)
+  if (!doc) {
+    return; //Throw here
   }
   if (data && Array.isArray(data) && data.length > 0) {
     for (let counter = 0; counter < data.length; counter++) {
@@ -1050,6 +1039,8 @@ function buildMismoNodes(
           const value = n[key](row, counter + 1);
           if (value) {
             doc.ele(key).txt(value).up();
+          } else if (n.defaultValue) {
+            doc.ele(key).txt(n.defaultValue).up();
           }
         });
         if (element.goBack) {
@@ -1222,7 +1213,11 @@ function money(amount) {
     return amount.toString().replace(/,/g, "");
   }
 }
-
+function tel(telNumber) {
+  if (telNumber) {
+    return telNumber.replace(/[^0-9]/g, "");
+  }
+}
 function streetName(addressLine) {
   if (addressLine) {
     try {

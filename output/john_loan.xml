@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd">
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas MISMO_3.4.0_B324.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
-      <CreatedDatetime>2021-01-23T23:55:01Z</CreatedDatetime>
+      <AboutVersionIdentifier>MISMO v3.4 standard version</AboutVersionIdentifier>
+      <CreatedDatetime>2021-01-25T19:38:02Z</CreatedDatetime>
     </ABOUT_VERSION>
   </ABOUT_VERSIONS>
   <DEAL_SETS>
@@ -16,9 +17,6 @@
                 <AssetCashOrMarketValueAmount>3424</AssetCashOrMarketValueAmount>
                 <AssetType>CheckingAccount</AssetType>
               </ASSET_DETAIL>
-              <ASSET_HOLDER>
-                <NAME/>
-              </ASSET_HOLDER>
             </ASSET>
             <ASSET SequenceNumber="2" xlink:label="ASSET_2">
               <ASSET_DETAIL>
@@ -26,9 +24,6 @@
                 <AssetCashOrMarketValueAmount>324</AssetCashOrMarketValueAmount>
                 <AssetType>SavingsAccount</AssetType>
               </ASSET_DETAIL>
-              <ASSET_HOLDER>
-                <NAME/>
-              </ASSET_HOLDER>
             </ASSET>
             <ASSET SequenceNumber="3" xlink:label="ASSET_3">
               <OWNED_PROPERTY>
@@ -214,7 +209,7 @@
             </LIABILITY>
           </LIABILITIES>
           <LOANS>
-            <LOAN SequenceNumber="1" xlink:label="LOAN_1">
+            <LOAN SequenceNumber="1" xlink:label="LOAN_1" LoanRoleType="SubjectLoan">
               <CLOSING_INFORMATION>
                 <CLOSING_INFORMATION_DETAIL>
                   <CashFromBorrowerAtClosingAmount>0</CashFromBorrowerAtClosingAmount>
@@ -301,7 +296,6 @@
                   <AddressType>Current</AddressType>
                   <CityName>currentcity</CityName>
                   <CountryCode>USA</CountryCode>
-                  <PostalCode>34456</PostalCode>
                   <StateCode>FL</StateCode>
                   <StreetName>current address st</StreetName>
                   <StreetPrimaryNumberText>123</StreetPrimaryNumberText>
@@ -462,7 +456,7 @@
                   </CONTACT_POINT>
                   <CONTACT_POINT>
                     <CONTACT_POINT_TELEPHONE>
-                      <ContactPointTelephoneValue>3243242344</ContactPointTelephoneValue>
+                      <ContactPointTelephoneValue>3424324244</ContactPointTelephoneValue>
                     </CONTACT_POINT_TELEPHONE>
                     <CONTACT_POINT_DETAIL>
                       <ContactPointRoleType>Mobile</ContactPointRoleType>
@@ -534,9 +528,6 @@
                           <ContactPointEmailValue>davetest@lendingwise.com</ContactPointEmailValue>
                         </CONTACT_POINT_EMAIL>
                       </CONTACT_POINT>
-                      <CONTACT_POINT>
-                        <CONTACT_POINT_TELEPHONE/>
-                      </CONTACT_POINT>
                     </CONTACT_POINTS>
                     <NAME>
                       <FirstName>daves</FirstName>
@@ -555,11 +546,6 @@
               </ADDRESSES>
               <ROLES>
                 <ROLE>
-                  <LICENSES>
-                    <LICENSE>
-                      <LICENSE_DETAIL/>
-                    </LICENSE>
-                  </LICENSES>
                   <ROLE_DETAIL>
                     <PartyRoleType>LoanOriginator</PartyRoleType>
                   </ROLE_DETAIL>
