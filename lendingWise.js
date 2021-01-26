@@ -25,7 +25,7 @@ function createMismo(incomingLoan) {
       "http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd",
   });
   doc = container(doc, ["ABOUT_VERSIONS", "ABOUT_VERSION"]);
-  doc = doc.ele("AboutVersionIdentifier").txt("MISMO v3.4 standard version").up();
+  doc = doc.ele("AboutVersionIdentifier").txt("MISMO v3.4 B324 version").up();
   doc = doc.ele("CreatedDatetime").txt(moment().utc().format()).up();
   doc = doc.root();
   doc = container(doc, ["DEAL_SETS", "DEAL_SET", "DEALS", "DEAL", "ASSETS"]);
