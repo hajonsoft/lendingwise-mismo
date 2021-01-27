@@ -17,18 +17,30 @@ function createMismo(incomingLoan) {
     version: "1.0",
     encoding: "UTF-8",
   }).ele("http://www.mismo.org/residential/2009/schemas", "MESSAGE", {
-    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
     MISMOReferenceModelIdentifier: "3.4.032420160128",
     "xmlns:xlink": "http://www.w3.org/1999/xlink",
     "xmlns:ULAD": "http://www.datamodelextension.org/Schema/ULAD",
+    "xmlns:LPA": "http://www.datamodelextension.org/Schema/LPA",
     "xsi:schemaLocation":
       "http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd",
   });
   doc = container(doc, ["ABOUT_VERSIONS", "ABOUT_VERSION"]);
-  doc = doc.ele("AboutVersionIdentifier").txt("MISMO v3.4 B324 version").up();
-  doc = doc.ele("CreatedDatetime").txt(moment().utc().format()).up();
+  // doc = doc.ele("AboutVersionIdentifier").txt("MISMO v3.4 B324 version").up();
+  doc = doc.ele("AboutVersionIdentifier").txt("S5.0.06").up();
+  // doc = doc.ele("CreatedDatetime").txt(moment().utc().format()).up();
+  doc = doc.ele("DataVersionIdentifier").txt("5.0.06").up();
   doc = doc.root();
-  doc = container(doc, ["DEAL_SETS", "DEAL_SET", "DEALS", "DEAL", "ASSETS"]);
+  doc = container(doc, [
+    "DEAL_SETS",
+    "DEAL_SET",
+    "DEALS",
+    "DEAL",
+    "ABOUT_VERSIONS",
+    "ABOUT_VERSION",
+  ]);
+  doc = doc.ele("DataVersionName").txt("LPA_REQUEST").up();
+  doc = doc.up().up();
+  doc = container(doc, ["ASSETS"]);
 
   const loanAssets = loan["fileLOChekingSavingInfo"];
   doc = assets(doc, loanAssets);
@@ -62,14 +74,12 @@ function createMismo(incomingLoan) {
   }
 
   let anEmptyNode = doc
-  .root()
-  .find((n) => n.node.textContent === '', true, true);
+    .root()
+    .find((n) => n.node.textContent === "", true, true);
 
-  while(anEmptyNode) {
+  while (anEmptyNode) {
     anEmptyNode.remove();
-    anEmptyNode = doc
-  .root()
-  .find((n) => n.node.textContent === '', true, true);
+    anEmptyNode = doc.root().find((n) => n.node.textContent === "", true, true);
   }
   const xml = doc.end({ prettyPrint: true });
   return xml;
@@ -87,13 +97,17 @@ function assets(doc, data) {
     },
     {
       path: ["ASSET_HOLDER", "NAME"],
-      nodes: [{ FullName: (row) => row.accountTitledAs }],
+      nodes: [{ FullName: (row) => row.nameAddrOfBank }],
     },
   ]);
 }
 
 function ownedProperty(doc, data, startIndex) {
   return buildMismoNodes(doc, data, "ASSETS", "ASSET", startIndex, [
+    {
+      path: ["ASSET_DETAIL"],
+      nodes: [{ AssetType: (row) => "RealEstateOwned" }],
+    },
     {
       path: ["OWNED_PROPERTY", "OWNED_PROPERTY_DETAIL"],
       goBack: 1,
@@ -126,7 +140,7 @@ function ownedProperty(doc, data, startIndex) {
         { CityName: (row) => row.schedulePropCity },
         { StateCode: (row) => row.schedulePropState },
         { PostalCode: (row) => row.schedulePropZip },
-        { CountryCode: (row) => "USA" },
+        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -138,6 +152,10 @@ function ownedProperty(doc, data, startIndex) {
         },
         {
           PropertyUsageType: (row) =>
+            mapValue(row.intendedOccupancy, intendedOccupancyDiagram),
+        },
+        {
+          PropertyCurrentUsageType: (row) =>
             mapValue(row.intendedOccupancy, intendedOccupancyDiagram),
         },
       ],
@@ -173,6 +191,7 @@ function collaterals(doc, data) {
           PostalCode: (row) => row.propertyZip,
         },
         { CountyName: (row) => row.propertyCounty },
+        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -274,6 +293,23 @@ function liabilities(doc, data, startIndex) {
 function loans(doc, data, startIndex) {
   return buildMismoNodes(doc, data, "LOANS", "LOAN", startIndex, [
     {
+      path: ["AMORTIZATION", "AMORTIZATION_RULE"],
+      nodes: [
+        {
+          AmortizationType: (row) =>
+            loan["fileHMLONewLoanInfo"].amortizationType,
+        },
+        {
+          LoanAmortizationPeriodCount: (row) =>
+            loan["fileHMLOPropertyInfo"].loanTerm &&
+            loan["fileHMLOPropertyInfo"].loanTerm.replace(/[^0-9]/g, ""),
+        },
+        {
+          LoanAmortizationPeriodType: (row) => "Month",
+        },
+      ],
+    },
+    {
       path: ["CLOSING_INFORMATION", "CLOSING_INFORMATION_DETAIL"],
       nodes: [
         {
@@ -306,17 +342,37 @@ function loans(doc, data, startIndex) {
       goBack: "LOAN",
       nodes: [
         {
-          URLATotalDueFromBorrowerAtClosingAmount: (row) =>
+          AlterationsImprovementsAndRepairsAmount: (row) => "0.00",
+        },
+        {
+          EstimatedClosingCostsAmount: (row) =>
             money(loan["fileLOPropInfo"].estimatedClosingCosts),
+        },
+        {
+          MIAndFundingFeeFinancedAmount: (row) => "0.00",
+        },
+        {
+          MIAndFundingFeeTotalAmount: (row) => "0.00",
+        },
+        {
+          PrepaidItemsEstimatedAmount: (row) => "0.00",
+        },
+        {
+          RefinanceIncludingDebtsToBePaidOffAmount: (row) => "0.00",
         },
       ],
     },
     {
       path: ["LOAN_DETAIL"],
       nodes: [
-        {
-          BorrowerCount: (row) => (loan["LMRInfo"].isCoBorrower ? "2" : "1"),
-        },
+        { BalloonIndicator: (row) => "false" },
+        { BuydownTemporarySubsidyFundingIndicator: (row) => "false" },
+        { ConstructionLoanIndicator: (row) => "false" },
+        { ConversionOfContractForDeedIndicator: (row) => "false" },
+        { EnergyRelatedImprovementsIndicator: (row) => "false" },
+        { InterestOnlyIndicator: (row) => "false" },
+        { NegativeAmortizationIndicator: (row) => "false" },
+        { PrepaymentPenaltyIndicator: (row) => "false" },
       ],
     },
     {
@@ -344,6 +400,9 @@ function loans(doc, data, startIndex) {
         {
           MortgageType: (row) => "Conventional",
         },
+        {
+          LienPriorityType: (row) => "FirstLien",
+        },
         { NoteRatePercent: (row) => loan["LMRInfo"].lien1Rate },
       ],
     },
@@ -355,9 +414,9 @@ function partyBorrower(doc, data) {
       path: ["INDIVIDUAL", "ALIASES", "ALIAS", "NAME"],
       goBack: 3,
       nodes: [
-        { FirstName: (row) => row.borrowerFName },
+        { FirstName: (row) => '' },
         {
-          LastName: (row) => row.borrowerLName,
+          LastName: (row) => '',
         },
       ],
     },
@@ -431,7 +490,7 @@ function partyBorrower(doc, data) {
         { CityName: (row) => loan.file2Info.presentCity },
         { StateCode: (row) => loan.file2Info.presentState },
         { PostalCode: (row) => row.presentZip },
-        { CountryCode: (row) => "USA" },
+        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -448,7 +507,7 @@ function partyBorrower(doc, data) {
         { CityName: (row) => row.previousCity },
         { StateCode: (row) => row.previousState },
         { PostalCode: (row) => row.previousZip },
-        { CountryCode: (row) => "USA" },
+        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -466,7 +525,7 @@ function partyBorrower(doc, data) {
         { CityName: (row) => row.mailingCity },
         { StateCode: (row) => row.mailingState },
         { PostalCode: (row) => row.mailingZip },
-        { CountryCode: (row) => "USA" },
+        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -648,7 +707,7 @@ function partyBorrower(doc, data) {
         { CityName: (row) => "" },
         { StateCode: (row) => "" },
         { PostalCode: (row) => "" },
-        { CountryCode: (row) => "USA" },
+        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -868,7 +927,7 @@ function partyCoBorrower(doc, data) {
         { CityName: (row) => loan.file2Info.coBPresentCity },
         { StateCode: (row) => loan.file2Info.coBPresentState },
         { PostalCode: (row) => row.coBPresentZip },
-        { CountryCode: (row) => "USA" },
+        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -886,7 +945,7 @@ function partyCoBorrower(doc, data) {
         { CityName: (row) => row.coBorPreviousCity },
         { StateCode: (row) => row.coBorPreviousState },
         { PostalCode: (row) => row.coBorPreviousZip },
-        { CountryCode: (row) => "USA" },
+        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -905,7 +964,7 @@ function partyCoBorrower(doc, data) {
         { CityName: (row) => row.coBorrowerMailingCity },
         { StateCode: (row) => row.coBorrowerMailingState },
         { PostalCode: (row) => row.coBorrowerMailingZip },
-        { CountryCode: (row) => "USA" },
+        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -978,7 +1037,7 @@ function partyBroker(doc, data, startingIndex) {
         { CityName: (row) => row.city },
         { StateCode: (row) => row.state },
         { PostalCode: (row) => row.zipCode },
-        { CountryCode: (row) => "USA" },
+        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -1026,10 +1085,14 @@ function buildMismoNodes(
           .find((n) => n.node.nodeName === "DEAL", true, true)
           .ele(rootNode);
       }
-      doc = doc.ele(repeatingNode, {
+      const attributes = {
         SequenceNumber: counter + startIndex + 1,
         "xlink:label": `${repeatingNode}_${counter + startIndex + 1}`,
-      });
+      };
+      if (repeatingNode === "LOAN" && counter === 0 && startIndex === 0) {
+        attributes["LoanRoleType"] = "SubjectLoan";
+      }
+      doc = doc.ele(repeatingNode, attributes);
       config.forEach((element) => {
         doc = container(doc, element.path);
 

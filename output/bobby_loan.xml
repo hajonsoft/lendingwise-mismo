@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas MISMO_3.4.0_B324.xsd">
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
-      <AboutVersionIdentifier>MISMO v3.4 standard version</AboutVersionIdentifier>
-      <CreatedDatetime>2021-01-25T19:38:02Z</CreatedDatetime>
+      <AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
+      <DataVersionIdentifier>5.0.06</DataVersionIdentifier>
     </ABOUT_VERSION>
   </ABOUT_VERSIONS>
   <DEAL_SETS>
     <DEAL_SET>
       <DEALS>
         <DEAL>
+          <ABOUT_VERSIONS>
+            <ABOUT_VERSION>
+              <DataVersionName>LPA_REQUEST</DataVersionName>
+            </ABOUT_VERSION>
+          </ABOUT_VERSIONS>
           <ASSETS>
             <ASSET SequenceNumber="1" xlink:label="ASSET_1">
               <ASSET_DETAIL>
@@ -17,6 +22,11 @@
                 <AssetCashOrMarketValueAmount>1000</AssetCashOrMarketValueAmount>
                 <AssetType>CheckingAccount</AssetType>
               </ASSET_DETAIL>
+              <ASSET_HOLDER>
+                <NAME>
+                  <FullName>ayman Bank</FullName>
+                </NAME>
+              </ASSET_HOLDER>
             </ASSET>
             <ASSET SequenceNumber="2" xlink:label="ASSET_2">
               <ASSET_DETAIL>
@@ -24,6 +34,11 @@
                 <AssetCashOrMarketValueAmount>1500</AssetCashOrMarketValueAmount>
                 <AssetType>SavingsAccount</AssetType>
               </ASSET_DETAIL>
+              <ASSET_HOLDER>
+                <NAME>
+                  <FullName>ayman another bank</FullName>
+                </NAME>
+              </ASSET_HOLDER>
             </ASSET>
             <ASSET SequenceNumber="3" xlink:label="ASSET_3">
               <ASSET_DETAIL>
@@ -31,6 +46,11 @@
                 <AssetCashOrMarketValueAmount>2000</AssetCashOrMarketValueAmount>
                 <AssetType>CertificateOfDepositTimeDeposit</AssetType>
               </ASSET_DETAIL>
+              <ASSET_HOLDER>
+                <NAME>
+                  <FullName>ayman yet another bank</FullName>
+                </NAME>
+              </ASSET_HOLDER>
             </ASSET>
             <ASSET SequenceNumber="4" xlink:label="ASSET_4">
               <ASSET_DETAIL>
@@ -38,6 +58,11 @@
                 <AssetCashOrMarketValueAmount>2500</AssetCashOrMarketValueAmount>
                 <AssetType>MoneyMarketFund</AssetType>
               </ASSET_DETAIL>
+              <ASSET_HOLDER>
+                <NAME>
+                  <FullName>ayman yet another bank for money market</FullName>
+                </NAME>
+              </ASSET_HOLDER>
             </ASSET>
           </ASSETS>
           <COLLATERALS>
@@ -46,6 +71,7 @@
                 <ADDRESS>
                   <AddressLineText>6075 sw 106 st</AddressLineText>
                   <CityName>Miami</CityName>
+                  <CountryCode>US</CountryCode>
                   <CountyName>Miami-Dade</CountyName>
                   <PostalCode>33156</PostalCode>
                   <StateCode>FL</StateCode>
@@ -127,7 +153,12 @@
             </LIABILITY>
           </LIABILITIES>
           <LOANS>
-            <LOAN SequenceNumber="1" xlink:label="LOAN_1" LoanRoleType="SubjectLoan" >
+            <LOAN SequenceNumber="1" xlink:label="LOAN_1" LoanRoleType="SubjectLoan">
+              <AMORTIZATION>
+                <AMORTIZATION_RULE>
+                  <LoanAmortizationPeriodType>Month</LoanAmortizationPeriodType>
+                </AMORTIZATION_RULE>
+              </AMORTIZATION>
               <CLOSING_INFORMATION>
                 <CLOSING_INFORMATION_DETAIL>
                   <CashFromBorrowerAtClosingAmount>0</CashFromBorrowerAtClosingAmount>
@@ -140,13 +171,25 @@
                       <EstimatedClosingCostsAmount>0</EstimatedClosingCostsAmount>
                     </URLA_DETAIL>
                     <URLA_TOTAL>
-                      <URLATotalDueFromBorrowerAtClosingAmount>0</URLATotalDueFromBorrowerAtClosingAmount>
+                      <AlterationsImprovementsAndRepairsAmount>0.00</AlterationsImprovementsAndRepairsAmount>
+                      <EstimatedClosingCostsAmount>0</EstimatedClosingCostsAmount>
+                      <MIAndFundingFeeFinancedAmount>0.00</MIAndFundingFeeFinancedAmount>
+                      <MIAndFundingFeeTotalAmount>0.00</MIAndFundingFeeTotalAmount>
+                      <PrepaidItemsEstimatedAmount>0.00</PrepaidItemsEstimatedAmount>
+                      <RefinanceIncludingDebtsToBePaidOffAmount>0.00</RefinanceIncludingDebtsToBePaidOffAmount>
                     </URLA_TOTAL>
                   </URLA>
                 </DOCUMENT_SPECIFIC_DATA_SET>
               </DOCUMENT_SPECIFIC_DATA_SETS>
               <LOAN_DETAIL>
-                <BorrowerCount>2</BorrowerCount>
+                <BalloonIndicator>false</BalloonIndicator>
+                <BuydownTemporarySubsidyFundingIndicator>false</BuydownTemporarySubsidyFundingIndicator>
+                <ConstructionLoanIndicator>false</ConstructionLoanIndicator>
+                <ConversionOfContractForDeedIndicator>false</ConversionOfContractForDeedIndicator>
+                <EnergyRelatedImprovementsIndicator>false</EnergyRelatedImprovementsIndicator>
+                <InterestOnlyIndicator>false</InterestOnlyIndicator>
+                <NegativeAmortizationIndicator>false</NegativeAmortizationIndicator>
+                <PrepaymentPenaltyIndicator>false</PrepaymentPenaltyIndicator>
               </LOAN_DETAIL>
               <LOAN_IDENTIFIERS>
                 <LOAN_IDENTIFIER>
@@ -156,6 +199,7 @@
               </LOAN_IDENTIFIERS>
               <TERMS_OF_LOAN>
                 <BaseLoanAmount>-154900</BaseLoanAmount>
+                <LienPriorityType>FirstLien</LienPriorityType>
                 <LoanPurposeType>Purchase</LoanPurposeType>
                 <MortgageType>Conventional</MortgageType>
               </TERMS_OF_LOAN>
@@ -164,14 +208,6 @@
           <PARTIES>
             <PARTY SequenceNumber="1" xlink:label="PARTY_1">
               <INDIVIDUAL>
-                <ALIASES>
-                  <ALIAS>
-                    <NAME>
-                      <FirstName>bobby</FirstName>
-                      <LastName>borrower</LastName>
-                    </NAME>
-                  </ALIAS>
-                </ALIASES>
                 <CONTACT_POINTS>
                   <CONTACT_POINT>
                     <CONTACT_POINT_EMAIL>
@@ -212,7 +248,7 @@
                 <ADDRESS>
                   <AddressType>Current</AddressType>
                   <CityName>currentcity</CityName>
-                  <CountryCode>USA</CountryCode>
+                  <CountryCode>US</CountryCode>
                   <StateCode>FL</StateCode>
                   <StreetName>current address st</StreetName>
                   <StreetPrimaryNumberText>123</StreetPrimaryNumberText>
@@ -220,7 +256,7 @@
                 <ADDRESS>
                   <AddressType>Prior</AddressType>
                   <CityName>prevcity</CityName>
-                  <CountryCode>USA</CountryCode>
+                  <CountryCode>US</CountryCode>
                   <PostalCode>34456</PostalCode>
                   <StateCode>DE</StateCode>
                   <StreetName>previous address st</StreetName>
@@ -229,7 +265,7 @@
                 <ADDRESS>
                   <AddressType>Mailing</AddressType>
                   <CityName>san anselmo</CityName>
-                  <CountryCode>USA</CountryCode>
+                  <CountryCode>US</CountryCode>
                   <PostalCode>94960</PostalCode>
                   <StateCode>CA</StateCode>
                   <StreetName>mailing address st</StreetName>
@@ -311,7 +347,7 @@
                       <EMPLOYER>
                         <ADDRESS>
                           <AddressLineText>123 employer st, miami fl 33333</AddressLineText>
-                          <CountryCode>USA</CountryCode>
+                          <CountryCode>US</CountryCode>
                         </ADDRESS>
                         <EMPLOYMENT>
                           <EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
@@ -397,7 +433,7 @@
                 <ADDRESS>
                   <AddressType>Current</AddressType>
                   <CityName>omaha</CityName>
-                  <CountryCode>USA</CountryCode>
+                  <CountryCode>US</CountryCode>
                   <StateCode>NE</StateCode>
                   <StreetName>coborcurrent addr</StreetName>
                   <StreetPrimaryNumberText>123</StreetPrimaryNumberText>
@@ -405,7 +441,7 @@
                 <ADDRESS>
                   <AddressType>Prior</AddressType>
                   <CityName>cobprevcity</CityName>
-                  <CountryCode>USA</CountryCode>
+                  <CountryCode>US</CountryCode>
                   <PostalCode>86766</PostalCode>
                   <StateCode>GA</StateCode>
                   <StreetName>cobprevious address st</StreetName>
@@ -414,7 +450,7 @@
                 <ADDRESS>
                   <AddressType>Mailing</AddressType>
                   <CityName>cobMailingCity</CityName>
-                  <CountryCode>USA</CountryCode>
+                  <CountryCode>US</CountryCode>
                   <PostalCode>78656</PostalCode>
                   <StateCode>KS</StateCode>
                   <StreetName>coborMailing st</StreetName>
@@ -458,7 +494,7 @@
               <ADDRESSES>
                 <ADDRESS>
                   <AddressType>CorporateHeadquarters</AddressType>
-                  <CountryCode>USA</CountryCode>
+                  <CountryCode>US</CountryCode>
                 </ADDRESS>
               </ADDRESSES>
               <ROLES>
