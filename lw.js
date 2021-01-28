@@ -26,4 +26,9 @@ if (process.argv[2]) {
   jsonFile = fs.readFileSync("./assets/" + fileName + ".json", "utf-8");
   xml = createMismo(JSON.parse(jsonFile));
   fs.writeFileSync("./output/" + fileName + fileSuffix + ".xml", xml);
+
+  fileName = "keith_loan";
+  jsonFile = fs.readFileSync("./assets/" + fileName + ".json", "utf-8");
+  xml = createMismo(JSON.parse(jsonFile));
+  fs.writeFileSync("./output/" + fileName + fileSuffix + ".xml", xml);
 }

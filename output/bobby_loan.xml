@@ -77,10 +77,24 @@
                   <StateCode>FL</StateCode>
                 </ADDRESS>
                 <PROPERTY_DETAIL>
+                  <CommunityPropertyStateIndicator>false</CommunityPropertyStateIndicator>
+                  <ConstructionMethodType>SiteBuilt</ConstructionMethodType>
                   <FinancedUnitCount>1</FinancedUnitCount>
+                  <PUDIndicator>false</PUDIndicator>
+                  <PropertyEstateType>FeeSimple</PropertyEstateType>
                   <PropertyEstimatedValueAmount>154900.00</PropertyEstimatedValueAmount>
+                  <PropertyExistingCleanEnergyLienIndicator>false</PropertyExistingCleanEnergyLienIndicator>
+                  <PropertyInProjectIndicator>false</PropertyInProjectIndicator>
                   <PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
+                  <RentalEstimatedNetMonthlyRentAmount>0</RentalEstimatedNetMonthlyRentAmount>
                 </PROPERTY_DETAIL>
+                <SALES_CONTRACTS>
+                  <SALES_CONTRACT>
+                    <SALES_CONTRACT_DETAIL>
+                      <SalesContractAmount>154900.00</SalesContractAmount>
+                    </SALES_CONTRACT_DETAIL>
+                  </SALES_CONTRACT>
+                </SALES_CONTRACTS>
               </SUBJECT_PROPERTY>
             </COLLATERAL>
           </COLLATERALS>
@@ -273,11 +287,15 @@
                 </ADDRESS>
               </ADDRESSES>
               <ROLES>
-                <ROLE>
+                <ROLE SequenceNumber="1" xlink:label="BORROWER_1">
                   <BORROWER>
                     <BORROWER_DETAIL>
                       <BorrowerBirthDate>1972-10-06</BorrowerBirthDate>
+                      <BorrowerTotalMortgagedPropertiesCount>0</BorrowerTotalMortgagedPropertiesCount>
+                      <CommunityPropertyStateResidentIndicator>false</CommunityPropertyStateResidentIndicator>
                       <DependentCount>3</DependentCount>
+                      <DomesticRelationshipIndicator>false</DomesticRelationshipIndicator>
+                      <JointAssetLiabilityReportingType>Jointly</JointAssetLiabilityReportingType>
                       <MaritalStatusType>Married</MaritalStatusType>
                     </BORROWER_DETAIL>
                     <CURRENT_INCOME>
@@ -285,7 +303,7 @@
                         <URLABorrowerTotalOtherIncomeAmount>0</URLABorrowerTotalOtherIncomeAmount>
                       </CURRENT_INCOME_DETAIL>
                       <CURRENT_INCOME_ITEMS>
-                        <CURRENT_INCOME_ITEM>
+                        <CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_1">
                           <CURRENT_INCOME_ITEM_DETAIL>
                             <CurrentIncomeMonthlyTotalAmount>5000</CurrentIncomeMonthlyTotalAmount>
                             <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
@@ -344,7 +362,7 @@
                       </DECLARATION_DETAIL>
                     </DECLARATION>
                     <EMPLOYERS>
-                      <EMPLOYER>
+                      <EMPLOYER Sequence="1" xlink:label="EMPLOYER_1">
                         <ADDRESS>
                           <AddressLineText>123 employer st, miami fl 33333</AddressLineText>
                           <CountryCode>US</CountryCode>
@@ -374,6 +392,9 @@
                       </HMDA_RACES>
                     </GOVERNMENT_MONITORING>
                   </BORROWER>
+                  <ROLE_DETAIL>
+                    <PartyRoleType>Borrower</PartyRoleType>
+                  </ROLE_DETAIL>
                 </ROLE>
               </ROLES>
               <TAXPAYER_IDENTIFIERS>
@@ -383,16 +404,8 @@
                 </TAXPAYER_IDENTIFIER>
               </TAXPAYER_IDENTIFIERS>
             </PARTY>
-            <PARTY SequenceNumber="1" xlink:label="PARTY_1">
+            <PARTY SequenceNumber="2" xlink:label="PARTY_2">
               <INDIVIDUAL>
-                <ALIASES>
-                  <ALIAS>
-                    <NAME>
-                      <FirstName>Michelle</FirstName>
-                      <LastName>Abraham</LastName>
-                    </NAME>
-                  </ALIAS>
-                </ALIASES>
                 <CONTACT_POINTS>
                   <CONTACT_POINT>
                     <CONTACT_POINT_EMAIL>
@@ -409,7 +422,7 @@
                   </CONTACT_POINT>
                   <CONTACT_POINT>
                     <CONTACT_POINT_TELEPHONE>
-                      <ContactPointTelephoneValue>4445556666</ContactPointTelephoneValue>
+                      <ContactPointTelephoneValue>0987654321</ContactPointTelephoneValue>
                     </CONTACT_POINT_TELEPHONE>
                     <CONTACT_POINT_DETAIL>
                       <ContactPointRoleType>Mobile</ContactPointRoleType>
@@ -458,9 +471,111 @@
                 </ADDRESS>
               </ADDRESSES>
               <ROLES>
-                <ROLE>
+                <ROLE SequenceNumber="1" xlink:label="BORROWER_2">
+                  <BORROWER>
+                    <BORROWER_DETAIL>
+                      <BorrowerBirthDate>1976-01-06</BorrowerBirthDate>
+                      <BorrowerTotalMortgagedPropertiesCount>0</BorrowerTotalMortgagedPropertiesCount>
+                      <CommunityPropertyStateResidentIndicator>false</CommunityPropertyStateResidentIndicator>
+                      <DependentCount>0</DependentCount>
+                      <DomesticRelationshipIndicator>false</DomesticRelationshipIndicator>
+                      <JointAssetLiabilityReportingType>Jointly</JointAssetLiabilityReportingType>
+                      <MaritalStatusType>Married</MaritalStatusType>
+                    </BORROWER_DETAIL>
+                    <CURRENT_INCOME>
+                      <CURRENT_INCOME_DETAIL>
+                        <URLABorrowerTotalOtherIncomeAmount>0</URLABorrowerTotalOtherIncomeAmount>
+                      </CURRENT_INCOME_DETAIL>
+                      <CURRENT_INCOME_ITEMS>
+                        <CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_2">
+                          <CURRENT_INCOME_ITEM_DETAIL>
+                            <CurrentIncomeMonthlyTotalAmount>2500</CurrentIncomeMonthlyTotalAmount>
+                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+                            <IncomeType>Base</IncomeType>
+                          </CURRENT_INCOME_ITEM_DETAIL>
+                        </CURRENT_INCOME_ITEM>
+                        <CURRENT_INCOME_ITEM>
+                          <CURRENT_INCOME_ITEM_DETAIL>
+                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+                            <IncomeType>Bonus</IncomeType>
+                          </CURRENT_INCOME_ITEM_DETAIL>
+                        </CURRENT_INCOME_ITEM>
+                        <CURRENT_INCOME_ITEM>
+                          <CURRENT_INCOME_ITEM_DETAIL>
+                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+                            <IncomeType>Other</IncomeType>
+                          </CURRENT_INCOME_ITEM_DETAIL>
+                        </CURRENT_INCOME_ITEM>
+                        <CURRENT_INCOME_ITEM>
+                          <CURRENT_INCOME_ITEM_DETAIL>
+                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+                            <IncomeType>Overtime</IncomeType>
+                          </CURRENT_INCOME_ITEM_DETAIL>
+                        </CURRENT_INCOME_ITEM>
+                        <CURRENT_INCOME_ITEM>
+                          <CURRENT_INCOME_ITEM_DETAIL>
+                            <CurrentIncomeMonthlyTotalAmount>2500</CurrentIncomeMonthlyTotalAmount>
+                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+                            <IncomeType>BorrowerEstimatedTotalMonthlyIncome</IncomeType>
+                          </CURRENT_INCOME_ITEM_DETAIL>
+                        </CURRENT_INCOME_ITEM>
+                      </CURRENT_INCOME_ITEMS>
+                    </CURRENT_INCOME>
+                    <DECLARATION>
+                      <DECLARATION_DETAIL>
+                        <BankruptcyIndicator>false</BankruptcyIndicator>
+                        <CitizenshipResidencyType>PermanentResidentAlien</CitizenshipResidencyType>
+                        <FHASecondaryResidenceIndicator>false</FHASecondaryResidenceIndicator>
+                        <HomeownerPastThreeYearsType>No</HomeownerPastThreeYearsType>
+                        <IntentToOccupyType>Yes</IntentToOccupyType>
+                        <OutstandingJudgmentsIndicator>false</OutstandingJudgmentsIndicator>
+                        <PartyToLawsuitIndicator>false</PartyToLawsuitIndicator>
+                        <PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
+                        <PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
+                        <PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
+                        <PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
+                        <PropertyProposedCleanEnergyLienIndicator>false</PropertyProposedCleanEnergyLienIndicator>
+                        <UndisclosedBorrowedFundsAmount>0</UndisclosedBorrowedFundsAmount>
+                        <UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
+                        <UndisclosedComakerOfNoteIndicator>false</UndisclosedComakerOfNoteIndicator>
+                        <UndisclosedCreditApplicationIndicator>false</UndisclosedCreditApplicationIndicator>
+                        <UndisclosedMortgageApplicationIndicator>false</UndisclosedMortgageApplicationIndicator>
+                      </DECLARATION_DETAIL>
+                    </DECLARATION>
+                    <EMPLOYERS>
+                      <EMPLOYER Sequence="1" xlink:label="EMPLOYER_2">
+                        <ADDRESS>
+                          <AddressLineText>123 butterfly st, miami fl 33176</AddressLineText>
+                          <CountryCode>US</CountryCode>
+                        </ADDRESS>
+                        <EMPLOYMENT>
+                          <EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
+                          <EmploymentClassificationType>Secondary</EmploymentClassificationType>
+                          <EmploymentPositionDescription>butterfly milker</EmploymentPositionDescription>
+                          <EmploymentStartDate>2015-01-09</EmploymentStartDate>
+                          <EmploymentStatusType>Current</EmploymentStatusType>
+                          <EmploymentTimeInLineOfWorkMonthsCount>5</EmploymentTimeInLineOfWorkMonthsCount>
+                        </EMPLOYMENT>
+                      </EMPLOYER>
+                    </EMPLOYERS>
+                    <GOVERNMENT_MONITORING>
+                      <HMDA_ETHNICITY_ORIGINS>
+                        <HMDA_ETHNICITY_ORIGIN>
+                          <HMDAEthnicityOriginType>Mexican</HMDAEthnicityOriginType>
+                          <HMDAEthnicityOriginTypeOtherDescription>3</HMDAEthnicityOriginTypeOtherDescription>
+                        </HMDA_ETHNICITY_ORIGIN>
+                      </HMDA_ETHNICITY_ORIGINS>
+                      <HMDA_RACES>
+                        <HMDA_RACE>
+                          <HMDA_RACE_DETAIL>
+                            <HMDARaceType>NativeHawaiianOrOtherPacificIslander</HMDARaceType>
+                          </HMDA_RACE_DETAIL>
+                        </HMDA_RACE>
+                      </HMDA_RACES>
+                    </GOVERNMENT_MONITORING>
+                  </BORROWER>
                   <ROLE_DETAIL>
-                    <PartyRoleType>Cosigner</PartyRoleType>
+                    <PartyRoleType>Borrower</PartyRoleType>
                   </ROLE_DETAIL>
                 </ROLE>
               </ROLES>
@@ -506,6 +621,13 @@
               </ROLES>
             </PARTY>
           </PARTIES>
+          <RELATIONSHIPS>
+            <RELATIONSHIP SequenceNumber="1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_1" xlink:to="BORROWER_1"/>
+            <RELATIONSHIP SequenceNumber="2" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_2" xlink:to="BORROWER_1"/>
+            <RELATIONSHIP SequenceNumber="3" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_3" xlink:to="BORROWER_1"/>
+            <RELATIONSHIP SequenceNumber="4" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_4" xlink:to="BORROWER_1"/>
+            <RELATIONSHIP SequenceNumber="5" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1"/>
+          </RELATIONSHIPS>
         </DEAL>
       </DEALS>
     </DEAL_SET>
