@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd">
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
       <AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
@@ -77,22 +77,25 @@
                   <StateCode>FL</StateCode>
                 </ADDRESS>
                 <PROPERTY_DETAIL>
+                  <AttachmentType>Attached</AttachmentType>
                   <CommunityPropertyStateIndicator>false</CommunityPropertyStateIndicator>
                   <ConstructionMethodType>SiteBuilt</ConstructionMethodType>
                   <FinancedUnitCount>1</FinancedUnitCount>
-                  <PUDIndicator>false</PUDIndicator>
-                  <PropertyEstateType>FeeSimple</PropertyEstateType>
                   <PropertyEstimatedValueAmount>154900.00</PropertyEstimatedValueAmount>
                   <PropertyExistingCleanEnergyLienIndicator>false</PropertyExistingCleanEnergyLienIndicator>
                   <PropertyInProjectIndicator>false</PropertyInProjectIndicator>
                   <PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
+                  <PropertyUsageType>Investment</PropertyUsageType>
                   <RentalEstimatedNetMonthlyRentAmount>0</RentalEstimatedNetMonthlyRentAmount>
                 </PROPERTY_DETAIL>
+                <PROPERTY_VALUATIONS>
+                  <PROPERTY_VALUATION>
+                    <PROPERTY_VALUATION_DETAIL/>
+                  </PROPERTY_VALUATION>
+                </PROPERTY_VALUATIONS>
                 <SALES_CONTRACTS>
                   <SALES_CONTRACT>
-                    <SALES_CONTRACT_DETAIL>
-                      <SalesContractAmount>154900.00</SalesContractAmount>
-                    </SALES_CONTRACT_DETAIL>
+                    <SALES_CONTRACT_DETAIL/>
                   </SALES_CONTRACT>
                 </SALES_CONTRACTS>
               </SUBJECT_PROPERTY>
@@ -170,31 +173,43 @@
             <LOAN SequenceNumber="1" xlink:label="LOAN_1" LoanRoleType="SubjectLoan">
               <AMORTIZATION>
                 <AMORTIZATION_RULE>
+                  <AmortizationType>Fixed</AmortizationType>
+                  <LoanAmortizationPeriodCount>360</LoanAmortizationPeriodCount>
                   <LoanAmortizationPeriodType>Month</LoanAmortizationPeriodType>
                 </AMORTIZATION_RULE>
               </AMORTIZATION>
-              <CLOSING_INFORMATION>
-                <CLOSING_INFORMATION_DETAIL>
-                  <CashFromBorrowerAtClosingAmount>0</CashFromBorrowerAtClosingAmount>
-                </CLOSING_INFORMATION_DETAIL>
-              </CLOSING_INFORMATION>
+              <CONSTRUCTION/>
               <DOCUMENT_SPECIFIC_DATA_SETS>
                 <DOCUMENT_SPECIFIC_DATA_SET>
                   <URLA>
                     <URLA_DETAIL>
-                      <EstimatedClosingCostsAmount>0</EstimatedClosingCostsAmount>
-                    </URLA_DETAIL>
-                    <URLA_TOTAL>
                       <AlterationsImprovementsAndRepairsAmount>0.00</AlterationsImprovementsAndRepairsAmount>
                       <EstimatedClosingCostsAmount>0</EstimatedClosingCostsAmount>
                       <MIAndFundingFeeFinancedAmount>0.00</MIAndFundingFeeFinancedAmount>
                       <MIAndFundingFeeTotalAmount>0.00</MIAndFundingFeeTotalAmount>
                       <PrepaidItemsEstimatedAmount>0.00</PrepaidItemsEstimatedAmount>
                       <RefinanceIncludingDebtsToBePaidOffAmount>0.00</RefinanceIncludingDebtsToBePaidOffAmount>
-                    </URLA_TOTAL>
+                    </URLA_DETAIL>
                   </URLA>
                 </DOCUMENT_SPECIFIC_DATA_SET>
               </DOCUMENT_SPECIFIC_DATA_SETS>
+              <HOUSING_EXPENSES>
+                <HOUSING_EXPENSE>
+                  <HousingExpensePaymentAmount>2367.98</HousingExpensePaymentAmount>
+                  <HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+                  <HousingExpenseType>FirstMortgagePrincipalAndInterest</HousingExpenseType>
+                </HOUSING_EXPENSE>
+                <HOUSING_EXPENSE>
+                  <HousingExpensePaymentAmount>300.00</HousingExpensePaymentAmount>
+                  <HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+                  <HousingExpenseType>HomeownersInsurance</HousingExpenseType>
+                </HOUSING_EXPENSE>
+                <HOUSING_EXPENSE>
+                  <HousingExpensePaymentAmount>150.00</HousingExpensePaymentAmount>
+                  <HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+                  <HousingExpenseType>RealEstateTax</HousingExpenseType>
+                </HOUSING_EXPENSE>
+              </HOUSING_EXPENSES>
               <LOAN_DETAIL>
                 <BalloonIndicator>false</BalloonIndicator>
                 <BuydownTemporarySubsidyFundingIndicator>false</BuydownTemporarySubsidyFundingIndicator>
@@ -211,6 +226,25 @@
                   <LoanIdentifierType>LenderLoan</LoanIdentifierType>
                 </LOAN_IDENTIFIER>
               </LOAN_IDENTIFIERS>
+              <LOAN_PRODUCT>
+                <LOAN_PRODUCT_DETAIL>
+                  <DiscountPointsTotalAmount>0.00</DiscountPointsTotalAmount>
+                  <ProductDescription>Non-QM Agency Plus 30 Year Fixed</ProductDescription>
+                </LOAN_PRODUCT_DETAIL>
+              </LOAN_PRODUCT>
+              <LOAN_STATUSES>
+                <LOAN_STATUS>
+                  <LoanStatusIdentifier>Underwriting</LoanStatusIdentifier>
+                </LOAN_STATUS>
+              </LOAN_STATUSES>
+              <ORIGINATION_SYSTEMS>
+                <ORIGINATION_SYSTEM>
+                  <LoanOriginationSystemVendorIdentifier>000112</LoanOriginationSystemVendorIdentifier>
+                  <LoanOriginationSystemVersionIdentifier>LendingPadVerison</LoanOriginationSystemVersionIdentifier>
+                </ORIGINATION_SYSTEM>
+              </ORIGINATION_SYSTEMS>
+              <PURCHASE_CREDITS/>
+              <QUALIFICATION/>
               <TERMS_OF_LOAN>
                 <BaseLoanAmount>-154900</BaseLoanAmount>
                 <LienPriorityType>FirstLien</LienPriorityType>
@@ -299,9 +333,6 @@
                       <MaritalStatusType>Married</MaritalStatusType>
                     </BORROWER_DETAIL>
                     <CURRENT_INCOME>
-                      <CURRENT_INCOME_DETAIL>
-                        <URLABorrowerTotalOtherIncomeAmount>0</URLABorrowerTotalOtherIncomeAmount>
-                      </CURRENT_INCOME_DETAIL>
                       <CURRENT_INCOME_ITEMS>
                         <CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_1">
                           <CURRENT_INCOME_ITEM_DETAIL>
@@ -359,7 +390,15 @@
                         <UndisclosedComakerOfNoteIndicator>false</UndisclosedComakerOfNoteIndicator>
                         <UndisclosedCreditApplicationIndicator>false</UndisclosedCreditApplicationIndicator>
                         <UndisclosedMortgageApplicationIndicator>false</UndisclosedMortgageApplicationIndicator>
+                        <EXTENSION>
+                          <OTHER>
+                            <ULAD:DECLARATION_DETAIL_EXTENSION>
+                              <ULAD:SpecialBorrowerSellerRelationshipIndicator>false</ULAD:SpecialBorrowerSellerRelationshipIndicator>
+                            </ULAD:DECLARATION_DETAIL_EXTENSION>
+                          </OTHER>
+                        </EXTENSION>
                       </DECLARATION_DETAIL>
+                      <DECLARATION_EXPLANATIONS/>
                     </DECLARATION>
                     <EMPLOYERS>
                       <EMPLOYER Sequence="1" xlink:label="EMPLOYER_1">
@@ -367,13 +406,32 @@
                           <AddressLineText>123 employer st, miami fl 33333</AddressLineText>
                           <CountryCode>US</CountryCode>
                         </ADDRESS>
+                        <LEGAL_ENTITY>
+                          <CONTACTS>
+                            <CONTACT>
+                              <CONTACT_POINTS>
+                                <CONTACT_POINT>
+                                  <CONTACT_POINT_TELEPHONE>
+                                    <ContactPointTelephoneValue>123456789</ContactPointTelephoneValue>
+                                  </CONTACT_POINT_TELEPHONE>
+                                  <CONTACT_POINT_DETAIL>
+                                    <ContactPointRoleType>Mobile</ContactPointRoleType>
+                                  </CONTACT_POINT_DETAIL>
+                                </CONTACT_POINT>
+                              </CONTACT_POINTS>
+                            </CONTACT>
+                          </CONTACTS>
+                          <LEGAL_ENTITY_DETAIL>
+                            <FullName>Google</FullName>
+                          </LEGAL_ENTITY_DETAIL>
+                        </LEGAL_ENTITY>
                         <EMPLOYMENT>
                           <EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
                           <EmploymentClassificationType>Primary</EmploymentClassificationType>
                           <EmploymentPositionDescription>programmer</EmploymentPositionDescription>
                           <EmploymentStartDate>2020-01-01</EmploymentStartDate>
                           <EmploymentStatusType>Current</EmploymentStatusType>
-                          <EmploymentTimeInLineOfWorkMonthsCount>1</EmploymentTimeInLineOfWorkMonthsCount>
+                          <EmploymentTimeInLineOfWorkMonthsCount>12</EmploymentTimeInLineOfWorkMonthsCount>
                         </EMPLOYMENT>
                       </EMPLOYER>
                     </EMPLOYERS>
@@ -406,6 +464,11 @@
             </PARTY>
             <PARTY SequenceNumber="2" xlink:label="PARTY_2">
               <INDIVIDUAL>
+                <ALIASES>
+                  <ALIAS>
+                    <NAME/>
+                  </ALIAS>
+                </ALIASES>
                 <CONTACT_POINTS>
                   <CONTACT_POINT>
                     <CONTACT_POINT_EMAIL>
@@ -585,40 +648,6 @@
                   <TaxpayerIdentifierValue>798645654</TaxpayerIdentifierValue>
                 </TAXPAYER_IDENTIFIER>
               </TAXPAYER_IDENTIFIERS>
-            </PARTY>
-            <PARTY SequenceNumber="3" xlink:label="PARTY_3">
-              <LEGAL_ENTITY>
-                <CONTACTS>
-                  <CONTACT>
-                    <CONTACT_POINTS>
-                      <CONTACT_POINT>
-                        <CONTACT_POINT_EMAIL>
-                          <ContactPointEmailValue>davetest@lendingwise.com</ContactPointEmailValue>
-                        </CONTACT_POINT_EMAIL>
-                      </CONTACT_POINT>
-                    </CONTACT_POINTS>
-                    <NAME>
-                      <FirstName>daves</FirstName>
-                    </NAME>
-                  </CONTACT>
-                </CONTACTS>
-                <LEGAL_ENTITY_DETAIL>
-                  <FullName>daves</FullName>
-                </LEGAL_ENTITY_DETAIL>
-              </LEGAL_ENTITY>
-              <ADDRESSES>
-                <ADDRESS>
-                  <AddressType>CorporateHeadquarters</AddressType>
-                  <CountryCode>US</CountryCode>
-                </ADDRESS>
-              </ADDRESSES>
-              <ROLES>
-                <ROLE>
-                  <ROLE_DETAIL>
-                    <PartyRoleType>LoanOriginator</PartyRoleType>
-                  </ROLE_DETAIL>
-                </ROLE>
-              </ROLES>
             </PARTY>
           </PARTIES>
           <RELATIONSHIPS>

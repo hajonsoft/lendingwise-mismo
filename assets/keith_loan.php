@@ -39,7 +39,7 @@ Array
             [initialRate] => 
             [totalMonthlyExpenses] => 0
             [borrowerLName] => Janzen
-            [propertyAddress] => 2719 W Fremont St
+            [propertyAddress] => 10600 Southwest 72nd Court
             [phoneNumber] => 
             [cellNumber] => 
             [borrowerEmail] => keithjanzenbeach@yahoo.com
@@ -65,9 +65,9 @@ Array
             [coBSsnNumber] => 
             [fax] => 
             [coBFax] => 
-            [propertyCity] => Peoria
-            [propertyState] => IL
-            [propertyZip] => 61605
+            [propertyCity] => Pinecrest
+            [propertyState] => FL
+            [propertyZip] => 33156
             [mailingCity] => 
             [mailingState] => 
             [mailingZip] => 
@@ -78,7 +78,7 @@ Array
             [receiveModification] => NA
             [receiveModificationNotes] => 
             [userType] => Employee
-            [createdBy] => 12827
+            [createdBy] => 13096
             [createdUserType] => Employee
             [lien1BalanceDue] => 
             [lien2BalanceDue] => 
@@ -88,7 +88,7 @@ Array
             [lien1Terms] => Interest Only
             [lien2Terms] => 
             [checkingAndSavings] => 
-            [borrowerDOB] => 
+            [borrowerDOB] => 1977-07-24
             [borrowerPOB] => 
             [noOfPeopleInProperty] => 0
             [mortgageNotes] => 
@@ -98,14 +98,14 @@ Array
             [enc_borrowerName] => 994bfde887b2b674
             [enc_borrowerLName] => 7ed0587c9fd59e30
             [enc_ssnNumber] => 
-            [enc_borrowerDOB] => 
+            [enc_borrowerDOB] => 3ffd5fd6a36c34dec223af495ba6a773
             [enc_loanNumber] => 
             [enc_loanNumber2] => 
             [enc_borrowerEmail] => a6fa0539c09acd0e018afb907607b78a675de3b93ff791c1b04b157c747d4e23
-            [enc_propertyAddress] => 9fdc9632d07f94b4a7b965941905f211315c036c0e6f3a4b
-            [enc_propertyCity] => c2b0be01e226f43c
-            [enc_propertyState] => 8ea4f191f698d9fa
-            [enc_propertyZip] => 4a3860db2c0fd3b2
+            [enc_propertyAddress] => 40843c8c23e8b7883054a26b2befa40a34c76bca8cad54644f3528e21fddd6ba
+            [enc_propertyCity] => 399c6225f659758d01e1e826287882f4
+            [enc_propertyState] => 0a3c07c5aa4479a1
+            [enc_propertyZip] => d07e45f5c1d0384d
             [fileSubmissionStatus] => 
             [altPhoneNumber] => 
             [coBAltPhoneNumber] => 
@@ -118,8 +118,8 @@ Array
             [referralCode1_del] => 0
             [LMRAffiliateCode1_del] => 0
             [executiveId1_del] => 0
-            [propertyCounty] => 
-            [maritalStatus] => 
+            [propertyCounty] => Miami-Dade
+            [maritalStatus] => Single
             [marriageDate] => 
             [divorceDate] => 
             [maidenName] => 
@@ -182,8 +182,8 @@ Array
             [mortgageOwner1_copy] => 
             [mortgageOwner2_copy] => 
             [coBServiceProvider] => 
-            [lastUpdatedDate] => 2021-01-26 09:58:46
-            [updatedBy] => Dave Test
+            [lastUpdatedDate] => 2021-01-28 16:14:28
+            [updatedBy] => Ayman Ali
             [borrowerPinNo] => 
             [coBorrowerPinNo] => 
             [fileCopied] => 0
@@ -933,7 +933,7 @@ Array
                     [LMRAEId] => 0
                     [processingCompanyId] => 1652
                     [empCreatedDate] => 2021-01-11
-                    [empLastLoginDate] => 2021-01-26 11:21:41
+                    [empLastLoginDate] => 2021-01-28 13:45:20
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => 
                     [timeZone] => EST
@@ -1232,7 +1232,7 @@ Array
             [twentyFourMonthRent] => 
             [assessedValue] => 
             [quickSaleValue] => 
-            [zillowValue] => 
+            [zillowValue] => 650000.00
             [zillowRentValue] => 
             [updateEmailStatus] => 
             [offerAmount] => 
@@ -2173,7 +2173,7 @@ If Trust- Certification of Trust, Trust Agreement
             [occupation2] => 
             [employedInfo1] => 
             [employedInfo2] => 
-            [grossIncome1] => 
+            [grossIncome1] => 120,000.00
             [grossIncome2] => 
             [commissionOrBonus1] => 
             [commissionOrBonus2] => 
@@ -2265,7 +2265,7 @@ If Trust- Certification of Trust, Trust Agreement
             [currntPmntTaxAndIns1] => 
             [columnmortgageInsurance1] => 
             [mortgageInsurance1] => 
-            [employer1] => 
+            [employer1] => google
             [employer2] => 
             [yearsAtJob1] => 
             [yearsAtJob2] => 
@@ -2277,7 +2277,7 @@ If Trust- Certification of Trust, Trust Agreement
             [foodStampWelfare1] => 
             [foodStampWelfare2] => 
             [employer1Add] => 
-            [employer1Phone] => 
+            [employer1Phone] => 4234523425
             [employer2Add] => 
             [employer2Phone] => 
             [creditCardsBalance1] => 
@@ -2323,7 +2323,7 @@ If Trust- Certification of Trust, Trust Agreement
             [netUnemployment1] => 
             [netUnemployment2] => 
             [floodInsurance1] => 
-            [borrowerHireDate] => 
+            [borrowerHireDate] => 0000-00-00
             [coBorrowerHireDate] => 
             [includeNotesToPDF] => 0
             [rentalExp1] => 
@@ -2360,12 +2360,12 @@ If Trust- Certification of Trust, Trust Agreement
             [otherIncomeDescription2] => 
             [borSocialSecurity] => 
             [coBSocialSecurity] => 
-            [borrowerTotalMonthlyIncome] => 0
+            [borrowerTotalMonthlyIncome] => 120000
             [coborrowerTotalMonthlyIncome] => 
             [borrowerTotalMonthlyExpenses] => 0
             [coborrowerTotalMonthlyExpenses] => 
             [totalMonthlyExpensesBorrowerAndCoborrower] => 0
-            [totalMonthlyIncomeBorrowerAndCoborrower] => 0
+            [totalMonthlyIncomeBorrowerAndCoborrower] => 120000
         )
 
     [QAInfo] => Array
@@ -2693,7 +2693,7 @@ If Trust- Certification of Trust, Trust Agreement
             [internalInfoTags] => 
             [internalInfoStatus] => 
             [internalInfoCreditLine] => 
-            [borrowerDOB] => 
+            [borrowerDOB] => 1977-07-24
             [borrowerPOB] => 
             [ssnNumber] => 
             [clientMaxAcqusitionLTV] => 
@@ -6150,6 +6150,98 @@ For question that need additional infio, make sure borrower uploads supporting d
 
     [fileLOChekingSavingInfo] => Array
         (
+            [0] => Array
+                (
+                    [LOCSID] => 676
+                    [fileID] => 6838612
+                    [nameAddrOfBank] => Chase
+                    [accountNumber] => 9834209
+                    [balance] => 104137
+                    [recordDate] => 2021-01-28 13:48:52
+                    [accType] => Savings
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [1] => Array
+                (
+                    [LOCSID] => 677
+                    [fileID] => 6838612
+                    [nameAddrOfBank] => Chase
+                    [accountNumber] => 0039842
+                    [balance] => 9304
+                    [recordDate] => 2021-01-28 13:48:52
+                    [accType] => Checking
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [2] => Array
+                (
+                    [LOCSID] => 678
+                    [fileID] => 6838612
+                    [nameAddrOfBank] => Bank of America
+                    [accountNumber] => 939289
+                    [balance] => 19000
+                    [recordDate] => 2021-01-28 13:48:52
+                    [accType] => retirement
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
+            [3] => Array
+                (
+                    [LOCSID] => 679
+                    [fileID] => 6838612
+                    [nameAddrOfBank] => Atlantic One
+                    [accountNumber] => 9392
+                    [balance] => 45039
+                    [recordDate] => 2021-01-28 13:48:52
+                    [accType] => Savings
+                    [accountTitledAs] => 
+                    [description] => 
+                    [shareValueInBond] => 
+                    [nameofSecurity] => 
+                    [cost] => 
+                    [marketValueQuote] => 
+                    [dateofQuote] => 
+                    [typeofPolicy] => 
+                    [faceAmount] => 
+                    [amountBorrowed] => 
+                    [beneficiaries] => 
+                    [pledged] => 
+                )
+
         )
 
     [liabilitiesInfo] => Array
@@ -6251,7 +6343,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [coBorCompanyName] => 
             [coBorCreditScoreRange] => 
             [coBorCreditScore] => 0
-            [recordDate] => 2021-01-26 09:58:27
+            [recordDate] => 2021-01-28 16:14:25
             [afterRepairValue] => 0.00
             [targetClosingDate] => 
             [ownThisProperty] => No
@@ -6272,7 +6364,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [isServicingMember] => 
             [servicingMemberInfo] => 
             [agesOfDependent] => 
-            [numberOfDependents] => 
+            [numberOfDependents] => 0
             [maritalStatusCoBor] => 
             [coBorrowerCitizenship] => 
         )
@@ -6310,7 +6402,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [activeStatus] => 1
             [loanTerm] => 
             [prePaymentPenalty] => 
-            [lienPosition] => 
+            [lienPosition] => 1
             [annualPremium] => 
             [isHiredPerformRehab] => 
             [GCCompanyName] => 
@@ -6364,7 +6456,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [referringParty] => 
             [hereAbout] => 
             [proInsPolicyEffDate] => 
-            [userName] => Dave Test
+            [userName] => Ayman Ali
             [userType] => 
             [recordingDate] => 
             [payOffDate] => 
@@ -6562,7 +6654,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [member9CreditScore] => 
             [member10CreditScore] => 
             [organizationalRef] => 
-            [dateOfFormation] => 
+            [dateOfFormation] => 0000-00-00
             [CBEID] => 0
             [dateOfOperatingAgreement] => 
             [businessCategory] => 
@@ -6628,6 +6720,58 @@ For question that need additional infio, make sure borrower uploads supporting d
 
     [fileHMLOBackGroundInfo] => Array
         (
+            [HMLOBGID] => 66888
+            [fileID] => 6838612
+            [isBorUSCitizen] => NA
+            [isBorDecalredBankruptPastYears] => NA
+            [isAnyBorOutstandingJudgements] => NA
+            [hasBorAnyActiveLawsuits] => NA
+            [hasBorPropertyTaxLiens] => NA
+            [hasBorObligatedInForeclosure] => NA
+            [isBorPresenltyDelinquent] => NA
+            [isBorBorrowedDownPayment] => NA
+            [isBorIntendToOccupyPropAsPRI] => NA
+            [haveBorOtherFraudRelatedCrimes] => NA
+            [isBorPersonallyGuaranteeLoan] => NA
+            [isCoBorUSCitizen] => NA
+            [isCoBorDecalredBankruptPastYears] => NA
+            [isAnyCoBorOutstandingJudgements] => NA
+            [hasCoBorAnyActiveLawsuits] => NA
+            [hasCoBorPropertyTaxLiens] => NA
+            [hasCoBorObligatedInForeclosure] => NA
+            [isCoBorPresenltyDelinquent] => NA
+            [isCoBorBorrowedDownPayment] => NA
+            [isCoBorIntendToOccupyPropAsPRI] => NA
+            [haveCoBorOtherFraudRelatedCrimes] => NA
+            [isCoBorPersonallyGuaranteeLoan] => NA
+            [recordDate] => 2021-01-28 13:48:51
+            [activeStatus] => 1
+            [borBackgroundExplanation] => 
+            [coBorBackgroundExplanation] => 
+            [borDecalredBankruptExpln] => 
+            [borOutstandingJudgementsExpln] => 
+            [borActiveLawsuitsExpln] => 
+            [borPropertyTaxLiensExpln] => 
+            [borObligatedInForeclosureExpln] => 
+            [borDelinquentExpln] => 
+            [borOtherFraudRelatedCrimesExpln] => 
+            [borBorrowedDownPaymentExpln] => 
+            [coBorDecalredBankruptExpln] => 
+            [coBorOutstandingJudgementsExpln] => 
+            [coBorActiveLawsuitsExpln] => 
+            [coBorPropertyTaxLiensExpln] => 
+            [coBorObligatedInForeclosureExpln] => 
+            [coBorDelinquentExpln] => 
+            [coBorOtherFraudRelatedCrimesExpln] => 
+            [coBorBorrowedDownPaymentExpln] => 
+            [CID] => 6378847
+            [borOrigin] => 
+            [borVisaStatus] => 
+            [borDesignatedBeneficiaryAgreement] => 
+            [borDesignatedBeneficiaryAgreementExpln] => 
+            [coBorDesignatedBeneficiaryAgreement] => 
+            [coBorDesignatedBeneficiaryAgreementExpln] => 
+            [marriedToBor] => 
         )
 
     [SBABackground] => Array
@@ -6712,18 +6856,18 @@ For question that need additional infio, make sure borrower uploads supporting d
             [haveBorProjectCurrentlyInProgress] => NA
             [borNoOfProjectCurrently] => 
             [haveBorOwnInvestmentProperties] => NA
-            [borNoOfOwnProp] => 
+            [borNoOfOwnProp] => 0
             [areBorMemberOfInvestmentClub] => NA
             [borClubName] => 
             [haveCoBorREInvestmentExperience] => NA
-            [coBorNoOfREPropertiesCompleted] => 
+            [coBorNoOfREPropertiesCompleted] => 0
             [haveCoBorRehabConstructionExperience] => NA
             [coBorNoOfYearRehabExperience] => 
             [coBorRehabPropCompleted] => 
             [haveCoBorProjectCurrentlyInProgress] => NA
-            [coBorNoOfProjectCurrently] => 
+            [coBorNoOfProjectCurrently] => 0
             [haveCoBorOwnInvestmentProperties] => NA
-            [coBorNoOfOwnProp] => 
+            [coBorNoOfOwnProp] => 0
             [areCoBorMemberOfInvestmentClub] => NA
             [coBorClubName] => 
             [borREAddress1] => 
@@ -6770,18 +6914,18 @@ For question that need additional infio, make sure borrower uploads supporting d
             [typicalPurchasePriceTo] => 
             [typicalConstructionCosts] => 
             [typicalConstructionCostsTo] => 
-            [typicalSalePrice] => 
-            [typicalSalePriceTo] => 
-            [constructionDrawsPerProject] => 
+            [typicalSalePrice] => 0
+            [typicalSalePriceTo] => 0
+            [constructionDrawsPerProject] => 0
             [constructionDrawsPerProjectTo] => 
-            [monthsPurchaseDateToFirstConst] => 
-            [monthsPurchaseDateToFirstConstTo] => 
+            [monthsPurchaseDateToFirstConst] => 0
+            [monthsPurchaseDateToFirstConstTo] => 0
             [monthsPurchaseDateUntilConst] => 
             [monthsPurchaseDateUntilConstTo] => 
             [monthsPurchaseDateToSaleDate] => 
             [monthsPurchaseDateToSaleDateTo] => 
-            [NoOfSuchProjects] => 
-            [NoOfSuchProjectsTo] => 
+            [NoOfSuchProjects] => 0
+            [NoOfSuchProjectsTo] => 0
             [haveBorSellPropertie] => 
             [borNoOfProSellExperience] => 
             [borNoOfProSellCompleted] => 
@@ -6927,7 +7071,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [costOfImprovementsToBeMade] => 
             [LOCTotalLoanAmt] => 0.00
             [rehabCostPercentageFinanced] => 100
-            [downPaymentPercentage] => 
+            [downPaymentPercentage] => 20
             [yieldSpread] => 
             [CORTotalLoanAmt] => 0.00
             [CORefiLTVPercentage] => 
@@ -6945,7 +7089,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [UccLienSearch] => 
             [isFeeUpdated] => 
             [haveBorSquareFootage] => 
-            [borNoOfSquareFeet] => 
+            [borNoOfSquareFeet] => 0
             [haveInterestreserve] => 
             [prepaidInterestReserve] => 
             [noOfMonthsPrepaid] => 
@@ -6983,9 +7127,9 @@ For question that need additional infio, make sure borrower uploads supporting d
             [autoCalcTLAARV] => No
             [maxArvPer] => 70.00
             [refinanceCurrentLoanBalance] => 0
-            [updatedBy] => Dave Test
+            [updatedBy] => Ayman Ali
             [updatedUserType] => Employee
-            [UID] => 12827
+            [UID] => 13096
             [approvedAcquisition] => 
             [typeOfHMLOLoanRequesting] => Purchase
             [maxAmtToPutDown] => 0.00
@@ -7687,7 +7831,7 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [EIID] => 123516
+                    [EIID] => 124721
                     [LMRId] => 6838612
                     [vendorName] => 
                     [vendorPhone] => 
@@ -7706,9 +7850,9 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [mileage] => 
                     [equipmentDescription] => 
                     [term] => 
-                    [userType] => Manager
-                    [createdBy] => 12827
-                    [recordDate] => 2021-01-26 09:58:29
+                    [userType] => Processing Manager
+                    [createdBy] => 13096
+                    [recordDate] => 2021-01-28 16:14:28
                 )
 
         )
@@ -7722,7 +7866,7 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [AGID] => 222174
+                    [AGID] => 223655
                     [LMRId] => 6838612
                     [guarantorFName] => 
                     [guarantorLName] => 
@@ -7735,7 +7879,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [guarantorCity] => 
                     [guarantorState] => 
                     [guarantorZip] => 
-                    [recordDate] => 2021-01-26 09:58:29
+                    [recordDate] => 2021-01-28 16:14:28
                     [guarantorEmail] => 
                     [guarantorNote] => 
                 )
@@ -7748,7 +7892,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2848840
+                            [FFGID] => 2865721
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Flip
@@ -7769,12 +7913,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-26 09:58:29
+                            [recordDate] => 2021-01-28 16:14:27
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2848841
+                            [FFGID] => 2865722
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Flip
@@ -7795,12 +7939,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-26 09:58:29
+                            [recordDate] => 2021-01-28 16:14:27
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2848842
+                            [FFGID] => 2865723
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Flip
@@ -7821,7 +7965,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-26 09:58:29
+                            [recordDate] => 2021-01-28 16:14:27
                         )
 
                 )
@@ -7830,7 +7974,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2848843
+                            [FFGID] => 2865724
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Gup
@@ -7851,12 +7995,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-26 09:58:29
+                            [recordDate] => 2021-01-28 16:14:27
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2848844
+                            [FFGID] => 2865725
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Gup
@@ -7877,12 +8021,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-26 09:58:29
+                            [recordDate] => 2021-01-28 16:14:27
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2848845
+                            [FFGID] => 2865726
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Gup
@@ -7903,7 +8047,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-26 09:58:29
+                            [recordDate] => 2021-01-28 16:14:27
                         )
 
                 )
@@ -7912,7 +8056,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2848846
+                            [FFGID] => 2865727
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Sell
@@ -7933,12 +8077,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-26 09:58:29
+                            [recordDate] => 2021-01-28 16:14:27
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2848847
+                            [FFGID] => 2865728
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Sell
@@ -7959,12 +8103,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-26 09:58:29
+                            [recordDate] => 2021-01-28 16:14:27
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2848848
+                            [FFGID] => 2865729
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Sell
@@ -7985,7 +8129,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-26 09:58:29
+                            [recordDate] => 2021-01-28 16:14:27
                         )
 
                 )
