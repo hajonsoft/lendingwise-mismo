@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd">
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
       <AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
@@ -19,7 +19,7 @@
             <ASSET SequenceNumber="1" xlink:label="ASSET_1">
               <ASSET_DETAIL>
                 <AssetAccountIdentifier>9834209</AssetAccountIdentifier>
-                <AssetCashOrMarketValueAmount>104137</AssetCashOrMarketValueAmount>
+                <AssetCashOrMarketValueAmount>104137.00</AssetCashOrMarketValueAmount>
                 <AssetType>SavingsAccount</AssetType>
               </ASSET_DETAIL>
               <ASSET_HOLDER>
@@ -31,7 +31,7 @@
             <ASSET SequenceNumber="2" xlink:label="ASSET_2">
               <ASSET_DETAIL>
                 <AssetAccountIdentifier>0039842</AssetAccountIdentifier>
-                <AssetCashOrMarketValueAmount>9304</AssetCashOrMarketValueAmount>
+                <AssetCashOrMarketValueAmount>9304.00</AssetCashOrMarketValueAmount>
                 <AssetType>CheckingAccount</AssetType>
               </ASSET_DETAIL>
               <ASSET_HOLDER>
@@ -43,7 +43,7 @@
             <ASSET SequenceNumber="3" xlink:label="ASSET_3">
               <ASSET_DETAIL>
                 <AssetAccountIdentifier>939289</AssetAccountIdentifier>
-                <AssetCashOrMarketValueAmount>19000</AssetCashOrMarketValueAmount>
+                <AssetCashOrMarketValueAmount>19000.00</AssetCashOrMarketValueAmount>
                 <AssetType>RetirementFund</AssetType>
               </ASSET_DETAIL>
               <ASSET_HOLDER>
@@ -55,7 +55,7 @@
             <ASSET SequenceNumber="4" xlink:label="ASSET_4">
               <ASSET_DETAIL>
                 <AssetAccountIdentifier>9392</AssetAccountIdentifier>
-                <AssetCashOrMarketValueAmount>45039</AssetCashOrMarketValueAmount>
+                <AssetCashOrMarketValueAmount>45039.00</AssetCashOrMarketValueAmount>
                 <AssetType>SavingsAccount</AssetType>
               </ASSET_DETAIL>
               <ASSET_HOLDER>
@@ -81,6 +81,7 @@
                   <CommunityPropertyStateIndicator>false</CommunityPropertyStateIndicator>
                   <ConstructionMethodType>SiteBuilt</ConstructionMethodType>
                   <FinancedUnitCount>1</FinancedUnitCount>
+                  <PropertyEstimatedValueAmount>0.00</PropertyEstimatedValueAmount>
                   <PropertyExistingCleanEnergyLienIndicator>false</PropertyExistingCleanEnergyLienIndicator>
                   <PropertyInProjectIndicator>false</PropertyInProjectIndicator>
                   <PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
@@ -117,7 +118,7 @@
                   <URLA>
                     <URLA_DETAIL>
                       <AlterationsImprovementsAndRepairsAmount>0.00</AlterationsImprovementsAndRepairsAmount>
-                      <EstimatedClosingCostsAmount>0</EstimatedClosingCostsAmount>
+                      <EstimatedClosingCostsAmount>0.00</EstimatedClosingCostsAmount>
                       <MIAndFundingFeeFinancedAmount>0.00</MIAndFundingFeeFinancedAmount>
                       <MIAndFundingFeeTotalAmount>0.00</MIAndFundingFeeTotalAmount>
                       <PrepaidItemsEstimatedAmount>0.00</PrepaidItemsEstimatedAmount>
@@ -179,10 +180,11 @@
               <PURCHASE_CREDITS/>
               <QUALIFICATION/>
               <TERMS_OF_LOAN>
-                <BaseLoanAmount>0</BaseLoanAmount>
+                <BaseLoanAmount>500000.00</BaseLoanAmount>
                 <LienPriorityType>FirstLien</LienPriorityType>
                 <LoanPurposeType>Purchase</LoanPurposeType>
                 <MortgageType>Conventional</MortgageType>
+                <NoteRatePercent>4</NoteRatePercent>
               </TERMS_OF_LOAN>
             </LOAN>
           </LOANS>
@@ -191,21 +193,33 @@
               <INDIVIDUAL>
                 <CONTACT_POINTS>
                   <CONTACT_POINT>
+                    <CONTACT_POINT_TELEPHONE>
+                      <ContactPointTelephoneValue>4353456354</ContactPointTelephoneValue>
+                    </CONTACT_POINT_TELEPHONE>
+                    <CONTACT_POINT_DETAIL>
+                      <ContactPointRoleType>Home</ContactPointRoleType>
+                    </CONTACT_POINT_DETAIL>
+                  </CONTACT_POINT>
+                  <CONTACT_POINT>
+                    <CONTACT_POINT_TELEPHONE>
+                      <ContactPointTelephoneValue>9329432423</ContactPointTelephoneValue>
+                    </CONTACT_POINT_TELEPHONE>
+                    <CONTACT_POINT_DETAIL>
+                      <ContactPointRoleType>Mobile</ContactPointRoleType>
+                    </CONTACT_POINT_DETAIL>
+                  </CONTACT_POINT>
+                  <CONTACT_POINT>
+                    <CONTACT_POINT_TELEPHONE>
+                      <ContactPointTelephoneValue>4353453454</ContactPointTelephoneValue>
+                    </CONTACT_POINT_TELEPHONE>
+                    <CONTACT_POINT_DETAIL>
+                      <ContactPointRoleType>Work</ContactPointRoleType>
+                    </CONTACT_POINT_DETAIL>
+                  </CONTACT_POINT>
+                  <CONTACT_POINT>
                     <CONTACT_POINT_EMAIL>
                       <ContactPointEmailValue>keithjanzenbeach@yahoo.com</ContactPointEmailValue>
                     </CONTACT_POINT_EMAIL>
-                  </CONTACT_POINT>
-                  <CONTACT_POINT>
-                    <CONTACT_POINT_TELEPHONE/>
-                    <CONTACT_POINT_DETAIL/>
-                  </CONTACT_POINT>
-                  <CONTACT_POINT>
-                    <CONTACT_POINT_TELEPHONE/>
-                    <CONTACT_POINT_DETAIL/>
-                  </CONTACT_POINT>
-                  <CONTACT_POINT>
-                    <CONTACT_POINT_TELEPHONE/>
-                    <CONTACT_POINT_DETAIL/>
                   </CONTACT_POINT>
                 </CONTACT_POINTS>
                 <NAME>
@@ -214,9 +228,9 @@
                 </NAME>
               </INDIVIDUAL>
               <ADDRESSES>
-                <ADDRESS/>
-                <ADDRESS/>
-                <ADDRESS/>
+                
+                
+                
               </ADDRESSES>
               <ROLES>
                 <ROLE SequenceNumber="1" xlink:label="BORROWER_1">
@@ -234,31 +248,9 @@
                       <CURRENT_INCOME_ITEMS>
                         <CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_1">
                           <CURRENT_INCOME_ITEM_DETAIL>
-                            <CurrentIncomeMonthlyTotalAmount>10000</CurrentIncomeMonthlyTotalAmount>
+                            <CurrentIncomeMonthlyTotalAmount>10000.00</CurrentIncomeMonthlyTotalAmount>
                             <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
                             <IncomeType>Base</IncomeType>
-                          </CURRENT_INCOME_ITEM_DETAIL>
-                        </CURRENT_INCOME_ITEM>
-                        <CURRENT_INCOME_ITEM>
-                          <CURRENT_INCOME_ITEM_DETAIL>
-                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-                          </CURRENT_INCOME_ITEM_DETAIL>
-                        </CURRENT_INCOME_ITEM>
-                        <CURRENT_INCOME_ITEM>
-                          <CURRENT_INCOME_ITEM_DETAIL>
-                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-                          </CURRENT_INCOME_ITEM_DETAIL>
-                        </CURRENT_INCOME_ITEM>
-                        <CURRENT_INCOME_ITEM>
-                          <CURRENT_INCOME_ITEM_DETAIL>
-                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-                          </CURRENT_INCOME_ITEM_DETAIL>
-                        </CURRENT_INCOME_ITEM>
-                        <CURRENT_INCOME_ITEM>
-                          <CURRENT_INCOME_ITEM_DETAIL>
-                            <CurrentIncomeMonthlyTotalAmount>10000</CurrentIncomeMonthlyTotalAmount>
-                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-                            <IncomeType>BorrowerEstimatedTotalMonthlyIncome</IncomeType>
                           </CURRENT_INCOME_ITEM_DETAIL>
                         </CURRENT_INCOME_ITEM>
                       </CURRENT_INCOME_ITEMS>
@@ -293,7 +285,7 @@
                     </DECLARATION>
                     <EMPLOYERS>
                       <EMPLOYER Sequence="1" xlink:label="EMPLOYER_1">
-                        <ADDRESS/>
+                        
                         <LEGAL_ENTITY>
                           <CONTACTS>
                             <CONTACT>
@@ -324,6 +316,18 @@
                       </EMPLOYER>
                     </EMPLOYERS>
                     <GOVERNMENT_MONITORING>
+                      <GOVERNMENT_MONITORING_DETAIL>
+                        <HMDAEthnicityRefusalIndicator>false</HMDAEthnicityRefusalIndicator>
+                        <HMDAGenderRefusalIndicator>false</HMDAGenderRefusalIndicator>
+                        <HMDARaceRefusalIndicator>false</HMDARaceRefusalIndicator>
+                        <EXTENSION>
+                          <OTHER>
+                            <ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+                              <ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
+                            </ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+                          </OTHER>
+                        </EXTENSION>
+                      </GOVERNMENT_MONITORING_DETAIL>
                       <HMDA_ETHNICITY_ORIGINS>
                         <HMDA_ETHNICITY_ORIGIN>
                           <HMDAEthnicityOriginType>Other</HMDAEthnicityOriginType>
@@ -336,6 +340,17 @@
                           </HMDA_RACE_DETAIL>
                         </HMDA_RACE>
                       </HMDA_RACES>
+                      <EXTENSION>
+                        <OTHER>
+                          <ULAD:GOVERNMENT_MONITORING_EXTENSION>
+                            <ULAD:HMDA_ETHNICITIES>
+                              <ULAD:HMDA_ETHNICITY>
+                                <ULAD:HMDAEthnicityType>HispanicOrLatino</ULAD:HMDAEthnicityType>
+                              </ULAD:HMDA_ETHNICITY>
+                            </ULAD:HMDA_ETHNICITIES>
+                          </ULAD:GOVERNMENT_MONITORING_EXTENSION>
+                        </OTHER>
+                      </EXTENSION>
                     </GOVERNMENT_MONITORING>
                   </BORROWER>
                   <ROLE_DETAIL>
@@ -346,6 +361,7 @@
               <TAXPAYER_IDENTIFIERS>
                 <TAXPAYER_IDENTIFIER>
                   <TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
+                  <TaxpayerIdentifierValue>0123111111</TaxpayerIdentifierValue>
                 </TAXPAYER_IDENTIFIER>
               </TAXPAYER_IDENTIFIERS>
             </PARTY>
@@ -357,6 +373,50 @@
             <RELATIONSHIP SequenceNumber="4" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_4" xlink:to="BORROWER_1"/>
             <RELATIONSHIP SequenceNumber="5" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1"/>
           </RELATIONSHIPS>
+          <SERVICES>
+            <SERVICE SequenceNumber="1" xlink:label="SERVICE_1">
+              <EXTENSION>
+                <OTHER>
+                  <LPA:SERVICE_EXTENSION>
+                    <LPA:SERVICE_DETAIL>
+                      <LPA:ServiceType>AutomatedUnderwritingSystem</LPA:ServiceType>
+                    </LPA:SERVICE_DETAIL>
+                  </LPA:SERVICE_EXTENSION>
+                </OTHER>
+              </EXTENSION>
+            </SERVICE>
+            <SERVICE>
+              <EXTENSION>
+                <OTHER>
+                  <LPA:SERVICE_EXTENSION>
+                    <LPA:DOCUMENT_PREPARATION>
+                      <LPA:DOCUMENT_PREPARATION_RESPONSES>
+                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
+                          <LPA:RequestedDocumentType>DocCheckList</LPA:RequestedDocumentType>
+                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
+                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
+                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
+                          <LPA:RequestedDocumentType>Errors</LPA:RequestedDocumentType>
+                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
+                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
+                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
+                          <LPA:RequestedDocumentType>FullFeedback</LPA:RequestedDocumentType>
+                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
+                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
+                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
+                          <LPA:RequestedDocumentType>HVE</LPA:RequestedDocumentType>
+                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
+                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
+                      </LPA:DOCUMENT_PREPARATION_RESPONSES>
+                    </LPA:DOCUMENT_PREPARATION>
+                    <LPA:SERVICE_DETAIL>
+                      <LPA:ServiceType>DocumentPreparation</LPA:ServiceType>
+                    </LPA:SERVICE_DETAIL>
+                  </LPA:SERVICE_EXTENSION>
+                </OTHER>
+              </EXTENSION>
+            </SERVICE>
+          </SERVICES>
         </DEAL>
       </DEALS>
     </DEAL_SET>

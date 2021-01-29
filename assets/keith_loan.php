@@ -17,8 +17,8 @@ Array
             [lates2] => 0
             [lates3] => 0
             [lates4] => 0
-            [lien1Rate] => 
-            [lien1Payment] => 
+            [lien1Rate] => 4
+            [lien1Payment] => 1,666.67
             [lien1Amount] => 
             [servicer1] => 
             [lien2Rate] => 
@@ -40,8 +40,8 @@ Array
             [totalMonthlyExpenses] => 0
             [borrowerLName] => Janzen
             [propertyAddress] => 10600 Southwest 72nd Court
-            [phoneNumber] => 
-            [cellNumber] => 
+            [phoneNumber] => 4353456354
+            [cellNumber] => 9329432423
             [borrowerEmail] => keithjanzenbeach@yahoo.com
             [borrowerSecondaryEmail] => 
             [coBorrowerFName] => 
@@ -93,7 +93,7 @@ Array
             [noOfPeopleInProperty] => 0
             [mortgageNotes] => 
             [areTaxesInsuranceEscrowed] => 0
-            [workNumber] => 
+            [workNumber] => 435 - 345 - 3454
             [coBorrowerWorkNumber] => 
             [enc_borrowerName] => 994bfde887b2b674
             [enc_borrowerLName] => 7ed0587c9fd59e30
@@ -182,7 +182,7 @@ Array
             [mortgageOwner1_copy] => 
             [mortgageOwner2_copy] => 
             [coBServiceProvider] => 
-            [lastUpdatedDate] => 2021-01-28 16:14:28
+            [lastUpdatedDate] => 2021-01-28 21:21:21
             [updatedBy] => Ayman Ali
             [borrowerPinNo] => 
             [coBorrowerPinNo] => 
@@ -324,10 +324,10 @@ Array
             [screenerName] => 
             [projectName] => 
             [CID] => 
-            [totalLoanAmount] => 0
+            [totalLoanAmount] => 500000
             [lenderInternalNotes] => 
             [noOfDaysStale] => 
-            [loanTermExpireDate] => 
+            [loanTermExpireDate] => 0000-00-00
         )
 
     [BrokerInfo] => Array
@@ -933,7 +933,7 @@ Array
                     [LMRAEId] => 0
                     [processingCompanyId] => 1652
                     [empCreatedDate] => 2021-01-11
-                    [empLastLoginDate] => 2021-01-28 13:45:20
+                    [empLastLoginDate] => 2021-01-28 19:16:18
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => 
                     [timeZone] => EST
@@ -1143,7 +1143,7 @@ Array
             [buyer3AttorneyEmail] => 
             [appraisalNotes] => 
             [attorneyNotes] => 
-            [costBasis] => 
+            [costBasis] => 500000.00
             [dateObtained] => 
             [rehabValue] => 
             [dateObtained2] => 
@@ -2362,9 +2362,9 @@ If Trust- Certification of Trust, Trust Agreement
             [coBSocialSecurity] => 
             [borrowerTotalMonthlyIncome] => 120000
             [coborrowerTotalMonthlyIncome] => 
-            [borrowerTotalMonthlyExpenses] => 0
+            [borrowerTotalMonthlyExpenses] => 1666.67
             [coborrowerTotalMonthlyExpenses] => 
-            [totalMonthlyExpensesBorrowerAndCoborrower] => 0
+            [totalMonthlyExpensesBorrowerAndCoborrower] => 1666.67
             [totalMonthlyIncomeBorrowerAndCoborrower] => 120000
         )
 
@@ -2601,6 +2601,26 @@ If Trust- Certification of Trust, Trust Agreement
         (
             [0] => Array
                 (
+                    [serialNumber] => 21383481
+                    [executiveId] => 0
+                    [brokerNumber] => 0
+                    [employeeId] => 13096
+                    [processorComments] =>  Interest Rate has been updated to 4  %
+                    [notesType] => GE
+                    [private] => 1
+                    [notesDate] => 2021-01-28 20:02:04
+                    [signExecutiveName] => 
+                    [displayIn] => NH
+                    [sendTo] => 
+                    [clientId] => 0
+                    [isSysNotes] => 1
+                    [fileID] => 6838612
+                    [processorName] => Ayman Ali
+                    [updatedUserType] => Employee
+                )
+
+            [1] => Array
+                (
                     [serialNumber] => 21359626
                     [executiveId] => 0
                     [brokerNumber] => 0
@@ -2619,7 +2639,7 @@ If Trust- Certification of Trust, Trust Agreement
                     [updatedUserType] => 
                 )
 
-            [1] => Array
+            [2] => Array
                 (
                     [serialNumber] => 21359621
                     [executiveId] => 0
@@ -2646,8 +2666,8 @@ If Trust- Certification of Trust, Trust Agreement
             [CID] => 6378847
             [clientFName] => Keith
             [clientLName] => Janzen
-            [clientPhone] => 
-            [clientCell] => 
+            [clientPhone] => 4353456354
+            [clientCell] => 9329432423
             [clientEmail] => keithjanzenbeach@yahoo.com
             [clientSecondaryEmail] => 
             [registerDate] => 2021-01-26
@@ -5463,6 +5483,15 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [myOpt] => notesEmpInfo
                 )
 
+            [13096] => Array
+                (
+                    [AID] => 13096
+                    [processorName] => Ayman Ali
+                    [employeeNames] => Ayman Ali (Processing Manager)
+                    [myKey] => 13096
+                    [myOpt] => notesEmpInfo
+                )
+
         )
 
     [notesAgentInfo] => Array
@@ -6343,7 +6372,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [coBorCompanyName] => 
             [coBorCreditScoreRange] => 
             [coBorCreditScore] => 0
-            [recordDate] => 2021-01-28 16:14:25
+            [recordDate] => 2021-01-28 21:21:19
             [afterRepairValue] => 0.00
             [targetClosingDate] => 
             [ownThisProperty] => No
@@ -6403,7 +6432,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [loanTerm] => 
             [prePaymentPenalty] => 
             [lienPosition] => 1
-            [annualPremium] => 
+            [annualPremium] => 0.00
             [isHiredPerformRehab] => 
             [GCCompanyName] => 
             [GCFirstName] => 
@@ -6415,15 +6444,15 @@ For question that need additional infio, make sure borrower uploads supporting d
             [maxAmtToPutDown] => 0.00
             [HMLOEstateHeldIn] => 
             [paymentReserves] => 0
-            [requiredConstruction] => 
-            [contingencyReserve] => 
+            [requiredConstruction] => 0
+            [contingencyReserve] => 0
             [isBlanketLoan] => 
             [serviceLenderType] => 
             [typeOfRecordingJurisdiction] => 
             [nameOfRecordingJurisdiction] => 
             [dateNoteSigned] => 
             [riders] => 
-            [maturityDate] => 
+            [maturityDate] => 0000-00-00
             [typeOfSale] => 
             [latePayemntAppliedOn] => 
             [lateChargeAmt] => 
@@ -6435,7 +6464,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [lenderNotes] => 
             [checkDisplayTermSheet] => No
             [involvedPurchase] => 
-            [wholesaleFee] => 
+            [wholesaleFee] => 0
             [seekingCashRefinance] => 
             [seekingCash] => 
             [seekingFund] => 
@@ -6452,7 +6481,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [loanSigning] => 
             [courtOrderNecessary] => 
             [loanPurpose] => 
-            [expectForDueDiligence] => 
+            [expectForDueDiligence] => %3Cbr%3E%2A+Receipt+and+review+of+background+and+credit+for+borrower%2Fguarantor%2C+and+contractor%2C+if+applicable.%3Cbr%3E%3Cbr%3E%2A+Lender+to+verify+that+Borrower%28s%29+has+acceptable+cash+to+close.%3Cbr%3E%3Cbr%3E%2A+Borrower+to+provide+%28and+lender+to+review%29+most+recent+acceptable+purchase+contract+or+sale+agreement+for+property.%3Cbr%3E%3Cbr%3E%2A+Borrower+to+provide+%28and+lender+to+review%29+rehab+plans+and+budget.%3Cbr%3E%3Cbr%3E%2A+Acceptable+%28to+Lender%29+third+party+broker%26%2339%3Bs+price+opinion+%28BPO%29+and%2For+appraisal%2C+ordered+by+Lender%2C+evidencing+as-is+value%3Cbr%3Eand+after-repair-value+%28%26quot%3BARV%26quot%3B%29.%3Cbr%3E%3Cbr%3E%2A+Adequate+project%2C+property+and+title+insurance%2C+as+determined+by+Lender.%3Cbr%3E%3Cbr%3E%2A+Lender+to+utilize+third+party+services+to+determine+that+all+parties+involved+in+transaction+have+no+history+of+criminal+and%2For+fraudulent+behavior.%3Cbr%3E%3Cbr%3E%2A+Lender+to+determine+if+transaction+conforms+to+federal+and+state+regulations.%3Cbr%3E%3Cbr%3E%2A+Lender+to+determine+if+transaction+conforms+to+investor+requirements.%3Cbr%3E%3Cbr%3E%2A+Lender+to+review+estimated+and+final+closing+statements+prior+to+closing+transaction.
             [referringParty] => 
             [hereAbout] => 
             [proInsPolicyEffDate] => 
@@ -6482,16 +6511,16 @@ For question that need additional infio, make sure borrower uploads supporting d
             [noteSalePrice] => 
             [BPieceAmount] => 
             [securityInstrument] => 
-            [desiredFundingAmount] => 
+            [desiredFundingAmount] => 0.00
             [purposeOfLoan] => 
             [useOfFunds] => 
             [haveCurrentLoanBal] => 
-            [balance] => 
+            [balance] => 0.00
             [heldWith] => 
             [haveInvoiceToFactor] => 
             [amount] => 0.00
             [displayNotes] => 
-            [fundingDate] => 
+            [fundingDate] => 0000-00-00
             [selInsNames] => 
             [reqValMethodNames] => 
         )
@@ -6993,22 +7022,22 @@ For question that need additional infio, make sure borrower uploads supporting d
             [HMLIID] => 157269
             [fileID] => 6838612
             [extensionOption] => 0
-            [loanTermExpireDate] => 
+            [loanTermExpireDate] => 0000-00-00
             [isTaxesInsEscrowed] => 
             [assumability] => 
             [applicationFee] => 0.00
-            [processingFee] => 0.00
-            [appraisalFee] => 0.00
+            [processingFee] => 1000.00
+            [appraisalFee] => 450.00
             [drawsSetUpFee] => 0.00
             [miscellaneousFee] => 0.00
             [estdTitleClosingFee] => 0
-            [originationPointsRate] => 
-            [originationPointsValue] => 0.00
-            [brokerPointsRate] => 
+            [originationPointsRate] => 1.000000
+            [originationPointsValue] => 5000.00
+            [brokerPointsRate] => 0.000000
             [brokerPointsValue] => 0.00
             [closingCostFinanced] => 0.00
             [rehabCostFinanced] => 0.00
-            [HMLOLender] => 
+            [HMLOLender] => Lendingwise
             [recordDate] => 0000-00-00 00:00:00
             [interestReserves] => 0
             [percentageOfBudget] => 0.00
@@ -7025,7 +7054,7 @@ For question that need additional infio, make sure borrower uploads supporting d
             [refinanceMonthlyPayment] => 0.00
             [CashOut] => 
             [additionalPropertyRestrictions] => 
-            [restrictionsExplain] => 
+            [restrictionsExplain] => 0.00
             [actualRentsInPlace] => 0.00
             [lessActualExpenses] => 0.00
             [grossAnnualRentLargestTenant] => 0
@@ -7060,40 +7089,40 @@ For question that need additional infio, make sure borrower uploads supporting d
             [constructionHoldbackFee] => 0.00
             [thirdPartyFees] => 0.00
             [otherFee] => 0.00
-            [taxImpoundsMonth] => 
+            [taxImpoundsMonth] => 0
             [taxImpoundsMonthAmt] => 0.00
             [taxImpoundsFee] => 0.00
             [insImpoundsMonth] => 
             [insImpoundsMonthAmt] => 0.00
             [insImpoundsFee] => 0.00
-            [interestChargedFromDate] => 
-            [interestChargedEndDate] => 
+            [interestChargedFromDate] => 0000-00-00
+            [interestChargedEndDate] => 0000-00-00
             [costOfImprovementsToBeMade] => 
             [LOCTotalLoanAmt] => 0.00
             [rehabCostPercentageFinanced] => 100
-            [downPaymentPercentage] => 20
-            [yieldSpread] => 
+            [downPaymentPercentage] => 0
+            [yieldSpread] => 0
             [CORTotalLoanAmt] => 0.00
-            [CORefiLTVPercentage] => 
-            [costOfCapital] => 
+            [CORefiLTVPercentage] => 0.00
+            [costOfCapital] => 4.000
             [stabilizedRate] => 
             [includeCCF] => 0
             [landValue] => 0.00
             [isOwnLand] => 
             [PAExpirationDate] => 0000-00-00
-            [totalLoanAmount] => 0.00
+            [totalLoanAmount] => 500000.00
             [finalLoanAmt] => 0.00
-            [inspectionFees] => 
-            [projectFeasibility] => 
-            [dueDiligence] => 
-            [UccLienSearch] => 
-            [isFeeUpdated] => 
+            [inspectionFees] => 0.00
+            [projectFeasibility] => 0.00
+            [dueDiligence] => 0.00
+            [UccLienSearch] => 0.00
+            [isFeeUpdated] => 1
             [haveBorSquareFootage] => 
             [borNoOfSquareFeet] => 0
             [haveInterestreserve] => 
-            [prepaidInterestReserve] => 
-            [noOfMonthsPrepaid] => 
-            [closingCostFinancingFee] => 
+            [prepaidInterestReserve] => 0.00
+            [noOfMonthsPrepaid] => 0
+            [closingCostFinancingFee] => 0.00
             [lien1MaturityDate] => 
             [lien2MaturityDate] => 
             [lean1CurrentDefault] => 
@@ -7103,24 +7132,24 @@ For question that need additional infio, make sure borrower uploads supporting d
             [brokerDealFee] => 
             [brokerQuotedinterestRate] => 
             [accessWholesalePricing] => 
-            [desiredLoanAmount] => 
-            [attorneyFee] => 
-            [extensionOptionPercentage] => 
-            [escrowFees] => 
-            [recordingFee] => 
-            [prePaidInterest] => 
-            [realEstateTaxes] => 
-            [insurancePremium] => 
-            [bufferAndMessengerFee] => 
-            [travelNotaryFee] => 
-            [underwritingFees] => 
-            [propertyTax] => 
-            [payOffLiensCreditors] => 
-            [wireTransferFeeToTitle] => 
-            [wireTransferFeeToEscrow] => 
-            [pastDuePropertyTaxes] => 
-            [earnestDeposit] => 
-            [otherDownPayment] => 
+            [desiredLoanAmount] => 496000
+            [attorneyFee] => 0
+            [extensionOptionPercentage] => 0.00
+            [escrowFees] => 0.00
+            [recordingFee] => 0.00
+            [prePaidInterest] => 0.00
+            [realEstateTaxes] => 0.00
+            [insurancePremium] => 0.00
+            [bufferAndMessengerFee] => 0.00
+            [travelNotaryFee] => 0.00
+            [underwritingFees] => 0.00
+            [propertyTax] => 0.00
+            [payOffLiensCreditors] => 0.00
+            [wireTransferFeeToTitle] => 0.00
+            [wireTransferFeeToEscrow] => 0.00
+            [pastDuePropertyTaxes] => 0.00
+            [earnestDeposit] => 0.00
+            [otherDownPayment] => 0.00
             [isLoanPaymentAmt] => TLA
             [ownedFreeAndClear] => 
             [ownedSameEntity] => 
@@ -7134,13 +7163,13 @@ For question that need additional infio, make sure borrower uploads supporting d
             [typeOfHMLOLoanRequesting] => Purchase
             [maxAmtToPutDown] => 0.00
             [rehabCost] => 0.00
-            [costBasis] => 0.00
-            [extensionRatePercentage] => 
-            [survey] => 
-            [wholeSaleAdminFee] => 
+            [costBasis] => 500000.00
+            [extensionRatePercentage] => 0.00
+            [survey] => 0.00
+            [wholeSaleAdminFee] => 0.00
             [cityCountyTaxStamps] => 
-            [origination_based_on_total_loan_amt] => 
-            [broker_based_on_total_loan_amt] => 
+            [origination_based_on_total_loan_amt] => 0
+            [broker_based_on_total_loan_amt] => 0
             [calcInrBasedOnMonthlyPayment] => 
             [InrBasedOnMonthlyPayment] => 
             [paymentFrequency] => 
@@ -7831,7 +7860,7 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [EIID] => 124721
+                    [EIID] => 124838
                     [LMRId] => 6838612
                     [vendorName] => 
                     [vendorPhone] => 
@@ -7852,7 +7881,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [term] => 
                     [userType] => Processing Manager
                     [createdBy] => 13096
-                    [recordDate] => 2021-01-28 16:14:28
+                    [recordDate] => 2021-01-28 21:21:21
                 )
 
         )
@@ -7866,7 +7895,7 @@ For question that need additional infio, make sure borrower uploads supporting d
         (
             [0] => Array
                 (
-                    [AGID] => 223655
+                    [AGID] => 223794
                     [LMRId] => 6838612
                     [guarantorFName] => 
                     [guarantorLName] => 
@@ -7879,7 +7908,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                     [guarantorCity] => 
                     [guarantorState] => 
                     [guarantorZip] => 
-                    [recordDate] => 2021-01-28 16:14:28
+                    [recordDate] => 2021-01-28 21:21:21
                     [guarantorEmail] => 
                     [guarantorNote] => 
                 )
@@ -7892,7 +7921,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2865721
+                            [FFGID] => 2867194
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Flip
@@ -7913,12 +7942,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-28 16:14:27
+                            [recordDate] => 2021-01-28 21:21:20
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2865722
+                            [FFGID] => 2867195
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Flip
@@ -7939,12 +7968,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-28 16:14:27
+                            [recordDate] => 2021-01-28 21:21:20
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2865723
+                            [FFGID] => 2867196
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Flip
@@ -7965,7 +7994,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-28 16:14:27
+                            [recordDate] => 2021-01-28 21:21:20
                         )
 
                 )
@@ -7974,7 +8003,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2865724
+                            [FFGID] => 2867197
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Gup
@@ -7995,12 +8024,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-28 16:14:27
+                            [recordDate] => 2021-01-28 21:21:20
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2865725
+                            [FFGID] => 2867198
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Gup
@@ -8021,12 +8050,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-28 16:14:27
+                            [recordDate] => 2021-01-28 21:21:20
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2865726
+                            [FFGID] => 2867199
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Gup
@@ -8047,7 +8076,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-28 16:14:27
+                            [recordDate] => 2021-01-28 21:21:20
                         )
 
                 )
@@ -8056,7 +8085,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2865727
+                            [FFGID] => 2867200
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Sell
@@ -8077,12 +8106,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-28 16:14:27
+                            [recordDate] => 2021-01-28 21:21:20
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2865728
+                            [FFGID] => 2867201
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Sell
@@ -8103,12 +8132,12 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-28 16:14:27
+                            [recordDate] => 2021-01-28 21:21:20
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2865729
+                            [FFGID] => 2867202
                             [LMRId] => 6838612
                             [userType] => B
                             [expType] => Sell
@@ -8129,7 +8158,7 @@ For question that need additional infio, make sure borrower uploads supporting d
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-01-28 16:14:27
+                            [recordDate] => 2021-01-28 21:21:20
                         )
 
                 )
