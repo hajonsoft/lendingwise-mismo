@@ -78,21 +78,24 @@
                 </ADDRESS>
                 <PROPERTY_DETAIL>
                   <AttachmentType>Attached</AttachmentType>
+                  <!--AttachmentType is Hard Coded to Attached-->
                   <CommunityPropertyStateIndicator>false</CommunityPropertyStateIndicator>
+                  <!--CommunityPropertyStateIndicator is Hard Coded to false-->
                   <ConstructionMethodType>SiteBuilt</ConstructionMethodType>
+                  <!--ConstructionMethodType is Hard Coded to SiteBuilt-->
                   <FinancedUnitCount>1</FinancedUnitCount>
+                  <!--FinancedUnitCount is Hard Coded to 1-->
                   <PropertyEstimatedValueAmount>0.00</PropertyEstimatedValueAmount>
                   <PropertyExistingCleanEnergyLienIndicator>false</PropertyExistingCleanEnergyLienIndicator>
+                  <!--PropertyExistingCleanEnergyLienIndicator is Hard Coded to false-->
                   <PropertyInProjectIndicator>false</PropertyInProjectIndicator>
+                  <!--PropertyInProjectIndicator is Hard Coded to false-->
                   <PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
                   <PropertyUsageType>Investment</PropertyUsageType>
+                  <!--PropertyUsageType is Hard Coded to Investment-->
                   <RentalEstimatedNetMonthlyRentAmount>0</RentalEstimatedNetMonthlyRentAmount>
+                  <!--RentalEstimatedNetMonthlyRentAmount is Hard Coded to 0-->
                 </PROPERTY_DETAIL>
-                <PROPERTY_VALUATIONS>
-                  <PROPERTY_VALUATION>
-                    <PROPERTY_VALUATION_DETAIL/>
-                  </PROPERTY_VALUATION>
-                </PROPERTY_VALUATIONS>
                 <SALES_CONTRACTS>
                   <SALES_CONTRACT>
                     <SALES_CONTRACT_DETAIL>
@@ -110,19 +113,24 @@
                   <AmortizationType>Fixed</AmortizationType>
                   <LoanAmortizationPeriodCount>360</LoanAmortizationPeriodCount>
                   <LoanAmortizationPeriodType>Month</LoanAmortizationPeriodType>
+                  <!--LoanAmortizationPeriodType is Hard Coded to Month-->
                 </AMORTIZATION_RULE>
               </AMORTIZATION>
-              <CONSTRUCTION/>
               <DOCUMENT_SPECIFIC_DATA_SETS>
                 <DOCUMENT_SPECIFIC_DATA_SET>
                   <URLA>
                     <URLA_DETAIL>
                       <AlterationsImprovementsAndRepairsAmount>0.00</AlterationsImprovementsAndRepairsAmount>
+                      <!--AlterationsImprovementsAndRepairsAmount is Hard Coded to 0.00-->
                       <EstimatedClosingCostsAmount>0.00</EstimatedClosingCostsAmount>
                       <MIAndFundingFeeFinancedAmount>0.00</MIAndFundingFeeFinancedAmount>
+                      <!--MIAndFundingFeeFinancedAmount is Hard Coded to 0.00-->
                       <MIAndFundingFeeTotalAmount>0.00</MIAndFundingFeeTotalAmount>
+                      <!--MIAndFundingFeeTotalAmount is Hard Coded to 0.00-->
                       <PrepaidItemsEstimatedAmount>0.00</PrepaidItemsEstimatedAmount>
+                      <!--PrepaidItemsEstimatedAmount is Hard Coded to 0.00-->
                       <RefinanceIncludingDebtsToBePaidOffAmount>0.00</RefinanceIncludingDebtsToBePaidOffAmount>
+                      <!--RefinanceIncludingDebtsToBePaidOffAmount is Hard Coded to 0.00-->
                     </URLA_DETAIL>
                   </URLA>
                 </DOCUMENT_SPECIFIC_DATA_SET>
@@ -130,29 +138,46 @@
               <HOUSING_EXPENSES>
                 <HOUSING_EXPENSE>
                   <HousingExpensePaymentAmount>2367.98</HousingExpensePaymentAmount>
+                  <!--HousingExpensePaymentAmount is Hard Coded to 2367.98-->
                   <HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+                  <!--HousingExpenseTimingType is Hard Coded to Proposed-->
                   <HousingExpenseType>FirstMortgagePrincipalAndInterest</HousingExpenseType>
+                  <!--HousingExpenseType is Hard Coded to FirstMortgagePrincipalAndInterest-->
                 </HOUSING_EXPENSE>
                 <HOUSING_EXPENSE>
                   <HousingExpensePaymentAmount>300.00</HousingExpensePaymentAmount>
+                  <!--HousingExpensePaymentAmount is Hard Coded to 300.00-->
                   <HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+                  <!--HousingExpenseTimingType is Hard Coded to Proposed-->
                   <HousingExpenseType>HomeownersInsurance</HousingExpenseType>
+                  <!--HousingExpenseType is Hard Coded to HomeownersInsurance-->
                 </HOUSING_EXPENSE>
                 <HOUSING_EXPENSE>
                   <HousingExpensePaymentAmount>150.00</HousingExpensePaymentAmount>
+                  <!--HousingExpensePaymentAmount is Hard Coded to 150.00-->
                   <HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+                  <!--HousingExpenseTimingType is Hard Coded to Proposed-->
                   <HousingExpenseType>RealEstateTax</HousingExpenseType>
+                  <!--HousingExpenseType is Hard Coded to RealEstateTax-->
                 </HOUSING_EXPENSE>
               </HOUSING_EXPENSES>
               <LOAN_DETAIL>
                 <BalloonIndicator>false</BalloonIndicator>
+                <!--BalloonIndicator is Hard Coded to false-->
                 <BuydownTemporarySubsidyFundingIndicator>false</BuydownTemporarySubsidyFundingIndicator>
+                <!--BuydownTemporarySubsidyFundingIndicator is Hard Coded to false-->
                 <ConstructionLoanIndicator>false</ConstructionLoanIndicator>
+                <!--ConstructionLoanIndicator is Hard Coded to false-->
                 <ConversionOfContractForDeedIndicator>false</ConversionOfContractForDeedIndicator>
+                <!--ConversionOfContractForDeedIndicator is Hard Coded to false-->
                 <EnergyRelatedImprovementsIndicator>false</EnergyRelatedImprovementsIndicator>
+                <!--EnergyRelatedImprovementsIndicator is Hard Coded to false-->
                 <InterestOnlyIndicator>false</InterestOnlyIndicator>
+                <!--InterestOnlyIndicator is Hard Coded to false-->
                 <NegativeAmortizationIndicator>false</NegativeAmortizationIndicator>
+                <!--NegativeAmortizationIndicator is Hard Coded to false-->
                 <PrepaymentPenaltyIndicator>false</PrepaymentPenaltyIndicator>
+                <!--PrepaymentPenaltyIndicator is Hard Coded to false-->
               </LOAN_DETAIL>
               <LOAN_IDENTIFIERS>
                 <LOAN_IDENTIFIER>
@@ -163,27 +188,32 @@
               <LOAN_PRODUCT>
                 <LOAN_PRODUCT_DETAIL>
                   <DiscountPointsTotalAmount>0.00</DiscountPointsTotalAmount>
+                  <!--DiscountPointsTotalAmount is Hard Coded to 0.00-->
                   <ProductDescription>Non-QM Agency Plus 30 Year Fixed</ProductDescription>
+                  <!--ProductDescription is Hard Coded to Non-QM Agency Plus 30 Year Fixed-->
                 </LOAN_PRODUCT_DETAIL>
               </LOAN_PRODUCT>
               <LOAN_STATUSES>
                 <LOAN_STATUS>
                   <LoanStatusIdentifier>Underwriting</LoanStatusIdentifier>
+                  <!--LoanStatusIdentifier is Hard Coded to Underwriting-->
                 </LOAN_STATUS>
               </LOAN_STATUSES>
               <ORIGINATION_SYSTEMS>
                 <ORIGINATION_SYSTEM>
                   <LoanOriginationSystemVendorIdentifier>000112</LoanOriginationSystemVendorIdentifier>
+                  <!--LoanOriginationSystemVendorIdentifier is Hard Coded to 000112-->
                   <LoanOriginationSystemVersionIdentifier>LendingPadVerison</LoanOriginationSystemVersionIdentifier>
+                  <!--LoanOriginationSystemVersionIdentifier is Hard Coded to LendingPadVerison-->
                 </ORIGINATION_SYSTEM>
               </ORIGINATION_SYSTEMS>
-              <PURCHASE_CREDITS/>
-              <QUALIFICATION/>
               <TERMS_OF_LOAN>
                 <BaseLoanAmount>500000.00</BaseLoanAmount>
                 <LienPriorityType>FirstLien</LienPriorityType>
+                <!--LienPriorityType is Hard Coded to FirstLien-->
                 <LoanPurposeType>Purchase</LoanPurposeType>
                 <MortgageType>Conventional</MortgageType>
+                <!--MortgageType is Hard Coded to Conventional-->
                 <NoteRatePercent>4</NoteRatePercent>
               </TERMS_OF_LOAN>
             </LOAN>
@@ -227,21 +257,20 @@
                   <LastName>Janzen</LastName>
                 </NAME>
               </INDIVIDUAL>
-              <ADDRESSES>
-                
-                
-                
-              </ADDRESSES>
               <ROLES>
                 <ROLE SequenceNumber="1" xlink:label="BORROWER_1">
                   <BORROWER>
                     <BORROWER_DETAIL>
                       <BorrowerBirthDate>1977-07-24</BorrowerBirthDate>
                       <BorrowerTotalMortgagedPropertiesCount>0</BorrowerTotalMortgagedPropertiesCount>
+                      <!--BorrowerTotalMortgagedPropertiesCount is Hard Coded to 0-->
                       <CommunityPropertyStateResidentIndicator>false</CommunityPropertyStateResidentIndicator>
+                      <!--CommunityPropertyStateResidentIndicator is Hard Coded to false-->
                       <DependentCount>0</DependentCount>
                       <DomesticRelationshipIndicator>false</DomesticRelationshipIndicator>
+                      <!--DomesticRelationshipIndicator is Hard Coded to false-->
                       <JointAssetLiabilityReportingType>Jointly</JointAssetLiabilityReportingType>
+                      <!--JointAssetLiabilityReportingType is Hard Coded to Jointly-->
                       <MaritalStatusType>Unmarried</MaritalStatusType>
                     </BORROWER_DETAIL>
                     <CURRENT_INCOME>
@@ -259,33 +288,45 @@
                       <DECLARATION_DETAIL>
                         <BankruptcyIndicator>false</BankruptcyIndicator>
                         <FHASecondaryResidenceIndicator>false</FHASecondaryResidenceIndicator>
+                        <!--FHASecondaryResidenceIndicator is Hard Coded to false-->
                         <HomeownerPastThreeYearsType>No</HomeownerPastThreeYearsType>
+                        <!--HomeownerPastThreeYearsType is Hard Coded to No-->
                         <IntentToOccupyType>Yes</IntentToOccupyType>
                         <OutstandingJudgmentsIndicator>false</OutstandingJudgmentsIndicator>
                         <PartyToLawsuitIndicator>false</PartyToLawsuitIndicator>
                         <PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
                         <PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
+                        <!--PriorPropertyDeedInLieuConveyedIndicator is Hard Coded to false-->
                         <PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
+                        <!--PriorPropertyForeclosureCompletedIndicator is Hard Coded to false-->
                         <PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
+                        <!--PriorPropertyShortSaleCompletedIndicator is Hard Coded to false-->
+                        <!--PriorPropertyTitleType is Hard Coded to -->
+                        <!--PriorPropertyUsageType is Hard Coded to -->
                         <PropertyProposedCleanEnergyLienIndicator>false</PropertyProposedCleanEnergyLienIndicator>
+                        <!--PropertyProposedCleanEnergyLienIndicator is Hard Coded to false-->
                         <UndisclosedBorrowedFundsAmount>0</UndisclosedBorrowedFundsAmount>
+                        <!--UndisclosedBorrowedFundsAmount is Hard Coded to 0-->
                         <UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
+                        <!--UndisclosedBorrowedFundsIndicator is Hard Coded to false-->
                         <UndisclosedComakerOfNoteIndicator>false</UndisclosedComakerOfNoteIndicator>
+                        <!--UndisclosedComakerOfNoteIndicator is Hard Coded to false-->
                         <UndisclosedCreditApplicationIndicator>false</UndisclosedCreditApplicationIndicator>
+                        <!--UndisclosedCreditApplicationIndicator is Hard Coded to false-->
                         <UndisclosedMortgageApplicationIndicator>false</UndisclosedMortgageApplicationIndicator>
+                        <!--UndisclosedMortgageApplicationIndicator is Hard Coded to false-->
                         <EXTENSION>
                           <OTHER>
                             <ULAD:DECLARATION_DETAIL_EXTENSION>
                               <ULAD:SpecialBorrowerSellerRelationshipIndicator>false</ULAD:SpecialBorrowerSellerRelationshipIndicator>
+                              <!--ULAD:SpecialBorrowerSellerRelationshipIndicator is Hard Coded to false-->
                             </ULAD:DECLARATION_DETAIL_EXTENSION>
                           </OTHER>
                         </EXTENSION>
                       </DECLARATION_DETAIL>
-                      <DECLARATION_EXPLANATIONS/>
                     </DECLARATION>
                     <EMPLOYERS>
                       <EMPLOYER Sequence="1" xlink:label="EMPLOYER_1">
-                        
                         <LEGAL_ENTITY>
                           <CONTACTS>
                             <CONTACT>
@@ -293,9 +334,11 @@
                                 <CONTACT_POINT>
                                   <CONTACT_POINT_TELEPHONE>
                                     <ContactPointTelephoneValue>123456789</ContactPointTelephoneValue>
+                                    <!--ContactPointTelephoneValue is Hard Coded to 123456789-->
                                   </CONTACT_POINT_TELEPHONE>
                                   <CONTACT_POINT_DETAIL>
                                     <ContactPointRoleType>Mobile</ContactPointRoleType>
+                                    <!--ContactPointRoleType is Hard Coded to Mobile-->
                                   </CONTACT_POINT_DETAIL>
                                 </CONTACT_POINT>
                               </CONTACT_POINTS>
@@ -303,6 +346,7 @@
                           </CONTACTS>
                           <LEGAL_ENTITY_DETAIL>
                             <FullName>Google</FullName>
+                            <!--FullName is Hard Coded to Google-->
                           </LEGAL_ENTITY_DETAIL>
                         </LEGAL_ENTITY>
                         <EMPLOYMENT>
@@ -318,12 +362,16 @@
                     <GOVERNMENT_MONITORING>
                       <GOVERNMENT_MONITORING_DETAIL>
                         <HMDAEthnicityRefusalIndicator>false</HMDAEthnicityRefusalIndicator>
+                        <!--HMDAEthnicityRefusalIndicator is Hard Coded to false-->
                         <HMDAGenderRefusalIndicator>false</HMDAGenderRefusalIndicator>
+                        <!--HMDAGenderRefusalIndicator is Hard Coded to false-->
                         <HMDARaceRefusalIndicator>false</HMDARaceRefusalIndicator>
+                        <!--HMDARaceRefusalIndicator is Hard Coded to false-->
                         <EXTENSION>
                           <OTHER>
                             <ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
                               <ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
+                              <!--ULAD:HMDAGenderType is Hard Coded to Male-->
                             </ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
                           </OTHER>
                         </EXTENSION>
@@ -366,13 +414,6 @@
               </TAXPAYER_IDENTIFIERS>
             </PARTY>
           </PARTIES>
-          <RELATIONSHIPS>
-            <RELATIONSHIP SequenceNumber="1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_1" xlink:to="BORROWER_1"/>
-            <RELATIONSHIP SequenceNumber="2" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_2" xlink:to="BORROWER_1"/>
-            <RELATIONSHIP SequenceNumber="3" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_3" xlink:to="BORROWER_1"/>
-            <RELATIONSHIP SequenceNumber="4" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_4" xlink:to="BORROWER_1"/>
-            <RELATIONSHIP SequenceNumber="5" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1"/>
-          </RELATIONSHIPS>
           <SERVICES>
             <SERVICE SequenceNumber="1" xlink:label="SERVICE_1">
               <EXTENSION>
