@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA">
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:DU="http://www.datamodelextension.org/Schema/DU" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd">
   <ABOUT_VERSIONS>
     <ABOUT_VERSION>
       <AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
@@ -85,17 +85,30 @@
                   <!--ConstructionMethodType is Hard Coded to SiteBuilt-->
                   <FinancedUnitCount>1</FinancedUnitCount>
                   <!--FinancedUnitCount is Hard Coded to 1-->
+                  <PropertyEstateType>FeeSimple</PropertyEstateType>
+                  <!--PropertyEstateType is Hard Coded to FeeSimple-->
                   <PropertyEstimatedValueAmount>0.00</PropertyEstimatedValueAmount>
                   <PropertyExistingCleanEnergyLienIndicator>false</PropertyExistingCleanEnergyLienIndicator>
                   <!--PropertyExistingCleanEnergyLienIndicator is Hard Coded to false-->
                   <PropertyInProjectIndicator>false</PropertyInProjectIndicator>
                   <!--PropertyInProjectIndicator is Hard Coded to false-->
                   <PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
-                  <PropertyUsageType>Investment</PropertyUsageType>
-                  <!--PropertyUsageType is Hard Coded to Investment-->
+                  <PropertyStructureBuiltYear>1965</PropertyStructureBuiltYear>
+                  <!--PropertyStructureBuiltYear is Hard Coded to 1965-->
+                  <PropertyUsageType>PrimaryResidence</PropertyUsageType>
+                  <!--PropertyUsageType is Hard Coded to PrimaryResidence-->
+                  <PUDIndicator>false</PUDIndicator>
+                  <!--PUDIndicator is Hard Coded to false-->
                   <RentalEstimatedNetMonthlyRentAmount>0</RentalEstimatedNetMonthlyRentAmount>
                   <!--RentalEstimatedNetMonthlyRentAmount is Hard Coded to 0-->
                 </PROPERTY_DETAIL>
+                <PROPERTY_VALUATIONS>
+                  <PROPERTY_VALUATION>
+                    <PROPERTY_VALUATION_DETAIL>
+                      <PropertyValuationAmount>650000.00</PropertyValuationAmount>
+                    </PROPERTY_VALUATION_DETAIL>
+                  </PROPERTY_VALUATION>
+                </PROPERTY_VALUATIONS>
                 <SALES_CONTRACTS>
                   <SALES_CONTRACT>
                     <SALES_CONTRACT_DETAIL>
@@ -107,7 +120,7 @@
             </COLLATERAL>
           </COLLATERALS>
           <LOANS>
-            <LOAN SequenceNumber="1" xlink:label="LOAN_1" LoanRoleType="SubjectLoan">
+            <LOAN LoanRoleType="SubjectLoan" xlink:label="LOAN_1">
               <AMORTIZATION>
                 <AMORTIZATION_RULE>
                   <AmortizationType>Fixed</AmortizationType>
@@ -116,12 +129,27 @@
                   <!--LoanAmortizationPeriodType is Hard Coded to Month-->
                 </AMORTIZATION_RULE>
               </AMORTIZATION>
+              <CLOSING_INFORMATION>
+                <CLOSING_ADJUSTMENT_ITEMS>
+                  <CLOSING_ADJUSTMENT_ITEM>
+                    <CLOSING_ADJUSTMENT_ITEM_DETAIL>
+                      <ClosingAdjustmentItemAmount>1000</ClosingAdjustmentItemAmount>
+                      <ClosingAdjustmentItemType>LenderCredit</ClosingAdjustmentItemType>
+                    </CLOSING_ADJUSTMENT_ITEM_DETAIL>
+                  </CLOSING_ADJUSTMENT_ITEM>
+                </CLOSING_ADJUSTMENT_ITEMS>
+                <CLOSING_INFORMATION_DETAIL>
+                  <CashFromBorrowerAtClosingAmount>28800.00</CashFromBorrowerAtClosingAmount>
+                </CLOSING_INFORMATION_DETAIL>
+              </CLOSING_INFORMATION>
               <DOCUMENT_SPECIFIC_DATA_SETS>
                 <DOCUMENT_SPECIFIC_DATA_SET>
                   <URLA>
                     <URLA_DETAIL>
                       <AlterationsImprovementsAndRepairsAmount>0.00</AlterationsImprovementsAndRepairsAmount>
                       <!--AlterationsImprovementsAndRepairsAmount is Hard Coded to 0.00-->
+                      <ApplicationSignedByLoanOriginatorDate>2019-01-07</ApplicationSignedByLoanOriginatorDate>
+                      <!--ApplicationSignedByLoanOriginatorDate is Hard Coded to 2019-01-07-->
                       <EstimatedClosingCostsAmount>0.00</EstimatedClosingCostsAmount>
                       <MIAndFundingFeeFinancedAmount>0.00</MIAndFundingFeeFinancedAmount>
                       <!--MIAndFundingFeeFinancedAmount is Hard Coded to 0.00-->
@@ -132,6 +160,16 @@
                       <RefinanceIncludingDebtsToBePaidOffAmount>0.00</RefinanceIncludingDebtsToBePaidOffAmount>
                       <!--RefinanceIncludingDebtsToBePaidOffAmount is Hard Coded to 0.00-->
                     </URLA_DETAIL>
+                    <URLA_TOTAL>
+                      <EXTENSION>
+                        <OTHER>
+                          <ULAD:URLA_TOTAL_EXTENSION>
+                            <ULAD:URLATotalSellerCreditsAmount>4750.00</ULAD:URLATotalSellerCreditsAmount>
+                            <!--ULAD:URLATotalSellerCreditsAmount is Hard Coded to 4750.00-->
+                          </ULAD:URLA_TOTAL_EXTENSION>
+                        </OTHER>
+                      </EXTENSION>
+                    </URLA_TOTAL>
                   </URLA>
                 </DOCUMENT_SPECIFIC_DATA_SET>
               </DOCUMENT_SPECIFIC_DATA_SETS>
@@ -162,8 +200,12 @@
                 </HOUSING_EXPENSE>
               </HOUSING_EXPENSES>
               <LOAN_DETAIL>
+                <ApplicationReceivedDate>2019-01-06</ApplicationReceivedDate>
+                <!--ApplicationReceivedDate is Hard Coded to 2019-01-06-->
                 <BalloonIndicator>false</BalloonIndicator>
                 <!--BalloonIndicator is Hard Coded to false-->
+                <BorrowerCount>1</BorrowerCount>
+                <!--BorrowerCount is Hard Coded to 1-->
                 <BuydownTemporarySubsidyFundingIndicator>false</BuydownTemporarySubsidyFundingIndicator>
                 <!--BuydownTemporarySubsidyFundingIndicator is Hard Coded to false-->
                 <ConstructionLoanIndicator>false</ConstructionLoanIndicator>
@@ -178,6 +220,8 @@
                 <!--NegativeAmortizationIndicator is Hard Coded to false-->
                 <PrepaymentPenaltyIndicator>false</PrepaymentPenaltyIndicator>
                 <!--PrepaymentPenaltyIndicator is Hard Coded to false-->
+                <TotalMortgagedPropertiesCount>1</TotalMortgagedPropertiesCount>
+                <!--TotalMortgagedPropertiesCount is Hard Coded to 1-->
               </LOAN_DETAIL>
               <LOAN_IDENTIFIERS>
                 <LOAN_IDENTIFIER>
@@ -201,6 +245,8 @@
               </LOAN_STATUSES>
               <ORIGINATION_SYSTEMS>
                 <ORIGINATION_SYSTEM>
+                  <LoanOriginationSystemName>Name of LOS</LoanOriginationSystemName>
+                  <!--LoanOriginationSystemName is Hard Coded to Name of LOS-->
                   <LoanOriginationSystemVendorIdentifier>000112</LoanOriginationSystemVendorIdentifier>
                   <!--LoanOriginationSystemVendorIdentifier is Hard Coded to 000112-->
                   <LoanOriginationSystemVersionIdentifier>LendingPadVerison</LoanOriginationSystemVersionIdentifier>
@@ -223,12 +269,9 @@
               <INDIVIDUAL>
                 <CONTACT_POINTS>
                   <CONTACT_POINT>
-                    <CONTACT_POINT_TELEPHONE>
-                      <ContactPointTelephoneValue>4353456354</ContactPointTelephoneValue>
-                    </CONTACT_POINT_TELEPHONE>
-                    <CONTACT_POINT_DETAIL>
-                      <ContactPointRoleType>Home</ContactPointRoleType>
-                    </CONTACT_POINT_DETAIL>
+                    <CONTACT_POINT_EMAIL>
+                      <ContactPointEmailValue>keithjanzenbeach@yahoo.com</ContactPointEmailValue>
+                    </CONTACT_POINT_EMAIL>
                   </CONTACT_POINT>
                   <CONTACT_POINT>
                     <CONTACT_POINT_TELEPHONE>
@@ -247,9 +290,12 @@
                     </CONTACT_POINT_DETAIL>
                   </CONTACT_POINT>
                   <CONTACT_POINT>
-                    <CONTACT_POINT_EMAIL>
-                      <ContactPointEmailValue>keithjanzenbeach@yahoo.com</ContactPointEmailValue>
-                    </CONTACT_POINT_EMAIL>
+                    <CONTACT_POINT_TELEPHONE>
+                      <ContactPointTelephoneValue>4353456354</ContactPointTelephoneValue>
+                    </CONTACT_POINT_TELEPHONE>
+                    <CONTACT_POINT_DETAIL>
+                      <ContactPointRoleType>Home</ContactPointRoleType>
+                    </CONTACT_POINT_DETAIL>
                   </CONTACT_POINT>
                 </CONTACT_POINTS>
                 <NAME>
@@ -287,6 +333,7 @@
                     <DECLARATION>
                       <DECLARATION_DETAIL>
                         <BankruptcyIndicator>false</BankruptcyIndicator>
+                        <CitizenshipResidencyType>USCitizen</CitizenshipResidencyType>
                         <FHASecondaryResidenceIndicator>false</FHASecondaryResidenceIndicator>
                         <!--FHASecondaryResidenceIndicator is Hard Coded to false-->
                         <HomeownerPastThreeYearsType>No</HomeownerPastThreeYearsType>
@@ -349,6 +396,16 @@
                             <!--FullName is Hard Coded to Google-->
                           </LEGAL_ENTITY_DETAIL>
                         </LEGAL_ENTITY>
+                        <ADDRESS>
+                          <AddressLineText>Google</AddressLineText>
+                          <!--AddressLineText is Hard Coded to Google-->
+                          <CityName>Burbank</CityName>
+                          <!--CityName is Hard Coded to Burbank-->
+                          <PostalCode>915021234</PostalCode>
+                          <!--PostalCode is Hard Coded to 915021234-->
+                          <StateCode>CA</StateCode>
+                          <!--StateCode is Hard Coded to CA-->
+                        </ADDRESS>
                         <EMPLOYMENT>
                           <EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
                           <EmploymentClassificationType>Secondary</EmploymentClassificationType>
@@ -356,6 +413,7 @@
                           <EmploymentStartDate>2010-01-01</EmploymentStartDate>
                           <EmploymentStatusType>Current</EmploymentStatusType>
                           <EmploymentTimeInLineOfWorkMonthsCount>142</EmploymentTimeInLineOfWorkMonthsCount>
+                          <SpecialBorrowerEmployerRelationshipIndicator>false</SpecialBorrowerEmployerRelationshipIndicator>
                         </EMPLOYMENT>
                       </EMPLOYER>
                     </EMPLOYERS>
@@ -370,6 +428,8 @@
                         <EXTENSION>
                           <OTHER>
                             <ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+                              <ULAD:ApplicationTakenMethodType>FaceToFace</ULAD:ApplicationTakenMethodType>
+                              <!--ULAD:ApplicationTakenMethodType is Hard Coded to FaceToFace-->
                               <ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
                               <!--ULAD:HMDAGenderType is Hard Coded to Male-->
                             </ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
@@ -400,6 +460,26 @@
                         </OTHER>
                       </EXTENSION>
                     </GOVERNMENT_MONITORING>
+                    <RESIDENCES>
+                      <RESIDENCE>
+                        <ADDRESS>
+                          <AddressLineText>10655 Birch St</AddressLineText>
+                          <CityName>Burbank</CityName>
+                          <PostalCode>915021234</PostalCode>
+                          <StateCode>CA</StateCode>
+                        </ADDRESS>
+                        <LANDLORD>
+                          <LANDLORD_DETAIL>
+                            <MonthlyRentAmount>3500.00</MonthlyRentAmount>
+                          </LANDLORD_DETAIL>
+                        </LANDLORD>
+                        <RESIDENCE_DETAIL>
+                          <BorrowerResidencyBasisType>Rent</BorrowerResidencyBasisType>
+                          <BorrowerResidencyDurationMonthsCount>43</BorrowerResidencyDurationMonthsCount>
+                          <BorrowerResidencyType>Current</BorrowerResidencyType>
+                        </RESIDENCE_DETAIL>
+                      </RESIDENCE>
+                    </RESIDENCES>
                   </BORROWER>
                   <ROLE_DETAIL>
                     <PartyRoleType>Borrower</PartyRoleType>
@@ -412,6 +492,37 @@
                   <TaxpayerIdentifierValue>0123111111</TaxpayerIdentifierValue>
                 </TAXPAYER_IDENTIFIER>
               </TAXPAYER_IDENTIFIERS>
+            </PARTY>
+            <PARTY SequenceNumber="2" xlink:label="PARTY_2">
+              <LEGAL_ENTITY>
+                <LEGAL_ENTITY_DETAIL>
+                  <FullName>ABC Mortgage</FullName>
+                </LEGAL_ENTITY_DETAIL>
+              </LEGAL_ENTITY>
+              <ADDRESSES>
+                <ADDRESS>
+                  <AddressLineText>412 H St, NW</AddressLineText>
+                  <CityName>Washington</CityName>
+                  <PostalCode>200121234</PostalCode>
+                  <StateCode>DC</StateCode>
+                </ADDRESS>
+              </ADDRESSES>
+              <ROLES>
+                <ROLE>
+                  <LICENSES>
+                    <LICENSE>
+                      <LICENSE_DETAIL>
+                        <LicenseAuthorityLevelType>Private</LicenseAuthorityLevelType>
+                        <!--LicenseAuthorityLevelType is Hard Coded to Private-->
+                        <LicenseIdentifier>123456789111</LicenseIdentifier>
+                      </LICENSE_DETAIL>
+                    </LICENSE>
+                  </LICENSES>
+                  <ROLE_DETAIL>
+                    <PartyRoleType>LoanOriginationCompany</PartyRoleType>
+                  </ROLE_DETAIL>
+                </ROLE>
+              </ROLES>
             </PARTY>
           </PARTIES>
           <SERVICES>

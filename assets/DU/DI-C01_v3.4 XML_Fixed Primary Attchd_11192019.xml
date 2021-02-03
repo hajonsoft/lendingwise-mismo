@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:DU="http://www.datamodelextension.org/Schema/DU" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas DU_Wrapper_3.4.0_B324.xsd">
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" 
+xmlns:DU="http://www.datamodelextension.org/Schema/DU" 
+MISMOReferenceModelIdentifier="3.4.032420160128" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas 
+DU_Wrapper_3.4.0_B324.xsd">
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<CreatedDatetime>2019-11-19T14:24:17Z</CreatedDatetime>
