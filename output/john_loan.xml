@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:DU="http://www.datamodelextension.org/Schema/DU" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd">
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:DU="http://www.datamodelextension.org/Schema/DU" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA">
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-04T01:13:10Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-04T16:45:10Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -11,11 +11,6 @@
 		<DEAL_SET>
 			<DEALS>
 				<DEAL>
-					<ABOUT_VERSIONS>
-						<ABOUT_VERSION>
-							<DataVersionName>LPA_REQUEST</DataVersionName>
-						</ABOUT_VERSION>
-					</ABOUT_VERSIONS>
 					<ASSETS>
 						<ASSET SequenceNumber="1" xlink:label="ASSET_1">
 							<ASSET_DETAIL>
@@ -198,7 +193,6 @@
 								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
 								<LiabilityMonthlyPaymentAmount>1100.00</LiabilityMonthlyPaymentAmount>
 								<LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
-								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
 								<LiabilityType>Revolving</LiabilityType>
 								<LiabilityTypeOtherDescription>Alimony</LiabilityTypeOtherDescription>
 								<LiabilityUnpaidBalanceAmount>12000.00</LiabilityUnpaidBalanceAmount>
@@ -215,7 +209,6 @@
 								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
 								<LiabilityMonthlyPaymentAmount>900.00</LiabilityMonthlyPaymentAmount>
 								<LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
-								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
 								<LiabilityType>Revolving</LiabilityType>
 								<LiabilityTypeOtherDescription>Credit card</LiabilityTypeOtherDescription>
 								<LiabilityUnpaidBalanceAmount>11000.00</LiabilityUnpaidBalanceAmount>
@@ -232,7 +225,6 @@
 								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
 								<LiabilityMonthlyPaymentAmount>43.00</LiabilityMonthlyPaymentAmount>
 								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
-								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
 								<LiabilityType>Revolving</LiabilityType>
 								<LiabilityTypeOtherDescription>Auto Loan</LiabilityTypeOtherDescription>
 								<LiabilityUnpaidBalanceAmount>324.00</LiabilityUnpaidBalanceAmount>
@@ -249,7 +241,6 @@
 								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
 								<LiabilityMonthlyPaymentAmount>324.00</LiabilityMonthlyPaymentAmount>
 								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
-								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
 								<LiabilityType>Revolving</LiabilityType>
 								<LiabilityTypeOtherDescription>Child Care</LiabilityTypeOtherDescription>
 								<LiabilityUnpaidBalanceAmount>342.00</LiabilityUnpaidBalanceAmount>
@@ -283,7 +274,6 @@
 									<CashFromBorrowerAtClosingAmount>28800.00</CashFromBorrowerAtClosingAmount>
 								</CLOSING_INFORMATION_DETAIL>
 							</CLOSING_INFORMATION>
-							<CONSTRUCTION></CONSTRUCTION>
 							<DOCUMENT_SPECIFIC_DATA_SETS>
 								<DOCUMENT_SPECIFIC_DATA_SET>
 									<URLA>
@@ -362,10 +352,8 @@
 									<LoanOriginationSystemVersionIdentifier>LendingPadVerison</LoanOriginationSystemVersionIdentifier>
 								</ORIGINATION_SYSTEM>
 							</ORIGINATION_SYSTEMS>
-							<PURCHASE_CREDITS></PURCHASE_CREDITS>
-							<QUALIFICATION></QUALIFICATION>
 							<TERMS_OF_LOAN>
-								<BaseLoanAmount>190000.00</BaseLoanAmount>
+								<BaseLoanAmount>190000</BaseLoanAmount>
 								<LienPriorityType>FirstLien</LienPriorityType>
 								<LoanPurposeType>Purchase</LoanPurposeType>
 								<MortgageType>Conventional</MortgageType>
@@ -417,7 +405,6 @@
 									<AddressType>Current</AddressType>
 									<CityName>currentcity</CityName>
 									<CountryCode>US</CountryCode>
-									<PostalCode></PostalCode>
 									<StateCode>FL</StateCode>
 									<StreetName>current address st</StreetName>
 									<StreetPrimaryNumberText>123</StreetPrimaryNumberText>
@@ -433,7 +420,6 @@
 								</ADDRESS>
 								<ADDRESS>
 									<AddressType>Mailing</AddressType>
-									<AddressUnitIdentifier></AddressUnitIdentifier>
 									<CityName>san anselmo</CityName>
 									<CountryCode>US</CountryCode>
 									<PostalCode>94960</PostalCode>
@@ -499,8 +485,6 @@
 												<PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
 												<PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
 												<PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
-												<PriorPropertyTitleType></PriorPropertyTitleType>
-												<PriorPropertyUsageType></PriorPropertyUsageType>
 												<PropertyProposedCleanEnergyLienIndicator>false</PropertyProposedCleanEnergyLienIndicator>
 												<UndisclosedBorrowedFundsAmount>0</UndisclosedBorrowedFundsAmount>
 												<UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
@@ -515,17 +499,12 @@
 													</OTHER>
 												</EXTENSION>
 											</DECLARATION_DETAIL>
-											<DECLARATION_EXPLANATIONS></DECLARATION_EXPLANATIONS>
 										</DECLARATION>
 										<EMPLOYERS>
 											<EMPLOYER SequenceNumber="1" xlink:label="EMPLOYER_1">
 												<ADDRESS>
 													<AddressLineText>123 employer st, miami fl 33333</AddressLineText>
-													<AddressUnitIdentifier></AddressUnitIdentifier>
-													<CityName></CityName>
 													<CountryCode>US</CountryCode>
-													<PostalCode></PostalCode>
-													<StateCode></StateCode>
 												</ADDRESS>
 												<LEGAL_ENTITY>
 													<CONTACTS>
@@ -555,12 +534,10 @@
 												<EMPLOYMENT>
 													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
 													<EmploymentClassificationType>Primary</EmploymentClassificationType>
-													<EmploymentMonthlyIncomeAmount></EmploymentMonthlyIncomeAmount>
 													<EmploymentPositionDescription>programmer</EmploymentPositionDescription>
 													<EmploymentStartDate>2020-01-01</EmploymentStartDate>
 													<EmploymentStatusType>Current</EmploymentStatusType>
 													<EmploymentTimeInLineOfWorkMonthsCount>12</EmploymentTimeInLineOfWorkMonthsCount>
-													<OwnershipInterestType></OwnershipInterestType>
 													<SpecialBorrowerEmployerRelationshipIndicator>false</SpecialBorrowerEmployerRelationshipIndicator>
 												</EMPLOYMENT>
 											</EMPLOYER>
@@ -582,7 +559,6 @@
 											<HMDA_ETHNICITY_ORIGINS>
 												<HMDA_ETHNICITY_ORIGIN>
 													<HMDAEthnicityOriginType>Other</HMDAEthnicityOriginType>
-													<HMDAEthnicityOriginTypeOtherDescription></HMDAEthnicityOriginTypeOtherDescription>
 												</HMDA_ETHNICITY_ORIGIN>
 											</HMDA_ETHNICITY_ORIGINS>
 											<HMDA_RACES>
@@ -639,14 +615,6 @@
 						</PARTY>
 						<PARTY SequenceNumber="2" xlink:label="PARTY_2">
 							<INDIVIDUAL>
-								<ALIASES>
-									<ALIAS>
-										<NAME>
-											<FirstName></FirstName>
-											<LastName></LastName>
-										</NAME>
-									</ALIAS>
-								</ALIASES>
 								<CONTACT_POINTS>
 									<CONTACT_POINT>
 										<CONTACT_POINT_EMAIL>
@@ -688,7 +656,6 @@
 									<AddressType>Current</AddressType>
 									<CityName>omaha</CityName>
 									<CountryCode>US</CountryCode>
-									<PostalCode></PostalCode>
 									<StateCode>NE</StateCode>
 									<StreetName>coborcurrent addr</StreetName>
 									<StreetPrimaryNumberText>123</StreetPrimaryNumberText>
@@ -704,7 +671,6 @@
 								</ADDRESS>
 								<ADDRESS>
 									<AddressType>Mailing</AddressType>
-									<AddressUnitIdentifier></AddressUnitIdentifier>
 									<CityName>cobMailingCity</CityName>
 									<CountryCode>US</CountryCode>
 									<PostalCode>78656</PostalCode>
@@ -780,8 +746,6 @@
 												<PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
 												<PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
 												<PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
-												<PriorPropertyTitleType></PriorPropertyTitleType>
-												<PriorPropertyUsageType></PriorPropertyUsageType>
 												<PropertyProposedCleanEnergyLienIndicator>false</PropertyProposedCleanEnergyLienIndicator>
 												<UndisclosedBorrowedFundsAmount>0</UndisclosedBorrowedFundsAmount>
 												<UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
@@ -794,21 +758,15 @@
 											<EMPLOYER Sequence="1" xlink:label="EMPLOYER_2">
 												<ADDRESS>
 													<AddressLineText>123 butterfly st, miami fl 33176</AddressLineText>
-													<AddressUnitIdentifier></AddressUnitIdentifier>
-													<CityName></CityName>
 													<CountryCode>US</CountryCode>
-													<PostalCode></PostalCode>
-													<StateCode></StateCode>
 												</ADDRESS>
 												<EMPLOYMENT>
 													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
 													<EmploymentClassificationType>Secondary</EmploymentClassificationType>
-													<EmploymentMonthlyIncomeAmount></EmploymentMonthlyIncomeAmount>
 													<EmploymentPositionDescription>butterfly milker</EmploymentPositionDescription>
 													<EmploymentStartDate>2015-01-09</EmploymentStartDate>
 													<EmploymentStatusType>Current</EmploymentStatusType>
 													<EmploymentTimeInLineOfWorkMonthsCount>5</EmploymentTimeInLineOfWorkMonthsCount>
-													<OwnershipInterestType></OwnershipInterestType>
 												</EMPLOYMENT>
 											</EMPLOYER>
 										</EMPLOYERS>

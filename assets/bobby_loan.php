@@ -6304,9 +6304,9 @@ For question that need additional infio, make sure borrower uploads supporting d
             [HMLOBGID] => 65349
             [fileID] => 6833894
             [isBorUSCitizen] => NA
-            [isBorDecalredBankruptPastYears] => Yes
+            [isBorDecalredBankruptPastYears] => No
             [isAnyBorOutstandingJudgements] => No
-            [hasBorAnyActiveLawsuits] => Yes
+            [hasBorAnyActiveLawsuits] => No
             [hasBorPropertyTaxLiens] => NA
             [hasBorObligatedInForeclosure] => NA
             [isBorPresenltyDelinquent] => No

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:DU="http://www.datamodelextension.org/Schema/DU" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd">
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:DU="http://www.datamodelextension.org/Schema/DU" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA">
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-04T01:13:10Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-04T16:45:11Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -11,11 +11,6 @@
 		<DEAL_SET>
 			<DEALS>
 				<DEAL>
-					<ABOUT_VERSIONS>
-						<ABOUT_VERSION>
-							<DataVersionName>LPA_REQUEST</DataVersionName>
-						</ABOUT_VERSION>
-					</ABOUT_VERSIONS>
 					<ASSETS>
 						<ASSET SequenceNumber="1" xlink:label="ASSET_1">
 							<ASSET_DETAIL>
@@ -150,7 +145,6 @@
 								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
 								<LiabilityMonthlyPaymentAmount>1100.00</LiabilityMonthlyPaymentAmount>
 								<LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
-								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
 								<LiabilityType>Revolving</LiabilityType>
 								<LiabilityTypeOtherDescription>Alimony</LiabilityTypeOtherDescription>
 								<LiabilityUnpaidBalanceAmount>12000.00</LiabilityUnpaidBalanceAmount>
@@ -167,7 +161,6 @@
 								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
 								<LiabilityMonthlyPaymentAmount>900.00</LiabilityMonthlyPaymentAmount>
 								<LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
-								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
 								<LiabilityType>Revolving</LiabilityType>
 								<LiabilityTypeOtherDescription>Credit card</LiabilityTypeOtherDescription>
 								<LiabilityUnpaidBalanceAmount>11000.00</LiabilityUnpaidBalanceAmount>
@@ -201,7 +194,6 @@
 									<CashFromBorrowerAtClosingAmount>28800.00</CashFromBorrowerAtClosingAmount>
 								</CLOSING_INFORMATION_DETAIL>
 							</CLOSING_INFORMATION>
-							<CONSTRUCTION></CONSTRUCTION>
 							<DOCUMENT_SPECIFIC_DATA_SETS>
 								<DOCUMENT_SPECIFIC_DATA_SET>
 									<URLA>
@@ -280,14 +272,12 @@
 									<LoanOriginationSystemVersionIdentifier>LendingPadVerison</LoanOriginationSystemVersionIdentifier>
 								</ORIGINATION_SYSTEM>
 							</ORIGINATION_SYSTEMS>
-							<PURCHASE_CREDITS></PURCHASE_CREDITS>
-							<QUALIFICATION></QUALIFICATION>
 							<TERMS_OF_LOAN>
-								<BaseLoanAmount>-154900.00</BaseLoanAmount>
+								<BaseLoanAmount>154900</BaseLoanAmount>
 								<LienPriorityType>FirstLien</LienPriorityType>
 								<LoanPurposeType>Purchase</LoanPurposeType>
 								<MortgageType>Conventional</MortgageType>
-								<NoteRatePercent>0.00</NoteRatePercent>
+								<NoteRatePercent>4.00</NoteRatePercent>
 							</TERMS_OF_LOAN>
 						</LOAN>
 					</LOANS>
@@ -330,36 +320,6 @@
 									<LastName>borrower</LastName>
 								</NAME>
 							</INDIVIDUAL>
-							<ADDRESSES>
-								<ADDRESS>
-									<AddressType>Current</AddressType>
-									<CityName>currentcity</CityName>
-									<CountryCode>US</CountryCode>
-									<PostalCode></PostalCode>
-									<StateCode>FL</StateCode>
-									<StreetName>current address st</StreetName>
-									<StreetPrimaryNumberText>123</StreetPrimaryNumberText>
-								</ADDRESS>
-								<ADDRESS>
-									<AddressType>Prior</AddressType>
-									<CityName>prevcity</CityName>
-									<CountryCode>US</CountryCode>
-									<PostalCode>34456</PostalCode>
-									<StateCode>DE</StateCode>
-									<StreetName>previous address st</StreetName>
-									<StreetPrimaryNumberText>234</StreetPrimaryNumberText>
-								</ADDRESS>
-								<ADDRESS>
-									<AddressType>Mailing</AddressType>
-									<AddressUnitIdentifier></AddressUnitIdentifier>
-									<CityName>san anselmo</CityName>
-									<CountryCode>US</CountryCode>
-									<PostalCode>94960</PostalCode>
-									<StateCode>CA</StateCode>
-									<StreetName>mailing address st</StreetName>
-									<StreetPrimaryNumberText>345</StreetPrimaryNumberText>
-								</ADDRESS>
-							</ADDRESSES>
 							<ROLES>
 								<ROLE SequenceNumber="1" xlink:label="BORROWER_1">
 									<BORROWER>
@@ -381,44 +341,21 @@
 														<IncomeType>Base</IncomeType>
 													</CURRENT_INCOME_ITEM_DETAIL>
 												</CURRENT_INCOME_ITEM>
-												<CURRENT_INCOME_ITEM>
-													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount>125.00</CurrentIncomeMonthlyTotalAmount>
-														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-														<IncomeType>Bonus</IncomeType>
-													</CURRENT_INCOME_ITEM_DETAIL>
-												</CURRENT_INCOME_ITEM>
-												<CURRENT_INCOME_ITEM>
-													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount>16</CurrentIncomeMonthlyTotalAmount>
-														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-														<IncomeType>Other</IncomeType>
-													</CURRENT_INCOME_ITEM_DETAIL>
-												</CURRENT_INCOME_ITEM>
-												<CURRENT_INCOME_ITEM>
-													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount>208.00</CurrentIncomeMonthlyTotalAmount>
-														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-														<IncomeType>Overtime</IncomeType>
-													</CURRENT_INCOME_ITEM_DETAIL>
-												</CURRENT_INCOME_ITEM>
 											</CURRENT_INCOME_ITEMS>
 										</CURRENT_INCOME>
 										<DECLARATION>
 											<DECLARATION_DETAIL>
-												<BankruptcyIndicator>true</BankruptcyIndicator>
+												<BankruptcyIndicator>false</BankruptcyIndicator>
 												<CitizenshipResidencyType>USCitizen</CitizenshipResidencyType>
 												<FHASecondaryResidenceIndicator>false</FHASecondaryResidenceIndicator>
 												<HomeownerPastThreeYearsType>No</HomeownerPastThreeYearsType>
 												<IntentToOccupyType>Yes</IntentToOccupyType>
 												<OutstandingJudgmentsIndicator>false</OutstandingJudgmentsIndicator>
-												<PartyToLawsuitIndicator>true</PartyToLawsuitIndicator>
+												<PartyToLawsuitIndicator>false</PartyToLawsuitIndicator>
 												<PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
 												<PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
 												<PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
 												<PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
-												<PriorPropertyTitleType></PriorPropertyTitleType>
-												<PriorPropertyUsageType></PriorPropertyUsageType>
 												<PropertyProposedCleanEnergyLienIndicator>false</PropertyProposedCleanEnergyLienIndicator>
 												<UndisclosedBorrowedFundsAmount>0</UndisclosedBorrowedFundsAmount>
 												<UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
@@ -433,18 +370,9 @@
 													</OTHER>
 												</EXTENSION>
 											</DECLARATION_DETAIL>
-											<DECLARATION_EXPLANATIONS></DECLARATION_EXPLANATIONS>
 										</DECLARATION>
 										<EMPLOYERS>
 											<EMPLOYER SequenceNumber="1" xlink:label="EMPLOYER_1">
-												<ADDRESS>
-													<AddressLineText>123 employer st, miami fl 33333</AddressLineText>
-													<AddressUnitIdentifier></AddressUnitIdentifier>
-													<CityName></CityName>
-													<CountryCode>US</CountryCode>
-													<PostalCode></PostalCode>
-													<StateCode></StateCode>
-												</ADDRESS>
 												<LEGAL_ENTITY>
 													<CONTACTS>
 														<CONTACT>
@@ -472,13 +400,11 @@
 												</ADDRESS>
 												<EMPLOYMENT>
 													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
-													<EmploymentClassificationType>Primary</EmploymentClassificationType>
-													<EmploymentMonthlyIncomeAmount></EmploymentMonthlyIncomeAmount>
-													<EmploymentPositionDescription>programmer</EmploymentPositionDescription>
-													<EmploymentStartDate>2020-01-01</EmploymentStartDate>
+													<EmploymentClassificationType>Secondary</EmploymentClassificationType>
+													<EmploymentPositionDescription>Employee</EmploymentPositionDescription>
+													<EmploymentStartDate>2010-01-01</EmploymentStartDate>
 													<EmploymentStatusType>Current</EmploymentStatusType>
-													<EmploymentTimeInLineOfWorkMonthsCount>12</EmploymentTimeInLineOfWorkMonthsCount>
-													<OwnershipInterestType></OwnershipInterestType>
+													<EmploymentTimeInLineOfWorkMonthsCount>142</EmploymentTimeInLineOfWorkMonthsCount>
 													<SpecialBorrowerEmployerRelationshipIndicator>false</SpecialBorrowerEmployerRelationshipIndicator>
 												</EMPLOYMENT>
 											</EMPLOYER>
@@ -500,7 +426,6 @@
 											<HMDA_ETHNICITY_ORIGINS>
 												<HMDA_ETHNICITY_ORIGIN>
 													<HMDAEthnicityOriginType>Other</HMDAEthnicityOriginType>
-													<HMDAEthnicityOriginTypeOtherDescription></HMDAEthnicityOriginTypeOtherDescription>
 												</HMDA_ETHNICITY_ORIGIN>
 											</HMDA_ETHNICITY_ORIGINS>
 											<HMDA_RACES>
@@ -557,14 +482,6 @@
 						</PARTY>
 						<PARTY SequenceNumber="2" xlink:label="PARTY_2">
 							<INDIVIDUAL>
-								<ALIASES>
-									<ALIAS>
-										<NAME>
-											<FirstName></FirstName>
-											<LastName></LastName>
-										</NAME>
-									</ALIAS>
-								</ALIASES>
 								<CONTACT_POINTS>
 									<CONTACT_POINT>
 										<CONTACT_POINT_EMAIL>
@@ -606,7 +523,6 @@
 									<AddressType>Current</AddressType>
 									<CityName>omaha</CityName>
 									<CountryCode>US</CountryCode>
-									<PostalCode></PostalCode>
 									<StateCode>NE</StateCode>
 									<StreetName>coborcurrent addr</StreetName>
 									<StreetPrimaryNumberText>123</StreetPrimaryNumberText>
@@ -622,7 +538,6 @@
 								</ADDRESS>
 								<ADDRESS>
 									<AddressType>Mailing</AddressType>
-									<AddressUnitIdentifier></AddressUnitIdentifier>
 									<CityName>cobMailingCity</CityName>
 									<CountryCode>US</CountryCode>
 									<PostalCode>78656</PostalCode>
@@ -657,21 +572,18 @@
 												</CURRENT_INCOME_ITEM>
 												<CURRENT_INCOME_ITEM>
 													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount></CurrentIncomeMonthlyTotalAmount>
 														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
 														<IncomeType>Bonus</IncomeType>
 													</CURRENT_INCOME_ITEM_DETAIL>
 												</CURRENT_INCOME_ITEM>
 												<CURRENT_INCOME_ITEM>
 													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount></CurrentIncomeMonthlyTotalAmount>
 														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
 														<IncomeType>Other</IncomeType>
 													</CURRENT_INCOME_ITEM_DETAIL>
 												</CURRENT_INCOME_ITEM>
 												<CURRENT_INCOME_ITEM>
 													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount></CurrentIncomeMonthlyTotalAmount>
 														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
 														<IncomeType>Overtime</IncomeType>
 													</CURRENT_INCOME_ITEM_DETAIL>
@@ -698,8 +610,6 @@
 												<PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
 												<PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
 												<PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
-												<PriorPropertyTitleType></PriorPropertyTitleType>
-												<PriorPropertyUsageType></PriorPropertyUsageType>
 												<PropertyProposedCleanEnergyLienIndicator>false</PropertyProposedCleanEnergyLienIndicator>
 												<UndisclosedBorrowedFundsAmount>0</UndisclosedBorrowedFundsAmount>
 												<UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
@@ -712,21 +622,15 @@
 											<EMPLOYER Sequence="1" xlink:label="EMPLOYER_2">
 												<ADDRESS>
 													<AddressLineText>123 butterfly st, miami fl 33176</AddressLineText>
-													<AddressUnitIdentifier></AddressUnitIdentifier>
-													<CityName></CityName>
 													<CountryCode>US</CountryCode>
-													<PostalCode></PostalCode>
-													<StateCode></StateCode>
 												</ADDRESS>
 												<EMPLOYMENT>
 													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
 													<EmploymentClassificationType>Secondary</EmploymentClassificationType>
-													<EmploymentMonthlyIncomeAmount></EmploymentMonthlyIncomeAmount>
 													<EmploymentPositionDescription>butterfly milker</EmploymentPositionDescription>
 													<EmploymentStartDate>2015-01-09</EmploymentStartDate>
 													<EmploymentStatusType>Current</EmploymentStatusType>
 													<EmploymentTimeInLineOfWorkMonthsCount>5</EmploymentTimeInLineOfWorkMonthsCount>
-													<OwnershipInterestType></OwnershipInterestType>
 												</EMPLOYMENT>
 											</EMPLOYER>
 										</EMPLOYERS>
@@ -794,11 +698,7 @@
 						<RELATIONSHIP SequenceNumber="2" xlink:from="ASSET_2" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"></RELATIONSHIP>
 						<RELATIONSHIP SequenceNumber="3" xlink:from="ASSET_3" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"></RELATIONSHIP>
 						<RELATIONSHIP SequenceNumber="4" xlink:from="ASSET_4" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="5" xlink:from="LIABILITY_1" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="6" xlink:from="LIABILITY_2" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="7" xlink:from="LIABILITY_3" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="8" xlink:from="LIABILITY_4" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="9" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="5" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"></RELATIONSHIP>
 					</RELATIONSHIPS>
 				</DEAL>
 			</DEALS>

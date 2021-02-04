@@ -23,8 +23,8 @@ function createMismo(incomingLoan) {
     MISMOReferenceModelIdentifier: "3.4.032420160128",
     "xmlns:xlink": "http://www.w3.org/1999/xlink",
     "xmlns:LPA": "http://www.datamodelextension.org/Schema/LPA",
-    "xsi:schemaLocation":
-      "http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd",
+    // "xsi:schemaLocation":
+    //   "http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd",
   });
   doc = container(doc, ["ABOUT_VERSIONS", "ABOUT_VERSION"]);
   doc = doc.ele("AboutVersionIdentifier").txt("S5.0.06").up();
@@ -526,7 +526,7 @@ function loans(doc, data, startIndex) {
       path: ["TERMS_OF_LOAN"],
       nodes: [
         {
-          BaseLoanAmount: (row) => money(loan["ResponseInfo"].totalLoanAmount),
+          BaseLoanAmount: (row) => Math.abs(money(loan["ResponseInfo"].totalLoanAmount)),
         },
         {
           LoanPurposeType: (row) =>

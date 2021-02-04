@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:DU="http://www.datamodelextension.org/Schema/DU" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd">
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:DU="http://www.datamodelextension.org/Schema/DU" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA">
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-04T01:24:58Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-04T16:45:11Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -205,7 +205,7 @@
 								</ORIGINATION_SYSTEM>
 							</ORIGINATION_SYSTEMS>
 							<TERMS_OF_LOAN>
-								<BaseLoanAmount>500000.00</BaseLoanAmount>
+								<BaseLoanAmount>500000</BaseLoanAmount>
 								<LienPriorityType>FirstLien</LienPriorityType>
 								<LoanPurposeType>Purchase</LoanPurposeType>
 								<MortgageType>Conventional</MortgageType>
