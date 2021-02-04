@@ -1,752 +1,642 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:DU="http://www.datamodelextension.org/Schema/DU" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA" xsi:schemaLocation="http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd">
-  <ABOUT_VERSIONS>
-    <ABOUT_VERSION>
-      <AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-      <DataVersionIdentifier>5.0.06</DataVersionIdentifier>
-    </ABOUT_VERSION>
-  </ABOUT_VERSIONS>
-  <DEAL_SETS>
-    <DEAL_SET>
-      <DEALS>
-        <DEAL>
-          <ABOUT_VERSIONS>
-            <ABOUT_VERSION>
-              <DataVersionName>LPA_REQUEST</DataVersionName>
-            </ABOUT_VERSION>
-          </ABOUT_VERSIONS>
-          <ASSETS>
-            <ASSET SequenceNumber="1" xlink:label="ASSET_1">
-              <ASSET_DETAIL>
-                <AssetType>RealEstateOwned</AssetType>
-              </ASSET_DETAIL>
-              <OWNED_PROPERTY>
-                <OWNED_PROPERTY_DETAIL>
-                  <OwnedPropertyDispositionStatusType>Retain</OwnedPropertyDispositionStatusType>
-                  <OwnedPropertyLienUPBAmount>0.00</OwnedPropertyLienUPBAmount>
-                  <OwnedPropertyMaintenanceExpenseAmount>918.00</OwnedPropertyMaintenanceExpenseAmount>
-                  <OwnedPropertyRentalIncomeGrossAmount>2983.00</OwnedPropertyRentalIncomeGrossAmount>
-                  <OwnedPropertyRentalIncomeNetAmount>919.00</OwnedPropertyRentalIncomeNetAmount>
-                  <OwnedPropertySubjectIndicator>false</OwnedPropertySubjectIndicator>
-                  <!--OwnedPropertySubjectIndicator is Hard Coded to false-->
-                </OWNED_PROPERTY_DETAIL>
-                <PROPERTY>
-                  <ADDRESS>
-                    <AddressLineText>829 SW 91 ST</AddressLineText>
-                    <CityName>Miami</CityName>
-                    <CountryCode>US</CountryCode>
-                    <PostalCode>39398</PostalCode>
-                    <StateCode>FL</StateCode>
-                  </ADDRESS>
-                  <PROPERTY_DETAIL>
-                    <PropertyCurrentUsageType>PrimaryResidence</PropertyCurrentUsageType>
-                    <PropertyEstimatedValueAmount>2000.00</PropertyEstimatedValueAmount>
-                    <PropertyUsageType>PrimaryResidence</PropertyUsageType>
-                  </PROPERTY_DETAIL>
-                  <PROPERTY_VALUATIONS>
-                    <PROPERTY_VALUATION>
-                      <PROPERTY_VALUATION_DETAIL>
-                        <PropertyValuationAmount>2000.00</PropertyValuationAmount>
-                      </PROPERTY_VALUATION_DETAIL>
-                    </PROPERTY_VALUATION>
-                  </PROPERTY_VALUATIONS>
-                </PROPERTY>
-              </OWNED_PROPERTY>
-            </ASSET>
-          </ASSETS>
-          <COLLATERALS>
-            <COLLATERAL SequenceNumber="1" xlink:label="COLLATERAL_1">
-              <SUBJECT_PROPERTY>
-                <ADDRESS>
-                  <AddressLineText>9382 sw 18 st</AddressLineText>
-                  <CityName>Miami</CityName>
-                  <CountryCode>US</CountryCode>
-                  <CountyName>Apache</CountyName>
-                  <PostalCode>54355</PostalCode>
-                  <StateCode>AZ</StateCode>
-                </ADDRESS>
-                <PROPERTY_DETAIL>
-                  <AttachmentType>Attached</AttachmentType>
-                  <!--AttachmentType is Hard Coded to Attached-->
-                  <CommunityPropertyStateIndicator>false</CommunityPropertyStateIndicator>
-                  <!--CommunityPropertyStateIndicator is Hard Coded to false-->
-                  <ConstructionMethodType>SiteBuilt</ConstructionMethodType>
-                  <!--ConstructionMethodType is Hard Coded to SiteBuilt-->
-                  <FinancedUnitCount>1</FinancedUnitCount>
-                  <!--FinancedUnitCount is Hard Coded to 1-->
-                  <PropertyEstateType>FeeSimple</PropertyEstateType>
-                  <!--PropertyEstateType is Hard Coded to FeeSimple-->
-                  <PropertyEstimatedValueAmount>220900.00</PropertyEstimatedValueAmount>
-                  <PropertyExistingCleanEnergyLienIndicator>false</PropertyExistingCleanEnergyLienIndicator>
-                  <!--PropertyExistingCleanEnergyLienIndicator is Hard Coded to false-->
-                  <PropertyInProjectIndicator>false</PropertyInProjectIndicator>
-                  <!--PropertyInProjectIndicator is Hard Coded to false-->
-                  <PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
-                  <PropertyStructureBuiltYear>1965</PropertyStructureBuiltYear>
-                  <!--PropertyStructureBuiltYear is Hard Coded to 1965-->
-                  <PropertyUsageType>PrimaryResidence</PropertyUsageType>
-                  <!--PropertyUsageType is Hard Coded to PrimaryResidence-->
-                  <PUDIndicator>false</PUDIndicator>
-                  <!--PUDIndicator is Hard Coded to false-->
-                  <RentalEstimatedNetMonthlyRentAmount>0</RentalEstimatedNetMonthlyRentAmount>
-                  <!--RentalEstimatedNetMonthlyRentAmount is Hard Coded to 0-->
-                </PROPERTY_DETAIL>
-                <PROPERTY_VALUATIONS>
-                  <PROPERTY_VALUATION>
-                    <PROPERTY_VALUATION_DETAIL>
-                      <PropertyValuationAmount>0.00</PropertyValuationAmount>
-                    </PROPERTY_VALUATION_DETAIL>
-                  </PROPERTY_VALUATION>
-                </PROPERTY_VALUATIONS>
-                <SALES_CONTRACTS>
-                  <SALES_CONTRACT>
-                    <SALES_CONTRACT_DETAIL>
-                      <SalesContractAmount>0.00</SalesContractAmount>
-                    </SALES_CONTRACT_DETAIL>
-                  </SALES_CONTRACT>
-                </SALES_CONTRACTS>
-              </SUBJECT_PROPERTY>
-            </COLLATERAL>
-          </COLLATERALS>
-          <LIABILITIES>
-            <LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
-              <LIABILITY_DETAIL>
-                <LiabilityAccountIdentifier>9293</LiabilityAccountIdentifier>
-                <LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
-                <!--LiabilityExclusionIndicator is Hard Coded to false-->
-                <LiabilityMonthlyPaymentAmount>321.00</LiabilityMonthlyPaymentAmount>
-                <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
-                <!--LiabilityPayoffStatusIndicator is Hard Coded to false-->
-                <LiabilityRemainingTermMonthsCount>93</LiabilityRemainingTermMonthsCount>
-                <LiabilityType>Other</LiabilityType>
-                <LiabilityTypeOtherDescription>testing</LiabilityTypeOtherDescription>
-                <LiabilityUnpaidBalanceAmount>9329.00</LiabilityUnpaidBalanceAmount>
-              </LIABILITY_DETAIL>
-              <LIABILITY_HOLDER>
-                <NAME>
-                  <FullName>ljka</FullName>
-                </NAME>
-              </LIABILITY_HOLDER>
-            </LIABILITY>
-            <LIABILITY SequenceNumber="2" xlink:label="LIABILITY_2">
-              <LIABILITY_DETAIL>
-                <LiabilityAccountIdentifier>90320</LiabilityAccountIdentifier>
-                <LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
-                <!--LiabilityExclusionIndicator is Hard Coded to false-->
-                <LiabilityMonthlyPaymentAmount>9393.00</LiabilityMonthlyPaymentAmount>
-                <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
-                <!--LiabilityPayoffStatusIndicator is Hard Coded to false-->
-                <LiabilityRemainingTermMonthsCount>93</LiabilityRemainingTermMonthsCount>
-                <LiabilityType>Other</LiabilityType>
-                <LiabilityTypeOtherDescription>testing2</LiabilityTypeOtherDescription>
-                <LiabilityUnpaidBalanceAmount>290.00</LiabilityUnpaidBalanceAmount>
-              </LIABILITY_DETAIL>
-              <LIABILITY_HOLDER>
-                <NAME>
-                  <FullName>mdsak</FullName>
-                </NAME>
-              </LIABILITY_HOLDER>
-            </LIABILITY>
-            <LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
-              <LIABILITY_DETAIL>
-                <LiabilityAccountIdentifier>alimoney123</LiabilityAccountIdentifier>
-                <LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
-                <!--LiabilityExclusionIndicator is Hard Coded to false-->
-                <LiabilityMonthlyPaymentAmount>1100.00</LiabilityMonthlyPaymentAmount>
-                <LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
-                <!--LiabilityRemainingTermMonthsCount is Hard Coded to -->
-                <LiabilityType>Revolving</LiabilityType>
-                <LiabilityTypeOtherDescription>Alimony</LiabilityTypeOtherDescription>
-                <LiabilityUnpaidBalanceAmount>12000.00</LiabilityUnpaidBalanceAmount>
-              </LIABILITY_DETAIL>
-              <LIABILITY_HOLDER>
-                <NAME>
-                  <FullName>alimonycompany</FullName>
-                </NAME>
-              </LIABILITY_HOLDER>
-            </LIABILITY>
-            <LIABILITY SequenceNumber="2" xlink:label="LIABILITY_2">
-              <LIABILITY_DETAIL>
-                <LiabilityAccountIdentifier>ccardamex6345</LiabilityAccountIdentifier>
-                <LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
-                <!--LiabilityExclusionIndicator is Hard Coded to false-->
-                <LiabilityMonthlyPaymentAmount>900.00</LiabilityMonthlyPaymentAmount>
-                <LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
-                <!--LiabilityRemainingTermMonthsCount is Hard Coded to -->
-                <LiabilityType>Revolving</LiabilityType>
-                <LiabilityTypeOtherDescription>Credit card</LiabilityTypeOtherDescription>
-                <LiabilityUnpaidBalanceAmount>11000.00</LiabilityUnpaidBalanceAmount>
-              </LIABILITY_DETAIL>
-              <LIABILITY_HOLDER>
-                <NAME>
-                  <FullName>creditcardAmex</FullName>
-                </NAME>
-              </LIABILITY_HOLDER>
-            </LIABILITY>
-            <LIABILITY SequenceNumber="3" xlink:label="LIABILITY_3">
-              <LIABILITY_DETAIL>
-                <LiabilityAccountIdentifier>324324</LiabilityAccountIdentifier>
-                <LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
-                <!--LiabilityExclusionIndicator is Hard Coded to false-->
-                <LiabilityMonthlyPaymentAmount>23423.00</LiabilityMonthlyPaymentAmount>
-                <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
-                <!--LiabilityRemainingTermMonthsCount is Hard Coded to -->
-                <LiabilityType>Installment</LiabilityType>
-                <LiabilityTypeOtherDescription>Medical</LiabilityTypeOtherDescription>
-                <LiabilityUnpaidBalanceAmount>24234.00</LiabilityUnpaidBalanceAmount>
-              </LIABILITY_DETAIL>
-              <LIABILITY_HOLDER>
-                <NAME>
-                  <FullName>testing</FullName>
-                </NAME>
-              </LIABILITY_HOLDER>
-            </LIABILITY>
-            <LIABILITY SequenceNumber="4" xlink:label="LIABILITY_4">
-              <LIABILITY_DETAIL>
-                <LiabilityAccountIdentifier>43242</LiabilityAccountIdentifier>
-                <LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
-                <!--LiabilityExclusionIndicator is Hard Coded to false-->
-                <LiabilityMonthlyPaymentAmount>432.00</LiabilityMonthlyPaymentAmount>
-                <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
-                <!--LiabilityRemainingTermMonthsCount is Hard Coded to -->
-                <LiabilityType>Revolving</LiabilityType>
-                <LiabilityTypeOtherDescription>Child Care</LiabilityTypeOtherDescription>
-                <LiabilityUnpaidBalanceAmount>32.00</LiabilityUnpaidBalanceAmount>
-              </LIABILITY_DETAIL>
-              <LIABILITY_HOLDER>
-                <NAME>
-                  <FullName>child test</FullName>
-                </NAME>
-              </LIABILITY_HOLDER>
-            </LIABILITY>
-            <LIABILITY SequenceNumber="5" xlink:label="LIABILITY_5">
-              <LIABILITY_DETAIL>
-                <LiabilityAccountIdentifier>4242</LiabilityAccountIdentifier>
-                <LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
-                <!--LiabilityExclusionIndicator is Hard Coded to false-->
-                <LiabilityMonthlyPaymentAmount>432423.00</LiabilityMonthlyPaymentAmount>
-                <LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
-                <!--LiabilityRemainingTermMonthsCount is Hard Coded to -->
-                <LiabilityType>Installment</LiabilityType>
-                <LiabilityTypeOtherDescription>Student Loan</LiabilityTypeOtherDescription>
-                <LiabilityUnpaidBalanceAmount>432.00</LiabilityUnpaidBalanceAmount>
-              </LIABILITY_DETAIL>
-              <LIABILITY_HOLDER>
-                <NAME>
-                  <FullName>chase</FullName>
-                </NAME>
-              </LIABILITY_HOLDER>
-            </LIABILITY>
-          </LIABILITIES>
-          <LOANS>
-            <LOAN LoanRoleType="SubjectLoan" xlink:label="LOAN_1">
-              <AMORTIZATION>
-                <AMORTIZATION_RULE>
-                  <AmortizationType>Fixed</AmortizationType>
-                  <LoanAmortizationPeriodCount>360</LoanAmortizationPeriodCount>
-                  <LoanAmortizationPeriodType>Month</LoanAmortizationPeriodType>
-                  <!--LoanAmortizationPeriodType is Hard Coded to Month-->
-                </AMORTIZATION_RULE>
-              </AMORTIZATION>
-              <CLOSING_INFORMATION>
-                <CLOSING_ADJUSTMENT_ITEMS>
-                  <CLOSING_ADJUSTMENT_ITEM>
-                    <CLOSING_ADJUSTMENT_ITEM_DETAIL>
-                      <ClosingAdjustmentItemAmount>1000</ClosingAdjustmentItemAmount>
-                      <ClosingAdjustmentItemType>LenderCredit</ClosingAdjustmentItemType>
-                    </CLOSING_ADJUSTMENT_ITEM_DETAIL>
-                  </CLOSING_ADJUSTMENT_ITEM>
-                </CLOSING_ADJUSTMENT_ITEMS>
-                <CLOSING_INFORMATION_DETAIL>
-                  <CashFromBorrowerAtClosingAmount>28800.00</CashFromBorrowerAtClosingAmount>
-                </CLOSING_INFORMATION_DETAIL>
-              </CLOSING_INFORMATION>
-              <DOCUMENT_SPECIFIC_DATA_SETS>
-                <DOCUMENT_SPECIFIC_DATA_SET>
-                  <URLA>
-                    <URLA_DETAIL>
-                      <AlterationsImprovementsAndRepairsAmount>0.00</AlterationsImprovementsAndRepairsAmount>
-                      <!--AlterationsImprovementsAndRepairsAmount is Hard Coded to 0.00-->
-                      <ApplicationSignedByLoanOriginatorDate>2019-01-07</ApplicationSignedByLoanOriginatorDate>
-                      <!--ApplicationSignedByLoanOriginatorDate is Hard Coded to 2019-01-07-->
-                      <EstimatedClosingCostsAmount>0.00</EstimatedClosingCostsAmount>
-                      <MIAndFundingFeeFinancedAmount>0.00</MIAndFundingFeeFinancedAmount>
-                      <!--MIAndFundingFeeFinancedAmount is Hard Coded to 0.00-->
-                      <MIAndFundingFeeTotalAmount>0.00</MIAndFundingFeeTotalAmount>
-                      <!--MIAndFundingFeeTotalAmount is Hard Coded to 0.00-->
-                      <PrepaidItemsEstimatedAmount>0.00</PrepaidItemsEstimatedAmount>
-                      <!--PrepaidItemsEstimatedAmount is Hard Coded to 0.00-->
-                      <RefinanceIncludingDebtsToBePaidOffAmount>0.00</RefinanceIncludingDebtsToBePaidOffAmount>
-                      <!--RefinanceIncludingDebtsToBePaidOffAmount is Hard Coded to 0.00-->
-                    </URLA_DETAIL>
-                    <URLA_TOTAL>
-                      <EXTENSION>
-                        <OTHER>
-                          <ULAD:URLA_TOTAL_EXTENSION>
-                            <ULAD:URLATotalSellerCreditsAmount>4750.00</ULAD:URLATotalSellerCreditsAmount>
-                            <!--ULAD:URLATotalSellerCreditsAmount is Hard Coded to 4750.00-->
-                          </ULAD:URLA_TOTAL_EXTENSION>
-                        </OTHER>
-                      </EXTENSION>
-                    </URLA_TOTAL>
-                  </URLA>
-                </DOCUMENT_SPECIFIC_DATA_SET>
-              </DOCUMENT_SPECIFIC_DATA_SETS>
-              <HOUSING_EXPENSES>
-                <HOUSING_EXPENSE>
-                  <HousingExpensePaymentAmount>2367.98</HousingExpensePaymentAmount>
-                  <!--HousingExpensePaymentAmount is Hard Coded to 2367.98-->
-                  <HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
-                  <!--HousingExpenseTimingType is Hard Coded to Proposed-->
-                  <HousingExpenseType>FirstMortgagePrincipalAndInterest</HousingExpenseType>
-                  <!--HousingExpenseType is Hard Coded to FirstMortgagePrincipalAndInterest-->
-                </HOUSING_EXPENSE>
-                <HOUSING_EXPENSE>
-                  <HousingExpensePaymentAmount>300.00</HousingExpensePaymentAmount>
-                  <!--HousingExpensePaymentAmount is Hard Coded to 300.00-->
-                  <HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
-                  <!--HousingExpenseTimingType is Hard Coded to Proposed-->
-                  <HousingExpenseType>HomeownersInsurance</HousingExpenseType>
-                  <!--HousingExpenseType is Hard Coded to HomeownersInsurance-->
-                </HOUSING_EXPENSE>
-                <HOUSING_EXPENSE>
-                  <HousingExpensePaymentAmount>150.00</HousingExpensePaymentAmount>
-                  <!--HousingExpensePaymentAmount is Hard Coded to 150.00-->
-                  <HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
-                  <!--HousingExpenseTimingType is Hard Coded to Proposed-->
-                  <HousingExpenseType>RealEstateTax</HousingExpenseType>
-                  <!--HousingExpenseType is Hard Coded to RealEstateTax-->
-                </HOUSING_EXPENSE>
-              </HOUSING_EXPENSES>
-              <LOAN_DETAIL>
-                <ApplicationReceivedDate>2019-01-06</ApplicationReceivedDate>
-                <!--ApplicationReceivedDate is Hard Coded to 2019-01-06-->
-                <BalloonIndicator>false</BalloonIndicator>
-                <!--BalloonIndicator is Hard Coded to false-->
-                <BorrowerCount>1</BorrowerCount>
-                <!--BorrowerCount is Hard Coded to 1-->
-                <BuydownTemporarySubsidyFundingIndicator>false</BuydownTemporarySubsidyFundingIndicator>
-                <!--BuydownTemporarySubsidyFundingIndicator is Hard Coded to false-->
-                <ConstructionLoanIndicator>false</ConstructionLoanIndicator>
-                <!--ConstructionLoanIndicator is Hard Coded to false-->
-                <ConversionOfContractForDeedIndicator>false</ConversionOfContractForDeedIndicator>
-                <!--ConversionOfContractForDeedIndicator is Hard Coded to false-->
-                <EnergyRelatedImprovementsIndicator>false</EnergyRelatedImprovementsIndicator>
-                <!--EnergyRelatedImprovementsIndicator is Hard Coded to false-->
-                <InterestOnlyIndicator>false</InterestOnlyIndicator>
-                <!--InterestOnlyIndicator is Hard Coded to false-->
-                <NegativeAmortizationIndicator>false</NegativeAmortizationIndicator>
-                <!--NegativeAmortizationIndicator is Hard Coded to false-->
-                <PrepaymentPenaltyIndicator>false</PrepaymentPenaltyIndicator>
-                <!--PrepaymentPenaltyIndicator is Hard Coded to false-->
-                <TotalMortgagedPropertiesCount>1</TotalMortgagedPropertiesCount>
-                <!--TotalMortgagedPropertiesCount is Hard Coded to 1-->
-              </LOAN_DETAIL>
-              <LOAN_IDENTIFIERS>
-                <LOAN_IDENTIFIER>
-                  <LoanIdentifier>6836781</LoanIdentifier>
-                  <LoanIdentifierType>LenderLoan</LoanIdentifierType>
-                </LOAN_IDENTIFIER>
-              </LOAN_IDENTIFIERS>
-              <LOAN_PRODUCT>
-                <LOAN_PRODUCT_DETAIL>
-                  <DiscountPointsTotalAmount>0.00</DiscountPointsTotalAmount>
-                  <!--DiscountPointsTotalAmount is Hard Coded to 0.00-->
-                  <ProductDescription>Non-QM Agency Plus 30 Year Fixed</ProductDescription>
-                  <!--ProductDescription is Hard Coded to Non-QM Agency Plus 30 Year Fixed-->
-                </LOAN_PRODUCT_DETAIL>
-              </LOAN_PRODUCT>
-              <LOAN_STATUSES>
-                <LOAN_STATUS>
-                  <LoanStatusIdentifier>Underwriting</LoanStatusIdentifier>
-                  <!--LoanStatusIdentifier is Hard Coded to Underwriting-->
-                </LOAN_STATUS>
-              </LOAN_STATUSES>
-              <ORIGINATION_SYSTEMS>
-                <ORIGINATION_SYSTEM>
-                  <LoanOriginationSystemName>Name of LOS</LoanOriginationSystemName>
-                  <!--LoanOriginationSystemName is Hard Coded to Name of LOS-->
-                  <LoanOriginationSystemVendorIdentifier>000112</LoanOriginationSystemVendorIdentifier>
-                  <!--LoanOriginationSystemVendorIdentifier is Hard Coded to 000112-->
-                  <LoanOriginationSystemVersionIdentifier>LendingPadVerison</LoanOriginationSystemVersionIdentifier>
-                  <!--LoanOriginationSystemVersionIdentifier is Hard Coded to LendingPadVerison-->
-                </ORIGINATION_SYSTEM>
-              </ORIGINATION_SYSTEMS>
-              <TERMS_OF_LOAN>
-                <BaseLoanAmount>200000.00</BaseLoanAmount>
-                <LienPriorityType>FirstLien</LienPriorityType>
-                <!--LienPriorityType is Hard Coded to FirstLien-->
-                <LoanPurposeType>Refinance</LoanPurposeType>
-                <MortgageType>Conventional</MortgageType>
-                <!--MortgageType is Hard Coded to Conventional-->
-                <NoteRatePercent>7.000</NoteRatePercent>
-              </TERMS_OF_LOAN>
-            </LOAN>
-          </LOANS>
-          <PARTIES>
-            <PARTY SequenceNumber="1" xlink:label="PARTY_1">
-              <INDIVIDUAL>
-                <CONTACT_POINTS>
-                  <CONTACT_POINT>
-                    <CONTACT_POINT_EMAIL>
-                      <ContactPointEmailValue>bobbyloan1@hshhsd.com</ContactPointEmailValue>
-                    </CONTACT_POINT_EMAIL>
-                  </CONTACT_POINT>
-                  <CONTACT_POINT>
-                    <CONTACT_POINT_TELEPHONE>
-                      <ContactPointTelephoneValue>3424324244</ContactPointTelephoneValue>
-                    </CONTACT_POINT_TELEPHONE>
-                    <CONTACT_POINT_DETAIL>
-                      <ContactPointRoleType>Mobile</ContactPointRoleType>
-                    </CONTACT_POINT_DETAIL>
-                  </CONTACT_POINT>
-                  <CONTACT_POINT>
-                    <CONTACT_POINT_TELEPHONE>
-                      <ContactPointTelephoneValue>3243242342</ContactPointTelephoneValue>
-                    </CONTACT_POINT_TELEPHONE>
-                    <CONTACT_POINT_DETAIL>
-                      <ContactPointRoleType>Work</ContactPointRoleType>
-                    </CONTACT_POINT_DETAIL>
-                  </CONTACT_POINT>
-                  <CONTACT_POINT>
-                    <CONTACT_POINT_TELEPHONE>
-                      <ContactPointTelephoneValue>3424234234</ContactPointTelephoneValue>
-                    </CONTACT_POINT_TELEPHONE>
-                    <CONTACT_POINT_DETAIL>
-                      <ContactPointRoleType>Home</ContactPointRoleType>
-                    </CONTACT_POINT_DETAIL>
-                  </CONTACT_POINT>
-                </CONTACT_POINTS>
-                <NAME>
-                  <FirstName>Jane</FirstName>
-                  <LastName>Rodriguez</LastName>
-                </NAME>
-              </INDIVIDUAL>
-              <ADDRESSES>
-                <ADDRESS>
-                  <AddressType>Current</AddressType>
-                  <CityName>currentcity</CityName>
-                  <CountryCode>US</CountryCode>
-                  <StateCode>FL</StateCode>
-                  <StreetName>current address st</StreetName>
-                  <StreetPrimaryNumberText>123</StreetPrimaryNumberText>
-                </ADDRESS>
-                <ADDRESS>
-                  <AddressType>Prior</AddressType>
-                  <CityName>prevcity</CityName>
-                  <CountryCode>US</CountryCode>
-                  <PostalCode>34456</PostalCode>
-                  <StateCode>DE</StateCode>
-                  <StreetName>previous address st</StreetName>
-                  <StreetPrimaryNumberText>234</StreetPrimaryNumberText>
-                </ADDRESS>
-                <ADDRESS>
-                  <AddressType>Mailing</AddressType>
-                  <CityName>san anselmo</CityName>
-                  <CountryCode>US</CountryCode>
-                  <PostalCode>94960</PostalCode>
-                  <StateCode>CA</StateCode>
-                  <StreetName>mailing address st</StreetName>
-                  <StreetPrimaryNumberText>345</StreetPrimaryNumberText>
-                </ADDRESS>
-              </ADDRESSES>
-              <ROLES>
-                <ROLE SequenceNumber="1" xlink:label="BORROWER_1">
-                  <BORROWER>
-                    <BORROWER_DETAIL>
-                      <BorrowerBirthDate>1972-10-06</BorrowerBirthDate>
-                      <BorrowerTotalMortgagedPropertiesCount>0</BorrowerTotalMortgagedPropertiesCount>
-                      <!--BorrowerTotalMortgagedPropertiesCount is Hard Coded to 0-->
-                      <CommunityPropertyStateResidentIndicator>false</CommunityPropertyStateResidentIndicator>
-                      <!--CommunityPropertyStateResidentIndicator is Hard Coded to false-->
-                      <DependentCount>3</DependentCount>
-                      <DomesticRelationshipIndicator>false</DomesticRelationshipIndicator>
-                      <!--DomesticRelationshipIndicator is Hard Coded to false-->
-                      <JointAssetLiabilityReportingType>Jointly</JointAssetLiabilityReportingType>
-                      <!--JointAssetLiabilityReportingType is Hard Coded to Jointly-->
-                      <MaritalStatusType>Married</MaritalStatusType>
-                    </BORROWER_DETAIL>
-                    <CURRENT_INCOME>
-                      <CURRENT_INCOME_ITEMS>
-                        <CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_1">
-                          <CURRENT_INCOME_ITEM_DETAIL>
-                            <CurrentIncomeMonthlyTotalAmount>5000.00</CurrentIncomeMonthlyTotalAmount>
-                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-                            <IncomeType>Base</IncomeType>
-                          </CURRENT_INCOME_ITEM_DETAIL>
-                        </CURRENT_INCOME_ITEM>
-                        <CURRENT_INCOME_ITEM>
-                          <CURRENT_INCOME_ITEM_DETAIL>
-                            <CurrentIncomeMonthlyTotalAmount>125.00</CurrentIncomeMonthlyTotalAmount>
-                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-                            <IncomeType>Bonus</IncomeType>
-                          </CURRENT_INCOME_ITEM_DETAIL>
-                        </CURRENT_INCOME_ITEM>
-                        <CURRENT_INCOME_ITEM>
-                          <CURRENT_INCOME_ITEM_DETAIL>
-                            <CurrentIncomeMonthlyTotalAmount>16</CurrentIncomeMonthlyTotalAmount>
-                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-                            <IncomeType>Other</IncomeType>
-                          </CURRENT_INCOME_ITEM_DETAIL>
-                        </CURRENT_INCOME_ITEM>
-                        <CURRENT_INCOME_ITEM>
-                          <CURRENT_INCOME_ITEM_DETAIL>
-                            <CurrentIncomeMonthlyTotalAmount>208.00</CurrentIncomeMonthlyTotalAmount>
-                            <EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-                            <IncomeType>Overtime</IncomeType>
-                          </CURRENT_INCOME_ITEM_DETAIL>
-                        </CURRENT_INCOME_ITEM>
-                      </CURRENT_INCOME_ITEMS>
-                    </CURRENT_INCOME>
-                    <DECLARATION>
-                      <DECLARATION_DETAIL>
-                        <BankruptcyIndicator>false</BankruptcyIndicator>
-                        <CitizenshipResidencyType>USCitizen</CitizenshipResidencyType>
-                        <FHASecondaryResidenceIndicator>false</FHASecondaryResidenceIndicator>
-                        <!--FHASecondaryResidenceIndicator is Hard Coded to false-->
-                        <HomeownerPastThreeYearsType>No</HomeownerPastThreeYearsType>
-                        <!--HomeownerPastThreeYearsType is Hard Coded to No-->
-                        <IntentToOccupyType>Yes</IntentToOccupyType>
-                        <OutstandingJudgmentsIndicator>false</OutstandingJudgmentsIndicator>
-                        <PartyToLawsuitIndicator>false</PartyToLawsuitIndicator>
-                        <PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
-                        <PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
-                        <!--PriorPropertyDeedInLieuConveyedIndicator is Hard Coded to false-->
-                        <PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
-                        <!--PriorPropertyForeclosureCompletedIndicator is Hard Coded to false-->
-                        <PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
-                        <!--PriorPropertyShortSaleCompletedIndicator is Hard Coded to false-->
-                        <!--PriorPropertyTitleType is Hard Coded to -->
-                        <!--PriorPropertyUsageType is Hard Coded to -->
-                        <PropertyProposedCleanEnergyLienIndicator>false</PropertyProposedCleanEnergyLienIndicator>
-                        <!--PropertyProposedCleanEnergyLienIndicator is Hard Coded to false-->
-                        <UndisclosedBorrowedFundsAmount>0</UndisclosedBorrowedFundsAmount>
-                        <!--UndisclosedBorrowedFundsAmount is Hard Coded to 0-->
-                        <UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
-                        <!--UndisclosedBorrowedFundsIndicator is Hard Coded to false-->
-                        <UndisclosedComakerOfNoteIndicator>false</UndisclosedComakerOfNoteIndicator>
-                        <!--UndisclosedComakerOfNoteIndicator is Hard Coded to false-->
-                        <UndisclosedCreditApplicationIndicator>false</UndisclosedCreditApplicationIndicator>
-                        <!--UndisclosedCreditApplicationIndicator is Hard Coded to false-->
-                        <UndisclosedMortgageApplicationIndicator>false</UndisclosedMortgageApplicationIndicator>
-                        <!--UndisclosedMortgageApplicationIndicator is Hard Coded to false-->
-                        <EXTENSION>
-                          <OTHER>
-                            <ULAD:DECLARATION_DETAIL_EXTENSION>
-                              <ULAD:SpecialBorrowerSellerRelationshipIndicator>false</ULAD:SpecialBorrowerSellerRelationshipIndicator>
-                              <!--ULAD:SpecialBorrowerSellerRelationshipIndicator is Hard Coded to false-->
-                            </ULAD:DECLARATION_DETAIL_EXTENSION>
-                          </OTHER>
-                        </EXTENSION>
-                      </DECLARATION_DETAIL>
-                    </DECLARATION>
-                    <EMPLOYERS>
-                      <EMPLOYER Sequence="1" xlink:label="EMPLOYER_1">
-                        <ADDRESS>
-                          <AddressLineText>123 employer st, miami fl 33333</AddressLineText>
-                          <!--AddressUnitIdentifier is Hard Coded to -->
-                          <!--CityName is Hard Coded to -->
-                          <CountryCode>US</CountryCode>
-                          <!--PostalCode is Hard Coded to -->
-                          <!--StateCode is Hard Coded to -->
-                        </ADDRESS>
-                        <LEGAL_ENTITY>
-                          <CONTACTS>
-                            <CONTACT>
-                              <CONTACT_POINTS>
-                                <CONTACT_POINT>
-                                  <CONTACT_POINT_TELEPHONE>
-                                    <ContactPointTelephoneValue>123456789</ContactPointTelephoneValue>
-                                    <!--ContactPointTelephoneValue is Hard Coded to 123456789-->
-                                  </CONTACT_POINT_TELEPHONE>
-                                  <CONTACT_POINT_DETAIL>
-                                    <ContactPointRoleType>Mobile</ContactPointRoleType>
-                                    <!--ContactPointRoleType is Hard Coded to Mobile-->
-                                  </CONTACT_POINT_DETAIL>
-                                </CONTACT_POINT>
-                              </CONTACT_POINTS>
-                            </CONTACT>
-                          </CONTACTS>
-                          <LEGAL_ENTITY_DETAIL>
-                            <FullName>Google</FullName>
-                            <!--FullName is Hard Coded to Google-->
-                          </LEGAL_ENTITY_DETAIL>
-                        </LEGAL_ENTITY>
-                        <ADDRESS>
-                          <AddressLineText>Google</AddressLineText>
-                          <!--AddressLineText is Hard Coded to Google-->
-                          <CityName>Burbank</CityName>
-                          <!--CityName is Hard Coded to Burbank-->
-                          <PostalCode>915021234</PostalCode>
-                          <!--PostalCode is Hard Coded to 915021234-->
-                          <StateCode>CA</StateCode>
-                          <!--StateCode is Hard Coded to CA-->
-                        </ADDRESS>
-                        <EMPLOYMENT>
-                          <EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
-                          <EmploymentClassificationType>Primary</EmploymentClassificationType>
-                          <EmploymentPositionDescription>programmer</EmploymentPositionDescription>
-                          <EmploymentStartDate>2020-01-01</EmploymentStartDate>
-                          <EmploymentStatusType>Current</EmploymentStatusType>
-                          <EmploymentTimeInLineOfWorkMonthsCount>12</EmploymentTimeInLineOfWorkMonthsCount>
-                          <SpecialBorrowerEmployerRelationshipIndicator>false</SpecialBorrowerEmployerRelationshipIndicator>
-                        </EMPLOYMENT>
-                      </EMPLOYER>
-                    </EMPLOYERS>
-                    <GOVERNMENT_MONITORING>
-                      <GOVERNMENT_MONITORING_DETAIL>
-                        <HMDAEthnicityRefusalIndicator>false</HMDAEthnicityRefusalIndicator>
-                        <!--HMDAEthnicityRefusalIndicator is Hard Coded to false-->
-                        <HMDAGenderRefusalIndicator>false</HMDAGenderRefusalIndicator>
-                        <!--HMDAGenderRefusalIndicator is Hard Coded to false-->
-                        <HMDARaceRefusalIndicator>false</HMDARaceRefusalIndicator>
-                        <!--HMDARaceRefusalIndicator is Hard Coded to false-->
-                        <EXTENSION>
-                          <OTHER>
-                            <ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
-                              <ULAD:ApplicationTakenMethodType>FaceToFace</ULAD:ApplicationTakenMethodType>
-                              <!--ULAD:ApplicationTakenMethodType is Hard Coded to FaceToFace-->
-                              <ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
-                              <!--ULAD:HMDAGenderType is Hard Coded to Male-->
-                            </ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
-                          </OTHER>
-                        </EXTENSION>
-                      </GOVERNMENT_MONITORING_DETAIL>
-                      <HMDA_ETHNICITY_ORIGINS>
-                        <HMDA_ETHNICITY_ORIGIN>
-                          <HMDAEthnicityOriginType>Other</HMDAEthnicityOriginType>
-                        </HMDA_ETHNICITY_ORIGIN>
-                      </HMDA_ETHNICITY_ORIGINS>
-                      <HMDA_RACES>
-                        <HMDA_RACE>
-                          <HMDA_RACE_DETAIL>
-                            <HMDARaceType>Asian</HMDARaceType>
-                          </HMDA_RACE_DETAIL>
-                        </HMDA_RACE>
-                      </HMDA_RACES>
-                      <EXTENSION>
-                        <OTHER>
-                          <ULAD:GOVERNMENT_MONITORING_EXTENSION>
-                            <ULAD:HMDA_ETHNICITIES>
-                              <ULAD:HMDA_ETHNICITY>
-                                <ULAD:HMDAEthnicityType>HispanicOrLatino</ULAD:HMDAEthnicityType>
-                              </ULAD:HMDA_ETHNICITY>
-                            </ULAD:HMDA_ETHNICITIES>
-                          </ULAD:GOVERNMENT_MONITORING_EXTENSION>
-                        </OTHER>
-                      </EXTENSION>
-                    </GOVERNMENT_MONITORING>
-                    <RESIDENCES>
-                      <RESIDENCE>
-                        <ADDRESS>
-                          <AddressLineText>10655 Birch St</AddressLineText>
-                          <CityName>Burbank</CityName>
-                          <PostalCode>915021234</PostalCode>
-                          <StateCode>CA</StateCode>
-                        </ADDRESS>
-                        <LANDLORD>
-                          <LANDLORD_DETAIL>
-                            <MonthlyRentAmount>3500.00</MonthlyRentAmount>
-                          </LANDLORD_DETAIL>
-                        </LANDLORD>
-                        <RESIDENCE_DETAIL>
-                          <BorrowerResidencyBasisType>Rent</BorrowerResidencyBasisType>
-                          <BorrowerResidencyDurationMonthsCount>43</BorrowerResidencyDurationMonthsCount>
-                          <BorrowerResidencyType>Current</BorrowerResidencyType>
-                        </RESIDENCE_DETAIL>
-                      </RESIDENCE>
-                    </RESIDENCES>
-                  </BORROWER>
-                  <ROLE_DETAIL>
-                    <PartyRoleType>Borrower</PartyRoleType>
-                  </ROLE_DETAIL>
-                </ROLE>
-              </ROLES>
-              <TAXPAYER_IDENTIFIERS>
-                <TAXPAYER_IDENTIFIER>
-                  <TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
-                  <TaxpayerIdentifierValue>593125444</TaxpayerIdentifierValue>
-                </TAXPAYER_IDENTIFIER>
-              </TAXPAYER_IDENTIFIERS>
-            </PARTY>
-            <PARTY SequenceNumber="2" xlink:label="PARTY_2">
-              <LEGAL_ENTITY>
-                <LEGAL_ENTITY_DETAIL>
-                  <FullName>ABC Mortgage</FullName>
-                </LEGAL_ENTITY_DETAIL>
-              </LEGAL_ENTITY>
-              <ADDRESSES>
-                <ADDRESS>
-                  <AddressLineText>412 H St, NW</AddressLineText>
-                  <CityName>Washington</CityName>
-                  <PostalCode>200121234</PostalCode>
-                  <StateCode>DC</StateCode>
-                </ADDRESS>
-              </ADDRESSES>
-              <ROLES>
-                <ROLE>
-                  <LICENSES>
-                    <LICENSE>
-                      <LICENSE_DETAIL>
-                        <LicenseAuthorityLevelType>Private</LicenseAuthorityLevelType>
-                        <!--LicenseAuthorityLevelType is Hard Coded to Private-->
-                        <LicenseIdentifier>123456789111</LicenseIdentifier>
-                      </LICENSE_DETAIL>
-                    </LICENSE>
-                  </LICENSES>
-                  <ROLE_DETAIL>
-                    <PartyRoleType>LoanOriginationCompany</PartyRoleType>
-                  </ROLE_DETAIL>
-                </ROLE>
-              </ROLES>
-            </PARTY>
-          </PARTIES>
-          <SERVICES>
-            <SERVICE SequenceNumber="1" xlink:label="SERVICE_1">
-              <EXTENSION>
-                <OTHER>
-                  <LPA:SERVICE_EXTENSION>
-                    <LPA:SERVICE_DETAIL>
-                      <LPA:ServiceType>AutomatedUnderwritingSystem</LPA:ServiceType>
-                    </LPA:SERVICE_DETAIL>
-                  </LPA:SERVICE_EXTENSION>
-                </OTHER>
-              </EXTENSION>
-            </SERVICE>
-            <SERVICE>
-              <EXTENSION>
-                <OTHER>
-                  <LPA:SERVICE_EXTENSION>
-                    <LPA:DOCUMENT_PREPARATION>
-                      <LPA:DOCUMENT_PREPARATION_RESPONSES>
-                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
-                          <LPA:RequestedDocumentType>DocCheckList</LPA:RequestedDocumentType>
-                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
-                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
-                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
-                          <LPA:RequestedDocumentType>Errors</LPA:RequestedDocumentType>
-                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
-                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
-                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
-                          <LPA:RequestedDocumentType>FullFeedback</LPA:RequestedDocumentType>
-                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
-                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
-                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
-                          <LPA:RequestedDocumentType>HVE</LPA:RequestedDocumentType>
-                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
-                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
-                      </LPA:DOCUMENT_PREPARATION_RESPONSES>
-                    </LPA:DOCUMENT_PREPARATION>
-                    <LPA:SERVICE_DETAIL>
-                      <LPA:ServiceType>DocumentPreparation</LPA:ServiceType>
-                    </LPA:SERVICE_DETAIL>
-                  </LPA:SERVICE_EXTENSION>
-                </OTHER>
-              </EXTENSION>
-            </SERVICE>
-          </SERVICES>
-        </DEAL>
-      </DEALS>
-    </DEAL_SET>
-  </DEAL_SETS>
+	<ABOUT_VERSIONS>
+		<ABOUT_VERSION>
+			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
+			<CreatedDatetime>2021-02-04T01:13:10Z</CreatedDatetime>
+			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
+		</ABOUT_VERSION>
+	</ABOUT_VERSIONS>
+	<DEAL_SETS>
+		<DEAL_SET>
+			<DEALS>
+				<DEAL>
+					<ABOUT_VERSIONS>
+						<ABOUT_VERSION>
+							<DataVersionName>LPA_REQUEST</DataVersionName>
+						</ABOUT_VERSION>
+					</ABOUT_VERSIONS>
+					<ASSETS>
+						<ASSET SequenceNumber="1" xlink:label="ASSET_1">
+							<ASSET_DETAIL>
+								<AssetType>RealEstateOwned</AssetType>
+							</ASSET_DETAIL>
+							<OWNED_PROPERTY>
+								<OWNED_PROPERTY_DETAIL>
+									<OwnedPropertyDispositionStatusType>Retain</OwnedPropertyDispositionStatusType>
+									<OwnedPropertyLienUPBAmount>0.00</OwnedPropertyLienUPBAmount>
+									<OwnedPropertyMaintenanceExpenseAmount>918.00</OwnedPropertyMaintenanceExpenseAmount>
+									<OwnedPropertyRentalIncomeGrossAmount>2983.00</OwnedPropertyRentalIncomeGrossAmount>
+									<OwnedPropertyRentalIncomeNetAmount>919.00</OwnedPropertyRentalIncomeNetAmount>
+									<OwnedPropertySubjectIndicator>false</OwnedPropertySubjectIndicator>
+								</OWNED_PROPERTY_DETAIL>
+								<PROPERTY>
+									<ADDRESS>
+										<AddressLineText>829 SW 91 ST</AddressLineText>
+										<CityName>Miami</CityName>
+										<CountryCode>US</CountryCode>
+										<PostalCode>39398</PostalCode>
+										<StateCode>FL</StateCode>
+									</ADDRESS>
+									<PROPERTY_DETAIL>
+										<PropertyCurrentUsageType>PrimaryResidence</PropertyCurrentUsageType>
+										<PropertyEstimatedValueAmount>2000.00</PropertyEstimatedValueAmount>
+										<PropertyUsageType>PrimaryResidence</PropertyUsageType>
+									</PROPERTY_DETAIL>
+									<PROPERTY_VALUATIONS>
+										<PROPERTY_VALUATION>
+											<PROPERTY_VALUATION_DETAIL>
+												<PropertyValuationAmount>2000.00</PropertyValuationAmount>
+											</PROPERTY_VALUATION_DETAIL>
+										</PROPERTY_VALUATION>
+									</PROPERTY_VALUATIONS>
+								</PROPERTY>
+							</OWNED_PROPERTY>
+						</ASSET>
+					</ASSETS>
+					<COLLATERALS>
+						<COLLATERAL SequenceNumber="1" xlink:label="COLLATERAL_1">
+							<SUBJECT_PROPERTY>
+								<ADDRESS>
+									<AddressLineText>9382 sw 18 st</AddressLineText>
+									<CityName>Miami</CityName>
+									<CountryCode>US</CountryCode>
+									<CountyName>Apache</CountyName>
+									<PostalCode>54355</PostalCode>
+									<StateCode>AZ</StateCode>
+								</ADDRESS>
+								<PROPERTY_DETAIL>
+									<AttachmentType>Attached</AttachmentType>
+									<CommunityPropertyStateIndicator>false</CommunityPropertyStateIndicator>
+									<ConstructionMethodType>SiteBuilt</ConstructionMethodType>
+									<FinancedUnitCount>1</FinancedUnitCount>
+									<PropertyEstateType>FeeSimple</PropertyEstateType>
+									<PropertyEstimatedValueAmount>220900.00</PropertyEstimatedValueAmount>
+									<PropertyExistingCleanEnergyLienIndicator>false</PropertyExistingCleanEnergyLienIndicator>
+									<PropertyInProjectIndicator>false</PropertyInProjectIndicator>
+									<PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
+									<PropertyStructureBuiltYear>1965</PropertyStructureBuiltYear>
+									<PropertyUsageType>PrimaryResidence</PropertyUsageType>
+									<PUDIndicator>false</PUDIndicator>
+									<RentalEstimatedNetMonthlyRentAmount>0</RentalEstimatedNetMonthlyRentAmount>
+								</PROPERTY_DETAIL>
+								<PROPERTY_VALUATIONS>
+									<PROPERTY_VALUATION>
+										<PROPERTY_VALUATION_DETAIL>
+											<PropertyValuationAmount>0.00</PropertyValuationAmount>
+										</PROPERTY_VALUATION_DETAIL>
+									</PROPERTY_VALUATION>
+								</PROPERTY_VALUATIONS>
+								<SALES_CONTRACTS>
+									<SALES_CONTRACT>
+										<SALES_CONTRACT_DETAIL>
+											<SalesContractAmount>0.00</SalesContractAmount>
+										</SALES_CONTRACT_DETAIL>
+									</SALES_CONTRACT>
+								</SALES_CONTRACTS>
+							</SUBJECT_PROPERTY>
+						</COLLATERAL>
+					</COLLATERALS>
+					<LIABILITIES>
+						<LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>9293</LiabilityAccountIdentifier>
+								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
+								<LiabilityMonthlyPaymentAmount>321.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+								<LiabilityRemainingTermMonthsCount>93</LiabilityRemainingTermMonthsCount>
+								<LiabilityType>Other</LiabilityType>
+								<LiabilityTypeOtherDescription>testing</LiabilityTypeOtherDescription>
+								<LiabilityUnpaidBalanceAmount>9329.00</LiabilityUnpaidBalanceAmount>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>ljka</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY SequenceNumber="2" xlink:label="LIABILITY_2">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>90320</LiabilityAccountIdentifier>
+								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
+								<LiabilityMonthlyPaymentAmount>9393.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+								<LiabilityRemainingTermMonthsCount>93</LiabilityRemainingTermMonthsCount>
+								<LiabilityType>Other</LiabilityType>
+								<LiabilityTypeOtherDescription>testing2</LiabilityTypeOtherDescription>
+								<LiabilityUnpaidBalanceAmount>290.00</LiabilityUnpaidBalanceAmount>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>mdsak</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>alimoney123</LiabilityAccountIdentifier>
+								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
+								<LiabilityMonthlyPaymentAmount>1100.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
+								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
+								<LiabilityType>Revolving</LiabilityType>
+								<LiabilityTypeOtherDescription>Alimony</LiabilityTypeOtherDescription>
+								<LiabilityUnpaidBalanceAmount>12000.00</LiabilityUnpaidBalanceAmount>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>alimonycompany</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY SequenceNumber="2" xlink:label="LIABILITY_2">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>ccardamex6345</LiabilityAccountIdentifier>
+								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
+								<LiabilityMonthlyPaymentAmount>900.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
+								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
+								<LiabilityType>Revolving</LiabilityType>
+								<LiabilityTypeOtherDescription>Credit card</LiabilityTypeOtherDescription>
+								<LiabilityUnpaidBalanceAmount>11000.00</LiabilityUnpaidBalanceAmount>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>creditcardAmex</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY SequenceNumber="3" xlink:label="LIABILITY_3">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>324324</LiabilityAccountIdentifier>
+								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
+								<LiabilityMonthlyPaymentAmount>23423.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
+								<LiabilityType>Installment</LiabilityType>
+								<LiabilityTypeOtherDescription>Medical</LiabilityTypeOtherDescription>
+								<LiabilityUnpaidBalanceAmount>24234.00</LiabilityUnpaidBalanceAmount>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>testing</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY SequenceNumber="4" xlink:label="LIABILITY_4">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>43242</LiabilityAccountIdentifier>
+								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
+								<LiabilityMonthlyPaymentAmount>432.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
+								<LiabilityType>Revolving</LiabilityType>
+								<LiabilityTypeOtherDescription>Child Care</LiabilityTypeOtherDescription>
+								<LiabilityUnpaidBalanceAmount>32.00</LiabilityUnpaidBalanceAmount>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>child test</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY SequenceNumber="5" xlink:label="LIABILITY_5">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>4242</LiabilityAccountIdentifier>
+								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
+								<LiabilityMonthlyPaymentAmount>432423.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+								<LiabilityRemainingTermMonthsCount></LiabilityRemainingTermMonthsCount>
+								<LiabilityType>Installment</LiabilityType>
+								<LiabilityTypeOtherDescription>Student Loan</LiabilityTypeOtherDescription>
+								<LiabilityUnpaidBalanceAmount>432.00</LiabilityUnpaidBalanceAmount>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>chase</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+					</LIABILITIES>
+					<LOANS>
+						<LOAN LoanRoleType="SubjectLoan" xlink:label="LOAN_1">
+							<AMORTIZATION>
+								<AMORTIZATION_RULE>
+									<AmortizationType>Fixed</AmortizationType>
+									<LoanAmortizationPeriodCount>360</LoanAmortizationPeriodCount>
+									<LoanAmortizationPeriodType>Month</LoanAmortizationPeriodType>
+								</AMORTIZATION_RULE>
+							</AMORTIZATION>
+							<CLOSING_INFORMATION>
+								<CLOSING_ADJUSTMENT_ITEMS>
+									<CLOSING_ADJUSTMENT_ITEM>
+										<CLOSING_ADJUSTMENT_ITEM_DETAIL>
+											<ClosingAdjustmentItemAmount>1000</ClosingAdjustmentItemAmount>
+											<ClosingAdjustmentItemType>LenderCredit</ClosingAdjustmentItemType>
+										</CLOSING_ADJUSTMENT_ITEM_DETAIL>
+									</CLOSING_ADJUSTMENT_ITEM>
+								</CLOSING_ADJUSTMENT_ITEMS>
+								<CLOSING_INFORMATION_DETAIL>
+									<CashFromBorrowerAtClosingAmount>28800.00</CashFromBorrowerAtClosingAmount>
+								</CLOSING_INFORMATION_DETAIL>
+							</CLOSING_INFORMATION>
+							<CONSTRUCTION></CONSTRUCTION>
+							<DOCUMENT_SPECIFIC_DATA_SETS>
+								<DOCUMENT_SPECIFIC_DATA_SET>
+									<URLA>
+										<URLA_DETAIL>
+											<AlterationsImprovementsAndRepairsAmount>0.00</AlterationsImprovementsAndRepairsAmount>
+											<ApplicationSignedByLoanOriginatorDate>2019-01-07</ApplicationSignedByLoanOriginatorDate>
+											<EstimatedClosingCostsAmount>0.00</EstimatedClosingCostsAmount>
+											<MIAndFundingFeeFinancedAmount>0.00</MIAndFundingFeeFinancedAmount>
+											<MIAndFundingFeeTotalAmount>0.00</MIAndFundingFeeTotalAmount>
+											<PrepaidItemsEstimatedAmount>0.00</PrepaidItemsEstimatedAmount>
+											<RefinanceIncludingDebtsToBePaidOffAmount>0.00</RefinanceIncludingDebtsToBePaidOffAmount>
+										</URLA_DETAIL>
+										<URLA_TOTAL>
+											<EXTENSION>
+												<OTHER>
+													<ULAD:URLA_TOTAL_EXTENSION>
+														<ULAD:URLATotalSellerCreditsAmount>4750.00</ULAD:URLATotalSellerCreditsAmount>
+													</ULAD:URLA_TOTAL_EXTENSION>
+												</OTHER>
+											</EXTENSION>
+										</URLA_TOTAL>
+									</URLA>
+								</DOCUMENT_SPECIFIC_DATA_SET>
+							</DOCUMENT_SPECIFIC_DATA_SETS>
+							<HOUSING_EXPENSES>
+								<HOUSING_EXPENSE>
+									<HousingExpensePaymentAmount>2367.98</HousingExpensePaymentAmount>
+									<HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+									<HousingExpenseType>FirstMortgagePrincipalAndInterest</HousingExpenseType>
+								</HOUSING_EXPENSE>
+								<HOUSING_EXPENSE>
+									<HousingExpensePaymentAmount>300.00</HousingExpensePaymentAmount>
+									<HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+									<HousingExpenseType>HomeownersInsurance</HousingExpenseType>
+								</HOUSING_EXPENSE>
+								<HOUSING_EXPENSE>
+									<HousingExpensePaymentAmount>150.00</HousingExpensePaymentAmount>
+									<HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+									<HousingExpenseType>RealEstateTax</HousingExpenseType>
+								</HOUSING_EXPENSE>
+							</HOUSING_EXPENSES>
+							<LOAN_DETAIL>
+								<ApplicationReceivedDate>2019-01-06</ApplicationReceivedDate>
+								<BalloonIndicator>false</BalloonIndicator>
+								<BorrowerCount>1</BorrowerCount>
+								<BuydownTemporarySubsidyFundingIndicator>false</BuydownTemporarySubsidyFundingIndicator>
+								<ConstructionLoanIndicator>false</ConstructionLoanIndicator>
+								<ConversionOfContractForDeedIndicator>false</ConversionOfContractForDeedIndicator>
+								<EnergyRelatedImprovementsIndicator>false</EnergyRelatedImprovementsIndicator>
+								<InterestOnlyIndicator>false</InterestOnlyIndicator>
+								<NegativeAmortizationIndicator>false</NegativeAmortizationIndicator>
+								<PrepaymentPenaltyIndicator>false</PrepaymentPenaltyIndicator>
+								<TotalMortgagedPropertiesCount>1</TotalMortgagedPropertiesCount>
+							</LOAN_DETAIL>
+							<LOAN_IDENTIFIERS>
+								<LOAN_IDENTIFIER>
+									<LoanIdentifier>6836781</LoanIdentifier>
+									<LoanIdentifierType>LenderLoan</LoanIdentifierType>
+								</LOAN_IDENTIFIER>
+							</LOAN_IDENTIFIERS>
+							<LOAN_PRODUCT>
+								<LOAN_PRODUCT_DETAIL>
+									<DiscountPointsTotalAmount>0.00</DiscountPointsTotalAmount>
+									<ProductDescription>Non-QM Agency Plus 30 Year Fixed</ProductDescription>
+								</LOAN_PRODUCT_DETAIL>
+							</LOAN_PRODUCT>
+							<LOAN_STATUSES>
+								<LOAN_STATUS>
+									<LoanStatusIdentifier>Underwriting</LoanStatusIdentifier>
+								</LOAN_STATUS>
+							</LOAN_STATUSES>
+							<ORIGINATION_SYSTEMS>
+								<ORIGINATION_SYSTEM>
+									<LoanOriginationSystemName>Name of LOS</LoanOriginationSystemName>
+									<LoanOriginationSystemVendorIdentifier>000112</LoanOriginationSystemVendorIdentifier>
+									<LoanOriginationSystemVersionIdentifier>LendingPadVerison</LoanOriginationSystemVersionIdentifier>
+								</ORIGINATION_SYSTEM>
+							</ORIGINATION_SYSTEMS>
+							<PURCHASE_CREDITS></PURCHASE_CREDITS>
+							<QUALIFICATION></QUALIFICATION>
+							<TERMS_OF_LOAN>
+								<BaseLoanAmount>200000.00</BaseLoanAmount>
+								<LienPriorityType>FirstLien</LienPriorityType>
+								<LoanPurposeType>Refinance</LoanPurposeType>
+								<MortgageType>Conventional</MortgageType>
+								<NoteRatePercent>7.00</NoteRatePercent>
+							</TERMS_OF_LOAN>
+						</LOAN>
+					</LOANS>
+					<PARTIES>
+						<PARTY SequenceNumber="1" xlink:label="PARTY_1">
+							<INDIVIDUAL>
+								<CONTACT_POINTS>
+									<CONTACT_POINT>
+										<CONTACT_POINT_EMAIL>
+											<ContactPointEmailValue>bobbyloan1@hshhsd.com</ContactPointEmailValue>
+										</CONTACT_POINT_EMAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>3424324244</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Mobile</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>3243242342</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Work</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>3424234234</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Home</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+								</CONTACT_POINTS>
+								<NAME>
+									<FirstName>Jane</FirstName>
+									<LastName>Rodriguez</LastName>
+								</NAME>
+							</INDIVIDUAL>
+							<ADDRESSES>
+								<ADDRESS>
+									<AddressType>Current</AddressType>
+									<CityName>currentcity</CityName>
+									<CountryCode>US</CountryCode>
+									<PostalCode></PostalCode>
+									<StateCode>FL</StateCode>
+									<StreetName>current address st</StreetName>
+									<StreetPrimaryNumberText>123</StreetPrimaryNumberText>
+								</ADDRESS>
+								<ADDRESS>
+									<AddressType>Prior</AddressType>
+									<CityName>prevcity</CityName>
+									<CountryCode>US</CountryCode>
+									<PostalCode>34456</PostalCode>
+									<StateCode>DE</StateCode>
+									<StreetName>previous address st</StreetName>
+									<StreetPrimaryNumberText>234</StreetPrimaryNumberText>
+								</ADDRESS>
+								<ADDRESS>
+									<AddressType>Mailing</AddressType>
+									<AddressUnitIdentifier></AddressUnitIdentifier>
+									<CityName>san anselmo</CityName>
+									<CountryCode>US</CountryCode>
+									<PostalCode>94960</PostalCode>
+									<StateCode>CA</StateCode>
+									<StreetName>mailing address st</StreetName>
+									<StreetPrimaryNumberText>345</StreetPrimaryNumberText>
+								</ADDRESS>
+							</ADDRESSES>
+							<ROLES>
+								<ROLE SequenceNumber="1" xlink:label="BORROWER_1">
+									<BORROWER>
+										<BORROWER_DETAIL>
+											<BorrowerBirthDate>1972-10-06</BorrowerBirthDate>
+											<BorrowerTotalMortgagedPropertiesCount>0</BorrowerTotalMortgagedPropertiesCount>
+											<CommunityPropertyStateResidentIndicator>false</CommunityPropertyStateResidentIndicator>
+											<DependentCount>3</DependentCount>
+											<DomesticRelationshipIndicator>false</DomesticRelationshipIndicator>
+											<JointAssetLiabilityReportingType>Jointly</JointAssetLiabilityReportingType>
+											<MaritalStatusType>Married</MaritalStatusType>
+										</BORROWER_DETAIL>
+										<CURRENT_INCOME>
+											<CURRENT_INCOME_ITEMS>
+												<CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_1">
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>5000.00</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Base</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+												<CURRENT_INCOME_ITEM>
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>125.00</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Bonus</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+												<CURRENT_INCOME_ITEM>
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>16</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Other</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+												<CURRENT_INCOME_ITEM>
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>208.00</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Overtime</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+											</CURRENT_INCOME_ITEMS>
+										</CURRENT_INCOME>
+										<DECLARATION>
+											<DECLARATION_DETAIL>
+												<BankruptcyIndicator>false</BankruptcyIndicator>
+												<CitizenshipResidencyType>USCitizen</CitizenshipResidencyType>
+												<FHASecondaryResidenceIndicator>false</FHASecondaryResidenceIndicator>
+												<HomeownerPastThreeYearsType>No</HomeownerPastThreeYearsType>
+												<IntentToOccupyType>Yes</IntentToOccupyType>
+												<OutstandingJudgmentsIndicator>false</OutstandingJudgmentsIndicator>
+												<PartyToLawsuitIndicator>false</PartyToLawsuitIndicator>
+												<PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
+												<PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
+												<PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
+												<PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
+												<PriorPropertyTitleType></PriorPropertyTitleType>
+												<PriorPropertyUsageType></PriorPropertyUsageType>
+												<PropertyProposedCleanEnergyLienIndicator>false</PropertyProposedCleanEnergyLienIndicator>
+												<UndisclosedBorrowedFundsAmount>0</UndisclosedBorrowedFundsAmount>
+												<UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
+												<UndisclosedComakerOfNoteIndicator>false</UndisclosedComakerOfNoteIndicator>
+												<UndisclosedCreditApplicationIndicator>false</UndisclosedCreditApplicationIndicator>
+												<UndisclosedMortgageApplicationIndicator>false</UndisclosedMortgageApplicationIndicator>
+												<EXTENSION>
+													<OTHER>
+														<ULAD:DECLARATION_DETAIL_EXTENSION>
+															<ULAD:SpecialBorrowerSellerRelationshipIndicator>false</ULAD:SpecialBorrowerSellerRelationshipIndicator>
+														</ULAD:DECLARATION_DETAIL_EXTENSION>
+													</OTHER>
+												</EXTENSION>
+											</DECLARATION_DETAIL>
+											<DECLARATION_EXPLANATIONS></DECLARATION_EXPLANATIONS>
+										</DECLARATION>
+										<EMPLOYERS>
+											<EMPLOYER SequenceNumber="1" xlink:label="EMPLOYER_1">
+												<ADDRESS>
+													<AddressLineText>123 employer st, miami fl 33333</AddressLineText>
+													<AddressUnitIdentifier></AddressUnitIdentifier>
+													<CityName></CityName>
+													<CountryCode>US</CountryCode>
+													<PostalCode></PostalCode>
+													<StateCode></StateCode>
+												</ADDRESS>
+												<LEGAL_ENTITY>
+													<CONTACTS>
+														<CONTACT>
+															<CONTACT_POINTS>
+																<CONTACT_POINT>
+																	<CONTACT_POINT_TELEPHONE>
+																		<ContactPointTelephoneValue>123456789</ContactPointTelephoneValue>
+																	</CONTACT_POINT_TELEPHONE>
+																	<CONTACT_POINT_DETAIL>
+																		<ContactPointRoleType>Mobile</ContactPointRoleType>
+																	</CONTACT_POINT_DETAIL>
+																</CONTACT_POINT>
+															</CONTACT_POINTS>
+														</CONTACT>
+													</CONTACTS>
+													<LEGAL_ENTITY_DETAIL>
+														<FullName>Google</FullName>
+													</LEGAL_ENTITY_DETAIL>
+												</LEGAL_ENTITY>
+												<ADDRESS>
+													<AddressLineText>Google</AddressLineText>
+													<CityName>Burbank</CityName>
+													<PostalCode>915021234</PostalCode>
+													<StateCode>CA</StateCode>
+												</ADDRESS>
+												<EMPLOYMENT>
+													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
+													<EmploymentClassificationType>Primary</EmploymentClassificationType>
+													<EmploymentMonthlyIncomeAmount></EmploymentMonthlyIncomeAmount>
+													<EmploymentPositionDescription>programmer</EmploymentPositionDescription>
+													<EmploymentStartDate>2020-01-01</EmploymentStartDate>
+													<EmploymentStatusType>Current</EmploymentStatusType>
+													<EmploymentTimeInLineOfWorkMonthsCount>12</EmploymentTimeInLineOfWorkMonthsCount>
+													<OwnershipInterestType></OwnershipInterestType>
+													<SpecialBorrowerEmployerRelationshipIndicator>false</SpecialBorrowerEmployerRelationshipIndicator>
+												</EMPLOYMENT>
+											</EMPLOYER>
+										</EMPLOYERS>
+										<GOVERNMENT_MONITORING>
+											<GOVERNMENT_MONITORING_DETAIL>
+												<HMDAEthnicityRefusalIndicator>false</HMDAEthnicityRefusalIndicator>
+												<HMDAGenderRefusalIndicator>false</HMDAGenderRefusalIndicator>
+												<HMDARaceRefusalIndicator>false</HMDARaceRefusalIndicator>
+												<EXTENSION>
+													<OTHER>
+														<ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+															<ULAD:ApplicationTakenMethodType>FaceToFace</ULAD:ApplicationTakenMethodType>
+															<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
+														</ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+													</OTHER>
+												</EXTENSION>
+											</GOVERNMENT_MONITORING_DETAIL>
+											<HMDA_ETHNICITY_ORIGINS>
+												<HMDA_ETHNICITY_ORIGIN>
+													<HMDAEthnicityOriginType>Other</HMDAEthnicityOriginType>
+													<HMDAEthnicityOriginTypeOtherDescription></HMDAEthnicityOriginTypeOtherDescription>
+												</HMDA_ETHNICITY_ORIGIN>
+											</HMDA_ETHNICITY_ORIGINS>
+											<HMDA_RACES>
+												<HMDA_RACE>
+													<HMDA_RACE_DETAIL>
+														<HMDARaceType>Asian</HMDARaceType>
+													</HMDA_RACE_DETAIL>
+												</HMDA_RACE>
+											</HMDA_RACES>
+											<EXTENSION>
+												<OTHER>
+													<ULAD:GOVERNMENT_MONITORING_EXTENSION>
+														<ULAD:HMDA_ETHNICITIES>
+															<ULAD:HMDA_ETHNICITY>
+																<ULAD:HMDAEthnicityType>HispanicOrLatino</ULAD:HMDAEthnicityType>
+															</ULAD:HMDA_ETHNICITY>
+														</ULAD:HMDA_ETHNICITIES>
+													</ULAD:GOVERNMENT_MONITORING_EXTENSION>
+												</OTHER>
+											</EXTENSION>
+										</GOVERNMENT_MONITORING>
+										<RESIDENCES>
+											<RESIDENCE>
+												<ADDRESS>
+													<AddressLineText>10655 Birch St</AddressLineText>
+													<CityName>Burbank</CityName>
+													<PostalCode>915021234</PostalCode>
+													<StateCode>CA</StateCode>
+												</ADDRESS>
+												<LANDLORD>
+													<LANDLORD_DETAIL>
+														<MonthlyRentAmount>3500.00</MonthlyRentAmount>
+													</LANDLORD_DETAIL>
+												</LANDLORD>
+												<RESIDENCE_DETAIL>
+													<BorrowerResidencyBasisType>Rent</BorrowerResidencyBasisType>
+													<BorrowerResidencyDurationMonthsCount>43</BorrowerResidencyDurationMonthsCount>
+													<BorrowerResidencyType>Current</BorrowerResidencyType>
+												</RESIDENCE_DETAIL>
+											</RESIDENCE>
+										</RESIDENCES>
+									</BORROWER>
+									<ROLE_DETAIL>
+										<PartyRoleType>Borrower</PartyRoleType>
+									</ROLE_DETAIL>
+								</ROLE>
+							</ROLES>
+							<TAXPAYER_IDENTIFIERS>
+								<TAXPAYER_IDENTIFIER>
+									<TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
+									<TaxpayerIdentifierValue>593125444</TaxpayerIdentifierValue>
+								</TAXPAYER_IDENTIFIER>
+							</TAXPAYER_IDENTIFIERS>
+						</PARTY>
+						<PARTY SequenceNumber="2" xlink:label="PARTY_2">
+							<LEGAL_ENTITY>
+								<LEGAL_ENTITY_DETAIL>
+									<FullName>ABC Mortgage</FullName>
+								</LEGAL_ENTITY_DETAIL>
+							</LEGAL_ENTITY>
+							<ADDRESSES>
+								<ADDRESS>
+									<AddressLineText>412 H St, NW</AddressLineText>
+									<CityName>Washington</CityName>
+									<PostalCode>200121234</PostalCode>
+									<StateCode>DC</StateCode>
+								</ADDRESS>
+							</ADDRESSES>
+							<ROLES>
+								<ROLE>
+									<LICENSES>
+										<LICENSE>
+											<LICENSE_DETAIL>
+												<LicenseAuthorityLevelType>Private</LicenseAuthorityLevelType>
+												<LicenseIdentifier>123456789111</LicenseIdentifier>
+											</LICENSE_DETAIL>
+										</LICENSE>
+									</LICENSES>
+									<ROLE_DETAIL>
+										<PartyRoleType>LoanOriginationCompany</PartyRoleType>
+									</ROLE_DETAIL>
+								</ROLE>
+							</ROLES>
+						</PARTY>
+					</PARTIES>
+					<RELATIONSHIPS xsi:type="RELATIONSHIPS">
+						<RELATIONSHIP SequenceNumber="1" xlink:from="LIABILITY_1" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="2" xlink:from="LIABILITY_2" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="3" xlink:from="LIABILITY_3" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="4" xlink:from="LIABILITY_4" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="5" xlink:from="LIABILITY_5" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="6" xlink:from="LIABILITY_6" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="7" xlink:from="LIABILITY_7" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="8" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"></RELATIONSHIP>
+					</RELATIONSHIPS>
+				</DEAL>
+			</DEALS>
+		</DEAL_SET>
+	</DEAL_SETS>
 </MESSAGE>

@@ -28,6 +28,7 @@ function createMismo(incomingLoan) {
   });
   doc = container(doc, ["ABOUT_VERSIONS", "ABOUT_VERSION"]);
   doc = doc.ele("AboutVersionIdentifier").txt("S5.0.06").up();
+  doc = doc.ele("CreatedDatetime").txt(moment().utc().format()).up();
   doc = doc.ele("DataVersionIdentifier").txt("5.0.06").up();
   doc = doc.root();
   doc = container(doc, [
@@ -38,7 +39,7 @@ function createMismo(incomingLoan) {
     "ABOUT_VERSIONS",
     "ABOUT_VERSION",
   ]);
-  doc = doc.ele("DataVersionName").txt("LPA_REQUEST").up();
+  doc = doc.ele("DataVersionName").txt("").up();
   doc = doc.up().up();
   doc = container(doc, ["ASSETS"]);
 
@@ -77,13 +78,11 @@ function createMismo(incomingLoan) {
     );
   }
 
-  doc = doc.up().up();
-  doc = relationships(doc, borrowerAssets);
-  doc = service1(doc, [""]);
+  doc = doc.root().find(x=> x.node.nodeName == 'DEAL', true, true);
+  doc = relationships(doc, borrowerAssets, [...contingentLiabilityData, ...creditorInfoData]);
+  // doc = service1(doc, [""]);
   removeEmptyNodes(doc);
-  let xml = doc.end({ prettyPrint: true });
-  // let re = new RegExp("<Address/>", "gi");
-  // xml = xml.replace(re, "");
+  let xml = doc.end({ prettyPrint: true, allowEmptyTags: true, newline: '\r\n', indent: '\t' });
   return xml;
 }
 
@@ -345,10 +344,10 @@ function loans(doc, data, startIndex) {
       goBack: 3,
       nodes: [
         {
-          ClosingAdjustmentItemAmount: (row) => "1000", isHardCoded: true,
+          ClosingAdjustmentItemAmount: (row) => "1000", hardCoded: true,
         },
         {
-          ClosingAdjustmentItemType: (row) => "LenderCredit", isHardCoded: true,
+          ClosingAdjustmentItemType: (row) => "LenderCredit", hardCoded: true,
         },
       ],
     },
@@ -357,7 +356,7 @@ function loans(doc, data, startIndex) {
       goBack: 2,
       nodes: [
         {
-          CashFromBorrowerAtClosingAmount: (row) => "28800.00", isHardCoded: true,
+          CashFromBorrowerAtClosingAmount: (row) => "28800.00", hardCoded: true,
         },
       ],
     },
@@ -544,7 +543,7 @@ function loans(doc, data, startIndex) {
           LienPriorityType: (row) => "FirstLien",
           hardCoded: true,
         },
-        { NoteRatePercent: (row) => loan["LMRInfo"].lien1Rate },
+        { NoteRatePercent: (row) => money(loan["LMRInfo"].lien1Rate) },
       ],
     },
   ]);
@@ -902,7 +901,7 @@ function partyBorrower(doc, data) {
         "EMPLOYERS",
         {
           name: "EMPLOYER",
-          attributes: { Sequence: 1, "xlink:label": "EMPLOYER_1" },
+          attributes: { SequenceNumber: 1, "xlink:label": "EMPLOYER_1" },
         },
         "ADDRESS",
       ],
@@ -996,7 +995,7 @@ function partyBorrower(doc, data) {
             loan["incomeInfo"].empmonthlyincome1,
         },
         {
-          SpecialBorrowerEmployerRelationshipIndicator: (row) => "false", isHardCoded: true
+          SpecialBorrowerEmployerRelationshipIndicator: (row) => "false", hardCoded: true
         },
       ],
     },
@@ -1105,10 +1104,10 @@ function partyBorrower(doc, data) {
       ],
       goBack: "RESIDENCE",
       nodes: [
-        { AddressLineText: (row) => "10655 Birch St", isHardCoded: true },
-        { CityName: (row) => "Burbank", isHardCoded: true },
-        { PostalCode: (row) => "915021234", isHardCoded: true },
-        { StateCode: (row) => "CA", isHardCoded: true },
+        { AddressLineText: (row) => "10655 Birch St", hardCoded: true },
+        { CityName: (row) => "Burbank", hardCoded: true },
+        { PostalCode: (row) => "915021234", hardCoded: true },
+        { StateCode: (row) => "CA", hardCoded: true },
       ],
     },
     {
@@ -1118,7 +1117,7 @@ function partyBorrower(doc, data) {
       ],
       goBack: "RESIDENCE",
       nodes: [
-        { MonthlyRentAmount: (row) => "3500.00", isHardCoded: true },
+        { MonthlyRentAmount: (row) => "3500.00", hardCoded: true },
       ],
     },
     {
@@ -1127,9 +1126,9 @@ function partyBorrower(doc, data) {
       ],
       goBack: "ROLE",
       nodes: [
-        { BorrowerResidencyBasisType: (row) => "Rent", isHardCoded: true },
-        { BorrowerResidencyDurationMonthsCount: (row) => "43", isHardCoded: true },
-        { BorrowerResidencyType: (row) => "Current", isHardCoded: true },
+        { BorrowerResidencyBasisType: (row) => "Rent", hardCoded: true },
+        { BorrowerResidencyDurationMonthsCount: (row) => "43", hardCoded: true },
+        { BorrowerResidencyType: (row) => "Current", hardCoded: true },
       ],
     },
     {
@@ -1664,17 +1663,17 @@ function partyBroker(doc, data, startingIndex) {
     {
       path: ["LEGAL_ENTITY", "LEGAL_ENTITY_DETAIL"],
       goBack: 2,
-      nodes: [{ FullName: (row) => "ABC Mortgage", isHardCoded: true }],
+      nodes: [{ FullName: (row) => "ABC Mortgage", hardCoded: true }],
     },
     {
       path: ["ADDRESSES", "ADDRESS"],
       nodes: [
         {
-          AddressLineText: (row) => "412 H St, NW", isHardCoded: true,
+          AddressLineText: (row) => "412 H St, NW", hardCoded: true,
         },
-        { CityName: (row) => "Washington", isHardCoded: true, },
-        { StateCode: (row) => "DC", isHardCoded: true, },
-        { PostalCode: (row) => "200121234", isHardCoded: true, },
+        { CityName: (row) => "Washington", hardCoded: true, },
+        { StateCode: (row) => "DC", hardCoded: true, },
+        { PostalCode: (row) => "200121234", hardCoded: true, },
       ],
     },
     {
@@ -1682,7 +1681,7 @@ function partyBroker(doc, data, startingIndex) {
       goBack: 3,
       nodes: [
         {
-          LicenseIdentifier: (row) => 123456789111, isHardCoded: true,
+          LicenseIdentifier: (row) => 123456789111, hardCoded: true,
         },
         {
           LicenseAuthorityLevelType: (row) => "Private",
@@ -1799,6 +1798,7 @@ function buildMismoNodes(
         element.nodes.forEach((n) => {
           const key = Object.keys(n)[0];
           const value = n[key](row, counter + 1);
+          n.hardCoded = false;
           if (n.hardCoded) {
             doc
               .ele(key)
@@ -2025,44 +2025,61 @@ function indicator(value) {
   return "false";
 }
 
-function relationships(_doc, borrowerAssets) {
-  _doc = _doc.ele("RELATIONSHIPS");
+function relationships(_doc, borrowerAssets, borrowerLiabilities) {
+  _doc = _doc.ele("RELATIONSHIPS", {"xsi:type": "RELATIONSHIPS"});
   if (borrowerAssets && borrowerAssets.length > 0) {
     for (let i = 0; i < borrowerAssets.length; i++) {
-      _doc
+      _doc = _doc
         .ele("RELATIONSHIP", {
           SequenceNumber: i + 1,
-          "xlink:arcrole":
-            "urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE",
           "xlink:from": "ASSET_" + (i + 1).toString(),
           "xlink:to": "BORROWER_1",
+          "xlink:arcrole":
+            "urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE",
         })
         .up();
     }
   }
 
-  _doc
+  if (borrowerLiabilities && borrowerLiabilities.length > 0) {
+    for (let i = 0; i < borrowerLiabilities.length; i++) {
+      _doc = _doc
+        .ele("RELATIONSHIP", {
+          SequenceNumber: borrowerAssets.length + i + 1,
+          "xlink:from": "LIABILITY_" + (i + 1).toString(),
+          "xlink:to": "BORROWER_1",
+          "xlink:arcrole":
+            "urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE",
+        })
+        .up();
+    }
+  }
+
+  _doc = _doc
     .ele("RELATIONSHIP", {
-      SequenceNumber: borrowerAssets.length + 1,
-      "xlink:arcrole":
-        "urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER",
+      SequenceNumber: borrowerAssets.length + borrowerLiabilities.length + 1,
       "xlink:from": "CURRENT_INCOME_ITEM_1",
       "xlink:to": "EMPLOYER_1",
+      "xlink:arcrole":
+        "urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER",
     })
     .up();
   return _doc;
 }
 
 function removeEmptyNodes(doc) {
-  let anEmptyNode = doc
-    .root()
-    .find((n) => n.node.textContent === "", true, true);
+  let anEmptyNode = getEmptyNode(doc);
 
   while (anEmptyNode) {
     anEmptyNode.remove();
-    anEmptyNode = doc.root().find((n) => n.node.textContent === "", true, true);
+    anEmptyNode = getEmptyNode(doc);
   }
   return doc;
+}
+function getEmptyNode(doc) {
+  return doc
+  .root()
+  .find((n) =>  n.node.textContent === "" && n.node.nodeName != "RELATIONSHIPS" && n.node.nodeName != "RELATIONSHIP", true, true);
 }
 module.exports = {
   createMismo,
