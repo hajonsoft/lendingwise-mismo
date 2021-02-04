@@ -46,10 +46,10 @@ function createMismo(incomingLoan) {
   const borrowerAssets = loan["fileLOChekingSavingInfo"];
   doc = assets(doc, borrowerAssets);
 
-  const realEstateOwnedData = loanOwnedPropertyData(
-    loan["fileLOScheduleRealInfo"]
-  );
-  doc = realEstateOwned(doc, realEstateOwnedData, borrowerAssets.length);
+  // const realEstateOwnedData = loanOwnedPropertyData(
+  //   loan["fileLOScheduleRealInfo"]
+  // );
+  // doc = realEstateOwned(doc, realEstateOwnedData, borrowerAssets.length);
 
   const collateralData = [loan["LMRInfo"]];
   doc = collaterals(doc, collateralData);
@@ -66,9 +66,9 @@ function createMismo(incomingLoan) {
   const partyBorrowerData = [loan["LMRInfo"]];
   doc = partyBorrower(doc, partyBorrowerData);
 
-  if (partyBorrowerData[0].coBorrowerFName) {
-    doc = partyCoBorrower(doc, partyBorrowerData, 1);
-  }
+  // if (partyBorrowerData[0].coBorrowerFName) {
+  //   doc = partyCoBorrower(doc, partyBorrowerData, 1);
+  // }
   const brokerInfo = loan["BrokerInfo"];
   if (brokerInfo && brokerInfo.firstName) {
     doc = partyBroker(
@@ -201,7 +201,7 @@ function collaterals(doc, data) {
         { FinancedUnitCount: (row) => "1", hardCoded: true },
         { PUDIndicator: (row) => "false", hardCoded: true },
         { PropertyEstateType: (row) => "FeeSimple", hardCoded: true },
-        { PropertyStructureBuiltYear: (row) => "1965", hardCoded: true },
+        { PropertyStructureBuiltYear: (row) => loan["FileProInfo"][0].yearBuilt  },
         { PropertyEstimatedValueAmount: (row) => money(row.homeValue) },
         { PropertyUsageType: (row) => "PrimaryResidence", hardCoded: true },
         { AttachmentType: (row) => "Attached", hardCoded: true },
@@ -612,65 +612,65 @@ function partyBorrower(doc, data) {
         { LastName: (row) => row.borrowerLName },
       ],
     },
-    {
-      path: ["ADDRESSES", "ADDRESS"],
-      goBack: 1,
-      nodes: [
-        {
-          AddressType: (row) =>
-            streetName(loan.file2Info.presentAddress) && "Current",
-        },
-        {
-          StreetName: (row) => streetName(loan.file2Info.presentAddress),
-        },
-        {
-          StreetPrimaryNumberText: (row) =>
-            streetNumber(loan.file2Info.presentAddress),
-        },
-        { CityName: (row) => loan.file2Info.presentCity },
-        { StateCode: (row) => loan.file2Info.presentState },
-        { PostalCode: (row) => row.presentZip },
-        {
-          CountryCode: (row) =>
-            streetName(loan.file2Info.presentAddress) && "US",
-        },
-      ],
-    },
-    {
-      path: ["ADDRESS"],
-      goBack: 1,
-      nodes: [
-        { AddressType: (row) => streetName(row.previousAddress) && "Prior" },
-        {
-          StreetName: (row) => streetName(row.previousAddress),
-        },
-        {
-          StreetPrimaryNumberText: (row) => streetNumber(row.previousAddress),
-        },
-        { CityName: (row) => row.previousCity },
-        { StateCode: (row) => row.previousState },
-        { PostalCode: (row) => row.previousZip },
-        { CountryCode: (row) => streetName(row.previousAddress) && "US" },
-      ],
-    },
-    {
-      path: ["ADDRESS"],
-      goBack: 2,
-      nodes: [
-        { AddressType: (row) => streetName(row.mailingAddress) && "Mailing" },
-        {
-          StreetName: (row) => streetName(row.mailingAddress),
-        },
-        {
-          StreetPrimaryNumberText: (row) => streetNumber(row.mailingAddress),
-        },
-        { AddressUnitIdentifier: (row) => "" },
-        { CityName: (row) => row.mailingCity },
-        { StateCode: (row) => row.mailingState },
-        { PostalCode: (row) => row.mailingZip },
-        { CountryCode: (row) => streetName(row.mailingAddress) && "US" },
-      ],
-    },
+    // {
+    //   path: ["ADDRESSES", "ADDRESS"],
+    //   goBack: 1,
+    //   nodes: [
+    //     {
+    //       AddressType: (row) =>
+    //         streetName(loan.file2Info.presentAddress) && "Current",
+    //     },
+    //     {
+    //       StreetName: (row) => streetName(loan.file2Info.presentAddress),
+    //     },
+    //     {
+    //       StreetPrimaryNumberText: (row) =>
+    //         streetNumber(loan.file2Info.presentAddress),
+    //     },
+    //     { CityName: (row) => loan.file2Info.presentCity },
+    //     { StateCode: (row) => loan.file2Info.presentState },
+    //     { PostalCode: (row) => row.presentZip },
+    //     {
+    //       CountryCode: (row) =>
+    //         streetName(loan.file2Info.presentAddress) && "US",
+    //     },
+    //   ],
+    // },
+    // {
+    //   path: ["ADDRESS"],
+    //   goBack: 1,
+    //   nodes: [
+    //     { AddressType: (row) => streetName(row.previousAddress) && "Prior" },
+    //     {
+    //       StreetName: (row) => streetName(row.previousAddress),
+    //     },
+    //     {
+    //       StreetPrimaryNumberText: (row) => streetNumber(row.previousAddress),
+    //     },
+    //     { CityName: (row) => row.previousCity },
+    //     { StateCode: (row) => row.previousState },
+    //     { PostalCode: (row) => row.previousZip },
+    //     { CountryCode: (row) => streetName(row.previousAddress) && "US" },
+    //   ],
+    // },
+    // {
+    //   path: ["ADDRESS"],
+    //   goBack: 2,
+    //   nodes: [
+    //     { AddressType: (row) => streetName(row.mailingAddress) && "Mailing" },
+    //     {
+    //       StreetName: (row) => streetName(row.mailingAddress),
+    //     },
+    //     {
+    //       StreetPrimaryNumberText: (row) => streetNumber(row.mailingAddress),
+    //     },
+    //     { AddressUnitIdentifier: (row) => "" },
+    //     { CityName: (row) => row.mailingCity },
+    //     { StateCode: (row) => row.mailingState },
+    //     { PostalCode: (row) => row.mailingZip },
+    //     { CountryCode: (row) => streetName(row.mailingAddress) && "US" },
+    //   ],
+    // },
     {
       path: [
         "ROLES",
@@ -906,14 +906,7 @@ function partyBorrower(doc, data) {
         "ADDRESS",
       ],
       goBack: 1,
-      nodes: [
-        { AddressLineText: (row) => loan["incomeInfo"].employer1Add },
-        { AddressUnitIdentifier: (row) => "", hardCoded: true },
-        { CityName: (row) => "", hardCoded: true },
-        { StateCode: (row) => "", hardCoded: true },
-        { PostalCode: (row) => "", hardCoded: true },
-        { CountryCode: (row) => loan["incomeInfo"].employer1Add && "US" },
-      ],
+      nodes: [],
     },
     {
       path: [
@@ -1214,61 +1207,61 @@ function partyCoBorrower(doc, data) {
         { LastName: (row) => row.coBorrowerLName },
       ],
     },
-    {
-      path: ["ADDRESSES", "ADDRESS"],
-      goBack: 1,
-      nodes: [
-        { AddressType: (row) => "Current" },
-        {
-          StreetName: (row) => streetName(loan.file2Info.coBPresentAddress),
-        },
-        {
-          StreetPrimaryNumberText: (row) =>
-            streetNumber(loan.file2Info.coBPresentAddress),
-        },
-        { CityName: (row) => loan.file2Info.coBPresentCity },
-        { StateCode: (row) => loan.file2Info.coBPresentState },
-        { PostalCode: (row) => row.coBPresentZip },
-        { CountryCode: (row) => "US" },
-      ],
-    },
-    {
-      path: ["ADDRESS"],
-      goBack: 1,
-      nodes: [
-        { AddressType: (row) => "Prior" },
-        {
-          StreetName: (row) => streetName(row.coBorPreviousAddress),
-        },
-        {
-          StreetPrimaryNumberText: (row) =>
-            streetNumber(row.coBorPreviousAddress),
-        },
-        { CityName: (row) => row.coBorPreviousCity },
-        { StateCode: (row) => row.coBorPreviousState },
-        { PostalCode: (row) => row.coBorPreviousZip },
-        { CountryCode: (row) => "US" },
-      ],
-    },
-    {
-      path: ["ADDRESS"],
-      goBack: 2,
-      nodes: [
-        { AddressType: (row) => "Mailing" },
-        {
-          StreetName: (row) => streetName(row.coBorrowerMailingAddress),
-        },
-        {
-          StreetPrimaryNumberText: (row) =>
-            streetNumber(row.coBorrowerMailingAddress),
-        },
-        { AddressUnitIdentifier: (row) => "" },
-        { CityName: (row) => row.coBorrowerMailingCity },
-        { StateCode: (row) => row.coBorrowerMailingState },
-        { PostalCode: (row) => row.coBorrowerMailingZip },
-        { CountryCode: (row) => "US" },
-      ],
-    },
+    // {
+    //   path: ["ADDRESSES", "ADDRESS"],
+    //   goBack: 1,
+    //   nodes: [
+    //     { AddressType: (row) => "Current" },
+    //     {
+    //       StreetName: (row) => streetName(loan.file2Info.coBPresentAddress),
+    //     },
+    //     {
+    //       StreetPrimaryNumberText: (row) =>
+    //         streetNumber(loan.file2Info.coBPresentAddress),
+    //     },
+    //     { CityName: (row) => loan.file2Info.coBPresentCity },
+    //     { StateCode: (row) => loan.file2Info.coBPresentState },
+    //     { PostalCode: (row) => row.coBPresentZip },
+    //     { CountryCode: (row) => "US" },
+    //   ],
+    // },
+    // {
+    //   path: ["ADDRESS"],
+    //   goBack: 1,
+    //   nodes: [
+    //     { AddressType: (row) => "Prior" },
+    //     {
+    //       StreetName: (row) => streetName(row.coBorPreviousAddress),
+    //     },
+    //     {
+    //       StreetPrimaryNumberText: (row) =>
+    //         streetNumber(row.coBorPreviousAddress),
+    //     },
+    //     { CityName: (row) => row.coBorPreviousCity },
+    //     { StateCode: (row) => row.coBorPreviousState },
+    //     { PostalCode: (row) => row.coBorPreviousZip },
+    //     { CountryCode: (row) => "US" },
+    //   ],
+    // },
+    // {
+    //   path: ["ADDRESS"],
+    //   goBack: 2,
+    //   nodes: [
+    //     { AddressType: (row) => "Mailing" },
+    //     {
+    //       StreetName: (row) => streetName(row.coBorrowerMailingAddress),
+    //     },
+    //     {
+    //       StreetPrimaryNumberText: (row) =>
+    //         streetNumber(row.coBorrowerMailingAddress),
+    //     },
+    //     { AddressUnitIdentifier: (row) => "" },
+    //     { CityName: (row) => row.coBorrowerMailingCity },
+    //     { StateCode: (row) => row.coBorrowerMailingState },
+    //     { PostalCode: (row) => row.coBorrowerMailingZip },
+    //     { CountryCode: (row) => "US" },
+    //   ],
+    // },
     {
       path: [
         "ROLES",
@@ -1798,13 +1791,13 @@ function buildMismoNodes(
         element.nodes.forEach((n) => {
           const key = Object.keys(n)[0];
           const value = n[key](row, counter + 1);
-          n.hardCoded = false;
+          // n.hardCoded = false;
           if (n.hardCoded) {
-            doc
-              .ele(key)
-              .txt(value)
-              .up()
-              .com(`${key} is Hard Coded to ${value}`);
+             doc
+               .ele(key)
+               .txt(value)
+               .up()
+               .com(`${key} is Hard Coded to ${value}`);
           } else {
             doc.ele(key).txt(value).up();
           }
