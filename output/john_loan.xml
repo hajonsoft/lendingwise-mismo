@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-05T03:27:59Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-05T03:50:21Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -278,7 +278,6 @@
 													<OTHER>
 														<ULAD:DECLARATION_DETAIL_EXTENSION>
 															<ULAD:SpecialBorrowerSellerRelationshipIndicator>false</ULAD:SpecialBorrowerSellerRelationshipIndicator>
-															<!--ULAD:SpecialBorrowerSellerRelationshipIndicator is Hard Coded to false-->
 														</ULAD:DECLARATION_DETAIL_EXTENSION>
 													</OTHER>
 												</EXTENSION>
@@ -344,28 +343,16 @@
 										<RESIDENCES>
 											<RESIDENCE>
 												<ADDRESS>
-													<AddressLineText>10655 Birch St</AddressLineText>
-													<!--AddressLineText is Hard Coded to 10655 Birch St-->
-													<CityName>Burbank</CityName>
-													<!--CityName is Hard Coded to Burbank-->
-													<PostalCode>915021234</PostalCode>
-													<!--PostalCode is Hard Coded to 915021234-->
-													<StateCode>CA</StateCode>
-													<!--StateCode is Hard Coded to CA-->
+													<AddressLineText>123 current address st</AddressLineText>
+													<CityName>currentcity</CityName>
+													<PostalCode>33156</PostalCode>
+													<StateCode>FL</StateCode>
 												</ADDRESS>
-												<LANDLORD>
-													<LANDLORD_DETAIL>
-														<MonthlyRentAmount>3500.00</MonthlyRentAmount>
-														<!--MonthlyRentAmount is Hard Coded to 3500.00-->
-													</LANDLORD_DETAIL>
-												</LANDLORD>
 												<RESIDENCE_DETAIL>
 													<BorrowerResidencyBasisType>Rent</BorrowerResidencyBasisType>
-													<!--BorrowerResidencyBasisType is Hard Coded to Rent-->
 													<BorrowerResidencyDurationMonthsCount>43</BorrowerResidencyDurationMonthsCount>
 													<!--BorrowerResidencyDurationMonthsCount is Hard Coded to 43-->
-													<BorrowerResidencyType>Current</BorrowerResidencyType>
-													<!--BorrowerResidencyType is Hard Coded to Current-->
+													<BorrowerResidencyType>Prior</BorrowerResidencyType>
 												</RESIDENCE_DETAIL>
 											</RESIDENCE>
 										</RESIDENCES>

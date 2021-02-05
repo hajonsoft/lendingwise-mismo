@@ -225,12 +225,12 @@ function collaterals(doc, data) {
               ? "true"
               : "false",
         },
-        { FinancedUnitCount: (row) => "1" }, //Required by LendingPad
-        { PropertyInProjectIndicator: (row) => "" }, //false
-        { PropertyEstateType: (row) => "" }, //FeeSimple
-        { PropertyUsageType: (row) => "" }, //PrimaryResidence
-        { AttachmentType: (row) => "" }, //Attached
-        { ConstructionMethodType: (row) => "" }, //SiteBuilt
+        { FinancedUnitCount: (row) => "1" , required: true}, 
+        { PropertyInProjectIndicator: (row) => "" }, 
+        { PropertyEstateType: (row) => "" }, 
+        { PropertyUsageType: (row) => "" }, 
+        { AttachmentType: (row) => "" }, 
+        { ConstructionMethodType: (row) => "" }, 
         { RentalEstimatedNetMonthlyRentAmount: (row) => "" },
       ],
     },
@@ -864,8 +864,7 @@ function partyBorrower(doc, data) {
       goBack: 4,
       nodes: [
         {
-          "ULAD:SpecialBorrowerSellerRelationshipIndicator": (row) => "false",
-          hardCoded: true,
+          "ULAD:SpecialBorrowerSellerRelationshipIndicator": (row) => "false"
         },
       ],
     },
@@ -1072,27 +1071,27 @@ function partyBorrower(doc, data) {
       path: ["RESIDENCES", "RESIDENCE", "ADDRESS"],
       goBack: "RESIDENCE",
       nodes: [
-        { AddressLineText: (row) => "10655 Birch St", hardCoded: true },
-        { CityName: (row) => "Burbank", hardCoded: true },
-        { PostalCode: (row) => "915021234", hardCoded: true },
-        { StateCode: (row) => "CA", hardCoded: true },
+        { AddressLineText: (row) => loan["clientInfo"].clientAddress, required: true },
+        { CityName: (row) => loan["clientInfo"].clientCity },
+        { PostalCode: (row) => loan["clientInfo"].clientZip},
+        { StateCode: (row) => loan["clientInfo"].clientState },
       ],
     },
     {
       path: ["LANDLORD", "LANDLORD_DETAIL"],
       goBack: "RESIDENCE",
-      nodes: [{ MonthlyRentAmount: (row) => "3500.00", hardCoded: true }],
+      nodes: [{ MonthlyRentAmount: (row) => "" }],
     },
     {
       path: ["RESIDENCE_DETAIL"],
       goBack: "ROLE",
       nodes: [
-        { BorrowerResidencyBasisType: (row) => "Rent", hardCoded: true },
+        { BorrowerResidencyBasisType: (row) => loan["file2Info"].borPresentPropType ?  loan["file2Info"].borPresentPropType : "Unknown" },
         {
           BorrowerResidencyDurationMonthsCount: (row) => "43",
           hardCoded: true,
         },
-        { BorrowerResidencyType: (row) => "Current", hardCoded: true },
+        { BorrowerResidencyType: (row) => loan["FileProInfo"].isHouseProperty ?  "Current" : "Prior"  },
       ],
     },
     {
@@ -1249,24 +1248,19 @@ function partyCoBorrower(doc, data) {
           BorrowerBirthDate: (row) => row.coBorrowerDOB,
         },
         {
-          BorrowerTotalMortgagedPropertiesCount: (row) => "0",
-          hardCoded: true,
+          BorrowerTotalMortgagedPropertiesCount: (row) => ""
         },
         {
-          CommunityPropertyStateResidentIndicator: (row) => "false",
-          hardCoded: true,
+          CommunityPropertyStateResidentIndicator: (row) => ""
         },
         {
-          DomesticRelationshipIndicator: (row) => "false",
-          hardCoded: true,
+          DomesticRelationshipIndicator: (row) => ""
         },
         {
-          JointAssetLiabilityReportingType: (row) => "Jointly",
-          hardCoded: true,
+          JointAssetLiabilityReportingType: (row) => ""
         },
         {
-          DependentCount: (row) => "0",
-          hardCoded: true,
+          DependentCount: (row) => ""
         },
         {
           MaritalStatusType: (row) =>
@@ -1279,8 +1273,7 @@ function partyCoBorrower(doc, data) {
       goBack: 1,
       nodes: [
         {
-          URLABorrowerTotalOtherIncomeAmount: (row) => "0",
-          hardCoded: true,
+          URLABorrowerTotalOtherIncomeAmount: (row) => ""
         },
       ],
     },
