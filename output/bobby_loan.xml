@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-05T03:50:21Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-05T18:39:25Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -287,7 +287,6 @@
 													<EmploymentStatusType>Current</EmploymentStatusType>
 													<EmploymentTimeInLineOfWorkMonthsCount>12</EmploymentTimeInLineOfWorkMonthsCount>
 													<SpecialBorrowerEmployerRelationshipIndicator>false</SpecialBorrowerEmployerRelationshipIndicator>
-													<!--SpecialBorrowerEmployerRelationshipIndicator is Hard Coded to false-->
 												</EMPLOYMENT>
 											</EMPLOYER>
 										</EMPLOYERS>
@@ -304,8 +303,7 @@
 														<ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
 															<ULAD:ApplicationTakenMethodType>FaceToFace</ULAD:ApplicationTakenMethodType>
 															<!--ULAD:ApplicationTakenMethodType is Hard Coded to FaceToFace-->
-															<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
-															<!--ULAD:HMDAGenderType is Hard Coded to Male-->
+															<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>
 														</ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
 													</OTHER>
 												</EXTENSION>
@@ -344,8 +342,6 @@
 												</ADDRESS>
 												<RESIDENCE_DETAIL>
 													<BorrowerResidencyBasisType>Rent</BorrowerResidencyBasisType>
-													<BorrowerResidencyDurationMonthsCount>43</BorrowerResidencyDurationMonthsCount>
-													<!--BorrowerResidencyDurationMonthsCount is Hard Coded to 43-->
 													<BorrowerResidencyType>Prior</BorrowerResidencyType>
 												</RESIDENCE_DETAIL>
 											</RESIDENCE>
@@ -360,6 +356,139 @@
 								<TAXPAYER_IDENTIFIER>
 									<TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
 									<TaxpayerIdentifierValue>593125444</TaxpayerIdentifierValue>
+								</TAXPAYER_IDENTIFIER>
+							</TAXPAYER_IDENTIFIERS>
+						</PARTY>
+						<PARTY SequenceNumber="2" xlink:label="PARTY_2">
+							<INDIVIDUAL>
+								<CONTACT_POINTS>
+									<CONTACT_POINT>
+										<CONTACT_POINT_EMAIL>
+											<ContactPointEmailValue>coborrower@dummyemail.com</ContactPointEmailValue>
+										</CONTACT_POINT_EMAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>1234567890</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Home</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>0987654321</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Mobile</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>4154544634</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Work</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+								</CONTACT_POINTS>
+								<NAME>
+									<FirstName>Michelle</FirstName>
+									<LastName>Abraham</LastName>
+								</NAME>
+							</INDIVIDUAL>
+							<ROLES>
+								<ROLE SequenceNumber="1" xlink:label="BORROWER_2">
+									<BORROWER>
+										<BORROWER_DETAIL>
+											<BorrowerBirthDate>1976-01-06</BorrowerBirthDate>
+											<MaritalStatusType>Married</MaritalStatusType>
+										</BORROWER_DETAIL>
+										<CURRENT_INCOME>
+											<CURRENT_INCOME_ITEMS>
+												<CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_2">
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>2500.00</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Base</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+												<CURRENT_INCOME_ITEM>
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>2500</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>BorrowerEstimatedTotalMonthlyIncome</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+											</CURRENT_INCOME_ITEMS>
+										</CURRENT_INCOME>
+										<DECLARATION>
+											<DECLARATION_DETAIL>
+												<BankruptcyIndicator>false</BankruptcyIndicator>
+												<CitizenshipResidencyType>PermanentResidentAlien</CitizenshipResidencyType>
+												<FHASecondaryResidenceIndicator>false</FHASecondaryResidenceIndicator>
+												<!--FHASecondaryResidenceIndicator is Hard Coded to false-->
+												<HomeownerPastThreeYearsType>No</HomeownerPastThreeYearsType>
+												<!--HomeownerPastThreeYearsType is Hard Coded to No-->
+												<IntentToOccupyType>Yes</IntentToOccupyType>
+												<OutstandingJudgmentsIndicator>false</OutstandingJudgmentsIndicator>
+												<PartyToLawsuitIndicator>false</PartyToLawsuitIndicator>
+												<PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
+												<PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
+												<!--PriorPropertyDeedInLieuConveyedIndicator is Hard Coded to false-->
+												<PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
+												<!--PriorPropertyForeclosureCompletedIndicator is Hard Coded to false-->
+												<PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
+												<!--PriorPropertyShortSaleCompletedIndicator is Hard Coded to false-->
+												<UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
+												<!--UndisclosedBorrowedFundsIndicator is Hard Coded to false-->
+												<UndisclosedCreditApplicationIndicator>false</UndisclosedCreditApplicationIndicator>
+												<!--UndisclosedCreditApplicationIndicator is Hard Coded to false-->
+												<UndisclosedMortgageApplicationIndicator>false</UndisclosedMortgageApplicationIndicator>
+												<!--UndisclosedMortgageApplicationIndicator is Hard Coded to false-->
+											</DECLARATION_DETAIL>
+										</DECLARATION>
+										<EMPLOYERS>
+											<EMPLOYER Sequence="1" xlink:label="EMPLOYER_2">
+												<ADDRESS>
+													<AddressLineText>123 butterfly st, miami fl 33176</AddressLineText>
+													<CountryCode>US</CountryCode>
+												</ADDRESS>
+												<EMPLOYMENT>
+													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
+													<EmploymentClassificationType>Secondary</EmploymentClassificationType>
+													<EmploymentPositionDescription>butterfly milker</EmploymentPositionDescription>
+													<EmploymentStartDate>2015-01-09</EmploymentStartDate>
+													<EmploymentStatusType>Current</EmploymentStatusType>
+													<EmploymentTimeInLineOfWorkMonthsCount>5</EmploymentTimeInLineOfWorkMonthsCount>
+												</EMPLOYMENT>
+											</EMPLOYER>
+										</EMPLOYERS>
+										<GOVERNMENT_MONITORING>
+											<HMDA_ETHNICITY_ORIGINS>
+												<HMDA_ETHNICITY_ORIGIN>
+													<HMDAEthnicityOriginType>Mexican</HMDAEthnicityOriginType>
+													<HMDAEthnicityOriginTypeOtherDescription>3</HMDAEthnicityOriginTypeOtherDescription>
+												</HMDA_ETHNICITY_ORIGIN>
+											</HMDA_ETHNICITY_ORIGINS>
+											<HMDA_RACES>
+												<HMDA_RACE>
+													<HMDA_RACE_DETAIL>
+														<HMDARaceType>NativeHawaiianOrOtherPacificIslander</HMDARaceType>
+													</HMDA_RACE_DETAIL>
+												</HMDA_RACE>
+											</HMDA_RACES>
+										</GOVERNMENT_MONITORING>
+									</BORROWER>
+									<ROLE_DETAIL>
+										<PartyRoleType>Borrower</PartyRoleType>
+									</ROLE_DETAIL>
+								</ROLE>
+							</ROLES>
+							<TAXPAYER_IDENTIFIERS>
+								<TAXPAYER_IDENTIFIER>
+									<TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
+									<TaxpayerIdentifierValue>798645654</TaxpayerIdentifierValue>
 								</TAXPAYER_IDENTIFIER>
 							</TAXPAYER_IDENTIFIERS>
 						</PARTY>

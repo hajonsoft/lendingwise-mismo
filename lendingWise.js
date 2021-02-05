@@ -66,9 +66,9 @@ function createMismo(incomingLoan) {
   const partyBorrowerData = [loan["LMRInfo"]];
   doc = partyBorrower(doc, partyBorrowerData);
 
-  // if (partyBorrowerData[0].coBorrowerFName) {
-  //   doc = partyCoBorrower(doc, partyBorrowerData, 1);
-  // }
+  if (partyBorrowerData[0].coBorrowerFName) {
+    doc = partyCoBorrower(doc, partyBorrowerData, 1);
+  }
   const brokerInfo = loan["BrokerInfo"];
   if (brokerInfo && brokerInfo.firstName) {
     doc = partyBroker(
@@ -115,13 +115,13 @@ function realEstateOwned(doc, data, startIndex) {
   return buildMismoNodes(doc, data, "ASSETS", "ASSET", startIndex, [
     {
       path: ["ASSET_DETAIL"],
-      nodes: [{ AssetType: (row) => "RealEstateOwned" }],
+      nodes: [{ AssetType: (row) => "" }],
     },
     {
       path: ["OWNED_PROPERTY", "OWNED_PROPERTY_DETAIL"],
       goBack: 1,
       nodes: [
-        { OwnedPropertySubjectIndicator: (row) => "false", hardCoded: true },
+        { OwnedPropertySubjectIndicator: (row) => row.schedulePropAddr == loan["LMRInfo"].propertyAddress ? "true" : "false" },
         {
           OwnedPropertyDispositionStatusType: (row) =>
             mapValue(row.scheduleStatus, scheduleStatusDiagram),
@@ -149,7 +149,6 @@ function realEstateOwned(doc, data, startIndex) {
         { CityName: (row) => row.schedulePropCity },
         { StateCode: (row) => row.schedulePropState },
         { PostalCode: (row) => row.schedulePropZip },
-        { CountryCode: (row) => "US" },
       ],
     },
     {
@@ -941,7 +940,7 @@ function partyBorrower(doc, data) {
             loan["incomeInfo"].borrowerHireDate &&
             loan["incomeInfo"].borrowerHireDate != "0000-00-00"
               ? loan["incomeInfo"].borrowerHireDate
-              : "2010-01-01",
+              : "", required: true, defaultValue: moment().add(-5,'years').format("YYYY-MM-DD")
         },
         {
           EmploymentTimeInLineOfWorkMonthsCount: (row) =>
@@ -965,8 +964,7 @@ function partyBorrower(doc, data) {
             loan["incomeInfo"].empmonthlyincome1,
         },
         {
-          SpecialBorrowerEmployerRelationshipIndicator: (row) => "false",
-          hardCoded: true,
+          SpecialBorrowerEmployerRelationshipIndicator: (row) => "false"
         },
       ],
     },
@@ -997,8 +995,7 @@ function partyBorrower(doc, data) {
       goBack: "GOVERNMENT_MONITORING",
       nodes: [
         {
-          "ULAD:HMDAGenderType": (row) => "Male",
-          hardCoded: true,
+          "ULAD:HMDAGenderType": (row) => mapValue(loan["QAInfo"].BGender,genderDiagram)
         },
         {
           "ULAD:ApplicationTakenMethodType": (row) => "FaceToFace",
@@ -1088,8 +1085,7 @@ function partyBorrower(doc, data) {
       nodes: [
         { BorrowerResidencyBasisType: (row) => loan["file2Info"].borPresentPropType ?  loan["file2Info"].borPresentPropType : "Unknown" },
         {
-          BorrowerResidencyDurationMonthsCount: (row) => "43",
-          hardCoded: true,
+          BorrowerResidencyDurationMonthsCount: (row) => ""
         },
         { BorrowerResidencyType: (row) => loan["FileProInfo"].isHouseProperty ?  "Current" : "Prior"  },
       ],
@@ -1300,7 +1296,7 @@ function partyCoBorrower(doc, data) {
               )
             ),
         },
-        { EmploymentIncomeIndicator: (row) => "true", hardCoded: true },
+        { EmploymentIncomeIndicator: (row) => "true" },
         { IncomeType: (row) => "Base" },
       ],
     },
@@ -1319,8 +1315,8 @@ function partyCoBorrower(doc, data) {
               )
             ),
         },
-        { EmploymentIncomeIndicator: (row) => "true", hardCoded: true },
-        { IncomeType: (row) => "Bonus" },
+        { EmploymentIncomeIndicator: (row) => loan["incomeInfo"].commissionOrBonus2 && "true" },
+        { IncomeType: (row) => loan["incomeInfo"].commissionOrBonus2 && "Bonus" },
       ],
     },
     {
@@ -1335,8 +1331,8 @@ function partyCoBorrower(doc, data) {
                 12
             ),
         },
-        { EmploymentIncomeIndicator: (row) => "true", hardCoded: true },
-        { IncomeType: (row) => "Other" },
+        { EmploymentIncomeIndicator: (row) => loan["incomeInfo"].otherHouseHold2 && "true"},
+        { IncomeType: (row) => loan["incomeInfo"].otherHouseHold2 && "Other" },
       ],
     },
     {
@@ -1352,8 +1348,8 @@ function partyCoBorrower(doc, data) {
               )
             ),
         },
-        { EmploymentIncomeIndicator: (row) => "true", hardCoded: true },
-        { IncomeType: (row) => "Overtime" },
+        { EmploymentIncomeIndicator: (row) => loan["incomeInfo"].overtime2 && "true" },
+        { IncomeType: (row) => loan["incomeInfo"].overtime2 && "Overtime" },
       ],
     },
     {
@@ -1372,7 +1368,7 @@ function partyCoBorrower(doc, data) {
               [loan["incomeInfo"].empmonthlyincome2]
             ),
         },
-        { EmploymentIncomeIndicator: (row) => "true", hardCoded: true },
+        { EmploymentIncomeIndicator: (row) => "true" },
         { IncomeType: (row) => "BorrowerEstimatedTotalMonthlyIncome" },
       ],
     },
@@ -1400,7 +1396,7 @@ function partyCoBorrower(doc, data) {
           UndisclosedBorrowedFundsIndicator: (row) => "false",
           hardCoded: true,
         },
-        { UndisclosedBorrowedFundsAmount: (row) => "0", hardCoded: true },
+        { UndisclosedBorrowedFundsAmount: (row) => "" },
         {
           UndisclosedMortgageApplicationIndicator: (row) => "false",
           hardCoded: true,
@@ -1410,12 +1406,10 @@ function partyCoBorrower(doc, data) {
           hardCoded: true,
         },
         {
-          PropertyProposedCleanEnergyLienIndicator: (row) => "false",
-          hardCoded: true,
+          PropertyProposedCleanEnergyLienIndicator: (row) => ""
         },
         {
-          UndisclosedComakerOfNoteIndicator: (row) => "false",
-          hardCoded: true,
+          UndisclosedComakerOfNoteIndicator: (row) => ""
         },
         {
           OutstandingJudgmentsIndicator: (row) =>
@@ -1493,7 +1487,7 @@ function partyCoBorrower(doc, data) {
             loan["incomeInfo"].coBorrowerHireDate &&
             loan["incomeInfo"].coBorrowerHireDate != "0000-00-00"
               ? loan["incomeInfo"].coBorrowerHireDate
-              : "2010-01-01",
+              : "", required: true
         },
         {
           EmploymentTimeInLineOfWorkMonthsCount: (row) =>
@@ -1756,8 +1750,15 @@ function buildMismoNodes(
         element.nodes = sortNodes(element.nodes);
         element.nodes.forEach((n) => {
           const key = Object.keys(n)[0];
-          const value = n[key](row, counter + 1);
-          // n.hardCoded = false;
+          let value = n[key](row, counter + 1);
+          if (n.required && !value ){
+            if (n.defaultValue){
+              value = n.defaultValue;
+            } else {
+              throw new Error('Required value: ' + key);
+            }
+          } 
+          // n.hardCoded = false; //Override to set all hardcoded to false to remove all hardcoding comments
           if (n.hardCoded) {
             doc
               .ele(key)
@@ -1899,7 +1900,10 @@ const employmentClassificationType = [
   { lw: "Salary W-2", mismo: "Primary" },
   { mismo: "Secondary" },
 ];
-
+const genderDiagram = [
+  { lw: "2", mismo: "Female" },
+  { mismo: "Male" },
+];
 function mapValue(value, diagram) {
   if (diagram && value) {
     const mismo = diagram.find(

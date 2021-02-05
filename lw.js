@@ -1,4 +1,5 @@
 const { createMismo } = require("./lendingWise");
+const { validate } = require("./validate");
 const fs = require("fs");
 const moment = require('moment')
 
@@ -12,23 +13,16 @@ if (process.argv[2]) {
 } else {
   // const fileSuffix = "_" + moment().format('HHmmss')
   const fileSuffix = '';
-  let fileName = "john_loan";
-  let jsonFile = fs.readFileSync("./assets/" + fileName + ".json", "utf-8");
-  let xml = createMismo(JSON.parse(jsonFile));
-  fs.writeFileSync("./output/" + fileName + fileSuffix + ".xml", xml);
-
-  fileName = "bobby_loan";
-  jsonFile = fs.readFileSync("./assets/" + fileName + ".json", "utf-8");
-  xml = createMismo(JSON.parse(jsonFile));
-  fs.writeFileSync("./output/" + fileName + fileSuffix + ".xml", xml);
-
-  fileName = "rodriguez_loan";
-  jsonFile = fs.readFileSync("./assets/" + fileName + ".json", "utf-8");
-  xml = createMismo(JSON.parse(jsonFile));
-  fs.writeFileSync("./output/" + fileName + fileSuffix + ".xml", xml);
-
-  fileName = "keith_loan";
-  jsonFile = fs.readFileSync("./assets/" + fileName + ".json", "utf-8");
-  xml = createMismo(JSON.parse(jsonFile));
-  fs.writeFileSync("./output/" + fileName + fileSuffix + ".xml", xml);
+  const files = ["john_loan","bobby_loan","rodriguez_loan","keith_loan"];
+  for (let i =0 ; i< files.length; i++) {
+    let fileName = files[i];
+    let jsonFile = fs.readFileSync("./assets/" + fileName + ".json", "utf-8");
+    let xml = createMismo(JSON.parse(jsonFile));
+    let validationErrors = validate(xml);
+    if (validationErrors.length > 0) {
+      console.log(fileName,validationErrors.length, 'validation error(s)' , validationErrors);
+    }
+    fs.writeFileSync("./output/" + fileName + fileSuffix + ".xml", xml);
+  }
 }
+

@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-05T03:50:21Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-05T18:39:25Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -200,11 +200,10 @@
 													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
 													<EmploymentClassificationType>Secondary</EmploymentClassificationType>
 													<EmploymentPositionDescription>Employee</EmploymentPositionDescription>
-													<EmploymentStartDate>2010-01-01</EmploymentStartDate>
+													<EmploymentStartDate>2016-02-05</EmploymentStartDate>
 													<EmploymentStatusType>Current</EmploymentStatusType>
 													<EmploymentTimeInLineOfWorkMonthsCount>142</EmploymentTimeInLineOfWorkMonthsCount>
 													<SpecialBorrowerEmployerRelationshipIndicator>false</SpecialBorrowerEmployerRelationshipIndicator>
-													<!--SpecialBorrowerEmployerRelationshipIndicator is Hard Coded to false-->
 												</EMPLOYMENT>
 											</EMPLOYER>
 										</EMPLOYERS>
@@ -222,7 +221,6 @@
 															<ULAD:ApplicationTakenMethodType>FaceToFace</ULAD:ApplicationTakenMethodType>
 															<!--ULAD:ApplicationTakenMethodType is Hard Coded to FaceToFace-->
 															<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
-															<!--ULAD:HMDAGenderType is Hard Coded to Male-->
 														</ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
 													</OTHER>
 												</EXTENSION>
@@ -254,15 +252,13 @@
 										<RESIDENCES>
 											<RESIDENCE>
 												<ADDRESS>
-													<AddressLineText>Ayman Address</AddressLineText>
+													<AddressLineText>address</AddressLineText>
 													<CityName>Irvine</CityName>
 													<PostalCode>92604</PostalCode>
 													<StateCode>CA</StateCode>
 												</ADDRESS>
 												<RESIDENCE_DETAIL>
 													<BorrowerResidencyBasisType>Unknown</BorrowerResidencyBasisType>
-													<BorrowerResidencyDurationMonthsCount>43</BorrowerResidencyDurationMonthsCount>
-													<!--BorrowerResidencyDurationMonthsCount is Hard Coded to 43-->
 													<BorrowerResidencyType>Prior</BorrowerResidencyType>
 												</RESIDENCE_DETAIL>
 											</RESIDENCE>
