@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "libxmljs": "^0.19.7",
-    "libxmljs2-xsd": "^0.26.5",
     "moment": "^2.29.1",
     "xmlbuilder2": "^2.4.0"
   }
