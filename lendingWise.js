@@ -63,9 +63,9 @@ function createMismo(incomingLoan) {
   const partyBorrowerData = [loan["LMRInfo"]];
   doc = partyBorrower(doc, partyBorrowerData);
 
-  if (partyBorrowerData[0].coBorrowerFName) {
-    doc = partyCoBorrower(doc, partyBorrowerData, 1);
-  }
+  // if (partyBorrowerData[0].coBorrowerFName) {
+  //   doc = partyCoBorrower(doc, partyBorrowerData, 1);
+  // }
   const brokerInfo = loan["BrokerInfo"];
   if (brokerInfo && brokerInfo.firstName) {
     doc = partyBroker(
@@ -929,18 +929,18 @@ function partyBorrower(doc, data) {
         },
         {
           EmploymentPositionDescription: (row) =>
-            loan["incomeInfo"].occupation1 || "Employee",
+            loan["incomeInfo"].occupation1 ,
         },
         {
           EmploymentStartDate: (row) =>
             loan["incomeInfo"].borrowerHireDate &&
               loan["incomeInfo"].borrowerHireDate != "0000-00-00"
               ? loan["incomeInfo"].borrowerHireDate
-              : "", required: true, defaultValue: moment().add(-5, 'years').format("YYYY-MM-DD")
+              : ""
         },
         {
           EmploymentTimeInLineOfWorkMonthsCount: (row) =>
-            loan["incomeInfo"].yearsAtJob1 * 12 || 142,
+            loan["incomeInfo"].yearsAtJob1 * 12 ,
         },
         {
           EmploymentBorrowerSelfEmployedIndicator: (row) =>
@@ -969,16 +969,13 @@ function partyBorrower(doc, data) {
       goBack: "GOVERNMENT_MONITORING_DETAIL",
       nodes: [
         {
-          HMDAEthnicityRefusalIndicator: (row) => "false",
-          hardCoded: true,
+          HMDAEthnicityRefusalIndicator: (row) => ""
         },
         {
-          HMDAGenderRefusalIndicator: (row) => "false",
-          hardCoded: true,
+          HMDAGenderRefusalIndicator: (row) => ""
         },
         {
-          HMDARaceRefusalIndicator: (row) => "false",
-          hardCoded: true,
+          HMDARaceRefusalIndicator: (row) => ""
         },
       ],
     },
@@ -994,8 +991,7 @@ function partyBorrower(doc, data) {
           "ULAD:HMDAGenderType": (row) => mapValue(loan["QAInfo"].BGender, genderDiagram)
         },
         {
-          "ULAD:ApplicationTakenMethodType": (row) => "FaceToFace",
-          hardCoded: true,
+          "ULAD:ApplicationTakenMethodType": (row) => ""
         },
       ],
     },
@@ -1096,7 +1092,7 @@ function partyBorrower(doc, data) {
       nodes: [
         { TaxpayerIdentifierType: (row) => "SocialSecurityNumber" },
         {
-          TaxpayerIdentifierValue: (row) => row.ssnNumber || "0123111111",
+          TaxpayerIdentifierValue: (row) => row.ssnNumber ,
         },
       ],
     },
@@ -1384,22 +1380,22 @@ function partyCoBorrower(doc, data) {
               ? "Yes"
               : "No",
         },
-        { HomeownerPastThreeYearsType: (row) => "No", hardCoded: true },
+        { HomeownerPastThreeYearsType: (row) => "" },
         { PriorPropertyUsageType: (row) => "" },
-        { FHASecondaryResidenceIndicator: (row) => "false", hardCoded: true },
+        { FHASecondaryResidenceIndicator: (row) => "" },
         { PriorPropertyTitleType: (row) => "" },
         {
-          UndisclosedBorrowedFundsIndicator: (row) => "false",
-          hardCoded: true,
+          UndisclosedBorrowedFundsIndicator: (row) => "",
+      
         },
         { UndisclosedBorrowedFundsAmount: (row) => "" },
         {
-          UndisclosedMortgageApplicationIndicator: (row) => "false",
-          hardCoded: true,
+          UndisclosedMortgageApplicationIndicator: (row) => "",
+      
         },
         {
-          UndisclosedCreditApplicationIndicator: (row) => "false",
-          hardCoded: true,
+          UndisclosedCreditApplicationIndicator: (row) => "",
+      
         },
         {
           PropertyProposedCleanEnergyLienIndicator: (row) => ""
@@ -1422,16 +1418,16 @@ function partyCoBorrower(doc, data) {
             indicator(loan["fileHMLOBackGroundInfo"].hasCoBorAnyActiveLawsuits),
         },
         {
-          PriorPropertyDeedInLieuConveyedIndicator: (row) => "false",
-          hardCoded: true,
+          PriorPropertyDeedInLieuConveyedIndicator: (row) => "",
+          
         },
         {
-          PriorPropertyShortSaleCompletedIndicator: (row) => "false",
-          hardCoded: true,
+          PriorPropertyShortSaleCompletedIndicator: (row) => "",
+          
         },
         {
-          PriorPropertyForeclosureCompletedIndicator: (row) => "false",
-          hardCoded: true,
+          PriorPropertyForeclosureCompletedIndicator: (row) => "",
+         
         },
         {
           BankruptcyIndicator: (row) =>
@@ -1610,18 +1606,17 @@ function partyBroker(doc, data, startingIndex) {
     {
       path: ["LEGAL_ENTITY", "LEGAL_ENTITY_DETAIL"],
       goBack: 2,
-      nodes: [{ FullName: (row) => "ABC Mortgage", hardCoded: true }],
+      nodes: [{ FullName: (row) => ""}],
     },
     {
       path: ["ADDRESSES", "ADDRESS"],
       nodes: [
         {
-          AddressLineText: (row) => "412 H St, NW",
-          hardCoded: true,
+          AddressLineText: (row) => ""
         },
-        { CityName: (row) => "Washington", hardCoded: true },
-        { StateCode: (row) => "DC", hardCoded: true },
-        { PostalCode: (row) => "200121234", hardCoded: true },
+        { CityName: (row) => "",  },
+        { StateCode: (row) => "",  },
+        { PostalCode: (row) => "",  },
       ],
     },
     {
@@ -1629,12 +1624,12 @@ function partyBroker(doc, data, startingIndex) {
       goBack: 3,
       nodes: [
         {
-          LicenseIdentifier: (row) => 123456789111,
-          hardCoded: true,
+          LicenseIdentifier: (row) => "",
+          
         },
         {
-          LicenseAuthorityLevelType: (row) => "Private",
-          hardCoded: true,
+          LicenseAuthorityLevelType: (row) => "",
+          
         },
       ],
     },

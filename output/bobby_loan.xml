@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-05T20:28:41Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-05T21:05:00Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -292,17 +292,9 @@
 										</EMPLOYERS>
 										<GOVERNMENT_MONITORING>
 											<GOVERNMENT_MONITORING_DETAIL>
-												<HMDAEthnicityRefusalIndicator>false</HMDAEthnicityRefusalIndicator>
-												<!--HMDAEthnicityRefusalIndicator is HARD CODED to false-->
-												<HMDAGenderRefusalIndicator>false</HMDAGenderRefusalIndicator>
-												<!--HMDAGenderRefusalIndicator is HARD CODED to false-->
-												<HMDARaceRefusalIndicator>false</HMDARaceRefusalIndicator>
-												<!--HMDARaceRefusalIndicator is HARD CODED to false-->
 												<EXTENSION>
 													<OTHER>
 														<ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
-															<ULAD:ApplicationTakenMethodType>FaceToFace</ULAD:ApplicationTakenMethodType>
-															<!--ULAD:ApplicationTakenMethodType is HARD CODED to FaceToFace-->
 															<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>
 														</ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
 													</OTHER>
@@ -359,170 +351,9 @@
 								</TAXPAYER_IDENTIFIER>
 							</TAXPAYER_IDENTIFIERS>
 						</PARTY>
-						<PARTY SequenceNumber="2" xlink:label="PARTY_2">
-							<INDIVIDUAL>
-								<CONTACT_POINTS>
-									<CONTACT_POINT>
-										<CONTACT_POINT_EMAIL>
-											<ContactPointEmailValue>coborrower@dummyemail.com</ContactPointEmailValue>
-										</CONTACT_POINT_EMAIL>
-									</CONTACT_POINT>
-									<CONTACT_POINT>
-										<CONTACT_POINT_TELEPHONE>
-											<ContactPointTelephoneValue>1234567890</ContactPointTelephoneValue>
-										</CONTACT_POINT_TELEPHONE>
-										<CONTACT_POINT_DETAIL>
-											<ContactPointRoleType>Home</ContactPointRoleType>
-										</CONTACT_POINT_DETAIL>
-									</CONTACT_POINT>
-									<CONTACT_POINT>
-										<CONTACT_POINT_TELEPHONE>
-											<ContactPointTelephoneValue>0987654321</ContactPointTelephoneValue>
-										</CONTACT_POINT_TELEPHONE>
-										<CONTACT_POINT_DETAIL>
-											<ContactPointRoleType>Mobile</ContactPointRoleType>
-										</CONTACT_POINT_DETAIL>
-									</CONTACT_POINT>
-									<CONTACT_POINT>
-										<CONTACT_POINT_TELEPHONE>
-											<ContactPointTelephoneValue>4154544634</ContactPointTelephoneValue>
-										</CONTACT_POINT_TELEPHONE>
-										<CONTACT_POINT_DETAIL>
-											<ContactPointRoleType>Work</ContactPointRoleType>
-										</CONTACT_POINT_DETAIL>
-									</CONTACT_POINT>
-								</CONTACT_POINTS>
-								<NAME>
-									<FirstName>Michelle</FirstName>
-									<LastName>Abraham</LastName>
-								</NAME>
-							</INDIVIDUAL>
-							<ROLES>
-								<ROLE SequenceNumber="1" xlink:label="BORROWER_2">
-									<BORROWER>
-										<BORROWER_DETAIL>
-											<BorrowerBirthDate>1976-01-06</BorrowerBirthDate>
-											<MaritalStatusType>Married</MaritalStatusType>
-										</BORROWER_DETAIL>
-										<CURRENT_INCOME>
-											<CURRENT_INCOME_ITEMS>
-												<CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_2">
-													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount>2500.00</CurrentIncomeMonthlyTotalAmount>
-														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-														<IncomeType>Base</IncomeType>
-													</CURRENT_INCOME_ITEM_DETAIL>
-												</CURRENT_INCOME_ITEM>
-												<CURRENT_INCOME_ITEM>
-													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount>2500</CurrentIncomeMonthlyTotalAmount>
-														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-														<IncomeType>BorrowerEstimatedTotalMonthlyIncome</IncomeType>
-													</CURRENT_INCOME_ITEM_DETAIL>
-												</CURRENT_INCOME_ITEM>
-											</CURRENT_INCOME_ITEMS>
-										</CURRENT_INCOME>
-										<DECLARATION>
-											<DECLARATION_DETAIL>
-												<BankruptcyIndicator>false</BankruptcyIndicator>
-												<CitizenshipResidencyType>PermanentResidentAlien</CitizenshipResidencyType>
-												<FHASecondaryResidenceIndicator>false</FHASecondaryResidenceIndicator>
-												<!--FHASecondaryResidenceIndicator is HARD CODED to false-->
-												<HomeownerPastThreeYearsType>No</HomeownerPastThreeYearsType>
-												<!--HomeownerPastThreeYearsType is HARD CODED to No-->
-												<IntentToOccupyType>Yes</IntentToOccupyType>
-												<OutstandingJudgmentsIndicator>false</OutstandingJudgmentsIndicator>
-												<PartyToLawsuitIndicator>false</PartyToLawsuitIndicator>
-												<PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
-												<PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
-												<!--PriorPropertyDeedInLieuConveyedIndicator is HARD CODED to false-->
-												<PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
-												<!--PriorPropertyForeclosureCompletedIndicator is HARD CODED to false-->
-												<PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
-												<!--PriorPropertyShortSaleCompletedIndicator is HARD CODED to false-->
-												<UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
-												<!--UndisclosedBorrowedFundsIndicator is HARD CODED to false-->
-												<UndisclosedCreditApplicationIndicator>false</UndisclosedCreditApplicationIndicator>
-												<!--UndisclosedCreditApplicationIndicator is HARD CODED to false-->
-												<UndisclosedMortgageApplicationIndicator>false</UndisclosedMortgageApplicationIndicator>
-												<!--UndisclosedMortgageApplicationIndicator is HARD CODED to false-->
-											</DECLARATION_DETAIL>
-										</DECLARATION>
-										<EMPLOYERS>
-											<EMPLOYER Sequence="1" xlink:label="EMPLOYER_2">
-												<ADDRESS>
-													<AddressLineText>123 butterfly st, miami fl 33176</AddressLineText>
-													<CountryCode>US</CountryCode>
-												</ADDRESS>
-												<EMPLOYMENT>
-													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
-													<EmploymentClassificationType>Secondary</EmploymentClassificationType>
-													<EmploymentPositionDescription>butterfly milker</EmploymentPositionDescription>
-													<EmploymentStartDate>2015-01-09</EmploymentStartDate>
-													<EmploymentStatusType>Current</EmploymentStatusType>
-													<EmploymentTimeInLineOfWorkMonthsCount>5</EmploymentTimeInLineOfWorkMonthsCount>
-												</EMPLOYMENT>
-											</EMPLOYER>
-										</EMPLOYERS>
-										<GOVERNMENT_MONITORING>
-											<HMDA_ETHNICITY_ORIGINS>
-												<HMDA_ETHNICITY_ORIGIN>
-													<HMDAEthnicityOriginType>Mexican</HMDAEthnicityOriginType>
-													<HMDAEthnicityOriginTypeOtherDescription>3</HMDAEthnicityOriginTypeOtherDescription>
-												</HMDA_ETHNICITY_ORIGIN>
-											</HMDA_ETHNICITY_ORIGINS>
-											<HMDA_RACES>
-												<HMDA_RACE>
-													<HMDA_RACE_DETAIL>
-														<HMDARaceType>NativeHawaiianOrOtherPacificIslander</HMDARaceType>
-													</HMDA_RACE_DETAIL>
-												</HMDA_RACE>
-											</HMDA_RACES>
-										</GOVERNMENT_MONITORING>
-									</BORROWER>
-									<ROLE_DETAIL>
-										<PartyRoleType>Borrower</PartyRoleType>
-									</ROLE_DETAIL>
-								</ROLE>
-							</ROLES>
-							<TAXPAYER_IDENTIFIERS>
-								<TAXPAYER_IDENTIFIER>
-									<TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
-									<TaxpayerIdentifierValue>798645654</TaxpayerIdentifierValue>
-								</TAXPAYER_IDENTIFIER>
-							</TAXPAYER_IDENTIFIERS>
-						</PARTY>
 						<PARTY SequenceNumber="3" xlink:label="PARTY_3">
-							<LEGAL_ENTITY>
-								<LEGAL_ENTITY_DETAIL>
-									<FullName>ABC Mortgage</FullName>
-									<!--FullName is HARD CODED to ABC Mortgage-->
-								</LEGAL_ENTITY_DETAIL>
-							</LEGAL_ENTITY>
-							<ADDRESSES>
-								<ADDRESS>
-									<AddressLineText>412 H St, NW</AddressLineText>
-									<!--AddressLineText is HARD CODED to 412 H St, NW-->
-									<CityName>Washington</CityName>
-									<!--CityName is HARD CODED to Washington-->
-									<PostalCode>200121234</PostalCode>
-									<!--PostalCode is HARD CODED to 200121234-->
-									<StateCode>DC</StateCode>
-									<!--StateCode is HARD CODED to DC-->
-								</ADDRESS>
-							</ADDRESSES>
 							<ROLES>
 								<ROLE>
-									<LICENSES>
-										<LICENSE>
-											<LICENSE_DETAIL>
-												<LicenseAuthorityLevelType>Private</LicenseAuthorityLevelType>
-												<!--LicenseAuthorityLevelType is HARD CODED to Private-->
-												<LicenseIdentifier>123456789111</LicenseIdentifier>
-												<!--LicenseIdentifier is HARD CODED to 123456789111-->
-											</LICENSE_DETAIL>
-										</LICENSE>
-									</LICENSES>
 									<ROLE_DETAIL>
 										<PartyRoleType>LoanOriginationCompany</PartyRoleType>
 									</ROLE_DETAIL>
