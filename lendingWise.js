@@ -198,31 +198,25 @@ function collaterals(doc, data) {
     {
       path: ["PROPERTY_DETAIL"],
       nodes: [
-        { FinancedUnitCount: (row) => "1", hardCoded: true },
-        { PUDIndicator: (row) => "false", hardCoded: true },
-        { PropertyEstateType: (row) => "FeeSimple", hardCoded: true },
-        { PropertyStructureBuiltYear: (row) => loan["FileProInfo"][0].yearBuilt  },
-        { PropertyEstimatedValueAmount: (row) => money(row.homeValue) },
-        { PropertyUsageType: (row) => "PrimaryResidence", hardCoded: true },
-        { AttachmentType: (row) => "Attached", hardCoded: true },
+        { FinancedUnitCount: (row) => "" },
+        { PUDIndicator: (row) => "" },
+        { PropertyEstateType: (row) => loan["fileHMLOPropertyInfo"].HMLOEstateHeldIn },
+        { PropertyStructureBuiltYear: (row) => "" },
+        { PropertyEstimatedValueAmount: (row) => "" },
+        { PropertyUsageType: (row) => "" },
+        { AttachmentType: (row) => "" },
         {
           CommunityPropertyStateIndicator: (row) => "false",
           hardCoded: true,
         },
-        { ConstructionMethodType: (row) => "SiteBuilt", hardCoded: true },
+        { ConstructionMethodType: (row) => "" },
         {
-          PropertyExistingCleanEnergyLienIndicator: (row) => "false",
-          hardCoded: true,
+          PropertyExistingCleanEnergyLienIndicator: (row) => ""
         },
-        { PropertyInProjectIndicator: (row) => "false", hardCoded: true },
-        { RentalEstimatedNetMonthlyRentAmount: (row) => "0", hardCoded: true },
+        { PropertyInProjectIndicator: (row) => "" },
+        { RentalEstimatedNetMonthlyRentAmount: (row) => ""},
         {
-          PropertyMixedUsageIndicator: (row) =>
-            row.propertyType === "Apartment Complex" ||
-            row.propertyType === "Assisted Living Facility" ||
-            row.propertyType === "Commercial Lot/Land"
-              ? "true"
-              : "false",
+          PropertyMixedUsageIndicator: (row) => ""
         },
       ],
     },
@@ -264,14 +258,13 @@ function contingentLiabilities(doc, data, startIndex) {
           LiabilityUnpaidBalanceAmount: (row) => money(row.clBalance),
         },
         {
-          LiabilityPayoffStatusIndicator: (row) => "false",
-          hardCoded: true,
+          LiabilityPayoffStatusIndicator: (row) => ""
         },
         { LiabilityMonthlyPaymentAmount: (row) => money(row.monthlyPayment) },
         {
           LiabilityRemainingTermMonthsCount: (row) => row.monthsLeftToPay,
         },
-        { LiabilityExclusionIndicator: (row) => "false", hardCoded: true },
+        { LiabilityExclusionIndicator: (row) => "" },
       ],
     },
     {
@@ -334,8 +327,7 @@ function loans(doc, data, startIndex) {
             "360",
         },
         {
-          LoanAmortizationPeriodType: (row) => "Month",
-          hardCoded: true,
+          LoanAmortizationPeriodType: (row) => ""
         },
       ],
     },
@@ -344,10 +336,10 @@ function loans(doc, data, startIndex) {
       goBack: 3,
       nodes: [
         {
-          ClosingAdjustmentItemAmount: (row) => "1000", hardCoded: true,
+          ClosingAdjustmentItemAmount: (row) => ""
         },
         {
-          ClosingAdjustmentItemType: (row) => "LenderCredit", hardCoded: true,
+          ClosingAdjustmentItemType: (row) => ""
         },
       ],
     },
@@ -356,7 +348,7 @@ function loans(doc, data, startIndex) {
       goBack: 2,
       nodes: [
         {
-          CashFromBorrowerAtClosingAmount: (row) => "28800.00", hardCoded: true,
+          CashFromBorrowerAtClosingAmount: (row) => ""
         },
       ],
     },
@@ -374,32 +366,26 @@ function loans(doc, data, startIndex) {
       goBack: "URLA",
       nodes: [
         {
-          AlterationsImprovementsAndRepairsAmount: (row) => "0.00",
-          hardCoded: true,
+          AlterationsImprovementsAndRepairsAmount: (row) => ""
         },
         {
-          ApplicationSignedByLoanOriginatorDate: (row) => "2019-01-07",
-          hardCoded: true,
+          ApplicationSignedByLoanOriginatorDate: (row) => ""
         },
         {
           EstimatedClosingCostsAmount: (row) =>
             money(loan["fileLOPropInfo"].estimatedClosingCosts),
         },
         {
-          MIAndFundingFeeFinancedAmount: (row) => "0.00",
-          hardCoded: true,
+          MIAndFundingFeeFinancedAmount: (row) => ""
         },
         {
-          MIAndFundingFeeTotalAmount: (row) => "0.00",
-          hardCoded: true,
+          MIAndFundingFeeTotalAmount: (row) => ""
         },
         {
-          PrepaidItemsEstimatedAmount: (row) => "0.00",
-          hardCoded: true,
+          PrepaidItemsEstimatedAmount: (row) => ""
         },
         {
-          RefinanceIncludingDebtsToBePaidOffAmount: (row) => "0.00",
-          hardCoded: true,
+          RefinanceIncludingDebtsToBePaidOffAmount: (row) => ""
         },
       ],
     },
@@ -413,8 +399,7 @@ function loans(doc, data, startIndex) {
       goBack: "LOAN",
       nodes: [
         {
-          "ULAD:URLATotalSellerCreditsAmount": (row) => "4750.00",
-          hardCoded: true,
+          "ULAD:URLATotalSellerCreditsAmount": (row) => ""
         },
       ],
     },
@@ -422,54 +407,42 @@ function loans(doc, data, startIndex) {
       path: ["HOUSING_EXPENSES", "HOUSING_EXPENSE"],
       goBack: 1,
       nodes: [
-        { HousingExpensePaymentAmount: (row) => "2367.98", hardCoded: true },
-        { HousingExpenseTimingType: (row) => "Proposed", hardCoded: true },
+        { HousingExpensePaymentAmount: (row) => "" },
+        { HousingExpenseTimingType: (row) => "" },
         {
-          HousingExpenseType: (row) => "FirstMortgagePrincipalAndInterest",
-          hardCoded: true,
+          HousingExpenseType: (row) => ""
         },
-      ],
-    },
-    {
-      path: ["HOUSING_EXPENSE"],
-      nodes: [
-        { HousingExpensePaymentAmount: (row) => "300.00", hardCoded: true },
-        { HousingExpenseTimingType: (row) => "Proposed", hardCoded: true },
-        { HousingExpenseType: (row) => "HomeownersInsurance", hardCoded: true },
       ],
     },
     {
       path: ["HOUSING_EXPENSE"],
       goBack: "LOAN",
       nodes: [
-        { HousingExpensePaymentAmount: (row) => "150.00", hardCoded: true },
-        { HousingExpenseTimingType: (row) => "Proposed", hardCoded: true },
-        { HousingExpenseType: (row) => "RealEstateTax", hardCoded: true },
+        { HousingExpensePaymentAmount: (row) => "" },
+        { HousingExpenseTimingType: (row) => "" },
+        { HousingExpenseType: (row) => "" },
       ],
     },
     {
       path: ["LOAN_DETAIL"],
       nodes: [
-        { BalloonIndicator: (row) => "false", hardCoded: true },
+        { BalloonIndicator: (row) => "" },
         { BorrowerCount: (row) => "1", hardCoded: true },
-        { TotalMortgagedPropertiesCount: (row) => "1", hardCoded: true },
-        { ApplicationReceivedDate: (row) => "2019-01-06", hardCoded: true },
+        { TotalMortgagedPropertiesCount: (row) => "" },
+        { ApplicationReceivedDate: (row) => "" },
         {
-          BuydownTemporarySubsidyFundingIndicator: (row) => "false",
-          hardCoded: true,
+          BuydownTemporarySubsidyFundingIndicator: (row) => ""
         },
-        { ConstructionLoanIndicator: (row) => "false", hardCoded: true },
+        { ConstructionLoanIndicator: (row) => "" },
         {
-          ConversionOfContractForDeedIndicator: (row) => "false",
-          hardCoded: true,
+          ConversionOfContractForDeedIndicator: (row) => ""
         },
         {
-          EnergyRelatedImprovementsIndicator: (row) => "false",
-          hardCoded: true,
+          EnergyRelatedImprovementsIndicator: (row) => ""
         },
-        { InterestOnlyIndicator: (row) => "false", hardCoded: true },
-        { NegativeAmortizationIndicator: (row) => "false", hardCoded: true },
-        { PrepaymentPenaltyIndicator: (row) => "false", hardCoded: true },
+        { InterestOnlyIndicator: (row) => "" },
+        { NegativeAmortizationIndicator: (row) => "" },
+        { PrepaymentPenaltyIndicator: (row) => "" },
       ],
     },
     {
@@ -484,33 +457,29 @@ function loans(doc, data, startIndex) {
     {
       path: ["LOAN_PRODUCT", "LOAN_PRODUCT_DETAIL"],
       nodes: [
-        { DiscountPointsTotalAmount: (row) => "0.00", hardCoded: true },
+        { DiscountPointsTotalAmount: (row) => "" },
         {
-          ProductDescription: (row) => "Non-QM Agency Plus 30 Year Fixed",
-          hardCoded: true,
+          ProductDescription: (row) => ""
         },
       ],
     },
     {
       path: ["LOAN_STATUSES", "LOAN_STATUS"],
       nodes: [
-        { LoanStatusIdentifier: (row) => "Underwriting", hardCoded: true },
+        { LoanStatusIdentifier: (row) => loan["PCStatusInfo"].length > 0 && loan["PCStatusInfo"][loan["PCStatusInfo"].length - 1].primaryStatus },
       ],
     },
     {
       path: ["ORIGINATION_SYSTEMS", "ORIGINATION_SYSTEM"],
       nodes: [
         {
-          LoanOriginationSystemVendorIdentifier: (row) => "000112",
-          hardCoded: true,
+          LoanOriginationSystemVendorIdentifier: (row) => ""
         },
         {
-          LoanOriginationSystemName: (row) => "Name of LOS",
-          hardCoded: true,
+          LoanOriginationSystemName: (row) => ""
         },
         {
-          LoanOriginationSystemVersionIdentifier: (row) => "LendingPadVerison",
-          hardCoded: true,
+          LoanOriginationSystemVersionIdentifier: (row) => ""
         },
       ],
     },
@@ -536,12 +505,10 @@ function loans(doc, data, startIndex) {
             ),
         },
         {
-          MortgageType: (row) => "Conventional",
-          hardCoded: true,
+          MortgageType: (row) => ""
         },
         {
-          LienPriorityType: (row) => "FirstLien",
-          hardCoded: true,
+          LienPriorityType: (row) => ""
         },
         { NoteRatePercent: (row) => money(loan["LMRInfo"].lien1Rate) },
       ],
@@ -1791,6 +1758,7 @@ function buildMismoNodes(
         element.nodes.forEach((n) => {
           const key = Object.keys(n)[0];
           const value = n[key](row, counter + 1);
+          //TODO: // detect hardcoding automatically const isHardCoded = n[key](); //
           // n.hardCoded = false;
           if (n.hardCoded) {
              doc

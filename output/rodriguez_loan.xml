@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-04T18:12:52Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-05T02:05:51Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -23,28 +23,8 @@
 									<StateCode>AZ</StateCode>
 								</ADDRESS>
 								<PROPERTY_DETAIL>
-									<AttachmentType>Attached</AttachmentType>
-									<!--AttachmentType is Hard Coded to Attached-->
 									<CommunityPropertyStateIndicator>false</CommunityPropertyStateIndicator>
 									<!--CommunityPropertyStateIndicator is Hard Coded to false-->
-									<ConstructionMethodType>SiteBuilt</ConstructionMethodType>
-									<!--ConstructionMethodType is Hard Coded to SiteBuilt-->
-									<FinancedUnitCount>1</FinancedUnitCount>
-									<!--FinancedUnitCount is Hard Coded to 1-->
-									<PropertyEstateType>FeeSimple</PropertyEstateType>
-									<!--PropertyEstateType is Hard Coded to FeeSimple-->
-									<PropertyEstimatedValueAmount>220900.00</PropertyEstimatedValueAmount>
-									<PropertyExistingCleanEnergyLienIndicator>false</PropertyExistingCleanEnergyLienIndicator>
-									<!--PropertyExistingCleanEnergyLienIndicator is Hard Coded to false-->
-									<PropertyInProjectIndicator>false</PropertyInProjectIndicator>
-									<!--PropertyInProjectIndicator is Hard Coded to false-->
-									<PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
-									<PropertyUsageType>PrimaryResidence</PropertyUsageType>
-									<!--PropertyUsageType is Hard Coded to PrimaryResidence-->
-									<PUDIndicator>false</PUDIndicator>
-									<!--PUDIndicator is Hard Coded to false-->
-									<RentalEstimatedNetMonthlyRentAmount>0</RentalEstimatedNetMonthlyRentAmount>
-									<!--RentalEstimatedNetMonthlyRentAmount is Hard Coded to 0-->
 								</PROPERTY_DETAIL>
 								<PROPERTY_VALUATIONS>
 									<PROPERTY_VALUATION>
@@ -67,11 +47,7 @@
 						<LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
 							<LIABILITY_DETAIL>
 								<LiabilityAccountIdentifier>9293</LiabilityAccountIdentifier>
-								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
-								<!--LiabilityExclusionIndicator is Hard Coded to false-->
 								<LiabilityMonthlyPaymentAmount>321.00</LiabilityMonthlyPaymentAmount>
-								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
-								<!--LiabilityPayoffStatusIndicator is Hard Coded to false-->
 								<LiabilityRemainingTermMonthsCount>93</LiabilityRemainingTermMonthsCount>
 								<LiabilityType>Other</LiabilityType>
 								<LiabilityTypeOtherDescription>testing</LiabilityTypeOtherDescription>
@@ -86,11 +62,7 @@
 						<LIABILITY SequenceNumber="2" xlink:label="LIABILITY_2">
 							<LIABILITY_DETAIL>
 								<LiabilityAccountIdentifier>90320</LiabilityAccountIdentifier>
-								<LiabilityExclusionIndicator>false</LiabilityExclusionIndicator>
-								<!--LiabilityExclusionIndicator is Hard Coded to false-->
 								<LiabilityMonthlyPaymentAmount>9393.00</LiabilityMonthlyPaymentAmount>
-								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
-								<!--LiabilityPayoffStatusIndicator is Hard Coded to false-->
 								<LiabilityRemainingTermMonthsCount>93</LiabilityRemainingTermMonthsCount>
 								<LiabilityType>Other</LiabilityType>
 								<LiabilityTypeOtherDescription>testing2</LiabilityTypeOtherDescription>
@@ -199,106 +171,20 @@
 								<AMORTIZATION_RULE>
 									<AmortizationType>Fixed</AmortizationType>
 									<LoanAmortizationPeriodCount>360</LoanAmortizationPeriodCount>
-									<LoanAmortizationPeriodType>Month</LoanAmortizationPeriodType>
-									<!--LoanAmortizationPeriodType is Hard Coded to Month-->
 								</AMORTIZATION_RULE>
 							</AMORTIZATION>
-							<CLOSING_INFORMATION>
-								<CLOSING_ADJUSTMENT_ITEMS>
-									<CLOSING_ADJUSTMENT_ITEM>
-										<CLOSING_ADJUSTMENT_ITEM_DETAIL>
-											<ClosingAdjustmentItemAmount>1000</ClosingAdjustmentItemAmount>
-											<!--ClosingAdjustmentItemAmount is Hard Coded to 1000-->
-											<ClosingAdjustmentItemType>LenderCredit</ClosingAdjustmentItemType>
-											<!--ClosingAdjustmentItemType is Hard Coded to LenderCredit-->
-										</CLOSING_ADJUSTMENT_ITEM_DETAIL>
-									</CLOSING_ADJUSTMENT_ITEM>
-								</CLOSING_ADJUSTMENT_ITEMS>
-								<CLOSING_INFORMATION_DETAIL>
-									<CashFromBorrowerAtClosingAmount>28800.00</CashFromBorrowerAtClosingAmount>
-									<!--CashFromBorrowerAtClosingAmount is Hard Coded to 28800.00-->
-								</CLOSING_INFORMATION_DETAIL>
-							</CLOSING_INFORMATION>
 							<DOCUMENT_SPECIFIC_DATA_SETS>
 								<DOCUMENT_SPECIFIC_DATA_SET>
 									<URLA>
 										<URLA_DETAIL>
-											<AlterationsImprovementsAndRepairsAmount>0.00</AlterationsImprovementsAndRepairsAmount>
-											<!--AlterationsImprovementsAndRepairsAmount is Hard Coded to 0.00-->
-											<ApplicationSignedByLoanOriginatorDate>2019-01-07</ApplicationSignedByLoanOriginatorDate>
-											<!--ApplicationSignedByLoanOriginatorDate is Hard Coded to 2019-01-07-->
 											<EstimatedClosingCostsAmount>0.00</EstimatedClosingCostsAmount>
-											<MIAndFundingFeeFinancedAmount>0.00</MIAndFundingFeeFinancedAmount>
-											<!--MIAndFundingFeeFinancedAmount is Hard Coded to 0.00-->
-											<MIAndFundingFeeTotalAmount>0.00</MIAndFundingFeeTotalAmount>
-											<!--MIAndFundingFeeTotalAmount is Hard Coded to 0.00-->
-											<PrepaidItemsEstimatedAmount>0.00</PrepaidItemsEstimatedAmount>
-											<!--PrepaidItemsEstimatedAmount is Hard Coded to 0.00-->
-											<RefinanceIncludingDebtsToBePaidOffAmount>0.00</RefinanceIncludingDebtsToBePaidOffAmount>
-											<!--RefinanceIncludingDebtsToBePaidOffAmount is Hard Coded to 0.00-->
 										</URLA_DETAIL>
-										<URLA_TOTAL>
-											<EXTENSION>
-												<OTHER>
-													<ULAD:URLA_TOTAL_EXTENSION>
-														<ULAD:URLATotalSellerCreditsAmount>4750.00</ULAD:URLATotalSellerCreditsAmount>
-														<!--ULAD:URLATotalSellerCreditsAmount is Hard Coded to 4750.00-->
-													</ULAD:URLA_TOTAL_EXTENSION>
-												</OTHER>
-											</EXTENSION>
-										</URLA_TOTAL>
 									</URLA>
 								</DOCUMENT_SPECIFIC_DATA_SET>
 							</DOCUMENT_SPECIFIC_DATA_SETS>
-							<HOUSING_EXPENSES>
-								<HOUSING_EXPENSE>
-									<HousingExpensePaymentAmount>2367.98</HousingExpensePaymentAmount>
-									<!--HousingExpensePaymentAmount is Hard Coded to 2367.98-->
-									<HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
-									<!--HousingExpenseTimingType is Hard Coded to Proposed-->
-									<HousingExpenseType>FirstMortgagePrincipalAndInterest</HousingExpenseType>
-									<!--HousingExpenseType is Hard Coded to FirstMortgagePrincipalAndInterest-->
-								</HOUSING_EXPENSE>
-								<HOUSING_EXPENSE>
-									<HousingExpensePaymentAmount>300.00</HousingExpensePaymentAmount>
-									<!--HousingExpensePaymentAmount is Hard Coded to 300.00-->
-									<HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
-									<!--HousingExpenseTimingType is Hard Coded to Proposed-->
-									<HousingExpenseType>HomeownersInsurance</HousingExpenseType>
-									<!--HousingExpenseType is Hard Coded to HomeownersInsurance-->
-								</HOUSING_EXPENSE>
-								<HOUSING_EXPENSE>
-									<HousingExpensePaymentAmount>150.00</HousingExpensePaymentAmount>
-									<!--HousingExpensePaymentAmount is Hard Coded to 150.00-->
-									<HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
-									<!--HousingExpenseTimingType is Hard Coded to Proposed-->
-									<HousingExpenseType>RealEstateTax</HousingExpenseType>
-									<!--HousingExpenseType is Hard Coded to RealEstateTax-->
-								</HOUSING_EXPENSE>
-							</HOUSING_EXPENSES>
 							<LOAN_DETAIL>
-								<ApplicationReceivedDate>2019-01-06</ApplicationReceivedDate>
-								<!--ApplicationReceivedDate is Hard Coded to 2019-01-06-->
-								<BalloonIndicator>false</BalloonIndicator>
-								<!--BalloonIndicator is Hard Coded to false-->
 								<BorrowerCount>1</BorrowerCount>
 								<!--BorrowerCount is Hard Coded to 1-->
-								<BuydownTemporarySubsidyFundingIndicator>false</BuydownTemporarySubsidyFundingIndicator>
-								<!--BuydownTemporarySubsidyFundingIndicator is Hard Coded to false-->
-								<ConstructionLoanIndicator>false</ConstructionLoanIndicator>
-								<!--ConstructionLoanIndicator is Hard Coded to false-->
-								<ConversionOfContractForDeedIndicator>false</ConversionOfContractForDeedIndicator>
-								<!--ConversionOfContractForDeedIndicator is Hard Coded to false-->
-								<EnergyRelatedImprovementsIndicator>false</EnergyRelatedImprovementsIndicator>
-								<!--EnergyRelatedImprovementsIndicator is Hard Coded to false-->
-								<InterestOnlyIndicator>false</InterestOnlyIndicator>
-								<!--InterestOnlyIndicator is Hard Coded to false-->
-								<NegativeAmortizationIndicator>false</NegativeAmortizationIndicator>
-								<!--NegativeAmortizationIndicator is Hard Coded to false-->
-								<PrepaymentPenaltyIndicator>false</PrepaymentPenaltyIndicator>
-								<!--PrepaymentPenaltyIndicator is Hard Coded to false-->
-								<TotalMortgagedPropertiesCount>1</TotalMortgagedPropertiesCount>
-								<!--TotalMortgagedPropertiesCount is Hard Coded to 1-->
 							</LOAN_DETAIL>
 							<LOAN_IDENTIFIERS>
 								<LOAN_IDENTIFIER>
@@ -306,37 +192,14 @@
 									<LoanIdentifierType>LenderLoan</LoanIdentifierType>
 								</LOAN_IDENTIFIER>
 							</LOAN_IDENTIFIERS>
-							<LOAN_PRODUCT>
-								<LOAN_PRODUCT_DETAIL>
-									<DiscountPointsTotalAmount>0.00</DiscountPointsTotalAmount>
-									<!--DiscountPointsTotalAmount is Hard Coded to 0.00-->
-									<ProductDescription>Non-QM Agency Plus 30 Year Fixed</ProductDescription>
-									<!--ProductDescription is Hard Coded to Non-QM Agency Plus 30 Year Fixed-->
-								</LOAN_PRODUCT_DETAIL>
-							</LOAN_PRODUCT>
 							<LOAN_STATUSES>
 								<LOAN_STATUS>
-									<LoanStatusIdentifier>Underwriting</LoanStatusIdentifier>
-									<!--LoanStatusIdentifier is Hard Coded to Underwriting-->
+									<LoanStatusIdentifier>REO</LoanStatusIdentifier>
 								</LOAN_STATUS>
 							</LOAN_STATUSES>
-							<ORIGINATION_SYSTEMS>
-								<ORIGINATION_SYSTEM>
-									<LoanOriginationSystemName>Name of LOS</LoanOriginationSystemName>
-									<!--LoanOriginationSystemName is Hard Coded to Name of LOS-->
-									<LoanOriginationSystemVendorIdentifier>000112</LoanOriginationSystemVendorIdentifier>
-									<!--LoanOriginationSystemVendorIdentifier is Hard Coded to 000112-->
-									<LoanOriginationSystemVersionIdentifier>LendingPadVerison</LoanOriginationSystemVersionIdentifier>
-									<!--LoanOriginationSystemVersionIdentifier is Hard Coded to LendingPadVerison-->
-								</ORIGINATION_SYSTEM>
-							</ORIGINATION_SYSTEMS>
 							<TERMS_OF_LOAN>
 								<BaseLoanAmount>200000</BaseLoanAmount>
-								<LienPriorityType>FirstLien</LienPriorityType>
-								<!--LienPriorityType is Hard Coded to FirstLien-->
 								<LoanPurposeType>Refinance</LoanPurposeType>
-								<MortgageType>Conventional</MortgageType>
-								<!--MortgageType is Hard Coded to Conventional-->
 								<NoteRatePercent>7.00</NoteRatePercent>
 							</TERMS_OF_LOAN>
 						</LOAN>
