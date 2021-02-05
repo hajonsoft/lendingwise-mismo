@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-05T19:57:50Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-05T20:28:41Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -287,16 +287,16 @@
 										<GOVERNMENT_MONITORING>
 											<GOVERNMENT_MONITORING_DETAIL>
 												<HMDAEthnicityRefusalIndicator>false</HMDAEthnicityRefusalIndicator>
-												<!--HMDAEthnicityRefusalIndicator is Hard Coded to false-->
+												<!--HMDAEthnicityRefusalIndicator is HARD CODED to false-->
 												<HMDAGenderRefusalIndicator>false</HMDAGenderRefusalIndicator>
-												<!--HMDAGenderRefusalIndicator is Hard Coded to false-->
+												<!--HMDAGenderRefusalIndicator is HARD CODED to false-->
 												<HMDARaceRefusalIndicator>false</HMDARaceRefusalIndicator>
-												<!--HMDARaceRefusalIndicator is Hard Coded to false-->
+												<!--HMDARaceRefusalIndicator is HARD CODED to false-->
 												<EXTENSION>
 													<OTHER>
 														<ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
 															<ULAD:ApplicationTakenMethodType>FaceToFace</ULAD:ApplicationTakenMethodType>
-															<!--ULAD:ApplicationTakenMethodType is Hard Coded to FaceToFace-->
+															<!--ULAD:ApplicationTakenMethodType is HARD CODED to FaceToFace-->
 															<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>
 														</ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
 													</OTHER>
@@ -357,19 +357,19 @@
 							<LEGAL_ENTITY>
 								<LEGAL_ENTITY_DETAIL>
 									<FullName>ABC Mortgage</FullName>
-									<!--FullName is Hard Coded to ABC Mortgage-->
+									<!--FullName is HARD CODED to ABC Mortgage-->
 								</LEGAL_ENTITY_DETAIL>
 							</LEGAL_ENTITY>
 							<ADDRESSES>
 								<ADDRESS>
 									<AddressLineText>412 H St, NW</AddressLineText>
-									<!--AddressLineText is Hard Coded to 412 H St, NW-->
+									<!--AddressLineText is HARD CODED to 412 H St, NW-->
 									<CityName>Washington</CityName>
-									<!--CityName is Hard Coded to Washington-->
+									<!--CityName is HARD CODED to Washington-->
 									<PostalCode>200121234</PostalCode>
-									<!--PostalCode is Hard Coded to 200121234-->
+									<!--PostalCode is HARD CODED to 200121234-->
 									<StateCode>DC</StateCode>
-									<!--StateCode is Hard Coded to DC-->
+									<!--StateCode is HARD CODED to DC-->
 								</ADDRESS>
 							</ADDRESSES>
 							<ROLES>
@@ -378,9 +378,9 @@
 										<LICENSE>
 											<LICENSE_DETAIL>
 												<LicenseAuthorityLevelType>Private</LicenseAuthorityLevelType>
-												<!--LicenseAuthorityLevelType is Hard Coded to Private-->
+												<!--LicenseAuthorityLevelType is HARD CODED to Private-->
 												<LicenseIdentifier>123456789111</LicenseIdentifier>
-												<!--LicenseIdentifier is Hard Coded to 123456789111-->
+												<!--LicenseIdentifier is HARD CODED to 123456789111-->
 											</LICENSE_DETAIL>
 										</LICENSE>
 									</LICENSES>

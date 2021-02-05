@@ -1,4 +1,3 @@
-const { container } = require("./util");
 const { create } = require("xmlbuilder2");
 const moment = require("moment");
 
@@ -23,8 +22,6 @@ function createMismo(incomingLoan) {
     MISMOReferenceModelIdentifier: "3.4.032420160128",
     "xmlns:xlink": "http://www.w3.org/1999/xlink",
     "xmlns:LPA": "http://www.datamodelextension.org/Schema/LPA",
-    // "xsi:schemaLocation":
-    //   "http://www.mismo.org/residential/2009/schemas ../assets/reference/ReferenceModel_v3.4.0_B324/MISMO_3.4.0_B324.xsd",
   });
   doc = container(doc, ["ABOUT_VERSIONS", "ABOUT_VERSION"]);
   doc = doc.ele("AboutVersionIdentifier").txt("S5.0.06").up();
@@ -83,7 +80,6 @@ function createMismo(incomingLoan) {
     ...contingentLiabilityData,
     ...creditorInfoData,
   ]);
-  // doc = service1(doc, [""]);
   removeEmptyNodes(doc);
   let xml = doc.end({
     prettyPrint: true,
@@ -205,31 +201,31 @@ function collaterals(doc, data) {
     {
       path: ["PROPERTY_DETAIL"],
       nodes: [
-        { PUDIndicator: (row) => "" }, //false
+        { PUDIndicator: (row) => "" },
         {
           PropertyStructureBuiltYear: (row) => loan["FileProInfo"][0].yearBuilt,
         },
         { PropertyEstimatedValueAmount: (row) => money(row.homeValue) },
         {
           CommunityPropertyStateIndicator: (row) => "",
-        }, //false
+        },
         {
           PropertyExistingCleanEnergyLienIndicator: (row) => "",
-        }, //false
+        },
         {
           PropertyMixedUsageIndicator: (row) =>
             row.propertyType === "Apartment Complex" ||
-            row.propertyType === "Assisted Living Facility" ||
-            row.propertyType === "Commercial Lot/Land"
+              row.propertyType === "Assisted Living Facility" ||
+              row.propertyType === "Commercial Lot/Land"
               ? "true"
               : "false",
         },
-        { FinancedUnitCount: (row) => "1" , required: true}, 
-        { PropertyInProjectIndicator: (row) => "" }, 
-        { PropertyEstateType: (row) => "" }, 
-        { PropertyUsageType: (row) => "" }, 
-        { AttachmentType: (row) => "" }, 
-        { ConstructionMethodType: (row) => "" }, 
+        { FinancedUnitCount: (row) => "1", required: true },
+        { PropertyInProjectIndicator: (row) => "" },
+        { PropertyEstateType: (row) => "" },
+        { PropertyUsageType: (row) => "" },
+        { AttachmentType: (row) => "" },
+        { ConstructionMethodType: (row) => "" },
         { RentalEstimatedNetMonthlyRentAmount: (row) => "" },
       ],
     },
@@ -385,11 +381,11 @@ function loans(doc, data, startIndex) {
       nodes: [
         {
           AlterationsImprovementsAndRepairsAmount: (row) => "",
-          
+
         },
         {
           ApplicationSignedByLoanOriginatorDate: (row) => "",
-          
+
         },
         {
           EstimatedClosingCostsAmount: (row) =>
@@ -397,19 +393,19 @@ function loans(doc, data, startIndex) {
         },
         {
           MIAndFundingFeeFinancedAmount: (row) => "",
-          
+
         },
         {
           MIAndFundingFeeTotalAmount: (row) => "",
-          
+
         },
         {
           PrepaidItemsEstimatedAmount: (row) => "",
-          
+
         },
         {
           RefinanceIncludingDebtsToBePaidOffAmount: (row) => "",
-          
+
         },
       ],
     },
@@ -760,7 +756,7 @@ function partyBorrower(doc, data) {
             loan["incomeInfo"].otherHouseHold1 &&
             Math.floor(
               parseInt(loan["incomeInfo"].otherHouseHold1.replace(/,/g, "")) /
-                12
+              12
             ),
         },
         {
@@ -938,9 +934,9 @@ function partyBorrower(doc, data) {
         {
           EmploymentStartDate: (row) =>
             loan["incomeInfo"].borrowerHireDate &&
-            loan["incomeInfo"].borrowerHireDate != "0000-00-00"
+              loan["incomeInfo"].borrowerHireDate != "0000-00-00"
               ? loan["incomeInfo"].borrowerHireDate
-              : "", required: true, defaultValue: moment().add(-5,'years').format("YYYY-MM-DD")
+              : "", required: true, defaultValue: moment().add(-5, 'years').format("YYYY-MM-DD")
         },
         {
           EmploymentTimeInLineOfWorkMonthsCount: (row) =>
@@ -995,7 +991,7 @@ function partyBorrower(doc, data) {
       goBack: "GOVERNMENT_MONITORING",
       nodes: [
         {
-          "ULAD:HMDAGenderType": (row) => mapValue(loan["QAInfo"].BGender,genderDiagram)
+          "ULAD:HMDAGenderType": (row) => mapValue(loan["QAInfo"].BGender, genderDiagram)
         },
         {
           "ULAD:ApplicationTakenMethodType": (row) => "FaceToFace",
@@ -1070,7 +1066,7 @@ function partyBorrower(doc, data) {
       nodes: [
         { AddressLineText: (row) => loan["clientInfo"].clientAddress, required: true },
         { CityName: (row) => loan["clientInfo"].clientCity },
-        { PostalCode: (row) => loan["clientInfo"].clientZip},
+        { PostalCode: (row) => loan["clientInfo"].clientZip },
         { StateCode: (row) => loan["clientInfo"].clientState },
       ],
     },
@@ -1083,11 +1079,11 @@ function partyBorrower(doc, data) {
       path: ["RESIDENCE_DETAIL"],
       goBack: "ROLE",
       nodes: [
-        { BorrowerResidencyBasisType: (row) => loan["file2Info"].borPresentPropType ?  loan["file2Info"].borPresentPropType : "Unknown" },
+        { BorrowerResidencyBasisType: (row) => loan["file2Info"].borPresentPropType ? loan["file2Info"].borPresentPropType : "Unknown" },
         {
           BorrowerResidencyDurationMonthsCount: (row) => ""
         },
-        { BorrowerResidencyType: (row) => loan["FileProInfo"].isHouseProperty ?  "Current" : "Prior"  },
+        { BorrowerResidencyType: (row) => loan["FileProInfo"].isHouseProperty ? "Current" : "Prior" },
       ],
     },
     {
@@ -1328,10 +1324,10 @@ function partyCoBorrower(doc, data) {
             loan["incomeInfo"].otherHouseHold2 &&
             Math.floor(
               parseInt(loan["incomeInfo"].otherHouseHold2.replace(/,/g, "")) /
-                12
+              12
             ),
         },
-        { EmploymentIncomeIndicator: (row) => loan["incomeInfo"].otherHouseHold2 && "true"},
+        { EmploymentIncomeIndicator: (row) => loan["incomeInfo"].otherHouseHold2 && "true" },
         { IncomeType: (row) => loan["incomeInfo"].otherHouseHold2 && "Other" },
       ],
     },
@@ -1485,7 +1481,7 @@ function partyCoBorrower(doc, data) {
         {
           EmploymentStartDate: (row) =>
             loan["incomeInfo"].coBorrowerHireDate &&
-            loan["incomeInfo"].coBorrowerHireDate != "0000-00-00"
+              loan["incomeInfo"].coBorrowerHireDate != "0000-00-00"
               ? loan["incomeInfo"].coBorrowerHireDate
               : "", required: true
         },
@@ -1652,63 +1648,6 @@ function partyBroker(doc, data, startingIndex) {
     },
   ]);
 }
-function service1(doc, data) {
-  return buildMismoNodes(doc, data, "SERVICES", "SERVICE", 0, [
-    {
-      path: [
-        "EXTENSION",
-        "OTHER",
-        "LPA:SERVICE_EXTENSION",
-        "LPA:SERVICE_DETAIL",
-      ],
-      goBack: 5,
-      nodes: [{ "LPA:ServiceType": (row) => "AutomatedUnderwritingSystem" }],
-    },
-    {
-      path: [
-        "SERVICE",
-        "EXTENSION",
-        "OTHER",
-        "LPA:SERVICE_EXTENSION",
-        "LPA:DOCUMENT_PREPARATION",
-        "LPA:DOCUMENT_PREPARATION_RESPONSES",
-        "LPA:DOCUMENT_PREPARATION_RESPONSE",
-      ],
-      goBack: "LPA:DOCUMENT_PREPARATION_RESPONSES",
-      nodes: [
-        { "LPA:RequestedDocumentType": (row) => "DocCheckList" },
-        { "LPA:RequestedPDFIndicator": (row) => "true" },
-      ],
-    },
-    {
-      path: ["LPA:DOCUMENT_PREPARATION_RESPONSE"],
-      nodes: [
-        { "LPA:RequestedDocumentType": (row) => "Errors" },
-        { "LPA:RequestedPDFIndicator": (row) => "true" },
-      ],
-    },
-    {
-      path: ["LPA:DOCUMENT_PREPARATION_RESPONSE"],
-      nodes: [
-        { "LPA:RequestedDocumentType": (row) => "FullFeedback" },
-        { "LPA:RequestedPDFIndicator": (row) => "true" },
-      ],
-    },
-    {
-      path: ["LPA:DOCUMENT_PREPARATION_RESPONSE"],
-      goBack: 3,
-      nodes: [
-        { "LPA:RequestedDocumentType": (row) => "HVE" },
-        { "LPA:RequestedPDFIndicator": (row) => "true" },
-      ],
-    },
-    {
-      path: ["LPA:SERVICE_DETAIL"],
-      goBack: 2,
-      nodes: [{ "LPA:ServiceType": (row) => "DocumentPreparation" }],
-    },
-  ]);
-}
 function buildMismoNodes(
   doc,
   data,
@@ -1751,22 +1690,23 @@ function buildMismoNodes(
         element.nodes.forEach((n) => {
           const key = Object.keys(n)[0];
           let value = n[key](row, counter + 1);
-          if (n.required && !value ){
-            if (n.defaultValue){
-              value = n.defaultValue;
-            } else {
-              throw new Error('Required value: ' + key);
-            }
-          } 
           // n.hardCoded = false; //Override to set all hardcoded to false to remove all hardcoding comments
           if (n.hardCoded) {
             doc
               .ele(key)
               .txt(value)
               .up()
-              .com(`${key} is Hard Coded to ${value}`);
+              .com(`${key} is HARD CODED to ${value}`);
           } else {
-            doc.ele(key).txt(value).up();
+            if (n.required && !value) {
+              if (n.defaultValue) {
+                doc.ele(key).txt(n.defaultValue).up().com(`${n.defaultValue} is a default value, no value supplied for ${key}`);
+              } else {
+                throw new Error('Required value: ' + key);
+              }
+            } else {
+              doc.ele(key).txt(value).up();
+            }
           }
         });
         if (element.goBack) {
@@ -1956,14 +1896,14 @@ function streetName(addressLine) {
   if (addressLine) {
     try {
       return addressLine.split(" ").slice(1).join(" ");
-    } catch {}
+    } catch { }
   }
 }
 function streetNumber(addressLine) {
   if (addressLine) {
     try {
       return addressLine.split(" ")[0];
-    } catch {}
+    } catch { }
   }
 }
 
@@ -2050,6 +1990,16 @@ function getEmptyNode(doc) {
       true,
       true
     );
+}
+function container(doc, path) {
+  path.forEach((element) => {
+    if (typeof element === 'string' || element instanceof String){
+      doc = doc.ele(element);
+    } else {
+      doc = doc.ele(element.name, element.attributes);
+    }
+  });
+  return doc;
 }
 module.exports = {
   createMismo,
