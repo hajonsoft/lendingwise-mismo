@@ -78,11 +78,19 @@ function createMismo(incomingLoan) {
     );
   }
 
-  doc = doc.root().find(x=> x.node.nodeName == 'DEAL', true, true);
-  doc = relationships(doc, borrowerAssets, [...contingentLiabilityData, ...creditorInfoData]);
+  doc = doc.root().find((x) => x.node.nodeName == "DEAL", true, true);
+  doc = relationships(doc, borrowerAssets, [
+    ...contingentLiabilityData,
+    ...creditorInfoData,
+  ]);
   // doc = service1(doc, [""]);
   removeEmptyNodes(doc);
-  let xml = doc.end({ prettyPrint: true, allowEmptyTags: true, newline: '\r\n', indent: '\t' });
+  let xml = doc.end({
+    prettyPrint: true,
+    allowEmptyTags: true,
+    newline: "\r\n",
+    indent: "\t",
+  });
   return xml;
 }
 
@@ -198,26 +206,32 @@ function collaterals(doc, data) {
     {
       path: ["PROPERTY_DETAIL"],
       nodes: [
-        { FinancedUnitCount: (row) => "" },
-        { PUDIndicator: (row) => "" },
-        { PropertyEstateType: (row) => loan["fileHMLOPropertyInfo"].HMLOEstateHeldIn },
-        { PropertyStructureBuiltYear: (row) => "" },
-        { PropertyEstimatedValueAmount: (row) => "" },
-        { PropertyUsageType: (row) => "" },
-        { AttachmentType: (row) => "" },
+        { PUDIndicator: (row) => "" }, //false
         {
-          CommunityPropertyStateIndicator: (row) => "false",
-          hardCoded: true,
+          PropertyStructureBuiltYear: (row) => loan["FileProInfo"][0].yearBuilt,
         },
-        { ConstructionMethodType: (row) => "" },
+        { PropertyEstimatedValueAmount: (row) => money(row.homeValue) },
         {
-          PropertyExistingCleanEnergyLienIndicator: (row) => ""
-        },
-        { PropertyInProjectIndicator: (row) => "" },
-        { RentalEstimatedNetMonthlyRentAmount: (row) => ""},
+          CommunityPropertyStateIndicator: (row) => "",
+        }, //false
         {
-          PropertyMixedUsageIndicator: (row) => ""
+          PropertyExistingCleanEnergyLienIndicator: (row) => "",
+        }, //false
+        {
+          PropertyMixedUsageIndicator: (row) =>
+            row.propertyType === "Apartment Complex" ||
+            row.propertyType === "Assisted Living Facility" ||
+            row.propertyType === "Commercial Lot/Land"
+              ? "true"
+              : "false",
         },
+        { FinancedUnitCount: (row) => "1" }, //Required by LendingPad
+        { PropertyInProjectIndicator: (row) => "" }, //false
+        { PropertyEstateType: (row) => "" }, //FeeSimple
+        { PropertyUsageType: (row) => "" }, //PrimaryResidence
+        { AttachmentType: (row) => "" }, //Attached
+        { ConstructionMethodType: (row) => "" }, //SiteBuilt
+        { RentalEstimatedNetMonthlyRentAmount: (row) => "" },
       ],
     },
     {
@@ -226,7 +240,12 @@ function collaterals(doc, data) {
         "PROPERTY_VALUATION",
         "PROPERTY_VALUATION_DETAIL",
       ],
-      nodes: [{PropertyValuationAmount: (row)=> money(loan["listingRealtorInfo"].zillowValue)}],
+      nodes: [
+        {
+          PropertyValuationAmount: (row) =>
+            money(loan["listingRealtorInfo"].zillowValue),
+        },
+      ],
     },
     {
       path: ["SALES_CONTRACTS", "SALES_CONTRACT", "SALES_CONTRACT_DETAIL"],
@@ -299,10 +318,9 @@ function liabilities(doc, data, startIndex) {
           LiabilityMonthlyPaymentAmount: (row) => money(row.creditorMinPayment),
         },
         {
-          LiabilityRemainingTermMonthsCount: (row) => "",
-          hardCoded: true,
+          LiabilityRemainingTermMonthsCount: (row) => ""
         },
-        { LiabilityExclusionIndicator: (row) => "false", hardCoded: true },
+        { LiabilityExclusionIndicator: (row) => "" },
       ],
     },
     {
@@ -317,14 +335,10 @@ function loans(doc, data, startIndex) {
       path: ["AMORTIZATION", "AMORTIZATION_RULE"],
       nodes: [
         {
-          AmortizationType: (row) =>
-            loan["fileHMLONewLoanInfo"].amortizationType || "Fixed",
+          AmortizationType: (row) => "",
         },
         {
-          LoanAmortizationPeriodCount: (row) =>
-            (loan["fileHMLOPropertyInfo"].loanTerm &&
-              loan["fileHMLOPropertyInfo"].loanTerm.replace(/[^0-9]/g, "")) ||
-            "360",
+          LoanAmortizationPeriodCount: (row) => "",
         },
         {
           LoanAmortizationPeriodType: (row) => ""
@@ -332,7 +346,12 @@ function loans(doc, data, startIndex) {
       ],
     },
     {
-      path: ["CLOSING_INFORMATION", "CLOSING_ADJUSTMENT_ITEMS", "CLOSING_ADJUSTMENT_ITEM","CLOSING_ADJUSTMENT_ITEM_DETAIL"],
+      path: [
+        "CLOSING_INFORMATION",
+        "CLOSING_ADJUSTMENT_ITEMS",
+        "CLOSING_ADJUSTMENT_ITEM",
+        "CLOSING_ADJUSTMENT_ITEM_DETAIL",
+      ],
       goBack: 3,
       nodes: [
         {
@@ -366,36 +385,37 @@ function loans(doc, data, startIndex) {
       goBack: "URLA",
       nodes: [
         {
-          AlterationsImprovementsAndRepairsAmount: (row) => ""
+          AlterationsImprovementsAndRepairsAmount: (row) => "",
+          
         },
         {
-          ApplicationSignedByLoanOriginatorDate: (row) => ""
+          ApplicationSignedByLoanOriginatorDate: (row) => "",
+          
         },
         {
           EstimatedClosingCostsAmount: (row) =>
             money(loan["fileLOPropInfo"].estimatedClosingCosts),
         },
         {
-          MIAndFundingFeeFinancedAmount: (row) => ""
+          MIAndFundingFeeFinancedAmount: (row) => "",
+          
         },
         {
-          MIAndFundingFeeTotalAmount: (row) => ""
+          MIAndFundingFeeTotalAmount: (row) => "",
+          
         },
         {
-          PrepaidItemsEstimatedAmount: (row) => ""
+          PrepaidItemsEstimatedAmount: (row) => "",
+          
         },
         {
-          RefinanceIncludingDebtsToBePaidOffAmount: (row) => ""
+          RefinanceIncludingDebtsToBePaidOffAmount: (row) => "",
+          
         },
       ],
     },
     {
-      path: [
-        "URLA_TOTAL",
-        "EXTENSION",
-        "OTHER",
-        "ULAD:URLA_TOTAL_EXTENSION",
-      ],
+      path: ["URLA_TOTAL", "EXTENSION", "OTHER", "ULAD:URLA_TOTAL_EXTENSION"],
       goBack: "LOAN",
       nodes: [
         {
@@ -410,7 +430,7 @@ function loans(doc, data, startIndex) {
         { HousingExpensePaymentAmount: (row) => "" },
         { HousingExpenseTimingType: (row) => "" },
         {
-          HousingExpenseType: (row) => ""
+          HousingExpenseType: (row) => "",
         },
       ],
     },
@@ -427,18 +447,18 @@ function loans(doc, data, startIndex) {
       path: ["LOAN_DETAIL"],
       nodes: [
         { BalloonIndicator: (row) => "" },
-        { BorrowerCount: (row) => "1", hardCoded: true },
+        { BorrowerCount: (row) => "" },
         { TotalMortgagedPropertiesCount: (row) => "" },
         { ApplicationReceivedDate: (row) => "" },
         {
-          BuydownTemporarySubsidyFundingIndicator: (row) => ""
+          BuydownTemporarySubsidyFundingIndicator: (row) => "",
         },
         { ConstructionLoanIndicator: (row) => "" },
         {
-          ConversionOfContractForDeedIndicator: (row) => ""
+          ConversionOfContractForDeedIndicator: (row) => "",
         },
         {
-          EnergyRelatedImprovementsIndicator: (row) => ""
+          EnergyRelatedImprovementsIndicator: (row) => "",
         },
         { InterestOnlyIndicator: (row) => "" },
         { NegativeAmortizationIndicator: (row) => "" },
@@ -466,7 +486,7 @@ function loans(doc, data, startIndex) {
     {
       path: ["LOAN_STATUSES", "LOAN_STATUS"],
       nodes: [
-        { LoanStatusIdentifier: (row) => loan["PCStatusInfo"].length > 0 && loan["PCStatusInfo"][loan["PCStatusInfo"].length - 1].primaryStatus },
+        { LoanStatusIdentifier: (row) => "" },
       ],
     },
     {
@@ -495,7 +515,8 @@ function loans(doc, data, startIndex) {
       path: ["TERMS_OF_LOAN"],
       nodes: [
         {
-          BaseLoanAmount: (row) => Math.abs(money(loan["ResponseInfo"].totalLoanAmount)),
+          BaseLoanAmount: (row) =>
+            Math.abs(money(loan["ResponseInfo"].totalLoanAmount)),
         },
         {
           LoanPurposeType: (row) =>
@@ -564,12 +585,14 @@ function partyBorrower(doc, data) {
     {
       path: ["CONTACT_POINT", "CONTACT_POINT_TELEPHONE"],
       goBack: 1,
-      nodes: [{ ContactPointTelephoneValue: (row) => tel(row.phoneNumber)  }],
+      nodes: [{ ContactPointTelephoneValue: (row) => tel(row.phoneNumber) }],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
       goBack: 3,
-      nodes: [{ ContactPointRoleType: (row) => tel(row.phoneNumber) && "Home" }],
+      nodes: [
+        { ContactPointRoleType: (row) => tel(row.phoneNumber) && "Home" },
+      ],
     },
     {
       path: ["NAME"],
@@ -654,20 +677,16 @@ function partyBorrower(doc, data) {
           BorrowerBirthDate: (row) => row.borrowerDOB,
         },
         {
-          BorrowerTotalMortgagedPropertiesCount: (row) => "0",
-          hardCoded: true,
+          BorrowerTotalMortgagedPropertiesCount: (row) => ""
         },
         {
-          CommunityPropertyStateResidentIndicator: (row) => "false",
-          hardCoded: true,
+          CommunityPropertyStateResidentIndicator: (row) => ""
         },
         {
-          DomesticRelationshipIndicator: (row) => "false",
-          hardCoded: true,
+          DomesticRelationshipIndicator: (row) => ""
         },
         {
-          JointAssetLiabilityReportingType: (row) => "Jointly",
-          hardCoded: true,
+          JointAssetLiabilityReportingType: (row) => ""
         },
         {
           DependentCount: (row) =>
@@ -789,30 +808,25 @@ function partyBorrower(doc, data) {
               ? "Yes"
               : "No",
         },
-        { HomeownerPastThreeYearsType: (row) => "No", hardCoded: true },
-        { PriorPropertyUsageType: (row) => "", hardCoded: true },
-        { FHASecondaryResidenceIndicator: (row) => "false", hardCoded: true },
-        { PriorPropertyTitleType: (row) => "", hardCoded: true },
+        { HomeownerPastThreeYearsType: (row) => "" },
+        { PriorPropertyUsageType: (row) => "" },
+        { FHASecondaryResidenceIndicator: (row) => "" },
+        { PriorPropertyTitleType: (row) => "" },
         {
-          UndisclosedBorrowedFundsIndicator: (row) => "false",
-          hardCoded: true,
+          UndisclosedBorrowedFundsIndicator: (row) => ""
         },
-        { UndisclosedBorrowedFundsAmount: (row) => "0", hardCoded: true },
+        { UndisclosedBorrowedFundsAmount: (row) => "" },
         {
-          UndisclosedMortgageApplicationIndicator: (row) => "false",
-          hardCoded: true,
+          UndisclosedMortgageApplicationIndicator: (row) => ""
         },
         {
-          UndisclosedCreditApplicationIndicator: (row) => "false",
-          hardCoded: true,
+          UndisclosedCreditApplicationIndicator: (row) => ""
         },
         {
-          PropertyProposedCleanEnergyLienIndicator: (row) => "false",
-          hardCoded: true,
+          PropertyProposedCleanEnergyLienIndicator: (row) => ""
         },
         {
-          UndisclosedComakerOfNoteIndicator: (row) => "false",
-          hardCoded: true,
+          UndisclosedComakerOfNoteIndicator: (row) => ""
         },
         {
           OutstandingJudgmentsIndicator: (row) =>
@@ -829,16 +843,13 @@ function partyBorrower(doc, data) {
             indicator(loan["fileHMLOBackGroundInfo"].hasBorAnyActiveLawsuits),
         },
         {
-          PriorPropertyDeedInLieuConveyedIndicator: (row) => "false",
-          hardCoded: true,
+          PriorPropertyDeedInLieuConveyedIndicator: (row) => ""
         },
         {
-          PriorPropertyShortSaleCompletedIndicator: (row) => "false",
-          hardCoded: true,
+          PriorPropertyShortSaleCompletedIndicator: (row) => ""
         },
         {
-          PriorPropertyForeclosureCompletedIndicator: (row) => "false",
-          hardCoded: true,
+          PriorPropertyForeclosureCompletedIndicator: (row) => ""
         },
         {
           BankruptcyIndicator: (row) =>
@@ -886,26 +897,26 @@ function partyBorrower(doc, data) {
       ],
       goBack: 1,
       nodes: [
-        { ContactPointTelephoneValue: (row) => "123456789", hardCoded: true },
+        { ContactPointTelephoneValue: (row) => "" },
       ],
     },
     {
       path: ["CONTACT_POINT_DETAIL"],
       goBack: 5,
-      nodes: [{ ContactPointRoleType: (row) => "Mobile", hardCoded: true }],
+      nodes: [{ ContactPointRoleType: (row) => "" }],
     },
     {
       path: ["LEGAL_ENTITY_DETAIL"],
       goBack: 2,
-      nodes: [{ FullName: (row) => "Google", hardCoded: true }],
+      nodes: [{ FullName: (row) => "" }],
     },
     {
       path: ["ADDRESS"],
       nodes: [
-        { AddressLineText: (row) => "Google", hardCoded: true },
-        { CityName: (row) => "Burbank", hardCoded: true },
-        { PostalCode: (row) => "915021234", hardCoded: true },
-        { StateCode: (row) => "CA", hardCoded: true },
+        { AddressLineText: (row) => "" },
+        { CityName: (row) => "" },
+        { PostalCode: (row) => "" },
+        { StateCode: (row) => "" },
       ],
     },
     {
@@ -955,7 +966,8 @@ function partyBorrower(doc, data) {
             loan["incomeInfo"].empmonthlyincome1,
         },
         {
-          SpecialBorrowerEmployerRelationshipIndicator: (row) => "false", hardCoded: true
+          SpecialBorrowerEmployerRelationshipIndicator: (row) => "false",
+          hardCoded: true,
         },
       ],
     },
@@ -989,7 +1001,7 @@ function partyBorrower(doc, data) {
           "ULAD:HMDAGenderType": (row) => "Male",
           hardCoded: true,
         },
-                {
+        {
           "ULAD:ApplicationTakenMethodType": (row) => "FaceToFace",
           hardCoded: true,
         },
@@ -1057,11 +1069,7 @@ function partyBorrower(doc, data) {
       nodes: [{ "ULAD:HMDAEthnicityType": (row) => "HispanicOrLatino" }],
     },
     {
-      path: [
-        "RESIDENCES",
-        "RESIDENCE",
-        "ADDRESS",
-      ],
+      path: ["RESIDENCES", "RESIDENCE", "ADDRESS"],
       goBack: "RESIDENCE",
       nodes: [
         { AddressLineText: (row) => "10655 Birch St", hardCoded: true },
@@ -1071,23 +1079,19 @@ function partyBorrower(doc, data) {
       ],
     },
     {
-      path: [
-        "LANDLORD",
-        "LANDLORD_DETAIL",
-      ],
+      path: ["LANDLORD", "LANDLORD_DETAIL"],
       goBack: "RESIDENCE",
-      nodes: [
-        { MonthlyRentAmount: (row) => "3500.00", hardCoded: true },
-      ],
+      nodes: [{ MonthlyRentAmount: (row) => "3500.00", hardCoded: true }],
     },
     {
-      path: [
-        "RESIDENCE_DETAIL",
-      ],
+      path: ["RESIDENCE_DETAIL"],
       goBack: "ROLE",
       nodes: [
         { BorrowerResidencyBasisType: (row) => "Rent", hardCoded: true },
-        { BorrowerResidencyDurationMonthsCount: (row) => "43", hardCoded: true },
+        {
+          BorrowerResidencyDurationMonthsCount: (row) => "43",
+          hardCoded: true,
+        },
         { BorrowerResidencyType: (row) => "Current", hardCoded: true },
       ],
     },
@@ -1396,9 +1400,9 @@ function partyCoBorrower(doc, data) {
               : "No",
         },
         { HomeownerPastThreeYearsType: (row) => "No", hardCoded: true },
-        { PriorPropertyUsageType: (row) => "", hardCoded: true },
+        { PriorPropertyUsageType: (row) => "" },
         { FHASecondaryResidenceIndicator: (row) => "false", hardCoded: true },
-        { PriorPropertyTitleType: (row) => "", hardCoded: true },
+        { PriorPropertyTitleType: (row) => "" },
         {
           UndisclosedBorrowedFundsIndicator: (row) => "false",
           hardCoded: true,
@@ -1466,10 +1470,10 @@ function partyCoBorrower(doc, data) {
       goBack: 1,
       nodes: [
         { AddressLineText: (row) => loan["incomeInfo"].employer2Add },
-        { AddressUnitIdentifier: (row) => "", hardCoded: true },
-        { CityName: (row) => "", hardCoded: true },
-        { StateCode: (row) => "", hardCoded: true },
-        { PostalCode: (row) => "", hardCoded: true },
+        { AddressUnitIdentifier: (row) => "" },
+        { CityName: (row) => "" },
+        { StateCode: (row) => "" },
+        { PostalCode: (row) => "" },
         { CountryCode: (row) => "US" },
       ],
     },
@@ -1629,11 +1633,12 @@ function partyBroker(doc, data, startingIndex) {
       path: ["ADDRESSES", "ADDRESS"],
       nodes: [
         {
-          AddressLineText: (row) => "412 H St, NW", hardCoded: true,
+          AddressLineText: (row) => "412 H St, NW",
+          hardCoded: true,
         },
-        { CityName: (row) => "Washington", hardCoded: true, },
-        { StateCode: (row) => "DC", hardCoded: true, },
-        { PostalCode: (row) => "200121234", hardCoded: true, },
+        { CityName: (row) => "Washington", hardCoded: true },
+        { StateCode: (row) => "DC", hardCoded: true },
+        { PostalCode: (row) => "200121234", hardCoded: true },
       ],
     },
     {
@@ -1641,7 +1646,8 @@ function partyBroker(doc, data, startingIndex) {
       goBack: 3,
       nodes: [
         {
-          LicenseIdentifier: (row) => 123456789111, hardCoded: true,
+          LicenseIdentifier: (row) => 123456789111,
+          hardCoded: true,
         },
         {
           LicenseAuthorityLevelType: (row) => "Private",
@@ -1746,7 +1752,7 @@ function buildMismoNodes(
         "xlink:label": `${repeatingNode}_${counter + startIndex + 1}`,
       };
       if (repeatingNode === "LOAN" && counter === 0 && startIndex === 0) {
-         attributes = {
+        attributes = {
           LoanRoleType: "SubjectLoan",
           "xlink:label": `${repeatingNode}_${counter + startIndex + 1}`,
         };
@@ -1758,14 +1764,13 @@ function buildMismoNodes(
         element.nodes.forEach((n) => {
           const key = Object.keys(n)[0];
           const value = n[key](row, counter + 1);
-          //TODO: // detect hardcoding automatically const isHardCoded = n[key](); //
           // n.hardCoded = false;
           if (n.hardCoded) {
-             doc
-               .ele(key)
-               .txt(value)
-               .up()
-               .com(`${key} is Hard Coded to ${value}`);
+            doc
+              .ele(key)
+              .txt(value)
+              .up()
+              .com(`${key} is Hard Coded to ${value}`);
           } else {
             doc.ele(key).txt(value).up();
           }
@@ -1801,7 +1806,7 @@ const loanOwnedPropertyData = (data) => {
 };
 
 const citizenshipDiagram = [
-  {  mismo: "USCitizen" },
+  { mismo: "USCitizen" },
   { lw: "Perm Resident Alien", mismo: "PermanentResidentAlien" },
   { lw: "Non-Perm Resident Alien", mismo: "NonPermanentResidentAlien" },
 ];
@@ -1987,7 +1992,7 @@ function indicator(value) {
 }
 
 function relationships(_doc, borrowerAssets, borrowerLiabilities) {
-  _doc = _doc.ele("RELATIONSHIPS", {"xsi:type": "RELATIONSHIPS"});
+  _doc = _doc.ele("RELATIONSHIPS", { "xsi:type": "RELATIONSHIPS" });
   if (borrowerAssets && borrowerAssets.length > 0) {
     for (let i = 0; i < borrowerAssets.length; i++) {
       _doc = _doc
@@ -2039,8 +2044,15 @@ function removeEmptyNodes(doc) {
 }
 function getEmptyNode(doc) {
   return doc
-  .root()
-  .find((n) =>  n.node.textContent === "" && n.node.nodeName != "RELATIONSHIPS" && n.node.nodeName != "RELATIONSHIP", true, true);
+    .root()
+    .find(
+      (n) =>
+        n.node.textContent === "" &&
+        n.node.nodeName != "RELATIONSHIPS" &&
+        n.node.nodeName != "RELATIONSHIP",
+      true,
+      true
+    );
 }
 module.exports = {
   createMismo,
