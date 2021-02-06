@@ -18,10 +18,10 @@ if (process.argv[2]) {
     let fileName = files[i];
     let jsonFile = fs.readFileSync("./assets/" + fileName + ".json", "utf-8");
     let xml = createMismo(JSON.parse(jsonFile));
-    // let validationErrors = validate(xml);
-    // if (validationErrors.length > 0) {
-    //   console.log(fileName,validationErrors.length, 'validation error(s)' , validationErrors);
-    // }
+    let validationErrors = validate(xml);
+    if (validationErrors.length > 0) {
+      console.log(fileName,validationErrors.length, 'validation error(s)' , validationErrors);
+    }
     fs.writeFileSync("./output/" + fileName + fileSuffix + ".xml", xml);
   }
 }

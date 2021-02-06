@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-05T21:04:59Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-06T02:49:05Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -174,6 +174,9 @@
 									</URLA>
 								</DOCUMENT_SPECIFIC_DATA_SET>
 							</DOCUMENT_SPECIFIC_DATA_SETS>
+							<LOAN_DETAIL>
+								<BorrowerCount>2</BorrowerCount>
+							</LOAN_DETAIL>
 							<LOAN_IDENTIFIERS>
 								<LOAN_IDENTIFIER>
 									<LoanIdentifier>6836770</LoanIdentifier>
@@ -306,29 +309,6 @@
 													</OTHER>
 												</EXTENSION>
 											</GOVERNMENT_MONITORING_DETAIL>
-											<HMDA_ETHNICITY_ORIGINS>
-												<HMDA_ETHNICITY_ORIGIN>
-													<HMDAEthnicityOriginType>Other</HMDAEthnicityOriginType>
-												</HMDA_ETHNICITY_ORIGIN>
-											</HMDA_ETHNICITY_ORIGINS>
-											<HMDA_RACES>
-												<HMDA_RACE>
-													<HMDA_RACE_DETAIL>
-														<HMDARaceType>Asian</HMDARaceType>
-													</HMDA_RACE_DETAIL>
-												</HMDA_RACE>
-											</HMDA_RACES>
-											<EXTENSION>
-												<OTHER>
-													<ULAD:GOVERNMENT_MONITORING_EXTENSION>
-														<ULAD:HMDA_ETHNICITIES>
-															<ULAD:HMDA_ETHNICITY>
-																<ULAD:HMDAEthnicityType>HispanicOrLatino</ULAD:HMDAEthnicityType>
-															</ULAD:HMDA_ETHNICITY>
-														</ULAD:HMDA_ETHNICITIES>
-													</ULAD:GOVERNMENT_MONITORING_EXTENSION>
-												</OTHER>
-											</EXTENSION>
 										</GOVERNMENT_MONITORING>
 										<RESIDENCES>
 											<RESIDENCE>
@@ -357,6 +337,129 @@
 								</TAXPAYER_IDENTIFIER>
 							</TAXPAYER_IDENTIFIERS>
 						</PARTY>
+						<PARTY SequenceNumber="2" xlink:label="PARTY_2">
+							<INDIVIDUAL>
+								<CONTACT_POINTS>
+									<CONTACT_POINT>
+										<CONTACT_POINT_EMAIL>
+											<ContactPointEmailValue>coborrower@dummyemail.com</ContactPointEmailValue>
+										</CONTACT_POINT_EMAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>1234567890</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Home</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>3243242344</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Mobile</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>4154544634</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Work</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+								</CONTACT_POINTS>
+								<NAME>
+									<FirstName>Gina</FirstName>
+									<LastName>Smith</LastName>
+								</NAME>
+							</INDIVIDUAL>
+							<ROLES>
+								<ROLE SequenceNumber="1" xlink:label="BORROWER_2">
+									<BORROWER>
+										<BORROWER_DETAIL>
+											<BorrowerBirthDate>1976-01-06</BorrowerBirthDate>
+											<DependentCount>0</DependentCount>
+											<MaritalStatusType>Married</MaritalStatusType>
+										</BORROWER_DETAIL>
+										<CURRENT_INCOME>
+											<CURRENT_INCOME_ITEMS>
+												<CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_2">
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>2500.00</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Base</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+											</CURRENT_INCOME_ITEMS>
+										</CURRENT_INCOME>
+										<DECLARATION>
+											<DECLARATION_DETAIL>
+												<BankruptcyIndicator>false</BankruptcyIndicator>
+												<CitizenshipResidencyType>PermanentResidentAlien</CitizenshipResidencyType>
+												<IntentToOccupyType>Yes</IntentToOccupyType>
+												<OutstandingJudgmentsIndicator>false</OutstandingJudgmentsIndicator>
+												<PartyToLawsuitIndicator>false</PartyToLawsuitIndicator>
+												<PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
+											</DECLARATION_DETAIL>
+										</DECLARATION>
+										<EMPLOYERS>
+											<EMPLOYER SequenceNumber="1" xlink:label="EMPLOYER_2">
+												<LEGAL_ENTITY>
+													<LEGAL_ENTITY_DETAIL>
+														<FullName>butterflies r us</FullName>
+													</LEGAL_ENTITY_DETAIL>
+												</LEGAL_ENTITY>
+												<EMPLOYMENT>
+													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
+													<EmploymentClassificationType>Secondary</EmploymentClassificationType>
+													<EmploymentPositionDescription>butterfly milker</EmploymentPositionDescription>
+													<EmploymentStartDate>2015-01-09</EmploymentStartDate>
+													<EmploymentStatusType>Current</EmploymentStatusType>
+													<EmploymentTimeInLineOfWorkMonthsCount>60</EmploymentTimeInLineOfWorkMonthsCount>
+												</EMPLOYMENT>
+											</EMPLOYER>
+										</EMPLOYERS>
+										<GOVERNMENT_MONITORING>
+											<GOVERNMENT_MONITORING_DETAIL>
+												<EXTENSION>
+													<OTHER>
+														<ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+															<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
+														</ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+													</OTHER>
+												</EXTENSION>
+											</GOVERNMENT_MONITORING_DETAIL>
+										</GOVERNMENT_MONITORING>
+										<RESIDENCES>
+											<RESIDENCE>
+												<ADDRESS>
+													<AddressLineText>123 coborcurrent addr</AddressLineText>
+													<CityName>omaha</CityName>
+													<PostalCode>64355</PostalCode>
+													<StateCode>NE</StateCode>
+												</ADDRESS>
+												<RESIDENCE_DETAIL>
+													<BorrowerResidencyBasisType>Rent</BorrowerResidencyBasisType>
+													<BorrowerResidencyDurationMonthsCount>12</BorrowerResidencyDurationMonthsCount>
+													<BorrowerResidencyType>Current</BorrowerResidencyType>
+												</RESIDENCE_DETAIL>
+											</RESIDENCE>
+										</RESIDENCES>
+									</BORROWER>
+									<ROLE_DETAIL>
+										<PartyRoleType>Borrower</PartyRoleType>
+									</ROLE_DETAIL>
+								</ROLE>
+							</ROLES>
+							<TAXPAYER_IDENTIFIERS>
+								<TAXPAYER_IDENTIFIER>
+									<TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
+									<TaxpayerIdentifierValue>798645654</TaxpayerIdentifierValue>
+								</TAXPAYER_IDENTIFIER>
+							</TAXPAYER_IDENTIFIERS>
+						</PARTY>
 						<PARTY SequenceNumber="3" xlink:label="PARTY_3">
 							<ROLES>
 								<ROLE>
@@ -377,6 +480,8 @@
 						<RELATIONSHIP SequenceNumber="7" xlink:from="LIABILITY_5" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
 						<RELATIONSHIP SequenceNumber="8" xlink:from="LIABILITY_6" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"></RELATIONSHIP>
 						<RELATIONSHIP SequenceNumber="9" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="10" xlink:from="CURRENT_INCOME_ITEM_2" xlink:to="EMPLOYER_2" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="11" xlink:from="BORROWER_2" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ROLE_SharesJointCreditReportWith_ROLE"></RELATIONSHIP>
 					</RELATIONSHIPS>
 				</DEAL>
 			</DEALS>

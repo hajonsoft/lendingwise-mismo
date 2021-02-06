@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-05T21:05:00Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-06T02:49:06Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -162,12 +162,18 @@
 									</URLA>
 								</DOCUMENT_SPECIFIC_DATA_SET>
 							</DOCUMENT_SPECIFIC_DATA_SETS>
+							<LOAN_DETAIL>
+								<BorrowerCount>1</BorrowerCount>
+							</LOAN_DETAIL>
 							<LOAN_IDENTIFIERS>
 								<LOAN_IDENTIFIER>
 									<LoanIdentifier>6836781</LoanIdentifier>
 									<LoanIdentifierType>LenderLoan</LoanIdentifierType>
 								</LOAN_IDENTIFIER>
 							</LOAN_IDENTIFIERS>
+							<REFINANCE>
+								<RefinanceCashOutDeterminationType>Unknown</RefinanceCashOutDeterminationType>
+							</REFINANCE>
 							<TERMS_OF_LOAN>
 								<BaseLoanAmount>200000</BaseLoanAmount>
 								<LoanPurposeType>Refinance</LoanPurposeType>
@@ -294,29 +300,6 @@
 													</OTHER>
 												</EXTENSION>
 											</GOVERNMENT_MONITORING_DETAIL>
-											<HMDA_ETHNICITY_ORIGINS>
-												<HMDA_ETHNICITY_ORIGIN>
-													<HMDAEthnicityOriginType>Other</HMDAEthnicityOriginType>
-												</HMDA_ETHNICITY_ORIGIN>
-											</HMDA_ETHNICITY_ORIGINS>
-											<HMDA_RACES>
-												<HMDA_RACE>
-													<HMDA_RACE_DETAIL>
-														<HMDARaceType>Asian</HMDARaceType>
-													</HMDA_RACE_DETAIL>
-												</HMDA_RACE>
-											</HMDA_RACES>
-											<EXTENSION>
-												<OTHER>
-													<ULAD:GOVERNMENT_MONITORING_EXTENSION>
-														<ULAD:HMDA_ETHNICITIES>
-															<ULAD:HMDA_ETHNICITY>
-																<ULAD:HMDAEthnicityType>HispanicOrLatino</ULAD:HMDAEthnicityType>
-															</ULAD:HMDA_ETHNICITY>
-														</ULAD:HMDA_ETHNICITIES>
-													</ULAD:GOVERNMENT_MONITORING_EXTENSION>
-												</OTHER>
-											</EXTENSION>
 										</GOVERNMENT_MONITORING>
 										<RESIDENCES>
 											<RESIDENCE>
