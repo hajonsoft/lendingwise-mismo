@@ -34,7 +34,7 @@ https://modelviewers.pilotfishtechnology.com/modelviewers/MISMO/index.html?page=
 Mixing php and javascript 
 https://www.youtube.com/watch?v=-3LGsHOSTec
 
-browserify
+npm i -g browserify
 browserify index.js -o build/lw_mismo_converter.js
 
 Learning resources

@@ -7372,7 +7372,6 @@ $bobby = Array
 $json = json_encode($bobby);
 $html = <<<EOF
 <script src="build/lw_mismo_converter.js"></script>
-
 <script type="text/javascript">
 
 function createlwMismo() {

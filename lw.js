@@ -9,11 +9,15 @@ if (process.argv[2]) {
     "utf-8"
   );
   const xml = createMismo(JSON.parse(jsonFile));
+  let validationErrs = validate(xml);
+  if (validationErrs.length > 0) {
+    console.log(process.argv[2],validationErrs.length, 'validation error(s)' , validationErrs);
+  }
   fs.writeFileSync("./output/" + process.argv[2] + ".xml", xml);
 } else {
   // const fileSuffix = "_" + moment().format('HHmmss')
   const fileSuffix = '';
-  const files = ["john_loan","bobby_loan","rodriguez_loan","keith_loan"];
+  const files = ["john_loan","bobby_loan","rodriguez_loan","keith_loan", "smith_loan", "barbara_loan", "papon_loan", "smithb_loan"];
   for (let i =0 ; i< files.length; i++) {
     let fileName = files[i];
     let jsonFile = fs.readFileSync("./assets/" + fileName + ".json", "utf-8");

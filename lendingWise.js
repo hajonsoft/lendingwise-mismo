@@ -1052,8 +1052,7 @@ function partyBorrower(doc, data) {
       goBack: "RESIDENCE",
       nodes: [
         {
-          AddressLineText: (row) => loan["clientInfo"].clientAddress,
-          required: true,
+          AddressLineText: (row) => loan["clientInfo"].clientAddress
         },
         { CityName: (row) => loan["clientInfo"].clientCity },
         { PostalCode: (row) => loan["clientInfo"].clientZip },
@@ -1444,8 +1443,7 @@ function partyCoBorrower(doc, data) {
             loan["incomeInfo"].coBorrowerHireDate &&
             loan["incomeInfo"].coBorrowerHireDate != "0000-00-00"
               ? loan["incomeInfo"].coBorrowerHireDate
-              : "",
-          required: true,
+              : ""
         },
         {
           EmploymentTimeInLineOfWorkMonthsCount: (row) =>
@@ -2020,7 +2018,7 @@ function container(doc, path) {
 
 function getMonthDuration(duration) {
   const match = duration.match(/\d+/gi);
-  if (match.length) {
+  if (match && match.length) {
     if (duration.toLowerCase().includes("year")) {
       return match[0] * 12;
     }

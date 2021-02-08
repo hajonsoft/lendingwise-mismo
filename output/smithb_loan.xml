@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-07T23:38:59Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-07T23:39:00Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -11,84 +11,32 @@
 		<DEAL_SET>
 			<DEALS>
 				<DEAL>
-					<ASSETS>
-						<ASSET SequenceNumber="1" xlink:label="ASSET_1">
-							<ASSET_DETAIL>
-								<AssetAccountIdentifier>9834209</AssetAccountIdentifier>
-								<AssetCashOrMarketValueAmount>104137.00</AssetCashOrMarketValueAmount>
-								<AssetType>SavingsAccount</AssetType>
-							</ASSET_DETAIL>
-							<ASSET_HOLDER>
-								<NAME>
-									<FullName>Chase</FullName>
-								</NAME>
-							</ASSET_HOLDER>
-						</ASSET>
-						<ASSET SequenceNumber="2" xlink:label="ASSET_2">
-							<ASSET_DETAIL>
-								<AssetAccountIdentifier>0039842</AssetAccountIdentifier>
-								<AssetCashOrMarketValueAmount>9304.00</AssetCashOrMarketValueAmount>
-								<AssetType>CheckingAccount</AssetType>
-							</ASSET_DETAIL>
-							<ASSET_HOLDER>
-								<NAME>
-									<FullName>Chase</FullName>
-								</NAME>
-							</ASSET_HOLDER>
-						</ASSET>
-						<ASSET SequenceNumber="3" xlink:label="ASSET_3">
-							<ASSET_DETAIL>
-								<AssetAccountIdentifier>939289</AssetAccountIdentifier>
-								<AssetCashOrMarketValueAmount>19000.00</AssetCashOrMarketValueAmount>
-								<AssetType>RetirementFund</AssetType>
-							</ASSET_DETAIL>
-							<ASSET_HOLDER>
-								<NAME>
-									<FullName>Bank of America</FullName>
-								</NAME>
-							</ASSET_HOLDER>
-						</ASSET>
-						<ASSET SequenceNumber="4" xlink:label="ASSET_4">
-							<ASSET_DETAIL>
-								<AssetAccountIdentifier>9392</AssetAccountIdentifier>
-								<AssetCashOrMarketValueAmount>45039.00</AssetCashOrMarketValueAmount>
-								<AssetType>SavingsAccount</AssetType>
-							</ASSET_DETAIL>
-							<ASSET_HOLDER>
-								<NAME>
-									<FullName>Atlantic One</FullName>
-								</NAME>
-							</ASSET_HOLDER>
-						</ASSET>
-					</ASSETS>
 					<COLLATERALS>
 						<COLLATERAL SequenceNumber="1" xlink:label="COLLATERAL_1">
 							<SUBJECT_PROPERTY>
 								<ADDRESS>
-									<AddressLineText>10600 Southwest 72nd Court</AddressLineText>
-									<CityName>Pinecrest</CityName>
+									<AddressLineText>32984</AddressLineText>
+									<CityName>oakland</CityName>
 									<CountryCode>US</CountryCode>
-									<CountyName>Miami-Dade</CountyName>
-									<PostalCode>33156</PostalCode>
-									<StateCode>FL</StateCode>
+									<PostalCode>30032</PostalCode>
+									<StateCode>LA</StateCode>
 								</ADDRESS>
 								<PROPERTY_DETAIL>
 									<FinancedUnitCount>1</FinancedUnitCount>
-									<PropertyEstimatedValueAmount>0.00</PropertyEstimatedValueAmount>
+									<PropertyEstimatedValueAmount>393024.00</PropertyEstimatedValueAmount>
 									<PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
-									<PropertyStructureBuiltYear>1900</PropertyStructureBuiltYear>
 								</PROPERTY_DETAIL>
 								<PROPERTY_VALUATIONS>
 									<PROPERTY_VALUATION>
 										<PROPERTY_VALUATION_DETAIL>
-											<PropertyValuationAmount>650000.00</PropertyValuationAmount>
+											<PropertyValuationAmount>0.00</PropertyValuationAmount>
 										</PROPERTY_VALUATION_DETAIL>
 									</PROPERTY_VALUATION>
 								</PROPERTY_VALUATIONS>
 								<SALES_CONTRACTS>
 									<SALES_CONTRACT>
 										<SALES_CONTRACT_DETAIL>
-											<SalesContractAmount>650000.00</SalesContractAmount>
+											<SalesContractAmount>0.00</SalesContractAmount>
 										</SALES_CONTRACT_DETAIL>
 									</SALES_CONTRACT>
 								</SALES_CONTRACTS>
@@ -111,14 +59,17 @@
 							</LOAN_DETAIL>
 							<LOAN_IDENTIFIERS>
 								<LOAN_IDENTIFIER>
-									<LoanIdentifier>6838612</LoanIdentifier>
+									<LoanIdentifier>6848007</LoanIdentifier>
 									<LoanIdentifierType>LenderLoan</LoanIdentifierType>
 								</LOAN_IDENTIFIER>
 							</LOAN_IDENTIFIERS>
+							<REFINANCE>
+								<RefinanceCashOutDeterminationType>Unknown</RefinanceCashOutDeterminationType>
+							</REFINANCE>
 							<TERMS_OF_LOAN>
-								<BaseLoanAmount>500000</BaseLoanAmount>
-								<LoanPurposeType>Purchase</LoanPurposeType>
-								<NoteRatePercent>4.00</NoteRatePercent>
+								<BaseLoanAmount>230232</BaseLoanAmount>
+								<LoanPurposeType>Refinance</LoanPurposeType>
+								<NoteRatePercent>0.00</NoteRatePercent>
 							</TERMS_OF_LOAN>
 						</LOAN>
 					</LOANS>
@@ -128,12 +79,12 @@
 								<CONTACT_POINTS>
 									<CONTACT_POINT>
 										<CONTACT_POINT_EMAIL>
-											<ContactPointEmailValue>keithjanzenbeach@yahoo.com</ContactPointEmailValue>
+											<ContactPointEmailValue>SmithRefiBorr@aim.om</ContactPointEmailValue>
 										</CONTACT_POINT_EMAIL>
 									</CONTACT_POINT>
 									<CONTACT_POINT>
 										<CONTACT_POINT_TELEPHONE>
-											<ContactPointTelephoneValue>9329432423</ContactPointTelephoneValue>
+											<ContactPointTelephoneValue>3425234323</ContactPointTelephoneValue>
 										</CONTACT_POINT_TELEPHONE>
 										<CONTACT_POINT_DETAIL>
 											<ContactPointRoleType>Mobile</ContactPointRoleType>
@@ -141,15 +92,7 @@
 									</CONTACT_POINT>
 									<CONTACT_POINT>
 										<CONTACT_POINT_TELEPHONE>
-											<ContactPointTelephoneValue>4353453454</ContactPointTelephoneValue>
-										</CONTACT_POINT_TELEPHONE>
-										<CONTACT_POINT_DETAIL>
-											<ContactPointRoleType>Work</ContactPointRoleType>
-										</CONTACT_POINT_DETAIL>
-									</CONTACT_POINT>
-									<CONTACT_POINT>
-										<CONTACT_POINT_TELEPHONE>
-											<ContactPointTelephoneValue>4353456354</ContactPointTelephoneValue>
+											<ContactPointTelephoneValue>3243242343</ContactPointTelephoneValue>
 										</CONTACT_POINT_TELEPHONE>
 										<CONTACT_POINT_DETAIL>
 											<ContactPointRoleType>Home</ContactPointRoleType>
@@ -157,25 +100,23 @@
 									</CONTACT_POINT>
 								</CONTACT_POINTS>
 								<NAME>
-									<FirstName>Keith</FirstName>
-									<LastName>Janzen</LastName>
+									<FirstName>John</FirstName>
+									<LastName>SmithRefiBorr</LastName>
 								</NAME>
 							</INDIVIDUAL>
 							<ROLES>
 								<ROLE SequenceNumber="1" xlink:label="BORROWER_1">
 									<BORROWER>
 										<BORROWER_DETAIL>
-											<BorrowerBirthDate>1977-07-24</BorrowerBirthDate>
+											<BorrowerBirthDate>1926-01-16</BorrowerBirthDate>
 											<DependentCount>0</DependentCount>
-											<MaritalStatusType>Unmarried</MaritalStatusType>
+											<MaritalStatusType>Other</MaritalStatusType>
 										</BORROWER_DETAIL>
 										<CURRENT_INCOME>
 											<CURRENT_INCOME_ITEMS>
 												<CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_1">
 													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount>10000.00</CurrentIncomeMonthlyTotalAmount>
 														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-														<IncomeType>Base</IncomeType>
 													</CURRENT_INCOME_ITEM_DETAIL>
 												</CURRENT_INCOME_ITEM>
 											</CURRENT_INCOME_ITEMS>
@@ -222,10 +163,10 @@
 										<RESIDENCES>
 											<RESIDENCE>
 												<ADDRESS>
-													<AddressLineText>address</AddressLineText>
-													<CityName>Irvine</CityName>
-													<PostalCode>92604</PostalCode>
-													<StateCode>CA</StateCode>
+													<AddressLineText>1920 sw 02 st</AddressLineText>
+													<CityName>miami</CityName>
+													<PostalCode>33939</PostalCode>
+													<StateCode>FL</StateCode>
 												</ADDRESS>
 												<RESIDENCE_DETAIL>
 													<BorrowerResidencyBasisType>Unknown</BorrowerResidencyBasisType>
@@ -242,6 +183,7 @@
 							<TAXPAYER_IDENTIFIERS>
 								<TAXPAYER_IDENTIFIER>
 									<TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
+									<TaxpayerIdentifierValue>342432423</TaxpayerIdentifierValue>
 								</TAXPAYER_IDENTIFIER>
 							</TAXPAYER_IDENTIFIERS>
 						</PARTY>
@@ -256,11 +198,7 @@
 						</PARTY>
 					</PARTIES>
 					<RELATIONSHIPS xsi:type="RELATIONSHIPS">
-						<RELATIONSHIP SequenceNumber="1" xlink:from="ASSET_1" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="2" xlink:from="ASSET_2" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="3" xlink:from="ASSET_3" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="4" xlink:from="ASSET_4" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="5" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"></RELATIONSHIP>
+						<RELATIONSHIP SequenceNumber="1" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"></RELATIONSHIP>
 					</RELATIONSHIPS>
 				</DEAL>
 			</DEALS>
