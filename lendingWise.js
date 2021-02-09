@@ -1641,8 +1641,11 @@ function buildMismoNodes(
   config
 ) {
   if (!doc) {
-    return; //Throw here
+    throw new Error('Document is not defined, this is not expected!')
   }
+  try {
+
+  
   if (data && Array.isArray(data) && data.length > 0) {
     for (let counter = 0; counter < data.length; counter++) {
       const row = data[counter];
@@ -1715,6 +1718,9 @@ function buildMismoNodes(
       });
     }
   }
+} catch (err){
+  console.log('------------', err)
+}
   return doc;
 }
 

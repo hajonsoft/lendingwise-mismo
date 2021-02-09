@@ -17,10 +17,15 @@ if (process.argv[2]) {
 } else {
   // const fileSuffix = "_" + moment().format('HHmmss')
   const fileSuffix = '';
-  const files = ["john_loan","bobby_loan","rodriguez_loan","keith_loan", "smith_loan", "barbara_loan", "papon_loan", "smithb_loan"];
+  // const files = ["john_loan","bobby_loan","rodriguez_loan","keith_loan", "smith_loan", "barbara_loan", "papon_loan", "smithb_loan"];
+  const files = ["ayman"];
   for (let i =0 ; i< files.length; i++) {
     let fileName = files[i];
     let jsonFile = fs.readFileSync("./assets/" + fileName + ".json", "utf-8");
+
+
+
+    
     let xml = createMismo(JSON.parse(jsonFile));
     let validationErrors = validate(xml);
     if (validationErrors.length > 0) {
