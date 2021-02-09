@@ -184,7 +184,7 @@ abc abcbv
             [mortgageOwner1_copy] => 
             [mortgageOwner2_copy] => 
             [coBServiceProvider] => 
-            [lastUpdatedDate] => 2021-02-08 14:35:34
+            [lastUpdatedDate] => 2021-02-09 15:02:24
             [updatedBy] => Miguel Feal
             [borrowerPinNo] => 
             [coBorrowerPinNo] => 
@@ -196,7 +196,7 @@ abc abcbv
             [coBorDriverLicenseState] => 
             [coBorDriverLicenseNumber] => 
             [maritalStatusCoBor] => Married
-            [noOfDaysStale] => -9
+            [noOfDaysStale] => -10
             [borrowerFName] => Wanda
         )
 
@@ -723,7 +723,7 @@ abc abcbv
                     [LMRAEId] => 0
                     [processingCompanyId] => 3821
                     [empCreatedDate] => 2019-10-04
-                    [empLastLoginDate] => 2021-02-09 11:10:22
+                    [empLastLoginDate] => 2021-02-09 14:34:18
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => att
                     [timeZone] => EST
@@ -883,7 +883,7 @@ abc abcbv
                     [LMRAEId] => 0
                     [processingCompanyId] => 3821
                     [empCreatedDate] => 2021-02-08
-                    [empLastLoginDate] => 2021-02-09 11:15:57
+                    [empLastLoginDate] => 2021-02-09 15:03:00
                     [allowToViewAllFiles] => 1
                     [serviceProvider] => 
                     [timeZone] => EST
@@ -5827,7 +5827,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                         (
                             [0] => Array
                                 (
-                                    [SID] => 358901
+                                    [SID] => 359322
                                     [fileID] => 6848118
                                     [CID] => 216727
                                     [cRole_old] => 
@@ -5866,7 +5866,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                         (
                             [0] => Array
                                 (
-                                    [SID] => 358900
+                                    [SID] => 359321
                                     [fileID] => 6848118
                                     [CID] => 214626
                                     [cRole_old] => 
@@ -5905,7 +5905,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                         (
                             [0] => Array
                                 (
-                                    [SID] => 358899
+                                    [SID] => 359320
                                     [fileID] => 6848118
                                     [CID] => 214623
                                     [cRole_old] => 
@@ -5983,7 +5983,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                         (
                             [0] => Array
                                 (
-                                    [SID] => 358898
+                                    [SID] => 359319
                                     [fileID] => 6848118
                                     [CID] => 214619
                                     [cRole_old] => 
@@ -6061,7 +6061,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
 
             [Title Rep] => Array
                 (
-                    [SID] => 358901
+                    [SID] => 359322
                     [fileID] => 6848118
                     [CID] => 216727
                     [cRole_old] => 
@@ -6096,7 +6096,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
 
             [Escrow] => Array
                 (
-                    [SID] => 358900
+                    [SID] => 359321
                     [fileID] => 6848118
                     [CID] => 214626
                     [cRole_old] => 
@@ -6131,7 +6131,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
 
             [Attorney] => Array
                 (
-                    [SID] => 358899
+                    [SID] => 359320
                     [fileID] => 6848118
                     [CID] => 214623
                     [cRole_old] => 
@@ -6201,7 +6201,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
 
             [Insurance Rep] => Array
                 (
-                    [SID] => 358898
+                    [SID] => 359319
                     [fileID] => 6848118
                     [CID] => 214619
                     [cRole_old] => 
@@ -6832,12 +6832,12 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                 (
                     [LOCSID] => 690
                     [fileID] => 6848118
-                    [nameAddrOfBank] => 
-                    [accountNumber] => 
-                    [balance] => 0
+                    [nameAddrOfBank] => chase
+                    [accountNumber] => 92390
+                    [balance] => 232
                     [recordDate] => 2021-02-08 14:34:07
-                    [accType] => 
-                    [accountTitledAs] => 
+                    [accType] => Checking
+                    [accountTitledAs] => checking
                     [description] => 
                     [shareValueInBond] => 0.00
                     [nameofSecurity] => 
@@ -6848,7 +6848,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                     [faceAmount] => 0.00
                     [amountBorrowed] => 0.00
                     [beneficiaries] => 
-                    [pledged] => 
+                    [pledged] => No
                 )
 
         )
@@ -6952,7 +6952,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
             [coBorCompanyName] => 
             [coBorCreditScoreRange] => 600 - 619
             [coBorCreditScore] => 0
-            [recordDate] => 2021-02-08 14:35:32
+            [recordDate] => 2021-02-09 15:02:22
             [afterRepairValue] => 0.00
             [targetClosingDate] => 
             [ownThisProperty] => No
@@ -8013,7 +8013,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
         (
             [0] => Array
                 (
-                    [EIID] => 127737
+                    [EIID] => 128162
                     [LMRId] => 6848118
                     [vendorName] => 
                     [vendorPhone] => 
@@ -8034,7 +8034,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                     [term] => 
                     [userType] => Manager
                     [createdBy] => 12009
-                    [recordDate] => 2021-02-08 14:35:34
+                    [recordDate] => 2021-02-09 15:02:24
                 )
 
         )
@@ -8048,7 +8048,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
         (
             [0] => Array
                 (
-                    [AGID] => 227282
+                    [AGID] => 227778
                     [LMRId] => 6848118
                     [guarantorFName] => 
                     [guarantorLName] => 
@@ -8061,7 +8061,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                     [guarantorCity] => 
                     [guarantorState] => 
                     [guarantorZip] => 
-                    [recordDate] => 2021-02-08 14:35:34
+                    [recordDate] => 2021-02-09 15:02:24
                     [guarantorEmail] => 
                     [guarantorNote] => 
                 )
@@ -8074,7 +8074,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2908045
+                            [FFGID] => 2914003
                             [LMRId] => 6848118
                             [userType] => B
                             [expType] => Flip
@@ -8095,12 +8095,12 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-02-08 14:35:34
+                            [recordDate] => 2021-02-09 15:02:23
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2908046
+                            [FFGID] => 2914004
                             [LMRId] => 6848118
                             [userType] => B
                             [expType] => Flip
@@ -8121,12 +8121,12 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-02-08 14:35:34
+                            [recordDate] => 2021-02-09 15:02:23
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2908047
+                            [FFGID] => 2914005
                             [LMRId] => 6848118
                             [userType] => B
                             [expType] => Flip
@@ -8147,7 +8147,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-02-08 14:35:34
+                            [recordDate] => 2021-02-09 15:02:23
                         )
 
                 )
@@ -8156,7 +8156,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2908048
+                            [FFGID] => 2914006
                             [LMRId] => 6848118
                             [userType] => B
                             [expType] => Gup
@@ -8177,12 +8177,12 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-02-08 14:35:34
+                            [recordDate] => 2021-02-09 15:02:23
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2908049
+                            [FFGID] => 2914007
                             [LMRId] => 6848118
                             [userType] => B
                             [expType] => Gup
@@ -8203,12 +8203,12 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-02-08 14:35:34
+                            [recordDate] => 2021-02-09 15:02:23
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2908050
+                            [FFGID] => 2914008
                             [LMRId] => 6848118
                             [userType] => B
                             [expType] => Gup
@@ -8229,7 +8229,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-02-08 14:35:34
+                            [recordDate] => 2021-02-09 15:02:23
                         )
 
                 )
@@ -8238,7 +8238,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                 (
                     [0] => Array
                         (
-                            [FFGID] => 2908051
+                            [FFGID] => 2914009
                             [LMRId] => 6848118
                             [userType] => B
                             [expType] => Sell
@@ -8259,12 +8259,12 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-02-08 14:35:34
+                            [recordDate] => 2021-02-09 15:02:23
                         )
 
                     [1] => Array
                         (
-                            [FFGID] => 2908052
+                            [FFGID] => 2914010
                             [LMRId] => 6848118
                             [userType] => B
                             [expType] => Sell
@@ -8285,12 +8285,12 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-02-08 14:35:34
+                            [recordDate] => 2021-02-09 15:02:23
                         )
 
                     [2] => Array
                         (
-                            [FFGID] => 2908053
+                            [FFGID] => 2914011
                             [LMRId] => 6848118
                             [userType] => B
                             [expType] => Sell
@@ -8311,7 +8311,7 @@ Broker changed from Miguel1Broker Feal1Broker to fannie .
                             [zip] => 
                             [Outcome] => 0
                             [createdBy] => 
-                            [recordDate] => 2021-02-08 14:35:34
+                            [recordDate] => 2021-02-09 15:02:23
                         )
 
                 )

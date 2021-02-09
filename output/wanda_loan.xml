@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-09T16:19:40Z</CreatedDatetime>
+			<CreatedDatetime>2021-02-09T20:13:45Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -14,9 +14,15 @@
 					<ASSETS>
 						<ASSET SequenceNumber="1" xlink:label="ASSET_1">
 							<ASSET_DETAIL>
-								<AssetCashOrMarketValueAmount>0.00</AssetCashOrMarketValueAmount>
-								<AssetType>Other</AssetType>
+								<AssetAccountIdentifier>92390</AssetAccountIdentifier>
+								<AssetCashOrMarketValueAmount>232.00</AssetCashOrMarketValueAmount>
+								<AssetType>CheckingAccount</AssetType>
 							</ASSET_DETAIL>
+							<ASSET_HOLDER>
+								<NAME>
+									<FullName>chase</FullName>
+								</NAME>
+							</ASSET_HOLDER>
 						</ASSET>
 					</ASSETS>
 					<COLLATERALS>

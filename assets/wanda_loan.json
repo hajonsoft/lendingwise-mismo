@@ -180,7 +180,7 @@
         "mortgageOwner1_copy": "",
         "mortgageOwner2_copy": "",
         "coBServiceProvider": "",
-        "lastUpdatedDate": "2021-02-08 14:35:34",
+        "lastUpdatedDate": "2021-02-09 15:02:24",
         "updatedBy": "Miguel Feal",
         "borrowerPinNo": "",
         "coBorrowerPinNo": "",
@@ -192,7 +192,7 @@
         "coBorDriverLicenseState": "",
         "coBorDriverLicenseNumber": "",
         "maritalStatusCoBor": "Married",
-        "noOfDaysStale": "-9",
+        "noOfDaysStale": "-10",
         "borrowerFName": "Wanda"
     },
     "addedToFav": "0",
@@ -684,7 +684,7 @@
             "LMRAEId": "0",
             "processingCompanyId": "3821",
             "empCreatedDate": "2019-10-04",
-            "empLastLoginDate": "2021-02-09 11:10:22",
+            "empLastLoginDate": "2021-02-09 14:34:18",
             "allowToViewAllFiles": "1",
             "serviceProvider": "att",
             "timeZone": "EST",
@@ -840,7 +840,7 @@
             "LMRAEId": "0",
             "processingCompanyId": "3821",
             "empCreatedDate": "2021-02-08",
-            "empLastLoginDate": "2021-02-09 11:15:57",
+            "empLastLoginDate": "2021-02-09 15:03:00",
             "allowToViewAllFiles": "1",
             "serviceProvider": "",
             "timeZone": "EST",
@@ -4940,7 +4940,7 @@
             ],
             "Title Rep": [
                 {
-                    "SID": "358901",
+                    "SID": "359322",
                     "fileID": "6848118",
                     "CID": "216727",
                     "cRole_old": "",
@@ -4975,7 +4975,7 @@
             ],
             "Escrow": [
                 {
-                    "SID": "358900",
+                    "SID": "359321",
                     "fileID": "6848118",
                     "CID": "214626",
                     "cRole_old": "",
@@ -5010,7 +5010,7 @@
             ],
             "Attorney": [
                 {
-                    "SID": "358899",
+                    "SID": "359320",
                     "fileID": "6848118",
                     "CID": "214623",
                     "cRole_old": "",
@@ -5080,7 +5080,7 @@
             ],
             "Insurance Rep": [
                 {
-                    "SID": "358898",
+                    "SID": "359319",
                     "fileID": "6848118",
                     "CID": "214619",
                     "cRole_old": "",
@@ -5150,7 +5150,7 @@
             ]
         },
         "Title Rep": {
-            "SID": "358901",
+            "SID": "359322",
             "fileID": "6848118",
             "CID": "216727",
             "cRole_old": "",
@@ -5183,7 +5183,7 @@
             "repTitle": ""
         },
         "Escrow": {
-            "SID": "358900",
+            "SID": "359321",
             "fileID": "6848118",
             "CID": "214626",
             "cRole_old": "",
@@ -5216,7 +5216,7 @@
             "repTitle": ""
         },
         "Attorney": {
-            "SID": "358899",
+            "SID": "359320",
             "fileID": "6848118",
             "CID": "214623",
             "cRole_old": "",
@@ -5282,7 +5282,7 @@
             "repTitle": "miami"
         },
         "Insurance Rep": {
-            "SID": "358898",
+            "SID": "359319",
             "fileID": "6848118",
             "CID": "214619",
             "cRole_old": "",
@@ -5669,12 +5669,12 @@
         {
             "LOCSID": "690",
             "fileID": "6848118",
-            "nameAddrOfBank": "",
-            "accountNumber": "",
-            "balance": "0",
+            "nameAddrOfBank": "chase",
+            "accountNumber": "92390",
+            "balance": "232",
             "recordDate": "2021-02-08 14:34:07",
-            "accType": "",
-            "accountTitledAs": "",
+            "accType": "Checking",
+            "accountTitledAs": "checking",
             "description": "",
             "shareValueInBond": "0.00",
             "nameofSecurity": "",
@@ -5685,7 +5685,7 @@
             "faceAmount": "0.00",
             "amountBorrowed": "0.00",
             "beneficiaries": "",
-            "pledged": ""
+            "pledged": "No"
         }
     ],
     "liabilitiesInfo": [],
@@ -5748,7 +5748,7 @@
         "coBorCompanyName": "",
         "coBorCreditScoreRange": "600 - 619",
         "coBorCreditScore": "0",
-        "recordDate": "2021-02-08 14:35:32",
+        "recordDate": "2021-02-09 15:02:22",
         "afterRepairValue": "0.00",
         "targetClosingDate": "",
         "ownThisProperty": "No",
@@ -6690,7 +6690,7 @@
     "PCFieldsInfo": [],
     "equipmentInfo": [
         {
-            "EIID": "127737",
+            "EIID": "128162",
             "LMRId": "6848118",
             "vendorName": "",
             "vendorPhone": "",
@@ -6711,14 +6711,14 @@
             "term": "",
             "userType": "Manager",
             "createdBy": "12009",
-            "recordDate": "2021-02-08 14:35:34"
+            "recordDate": "2021-02-09 15:02:24"
         }
     ],
     "PCquickAppFieldsInfo": "",
     "propertyValuationDocs": [],
     "AddGuarantorsInfo": [
         {
-            "AGID": "227282",
+            "AGID": "227778",
             "LMRId": "6848118",
             "guarantorFName": "",
             "guarantorLName": "",
@@ -6731,7 +6731,7 @@
             "guarantorCity": "",
             "guarantorState": "",
             "guarantorZip": "",
-            "recordDate": "2021-02-08 14:35:34",
+            "recordDate": "2021-02-09 15:02:24",
             "guarantorEmail": "",
             "guarantorNote": ""
         }
@@ -6739,7 +6739,7 @@
     "fileExpFilpGroundUp": {
         "Flip": [
             {
-                "FFGID": "2908045",
+                "FFGID": "2914003",
                 "LMRId": "6848118",
                 "userType": "B",
                 "expType": "Flip",
@@ -6760,10 +6760,10 @@
                 "zip": "",
                 "Outcome": "0",
                 "createdBy": "",
-                "recordDate": "2021-02-08 14:35:34"
+                "recordDate": "2021-02-09 15:02:23"
             },
             {
-                "FFGID": "2908046",
+                "FFGID": "2914004",
                 "LMRId": "6848118",
                 "userType": "B",
                 "expType": "Flip",
@@ -6784,10 +6784,10 @@
                 "zip": "",
                 "Outcome": "0",
                 "createdBy": "",
-                "recordDate": "2021-02-08 14:35:34"
+                "recordDate": "2021-02-09 15:02:23"
             },
             {
-                "FFGID": "2908047",
+                "FFGID": "2914005",
                 "LMRId": "6848118",
                 "userType": "B",
                 "expType": "Flip",
@@ -6808,12 +6808,12 @@
                 "zip": "",
                 "Outcome": "0",
                 "createdBy": "",
-                "recordDate": "2021-02-08 14:35:34"
+                "recordDate": "2021-02-09 15:02:23"
             }
         ],
         "Gup": [
             {
-                "FFGID": "2908048",
+                "FFGID": "2914006",
                 "LMRId": "6848118",
                 "userType": "B",
                 "expType": "Gup",
@@ -6834,10 +6834,10 @@
                 "zip": "",
                 "Outcome": "0",
                 "createdBy": "",
-                "recordDate": "2021-02-08 14:35:34"
+                "recordDate": "2021-02-09 15:02:23"
             },
             {
-                "FFGID": "2908049",
+                "FFGID": "2914007",
                 "LMRId": "6848118",
                 "userType": "B",
                 "expType": "Gup",
@@ -6858,10 +6858,10 @@
                 "zip": "",
                 "Outcome": "0",
                 "createdBy": "",
-                "recordDate": "2021-02-08 14:35:34"
+                "recordDate": "2021-02-09 15:02:23"
             },
             {
-                "FFGID": "2908050",
+                "FFGID": "2914008",
                 "LMRId": "6848118",
                 "userType": "B",
                 "expType": "Gup",
@@ -6882,12 +6882,12 @@
                 "zip": "",
                 "Outcome": "0",
                 "createdBy": "",
-                "recordDate": "2021-02-08 14:35:34"
+                "recordDate": "2021-02-09 15:02:23"
             }
         ],
         "Sell": [
             {
-                "FFGID": "2908051",
+                "FFGID": "2914009",
                 "LMRId": "6848118",
                 "userType": "B",
                 "expType": "Sell",
@@ -6908,10 +6908,10 @@
                 "zip": "",
                 "Outcome": "0",
                 "createdBy": "",
-                "recordDate": "2021-02-08 14:35:34"
+                "recordDate": "2021-02-09 15:02:23"
             },
             {
-                "FFGID": "2908052",
+                "FFGID": "2914010",
                 "LMRId": "6848118",
                 "userType": "B",
                 "expType": "Sell",
@@ -6932,10 +6932,10 @@
                 "zip": "",
                 "Outcome": "0",
                 "createdBy": "",
-                "recordDate": "2021-02-08 14:35:34"
+                "recordDate": "2021-02-09 15:02:23"
             },
             {
-                "FFGID": "2908053",
+                "FFGID": "2914011",
                 "LMRId": "6848118",
                 "userType": "B",
                 "expType": "Sell",
@@ -6956,7 +6956,7 @@
                 "zip": "",
                 "Outcome": "0",
                 "createdBy": "",
-                "recordDate": "2021-02-08 14:35:34"
+                "recordDate": "2021-02-09 15:02:23"
             }
         ]
     },
