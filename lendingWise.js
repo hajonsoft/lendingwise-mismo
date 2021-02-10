@@ -43,10 +43,10 @@ function createMismo(incomingLoan) {
   const borrowerAssets = loan["fileLOChekingSavingInfo"];
   doc = assets(doc, borrowerAssets);
 
-  // const realEstateOwnedData = loanOwnedPropertyData(
-  //   loan["fileLOScheduleRealInfo"]
-  // );
-  // doc = realEstateOwned(doc, realEstateOwnedData, borrowerAssets.length);
+            // const realEstateOwnedData = loanOwnedPropertyData(
+            //   loan["fileLOScheduleRealInfo"]
+            // );
+            // doc = realEstateOwned(doc, realEstateOwnedData, borrowerAssets.length);
 
   const collateralData = [loan["LMRInfo"]];
   doc = collaterals(doc, collateralData);
@@ -690,7 +690,7 @@ function partyBorrower(doc, data) {
       goBack: 1,
       nodes: [
         {
-          BorrowerBirthDate: (row) => row.borrowerDOB,
+          BorrowerBirthDate: (row) => validDate(row.borrowerDOB),
         },
         {
           BorrowerTotalMortgagedPropertiesCount: (row) => "",
@@ -952,10 +952,7 @@ function partyBorrower(doc, data) {
         },
         {
           EmploymentStartDate: (row) =>
-            loan["incomeInfo"].borrowerHireDate &&
-            loan["incomeInfo"].borrowerHireDate != "0000-00-00"
-              ? loan["incomeInfo"].borrowerHireDate
-              : "",
+            validDate(loan["incomeInfo"].borrowerHireDate)
         },
         {
           EmploymentTimeInLineOfWorkMonthsCount: (row) =>
@@ -1234,7 +1231,7 @@ function partyCoBorrower(doc, data) {
       goBack: 1,
       nodes: [
         {
-          BorrowerBirthDate: (row) => row.coBorrowerDOB,
+          BorrowerBirthDate: (row) => validDate(row.coBorrowerDOB),
         },
         {
           BorrowerTotalMortgagedPropertiesCount: (row) => "",
@@ -1440,10 +1437,7 @@ function partyCoBorrower(doc, data) {
         },
         {
           EmploymentStartDate: (row) =>
-            loan["incomeInfo"].coBorrowerHireDate &&
-            loan["incomeInfo"].coBorrowerHireDate != "0000-00-00"
-              ? loan["incomeInfo"].coBorrowerHireDate
-              : ""
+            validDate(loan["incomeInfo"].coBorrowerHireDate)
         },
         {
           EmploymentTimeInLineOfWorkMonthsCount: (row) =>
@@ -1698,6 +1692,9 @@ function buildMismoNodes(
                 throw new Error("Required value: " + key);
               }
             } else {
+              if (value == null) {
+                value = ""
+              }
               doc.ele(key).txt(value).up();
             }
           }
@@ -2031,6 +2028,15 @@ function getMonthDuration(duration) {
     return match[0];
   }
   return "0";
+}
+
+function validDate(inDate){
+
+  if (inDate && inDate.includes("0000")){
+    return ""
+  }
+  return inDate;
+
 }
 module.exports = {
   createMismo,
