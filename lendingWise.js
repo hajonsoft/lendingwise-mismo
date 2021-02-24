@@ -338,13 +338,13 @@ function loans(doc, data, startIndex) {
       path: ["AMORTIZATION", "AMORTIZATION_RULE"],
       nodes: [
         {
-          AmortizationType: (row) => "",
+          AmortizationType: (row) => loan["fileHMLONewLoanInfo"].amortizationType,
         },
         {
-          LoanAmortizationPeriodCount: (row) => "",
+          LoanAmortizationPeriodCount: (row) => streetNumber(loan["fileHMLOPropertyInfo"].loanTerm),
         },
         {
-          LoanAmortizationPeriodType: (row) => "",
+          LoanAmortizationPeriodType: (row) => loan["fileHMLOPropertyInfo"]?.loanTerm?.toLowerCase()?.includes("month") ? "Month" : "",
         },
       ],
     },
