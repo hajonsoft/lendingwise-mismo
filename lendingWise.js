@@ -545,7 +545,7 @@ function loans(doc, data, startIndex) {
           MortgageType: (row) => "",
         },
         {
-          LienPriorityType: (row) => "",
+          LienPriorityType: (row) => loan["fileHMLOPropertyInfo"].lienPosition === 1 ? 'FirstLien' : 'SecondLien',
         },
         { NoteRatePercent: (row) => money(loan["LMRInfo"].lien1Rate) },
       ],
