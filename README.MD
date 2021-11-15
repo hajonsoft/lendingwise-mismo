@@ -8,7 +8,7 @@ Node is used to convert a lendingwise JSON object into its corresponding MISMO f
 
 ## Design
 
-xmlbuilder2 npm package is used to easily create the xml. This is easier than php which I am not so experienced with. The code is then packages using browserify and then echoed inside php
+xmlbuilder2 npm package is used to easily create the xml. This is easier than php which I am not so experienced with. The code is then packaged using browserify and then echoed inside php
 
 
 # Credits
