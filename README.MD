@@ -1,6 +1,6 @@
 # Overview
 
-This project converts a lendingwise loan to mismo format. 
+This project converts a lendingWise loan to mismo format. 
 
 # Getting Started
 

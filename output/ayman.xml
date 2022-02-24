@@ -3,7 +3,7 @@
 	<ABOUT_VERSIONS>
 		<ABOUT_VERSION>
 			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-24T22:36:55Z</CreatedDatetime>
+			<CreatedDatetime>2022-02-24T05:27:39Z</CreatedDatetime>
 			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
 		</ABOUT_VERSION>
 	</ABOUT_VERSIONS>
@@ -75,6 +75,7 @@
 							</REFINANCE>
 							<TERMS_OF_LOAN>
 								<BaseLoanAmount>0</BaseLoanAmount>
+								<LienPriorityType>SecondLien</LienPriorityType>
 								<LoanPurposeType>Refinance</LoanPurposeType>
 								<NoteRatePercent>0.00</NoteRatePercent>
 							</TERMS_OF_LOAN>
