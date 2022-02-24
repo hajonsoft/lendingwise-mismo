@@ -4,6 +4,10 @@ This project converts a lendingWise loan to mismo format.
 
 # Getting Started
 
+`node lw ayman`
+
+converts `./assets/ayman.json` to `./output/ayman.xml`
+
 Node is used to convert a lendingwise JSON object into its corresponding MISMO format. 
 
 ## Design
