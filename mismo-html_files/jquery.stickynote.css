@@ -1,0 +1,370 @@
+﻿body {
+}
+
+/* Common styles Starts*/
+body .each-sticky-note-outer {
+    position: absolute;
+}
+
+.each-sticky-note-header {
+    padding-bottom: 2px;
+}
+
+.each-sticky-note-header:hover {
+    cursor: move;
+}
+
+.each-sticky-note-header input {
+    padding: 2px 2px;
+    width: 70% !important;
+}
+
+.minimize_sticky_notes:after {
+/*     content: "\f2d1";
+
+    font-family: FontAwesome;
+    z-index: 1; */
+}
+
+.maximize_sticky_notes:after {
+/*     content: "\f2d0";
+    font-family: FontAwesome;
+    z-index: 1; */
+}
+
+.hide_sticky:after {
+/*     content: "\f06e";
+
+    font-family: FontAwesome;
+    z-index: 1; */
+}
+
+.show_sticky:after {
+    content: "\f070";
+
+    font-family: FontAwesome;
+    z-index: 1;
+}
+
+.each-sticky-note-header input:focus {
+    outline: none !important;
+    border: 0px solid red;
+}
+
+.each-sticky-note-text-box textarea {
+    border: none;
+    width: 99%;
+    resize: none !important;
+}
+
+.each-sticky-note-text-box textarea:focus {
+    outline: none !important;
+    border: 0px solid yellow !important;
+}
+
+.each-sticky-note-delete {
+    cursor: pointer;
+    float: right;
+    /*border: #000000 1px solid;*/
+    font-weight: bold;
+    padding: 0px 4px;
+}
+
+.each-sticky-note-options {
+    float: right;
+    position: relative;
+}
+
+.each-sticky-note-options-control {
+    cursor: pointer;
+    padding-right: 4px;
+}
+
+.hidden-item {
+    display: none;
+}
+
+body .each-sticky-note-outer.ui-draggable-disabled, body .each-sticky-note-outer.ui-resizable-disabled,
+body .each-sticky-note-outer.ui-state-disabled {
+    opacity: 1
+}
+
+/* Common styles Ends*/
+
+/*Yellow theme Starts*/
+.sticky-note-yellow-theme.each-sticky-note-outer {
+    background-color: rgb(250, 250, 48);
+    color: #000000;
+    font-size: 12px;
+    padding: 5px 5px;
+    border: #987656 1px solid;
+    border-radius: 5px;
+}
+
+.sticky-note-yellow-theme.each-sticky-note-outer .each-sticky-note-header {
+    border-bottom: solid 1px #000000;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.sticky-note-yellow-theme.each-sticky-note-outer .each-sticky-note-header input {
+    border: #ebe8e6 1px solid
+}
+
+.sticky-note-yellow-theme.each-sticky-note-outer .each-sticky-note-text-box {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 3px;
+}
+
+.sticky-note-yellow-theme.each-sticky-note-outer .each-sticky-note-text-box textarea {
+    background-color: rgb(250, 250, 48);
+}
+
+.sticky-note-yellow-theme.each-sticky-note-outer .each-sticky-note-delete {
+    /* border: #987656 1px solid*/
+}
+
+.sticky-note-yellow-theme.each-sticky-note-outer .each-sticky-note-options {
+
+}
+
+.sticky-note-yellow-theme.each-sticky-note-outer .each-sticky-note-options-control {
+    background: url("../images/color-circle1.png") no-repeat;
+    width: 14px;
+    height: 14px; 
+}
+
+/*Yellow theme Ends*/
+
+.minimize_sticky_notes, .maximize_sticky_notes, .hide_sticky, .show_sticky {
+    width: 16px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+    float: right;
+    /* border: #000000 1px solid; */
+    font-weight: bold;
+    margin: 0px 5px;
+}
+
+.show_hide_sticky {
+    width: 16px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+    float: right;
+    /* border: #000000 1px solid; */
+    font-weight: bold;
+    margin: 0px 10px;
+}
+
+
+/*Orange theme Starts*/
+.sticky-note-orange-theme.each-sticky-note-outer {
+    background-color: rgb(252, 190, 131);
+    color: #000000;
+    font-size: 12px;
+    padding: 5px 5px;
+    border: #987656 1px solid;
+    border-radius: 5px;
+}
+
+.sticky-note-orange-theme.each-sticky-note-outer .each-sticky-note-text-box {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 3px;
+}
+
+.sticky-note-orange-theme.each-sticky-note-outer .each-sticky-note-header {
+    border-bottom: solid 1px #000000;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.sticky-note-orange-theme.each-sticky-note-outer .each-sticky-note-header input {
+    border: #ebe8e6 1px solid
+}
+
+.sticky-note-orange-theme.each-sticky-note-outer .each-sticky-note-text-box {
+    padding-top: 3px;
+}
+
+.sticky-note-orange-theme.each-sticky-note-outer .each-sticky-note-text-box textarea {
+    background-color: rgb(252, 190, 131);
+}
+
+.sticky-note-orange-theme.each-sticky-note-outer .each-sticky-note-delete {
+    /*  border: #987656 1px solid*/
+}
+
+.sticky-note-orange-theme.each-sticky-note-outer .each-sticky-note-options {
+
+}
+
+.sticky-note-orange-theme.each-sticky-note-outer .each-sticky-note-options-control {
+    background: url("../images/color-circle1.png") no-repeat;
+    width: 14px;
+    height: 14px;
+}
+
+/*Orange theme Ends*/
+
+/*Green theme Starts*/
+.sticky-note-green-theme.each-sticky-note-outer {
+    background-color: rgb(136, 246, 147);
+    color: #000000;
+    font-size: 12px;
+    padding: 5px 5px;
+    border: #987656 1px solid;
+    border-radius: 5px;
+}
+
+.sticky-note-green-theme.each-sticky-note-outer .each-sticky-note-text-box {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 3px;
+}
+
+.sticky-note-green-theme.each-sticky-note-outer .each-sticky-note-header {
+    border-bottom: solid 1px #000000;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.sticky-note-green-theme.each-sticky-note-outer .each-sticky-note-header input {
+    border: #ebe8e6 1px solid
+}
+
+.sticky-note-green-theme.each-sticky-note-outer .each-sticky-note-text-box {
+    padding-top: 3px;
+}
+
+.sticky-note-green-theme.each-sticky-note-outer .each-sticky-note-text-box textarea {
+    background-color: rgb(136, 246, 147);
+}
+
+.sticky-note-green-theme.each-sticky-note-outer .each-sticky-note-delete {
+    /*  border: #987656 1px solid*/
+}
+
+.sticky-note-green-theme.each-sticky-note-outer .each-sticky-note-options {
+
+}
+
+.sticky-note-green-theme.each-sticky-note-outer .each-sticky-note-options-control {
+    background: url("../images/color-circle1.png") no-repeat;
+    width: 14px;
+    height: 14px;
+}
+
+/*Green theme Ends*/
+
+/*Blue theme Starts*/
+.sticky-note-blue-theme.each-sticky-note-outer {
+    background-color: rgb(206, 231, 252);
+    color: #000000;
+    font-size: 12px;
+    padding: 5px 5px;
+    border: #987656 1px solid;
+    border-radius: 5px;
+}
+
+.sticky-note-blue-theme.each-sticky-note-outer .each-sticky-note-text-box {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 3px;
+}
+
+.sticky-note-blue-theme.each-sticky-note-outer .each-sticky-note-header {
+    border-bottom: solid 1px #000000;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.sticky-note-blue-theme.each-sticky-note-outer .each-sticky-note-header input {
+    border: #ebe8e6 1px solid
+}
+
+.sticky-note-blue-theme.each-sticky-note-outer .each-sticky-note-text-box {
+    padding-top: 3px;
+}
+
+.sticky-note-blue-theme.each-sticky-note-outer .each-sticky-note-text-box textarea {
+    background-color: rgb(206, 231, 252);
+}
+
+.sticky-note-blue-theme.each-sticky-note-outer .each-sticky-note-delete {
+    /*  border: #987656 1px solid*/
+}
+
+.sticky-note-blue-theme.each-sticky-note-outer .each-sticky-note-options {
+
+}
+
+.sticky-note-blue-theme.each-sticky-note-outer .each-sticky-note-options-control {
+    background: url("../images/color-circle1.png") no-repeat;
+    width: 14px;
+    height: 14px;
+}
+
+/*Blue theme Ends*/
+
+/*Pink theme Starts*/
+.sticky-note-pink-theme.each-sticky-note-outer {
+    background-color: rgb(243, 172, 223);
+    color: #000000;
+    font-size: 12px;
+    padding: 5px 5px;
+    border: #987656 1px solid;
+    border-radius: 5px;
+}
+
+.sticky-note-pink-theme.each-sticky-note-outer .each-sticky-note-text-box {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 3px;
+}
+
+.sticky-note-pink-theme.each-sticky-note-outer .each-sticky-note-header {
+    border-bottom: solid 1px #000000;
+    font-size: 120%;
+    font-weight: bold;
+    width: 100% !important;
+    word-break: break-word;
+}
+
+.sticky-note-pink-theme.each-sticky-note-outer .each-sticky-note-header input {
+    border: #ebe8e6 1px solid
+}
+
+.sticky-note-pink-theme.each-sticky-note-outer .each-sticky-note-text-box {
+    padding-top: 3px;
+}
+
+.sticky-note-pink-theme.each-sticky-note-outer .each-sticky-note-text-box textarea {
+    background-color: rgb(243, 172, 223);
+}
+
+.sticky-note-pink-theme.each-sticky-note-outer .each-sticky-note-delete {
+    /* border: #987656 1px solid*/
+}
+
+.sticky-note-pink-theme.each-sticky-note-outer .each-sticky-note-options {
+
+}
+
+.sticky-note-pink-theme.each-sticky-note-outer .each-sticky-note-options-control {
+    background: url("../images/color-circle1.png") no-repeat;
+    width: 14px;
+    height: 14px;
+}
+
+.each-sticky-note-text-box {
+    overflow-y: scroll;
+
+}
+
+/*Blue theme Ends*/
+
+/*Like different themes mentioned above, more themes can be added!!!*/
