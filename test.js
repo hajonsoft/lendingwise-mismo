@@ -1,3 +1,29 @@
+function bootstrap() {
+  //   const style = document.createElement('style');
+  //   document.head.appendChild(style);
+
+  const inputElement = document.createElement('input');
+  //   inputElement.classList.add('custom-file-input');
+  inputElement.type = 'file';
+
+  inputElement.onchange = function () {
+    let file = this.files[0];
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      importToPage(reader.result);
+    };
+
+    reader.readAsText(file);
+  };
+
+  const parentElem = document.querySelector(
+    '#branchId_container'
+  ).parentElement;
+  parentElem.insertBefore(inputElement, parentElem.firstChild);
+}
+
 function importToPage(fnmFile) {
   const json = xml2json(parseXml(fnmFile, '')).replace(/undefined/g, '');
 
@@ -13,320 +39,6 @@ function importToPage(fnmFile) {
   const loanNumberElement = document.getElementById('loanNumber');
   loanNumberElement.value = loanNumber;
 }
-
-importToPage(`<?xml version="1.0" encoding="UTF-8"?>
-<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:DU="http://www.datamodelextension.org/Schema/DU" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA">
-	<ABOUT_VERSIONS>
-		<ABOUT_VERSION>
-			<AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-			<CreatedDatetime>2021-02-07T23:39:00Z</CreatedDatetime>
-			<DataVersionIdentifier>5.0.06</DataVersionIdentifier>
-		</ABOUT_VERSION>
-	</ABOUT_VERSIONS>
-	<DEAL_SETS>
-		<DEAL_SET>
-			<DEALS>
-				<DEAL>
-					<COLLATERALS>
-						<COLLATERAL SequenceNumber="1" xlink:label="COLLATERAL_1">
-							<SUBJECT_PROPERTY>
-								<ADDRESS>
-									<CountryCode>US</CountryCode>
-								</ADDRESS>
-								<PROPERTY_DETAIL>
-									<FinancedUnitCount>1</FinancedUnitCount>
-									<PropertyEstimatedValueAmount>323322.00</PropertyEstimatedValueAmount>
-									<PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
-								</PROPERTY_DETAIL>
-								<PROPERTY_VALUATIONS>
-									<PROPERTY_VALUATION>
-										<PROPERTY_VALUATION_DETAIL>
-											<PropertyValuationAmount>0.00</PropertyValuationAmount>
-										</PROPERTY_VALUATION_DETAIL>
-									</PROPERTY_VALUATION>
-								</PROPERTY_VALUATIONS>
-								<SALES_CONTRACTS>
-									<SALES_CONTRACT>
-										<SALES_CONTRACT_DETAIL>
-											<SalesContractAmount>0.00</SalesContractAmount>
-										</SALES_CONTRACT_DETAIL>
-									</SALES_CONTRACT>
-								</SALES_CONTRACTS>
-							</SUBJECT_PROPERTY>
-						</COLLATERAL>
-					</COLLATERALS>
-					<LOANS>
-						<LOAN LoanRoleType="SubjectLoan" xlink:label="LOAN_1">
-							<DOCUMENT_SPECIFIC_DATA_SETS>
-								<DOCUMENT_SPECIFIC_DATA_SET>
-									<URLA>
-										<URLA_DETAIL>
-											<EstimatedClosingCostsAmount>0.00</EstimatedClosingCostsAmount>
-										</URLA_DETAIL>
-									</URLA>
-								</DOCUMENT_SPECIFIC_DATA_SET>
-							</DOCUMENT_SPECIFIC_DATA_SETS>
-							<LOAN_DETAIL>
-								<BorrowerCount>2</BorrowerCount>
-							</LOAN_DETAIL>
-							<LOAN_IDENTIFIERS>
-								<LOAN_IDENTIFIER>
-									<LoanIdentifier>6848008</LoanIdentifier>
-									<LoanIdentifierType>LenderLoan</LoanIdentifierType>
-								</LOAN_IDENTIFIER>
-							</LOAN_IDENTIFIERS>
-							<TERMS_OF_LOAN>
-								<BaseLoanAmount>93203</BaseLoanAmount>
-								<LoanPurposeType>Purchase</LoanPurposeType>
-								<NoteRatePercent>6.00</NoteRatePercent>
-							</TERMS_OF_LOAN>
-						</LOAN>
-					</LOANS>
-					<PARTIES>
-						<PARTY SequenceNumber="1" xlink:label="PARTY_1">
-							<INDIVIDUAL>
-								<CONTACT_POINTS>
-									<CONTACT_POINT>
-										<CONTACT_POINT_EMAIL>
-											<ContactPointEmailValue>ksjflaka@aim.com</ContactPointEmailValue>
-										</CONTACT_POINT_EMAIL>
-									</CONTACT_POINT>
-									<CONTACT_POINT>
-										<CONTACT_POINT_TELEPHONE>
-											<ContactPointTelephoneValue>4324324324</ContactPointTelephoneValue>
-										</CONTACT_POINT_TELEPHONE>
-										<CONTACT_POINT_DETAIL>
-											<ContactPointRoleType>Mobile</ContactPointRoleType>
-										</CONTACT_POINT_DETAIL>
-									</CONTACT_POINT>
-									<CONTACT_POINT>
-										<CONTACT_POINT_TELEPHONE>
-											<ContactPointTelephoneValue>9320342342</ContactPointTelephoneValue>
-										</CONTACT_POINT_TELEPHONE>
-										<CONTACT_POINT_DETAIL>
-											<ContactPointRoleType>Home</ContactPointRoleType>
-										</CONTACT_POINT_DETAIL>
-									</CONTACT_POINT>
-								</CONTACT_POINTS>
-								<NAME>
-									<FirstName>Barbara</FirstName>
-									<LastName>Rodriguez</LastName>
-								</NAME>
-							</INDIVIDUAL>
-							<ROLES>
-								<ROLE SequenceNumber="1" xlink:label="BORROWER_1">
-									<BORROWER>
-										<BORROWER_DETAIL>
-											<BorrowerBirthDate>1926-01-15</BorrowerBirthDate>
-											<DependentCount>0</DependentCount>
-											<MaritalStatusType>Other</MaritalStatusType>
-										</BORROWER_DETAIL>
-										<CURRENT_INCOME>
-											<CURRENT_INCOME_ITEMS>
-												<CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_1">
-													<CURRENT_INCOME_ITEM_DETAIL>
-														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-													</CURRENT_INCOME_ITEM_DETAIL>
-												</CURRENT_INCOME_ITEM>
-											</CURRENT_INCOME_ITEMS>
-										</CURRENT_INCOME>
-										<DECLARATION>
-											<DECLARATION_DETAIL>
-												<BankruptcyIndicator>false</BankruptcyIndicator>
-												<CitizenshipResidencyType>USCitizen</CitizenshipResidencyType>
-												<IntentToOccupyType>Yes</IntentToOccupyType>
-												<OutstandingJudgmentsIndicator>false</OutstandingJudgmentsIndicator>
-												<PartyToLawsuitIndicator>false</PartyToLawsuitIndicator>
-												<PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
-												<EXTENSION>
-													<OTHER>
-														<ULAD:DECLARATION_DETAIL_EXTENSION>
-															<ULAD:SpecialBorrowerSellerRelationshipIndicator>false</ULAD:SpecialBorrowerSellerRelationshipIndicator>
-														</ULAD:DECLARATION_DETAIL_EXTENSION>
-													</OTHER>
-												</EXTENSION>
-											</DECLARATION_DETAIL>
-										</DECLARATION>
-										<EMPLOYERS>
-											<EMPLOYER SequenceNumber="1" xlink:label="EMPLOYER_1">
-												<EMPLOYMENT>
-													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
-													<EmploymentClassificationType>Secondary</EmploymentClassificationType>
-													<EmploymentStatusType>Current</EmploymentStatusType>
-													<EmploymentTimeInLineOfWorkMonthsCount>0</EmploymentTimeInLineOfWorkMonthsCount>
-													<SpecialBorrowerEmployerRelationshipIndicator>false</SpecialBorrowerEmployerRelationshipIndicator>
-												</EMPLOYMENT>
-											</EMPLOYER>
-										</EMPLOYERS>
-										<GOVERNMENT_MONITORING>
-											<GOVERNMENT_MONITORING_DETAIL>
-												<EXTENSION>
-													<OTHER>
-														<ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
-															<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
-														</ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
-													</OTHER>
-												</EXTENSION>
-											</GOVERNMENT_MONITORING_DETAIL>
-										</GOVERNMENT_MONITORING>
-										<RESIDENCES>
-											<RESIDENCE>
-												<ADDRESS>
-													<AddressLineText>43892</AddressLineText>
-													<CityName>city</CityName>
-													<PostalCode>39329</PostalCode>
-													<StateCode>GA</StateCode>
-												</ADDRESS>
-												<RESIDENCE_DETAIL>
-													<BorrowerResidencyBasisType>Unknown</BorrowerResidencyBasisType>
-													<BorrowerResidencyType>Prior</BorrowerResidencyType>
-												</RESIDENCE_DETAIL>
-											</RESIDENCE>
-										</RESIDENCES>
-									</BORROWER>
-									<ROLE_DETAIL>
-										<PartyRoleType>Borrower</PartyRoleType>
-									</ROLE_DETAIL>
-								</ROLE>
-							</ROLES>
-							<TAXPAYER_IDENTIFIERS>
-								<TAXPAYER_IDENTIFIER>
-									<TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
-									<TaxpayerIdentifierValue>032493920</TaxpayerIdentifierValue>
-								</TAXPAYER_IDENTIFIER>
-							</TAXPAYER_IDENTIFIERS>
-						</PARTY>
-						<PARTY SequenceNumber="2" xlink:label="PARTY_2">
-							<INDIVIDUAL>
-								<CONTACT_POINTS>
-									<CONTACT_POINT>
-										<CONTACT_POINT_EMAIL>
-											<ContactPointEmailValue>kljaf@aim.com</ContactPointEmailValue>
-										</CONTACT_POINT_EMAIL>
-									</CONTACT_POINT>
-									<CONTACT_POINT>
-										<CONTACT_POINT_TELEPHONE>
-											<ContactPointTelephoneValue>9302340320</ContactPointTelephoneValue>
-										</CONTACT_POINT_TELEPHONE>
-										<CONTACT_POINT_DETAIL>
-											<ContactPointRoleType>Home</ContactPointRoleType>
-										</CONTACT_POINT_DETAIL>
-									</CONTACT_POINT>
-									<CONTACT_POINT>
-										<CONTACT_POINT_TELEPHONE>
-											<ContactPointTelephoneValue>9230432940</ContactPointTelephoneValue>
-										</CONTACT_POINT_TELEPHONE>
-										<CONTACT_POINT_DETAIL>
-											<ContactPointRoleType>Mobile</ContactPointRoleType>
-										</CONTACT_POINT_DETAIL>
-									</CONTACT_POINT>
-									<CONTACT_POINT>
-										<CONTACT_POINT_DETAIL>
-											<ContactPointRoleType>Work</ContactPointRoleType>
-										</CONTACT_POINT_DETAIL>
-									</CONTACT_POINT>
-								</CONTACT_POINTS>
-								<NAME>
-									<FirstName>John</FirstName>
-									<LastName>Smith</LastName>
-								</NAME>
-							</INDIVIDUAL>
-							<ROLES>
-								<ROLE SequenceNumber="1" xlink:label="BORROWER_2">
-									<BORROWER>
-										<BORROWER_DETAIL>
-											<BorrowerBirthDate>1926-01-06</BorrowerBirthDate>
-											<DependentCount>0</DependentCount>
-											<MaritalStatusType>Other</MaritalStatusType>
-										</BORROWER_DETAIL>
-										<CURRENT_INCOME>
-											<CURRENT_INCOME_ITEMS>
-												<CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_2">
-													<CURRENT_INCOME_ITEM_DETAIL>
-														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
-														<IncomeType>Base</IncomeType>
-													</CURRENT_INCOME_ITEM_DETAIL>
-												</CURRENT_INCOME_ITEM>
-											</CURRENT_INCOME_ITEMS>
-										</CURRENT_INCOME>
-										<DECLARATION>
-											<DECLARATION_DETAIL>
-												<BankruptcyIndicator>true</BankruptcyIndicator>
-												<CitizenshipResidencyType>USCitizen</CitizenshipResidencyType>
-												<IntentToOccupyType>Yes</IntentToOccupyType>
-												<OutstandingJudgmentsIndicator>true</OutstandingJudgmentsIndicator>
-												<PartyToLawsuitIndicator>true</PartyToLawsuitIndicator>
-												<PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
-											</DECLARATION_DETAIL>
-										</DECLARATION>
-										<EMPLOYERS>
-											<EMPLOYER SequenceNumber="1" xlink:label="EMPLOYER_2">
-												<EMPLOYMENT>
-													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
-													<EmploymentClassificationType>Secondary</EmploymentClassificationType>
-													<EmploymentStatusType>Current</EmploymentStatusType>
-													<EmploymentTimeInLineOfWorkMonthsCount>0</EmploymentTimeInLineOfWorkMonthsCount>
-												</EMPLOYMENT>
-											</EMPLOYER>
-										</EMPLOYERS>
-										<GOVERNMENT_MONITORING>
-											<GOVERNMENT_MONITORING_DETAIL>
-												<EXTENSION>
-													<OTHER>
-														<ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
-															<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>
-														</ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
-													</OTHER>
-												</EXTENSION>
-											</GOVERNMENT_MONITORING_DETAIL>
-										</GOVERNMENT_MONITORING>
-										<RESIDENCES>
-											<RESIDENCE>
-												<ADDRESS>
-													<AddressLineText>9032 sw 29 st</AddressLineText>
-													<CityName>miami</CityName>
-													<PostalCode>30303</PostalCode>
-													<StateCode>FL</StateCode>
-												</ADDRESS>
-												<RESIDENCE_DETAIL>
-													<BorrowerResidencyDurationMonthsCount>0</BorrowerResidencyDurationMonthsCount>
-													<BorrowerResidencyType>Current</BorrowerResidencyType>
-												</RESIDENCE_DETAIL>
-											</RESIDENCE>
-										</RESIDENCES>
-									</BORROWER>
-									<ROLE_DETAIL>
-										<PartyRoleType>Borrower</PartyRoleType>
-									</ROLE_DETAIL>
-								</ROLE>
-							</ROLES>
-							<TAXPAYER_IDENTIFIERS>
-								<TAXPAYER_IDENTIFIER>
-									<TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
-									<TaxpayerIdentifierValue>342432432</TaxpayerIdentifierValue>
-								</TAXPAYER_IDENTIFIER>
-							</TAXPAYER_IDENTIFIERS>
-						</PARTY>
-						<PARTY SequenceNumber="3" xlink:label="PARTY_3">
-							<ROLES>
-								<ROLE>
-									<ROLE_DETAIL>
-										<PartyRoleType>LoanOriginationCompany</PartyRoleType>
-									</ROLE_DETAIL>
-								</ROLE>
-							</ROLES>
-						</PARTY>
-					</PARTIES>
-					<RELATIONSHIPS xsi:type="RELATIONSHIPS">
-						<RELATIONSHIP SequenceNumber="1" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="2" xlink:from="CURRENT_INCOME_ITEM_2" xlink:to="EMPLOYER_2" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"></RELATIONSHIP>
-						<RELATIONSHIP SequenceNumber="3" xlink:from="BORROWER_2" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ROLE_SharesJointCreditReportWith_ROLE"></RELATIONSHIP>
-					</RELATIONSHIPS>
-				</DEAL>
-			</DEALS>
-		</DEAL_SET>
-	</DEAL_SETS>
-</MESSAGE>`);
 
 function parseXml(xml) {
   var dom = null;
@@ -510,3 +222,5 @@ function xml2json(xml, tab) {
     '\n}'
   );
 }
+
+bootstrap();
