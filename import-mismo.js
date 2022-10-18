@@ -1,3 +1,58 @@
+const config = [
+  {
+    selector: '#loanNumber',
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS.LOAN
+    .LOAN_IDENTIFIERS.LOAN_IDENTIFIER.LoanIdentifier
+  },
+  {
+    selector: '#borrowerFName',
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.NAME.FirstName
+  },
+  {
+    selector: '#borrowerLName',
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.NAME.LastName
+  },
+  {
+    selector: '#borrowerMName',
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.NAME.MiddleName
+  },
+  {
+    selector: '#ssn',
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').TAXPAYER_IDENTIFIERS.TAXPAYER_IDENTIFIER.TaxpayerIdentifierValue
+  },
+  {
+    selector: "#borrowerEmail",
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(point => point.CONTACT_POINT_EMAIL)?.CONTACT_POINT_EMAIL.ContactPointEmailValue
+  },
+  {
+    selector: "#phoneNumber",
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(point => point.CONTACT_POINT_TELEPHONE && point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Home")?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue
+  },
+  {
+    selector: "#cellNo",
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(point => point.CONTACT_POINT_TELEPHONE && point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Mobile")?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue
+  },
+  {
+    selector: "#workNumber",
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(point => point.CONTACT_POINT_TELEPHONE && point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Work")?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue
+  },
+  // TODO: Address check address is the current address
+  {
+    selector: "#presentAddress",
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.AddressLineText
+  },
+  {
+    selector: "#presentCity",
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.CityName
+  },
+  {
+    selector: "#presentZip",
+    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.PostalCode
+  }
+    
+
+]
+
 function bootstrap() {
   //   const style = document.createElement('style');
   //   document.head.appendChild(style);
@@ -24,6 +79,8 @@ function bootstrap() {
   parentElem.insertBefore(inputElement, parentElem.firstChild);
 }
 
+
+
 function importToPage(fnmFile) {
   const json = xml2json(parseXml(fnmFile, '')).replace(/undefined/g, '');
 
@@ -31,13 +88,14 @@ function importToPage(fnmFile) {
 
   console.log(lendingWiseObject, '__lendingWiseObject..');
 
-  const loanNumber =
-    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS.LOAN
-      .LOAN_IDENTIFIERS.LOAN_IDENTIFIER.LoanIdentifier;
-
-  // Find the loan number element in the html page
-  const loanNumberElement = document.getElementById('loanNumber');
-  loanNumberElement.value = loanNumber;
+  config.forEach((item) => {
+    const element = document.querySelector(item.selector);
+    const val = item.value(lendingWiseObject);
+    if (val) {
+      console.log(item.selector, val)
+      element.value = val;
+    }
+  });
 }
 
 function parseXml(xml) {

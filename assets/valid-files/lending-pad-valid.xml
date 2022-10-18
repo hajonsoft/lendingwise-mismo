@@ -389,7 +389,7 @@
               <TAXPAYER_IDENTIFIERS>
                 <TAXPAYER_IDENTIFIER>
                   <TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
-                  <TaxpayerIdentifierValue />
+                  <TaxpayerIdentifierValue >111111111</TaxpayerIdentifierValue>
                 </TAXPAYER_IDENTIFIER>
               </TAXPAYER_IDENTIFIERS>
             </PARTY>
