@@ -1,100 +1,237 @@
-const config = [
+const adminConfig = [
   {
-    selector: '#loanNumber',
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS.LOAN
-    .LOAN_IDENTIFIERS.LOAN_IDENTIFIER.LoanIdentifier
+    selector: "#loanNumber",
+    value: (data) =>
+      data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS.LOAN.LOAN_IDENTIFIERS
+        .LOAN_IDENTIFIER.LoanIdentifier,
+  }
+];
+
+const borrowerConfig = [
+  {
+    selector: "#borrowerFName",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).INDIVIDUAL.NAME.FirstName,
   },
   {
-    selector: '#borrowerFName',
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.NAME.FirstName
+    selector: "#borrowerLName",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).INDIVIDUAL.NAME.LastName,
   },
   {
-    selector: '#borrowerLName',
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.NAME.LastName
+    selector: "#borrowerMName",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).INDIVIDUAL.NAME.MiddleName,
   },
   {
-    selector: '#borrowerMName',
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.NAME.MiddleName
-  },
-  {
-    selector: '#ssn',
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').TAXPAYER_IDENTIFIERS.TAXPAYER_IDENTIFIER.TaxpayerIdentifierValue
+    selector: "#ssn",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).TAXPAYER_IDENTIFIERS.TAXPAYER_IDENTIFIER.TaxpayerIdentifierValue,
   },
   {
     selector: "#borrowerEmail",
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(point => point.CONTACT_POINT_EMAIL)?.CONTACT_POINT_EMAIL.ContactPointEmailValue
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+        (point) => point.CONTACT_POINT_EMAIL
+      )?.CONTACT_POINT_EMAIL.ContactPointEmailValue,
   },
   {
     selector: "#phoneNumber",
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(point => point.CONTACT_POINT_TELEPHONE && point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Home")?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+        (point) =>
+          point.CONTACT_POINT_TELEPHONE &&
+          point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Home"
+      )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
   },
   {
     selector: "#cellNo",
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(point => point.CONTACT_POINT_TELEPHONE && point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Mobile")?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+        (point) =>
+          point.CONTACT_POINT_TELEPHONE &&
+          point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Mobile"
+      )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
   },
   {
     selector: "#workNumber",
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(point => point.CONTACT_POINT_TELEPHONE && point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Work")?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+        (point) =>
+          point.CONTACT_POINT_TELEPHONE &&
+          point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Work"
+      )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
   },
   // TODO: Address check address is the current address
   {
     selector: "#presentAddress",
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.AddressLineText
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.AddressLineText,
   },
   {
     selector: "#presentCity",
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.CityName
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.CityName,
   },
   {
     selector: "#presentZip",
-    value: (data) => data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY.find(party => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === 'Borrower').ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.PostalCode
-  }
-    
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.PostalCode,
+  },
+  // TODO: format date to lendingWise format
+  {
+    selector: "#borrowerDOB",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.BorrowerBirthDate,
+  },
+  {
+    selector: "#numberOfDependents",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.DependentCount,
+  },
+];
 
-]
+const assetsConfig = [
+  {
+    selector: "#assetSavingMoneyMarket",
+    value: (data) =>
+      data
+        .filter((asset) => asset.ASSET_DETAIL.AssetType === "SavingsAccount")
+        .reduce(
+          (acc, asset) => acc + asset.ASSET_DETAIL.AssetCashOrMarketValueAmount,
+          0
+        ),
+  },
+  {
+    selector: "#assetCheckingAccounts",
+    value: (data) =>
+      data
+        .filter((asset) => asset.ASSET_DETAIL.AssetType === "CheckingAccount")
+        .reduce(
+          (acc, asset) => acc + asset.ASSET_DETAIL.AssetCashOrMarketValueAmount,
+          0
+        ),
+  },
+  {
+    selector: "#assetIRAAccounts",
+    value: (data) =>
+      data
+        .filter((asset) => asset.ASSET_DETAIL.AssetType === "RetirementFund")
+        .reduce(
+          (acc, asset) => acc + asset.ASSET_DETAIL.AssetCashOrMarketValueAmount,
+          0
+        ),
+  },
+];
+const liabilitiesConfig = [
+
+];
+const collateralsConfig = [
+
+];
+const loansConfig = [
+
+];
+const partiesConfig = [
+
+];
+const relationshipsConfig = [
+
+];
 
 function bootstrap() {
-  //   const style = document.createElement('style');
-  //   document.head.appendChild(style);
-
-  const inputElement = document.createElement('input');
-  //   inputElement.classList.add('custom-file-input');
-  inputElement.type = 'file';
-
+  const inputElement = document.createElement("input");
+  inputElement.type = "file";
   inputElement.onchange = function () {
     let file = this.files[0];
-
     var reader = new FileReader();
-
     reader.onload = function (e) {
       importToPage(reader.result);
     };
-
     reader.readAsText(file);
   };
 
   const parentElem = document.querySelector(
-    '#branchId_container'
+    "#branchId_container"
   ).parentElement;
   parentElem.insertBefore(inputElement, parentElem.firstChild);
 }
 
-
-
 function importToPage(fnmFile) {
-  const json = xml2json(parseXml(fnmFile, '')).replace(/undefined/g, '');
-
+  const json = xml2json(parseXml(fnmFile, "")).replace(/undefined/g, "");
   const lendingWiseObject = JSON.parse(JSON.parse(JSON.stringify(json)));
+  console.log(lendingWiseObject, "__lendingWiseObject..");
 
-  console.log(lendingWiseObject, '__lendingWiseObject..');
+  const borrower = lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY
+  const assets =
+    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.ASSETS.ASSET;
+  const liabilities =
+    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LIABILITIES
+      .LIABILITY;
+  const collaterals =
+    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.COLLATERALS
+      .COLLATERAL;
+  const loans =
+    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS.LOAN;
+  const parties =
+    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY;
+  const relationships =
+    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.RELATIONSHIPS
+      .RELATIONSHIP;
 
-  config.forEach((item) => {
-    const element = document.querySelector(item.selector);
-    const val = item.value(lendingWiseObject);
-    if (val) {
-      console.log(item.selector, val)
-      element.value = val;
-    }
+  // document.querySelectorAll('input').forEach((input) => {
+  //   const selector = input.getAttribute('id');
+  //   try {
+
+  //     input.value = selector;
+  //   } catch{}
+  // });
+
+  publishConfig(adminConfig, lendingWiseObject);
+  publishConfig(borrowerConfig, borrower);
+  publishConfig(borrowerConfig, lendingWiseObject);
+  publishConfig(assetsConfig, assets);
+  publishConfig(liabilitiesConfig, liabilities);
+  publishConfig(collateralsConfig, collaterals);
+  publishConfig(loansConfig, loans);
+  publishConfig(partiesConfig, parties);
+  publishConfig(relationshipsConfig, relationships);
+
+}
+
+function publishConfig(config, data) {
+  config.forEach((_config) => {
+    const selector = _config.selector;
+    const value = _config.value;
+    try {
+      document.querySelector(selector).value = value(data);
+    } catch {}
   });
 }
 
@@ -102,13 +239,13 @@ function parseXml(xml) {
   var dom = null;
   if (window.DOMParser) {
     try {
-      dom = new DOMParser().parseFromString(xml, 'text/xml');
+      dom = new DOMParser().parseFromString(xml, "text/xml");
     } catch (e) {
       dom = null;
     }
   } else if (window.ActiveXObject) {
     try {
-      dom = new ActiveXObject('Microsoft.XMLDOM');
+      dom = new ActiveXObject("Microsoft.XMLDOM");
       dom.async = false;
       if (!dom.loadXML(xml))
         // parse error ..
@@ -117,7 +254,7 @@ function parseXml(xml) {
     } catch (e) {
       dom = null;
     }
-  } else alert('cannot parse xml string!');
+  } else alert("cannot parse xml string!");
   return dom;
 }
 
@@ -130,8 +267,8 @@ function xml2json(xml, tab) {
         if (xml.attributes.length)
           // element with attributes  ..
           for (var i = 0; i < xml.attributes.length; i++)
-            o['@' + xml.attributes[i].nodeName] = (
-              xml.attributes[i].nodeValue || ''
+            o["@" + xml.attributes[i].nodeName] = (
+              xml.attributes[i].nodeValue || ""
             ).toString();
         if (xml.firstChild) {
           // element has child nodes ..
@@ -151,10 +288,10 @@ function xml2json(xml, tab) {
               for (var n = xml.firstChild; n; n = n.nextSibling) {
                 if (n.nodeType == 3)
                   // text node
-                  o['#text'] = X.escape(n.nodeValue);
+                  o["#text"] = X.escape(n.nodeValue);
                 else if (n.nodeType == 4)
                   // cdata node
-                  o['#cdata'] = X.escape(n.nodeValue);
+                  o["#cdata"] = X.escape(n.nodeValue);
                 else if (o[n.nodeName]) {
                   // multiple occurence of element ..
                   if (o[n.nodeName] instanceof Array)
@@ -166,75 +303,75 @@ function xml2json(xml, tab) {
             } else {
               // mixed content
               if (!xml.attributes.length) o = X.escape(X.innerXml(xml));
-              else o['#text'] = X.escape(X.innerXml(xml));
+              else o["#text"] = X.escape(X.innerXml(xml));
             }
           } else if (textChild) {
             // pure text
             if (!xml.attributes.length) o = X.escape(X.innerXml(xml));
-            else o['#text'] = X.escape(X.innerXml(xml));
+            else o["#text"] = X.escape(X.innerXml(xml));
           } else if (cdataChild) {
             // cdata
             if (cdataChild > 1) o = X.escape(X.innerXml(xml));
             else
               for (var n = xml.firstChild; n; n = n.nextSibling)
-                o['#cdata'] = X.escape(n.nodeValue);
+                o["#cdata"] = X.escape(n.nodeValue);
           }
         }
         if (!xml.attributes.length && !xml.firstChild) o = null;
       } else if (xml.nodeType == 9) {
         // document.node
         o = X.toObj(xml.documentElement);
-      } else alert('unhandled node type: ' + xml.nodeType);
+      } else alert("unhandled node type: " + xml.nodeType);
       return o;
     },
     toJson: function (o, name, ind) {
-      var json = name ? '"' + name + '"' : '';
+      var json = name ? '"' + name + '"' : "";
       if (o instanceof Array) {
         for (var i = 0, n = o.length; i < n; i++)
-          o[i] = X.toJson(o[i], '', ind + '\t');
+          o[i] = X.toJson(o[i], "", ind + "\t");
         json +=
-          (name ? ':[' : '[') +
+          (name ? ":[" : "[") +
           (o.length > 1
-            ? '\n' + ind + '\t' + o.join(',\n' + ind + '\t') + '\n' + ind
-            : o.join('')) +
-          ']';
-      } else if (o == null) json += (name && ':') + 'null';
-      else if (typeof o == 'object') {
+            ? "\n" + ind + "\t" + o.join(",\n" + ind + "\t") + "\n" + ind
+            : o.join("")) +
+          "]";
+      } else if (o == null) json += (name && ":") + "null";
+      else if (typeof o == "object") {
         var arr = [];
-        for (var m in o) arr[arr.length] = X.toJson(o[m], m, ind + '\t');
+        for (var m in o) arr[arr.length] = X.toJson(o[m], m, ind + "\t");
         json +=
-          (name ? ':{' : '{') +
+          (name ? ":{" : "{") +
           (arr.length > 1
-            ? '\n' + ind + '\t' + arr.join(',\n' + ind + '\t') + '\n' + ind
-            : arr.join('')) +
-          '}';
-      } else if (typeof o == 'string')
-        json += (name && ':') + '"' + o.toString() + '"';
-      else json += (name && ':') + o.toString();
+            ? "\n" + ind + "\t" + arr.join(",\n" + ind + "\t") + "\n" + ind
+            : arr.join("")) +
+          "}";
+      } else if (typeof o == "string")
+        json += (name && ":") + '"' + o.toString() + '"';
+      else json += (name && ":") + o.toString();
       return json;
     },
     innerXml: function (node) {
-      var s = '';
-      if ('innerHTML' in node) s = node.innerHTML;
+      var s = "";
+      if ("innerHTML" in node) s = node.innerHTML;
       else {
         var asXml = function (n) {
-          var s = '';
+          var s = "";
           if (n.nodeType == 1) {
-            s += '<' + n.nodeName;
+            s += "<" + n.nodeName;
             for (var i = 0; i < n.attributes.length; i++)
               s +=
-                ' ' +
+                " " +
                 n.attributes[i].nodeName +
                 '="' +
-                (n.attributes[i].nodeValue || '').toString() +
+                (n.attributes[i].nodeValue || "").toString() +
                 '"';
             if (n.firstChild) {
-              s += '>';
+              s += ">";
               for (var c = n.firstChild; c; c = c.nextSibling) s += asXml(c);
-              s += '</' + n.nodeName + '>';
-            } else s += '/>';
+              s += "</" + n.nodeName + ">";
+            } else s += "/>";
           } else if (n.nodeType == 3) s += n.nodeValue;
-          else if (n.nodeType == 4) s += '<![CDATA[' + n.nodeValue + ']]>';
+          else if (n.nodeType == 4) s += "<![CDATA[" + n.nodeValue + "]]>";
           return s;
         };
         for (var c = node.firstChild; c; c = c.nextSibling) s += asXml(c);
@@ -243,10 +380,10 @@ function xml2json(xml, tab) {
     },
     escape: function (txt) {
       return txt
-        .replace(/[\\]/g, '\\\\')
+        .replace(/[\\]/g, "\\\\")
         .replace(/[\"]/g, '\\"')
-        .replace(/[\n]/g, '\\n')
-        .replace(/[\r]/g, '\\r');
+        .replace(/[\n]/g, "\\n")
+        .replace(/[\r]/g, "\\r");
     },
     removeWhite: function (e) {
       e.normalize();
@@ -272,12 +409,12 @@ function xml2json(xml, tab) {
   if (xml.nodeType == 9)
     // document node
     xml = xml.documentElement;
-  var json = X.toJson(X.toObj(X.removeWhite(xml)), xml.nodeName, '\t');
+  var json = X.toJson(X.toObj(X.removeWhite(xml)), xml.nodeName, "\t");
   return (
-    '{\n' +
+    "{\n" +
     tab +
-    (tab ? json.replace(/\t/g, tab) : json.replace(/\t|\n/g, '')) +
-    '\n}'
+    (tab ? json.replace(/\t/g, tab) : json.replace(/\t|\n/g, "")) +
+    "\n}"
   );
 }
 

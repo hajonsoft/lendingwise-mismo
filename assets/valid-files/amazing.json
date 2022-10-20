@@ -1,0 +1,469 @@
+{
+    "MESSAGE": {
+        "@xmlns": "http://www.mismo.org/residential/2009/schemas",
+        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "@xmlns:ULAD": "http://www.datamodelextension.org/Schema/ULAD",
+        "@xmlns:DU": "http://www.datamodelextension.org/Schema/DU",
+        "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+        "@xmlns:LPA": "http://www.datamodelextension.org/Schema/LPA",
+        "@MISMOReferenceModelIdentifier": "3.4.032420160128",
+        "ABOUT_VERSIONS": {
+            "ABOUT_VERSION": {
+                "AboutVersionIdentifier": "S5.0.06",
+                "CreatedDatetime": "2022-10-20T02:21:29Z",
+                "DataVersionIdentifier": "5.0.06"
+            }
+        },
+        "DEAL_SETS": {
+            "DEAL_SET": {
+                "DEALS": {
+                    "DEAL": {
+                        "ASSETS": {
+                            "ASSET": {
+                                "@SequenceNumber": "1",
+                                "@xlink:label": "ASSET_1",
+                                "ASSET_DETAIL": {
+                                    "AssetCashOrMarketValueAmount": "0.00",
+                                    "AssetType": "Other"
+                                }
+                            }
+                        },
+                        "COLLATERALS": {
+                            "COLLATERAL": {
+                                "@SequenceNumber": "1",
+                                "@xlink:label": "COLLATERAL_1",
+                                "SUBJECT_PROPERTY": {
+                                    "ADDRESS": {
+                                        "AddressLineText": "propertyAddress",
+                                        "CityName": "propertyCity",
+                                        "CountryCode": "US",
+                                        "CountyName": "Hawaii",
+                                        "PostalCode": "63846",
+                                        "StateCode": "HI"
+                                    },
+                                    "PROPERTY_DETAIL": {
+                                        "FinancedUnitCount": "1",
+                                        "PropertyEstimatedValueAmount": "150000.00",
+                                        "PropertyMixedUsageIndicator": "false",
+                                        "PropertyStructureBuiltYear": "2019"
+                                    },
+                                    "PROPERTY_VALUATIONS": {
+                                        "PROPERTY_VALUATION": {
+                                            "PROPERTY_VALUATION_DETAIL": {
+                                                "PropertyValuationAmount": "4444.00"
+                                            }
+                                        }
+                                    },
+                                    "SALES_CONTRACTS": {
+                                        "SALES_CONTRACT": {
+                                            "SALES_CONTRACT_DETAIL": {
+                                                "SalesContractAmount": "4444.00"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "LIABILITIES": {
+                            "LIABILITY": {
+                                "@SequenceNumber": "1",
+                                "@xlink:label": "LIABILITY_1",
+                                "LIABILITY_DETAIL": {
+                                    "LiabilityAccountIdentifier": "46845687887",
+                                    "LiabilityMonthlyPaymentAmount": "3232.00",
+                                    "LiabilityPayoffStatusIndicator": "true",
+                                    "LiabilityType": "Revolving",
+                                    "LiabilityTypeOtherDescription": "Alimony",
+                                    "LiabilityUnpaidBalanceAmount": "8548.00"
+                                },
+                                "LIABILITY_HOLDER": {
+                                    "NAME": {
+                                        "FullName": "creditorLName[]"
+                                    }
+                                }
+                            }
+                        },
+                        "LOANS": {
+                            "LOAN": {
+                                "@LoanRoleType": "SubjectLoan",
+                                "@xlink:label": "LOAN_1",
+                                "AMORTIZATION": {
+                                    "AMORTIZATION_RULE": {
+                                        "AmortizationType": "Fixed",
+                                        "LoanAmortizationPeriodCount": "15",
+                                        "LoanAmortizationPeriodType": "Month"
+                                    }
+                                },
+                                "DOCUMENT_SPECIFIC_DATA_SETS": {
+                                    "DOCUMENT_SPECIFIC_DATA_SET": {
+                                        "URLA": {
+                                            "URLA_DETAIL": {
+                                                "EstimatedClosingCostsAmount": "0.00"
+                                            }
+                                        }
+                                    }
+                                },
+                                "LOAN_DETAIL": {
+                                    "BorrowerCount": "2"
+                                },
+                                "LOAN_IDENTIFIERS": {
+                                    "LOAN_IDENTIFIER": {
+                                        "LoanIdentifier": "6310529",
+                                        "LoanIdentifierType": "LenderLoan"
+                                    }
+                                },
+                                "REFINANCE": {
+                                    "RefinanceCashOutDeterminationType": "Unknown"
+                                },
+                                "TERMS_OF_LOAN": {
+                                    "BaseLoanAmount": "1212",
+                                    "LienPriorityType": "FirstLien",
+                                    "LoanPurposeType": "Refinance",
+                                    "NoteRatePercent": "11.00"
+                                }
+                            }
+                        },
+                        "PARTIES": {
+                            "PARTY": [
+                                {
+                                    "@SequenceNumber": "1",
+                                    "@xlink:label": "PARTY_1",
+                                    "INDIVIDUAL": {
+                                        "CONTACT_POINTS": {
+                                            "CONTACT_POINT": [
+                                                {
+                                                    "CONTACT_POINT_EMAIL": {
+                                                        "ContactPointEmailValue": "borrowerEmail@gmail.com"
+                                                    }
+                                                },
+                                                {
+                                                    "CONTACT_POINT_TELEPHONE": {
+                                                        "ContactPointTelephoneValue": "1385745468"
+                                                    },
+                                                    "CONTACT_POINT_DETAIL": {
+                                                        "ContactPointRoleType": "Mobile"
+                                                    }
+                                                },
+                                                {
+                                                    "CONTACT_POINT_TELEPHONE": {
+                                                        "ContactPointTelephoneValue": "63858463857674"
+                                                    },
+                                                    "CONTACT_POINT_DETAIL": {
+                                                        "ContactPointRoleType": "Work"
+                                                    }
+                                                },
+                                                {
+                                                    "CONTACT_POINT_TELEPHONE": {
+                                                        "ContactPointTelephoneValue": "4161635163"
+                                                    },
+                                                    "CONTACT_POINT_DETAIL": {
+                                                        "ContactPointRoleType": "Home"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "NAME": {
+                                            "FirstName": "borrowerFName (refinance)",
+                                            "LastName": "borrowerLName"
+                                        }
+                                    },
+                                    "ROLES": {
+                                        "ROLE": {
+                                            "@SequenceNumber": "1",
+                                            "@xlink:label": "BORROWER_1",
+                                            "BORROWER": {
+                                                "BORROWER_DETAIL": {
+                                                    "BorrowerBirthDate": "1999-07-22",
+                                                    "DependentCount": "2",
+                                                    "MaritalStatusType": "Married"
+                                                },
+                                                "CURRENT_INCOME": {
+                                                    "CURRENT_INCOME_ITEMS": {
+                                                        "CURRENT_INCOME_ITEM": [
+                                                            {
+                                                                "@SequenceNumber": "1",
+                                                                "@xlink:label": "CURRENT_INCOME_ITEM_1",
+                                                                "CURRENT_INCOME_ITEM_DETAIL": {
+                                                                    "CurrentIncomeMonthlyTotalAmount": "0.00",
+                                                                    "EmploymentIncomeIndicator": "true",
+                                                                    "IncomeType": "Base"
+                                                                }
+                                                            },
+                                                            {
+                                                                "CURRENT_INCOME_ITEM_DETAIL": {
+                                                                    "CurrentIncomeMonthlyTotalAmount": "0.00",
+                                                                    "EmploymentIncomeIndicator": "true",
+                                                                    "IncomeType": "Bonus"
+                                                                }
+                                                            },
+                                                            {
+                                                                "CURRENT_INCOME_ITEM_DETAIL": {
+                                                                    "CurrentIncomeMonthlyTotalAmount": "2",
+                                                                    "EmploymentIncomeIndicator": "true",
+                                                                    "IncomeType": "Other"
+                                                                }
+                                                            },
+                                                            {
+                                                                "CURRENT_INCOME_ITEM_DETAIL": {
+                                                                    "CurrentIncomeMonthlyTotalAmount": "1.00",
+                                                                    "EmploymentIncomeIndicator": "true",
+                                                                    "IncomeType": "Overtime"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                "DECLARATION": {
+                                                    "DECLARATION_DETAIL": {
+                                                        "BankruptcyIndicator": "true",
+                                                        "CitizenshipResidencyType": "USCitizen",
+                                                        "IntentToOccupyType": "Yes",
+                                                        "OutstandingJudgmentsIndicator": "true",
+                                                        "PartyToLawsuitIndicator": "true",
+                                                        "PresentlyDelinquentIndicator": "true",
+                                                        "EXTENSION": {
+                                                            "OTHER": {
+                                                                "ULAD:DECLARATION_DETAIL_EXTENSION": {
+                                                                    "ULAD:SpecialBorrowerSellerRelationshipIndicator": "false"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "EMPLOYERS": {
+                                                    "EMPLOYER": {
+                                                        "@SequenceNumber": "1",
+                                                        "@xlink:label": "EMPLOYER_1",
+                                                        "EMPLOYMENT": {
+                                                            "EmploymentBorrowerSelfEmployedIndicator": "false",
+                                                            "EmploymentClassificationType": "Secondary",
+                                                            "EmploymentPositionDescription": "occupation1",
+                                                            "EmploymentStartDate": "2022-05-09",
+                                                            "EmploymentStatusType": "Current",
+                                                            "EmploymentTimeInLineOfWorkMonthsCount": "36",
+                                                            "SpecialBorrowerEmployerRelationshipIndicator": "false"
+                                                        }
+                                                    }
+                                                },
+                                                "GOVERNMENT_MONITORING": {
+                                                    "GOVERNMENT_MONITORING_DETAIL": {
+                                                        "EXTENSION": {
+                                                            "OTHER": {
+                                                                "ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION": {
+                                                                    "ULAD:HMDAGenderType": "Female"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "RESIDENCES": {
+                                                    "RESIDENCE": {
+                                                        "ADDRESS": {
+                                                            "AddressLineText": "123",
+                                                            "CityName": "123",
+                                                            "PostalCode": "12333",
+                                                            "StateCode": "KY"
+                                                        },
+                                                        "RESIDENCE_DETAIL": {
+                                                            "BorrowerResidencyBasisType": "Own",
+                                                            "BorrowerResidencyType": "Prior"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "ROLE_DETAIL": {
+                                                "PartyRoleType": "Borrower"
+                                            }
+                                        }
+                                    },
+                                    "TAXPAYER_IDENTIFIERS": {
+                                        "TAXPAYER_IDENTIFIER": {
+                                            "TaxpayerIdentifierType": "SocialSecurityNumber",
+                                            "TaxpayerIdentifierValue": "946785846"
+                                        }
+                                    }
+                                },
+                                {
+                                    "@SequenceNumber": "2",
+                                    "@xlink:label": "PARTY_2",
+                                    "INDIVIDUAL": {
+                                        "CONTACT_POINTS": {
+                                            "CONTACT_POINT": [
+                                                {
+                                                    "CONTACT_POINT_EMAIL": {
+                                                        "ContactPointEmailValue": "coBorrowerEmail@gmail.com"
+                                                    }
+                                                },
+                                                {
+                                                    "CONTACT_POINT_DETAIL": {
+                                                        "ContactPointRoleType": "Home"
+                                                    }
+                                                },
+                                                {
+                                                    "CONTACT_POINT_TELEPHONE": {
+                                                        "ContactPointTelephoneValue": "7753416846"
+                                                    },
+                                                    "CONTACT_POINT_DETAIL": {
+                                                        "ContactPointRoleType": "Mobile"
+                                                    }
+                                                },
+                                                {
+                                                    "CONTACT_POINT_TELEPHONE": {
+                                                        "ContactPointTelephoneValue": "5545843545"
+                                                    },
+                                                    "CONTACT_POINT_DETAIL": {
+                                                        "ContactPointRoleType": "Work"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "NAME": {
+                                            "FirstName": "coBorrowerFName",
+                                            "LastName": "coBorrowerLName"
+                                        }
+                                    },
+                                    "ROLES": {
+                                        "ROLE": {
+                                            "@SequenceNumber": "1",
+                                            "@xlink:label": "BORROWER_2",
+                                            "BORROWER": {
+                                                "BORROWER_DETAIL": {
+                                                    "BorrowerBirthDate": "1991-07-26",
+                                                    "DependentCount": "0",
+                                                    "MaritalStatusType": "Married"
+                                                },
+                                                "CURRENT_INCOME": {
+                                                    "CURRENT_INCOME_ITEMS": {
+                                                        "CURRENT_INCOME_ITEM": {
+                                                            "@SequenceNumber": "1",
+                                                            "@xlink:label": "CURRENT_INCOME_ITEM_2",
+                                                            "CURRENT_INCOME_ITEM_DETAIL": {
+                                                                "CurrentIncomeMonthlyTotalAmount": "0.00",
+                                                                "EmploymentIncomeIndicator": "true",
+                                                                "IncomeType": "Base"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "DECLARATION": {
+                                                    "DECLARATION_DETAIL": {
+                                                        "BankruptcyIndicator": "true",
+                                                        "CitizenshipResidencyType": "USCitizen",
+                                                        "IntentToOccupyType": "Yes",
+                                                        "OutstandingJudgmentsIndicator": "true",
+                                                        "PartyToLawsuitIndicator": "true",
+                                                        "PresentlyDelinquentIndicator": "true"
+                                                    }
+                                                },
+                                                "EMPLOYERS": {
+                                                    "EMPLOYER": {
+                                                        "@SequenceNumber": "1",
+                                                        "@xlink:label": "EMPLOYER_2",
+                                                        "LEGAL_ENTITY": {
+                                                            "LEGAL_ENTITY_DETAIL": {
+                                                                "FullName": "employer2"
+                                                            }
+                                                        },
+                                                        "EMPLOYMENT": {
+                                                            "EmploymentBorrowerSelfEmployedIndicator": "false",
+                                                            "EmploymentClassificationType": "Primary",
+                                                            "EmploymentPositionDescription": "occupation2",
+                                                            "EmploymentStartDate": "2022-03-08",
+                                                            "EmploymentStatusType": "Current",
+                                                            "EmploymentTimeInLineOfWorkMonthsCount": "60"
+                                                        }
+                                                    }
+                                                },
+                                                "GOVERNMENT_MONITORING": {
+                                                    "GOVERNMENT_MONITORING_DETAIL": {
+                                                        "EXTENSION": {
+                                                            "OTHER": {
+                                                                "ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION": {
+                                                                    "ULAD:HMDAGenderType": "Male"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "RESIDENCES": {
+                                                    "RESIDENCE": {
+                                                        "ADDRESS": {
+                                                            "AddressLineText": "coBPresentAddress",
+                                                            "CityName": "coBPresentCity",
+                                                            "PostalCode": "64563",
+                                                            "StateCode": "ID"
+                                                        },
+                                                        "RESIDENCE_DETAIL": {
+                                                            "BorrowerResidencyBasisType": "Rent",
+                                                            "BorrowerResidencyDurationMonthsCount": "1125",
+                                                            "BorrowerResidencyType": "Current"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "ROLE_DETAIL": {
+                                                "PartyRoleType": "Borrower"
+                                            }
+                                        }
+                                    },
+                                    "TAXPAYER_IDENTIFIERS": {
+                                        "TAXPAYER_IDENTIFIER": {
+                                            "TaxpayerIdentifierType": "SocialSecurityNumber",
+                                            "TaxpayerIdentifierValue": "646378634"
+                                        }
+                                    }
+                                },
+                                {
+                                    "@SequenceNumber": "3",
+                                    "@xlink:label": "PARTY_3",
+                                    "ROLES": {
+                                        "ROLE": {
+                                            "ROLE_DETAIL": {
+                                                "PartyRoleType": "LoanOriginationCompany"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "RELATIONSHIPS": {
+                            "@xsi:type": "RELATIONSHIPS",
+                            "RELATIONSHIP": [
+                                {
+                                    "@SequenceNumber": "1",
+                                    "@xlink:from": "ASSET_1",
+                                    "@xlink:to": "BORROWER_1",
+                                    "@xlink:arcrole": "urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"
+                                },
+                                {
+                                    "@SequenceNumber": "2",
+                                    "@xlink:from": "LIABILITY_1",
+                                    "@xlink:to": "BORROWER_1",
+                                    "@xlink:arcrole": "urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"
+                                },
+                                {
+                                    "@SequenceNumber": "3",
+                                    "@xlink:from": "CURRENT_INCOME_ITEM_1",
+                                    "@xlink:to": "EMPLOYER_1",
+                                    "@xlink:arcrole": "urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"
+                                },
+                                {
+                                    "@SequenceNumber": "4",
+                                    "@xlink:from": "CURRENT_INCOME_ITEM_2",
+                                    "@xlink:to": "EMPLOYER_2",
+                                    "@xlink:arcrole": "urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"
+                                },
+                                {
+                                    "@SequenceNumber": "5",
+                                    "@xlink:from": "BORROWER_2",
+                                    "@xlink:to": "BORROWER_1",
+                                    "@xlink:arcrole": "urn:fdc:mismo.org:2009:residential/ROLE_SharesJointCreditReportWith_ROLE"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
