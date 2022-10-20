@@ -4,7 +4,7 @@ const adminConfig = [
     value: (data) =>
       data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS.LOAN.LOAN_IDENTIFIERS
         .LOAN_IDENTIFIER.LoanIdentifier,
-  }
+  },
 ];
 
 const borrowerConfig = [
@@ -39,46 +39,54 @@ const borrowerConfig = [
   {
     selector: "#borrowerEmail",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
-        (point) => point.CONTACT_POINT_EMAIL
-      )?.CONTACT_POINT_EMAIL.ContactPointEmailValue,
+      data
+        .find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        )
+        .INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+          (point) => point.CONTACT_POINT_EMAIL
+        )?.CONTACT_POINT_EMAIL.ContactPointEmailValue,
   },
   {
     selector: "#phoneNumber",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
-        (point) =>
-          point.CONTACT_POINT_TELEPHONE &&
-          point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Home"
-      )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
+      data
+        .find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        )
+        .INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+          (point) =>
+            point.CONTACT_POINT_TELEPHONE &&
+            point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Home"
+        )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
   },
   {
     selector: "#cellNo",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
-        (point) =>
-          point.CONTACT_POINT_TELEPHONE &&
-          point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Mobile"
-      )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
+      data
+        .find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        )
+        .INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+          (point) =>
+            point.CONTACT_POINT_TELEPHONE &&
+            point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Mobile"
+        )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
   },
   {
     selector: "#workNumber",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
-        (point) =>
-          point.CONTACT_POINT_TELEPHONE &&
-          point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Work"
-      )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
+      data
+        .find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        )
+        .INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+          (point) =>
+            point.CONTACT_POINT_TELEPHONE &&
+            point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Work"
+        )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
   },
-  // TODO: Address check address is the current address
+  // TODO: Address check address is the current address "BorrowerResidencyType": "Current" in amazing.xml
   {
     selector: "#presentAddress",
     value: (data) =>
@@ -98,15 +106,49 @@ const borrowerConfig = [
     value: (data) =>
       data.find(
         (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.PostalCode,
+      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE?.ADDRESS?.PostalCode,
+  },
+  {
+    selector: "#presentState",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.StateCode,
+  },
+  {
+    selector: "#presentCountry",
+    value: () => "US",
+  },
+  {
+    selector: "#borPresentPropType",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.RESIDENCE_DETAIL
+        .BorrowerResidencyBasisType,
+  },
+  {
+    selector: "#presentPropLengthMonths",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.RESIDENCE_DETAIL
+        .BorrowerResidencyDurationMonthsCount,
   },
   // TODO: format date to lendingWise format
   {
     selector: "#borrowerDOB",
-    value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.BorrowerBirthDate,
+    value: (data) => {
+      const dob = data
+        .find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        )
+        .ROLES.ROLE.BORROWER.BORROWER_DETAIL?.BorrowerBirthDate?.split("-");
+
+      if (dob) {
+        return `${dob[1]}/${dob[2]}/${dob[0]}`;
+      }
+    },
   },
   {
     selector: "#numberOfDependents",
@@ -115,6 +157,165 @@ const borrowerConfig = [
         (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
       ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.DependentCount,
   },
+  {
+    selector: "#maritalStatus_2",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType === "Married",
+  },
+  // Check the value in mismo standard for unmarried
+  {
+    selector: "#maritalStatus_1",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType === "UnMarried",
+  },
+  // Check the value in mismo standard for separated
+  {
+    selector: "#maritalStatus_2",
+    value: (data) =>
+      data.find(
+        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+      ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType === "Separated",
+  },
+  // Check the value in mismo standard for permenant residence card
+  {
+    selector: "#borrowerCitizenship_0",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.CitizenshipResidencyType === "USCitizen"
+      );
+    },
+  },
+  {
+    selector: "#isBorUSCitizenYes",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.CitizenshipResidencyType === "USCitizen"
+      );
+    },
+  },
+  {
+    selector: "#isBorUSCitizenNo",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.CitizenshipResidencyType !== "USCitizen"
+      );
+    },
+  },
+  {
+    selector: "#borrowerCitizenship_1",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.CitizenshipResidencyType !== "USCitizen"
+      );
+    },
+  },
+  {
+    selector: "#isBorDecalredBankruptPastYearsYes",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.BankruptcyIndicator === "true"
+      );
+    },
+
+  },
+  {
+    selector: "#isBorDecalredBankruptPastYearsNO",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.BankruptcyIndicator !== "true"
+      );
+    },
+
+  },
+  {
+    selector: "#isAnyBorOutstandingJudgementsYes",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.OutstandingJudgmentsIndicator === "true"
+      );
+    },
+  },
+  {
+    selector: "#isAnyBorOutstandingJudgementsNo",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.OutstandingJudgmentsIndicator !== "true"
+      );
+    },
+  },
+  {
+    selector: "#hasBorAnyActiveLawsuitsYes",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.PartyToLawsuitIndicator === "true"
+      );
+    },
+  },
+  {
+    selector: "#hasBorAnyActiveLawsuitsNo",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.PartyToLawsuitIndicator !== "true"
+      );
+    },
+  },
+  {
+    selector: "#isBorPresenltyDelinquentYes",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.PresentlyDelinquentIndicator === "true"
+      );
+    },
+  },
+  {
+    selector: "#isBorPresenltyDelinquentNo",
+    value: (data) => {
+      return (
+        data.find(
+          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+          ?.PresentlyDelinquentIndicator !== "true"
+      );
+    },
+  }
+
 ];
 
 const assetsConfig = [
@@ -149,21 +350,11 @@ const assetsConfig = [
         ),
   },
 ];
-const liabilitiesConfig = [
-
-];
-const collateralsConfig = [
-
-];
-const loansConfig = [
-
-];
-const partiesConfig = [
-
-];
-const relationshipsConfig = [
-
-];
+const liabilitiesConfig = [];
+const collateralsConfig = [];
+const loansConfig = [];
+const partiesConfig = [];
+const relationshipsConfig = [];
 
 function bootstrap() {
   const inputElement = document.createElement("input");
@@ -188,12 +379,16 @@ function importToPage(fnmFile) {
   const lendingWiseObject = JSON.parse(JSON.parse(JSON.stringify(json)));
   console.log(lendingWiseObject, "__lendingWiseObject..");
 
-  const borrower = lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY
-  const assets =
-    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.ASSETS.ASSET;
+  const borrower =
+    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY;
+  const assets = Array.isArray(
+    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.ASSETS.ASSET
+  )
+    ? lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.ASSETS.ASSET
+    : [];
   const liabilities =
     lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LIABILITIES
-      .LIABILITY;
+      ?.LIABILITY;
   const collaterals =
     lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.COLLATERALS
       .COLLATERAL;
@@ -205,13 +400,12 @@ function importToPage(fnmFile) {
     lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.RELATIONSHIPS
       .RELATIONSHIP;
 
-  // document.querySelectorAll('input').forEach((input) => {
-  //   const selector = input.getAttribute('id');
-  //   try {
-
-  //     input.value = selector;
-  //   } catch{}
-  // });
+  document.querySelectorAll("input").forEach((input) => {
+    const selector = input.getAttribute("id");
+    try {
+      input.value = selector;
+    } catch {}
+  });
 
   publishConfig(adminConfig, lendingWiseObject);
   publishConfig(borrowerConfig, borrower);
@@ -221,16 +415,24 @@ function importToPage(fnmFile) {
   publishConfig(loansConfig, loans);
   publishConfig(partiesConfig, parties);
   publishConfig(relationshipsConfig, relationships);
-
 }
 
 function publishConfig(config, data) {
   config.forEach((_config) => {
     const selector = _config.selector;
     const value = _config.value;
-    try {
-      document.querySelector(selector).value = value(data);
-    } catch {}
+    const inputData = value(data);
+    console.log(selector, inputData);
+    if (inputData) {
+      try {
+        if (document.querySelector(selector).type === "radio") {
+          document.querySelector(selector).checked = inputData;
+        }
+        document.querySelector(selector).value = inputData;
+      } catch (error) {
+        console.log(error, selector, data);
+      }
+    }
   });
 }
 
