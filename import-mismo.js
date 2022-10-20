@@ -215,7 +215,6 @@ function importToPage(fnmFile) {
 
   publishConfig(adminConfig, lendingWiseObject);
   publishConfig(borrowerConfig, borrower);
-  publishConfig(borrowerConfig, lendingWiseObject);
   publishConfig(assetsConfig, assets);
   publishConfig(liabilitiesConfig, liabilities);
   publishConfig(collateralsConfig, collaterals);
