@@ -10,110 +10,75 @@ const adminConfig = [
 const borrowerConfig = [
   {
     selector: "#borrowerFName",
-    value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).INDIVIDUAL.NAME.FirstName,
+    value: (data) => data.INDIVIDUAL.NAME.FirstName,
   },
   {
     selector: "#borrowerLName",
-    value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).INDIVIDUAL.NAME.LastName,
+    value: (data) => data.INDIVIDUAL.NAME.LastName,
   },
   {
     selector: "#borrowerMName",
-    value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).INDIVIDUAL.NAME.MiddleName,
+    value: (data) => data.INDIVIDUAL.NAME.MiddleName,
   },
   {
     selector: "#ssn",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).TAXPAYER_IDENTIFIERS.TAXPAYER_IDENTIFIER.TaxpayerIdentifierValue,
+      data.TAXPAYER_IDENTIFIERS.TAXPAYER_IDENTIFIER.TaxpayerIdentifierValue,
   },
   {
     selector: "#borrowerEmail",
     value: (data) =>
-      data
-        .find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        )
-        .INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
-          (point) => point.CONTACT_POINT_EMAIL
-        )?.CONTACT_POINT_EMAIL.ContactPointEmailValue,
+      data.INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+        (point) => point.CONTACT_POINT_EMAIL
+      )?.CONTACT_POINT_EMAIL.ContactPointEmailValue,
   },
   {
     selector: "#phoneNumber",
     value: (data) =>
-      data
-        .find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        )
-        .INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
-          (point) =>
-            point.CONTACT_POINT_TELEPHONE &&
-            point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Home"
-        )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
+      data.INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+        (point) =>
+          point.CONTACT_POINT_TELEPHONE &&
+          point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Home"
+      )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
   },
   {
     selector: "#cellNo",
     value: (data) =>
-      data
-        .find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        )
-        .INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
-          (point) =>
-            point.CONTACT_POINT_TELEPHONE &&
-            point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Mobile"
-        )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
+      data.INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+        (point) =>
+          point.CONTACT_POINT_TELEPHONE &&
+          point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Mobile"
+      )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
   },
   {
     selector: "#workNumber",
     value: (data) =>
-      data
-        .find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        )
-        .INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
-          (point) =>
-            point.CONTACT_POINT_TELEPHONE &&
-            point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Work"
-        )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
+      data.INDIVIDUAL.CONTACT_POINTS.CONTACT_POINT.find(
+        (point) =>
+          point.CONTACT_POINT_TELEPHONE &&
+          point.CONTACT_POINT_DETAIL?.ContactPointRoleType === "Work"
+      )?.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue,
   },
   // TODO: Address check address is the current address "BorrowerResidencyType": "Current" in amazing.xml
   {
     selector: "#presentAddress",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.AddressLineText,
+      data.ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.AddressLineText,
   },
   {
     selector: "#presentCity",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.CityName,
+      data.ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.CityName,
   },
   {
     selector: "#presentZip",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE?.ADDRESS?.PostalCode,
+      data.ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE?.ADDRESS?.PostalCode,
   },
   {
     selector: "#presentState",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.StateCode,
+      data.ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.ADDRESS.StateCode,
   },
   {
     selector: "#presentCountry",
@@ -122,28 +87,21 @@ const borrowerConfig = [
   {
     selector: "#borPresentPropType",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.RESIDENCE_DETAIL
+      data.ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.RESIDENCE_DETAIL
         .BorrowerResidencyBasisType,
   },
   {
     selector: "#presentPropLengthMonths",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.RESIDENCE_DETAIL
+      data.ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.RESIDENCE_DETAIL
         .BorrowerResidencyDurationMonthsCount,
   },
   // TODO: format date to lendingWise format
   {
     selector: "#borrowerDOB",
     value: (data) => {
-      const dob = data
-        .find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        )
-        .ROLES.ROLE.BORROWER.BORROWER_DETAIL?.BorrowerBirthDate?.split("-");
+      const dob =
+        data.ROLES.ROLE.BORROWER.BORROWER_DETAIL?.BorrowerBirthDate?.split("-");
 
       if (dob) {
         return `${dob[1]}/${dob[2]}/${dob[0]}`;
@@ -152,42 +110,33 @@ const borrowerConfig = [
   },
   {
     selector: "#numberOfDependents",
-    value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.DependentCount,
+    value: (data) => data.ROLES.ROLE.BORROWER.BORROWER_DETAIL?.DependentCount,
   },
   {
     selector: "#maritalStatus_2",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType === "Married",
+      data.ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType === "Married",
   },
   // Check the value in mismo standard for unmarried
   {
     selector: "#maritalStatus_1",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType === "UnMarried",
+      data.ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType ===
+      "UnMarried",
   },
   // Check the value in mismo standard for separated
   {
     selector: "#maritalStatus_2",
     value: (data) =>
-      data.find(
-        (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-      ).ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType === "Separated",
+      data.ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType ===
+      "Separated",
   },
   // Check the value in mismo standard for permenant residence card
   {
     selector: "#borrowerCitizenship_0",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.CitizenshipResidencyType === "USCitizen"
       );
     },
@@ -196,9 +145,7 @@ const borrowerConfig = [
     selector: "#isBorUSCitizenYes",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.CitizenshipResidencyType === "USCitizen"
       );
     },
@@ -207,9 +154,7 @@ const borrowerConfig = [
     selector: "#isBorUSCitizenNo",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.CitizenshipResidencyType !== "USCitizen"
       );
     },
@@ -218,9 +163,7 @@ const borrowerConfig = [
     selector: "#borrowerCitizenship_1",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.CitizenshipResidencyType !== "USCitizen"
       );
     },
@@ -229,33 +172,25 @@ const borrowerConfig = [
     selector: "#isBorDecalredBankruptPastYearsYes",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.BankruptcyIndicator === "true"
       );
     },
-
   },
   {
     selector: "#isBorDecalredBankruptPastYearsNO",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.BankruptcyIndicator !== "true"
       );
     },
-
   },
   {
     selector: "#isAnyBorOutstandingJudgementsYes",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.OutstandingJudgmentsIndicator === "true"
       );
     },
@@ -264,9 +199,7 @@ const borrowerConfig = [
     selector: "#isAnyBorOutstandingJudgementsNo",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.OutstandingJudgmentsIndicator !== "true"
       );
     },
@@ -275,9 +208,7 @@ const borrowerConfig = [
     selector: "#hasBorAnyActiveLawsuitsYes",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.PartyToLawsuitIndicator === "true"
       );
     },
@@ -286,9 +217,7 @@ const borrowerConfig = [
     selector: "#hasBorAnyActiveLawsuitsNo",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.PartyToLawsuitIndicator !== "true"
       );
     },
@@ -297,9 +226,7 @@ const borrowerConfig = [
     selector: "#isBorPresenltyDelinquentYes",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.PresentlyDelinquentIndicator === "true"
       );
     },
@@ -308,14 +235,11 @@ const borrowerConfig = [
     selector: "#isBorPresenltyDelinquentNo",
     value: (data) => {
       return (
-        data.find(
-          (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
-        ).ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
+        data.ROLES.ROLE.BORROWER.DECLARATION?.DECLARATION_DETAIL
           ?.PresentlyDelinquentIndicator !== "true"
       );
     },
-  }
-
+  },
 ];
 
 const assetsConfig = [
@@ -374,66 +298,90 @@ function bootstrap() {
   parentElem.insertBefore(inputElement, parentElem.firstChild);
 }
 
+function getAssets(data) {
+  return Array.isArray(data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.ASSETS.ASSET)
+    ? data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.ASSETS.ASSET
+    : [];
+}
+
+function getLiabilities(data) {
+  return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LIABILITIES?.LIABILITY;
+}
+
+function getCollaterals(data) {
+  return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.COLLATERALS?.COLLATERAL;
+}
+
+function getLoans(data) {
+  return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS?.LOAN;
+}
+
+function getParties(data) {
+  return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES?.PARTY;
+}
+
+function getBorrower(data) {
+  // TODO: handle multiple borrowers
+  return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES?.PARTY.find(
+    (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
+  );
+}
+
 function importToPage(fnmFile) {
   const json = xml2json(parseXml(fnmFile, "")).replace(/undefined/g, "");
-  const lendingWiseObject = JSON.parse(JSON.parse(JSON.stringify(json)));
+  const lendingWiseObject = JSON.parse(json);
   console.log(lendingWiseObject, "__lendingWiseObject..");
 
-  const borrower =
-    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY;
-  const assets = Array.isArray(
-    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.ASSETS.ASSET
-  )
-    ? lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.ASSETS.ASSET
-    : [];
-  const liabilities =
-    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LIABILITIES
-      ?.LIABILITY;
-  const collaterals =
-    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.COLLATERALS
-      .COLLATERAL;
-  const loans =
-    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS.LOAN;
-  const parties =
-    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES.PARTY;
-  const relationships =
-    lendingWiseObject.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.RELATIONSHIPS
-      .RELATIONSHIP;
+  const borrower = getBorrower(lendingWiseObject);
+  const assets = getAssets(lendingWiseObject);
+  const liabilities = getLiabilities(lendingWiseObject);
+  const collaterals = getCollaterals(lendingWiseObject);
+  const loans = getLoans(lendingWiseObject);
+  const parties = getParties(lendingWiseObject);
 
-  document.querySelectorAll("input").forEach((input) => {
-    const selector = input.getAttribute("id");
-    try {
-      input.value = selector;
-    } catch {}
-  });
-
-  publishConfig(adminConfig, lendingWiseObject);
+  // publishConfig(adminConfig, lendingWiseObject);
   publishConfig(borrowerConfig, borrower);
-  publishConfig(assetsConfig, assets);
-  publishConfig(liabilitiesConfig, liabilities);
-  publishConfig(collateralsConfig, collaterals);
-  publishConfig(loansConfig, loans);
-  publishConfig(partiesConfig, parties);
-  publishConfig(relationshipsConfig, relationships);
+  // publishConfig(assetsConfig, assets);
+  // publishConfig(liabilitiesConfig, liabilities);
+  // publishConfig(collateralsConfig, collaterals);
+  // publishConfig(loansConfig, loans);
+  // publishConfig(partiesConfig, parties);
 }
 
 function publishConfig(config, data) {
+  writeCode(config, data);
   config.forEach((_config) => {
-    const selector = _config.selector;
-    const value = _config.value;
-    const inputData = value(data);
-    console.log(selector, inputData);
-    if (inputData) {
-      try {
-        if (document.querySelector(selector).type === "radio") {
-          document.querySelector(selector).checked = inputData;
-        }
-        document.querySelector(selector).value = inputData;
-      } catch (error) {
-        console.log(error, selector, data);
-      }
+    const element = document.querySelector(_config.selector);
+    if (!element) {
+      console.log("Element not found", _config.selector);
+      return;
+    }
+    const value = _config.value(data);
+    console.log(_config.selector, value);
+    if (!value) {
+      return;
+    }
+
+    if (element.type === "checkbox" || element.type === "radio") {
+      element.checked = value;
+    } else {
+      element.value = value;
     }
   });
+}
+
+function writeCode(config, data) {
+  const CONFIG = [];
+  document.querySelectorAll("input").forEach((input) => {
+    if (input.id && !config.find((c) => c.selector === `#${input.id}`)) {
+      CONFIG.push({
+        selector: `#${input.id}`,
+      });
+    }
+  });
+
+  console.log(CONFIG, "__CONFIG..",  CONFIG.length);
+  console.log(JSON.stringify(data, null, 2), "__DATA..");
 }
 
 function parseXml(xml) {
