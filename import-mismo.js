@@ -1,11 +1,4 @@
-const adminConfig = [
-  {
-    selector: "#loanNumber",
-    value: (data) =>
-      data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS.LOAN.LOAN_IDENTIFIERS
-        .LOAN_IDENTIFIER.LoanIdentifier,
-  },
-];
+const adminConfig = [];
 
 const borrowerConfig = [
   {
@@ -21,9 +14,22 @@ const borrowerConfig = [
     value: (data) => data.INDIVIDUAL.NAME.MiddleName,
   },
   {
+    selector: "#borrowerDOB",
+    value: (data) => {
+      const dob =
+        data.ROLES.ROLE.BORROWER.BORROWER_DETAIL?.BorrowerBirthDate?.split("-");
+
+      if (dob) {
+        return `${dob[1]}/${dob[2]}/${dob[0]}`;
+      }
+    },
+  },
+  {
     selector: "#ssn",
     value: (data) =>
-      data.TAXPAYER_IDENTIFIERS.TAXPAYER_IDENTIFIER.TaxpayerIdentifierValue,
+      (data.TAXPAYER_IDENTIFIERS.TAXPAYER_IDENTIFIER.TaxpayerIdentifierType =
+        "SocialSecurityNumber" &&
+        data.TAXPAYER_IDENTIFIERS.TAXPAYER_IDENTIFIER.TaxpayerIdentifierValue),
   },
   {
     selector: "#borrowerEmail",
@@ -96,18 +102,6 @@ const borrowerConfig = [
       data.ROLES.ROLE.BORROWER.RESIDENCES?.RESIDENCE.RESIDENCE_DETAIL
         .BorrowerResidencyDurationMonthsCount,
   },
-  // TODO: format date to lendingWise format
-  {
-    selector: "#borrowerDOB",
-    value: (data) => {
-      const dob =
-        data.ROLES.ROLE.BORROWER.BORROWER_DETAIL?.BorrowerBirthDate?.split("-");
-
-      if (dob) {
-        return `${dob[1]}/${dob[2]}/${dob[0]}`;
-      }
-    },
-  },
   {
     selector: "#numberOfDependents",
     value: (data) => data.ROLES.ROLE.BORROWER.BORROWER_DETAIL?.DependentCount,
@@ -117,12 +111,11 @@ const borrowerConfig = [
     value: (data) =>
       data.ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType === "Married",
   },
-  // Check the value in mismo standard for unmarried
   {
     selector: "#maritalStatus_1",
     value: (data) =>
       data.ROLES.ROLE.BORROWER.BORROWER_DETAIL?.MaritalStatusType ===
-      "UnMarried",
+      "Unmarried",
   },
   // Check the value in mismo standard for separated
   {
@@ -240,6 +233,63 @@ const borrowerConfig = [
       );
     },
   },
+  {
+    selector: "#borResidedPresentAddrNo",
+    value: (data) => true
+  },
+  {
+    selector: "#BRace5",
+    value: (data) => data.ROLES.ROLE.BORROWER.GOVERNMENT_MONITORING.HMDA_RACES.HMDA_RACE.HMDA_RACE_DETAIL.HMDARaceType === "White",
+  },
+  {
+    selector: "#previouslyHadShortSaleYes",
+    value: (data) =>   data.ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.PriorPropertyShortSaleCompletedIndicator === "true",
+  },
+  {
+    selector: "#previouslyHadShortSaleNo",
+    value: (data) =>   data.ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.PriorPropertyShortSaleCompletedIndicator === "false",
+  },
+  {
+    selector: "#hasBorBeenForeclosedYes",
+    value: (data) =>   data.ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.PriorPropertyForeclosureCompletedIndicator === "true",
+  },
+  {
+    selector: "#hasBorBeenForeclosedNo",
+    value: (data) =>   data.ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.PriorPropertyForeclosureCompletedIndicator === "false",
+  },
+  {
+    selector: "#grossIncome1",
+    value: (data) =>   data.ROLES.ROLE.BORROWER.CURRENT_INCOME.CURRENT_INCOME_ITEMS.CURRENT_INCOME_ITEM.CURRENT_INCOME_ITEM_DETAIL.EmploymentIncomeIndicator && data.ROLES.ROLE.BORROWER.CURRENT_INCOME.CURRENT_INCOME_ITEMS.CURRENT_INCOME_ITEM.CURRENT_INCOME_ITEM_DETAIL.IncomeType === "Base" && data.ROLES.ROLE.BORROWER.CURRENT_INCOME.CURRENT_INCOME_ITEMS.CURRENT_INCOME_ITEM.CURRENT_INCOME_ITEM_DETAIL.CurrentIncomeMonthlyTotalAmount,
+  },
+
+  // "ROLES.ROLE.BORROWER.BORROWER_DETAIL.BorrowerTotalMortgagedPropertiesCount": "0",
+  // "ROLES.ROLE.BORROWER.BORROWER_DETAIL.CommunityPropertyStateResidentIndicator": "false",
+  // "ROLES.ROLE.BORROWER.BORROWER_DETAIL.DomesticRelationshipIndicator": "false",
+  // "ROLES.ROLE.BORROWER.BORROWER_DETAIL.JointAssetLiabilityReportingType": "Jointly",
+  // "ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.HomeownerPastThreeYearsType": "No",
+  // "ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.IntentToOccupyType": "No",
+  // "ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.PriorPropertyDeedInLieuConveyedIndicator": "false",
+  // "ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.PropertyProposedCleanEnergyLienIndicator": "false",
+  // "ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.UndisclosedBorrowedFundsIndicator": "false",
+  // "ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.UndisclosedComakerOfNoteIndicator": "false",
+  // "ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.UndisclosedCreditApplicationIndicator": "false",
+  // "ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.UndisclosedMortgageApplicationIndicator": "false",
+  // "ROLES.ROLE.BORROWER.DECLARATION.DECLARATION_DETAIL.EXTENSION.OTHER.ULAD:DECLARATION_DETAIL_EXTENSION.ULAD:SpecialBorrowerSellerRelationshipIndicator": "false",
+  // "ROLES.ROLE.BORROWER.EMPLOYERS.EMPLOYER.LEGAL_ENTITY.CONTACTS.CONTACT.CONTACT_POINTS.CONTACT_POINT.CONTACT_POINT_TELEPHONE.ContactPointTelephoneValue": "4234523425",
+  // "ROLES.ROLE.BORROWER.EMPLOYERS.EMPLOYER.LEGAL_ENTITY.CONTACTS.CONTACT.CONTACT_POINTS.CONTACT_POINT.CONTACT_POINT_DETAIL.ContactPointRoleType": "Mobile",
+  // "ROLES.ROLE.BORROWER.EMPLOYERS.EMPLOYER.LEGAL_ENTITY.LEGAL_ENTITY_DETAIL.FullName": "Google",
+  // "ROLES.ROLE.BORROWER.EMPLOYERS.EMPLOYER.EMPLOYMENT.EmploymentBorrowerSelfEmployedIndicator": "false",
+  // "ROLES.ROLE.BORROWER.EMPLOYERS.EMPLOYER.EMPLOYMENT.EmploymentClassificationType": "Primary",
+  // "ROLES.ROLE.BORROWER.EMPLOYERS.EMPLOYER.EMPLOYMENT.EmploymentPositionDescription": "VP of Customer Success",
+  // "ROLES.ROLE.BORROWER.EMPLOYERS.EMPLOYER.EMPLOYMENT.EmploymentStartDate": "2009-03-29",
+  // "ROLES.ROLE.BORROWER.EMPLOYERS.EMPLOYER.EMPLOYMENT.EmploymentStatusType": "Current",
+  // "ROLES.ROLE.BORROWER.EMPLOYERS.EMPLOYER.EMPLOYMENT.EmploymentTimeInLineOfWorkMonthsCount": "142",
+  // "ROLES.ROLE.BORROWER.GOVERNMENT_MONITORING.GOVERNMENT_MONITORING_DETAIL.HMDAEthnicityRefusalIndicator": "false",
+  // "ROLES.ROLE.BORROWER.GOVERNMENT_MONITORING.GOVERNMENT_MONITORING_DETAIL.HMDAGenderRefusalIndicator": "false",
+  // "ROLES.ROLE.BORROWER.GOVERNMENT_MONITORING.GOVERNMENT_MONITORING_DETAIL.HMDARaceRefusalIndicator": "false",
+  // "ROLES.ROLE.BORROWER.GOVERNMENT_MONITORING.GOVERNMENT_MONITORING_DETAIL.EXTENSION.OTHER.ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION.ULAD:HMDAGenderType": "Male",
+  // "ROLES.ROLE.BORROWER.GOVERNMENT_MONITORING.HMDA_ETHNICITY_ORIGINS.HMDA_ETHNICITY_ORIGIN.HMDAEthnicityOriginType": "Cuban",
+
 ];
 
 const assetsConfig = [
@@ -276,7 +326,13 @@ const assetsConfig = [
 ];
 const liabilitiesConfig = [];
 const collateralsConfig = [];
-const loansConfig = [];
+const loansConfig = [
+  {
+    selector: "#loanNumber",
+    type: "text",
+    value: (data) => data.LOAN_IDENTIFIERS.LOAN_IDENTIFIER.LoanIdentifier,
+  },
+];
 const partiesConfig = [];
 const relationshipsConfig = [];
 
@@ -313,6 +369,7 @@ function getCollaterals(data) {
 }
 
 function getLoans(data) {
+  // Make sure the loan type is "LenderLoan" or whatever is the correct loan type
   return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS?.LOAN;
 }
 
@@ -320,7 +377,7 @@ function getParties(data) {
   return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES?.PARTY;
 }
 
-function getBorrower(data) {
+function getBorrowerParty(data) {
   // TODO: handle multiple borrowers
   return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES?.PARTY.find(
     (party) => party.ROLES.ROLE.ROLE_DETAIL.PartyRoleType === "Borrower"
@@ -330,26 +387,29 @@ function getBorrower(data) {
 function importToPage(fnmFile) {
   const json = xml2json(parseXml(fnmFile, "")).replace(/undefined/g, "");
   const lendingWiseObject = JSON.parse(json);
-  console.log(lendingWiseObject, "__lendingWiseObject..");
+  localStorage.setItem("lendingWiseObject", json);
 
-  const borrower = getBorrower(lendingWiseObject);
+  const borrower = getBorrowerParty(lendingWiseObject);
   const assets = getAssets(lendingWiseObject);
   const liabilities = getLiabilities(lendingWiseObject);
   const collaterals = getCollaterals(lendingWiseObject);
   const loans = getLoans(lendingWiseObject);
   const parties = getParties(lendingWiseObject);
 
-  // publishConfig(adminConfig, lendingWiseObject);
+  // publishConfig(adminConfig, lendingWiseObject, true);
   publishConfig(borrowerConfig, borrower);
   // publishConfig(assetsConfig, assets);
   // publishConfig(liabilitiesConfig, liabilities);
   // publishConfig(collateralsConfig, collaterals);
-  // publishConfig(loansConfig, loans);
+  publishConfig(loansConfig, loans);
   // publishConfig(partiesConfig, parties);
 }
 
-function publishConfig(config, data) {
-  writeCode(config, data);
+function publishConfig(config, data, debug = false) {
+  if (debug) {
+    writeCode(config, data);
+    return;
+  }
   config.forEach((_config) => {
     const element = document.querySelector(_config.selector);
     if (!element) {
@@ -370,18 +430,56 @@ function publishConfig(config, data) {
   });
 }
 
+// Declare an object
+let ob = {
+  Company: "GeeksforGeeks",
+  Address: "Noida",
+  contact: +91 - 999999999,
+  mentor: {
+    HTML: "GFG",
+    CSS: "GFG",
+    JavaScript: "GFG",
+  },
+};
+
+function flattenObj(ob) {
+  let result = {};
+  for (const i in ob) {
+    if (typeof ob[i] === "object" && !Array.isArray(ob[i])) {
+      const temp = flattenObj(ob[i]);
+      for (const j in temp) {
+        result[i + "." + j] = temp[j];
+      }
+    } else {
+      result[i] = ob[i];
+    }
+  }
+  return result;
+}
+
 function writeCode(config, data) {
-  const CONFIG = [];
+  const flattenObject = flattenObj(data);
+  localStorage.setItem("flattenObject", JSON.stringify(flattenObject, null, 2));
   document.querySelectorAll("input").forEach((input) => {
-    if (input.id && !config.find((c) => c.selector === `#${input.id}`)) {
-      CONFIG.push({
-        selector: `#${input.id}`,
-      });
+    if (
+      input.id &&
+      input.type !== "file" &&
+      input.type !== "button" &&
+      input.type !== "hidden" &&
+      input.type !== "search" &&
+      input.id.length > 3
+    ) {
+      try {
+        if (input.type === "checkbox" || input.type === "radio") {
+          // document.getElementById(input.id).nextElementSibling.outerHTML = `<div style="width: 100px;margin-left: 10px;margin-right: 10px;">${input.id}</div>`;
+        } else if (input.type === "text") {
+          document.getElementById(input.id).value = input.id;
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   });
-
-  console.log(CONFIG, "__CONFIG..",  CONFIG.length);
-  console.log(JSON.stringify(data, null, 2), "__DATA..");
 }
 
 function parseXml(xml) {
