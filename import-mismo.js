@@ -396,13 +396,13 @@ function importToPage(fnmFile) {
   const loans = getLoans(lendingWiseObject);
   const parties = getParties(lendingWiseObject);
 
-  // publishConfig(adminConfig, lendingWiseObject, true);
+  publishConfig(adminConfig, lendingWiseObject);
   publishConfig(borrowerConfig, borrower);
-  // publishConfig(assetsConfig, assets);
-  // publishConfig(liabilitiesConfig, liabilities);
-  // publishConfig(collateralsConfig, collaterals);
+  publishConfig(assetsConfig, assets);
+  publishConfig(liabilitiesConfig, liabilities);
+  publishConfig(collateralsConfig, collaterals);
   publishConfig(loansConfig, loans);
-  // publishConfig(partiesConfig, parties);
+  publishConfig(partiesConfig, parties);
 }
 
 function publishConfig(config, data, debug = false) {
