@@ -1,20 +1,9 @@
 <?xml version="1.0"?>
 <MESSAGE xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" xmlns:LPA="http://www.datamodelextension.org/Schema/LPA" xmlns:xlink="http://www.w3.org/1999/xlink" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns="http://www.mismo.org/residential/2009/schemas">
-  <ABOUT_VERSIONS>
-    <ABOUT_VERSION>
-      <AboutVersionIdentifier>S5.0.06</AboutVersionIdentifier>
-      <DataVersionIdentifier>5.0.06</DataVersionIdentifier>
-    </ABOUT_VERSION>
-  </ABOUT_VERSIONS>
   <DEAL_SETS>
     <DEAL_SET>
       <DEALS>
         <DEAL>
-          <ABOUT_VERSIONS>
-            <ABOUT_VERSION>
-              <DataVersionName>LPA_REQUEST</DataVersionName>
-            </ABOUT_VERSION>
-          </ABOUT_VERSIONS>
           <ASSETS>
             <ASSET SequenceNumber="1" xlink:label="ASSET_1">
               <ASSET_DETAIL>
@@ -22,7 +11,7 @@
                 <AssetCashOrMarketValueAmount>104137.00</AssetCashOrMarketValueAmount>
                 <AssetType>SavingsAccount</AssetType>
               </ASSET_DETAIL>
-              <ASSET_HOLDMISMO_3.4.0_B324.xsdER>
+              <ASSET_HOLDER>
                 <NAME>
                   <FullName>Chase</FullName>
                 </NAME>
@@ -188,7 +177,7 @@
               </LOAN_DETAIL>
               <LOAN_IDENTIFIERS>
                 <LOAN_IDENTIFIER>
-                  <LoanIdentifier>R000010</LoanIdentifier>
+                  <LoanIdentifier>loanNumber R000010</LoanIdentifier>
                   <LoanIdentifierType>LenderLoan</LoanIdentifierType>
                 </LOAN_IDENTIFIER>
               </LOAN_IDENTIFIERS>
@@ -587,58 +576,6 @@
               </ROLES>
             </PARTY>
           </PARTIES>
-          <RELATIONSHIPS>
-            <RELATIONSHIP SequenceNumber="1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_1" xlink:to="BORROWER_1" />
-            <RELATIONSHIP SequenceNumber="2" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_2" xlink:to="BORROWER_1" />
-            <RELATIONSHIP SequenceNumber="3" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_5" xlink:to="BORROWER_1" />
-            <RELATIONSHIP SequenceNumber="4" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_3" xlink:to="BORROWER_2" />
-            <RELATIONSHIP SequenceNumber="5" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE" xlink:from="ASSET_4" xlink:to="BORROWER_2" />
-            <RELATIONSHIP SequenceNumber="6" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_1" />
-          </RELATIONSHIPS>
-          <SERVICES>
-            <SERVICE SequenceNumber="1">
-              <EXTENSION>
-                <OTHER>
-                  <LPA:SERVICE_EXTENSION>
-                    <LPA:SERVICE_DETAIL>
-                      <LPA:ServiceType>AutomatedUnderwritingSystem</LPA:ServiceType>
-                    </LPA:SERVICE_DETAIL>
-                  </LPA:SERVICE_EXTENSION>
-                </OTHER>
-              </EXTENSION>
-            </SERVICE>
-            <SERVICE SequenceNumber="2">
-              <EXTENSION>
-                <OTHER>
-                  <LPA:SERVICE_EXTENSION>
-                    <LPA:DOCUMENT_PREPARATION>
-                      <LPA:DOCUMENT_PREPARATION_RESPONSES>
-                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
-                          <LPA:RequestedDocumentType>DocCheckList</LPA:RequestedDocumentType>
-                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
-                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
-                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
-                          <LPA:RequestedDocumentType>Errors</LPA:RequestedDocumentType>
-                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
-                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
-                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
-                          <LPA:RequestedDocumentType>FullFeedback</LPA:RequestedDocumentType>
-                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
-                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
-                        <LPA:DOCUMENT_PREPARATION_RESPONSE>
-                          <LPA:RequestedDocumentType>HVE</LPA:RequestedDocumentType>
-                          <LPA:RequestedPDFIndicator>true</LPA:RequestedPDFIndicator>
-                        </LPA:DOCUMENT_PREPARATION_RESPONSE>
-                      </LPA:DOCUMENT_PREPARATION_RESPONSES>
-                    </LPA:DOCUMENT_PREPARATION>
-                    <LPA:SERVICE_DETAIL>
-                      <LPA:ServiceType>DocumentPreparation</LPA:ServiceType>
-                    </LPA:SERVICE_DETAIL>
-                  </LPA:SERVICE_EXTENSION>
-                </OTHER>
-              </EXTENSION>
-            </SERVICE>
-          </SERVICES>
         </DEAL>
       </DEALS>
     </DEAL_SET>
