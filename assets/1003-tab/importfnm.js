@@ -1,3 +1,13 @@
+function handleImportChange(e) {
+
+        let file = e.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+        importToPage(reader.result);
+        };
+        reader.readAsText(file);
+}
+
 const adminConfig = [];
 
 const borrowerConfig = [
@@ -481,24 +491,6 @@ function getWhere(node, path, where, value) {
   return filtered;
 }
 
-function bootstrap() {
-  const inputElement = document.createElement("input");
-  inputElement.type = "file";
-  inputElement.onchange = function () {
-    let file = this.files[0];
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      importToPage(reader.result);
-    };
-    reader.readAsText(file);
-  };
-
-  const parentElem = document.querySelector(
-    "#branchId_container"
-  ).parentElement;
-  parentElem.insertBefore(inputElement, parentElem.firstChild);
-}
-
 function getAssets() {
   return Array.from(document.querySelectorAll("#onsoft ASSET"));
 }
@@ -535,7 +527,7 @@ function importToPage(fnmFile) {
   divElement.innerHTML = fnmFile;
 
   const parentElem = document.querySelector(
-    "#branchId_container"
+    "#loanModForm > div.borrowerInfoSection > div > div.card-header.card-header-tabs-line.bg-gray-100 > div.card-title > h3"
   ).parentElement;
   parentElem.insertBefore(divElement, parentElem.firstChild);
 
@@ -608,4 +600,3 @@ function writeCode(config, data) {
     }
   });
 }
-bootstrap();
