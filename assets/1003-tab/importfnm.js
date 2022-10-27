@@ -262,7 +262,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "CURRENT_INCOME_ITEMS",
+        "CURRENT_INCOME_ITEM",
         "IncomeType",
         "Base"
       );
@@ -274,10 +274,12 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "CURRENT_INCOME_ITEMS",
+        "CURRENT_INCOME_ITEM",
         "IncomeType",
         "Bonus"
       );
+      console.log('%cMyProject%cline:275%cfiltered', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(248, 147, 29);padding:3px;border-radius:2px', filtered)
+
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
   },
@@ -286,7 +288,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "CURRENT_INCOME_ITEMS",
+        "CURRENT_INCOME_ITEM",
         "IncomeType",
         "Other"
       );
@@ -298,7 +300,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "CURRENT_INCOME_ITEMS",
+        "CURRENT_INCOME_ITEM",
         "IncomeType",
         "Overtime"
       );
@@ -310,7 +312,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "CURRENT_INCOME_ITEMS",
+        "CURRENT_INCOME_ITEM",
         "IncomeType",
         "MilitaryBasePay"
       );
@@ -322,7 +324,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "CURRENT_INCOME_ITEMS",
+        "CURRENT_INCOME_ITEM",
         "IncomeType",
         "MilitaryBasePay"
       );
@@ -334,7 +336,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "CURRENT_INCOME_ITEMS",
+        "CURRENT_INCOME_ITEM",
         "IncomeType",
         "NetRentalIncome"
       );
@@ -346,7 +348,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "CURRENT_INCOME_ITEMS",
+        "CURRENT_INCOME_ITEM",
         "IncomeType",
         "DividendsInterest"
       );

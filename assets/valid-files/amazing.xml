@@ -159,14 +159,14 @@
 											<CURRENT_INCOME_ITEMS>
 												<CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_1">
 													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount>0.00</CurrentIncomeMonthlyTotalAmount>
+														<CurrentIncomeMonthlyTotalAmount>2000.00</CurrentIncomeMonthlyTotalAmount>
 														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
 														<IncomeType>Base</IncomeType>
 													</CURRENT_INCOME_ITEM_DETAIL>
 												</CURRENT_INCOME_ITEM>
 												<CURRENT_INCOME_ITEM>
 													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount>0.00</CurrentIncomeMonthlyTotalAmount>
+														<CurrentIncomeMonthlyTotalAmount>50.00</CurrentIncomeMonthlyTotalAmount>
 														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
 														<IncomeType>Bonus</IncomeType>
 													</CURRENT_INCOME_ITEM_DETAIL>
@@ -180,7 +180,7 @@
 												</CURRENT_INCOME_ITEM>
 												<CURRENT_INCOME_ITEM>
 													<CURRENT_INCOME_ITEM_DETAIL>
-														<CurrentIncomeMonthlyTotalAmount>1.00</CurrentIncomeMonthlyTotalAmount>
+														<CurrentIncomeMonthlyTotalAmount>6.00</CurrentIncomeMonthlyTotalAmount>
 														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
 														<IncomeType>Overtime</IncomeType>
 													</CURRENT_INCOME_ITEM_DETAIL>
