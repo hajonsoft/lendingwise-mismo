@@ -1,11 +1,12 @@
-function handleImportChange(e) {
+const debug = true;
 
-        let file = e.files[0];
-        var reader = new FileReader();
-        reader.onload = function (e) {
-        importToPage(reader.result);
-        };
-        reader.readAsText(file);
+function handleImportChange(e) {
+  let file = e.files[0];
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    importToPage(reader.result);
+  };
+  reader.readAsText(file);
 }
 
 const adminConfig = [];
@@ -278,7 +279,13 @@ const borrowerConfig = [
         "IncomeType",
         "Bonus"
       );
-      console.log('%cMyProject%cline:275%cfiltered', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(248, 147, 29);padding:3px;border-radius:2px', filtered)
+      console.log(
+        "%cMyProject%cline:275%cfiltered",
+        "color:#fff;background:#ee6f57;padding:3px;border-radius:2px",
+        "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
+        "color:#fff;background:rgb(248, 147, 29);padding:3px;border-radius:2px",
+        filtered
+      );
 
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
@@ -435,6 +442,27 @@ TrustAccount
 `,
   },
 ];
+
+const assetConfig = [
+  {
+    selector: "#account",
+    value: (asset) => asset.querySelector("assetaccountidentifier")?.textContent,
+  },
+  {
+    selector: "#accountType",
+    value: (asset) =>
+      getLWAssetType(asset.querySelector("assettype")?.textContent),
+  },
+  {
+    selector: "#nameofInstitution",
+    value: (asset) => asset.querySelector("fullname")?.textContent,
+  },
+  {
+    selector: "#balanceValue",
+    value: (asset) =>
+      asset.querySelector("assetcashormarketvalueamount")?.textContent,
+  },
+];
 const liabilitiesConfig = [];
 const collateralsConfig = [];
 const loansConfig = [
@@ -464,6 +492,38 @@ function getAssetTotal(data, assetType) {
     );
 
   return total ?? 0.0;
+}
+
+function getLWAssetType(assetType) {
+  // TODO - review this mapping
+  switch (assetType) {
+    case "SavingsAccount":
+      return "Savings";
+    case "CheckingAccount":
+      return "Checking";
+    case "RetirementFund":
+      return "IRA";
+    case "CashOnHand":
+      return "Cash";
+    case "NetWorthOfBusinessOwned":
+      return "Business";
+    case "LifeInsurance":
+      return "Life Insurance";
+    case "BorrowerPrimaryHome":
+      return "Home";
+    case "StockOptions":
+      return "Stocks";
+    case "Stock":
+      return "Stocks Owed";
+    case "Automobile":
+      return "Car";
+    case "RecreationalVehicle":
+      return "RV";
+    case "Other":
+      return "Other";
+    default:
+      return "Other";
+  }
 }
 
 function getText(node, path) {
@@ -522,6 +582,42 @@ function getBorrowerParty() {
   return borrower;
 }
 
+function createFields(assets) {
+  for (let i = 0; i < assets.length; i++) {
+    setTimeout(() => {
+      const addNewSelector = `#financeAndSecuritie${
+        i === 0 ? "" : "_" + i
+      } > div:nth-child(4) > div:nth-child(5) > div > span > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
+      document.querySelector(addNewSelector)?.click();
+    }, 1000 * i);
+  }
+}
+
+function publishConfigItems(config, assets) {
+  for (let i = 0; i < assets.length; i++) {
+    setTimeout(() => {
+      const asset = assets[i];
+      for (const configItem of config) {
+        const selector = `${configItem.selector}_${i}`;
+        console.log(asset, selector);
+        const value = configItem.value(asset);
+        const type = configItem.type ?? "text";
+        const element = document.querySelector(selector);
+        if (element) {
+          if (type === "text") {
+            element.value = value;
+          } else if (type === "select") {
+            element.value = value;
+            element.dispatchEvent(new Event("change"));
+          }
+        } else {
+          console.log("element not found", selector);
+        }
+      }
+    }, 1000 * i);
+  }
+}
+
 function importToPage(fnmFile) {
   const divElement = document.createElement("div");
   divElement.style.display = "none";
@@ -542,6 +638,8 @@ function importToPage(fnmFile) {
 
   // publishConfig(adminConfig, lendingWiseObject);
   publishConfig(borrowerConfig, borrower);
+  createFields(assets);
+  publishConfigItems(assetConfig, assets);
   publishConfig(assetsConfig, assets);
   // publishConfig(liabilitiesConfig, liabilities);
   // publishConfig(collateralsConfig, collaterals);
@@ -549,7 +647,7 @@ function importToPage(fnmFile) {
   // publishConfig(partiesConfig, parties);
 }
 
-function publishConfig(config, data, debug = false) {
+function publishConfig(config, data) {
   if (debug) {
     writeCode(config, data);
   }
