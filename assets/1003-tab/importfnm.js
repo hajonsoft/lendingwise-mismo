@@ -1,4 +1,4 @@
-const debug = true;
+const debug = false;
 
 function handleImportChange(e) {
   let file = e.files[0];
@@ -583,7 +583,7 @@ function getBorrowerParty() {
 }
 
 function createFields(assets) {
-  for (let i = 0; i < assets.length; i++) {
+  for (let i = 0; i < assets.length - 1; i++) {
     setTimeout(() => {
       const addNewSelector = `#financeAndSecuritie${
         i === 0 ? "" : "_" + i
