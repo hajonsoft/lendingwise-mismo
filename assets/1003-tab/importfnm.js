@@ -446,7 +446,8 @@ TrustAccount
 const assetConfig = [
   {
     selector: "#account",
-    value: (asset) => asset.querySelector("assetaccountidentifier")?.textContent,
+    value: (asset) =>
+      asset.querySelector("assetaccountidentifier")?.textContent,
   },
   {
     selector: "#accountType",
@@ -633,7 +634,7 @@ function importToPage(fnmFile) {
   const assets = getAssets();
   // const liabilities = getLiabilities();
   // const collaterals = getCollaterals();
-  // const loans = getLoans();
+  const loans = getLoans();
   // const parties = getParties();
 
   // publishConfig(adminConfig, lendingWiseObject);
@@ -643,7 +644,7 @@ function importToPage(fnmFile) {
   publishConfig(assetsConfig, assets);
   // publishConfig(liabilitiesConfig, liabilities);
   // publishConfig(collateralsConfig, collaterals);
-  // publishConfig(loansConfig, loans);
+  publishConfig(loansConfig, loans);
   // publishConfig(partiesConfig, parties);
 }
 
