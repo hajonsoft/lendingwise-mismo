@@ -30,10 +30,10 @@ const borrowerConfig = [
       const dob = getText(
         node,
         "ROLES ROLE BORROWER BORROWER_DETAIL BorrowerBirthDate"
-      )?.split("-");
+      );
 
       if (dob) {
-        return `${dob[1]}/${dob[2]}/${dob[0]}`;
+        return formatDate(dob);
       }
     },
   },
@@ -464,6 +464,91 @@ const assetConfig = [
       asset.querySelector("assetcashormarketvalueamount")?.textContent,
   },
 ];
+
+const currentEmployerConfig = [
+  {
+    selector: "#occupation1",
+    value: (node) => node.querySelector("EmploymentPositionDescription")?.textContent,
+  },
+  {
+    selector: "#borrowerHireDate",
+    value: (node) => {
+      const hireDate = node.querySelector("EmploymentStartDate")?.textContent;
+      return hireDate ? formatDate(hireDate) : "";
+    }
+  },
+  {
+    selector: "#employer1",
+    value: (employer) =>
+      employer.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
+  },
+  {
+    selector: "#employer1Add",
+    value: (employer) =>
+      employer.querySelector("address AddressLineText")?.textContent,
+  },
+  {
+    selector: "#employer1City",
+    value: (employer) =>
+      employer.querySelector("address CityName")?.textContent,
+  },
+  {
+    selector: "#employer1Zip",
+    value: (employer) => employer.querySelector("address PostalCode")?.textContent?.substr(0, 5),
+  },
+  {
+    selector: "#employer1State",
+    value: (employer) =>
+      employer.querySelector("address StateCode")?.textContent,
+  },
+];
+
+const prevEmployerConfig = [
+  {
+    selector: "#AddiontalEmplInfo_2_addOrPrevJob",
+    value: () => "previous",
+  },
+  {
+    selector: "#AddiontalEmplInfo_{counter}_nameOfEmployer",
+    value: (employer) =>
+      employer.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
+  },
+  {
+    selector: "#AddiontalEmplInfo_{counter}_addrOfEmployer",
+    value: (employer) =>
+      employer.querySelector("address AddressLineText")?.textContent,
+  },
+  {
+    selector: "#AddiontalEmplInfo_{counter}_cityOfEmployer",
+    value: (employer) =>
+      employer.querySelector("address CityName")?.textContent,
+  },
+  // Get the correct selector for the zip code and state
+  {
+    selector: "#AddiontalEmplInfo_{counter}_zipOfEmployer",
+    value: (employer) => employer.querySelector("address PostalCode")?.textContent,
+  },
+  {
+    selector: "#AddiontalEmplInfo_{counter}_stateOfEmployer",
+    value: (employer) =>
+      employer.querySelector("address StateCode")?.textContent,
+  },
+  {
+    selector: "#AddiontalEmplInfo_{counter}_employedFrom",
+    value: (employer) => {
+      const hireDate = getText(
+        employer,
+        "EmploymentStartDate"
+      );
+
+      if (hireDate) {
+        return formatDate(hireDate);
+      }
+    }
+
+  }
+];
+
 const liabilitiesConfig = [];
 const collateralsConfig = [];
 const loansConfig = [
@@ -527,6 +612,11 @@ function getLWAssetType(assetType) {
   }
 }
 
+function formatDate(date) {
+  const [year, month, day] = date.split("-");
+  return `${month}/${day}/${year}`;
+}
+
 function getText(node, path) {
   if (!node || (Array.isArray(node) && node.length === 0)) {
     console.log(path, "not found in undefined getText");
@@ -558,21 +648,29 @@ function getAssets() {
   return Array.from(document.querySelectorAll("#onsoft ASSET"));
 }
 
+function getEmployers() {
+  return Array.from(document.querySelectorAll("#onsoft BORROWER EMPLOYERS EMPLOYER"));
+}
+
 function getLiabilities(data) {
-  return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LIABILITIES?.LIABILITY;
+  return Array.from(document.querySelectorAll("#onsoft LIABILITIES LIABILITY"));
+
 }
 
 function getCollaterals(data) {
-  return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.COLLATERALS?.COLLATERAL;
+  return Array.from(document.querySelectorAll("#onsoft COLLATERALS COLLATERAL"));
+
 }
 
 function getLoans(data) {
   // Make sure the loan type is "LenderLoan" or whatever is the correct loan type
-  return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.LOANS?.LOAN;
+  return Array.from(document.querySelectorAll("#onsoft LOAN"));
+
 }
 
 function getParties(data) {
-  return data.MESSAGE.DEAL_SETS.DEAL_SET.DEALS.DEAL.PARTIES?.PARTY;
+  return Array.from(document.querySelectorAll("#onsoft PARTIES PARTY"));
+
 }
 
 function getBorrowerParty() {
@@ -583,7 +681,7 @@ function getBorrowerParty() {
   return borrower;
 }
 
-function createFields(assets) {
+function createAssetFields(assets) {
   for (let i = 0; i < assets.length - 1; i++) {
     setTimeout(() => {
       const addNewSelector = `#financeAndSecuritie${
@@ -594,15 +692,29 @@ function createFields(assets) {
   }
 }
 
-function publishConfigItems(config, assets) {
-  for (let i = 0; i < assets.length; i++) {
+function createEmployerFields(employers) {
+  for (let i = 2; i < employers.length - 1; i++) {
     setTimeout(() => {
-      const asset = assets[i];
+      const addNewSelector = `#hideAddnlEmpInfo > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass.cloneFormButton`;
+      document.querySelector(addNewSelector)?.click();
+    }, 10 * i);
+  }
+}
+
+function publishConfigItems(config, items, selectorFunction) {
+  for (let i = 0; i < items.length; i++) {
+    setTimeout(() => {
+      const item = items[i];
       for (const configItem of config) {
-        const selector = `${configItem.selector}_${i}`;
-        console.log(asset, selector);
-        const value = configItem.value(asset);
+        let selector;
+        if (selectorFunction) {
+          selector = selectorFunction(i, configItem.selector);
+        } else {
+          selector = `${configItem.selector}_${i}`;
+        }
+        const value = configItem.value(item);
         const type = configItem.type ?? "text";
+        console.log(item, selector, value, type);
         const element = document.querySelector(selector);
         if (element) {
           if (type === "text") {
@@ -639,8 +751,18 @@ function importToPage(fnmFile) {
 
   // publishConfig(adminConfig, lendingWiseObject);
   publishConfig(borrowerConfig, borrower);
-  createFields(assets);
+  createAssetFields(assets);
   publishConfigItems(assetConfig, assets);
+  // Employers
+  const employers = getEmployers(borrower);
+  const currentEmployer = employers.filter(employer => getText(employer, "EmploymentStatusType") === "Current")[0];
+  const previousEmployers = employers.filter(employer => getText(employer, "EmploymentStatusType") !== "Current");
+  createEmployerFields(employers);
+  publishConfig(currentEmployerConfig, currentEmployer);
+  console.log('%cMyProject%cline:758%cpreviousEmployers', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(23, 44, 60);padding:3px;border-radius:2px', previousEmployers)
+  publishConfigItems(prevEmployerConfig, previousEmployers, (i, selector) => selector.replace("{counter}", i + 1));
+
+
   publishConfig(assetsConfig, assets);
   // publishConfig(liabilitiesConfig, liabilities);
   // publishConfig(collateralsConfig, collaterals);
