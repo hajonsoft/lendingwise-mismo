@@ -114,7 +114,7 @@
 								<CONTACT_POINTS>
 									<CONTACT_POINT>
 										<CONTACT_POINT_EMAIL>
-											<ContactPointEmailValue>borrowerEmail@gmail.com</ContactPointEmailValue>
+											<ContactPointEmailValue>johnmorrison@gmail.com</ContactPointEmailValue>
 										</CONTACT_POINT_EMAIL>
 									</CONTACT_POINT>
 									<CONTACT_POINT>
@@ -143,9 +143,17 @@
 									</CONTACT_POINT>
 								</CONTACT_POINTS>
 								<NAME>
-									<FirstName>borrowerFName (refinance)</FirstName>
-									<LastName>borrowerLName</LastName>
+									<FirstName>John</FirstName>
+									<MiddleName>Kennedy</MiddleName>
+									<LastName>Morrison</LastName>
 								</NAME>
+								<ALIASES>
+									<ALIAS>
+										<LastName>John</LastName>
+										<FirstName>Other</FirstName>
+										<MiddleName>Other</MiddleName>
+									</ALIAS>
+								</ALIASES>
 							</INDIVIDUAL>
 							<ROLES>
 								<ROLE SequenceNumber="1" xlink:label="BORROWER_1">
@@ -231,14 +239,24 @@
 										<RESIDENCES>
 											<RESIDENCE>
 												<ADDRESS>
-													<AddressLineText>123</AddressLineText>
-													<CityName>123</CityName>
+													<AddressLineText>123 Main street</AddressLineText>
+													<CityName>New York</CityName>
+													<PostalCode>12333</PostalCode>
+													<AddressUnitIdentifier>1</AddressUnitIdentifier>
+													<StateCode>KY</StateCode>
+													<AddressType>Current</AddressType>
+												</ADDRESS>
+												<ADDRESS>
+													<AddressLineText>123 Main street</AddressLineText>
+													<CityName>New York</CityName>
 													<PostalCode>12333</PostalCode>
 													<StateCode>KY</StateCode>
+													<AddressUnitIdentifier>1</AddressUnitIdentifier>
+													<AddressType>Mailing</AddressType>
 												</ADDRESS>
 												<RESIDENCE_DETAIL>
 													<BorrowerResidencyBasisType>Own</BorrowerResidencyBasisType>
-													<BorrowerResidencyType>Prior</BorrowerResidencyType>
+													<BorrowerResidencyType>Current</BorrowerResidencyType>
 												</RESIDENCE_DETAIL>
 											</RESIDENCE>
 										</RESIDENCES>

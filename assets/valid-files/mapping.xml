@@ -410,6 +410,7 @@
 													<EmploymentPositionDescription>Consultant</EmploymentPositionDescription>
 													<EmploymentStartDate>2004-06-01</EmploymentStartDate>
 													<EmploymentStatusType>Previous</EmploymentStatusType>
+                          <EmploymentMonthlyIncomeAmount>1000</EmploymentMonthlyIncomeAmount>
 													<SpecialBorrowerEmployerRelationshipIndicator>false</SpecialBorrowerEmployerRelationshipIndicator>
 													<EXTENSION>
 														<OTHER>
