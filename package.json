@@ -1,7 +1,7 @@
 {
-  "name": "mismo",
-  "version": "1.0.0",
-  "description": "- Mismo file. This file can have sample values or empty nodes\r - Mapping array that associates an xpath with a mapping function. The mapping function can either replace the target xpath. Example to such file is below\r   - [CREATEDATE]=>",
+  "name": "@hajonsoft/lendingwise-mismo",
+  "version": "1.0.1",
+  "description": "generate MISMO XML from LendingWise JSON or import MISMO XML into LendingWise website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +13,11 @@
     "moment": "^2.29.1",
     "xml2json": "^0.12.0",
     "xmlbuilder2": "^2.4.0"
+  },
+  "repository": {
+      "url":"https://github.com/hajonsoft/lendingwise-mismo.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@hajonsoft"
   }
 }

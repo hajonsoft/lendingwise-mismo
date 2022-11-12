@@ -55,3 +55,12 @@ replace to get php arry from print_r
 
 npm i libxmljs
 on Mac issues https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d
+
+
+# just for fun
+To publish to github packages
+create .npmrc
+update package.json (name, repository, registry)
+npm login --registry https://npm.pkg.github.com  
+login with hajonsoft and a token ex. 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
+npm publish
