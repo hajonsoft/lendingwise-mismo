@@ -264,47 +264,69 @@ const borrowerConfig = [
   },
   {
     selector: "#isBorUSCitizenYes",
-    value: (node) => getText(node, "MaritalStatusType") === "USCitizen",
+    value: (node) => getText(node, "CitizenshipResidencyType") === "USCitizen",
   },
   {
     selector: "#isBorUSCitizenNo",
-    value: (node) => getText(node, "MaritalStatusType") !== "USCitizen",
+    value: (node) => getText(node, "CitizenshipResidencyType") !== "USCitizen",
   },
   {
     selector: "#borrowerCitizenship_1",
-    value: (node) => getText(node, "MaritalStatusType") !== "USCitizen",
+    value: (node) => getText(node, "CitizenshipResidencyType") !== "USCitizen",
+  },
+  // TODO: Read veteran status from XML
+  {
+    selector: "#isServicingMember_1",
+    value: (node) => false,
   },
   {
-    selector: "#isBorDecalredBankruptPastYearsYes",
+    selector: "#isServicingMember_2",
+    value: (node) => true,
+  },
+  {
+    selector: [
+      "#additionalPropertyRestrictionsYes",
+      "#additionalPropertyRestrictionsNo",
+    ],
+    value: (node) =>
+      getText(node, "PropertyProposedCleanEnergyLienIndicator") === "true",
+  },
+  {
+    selector: [
+      "#isBorDecalredBankruptPastYearsYes",
+      "#isBorDecalredBankruptPastYearsNo",
+    ],
     value: (node) => getText(node, "BankruptcyIndicator") === "true",
   },
   {
-    selector: "#isBorDecalredBankruptPastYearsNO",
-    value: (node) => getText(node, "BankruptcyIndicator") !== "true",
+    selector: [
+      "#isBorIntendToOccupyPropAsPRIYes",
+      "#isBorIntendToOccupyPropAsPRINo",
+    ],
+    value: (node) => getText(node, "IntentToOccupyType") === "Yes",
   },
   {
-    selector: "#isAnyBorOutstandingJudgementsYes",
+    selector: [
+      "#hasBorObligatedInForeclosureYes",
+      "#hasBorObligatedInForeclosureNo",
+    ],
+    value: (node) =>
+      getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
+  },
+  {
+    selector: [
+      "#isAnyBorOutstandingJudgementsYes",
+      "#isAnyBorOutstandingJudgementsNo",
+    ],
     value: (node) => getText(node, "OutstandingJudgmentsIndicator") === "true",
   },
   {
-    selector: "#isAnyBorOutstandingJudgementsNo",
-    value: (node) => getText(node, "OutstandingJudgmentsIndicator") !== "true",
-  },
-  {
-    selector: "#hasBorAnyActiveLawsuitsYes",
+    selector: ["#hasBorAnyActiveLawsuitsYes", "#hasBorAnyActiveLawsuitsNo"],
     value: (node) => getText(node, "PartyToLawsuitIndicator") === "true",
   },
   {
-    selector: "#hasBorAnyActiveLawsuitsNo",
-    value: (node) => getText(node, "PartyToLawsuitIndicator") !== "true",
-  },
-  {
-    selector: "#isBorPresenltyDelinquentYes",
+    selector: ["#isBorPresenltyDelinquentYes", "#isBorPresenltyDelinquentNo"],
     value: (node) => getText(node, "PresentlyDelinquentIndicator") === "true",
-  },
-  {
-    selector: "#isBorPresenltyDelinquentNo",
-    value: (node) => getText(node, "PresentlyDelinquentIndicator") !== "true",
   },
   {
     selector: "#borResidedPresentAddrNo",
@@ -439,6 +461,42 @@ const borrowerConfig = [
     },
   },
 ];
+
+const loanOriginatorConfig = [
+  {
+    selector: "#loOrganizationName",
+    value: (node) => getText(node, "INDIVIDUAL NAME FirstName") + " " + getText(node, "INDIVIDUAL NAME LastName"),
+  },
+  {
+    selector: "#loOriginatorEmail",
+    value: (node) => getText(node, "ContactPointEmailValue"),
+  },
+  {
+    selector: "#loOriginatorPhone",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "INDIVIDUAL CONTACT_POINTS CONTACT_POINT",
+        "ContactPointRoleType",
+        "Home"
+      );
+      return getText(filtered?.[0], "ContactPointTelephoneValue");
+    },
+  },
+  {
+    selector: "#loOrganizationAddress",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE",
+        "BorrowerResidencyType",
+        "Current"
+      );
+      return getText(filtered?.[0], "AddressLineText") + " " + getText(filtered?.[0], "CityName") + " " + getText(filtered?.[0], "StateCode") + " " + getText(filtered?.[0], "PostalCode");
+    },
+  },
+];
+
 
 const subjectPropertyConfig = [
   {
@@ -774,7 +832,7 @@ function formatDate(date) {
 }
 
 function getText(node, path) {
-  console.log(node,path)
+  console.log(node, path);
   if (!node || (Array.isArray(node) && node.length === 0)) {
     console.log(path, "not found in undefined getText");
     return;
@@ -838,6 +896,13 @@ function getBorrowerParty() {
   return borrower;
 }
 
+function getLoanOriginatorParty() {
+  const borrower = Array.from(document.querySelectorAll("#onsoft PARTY")).find(
+    (party) => party.querySelector("PartyRoleType").textContent === "LoanOriginationCompany"
+  );
+  return borrower;
+}
+
 function getCoBorrowerParty() {
   const isCoBorrower =
     Array.from(document.querySelectorAll("#onsoft PARTY")).filter(
@@ -856,9 +921,10 @@ function getCoBorrowerParty() {
 }
 
 function getSubjectProperty() {
-  return document.querySelector("#onsoft COLLATERALS COLLATERAL SUBJECT_PROPERTY");
+  return document.querySelector(
+    "#onsoft COLLATERALS COLLATERAL SUBJECT_PROPERTY"
+  );
 }
-
 
 function createAssetFields(assets) {
   for (let i = 0; i < assets.length - 1; i++) {
@@ -915,6 +981,9 @@ function importToPage(fnmFile) {
   const borrower = getBorrowerParty();
   publishConfig(borrowerConfig, borrower);
 
+  const loanOriginator = getLoanOriginatorParty();
+  publishConfig(loanOriginatorConfig, loanOriginator);
+
   const assets = getAssets();
   // const liabilities = getLiabilities();
   // const collaterals = getCollaterals();
@@ -946,7 +1015,6 @@ function importToPage(fnmFile) {
 
   const subjectProperty = getSubjectProperty();
   publishConfig(subjectPropertyConfig, subjectProperty);
-
 }
 
 function attachXml(fnmFile) {
@@ -965,7 +1033,30 @@ function publishConfig(config, data) {
   if (debug) {
     writeCode(config, data);
   }
+
   config.forEach((_config) => {
+    if (Array.isArray(_config.selector)) {
+      console.log(
+        "%cMyProject%cline:978%c_config.selector",
+        "color:#fff;background:#ee6f57;padding:3px;border-radius:2px",
+        "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
+        "color:#fff;background:rgb(17, 63, 61);padding:3px;border-radius:2px",
+        _config.selector
+      );
+      _config.selector.forEach((selector, index) => {
+        publishConfig(
+          [
+            {
+              value:
+                index === 0 ? _config.value : (data) => !_config.value(data),
+              selector,
+            },
+          ],
+          data
+        );
+      });
+      return;
+    }
     const element = document.querySelector(_config.selector);
     if (!element) {
       console.log("Element not found", `selector: ${_config.selector}`);

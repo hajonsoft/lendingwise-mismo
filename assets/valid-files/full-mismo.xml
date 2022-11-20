@@ -393,14 +393,169 @@
 								</TAXPAYER_IDENTIFIER>
 							</TAXPAYER_IDENTIFIERS>
 						</PARTY>
-						<PARTY SequenceNumber="3" xlink:label="PARTY_3">
+						<PARTY SequenceNumber="3" xlink:label="PARTY_3">						<PARTY SequenceNumber="1" xlink:label="PARTY_1">
+							<INDIVIDUAL>
+								<CONTACT_POINTS>
+									<CONTACT_POINT>
+										<CONTACT_POINT_EMAIL>
+											<ContactPointEmailValue>johnmorrison@gmail.com</ContactPointEmailValue>
+										</CONTACT_POINT_EMAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>1385745468</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Mobile</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>63858463857674</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Work</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>4161635163</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Home</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+								</CONTACT_POINTS>
+								<NAME>
+									<FirstName>John</FirstName>
+									<MiddleName>Kennedy</MiddleName>
+									<LastName>Morrison</LastName>
+								</NAME>
+								<ALIASES>
+									<ALIAS>
+										<LastName>John</LastName>
+										<FirstName>Other</FirstName>
+										<MiddleName>Other</MiddleName>
+									</ALIAS>
+								</ALIASES>
+							</INDIVIDUAL>
 							<ROLES>
-								<ROLE>
+								<ROLE SequenceNumber="1" xlink:label="BORROWER_1">
+									<BORROWER>
+										<BORROWER_DETAIL>
+											<BorrowerBirthDate>1999-07-22</BorrowerBirthDate>
+											<DependentCount>2</DependentCount>
+											<MaritalStatusType>Married</MaritalStatusType>
+										</BORROWER_DETAIL>
+										<CURRENT_INCOME>
+											<CURRENT_INCOME_ITEMS>
+												<CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_1">
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>2000.00</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Base</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+												<CURRENT_INCOME_ITEM>
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>50.00</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Bonus</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+												<CURRENT_INCOME_ITEM>
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>2</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Other</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+												<CURRENT_INCOME_ITEM>
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>6.00</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Overtime</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+											</CURRENT_INCOME_ITEMS>
+										</CURRENT_INCOME>
+										<DECLARATION>
+											<DECLARATION_DETAIL>
+												<BankruptcyIndicator>true</BankruptcyIndicator>
+												<CitizenshipResidencyType>USCitizen</CitizenshipResidencyType>
+												<IntentToOccupyType>Yes</IntentToOccupyType>
+												<OutstandingJudgmentsIndicator>true</OutstandingJudgmentsIndicator>
+												<PartyToLawsuitIndicator>true</PartyToLawsuitIndicator>
+												<PresentlyDelinquentIndicator>true</PresentlyDelinquentIndicator>
+												<EXTENSION>
+													<OTHER>
+														<ULAD:DECLARATION_DETAIL_EXTENSION>
+															<ULAD:SpecialBorrowerSellerRelationshipIndicator>false</ULAD:SpecialBorrowerSellerRelationshipIndicator>
+														</ULAD:DECLARATION_DETAIL_EXTENSION>
+													</OTHER>
+												</EXTENSION>
+											</DECLARATION_DETAIL>
+										</DECLARATION>
+										<EMPLOYERS>
+											<EMPLOYER SequenceNumber="1" xlink:label="EMPLOYER_1">
+												<EMPLOYMENT>
+													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
+													<EmploymentClassificationType>Secondary</EmploymentClassificationType>
+													<EmploymentPositionDescription>occupation1</EmploymentPositionDescription>
+													<EmploymentStartDate>2022-05-09</EmploymentStartDate>
+													<EmploymentStatusType>Current</EmploymentStatusType>
+													<EmploymentTimeInLineOfWorkMonthsCount>36</EmploymentTimeInLineOfWorkMonthsCount>
+													<SpecialBorrowerEmployerRelationshipIndicator>false</SpecialBorrowerEmployerRelationshipIndicator>
+												</EMPLOYMENT>
+											</EMPLOYER>
+										</EMPLOYERS>
+										<GOVERNMENT_MONITORING>
+											<GOVERNMENT_MONITORING_DETAIL>
+												<EXTENSION>
+													<OTHER>
+														<ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+															<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>
+														</ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+													</OTHER>
+												</EXTENSION>
+											</GOVERNMENT_MONITORING_DETAIL>
+										</GOVERNMENT_MONITORING>
+										<RESIDENCES>
+											<RESIDENCE>
+												<ADDRESS>
+													<AddressLineText>123 Main street</AddressLineText>
+													<CityName>New York</CityName>
+													<PostalCode>12333</PostalCode>
+													<AddressUnitIdentifier>1</AddressUnitIdentifier>
+													<StateCode>KY</StateCode>
+													<AddressType>Current</AddressType>
+												</ADDRESS>
+												<ADDRESS>
+													<AddressLineText>123 Main street</AddressLineText>
+													<CityName>New York</CityName>
+													<PostalCode>12333</PostalCode>
+													<StateCode>KY</StateCode>
+													<AddressUnitIdentifier>1</AddressUnitIdentifier>
+													<AddressType>Mailing</AddressType>
+												</ADDRESS>
+												<RESIDENCE_DETAIL>
+													<BorrowerResidencyBasisType>Own</BorrowerResidencyBasisType>
+													<BorrowerResidencyType>Current</BorrowerResidencyType>
+												</RESIDENCE_DETAIL>
+											</RESIDENCE>
+										</RESIDENCES>
+									</BORROWER>
 									<ROLE_DETAIL>
 										<PartyRoleType>LoanOriginationCompany</PartyRoleType>
 									</ROLE_DETAIL>
 								</ROLE>
 							</ROLES>
+							<TAXPAYER_IDENTIFIERS>
+								<TAXPAYER_IDENTIFIER>
+									<TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
+									<TaxpayerIdentifierValue>946785846</TaxpayerIdentifierValue>
+								</TAXPAYER_IDENTIFIER>
+							</TAXPAYER_IDENTIFIERS>
 						</PARTY>
 					</PARTIES>
 					<RELATIONSHIPS xsi:type="RELATIONSHIPS">
