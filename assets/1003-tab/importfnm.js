@@ -636,7 +636,7 @@ const assetConfig = [
   {
     selector: "#account",
     value: (asset) =>
-      asset.querySelector("assetaccountidentifier")?.textContent,
+      asset.querySelector("assetaccountidentifier")?.textContent || "",
   },
   {
     selector: "#accountType",
@@ -645,7 +645,7 @@ const assetConfig = [
   },
   {
     selector: "#nameofInstitution",
-    value: (asset) => asset.querySelector("fullname")?.textContent,
+    value: (asset) => asset.querySelector("fullname")?.textContent || "",
   },
   {
     selector: "#balanceValue",
@@ -819,6 +819,8 @@ function getLWAssetType(assetType) {
       return "Car";
     case "RecreationalVehicle":
       return "RV";
+    case "BridgeLoanNotDeposited":
+      return "Bridge Loan Proceeds";
     case "Other":
       return "Other";
     default:
@@ -860,7 +862,9 @@ function getWhere(node, path, where, value) {
 }
 
 function getAssets() {
-  return Array.from(document.querySelectorAll("#onsoft ASSET"));
+  const allAssets =  Array.from(document.querySelectorAll("#onsoft ASSET"));
+  const assets = allAssets.filter(asset => !asset.querySelector("OWNED_PROPERTY"));
+  return assets;
 }
 
 function getEmployers() {

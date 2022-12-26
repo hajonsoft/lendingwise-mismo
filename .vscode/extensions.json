@@ -4,7 +4,23 @@
 
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
-		"ritwickdey.LiveServer"
+		"ritwickdey.LiveServer",
+		"formulahendry.auto-rename-tag",
+		"alefragnani.Bookmarks",
+		"streetsidesoftware.code-spell-checker",
+		"dbaeumer.vscode-eslint",
+		"shaharkazaz.git-merger",
+		"shyykoserhiy.git-autoconfig",
+		"GitHub.copilot",
+		"lokalise.i18n-ally",
+		"1nVitr0.invert-if",
+		"danielroedl.meld-diff",
+		"stylelint.vscode-stylelint",
+		"streetsidesoftware.code-spell-checker",
+		"kamikillerto.vscode-colorize",
+		"nicegyuha.quick-console-log",
+		"ms-vsliveshare.vsliveshare-pack",
+		"chrmarti.regex",
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
