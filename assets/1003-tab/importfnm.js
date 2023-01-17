@@ -314,11 +314,17 @@ const borrowerConfig = [
       getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
   },
   {
+    selector: ["#hasBorBeenForeclosedYes", "#hasBorBeenForeclosedNo"],
+    value: (node) =>
+      getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
+  },
+  {
     selector: [
       "#isAnyBorOutstandingJudgementsYes",
       "#isAnyBorOutstandingJudgementsNo",
     ],
-    value: (node) => getText(node, "OutstandingJudgmentsIndicator") === "true",
+    value: (node) =>
+      getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
   },
   {
     selector: ["#hasBorAnyActiveLawsuitsYes", "#hasBorAnyActiveLawsuitsNo"],
@@ -333,8 +339,32 @@ const borrowerConfig = [
     value: (node) => true,
   },
   {
+    selector: "#PublishBInfoYes",
+    value: (node) => true,
+  },
+  {
     selector: "#BRace5",
     value: (node) => getText(node, "HMDARaceType") === "White",
+  },
+  {
+    selector: "#BGendeMale",
+    value: (node) => getText(node, "HMDAGenderType") === "Male"
+  },
+  {
+    selector: "#BEthnicityH",
+    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
+  },
+  {
+    selector: "#BGenderNotDis",
+    value: (node) => getText(node, "HMDAGenderRefusalIndicator") === "true",
+  },
+  {
+    selector: "#BEthnicityND",
+    value: (node) => getText(node, "HMDAEthnicityRefusalIndicator") === "true",
+  },
+  {
+    selector: "#BRace6",
+    value: (node) => getText(node, "HMDARaceRefusalIndicator") === "true",
   },
   {
     selector: "#previouslyHadShortSaleYes",
@@ -344,7 +374,7 @@ const borrowerConfig = [
   {
     selector: "#previouslyHadShortSaleNo",
     value: (node) =>
-      getText(node, "PriorPropertyShortSaleCompletedIndicator") !== "false",
+      getText(node, "PriorPropertyShortSaleCompletedIndicator") === "false",
   },
   {
     selector: "#hasBorBeenForeclosedYes",
@@ -462,10 +492,20 @@ const borrowerConfig = [
   },
 ];
 
+const moreBorrowerConfig = [
+  {
+    selector: "#bFiEthnicitySubMexi",
+    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
+  },
+];
+
 const loanOriginatorConfig = [
   {
     selector: "#loOrganizationName",
-    value: (node) => getText(node, "INDIVIDUAL NAME FirstName") + " " + getText(node, "INDIVIDUAL NAME LastName"),
+    value: (node) =>
+      getText(node, "INDIVIDUAL NAME FirstName") +
+      " " +
+      getText(node, "INDIVIDUAL NAME LastName"),
   },
   {
     selector: "#loOriginatorEmail",
@@ -492,11 +532,18 @@ const loanOriginatorConfig = [
         "BorrowerResidencyType",
         "Current"
       );
-      return getText(filtered?.[0], "AddressLineText") + " " + getText(filtered?.[0], "CityName") + " " + getText(filtered?.[0], "StateCode") + " " + getText(filtered?.[0], "PostalCode");
+      return (
+        getText(filtered?.[0], "AddressLineText") +
+        " " +
+        getText(filtered?.[0], "CityName") +
+        " " +
+        getText(filtered?.[0], "StateCode") +
+        " " +
+        getText(filtered?.[0], "PostalCode")
+      );
     },
   },
 ];
-
 
 const subjectPropertyConfig = [
   {
@@ -641,7 +688,10 @@ const assetConfig = [
   {
     selector: "#accountType",
     value: (asset) =>
-      getLWAssetType(asset.querySelector("assettype")?.textContent),
+      getLWAssetType(
+        asset.querySelector("assettype")?.textContent ||
+          asset.querySelector("PurchaseCreditType")?.textContent
+      ),
   },
   {
     selector: "#nameofInstitution",
@@ -650,7 +700,48 @@ const assetConfig = [
   {
     selector: "#balanceValue",
     value: (asset) =>
-      asset.querySelector("assetcashormarketvalueamount")?.textContent,
+      asset.querySelector("assetcashormarketvalueamount")?.textContent ||
+      asset.querySelector("PurchaseCreditAmount")?.textContent,
+  },
+];
+
+const reoConfig = [
+  {
+    selector: "#schedulePropAddr",
+    value: (asset) => asset.querySelector("AddressLineText")?.textContent || "",
+  },
+  {
+    selector: "#schedulePropCity",
+    value: (asset) => asset.querySelector("CityName")?.textContent || "",
+  },
+  {
+    selector: "#schedulePropZip",
+    value: (asset) => asset.querySelector("PostalCode")?.textContent || "",
+  },
+  {
+    selector: "#schedulePropState",
+    value: (asset) => asset.querySelector("StateCode")?.textContent || "",
+  },
+  {
+    selector: "#schedulePropCountry",
+    value: () => "US",
+  },
+  {
+    selector: "#propType",
+    value: (asset) =>
+      getLWPropertyType(
+        asset.querySelector("propcurrentusagetype")?.textContent
+      ),
+  },
+  {
+    selector: "#presentMarketValue",
+    value: (asset) =>
+      asset.querySelector("PropertyEstimatedValueAmount")?.textContent || "",
+  },
+  {
+    selector: "#grossRentalIncome",
+    value: (asset) =>
+      asset.querySelector("OwnedPropertyRentalIncomeNetAmount")?.textContent,
   },
 ];
 
@@ -763,7 +854,38 @@ const prevEmployerConfig = [
   },
 ];
 
-const liabilitiesConfig = [];
+const liabilitiesConfig = [
+  {
+    selector: "#accountNo",
+    value: (liability) =>
+      liability.querySelector("LiabilityAccountIdentifier")?.textContent,
+  },
+  {
+    selector: "#liabilityAccType",
+    value: (liability) =>
+      getLWLiabilityType(liability.querySelector("LiabilityType")?.textContent),
+  },
+  {
+    selector: "#nameAddrOfCompany",
+    value: (liability) =>
+      liability.querySelector("LIABILITY_HOLDER FullName")?.textContent,
+  },
+  {
+    selector: "#monthlyPaymentExpenses",
+    value: (liability) =>
+      liability.querySelector("LiabilityMonthlyPaymentAmount")?.textContent,
+  },
+  {
+    selector: "#monthsLeftToPays",
+    value: (liability) =>
+      liability.querySelector("LiabilityRemainingTermMonthsCount")?.textContent,
+  },
+  {
+    selector: "#unpaidBalanceExpenses",
+    value: (liability) =>
+      liability.querySelector("LiabilityUnpaidBalanceAmount")?.textContent,
+  },
+];
 const collateralsConfig = [];
 const loansConfig = [
   {
@@ -779,6 +901,7 @@ function getAssetTotal(data, assetType) {
   const total = Array.from(data)
     .filter(
       (asset) =>
+        asset.querySelector("asset_detail assetType") &&
         asset.querySelector("asset_detail assetType").textContent === assetType
     )
     .reduce(
@@ -786,7 +909,7 @@ function getAssetTotal(data, assetType) {
         acc +
         parseFloat(
           asset.querySelector("ASSET_DETAIL AssetCashOrMarketValueAmount")
-            .textContent
+            ?.textContent || 0
         ),
       0.0
     );
@@ -817,10 +940,40 @@ function getLWAssetType(assetType) {
       return "Stocks Owed";
     case "Automobile":
       return "Car";
+    case "EarnestMoney":
+      return "Earnest Money";
     case "RecreationalVehicle":
       return "RV";
     case "BridgeLoanNotDeposited":
       return "Bridge Loan Proceeds";
+    case "Other":
+      return "Other";
+    default:
+      return "Other";
+  }
+}
+
+function getLWPropertyType(propType) {
+  switch (propType) {
+    case "BorrowerPrimaryHome":
+      return "Primary Residence";
+    case "VacationHome":
+      return "Vacation Home";
+    case "Investment":
+      return "Investment Property";
+    case "Other":
+      return "Other";
+    default:
+      return "Other";
+  }
+}
+
+function getLWLiabilityType(liabilityType) {
+  switch (liabilityType) {
+    case "Revolving":
+      return "Revolving";
+    case "Installment":
+      return "Installment";
     case "Other":
       return "Other";
     default:
@@ -862,9 +1015,29 @@ function getWhere(node, path, where, value) {
 }
 
 function getAssets() {
-  const allAssets =  Array.from(document.querySelectorAll("#onsoft ASSET"));
-  const assets = allAssets.filter(asset => !asset.querySelector("OWNED_PROPERTY"));
+  const allAssets = Array.from(document.querySelectorAll("#onsoft ASSET"));
+  const assets = allAssets.filter(
+    (asset) => !asset.querySelector("OWNED_PROPERTY")
+  );
+  const purchaseCredits = Array.from(
+    document.querySelectorAll("#onsoft LOANS PURCHASE_CREDITS PURCHASE_CREDIT")
+  );
+  purchaseCredits.forEach((credit) => {
+    assets.push(credit);
+  });
+
+  console.log(
+    "%cMyProject%cline:943%cassets",
+    "color:#fff;background:#ee6f57;padding:3px;border-radius:2px",
+    "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
+    "color:#fff;background:rgb(34, 8, 7);padding:3px;border-radius:2px",
+    assets
+  );
   return assets;
+}
+
+function getREO() {
+  return Array.from(document.querySelectorAll("#onsoft ASSET OWNED_PROPERTY"));
 }
 
 function getEmployers() {
@@ -902,7 +1075,9 @@ function getBorrowerParty() {
 
 function getLoanOriginatorParty() {
   const borrower = Array.from(document.querySelectorAll("#onsoft PARTY")).find(
-    (party) => party.querySelector("PartyRoleType").textContent === "LoanOriginationCompany"
+    (party) =>
+      party.querySelector("PartyRoleType").textContent ===
+      "LoanOriginationCompany"
   );
   return borrower;
 }
@@ -936,6 +1111,40 @@ function createAssetFields(assets) {
       const addNewSelector = `#financeAndSecuritie${
         i === 0 ? "" : "_" + i
       } > div:nth-child(4) > div:nth-child(5) > div > span > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
+      document.querySelector(addNewSelector)?.click();
+    }, 1000 * i);
+  }
+}
+
+function createReoFields(reos) {
+  for (let i = 0; i < reos.length - 1; i++) {
+    setTimeout(() => {
+      const addNewSelector = `#scheduleRealEstateDiv > div.card-header.card-header-tabs-line.bg-gray-100 > div.card-toolbar > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
+      document.querySelector(addNewSelector)?.click();
+    }, 1000 * i);
+  }
+}
+
+function createCollateralFields(collaterals) {
+  for (let i = 0; i < collaterals.length - 1; i++) {
+    setTimeout(() => {
+      const addNewSelector = `#addSubpropDiv > a`;
+      document.querySelector(addNewSelector)?.click();
+    }, 1000 * i);
+  }
+}
+
+function createLiabilityFields(liabilities) {
+  console.log(
+    "%cMyProject%cline:1061%cliabilities",
+    "color:#fff;background:#ee6f57;padding:3px;border-radius:2px",
+    "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
+    "color:#fff;background:rgb(217, 104, 49);padding:3px;border-radius:2px",
+    liabilities
+  );
+  for (let i = 0; i < liabilities.length - 1; i++) {
+    setTimeout(() => {
+      const addNewSelector = `#loLiabilitiesAdd > div.card-header.card-header-tabs-line.bg-gray-100 > div.card-toolbar > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
       document.querySelector(addNewSelector)?.click();
     }, 1000 * i);
   }
@@ -984,16 +1193,41 @@ function importToPage(fnmFile) {
   attachXml(fnmFile);
   const borrower = getBorrowerParty();
   publishConfig(borrowerConfig, borrower);
+  publishConfig(moreBorrowerConfig, borrower);
 
   const loanOriginator = getLoanOriginatorParty();
   publishConfig(loanOriginatorConfig, loanOriginator);
 
-  const assets = getAssets();
-  // const liabilities = getLiabilities();
-  // const collaterals = getCollaterals();
+  const reos = getREO();
+  createReoFields(reos);
+  publishConfigItems(reoConfig, reos);
+
+  const liabilities = getLiabilities();
+  createLiabilityFields(liabilities);
+  publishConfigItems(liabilitiesConfig, liabilities, (i, selector) =>
+  `${selector}_${i + 1}`);
+
+  const collaterals = getCollaterals();
+  if (collaterals.length > 0) {
+    const yesElement = document.querySelector("#isBlanketLoanMirrorYes");
+    if (yesElement) {
+      yesElement.click();
+      document.querySelector("#noOfPropertiesAcquiring_mirror").value =
+        collaterals.length;
+      // createCollateralFields(collaterals);
+    }
+  } else {
+    const noElement = document.querySelector("#isBlanketLoanMirrorNo");
+    if (noElement) {
+      noElement.click();
+    }
+  }
+  // #isBlanketLoanMirrorYes
   // const parties = getParties();
 
   // publishConfig(adminConfig, lendingWiseObject);
+  const assets = getAssets();
+
   createAssetFields(assets);
   publishConfigItems(assetConfig, assets);
   // Employers
@@ -1011,7 +1245,6 @@ function importToPage(fnmFile) {
   );
 
   publishConfig(assetsConfig, assets);
-  // publishConfig(liabilitiesConfig, liabilities);
   // publishConfig(collateralsConfig, collaterals);
   const loan = getLoan();
   publishConfig(loansConfig, loan);

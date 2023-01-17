@@ -99,6 +99,8 @@
 								</SALES_CONTRACTS>
 							</SUBJECT_PROPERTY>
 						</COLLATERAL>
+						<COLLATERAL>
+						</COLLATERAL>
 					</COLLATERALS>
 					<LIABILITIES>
 						<LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
