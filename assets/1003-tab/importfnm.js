@@ -407,14 +407,6 @@ const borrowerConfig = [
         "IncomeType",
         "Bonus"
       );
-      console.log(
-        "%cMyProject%cline:275%cfiltered",
-        "color:#fff;background:#ee6f57;padding:3px;border-radius:2px",
-        "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
-        "color:#fff;background:rgb(248, 147, 29);padding:3px;border-radius:2px",
-        filtered
-      );
-
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
   },
@@ -493,6 +485,194 @@ const borrowerConfig = [
 ];
 
 const moreBorrowerConfig = [
+  {
+    selector: "#bFiEthnicitySubMexi",
+    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
+  },
+];
+
+
+const coBorrowerConfig = [
+  {
+    selector: "#coBorrowerFName",
+    value: (node) => getText(node, "INDIVIDUAL NAME FirstName"),
+  },
+  {
+    selector: "#coBorrowerLName",
+    value: (node) => getText(node, "INDIVIDUAL NAME LastName"),
+  },
+  {
+    selector: "#coBorrowerDOB",
+    value: (node) => {
+      const dob = getText(
+        node,
+        "ROLES ROLE BORROWER BORROWER_DETAIL BorrowerBirthDate"
+      );
+
+      if (dob) {
+        return formatDate(dob);
+      }
+    },
+  },
+  {
+    selector: "#coBSsnNumber",
+    value: (node) =>
+      getText(
+        node,
+        "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierType"
+      ) === "SocialSecurityNumber" &&
+      getText(
+        node,
+        "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierValue"
+      ),
+  },
+  {
+    selector: "#coBorrowerEmail",
+    value: (node) => getText(node, "ContactPointEmailValue"),
+  },
+  {
+    selector: "#coBPhoneNumber",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "INDIVIDUAL CONTACT_POINTS CONTACT_POINT",
+        "ContactPointRoleType",
+        "Home"
+      );
+      return getText(filtered?.[0], "ContactPointTelephoneValue");
+    },
+  },
+  {
+    selector: "#coBCellNumber",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "INDIVIDUAL CONTACT_POINTS CONTACT_POINT",
+        "ContactPointRoleType",
+        "Mobile"
+      );
+      return getText(filtered?.[0], "ContactPointTelephoneValue");
+    },
+  },
+  {
+    selector: "#coBFax",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "INDIVIDUAL CONTACT_POINTS CONTACT_POINT",
+        "ContactPointRoleType",
+        "Work"
+      );
+      return getText(filtered?.[0], "ContactPointTelephoneValue");
+    },
+  },
+  {
+    selector: "#coBPresentAddress",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE",
+        "BorrowerResidencyType",
+        "Current"
+      );
+      return getText(filtered?.[0], "AddressLineText");
+    },
+  },
+  {
+    selector: "#coBPresentCity",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE",
+        "BorrowerResidencyType",
+        "Current"
+      );
+      return getText(filtered?.[0], "CityName");
+    },
+  },
+  {
+    selector: "#coBPresentZip",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE",
+        "BorrowerResidencyType",
+        "Current"
+      );
+      return getText(filtered?.[0], "PostalCode");
+    },
+  },
+  {
+    selector: "#coBPresentState",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE",
+        "BorrowerResidencyType",
+        "Current"
+      );
+      return getText(filtered?.[0], "StateCode");
+    },
+  },
+  {
+    selector: "#coBorrowerMailingAddress",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE Address",
+        "AddressType",
+        "Mailing"
+      );
+      return getText(filtered?.[0], "AddressLineText");
+    },
+  },
+  {
+    selector: "#coBorrowerMailingCity",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE Address",
+        "AddressType",
+        "Mailing"
+      );
+      return getText(filtered?.[0], "CityName");
+    },
+  },
+  {
+    selector: "#coBorrowerMailingZip",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE ADDRESS",
+        "AddressType",
+        "Mailing"
+      );
+      return getText(filtered?.[0], "PostalCode");
+    },
+  },
+  {
+    selector: "#coBorrowerMailingState",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE ADDRESS",
+        "AddressType",
+        "Mailing"
+      );
+      return getText(filtered?.[0], "StateCode");
+    },
+  },
+  {
+    selector: "#coBorrowerCitizenship_1",
+    value: (node) => getText(node, "MaritalStatusType") === "USCitizen",
+  },
+  {
+    selector: "#coBorrowerCitizenship_2",
+    value: (node) => getText(node, "CitizenshipResidencyType") !== "USCitizen",
+  }
+];
+
+const moreCoBorrowerConfig = [
   {
     selector: "#bFiEthnicitySubMexi",
     value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
@@ -1025,14 +1205,6 @@ function getAssets() {
   purchaseCredits.forEach((credit) => {
     assets.push(credit);
   });
-
-  console.log(
-    "%cMyProject%cline:943%cassets",
-    "color:#fff;background:#ee6f57;padding:3px;border-radius:2px",
-    "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
-    "color:#fff;background:rgb(34, 8, 7);padding:3px;border-radius:2px",
-    assets
-  );
   return assets;
 }
 
@@ -1058,7 +1230,6 @@ function getCollaterals(data) {
 
 function getLoan() {
   // Make sure the loan type is "LenderLoan" or whatever is the correct loan type
-  // You can get if there is a coborrower using BorrowerCount in amazing.xml
   return document.querySelector("#onsoft LOAN");
 }
 
@@ -1096,7 +1267,7 @@ function getCoBorrowerParty() {
   const coSigner = Array.from(document.querySelectorAll("#onsoft PARTY")).find(
     (party) => party.querySelector("PartyRoleType").textContent === "CoSigner"
   );
-  return coSigner;
+  if (coSigner) return coSigner;
 }
 
 function getSubjectProperty() {
@@ -1135,13 +1306,6 @@ function createCollateralFields(collaterals) {
 }
 
 function createLiabilityFields(liabilities) {
-  console.log(
-    "%cMyProject%cline:1061%cliabilities",
-    "color:#fff;background:#ee6f57;padding:3px;border-radius:2px",
-    "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
-    "color:#fff;background:rgb(217, 104, 49);padding:3px;border-radius:2px",
-    liabilities
-  );
   for (let i = 0; i < liabilities.length - 1; i++) {
     setTimeout(() => {
       const addNewSelector = `#loLiabilitiesAdd > div.card-header.card-header-tabs-line.bg-gray-100 > div.card-toolbar > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
@@ -1194,6 +1358,15 @@ function importToPage(fnmFile) {
   const borrower = getBorrowerParty();
   publishConfig(borrowerConfig, borrower);
   publishConfig(moreBorrowerConfig, borrower);
+
+  const coBorrower = getCoBorrowerParty();
+  if (coBorrower) {
+    document.querySelector("#isCoBo").click();
+    publishConfig(coBorrowerConfig, coBorrower);
+    publishConfig(moreCoBorrowerConfig, coBorrower);
+  }
+
+
 
   const loanOriginator = getLoanOriginatorParty();
   publishConfig(loanOriginatorConfig, loanOriginator);
