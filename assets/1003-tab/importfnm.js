@@ -348,7 +348,12 @@ const borrowerConfig = [
   },
   {
     selector: "#BGendeMale",
-    value: (node) => getText(node, "HMDAGenderType") === "Male",
+    // value: (node) => getText(node, "HMDAGenderType") === "Male",
+    value: (node) => xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`),
+  },
+  {
+    selector: "#BGendeFemale",
+    value: (node) => xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
   },
   {
     selector: "#BEthnicityH",
@@ -356,7 +361,7 @@ const borrowerConfig = [
   },
   {
     selector: "#BGenderNotDis",
-    value: (node) => getText(node, "HMDAGenderRefusalIndicator") === "true",
+    value: (node) => getText(node, "HMDAGenderRefusalIndicator") === "true" && !xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`) && !xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
   },
   {
     selector: "#BEthnicityND",
@@ -482,6 +487,11 @@ const borrowerConfig = [
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
   },
+  {
+    selector: "#isHouseProperty",
+    value: (node) => getLWOccupancy(getText(node, "PriorPropertyUsageType")),
+  },
+
 ];
 
 const moreBorrowerConfig = [
@@ -767,11 +777,12 @@ const subjectPropertyConfig = [
     value: (node) => getText(node, "PropertyUsageType"),
   },
 ];
-
+let xmlText = "";
 function handleImportChange(e) {
   let file = e.files[0];
   var reader = new FileReader();
   reader.onload = function (e) {
+    xmlText = reader.result;
     importToPage(reader.result);
   };
   reader.readAsText(file);
@@ -1075,6 +1086,42 @@ const loansConfig = [
     type: "text",
     value: (data) => data?.querySelector("LoanIdentifier")?.textContent,
   },
+  {
+    selector: "amortizationTypeFixed",
+    type: "radio",
+    value: (data) =>
+      data?.querySelector("AmortizationType")?.textContent === "Fixed",
+  },
+  {
+    selector: "amortizationTypeAdjust",
+    type: "radio",
+    value: (data) =>
+      data?.querySelector("AmortizationType")?.textContent !== "Adjustable",
+  },
+  {
+    selector: "#lien1Terms",
+    value: (data) =>
+    {
+      const period = data?.querySelector("LoanAmortizationPeriodCount")?.textContent;
+      const periodType = data?.querySelector("LoanAmortizationPeriodType")?.textContent;
+      if (period && periodType === "Month") {
+        return `${parseInt(period) / 12} Years`;
+      }
+      return period;
+    }
+  },
+  {
+    selector: "#otherMortgage1",
+    value: (data) =>
+      {
+        const allExpenses = Array.from(data?.querySelectorAll("HousingExpensePaymentAmount"));      
+        if (allExpenses) {
+          const total = allExpenses.reduce((acc, expense) => acc + parseFloat(expense?.textContent), 0);
+          return total;
+        }
+        return 0;
+      }
+  },
 ];
 const partiesConfig = [];
 const relationshipsConfig = [];
@@ -1147,6 +1194,19 @@ function getLWPropertyType(propType) {
       return "Other";
     default:
       return "Other";
+  }
+}
+
+function getLWOccupancy(propType) {
+  switch (propType) {
+    case "BorrowerPrimaryHome":
+      return "Owner Occupied";
+    case "VacationHome":
+      return "2nd Home";
+    case "Investment":
+      return "Investment";
+    default:
+      return "Investment";
   }
 }
 
@@ -1480,6 +1540,7 @@ function publishConfig(config, data) {
         element.maxLength = 0;
       }
       element.value = debug ? `${value}.${_config.selector}(c)` : value;
+      console.log("element", element, value);
     }
   });
 }
