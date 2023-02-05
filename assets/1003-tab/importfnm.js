@@ -348,7 +348,7 @@ const borrowerConfig = [
   },
   {
     selector: "#BGendeMale",
-    value: (node) => getText(node, "HMDAGenderType") === "Male"
+    value: (node) => getText(node, "HMDAGenderType") === "Male",
   },
   {
     selector: "#BEthnicityH",
@@ -490,7 +490,6 @@ const moreBorrowerConfig = [
     value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
   },
 ];
-
 
 const coBorrowerConfig = [
   {
@@ -669,7 +668,7 @@ const coBorrowerConfig = [
   {
     selector: "#coBorrowerCitizenship_2",
     value: (node) => getText(node, "CitizenshipResidencyType") !== "USCitizen",
-  }
+  },
 ];
 
 const moreCoBorrowerConfig = [
@@ -929,44 +928,44 @@ const currentEmployerConfig = [
   {
     selector: "#occupation1",
     value: (node) =>
-      node.querySelector("EmploymentPositionDescription")?.textContent,
+      node?.querySelector("EmploymentPositionDescription")?.textContent,
   },
   {
     selector: "#borrowerHireDate",
     value: (node) => {
-      const hireDate = node.querySelector("EmploymentStartDate")?.textContent;
+      const hireDate = node?.querySelector("EmploymentStartDate")?.textContent;
       return hireDate ? formatDate(hireDate) : "";
     },
   },
   {
     selector: "#employer1",
     value: (employer) =>
-      employer.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
+      employer?.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
   },
   {
     selector: "#employer1Add",
     value: (employer) =>
-      employer.querySelector("address AddressLineText")?.textContent,
+      employer?.querySelector("address AddressLineText")?.textContent,
   },
   {
     selector: "#employer1City",
     value: (employer) =>
-      employer.querySelector("address CityName")?.textContent,
+      employer?.querySelector("address CityName")?.textContent,
   },
   {
     selector: "#employer1Zip",
     value: (employer) =>
-      employer.querySelector("address PostalCode")?.textContent?.substr(0, 5),
+      employer?.querySelector("address PostalCode")?.textContent?.substr(0, 5),
   },
   {
     selector: "#employer1State",
     value: (employer) =>
-      employer.querySelector("address StateCode")?.textContent,
+      employer?.querySelector("address StateCode")?.textContent,
   },
   {
     selector: "#employerPhone1",
     value: (employer) =>
-      employer.querySelector("ContactPointTelephoneValue")?.textContent,
+      employer?.querySelector("ContactPointTelephoneValue")?.textContent,
   },
 ];
 
@@ -978,28 +977,28 @@ const prevEmployerConfig = [
   {
     selector: "#AddiontalEmplInfo_{counter}_nameOfEmployer",
     value: (employer) =>
-      employer.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
+      employer?.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_addrOfEmployer",
     value: (employer) =>
-      employer.querySelector("address AddressLineText")?.textContent,
+      employer?.querySelector("address AddressLineText")?.textContent,
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_cityOfEmployer",
     value: (employer) =>
-      employer.querySelector("address CityName")?.textContent,
+      employer?.querySelector("address CityName")?.textContent,
   },
   // Get the correct selector for the zip code and state
   {
     selector: "#AddiontalEmplInfo_{counter}_zipOfEmployer",
     value: (employer) =>
-      employer.querySelector("address PostalCode")?.textContent,
+      employer?.querySelector("address PostalCode")?.textContent,
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_stateOfEmployer",
     value: (employer) =>
-      employer.querySelector("address StateCode")?.textContent,
+      employer?.querySelector("address StateCode")?.textContent,
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_employedFrom",
@@ -1014,23 +1013,23 @@ const prevEmployerConfig = [
   {
     selector: "#AddiontalEmplInfo_{counter}_monthlyIncome",
     value: (employer) =>
-      employer.querySelector("EmploymentMonthlyIncomeAmount")?.textContent,
+      employer?.querySelector("EmploymentMonthlyIncomeAmount")?.textContent,
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_employedByOtherParty",
     value: (employer) =>
-      employer.querySelector("SpecialBorrowerEmployerRelationshipIndicator")
+      employer?.querySelector("SpecialBorrowerEmployerRelationshipIndicator")
         ?.textContent === "true",
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_position",
     value: (employer) =>
-      employer.querySelector("EmploymentPositionDescription")?.textContent,
+      employer?.querySelector("EmploymentPositionDescription")?.textContent,
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_businessPhone",
     value: (employer) =>
-      employer.querySelector("ContactPointTelephoneValue")?.textContent,
+      employer?.querySelector("ContactPointTelephoneValue")?.textContent,
   },
 ];
 
@@ -1038,32 +1037,35 @@ const liabilitiesConfig = [
   {
     selector: "#accountNo",
     value: (liability) =>
-      liability.querySelector("LiabilityAccountIdentifier")?.textContent,
+      liability?.querySelector("LiabilityAccountIdentifier")?.textContent,
   },
   {
     selector: "#liabilityAccType",
     value: (liability) =>
-      getLWLiabilityType(liability.querySelector("LiabilityType")?.textContent),
+      getLWLiabilityType(
+        liability?.querySelector("LiabilityType")?.textContent
+      ),
   },
   {
     selector: "#nameAddrOfCompany",
     value: (liability) =>
-      liability.querySelector("LIABILITY_HOLDER FullName")?.textContent,
+      liability?.querySelector("LIABILITY_HOLDER FullName")?.textContent,
   },
   {
     selector: "#monthlyPaymentExpenses",
     value: (liability) =>
-      liability.querySelector("LiabilityMonthlyPaymentAmount")?.textContent,
+      liability?.querySelector("LiabilityMonthlyPaymentAmount")?.textContent,
   },
   {
     selector: "#monthsLeftToPays",
     value: (liability) =>
-      liability.querySelector("LiabilityRemainingTermMonthsCount")?.textContent,
+      liability?.querySelector("LiabilityRemainingTermMonthsCount")
+        ?.textContent,
   },
   {
     selector: "#unpaidBalanceExpenses",
     value: (liability) =>
-      liability.querySelector("LiabilityUnpaidBalanceAmount")?.textContent,
+      liability?.querySelector("LiabilityUnpaidBalanceAmount")?.textContent,
   },
 ];
 const collateralsConfig = [];
@@ -1071,7 +1073,7 @@ const loansConfig = [
   {
     selector: "#loanNumber",
     type: "text",
-    value: (data) => data.querySelector("LoanIdentifier")?.textContent,
+    value: (data) => data?.querySelector("LoanIdentifier")?.textContent,
   },
 ];
 const partiesConfig = [];
@@ -1167,12 +1169,14 @@ function formatDate(date) {
 }
 
 function getText(node, path) {
-  console.log(node, path);
-  if (!node || (Array.isArray(node) && node.length === 0)) {
-    console.log(path, "not found in undefined getText");
-    return;
+  if (!node) {
+    return "";
+  }
+  if (Array.isArray(node) && node.length === 0) {
+    return "";
   }
 
+  console.log(node, path);
   let valueNode;
   if (Array.isArray(node)) {
     valueNode = node?.[0];
@@ -1335,6 +1339,7 @@ function publishConfigItems(config, items, selectorFunction) {
           selector = `${configItem.selector}_${i}`;
         }
         const value = configItem.value(item);
+        if (!value) continue;
         const type = configItem.type ?? "text";
         console.log(item, selector, value, type);
         const element = document.querySelector(selector);
@@ -1366,8 +1371,6 @@ function importToPage(fnmFile) {
     publishConfig(moreCoBorrowerConfig, coBorrower);
   }
 
-
-
   const loanOriginator = getLoanOriginatorParty();
   publishConfig(loanOriginatorConfig, loanOriginator);
 
@@ -1377,8 +1380,11 @@ function importToPage(fnmFile) {
 
   const liabilities = getLiabilities();
   createLiabilityFields(liabilities);
-  publishConfigItems(liabilitiesConfig, liabilities, (i, selector) =>
-  `${selector}_${i + 1}`);
+  publishConfigItems(
+    liabilitiesConfig,
+    liabilities,
+    (i, selector) => `${selector}_${i + 1}`
+  );
 
   const collaterals = getCollaterals();
   if (collaterals.length > 0) {
@@ -1387,7 +1393,6 @@ function importToPage(fnmFile) {
       yesElement.click();
       document.querySelector("#noOfPropertiesAcquiring_mirror").value =
         collaterals.length;
-      // createCollateralFields(collaterals);
     }
   } else {
     const noElement = document.querySelector("#isBlanketLoanMirrorNo");
@@ -1395,10 +1400,7 @@ function importToPage(fnmFile) {
       noElement.click();
     }
   }
-  // #isBlanketLoanMirrorYes
-  // const parties = getParties();
 
-  // publishConfig(adminConfig, lendingWiseObject);
   const assets = getAssets();
 
   createAssetFields(assets);
@@ -1418,10 +1420,8 @@ function importToPage(fnmFile) {
   );
 
   publishConfig(assetsConfig, assets);
-  // publishConfig(collateralsConfig, collaterals);
   const loan = getLoan();
   publishConfig(loansConfig, loan);
-  // publishConfig(partiesConfig, parties);
 
   const subjectProperty = getSubjectProperty();
   publishConfig(subjectPropertyConfig, subjectProperty);
@@ -1446,13 +1446,6 @@ function publishConfig(config, data) {
 
   config.forEach((_config) => {
     if (Array.isArray(_config.selector)) {
-      console.log(
-        "%cMyProject%cline:978%c_config.selector",
-        "color:#fff;background:#ee6f57;padding:3px;border-radius:2px",
-        "color:#fff;background:#1f3c88;padding:3px;border-radius:2px",
-        "color:#fff;background:rgb(17, 63, 61);padding:3px;border-radius:2px",
-        _config.selector
-      );
       _config.selector.forEach((selector, index) => {
         publishConfig(
           [
