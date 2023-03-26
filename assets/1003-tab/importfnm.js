@@ -1170,46 +1170,55 @@ function getLWAssetType(assetType, isImport = true) {
 }
 
 
-function getLWPropertyType(propType) {
-  switch (propType) {
-    case "BorrowerPrimaryHome":
-      return "Primary Residence";
-    case "VacationHome":
-      return "Vacation Home";
-    case "Investment":
-      return "Investment Property";
-    case "Other":
-      return "Other";
-    default:
-      return "Other";
+function getLWPropertyType(propType, isImport = true) {
+  const mapping = [
+    { xml: "BorrowerPrimaryHome", dom: "Primary Residence" },
+    { xml: "VacationHome", dom: "Vacation Home" },
+    { xml: "Investment", dom: "Investment Property" },
+    { xml: "Other", dom: "Other" },
+  ];
+
+  if (isImport) {
+    const found = mapping.find((item) => item.xml === propType);
+    return found ? found.dom : "Other";
   }
+
+  const found = mapping.find((item) => item.dom === propType);
+  return found ? found.xml : "Other";
 }
 
-function getLWOccupancy(propType) {
-  switch (propType) {
-    case "BorrowerPrimaryHome":
-      return "Owner Occupied";
-    case "VacationHome":
-      return "2nd Home";
-    case "Investment":
-      return "Investment";
-    default:
-      return "Investment";
+function getLWOccupancy(propType, isImport = true) {
+  const mapping = [
+    { xml: "BorrowerPrimaryHome", dom: "Owner Occupied" },
+    { xml: "VacationHome", dom: "2nd Home" },
+    { xml: "Investment", dom: "Investment" },
+  ];
+
+  if (isImport) {
+    const found = mapping.find((item) => item.xml === propType);
+    return found ? found.dom : "Investment";
   }
+
+  const found = mapping.find((item) => item.dom === propType);
+  return found ? found.xml : "Investment";
 }
 
-function getLWLiabilityType(liabilityType) {
-  switch (liabilityType) {
-    case "Revolving":
-      return "Revolving";
-    case "Installment":
-      return "Installment";
-    case "Other":
-      return "Other";
-    default:
-      return "Other";
+function getLWLiabilityType(liabilityType, isImport = true) {
+  const mapping = [
+    { xml: "Revolving", dom: "Revolving" },
+    { xml: "Installment", dom: "Installment" },
+    { xml: "Other", dom: "Other" },
+  ];
+
+  if (isImport) {
+    const found = mapping.find((item) => item.xml === liabilityType);
+    return found ? found.dom : "Other";
   }
+
+  const found = mapping.find((item) => item.dom === liabilityType);
+  return found ? found.xml : "Other";
 }
+
 
 function formatDate(date) {
   const [year, month, day] = date.split("-");
