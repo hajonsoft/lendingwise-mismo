@@ -1607,6 +1607,7 @@ function handleExportClick(e) {
 
     const individualNode = doc.ele("DEAL_SETS")
     .ele("DEAL_SET")
+    .ele("DEALS")
     .ele("DEAL")
     .ele("PARTIES")
     .ele("PARTY")
