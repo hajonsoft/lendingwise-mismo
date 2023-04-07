@@ -1599,18 +1599,30 @@ function handleExportClick(e) {
     .up()
     .ele("CreatedDatetime")
     .txt(moment().utc().format())
-    .up();
+    .up()
+    .up()
+    .up()
 
-  doc
-    .root()
-    .ele("DEAL_SETS")
+    const individualNode = doc.ele("DEAL_SETS")
     .ele("DEAL_SET")
+    .ele("DEALS")
     .ele("DEAL")
     .ele("PARTIES")
     .ele("PARTY")
     .ele("INDIVIDUAL")
-    .ele("CONTACT_POINTS")
-    .ele("CONTACT_POINT");
+
+    individualNode
+    .ele("Name")
+    .ele("FirstName").txt(document.querySelector("#borrowerFName").value).up()
+    .ele("MiddleName").txt(document.querySelector("#borrowerMName").value).up()
+    .ele("LastName").txt(document.querySelector("#borrowerLName").value).up()
+
+    individualNode.ele("CONTACT_POINTS")
+    .ele("CONTACT_POINT")
+    .ele("CONTACT_POINT_EMAIL")
+    .ele("ContactPointEmailValue").txt(document.querySelector("#borrowerEmail").value).up()
+
+
 
 
     

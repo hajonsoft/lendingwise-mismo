@@ -40,6 +40,7 @@ https://www.youtube.com/watch?v=-3LGsHOSTec
 
 npm i -g browserify
 browserify index.js -o build/lw_mismo_converter.js
+browserify importfnm.js -o assets/1003-tab/importfnm.js
 
 Learning resources
 https://singlefamily.fanniemae.com/learning-center/uniform-residential-loan-application
