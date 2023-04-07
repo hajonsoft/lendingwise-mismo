@@ -1566,3 +1566,14 @@ function writeCode(config, data) {
     }
   });
 }
+
+
+function handleExportClick(e) {
+  borrowerConfig.forEach((config) => {
+    const element = document.querySelector(config.selector);
+    if (element) {
+      console.log(config.selector, element.value);
+    }
+  })
+}
+
