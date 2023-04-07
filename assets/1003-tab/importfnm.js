@@ -9,18 +9,22 @@ const borrowerConfig = [
   {
     selector: "#borrowerFName",
     value: (node) => getText(node, "INDIVIDUAL NAME FirstName"),
+    exportTo: "INDIVIDUAL NAME FirstName",
   },
   {
     selector: "#borrowerLName",
     value: (node) => getText(node, "INDIVIDUAL NAME LastName"),
+    exportTo: "INDIVIDUAL NAME LastName",
   },
   {
     selector: "#borrowerMName",
     value: (node) => getText(node, "INDIVIDUAL NAME MiddleName"),
+    exportTo: "INDIVIDUAL NAME MiddleName",
   },
   {
     selector: "#alternateFName_1",
     value: (node) => getText(node, "INDIVIDUAL ALIAS FirstName"),
+    exportTo: "INDIVIDUAL ALIAS FirstName",
   },
   {
     selector: "#alternateLName_1",
@@ -42,6 +46,7 @@ const borrowerConfig = [
         return formatDate(dob);
       }
     },
+    exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL BorrowerBirthDate",
   },
   {
     selector: "#ssn",
@@ -54,10 +59,12 @@ const borrowerConfig = [
         node,
         "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierValue"
       ),
+    exportTo: "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierValue",
   },
   {
     selector: "#borrowerEmail",
     value: (node) => getText(node, "ContactPointEmailValue"),
+    exportTo: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_EMAIL ContactPointEmailValue",
   },
   {
     selector: "#phoneNumber",
@@ -1585,6 +1592,7 @@ function handleExportClick(e) {
   const doc = create({
     version: "1.0",
     encoding: "UTF-8",
+    keepNullNodes: false,
   })
     .ele("http://www.mismo.org/residential/2009/schemas", "MESSAGE", {
       "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
@@ -1603,31 +1611,38 @@ function handleExportClick(e) {
     .txt(moment().utc().format())
     .up()
     .up()
-    .up()
+    .up();
 
-    const individualNode = doc.ele("DEAL_SETS")
+  const individualNode = doc
+    .ele("DEAL_SETS")
     .ele("DEAL_SET")
     .ele("DEALS")
     .ele("DEAL")
     .ele("PARTIES")
-    .ele("PARTY")
-    .ele("INDIVIDUAL")
+    .ele("PARTY");
 
-    individualNode
-    .ele("Name")
-    .ele("FirstName").txt(document.querySelector("#borrowerFName").value).up()
-    .ele("MiddleName").txt(document.querySelector("#borrowerMName").value).up()
-    .ele("LastName").txt(document.querySelector("#borrowerLName").value).up()
+  // Borrower
+  borrowerConfig.forEach((config) => {
+    if (!config.exportTo) {
+      return;
+    }
+    if (!Array.isArray(config.selector)) {
+      const element = document.querySelector(config.selector);
+      let xmlNode = individualNode;
+      if (element) {
+        config.exportTo.split(" ").forEach((tagName) => {
+          const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
+          if (foundNode) {
+            xmlNode = foundNode;
+          } else {
+            xmlNode = xmlNode.ele(tagName);
+          }
+        });
+        xmlNode.txt(element.value);
+      }
+    }
+  });
 
-    individualNode.ele("CONTACT_POINTS")
-    .ele("CONTACT_POINT")
-    .ele("CONTACT_POINT_EMAIL")
-    .ele("ContactPointEmailValue").txt(document.querySelector("#borrowerEmail").value).up()
-
-
-
-
-    
   const xml = doc.end({ prettyPrint: true });
   console.log(xml);
 }
