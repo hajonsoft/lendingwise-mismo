@@ -113,6 +113,14 @@ const borrowerConfig = [
       );
       return getText(filtered?.[0], "AddressLineText");
     },
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE Address AddressLineText",
+    exportAppend: [
+      {
+        path: "ROLES ROLE BORROWER RESIDENCES RESIDENCE RESIDENCE_DETAIL BorrowerResidencyType",
+        value: "Current"
+      }
+    ]
+
   },
   {
     selector: "#presentUnit",
@@ -125,6 +133,7 @@ const borrowerConfig = [
       );
       return getText(filtered?.[0], "AddressUnitIdentifier");
     },
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE Address AddressUnitIdentifier"
   },
   {
     selector: "#presentCity",
@@ -521,6 +530,7 @@ const coBorrowerConfig = [
   {
     selector: "#coBorrowerFName",
     value: (node) => getText(node, "INDIVIDUAL NAME FirstName"),
+    exportTo: "INDIVIDUAL NAME FirstName",
   },
   {
     selector: "#coBorrowerLName",
@@ -1613,7 +1623,7 @@ function handleExportClick(e) {
     .up()
     .up();
 
-  const individualNode = doc
+  const borrowerPartyNode = doc
     .ele("DEAL_SETS")
     .ele("DEAL_SET")
     .ele("DEALS")
@@ -1626,9 +1636,13 @@ function handleExportClick(e) {
     if (!config.exportTo) {
       return;
     }
+    if (!config.exportAppend) {
+      // Write method to export the hardcoded value to the xml path
+      // loop through the exportAppend and create the nodes and then write the value
+    }
     if (!Array.isArray(config.selector)) {
       const element = document.querySelector(config.selector);
-      let xmlNode = individualNode;
+      let xmlNode = borrowerPartyNode;
       if (element) {
         config.exportTo.split(" ").forEach((tagName) => {
           const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
@@ -1642,6 +1656,34 @@ function handleExportClick(e) {
       }
     }
   });
+
+  const coborrowerPartyNode = borrowerPartyNode.up().ele("PARTY")
+  // CoBorrower
+  coBorrowerConfig.forEach((config) => {
+    if (!config.exportTo) {
+      return;
+    }
+    if (!config.exportAppend) {
+      // Write method to export the hardcoded value to the xml path
+      // loop through the exportAppend and create the nodes and then write the value
+    }
+    if (!Array.isArray(config.selector)) {
+      const element = document.querySelector(config.selector);
+      let xmlNode = coborrowerPartyNode;
+      if (element) {
+        config.exportTo.split(" ").forEach((tagName) => {
+          const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
+          if (foundNode) {
+            xmlNode = foundNode;
+          } else {
+            xmlNode = xmlNode.ele(tagName);
+          }
+        });
+        xmlNode.txt(element.value);
+      }
+    }
+  });
+
 
   const xml = doc.end({ prettyPrint: true });
   console.log(xml);
