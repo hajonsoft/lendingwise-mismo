@@ -22,15 +22,17 @@ const borrowerConfig = [
   {
     selector: "#alternateFName_1",
     value: (node) => getText(node, "INDIVIDUAL ALIAS FirstName"),
-    exportTo: "INDIVIDUAL ALIAS FirstName",
+    exportTo: "INDIVIDUAL ALIASES ALIAS NAME FirstName",
   },
   {
     selector: "#alternateLName_1",
     value: (node) => getText(node, "INDIVIDUAL ALIAS LastName"),
+    exportTo: "INDIVIDUAL ALIASES ALIAS NAME LastName",
   },
   {
     selector: "#alternateMName_1",
     value: (node) => getText(node, "INDIVIDUAL ALIAS MiddleName"),
+    exportTo: "INDIVIDUAL ALIASES ALIAS NAME MiddelName",
   },
   {
     selector: "#borrowerDOB",
@@ -75,6 +77,12 @@ const borrowerConfig = [
       );
       return getText(filtered?.[0], "ContactPointTelephoneValue");
     },
+    exportTo: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
+    newTag: "CONTACT_POINT_TELEPHONE",
+    dependency: {
+      tag: "CONTACT_POINT_DETAIL ContactPointRoleType",
+      value: "Home"
+    }
   },
   {
     selector: "#cellNo",
@@ -87,6 +95,12 @@ const borrowerConfig = [
       );
       return getText(filtered?.[0], "ContactPointTelephoneValue");
     },
+    exportTo: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
+    newTag: "CONTACT_POINT_TELEPHONE",
+    dependency: {
+      tag: "CONTACT_POINT_DETAIL ContactPointRoleType",
+      value: "Mobile"
+    }
   },
   {
     selector: "#workNumber",
@@ -99,6 +113,12 @@ const borrowerConfig = [
       );
       return getText(filtered?.[0], "ContactPointTelephoneValue");
     },
+    exportTo: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
+    newTag: "CONTACT_POINT_TELEPHONE",
+    dependency: {
+      tag: "CONTACT_POINT_DETAIL ContactPointRoleType",
+      value: "Work"
+    }
   },
   {
     selector: "#presentAddress",
@@ -904,7 +924,7 @@ const assetConfig = [
     value: (asset) =>
       getLWAssetType(
         asset.querySelector("assettype")?.textContent ||
-          asset.querySelector("PurchaseCreditType")?.textContent
+        asset.querySelector("PurchaseCreditType")?.textContent
       ),
   },
   {
@@ -1369,9 +1389,8 @@ function getSubjectProperty() {
 function createAssetFields(assets) {
   for (let i = 0; i < assets.length - 1; i++) {
     setTimeout(() => {
-      const addNewSelector = `#financeAndSecuritie${
-        i === 0 ? "" : "_" + i
-      } > div:nth-child(4) > div:nth-child(5) > div > span > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
+      const addNewSelector = `#financeAndSecuritie${i === 0 ? "" : "_" + i
+        } > div:nth-child(4) > div:nth-child(5) > div > span > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
       document.querySelector(addNewSelector)?.click();
     }, 1000 * i);
   }
@@ -1640,17 +1659,28 @@ function handleExportClick(e) {
     }
     if (!Array.isArray(config.selector)) {
       const element = document.querySelector(config.selector);
+      const eleVal = element.value;
       let xmlNode = borrowerPartyNode;
       if (element) {
         config.exportTo.split(" ").forEach((tagName) => {
           const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
-          if (foundNode) {
+          if (foundNode && config?.newTag != tagName) {
             xmlNode = foundNode;
           } else {
             xmlNode = xmlNode.ele(tagName);
           }
         });
-        xmlNode.txt(element.value);
+        if (config.selector === "#phoneNumber" || config.selector === "#cellNo") xmlNode.txt(eleVal.replace(/[^0-9]/g, ""))
+        else if (config.selector === "#workNumber") {
+          xmlNode.txt(eleVal.substr(0, eleVal.search("Ext")).replace(/[^0-9]/g, ""))
+          xmlNode.up().ele("ContactPointTelephoneExtensionValue").txt(eleVal.slice(-4).replace(/[^0-9]/g, ""))
+        }
+        else xmlNode.txt(eleVal)
+      }
+      if (config.dependency) {
+        xmlNode = xmlNode.up().up();
+        config?.dependency.tag.split(" ").forEach(child => xmlNode = xmlNode.ele(child))
+        xmlNode.txt(config?.dependency.value)
       }
     }
   });
@@ -1671,13 +1701,14 @@ function handleExportClick(e) {
       if (element) {
         config.exportTo.split(" ").forEach((tagName) => {
           const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
-          if (foundNode) {
+          if (foundNode && !config.newTag) {
             xmlNode = foundNode;
           } else {
             xmlNode = xmlNode.ele(tagName);
           }
         });
         xmlNode.txt(element.value);
+
       }
     }
   });
