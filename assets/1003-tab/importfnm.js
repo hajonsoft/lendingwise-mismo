@@ -122,6 +122,7 @@ const borrowerConfig = [
       value: "Work"
     }
   },
+  
   {
     selector: "#presentAddress",
     value: (node) => {
@@ -130,17 +131,20 @@ const borrowerConfig = [
         "RESIDENCES RESIDENCE",
         "BorrowerResidencyType",
         "Current"
-      );
-      return getText(filtered?.[0], "AddressLineText");
-    },
-    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE Address AddressLineText",
+        );
+        return getText(filtered?.[0], "AddressLineText");
+      },
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS AddressLineText",
     exportAppend: [
       {
         path: "ROLES ROLE BORROWER RESIDENCES RESIDENCE RESIDENCE_DETAIL BorrowerResidencyType",
         value: "Current"
       }
-    ]
-
+    ],
+    dependency: {
+      tag: "RESIDENCE_DETAIL BorrowerResidencyType",
+      value: "Current"
+    }
   },
   {
     selector: "#presentUnit",
@@ -150,22 +154,23 @@ const borrowerConfig = [
         "RESIDENCES RESIDENCE",
         "BorrowerResidencyType",
         "Current"
-      );
-      return getText(filtered?.[0], "AddressUnitIdentifier");
+        );
+        return getText(filtered?.[0], "AddressUnitIdentifier");
+      },
+      exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS AddressUnitIdentifier"
     },
-    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE Address AddressUnitIdentifier"
-  },
-  {
-    selector: "#presentCity",
-    value: (node) => {
-      const filtered = getWhere(
-        node,
-        "RESIDENCES RESIDENCE",
-        "BorrowerResidencyType",
-        "Current"
+    {
+      selector: "#presentCity",
+      value: (node) => {
+        const filtered = getWhere(
+          node,
+          "RESIDENCES RESIDENCE",
+          "BorrowerResidencyType",
+          "Current"
       );
       return getText(filtered?.[0], "CityName");
     },
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS CityName"
   },
   {
     selector: "#presentZip",
@@ -175,9 +180,10 @@ const borrowerConfig = [
         "RESIDENCES RESIDENCE",
         "BorrowerResidencyType",
         "Current"
-      );
-      return getText(filtered?.[0], "PostalCode");
+        );
+        return getText(filtered?.[0], "PostalCode");
     },
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS PostalCode"
   },
   {
     selector: "#presentState",
@@ -187,14 +193,43 @@ const borrowerConfig = [
         "RESIDENCES RESIDENCE",
         "BorrowerResidencyType",
         "Current"
-      );
-      return getText(filtered?.[0], "StateCode");
+        );
+        return getText(filtered?.[0], "StateCode");
+      },
+      exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS StateCode"
     },
-  },
-  {
-    selector: "#presentCountry",
-    value: () => "US",
-  },
+    {
+      selector: "#presentCountry",
+      value: () => "US",
+      exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS CountryCode"
+    },
+    {
+      selector: "#borPresentPropType",
+      value: (node) => {
+        const filtered = getWhere(
+          node,
+          "RESIDENCES RESIDENCE",
+          "BorrowerResidencyType",
+          "Current"
+        );
+        return getText(filtered?.[0], "BorrowerResidencyBasisType");
+      },
+      exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE RESIDENCE_DETAIL BorrowerResidencyBasisType",
+  
+    },
+    {
+      selector: "#presentPropLengthMonths",
+      value: (node) => {
+        const filtered = getWhere(
+          node,
+          "RESIDENCES RESIDENCE",
+          "BorrowerResidencyType",
+          "Current"
+        );
+        return getText(filtered?.[0], "BorrowerResidencyDurationMonthsCount");
+      },
+        exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE RESIDENCE_DETAIL BorrowerResidencyDurationMonthsCount",
+    },
   {
     selector: "#mailingAddress",
     value: (node) => {
@@ -258,30 +293,6 @@ const borrowerConfig = [
   {
     selector: "#mailingCountry",
     value: () => "US",
-  },
-  {
-    selector: "#borPresentPropType",
-    value: (node) => {
-      const filtered = getWhere(
-        node,
-        "RESIDENCES RESIDENCE",
-        "BorrowerResidencyType",
-        "Current"
-      );
-      return getText(filtered?.[0], "BorrowerResidencyBasisType");
-    },
-  },
-  {
-    selector: "#presentPropLengthMonths",
-    value: (node) => {
-      const filtered = getWhere(
-        node,
-        "RESIDENCES RESIDENCE",
-        "BorrowerResidencyType",
-        "Current"
-      );
-      return getText(filtered?.[0], "BorrowerResidencyDurationMonthsCount");
-    },
   },
   {
     selector: "#numberOfDependents",
