@@ -334,7 +334,18 @@ const borrowerConfig = [
   },
   {
     selector: "#borrowerCitizenship_0",
-    value: (node) => getText(node, "MaritalStatusType") === "USCitizen",
+    value: (node) => getText(node, "CitizenshipResidencyType") === "USCitizen",
+    exportTo: "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
+  },
+  {
+    selector: "#borrowerCitizenship_1",
+    value: (node) => getText(node, "CitizenshipResidencyType") !== "USCitizen",
+    exportTo: "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
+  },
+  {
+    selector: "#borrowerCitizenship_3",
+    value: (node) => getText(node, "CitizenshipResidencyType") !== "USCitizen",
+    exportTo: "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
   },
   {
     selector: "#isBorUSCitizenYes",
@@ -345,9 +356,11 @@ const borrowerConfig = [
     value: (node) => getText(node, "CitizenshipResidencyType") !== "USCitizen",
   },
   {
-    selector: "#borrowerCitizenship_1",
-    value: (node) => getText(node, "CitizenshipResidencyType") !== "USCitizen",
+    selector: "#agesOfDependent",
+    value: (node) => getText(node, "DEPENDENTS DEPENDENT DependentAgeYearsCount"),
+    exportTo: "ROLES ROLE BORROWER DEPENDENTS DEPENDENT DependentAgeYearsCount",
   },
+  
   // TODO: Read veteran status from XML
   {
     selector: "#isServicingMember_1",
@@ -1742,7 +1755,14 @@ function handleExportClick(e) {
           case "#maritalStatus_2":
           case "#maritalStatus_3":
             xmlNode.find(c => c.node.nodeValue) ? null :
-            xmlNode.txt(document.querySelector("input[name='maritalStatus']:checked")?.value) 
+              xmlNode.txt(document.querySelector("input[name='maritalStatus']:checked")?.value)
+            break;
+
+          case "#borrowerCitizenship_0":
+          case "#borrowerCitizenship_1":
+          case "#borrowerCitizenship_3":
+            xmlNode.find(c => c.node.nodeValue) ? null :
+              xmlNode.txt(document.querySelector("input[name='borrowerCitizenship']:checked")?.value)
             break;
 
           default:
