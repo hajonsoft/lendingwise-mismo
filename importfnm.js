@@ -35,20 +35,6 @@ const borrowerConfig = [
     exportTo: "INDIVIDUAL ALIASES ALIAS NAME MiddelName",
   },
   {
-    selector: "#borrowerDOB",
-    value: (node) => {
-      const dob = getText(
-        node,
-        "ROLES ROLE BORROWER BORROWER_DETAIL BorrowerBirthDate"
-      );
-
-      if (dob) {
-        return formatDate(dob);
-      }
-    },
-    exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL BorrowerBirthDate",
-  },
-  {
     selector: "#ssn",
     value: (node) =>
       getText(
@@ -65,6 +51,7 @@ const borrowerConfig = [
     selector: "#borrowerEmail",
     value: (node) => getText(node, "ContactPointEmailValue"),
     exportTo: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_EMAIL ContactPointEmailValue",
+
   },
   {
     selector: "#phoneNumber",
@@ -120,7 +107,7 @@ const borrowerConfig = [
       value: "Work"
     }
   },
-  
+
   {
     selector: "#presentAddress",
     value: (node) => {
@@ -129,9 +116,9 @@ const borrowerConfig = [
         "RESIDENCES RESIDENCE",
         "BorrowerResidencyType",
         "Current"
-        );
-        return getText(filtered?.[0], "AddressLineText");
-      },
+      );
+      return getText(filtered?.[0], "AddressLineText");
+    },
     exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS AddressLineText",
     exportAppend: [
       {
@@ -152,19 +139,19 @@ const borrowerConfig = [
         "RESIDENCES RESIDENCE",
         "BorrowerResidencyType",
         "Current"
-        );
-        return getText(filtered?.[0], "AddressUnitIdentifier");
-      },
-      exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS AddressUnitIdentifier"
+      );
+      return getText(filtered?.[0], "AddressUnitIdentifier");
     },
-    {
-      selector: "#presentCity",
-      value: (node) => {
-        const filtered = getWhere(
-          node,
-          "RESIDENCES RESIDENCE",
-          "BorrowerResidencyType",
-          "Current"
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS AddressUnitIdentifier"
+  },
+  {
+    selector: "#presentCity",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE",
+        "BorrowerResidencyType",
+        "Current"
       );
       return getText(filtered?.[0], "CityName");
     },
@@ -178,8 +165,8 @@ const borrowerConfig = [
         "RESIDENCES RESIDENCE",
         "BorrowerResidencyType",
         "Current"
-        );
-        return getText(filtered?.[0], "PostalCode");
+      );
+      return getText(filtered?.[0], "PostalCode");
     },
     exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS PostalCode"
   },
@@ -191,43 +178,56 @@ const borrowerConfig = [
         "RESIDENCES RESIDENCE",
         "BorrowerResidencyType",
         "Current"
-        );
-        return getText(filtered?.[0], "StateCode");
-      },
-      exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS StateCode"
+      );
+      return getText(filtered?.[0], "StateCode");
     },
-    {
-      selector: "#presentCountry",
-      value: () => "US",
-      exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS CountryCode"
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS StateCode"
+  },
+  {
+    selector: "#presentCountry",
+    value: () => "US",
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE ADDRESS CountryCode"
+  },
+  {
+    selector: "#borPresentPropType",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE",
+        "BorrowerResidencyType",
+        "Current"
+      );
+      return getText(filtered?.[0], "BorrowerResidencyBasisType");
     },
-    {
-      selector: "#borPresentPropType",
-      value: (node) => {
-        const filtered = getWhere(
-          node,
-          "RESIDENCES RESIDENCE",
-          "BorrowerResidencyType",
-          "Current"
-        );
-        return getText(filtered?.[0], "BorrowerResidencyBasisType");
-      },
-      exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE RESIDENCE_DETAIL BorrowerResidencyBasisType",
-  
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE RESIDENCE_DETAIL BorrowerResidencyBasisType",
+
+  },
+  {
+    selector: "#presentPropLengthMonths",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE",
+        "BorrowerResidencyType",
+        "Current"
+      );
+      return getText(filtered?.[0], "BorrowerResidencyDurationMonthsCount");
     },
-    {
-      selector: "#presentPropLengthMonths",
-      value: (node) => {
-        const filtered = getWhere(
-          node,
-          "RESIDENCES RESIDENCE",
-          "BorrowerResidencyType",
-          "Current"
-        );
-        return getText(filtered?.[0], "BorrowerResidencyDurationMonthsCount");
-      },
-        exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE RESIDENCE_DETAIL BorrowerResidencyDurationMonthsCount",
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE RESIDENCE_DETAIL BorrowerResidencyDurationMonthsCount",
+  },
+  {
+    selector: "#currentRPM",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE",
+        "BorrowerResidencyType",
+        "Current"
+      );
+      return getText(filtered?.[0], "MonthlyRentAmount");
     },
+    exportTo: "ROLES ROLE BORROWER RESIDENCES RESIDENCE LANDLORD LANDLORD_DETAIL MonthlyRentAmount",
+  },
   {
     selector: "#mailingAddress",
     value: (node) => {
@@ -239,6 +239,7 @@ const borrowerConfig = [
       );
       return getText(filtered?.[0], "AddressLineText");
     },
+    exportTo: "ADDRESSES ADDRESS AddressLineText",
   },
   {
     selector: "#mailingUnit",
@@ -251,6 +252,7 @@ const borrowerConfig = [
       );
       return getText(filtered?.[0], "AddressUnitIdentifier");
     },
+    exportTo: "ADDRESSES ADDRESS AddressUnitIdentifier",
   },
   {
     selector: "#mailingCity",
@@ -263,18 +265,7 @@ const borrowerConfig = [
       );
       return getText(filtered?.[0], "CityName");
     },
-  },
-  {
-    selector: "#mailingZip",
-    value: (node) => {
-      const filtered = getWhere(
-        node,
-        "RESIDENCES RESIDENCE ADDRESS",
-        "AddressType",
-        "Mailing"
-      );
-      return getText(filtered?.[0], "PostalCode");
-    },
+    exportTo: "ADDRESSES ADDRESS CityName",
   },
   {
     selector: "#mailingState",
@@ -287,26 +278,59 @@ const borrowerConfig = [
       );
       return getText(filtered?.[0], "StateCode");
     },
+    exportTo: "ADDRESSES ADDRESS StateCode",
+  },
+  {
+    selector: "#mailingZip",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "RESIDENCES RESIDENCE ADDRESS",
+        "AddressType",
+        "Mailing"
+      );
+      return getText(filtered?.[0], "PostalCode");
+    },
+    exportTo: "ADDRESSES ADDRESS PostalCode",
   },
   {
     selector: "#mailingCountry",
     value: () => "US",
+    exportTo: "ADDRESSES ADDRESS CountryCode",
   },
   {
-    selector: "#numberOfDependents",
-    value: (node) => getText(node, "BORROWER_DETAIL DependentCount"),
-  },
-  {
-    selector: "#maritalStatus_2",
-    value: (node) => getText(node, "MaritalStatusType") === "Married",
+    selector: "#borrowerDOB",
+    value: (node) => {
+      const dob = getText(
+        node,
+        "ROLES ROLE BORROWER BORROWER_DETAIL BorrowerBirthDate"
+      );
+
+      if (dob) {
+        return formatDate(dob);
+      }
+    },
+    exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL BorrowerBirthDate",
   },
   {
     selector: "#maritalStatus_1",
     value: (node) => getText(node, "MaritalStatusType") === "Unmarried",
+    exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL MaritalStatusType",
   },
   {
     selector: "#maritalStatus_2",
+    value: (node) => getText(node, "MaritalStatusType") === "Married",
+    exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL MaritalStatusType",
+  },
+  {
+    selector: "#maritalStatus_3",
     value: (node) => getText(node, "MaritalStatusType") === "Separated",
+    exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL MaritalStatusType",
+  },
+  {
+    selector: "#numberOfDependents",
+    value: (node) => getText(node, "BORROWER_DETAIL DependentCount"),
+    exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL DependentCount",
   },
   {
     selector: "#borrowerCitizenship_0",
@@ -1681,17 +1705,54 @@ function handleExportClick(e) {
             xmlNode = xmlNode.ele(tagName);
           }
         });
-        if (config.selector === "#phoneNumber" || config.selector === "#cellNo") xmlNode.txt(eleVal.replace(/[^0-9]/g, ""))
-        else if (config.selector === "#workNumber") {
-          xmlNode.txt(eleVal.substr(0, eleVal.search("Ext")).replace(/[^0-9]/g, ""))
-          xmlNode.up().ele("ContactPointTelephoneExtensionValue").txt(eleVal.slice(-4).replace(/[^0-9]/g, ""))
+        switch (config.selector) {
+          case "#phoneNumber":
+          case "#cellNo":
+            xmlNode.txt(eleVal.replace(/[^0-9]/g, ""));
+            break;
+
+          case "#workNumber":
+            xmlNode.txt(eleVal.substr(0, eleVal.search("Ext")).replace(/[^0-9]/g, ""));
+            xmlNode.up().ele("ContactPointTelephoneExtensionValue").txt(eleVal.slice(-4).replace(/[^0-9]/g, ""));
+            break;
+
+          case "#mailingAddress":
+          case "#mailingZip":
+          case "#mailingUnit":
+          case "#mailingState":
+          case "#mailingCity":
+          case "#mailingCountry":
+            xmlNode.txt(document.getElementById("mailingAddrAsPresent").value === "1" ?
+              document.getElementById(config.selector.replace("#mailing", "present")).value : eleVal);
+            xmlNode = xmlNode.up()
+            const addType = xmlNode.find(c => c.node.nodeName === "AddressType")
+            if (!addType) xmlNode.ele("AddressType").txt("Mailing");
+            break;
+
+          case "#ssn":
+            xmlNode.txt(eleVal.replace(/[^0-9]/g, ""));
+            xmlNode.up().ele("TaxpayerIdentifierType").txt("SocialSecurityNumber");
+            break;
+
+          case "#currentRPM":
+            xmlNode.txt(document.getElementById("borPresentPropType").value === "Rent" ? eleVal : null);
+            break;
+
+          case "#maritalStatus_1":
+          case "#maritalStatus_2":
+          case "#maritalStatus_3":
+            xmlNode.find(c => c.node.nodeValue) ? null :
+            xmlNode.txt(document.querySelector("input[name='maritalStatus']:checked")?.value) 
+            break;
+
+          default:
+            xmlNode.txt(eleVal)
         }
-        else xmlNode.txt(eleVal)
-      }
-      if (config.dependency) {
-        xmlNode = xmlNode.up().up();
-        config?.dependency.tag.split(" ").forEach(child => xmlNode = xmlNode.ele(child))
-        xmlNode.txt(config?.dependency.value)
+        if (config.dependency) {
+          xmlNode = xmlNode.up().up();
+          config?.dependency.tag.split(" ").forEach(child => xmlNode = xmlNode.ele(child))
+          xmlNode.txt(config?.dependency.value)
+        }
       }
     }
   });
