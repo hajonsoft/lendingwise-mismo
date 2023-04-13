@@ -367,10 +367,12 @@ const borrowerConfig = [
   {
     selector: "#isServicingMember_1",
     value: (node) => false,
+    exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL SelfDeclaredMilitaryServiceIndicator",
   },
   {
     selector: "#isServicingMember_2",
     value: (node) => true,
+    exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL SelfDeclaredMilitaryServiceIndicator",
   },
   {
     selector: [
@@ -1765,6 +1767,12 @@ function handleExportClick(e) {
           case "#borrowerCitizenship_3":
             xmlNode.find(c => c.node.nodeValue) ? null :
               xmlNode.txt(document.querySelector("input[name='borrowerCitizenship']:checked")?.value)
+            break;
+
+          case "#isServicingMember_1":
+          case "#isServicingMember_2":
+            xmlNode.find(c => c.node.nodeValue) ? null :
+              xmlNode.txt(document.querySelector("input[name='isServicingMember']:checked")?.value)
             break;
 
           default:
