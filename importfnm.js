@@ -377,6 +377,7 @@ const borrowerConfig = [
     ],
     value: (node) =>
       getText(node, "PropertyProposedCleanEnergyLienIndicator") === "true",
+    exportTo: "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PropertyProposedCleanEnergyLienIndicator",
   },
   {
     selector: [
