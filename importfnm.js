@@ -360,7 +360,7 @@ const borrowerConfig = [
     value: (node) => getText(node, "DEPENDENTS DEPENDENT DependentAgeYearsCount"),
     exportTo: "ROLES ROLE BORROWER DEPENDENTS DEPENDENT DependentAgeYearsCount",
   },
-  
+
   // TODO: Read veteran status from XML
   {
     selector: "#isServicingMember_1",
@@ -383,13 +383,6 @@ const borrowerConfig = [
   },
   {
     selector: [
-      "#isBorDecalredBankruptPastYearsYes",
-      "#isBorDecalredBankruptPastYearsNo",
-    ],
-    value: (node) => getText(node, "BankruptcyIndicator") === "true",
-  },
-  {
-    selector: [
       "#isBorIntendToOccupyPropAsPRIYes",
       "#isBorIntendToOccupyPropAsPRINo",
     ],
@@ -397,16 +390,38 @@ const borrowerConfig = [
   },
   {
     selector: [
-      "#hasBorObligatedInForeclosureYes",
-      "#hasBorObligatedInForeclosureNo",
+      "#borrowingMoneyYes",
+      "#borrowingMoneyNo",
     ],
-    value: (node) =>
-      getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
+    value: (node) => getText(node, "UndisclosedBorrowedFundsIndicator") === "Yes",
   },
   {
-    selector: ["#hasBorBeenForeclosedYes", "#hasBorBeenForeclosedNo"],
-    value: (node) =>
-      getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
+    selector: [
+      "#famBizAffilYes",
+      "#famBizAffilNo",
+    ],
+    value: (node) => getText(node, "ULAD:SpecialBorrowerSellerRelationshipIndicator") === "Yes",
+  },
+  {
+    selector: [
+      "#applyOtherLoanYes",
+      "#applyOtherLoanNo",
+    ],
+    value: (node) => getText(node, "UndisclosedMortgageApplicationIndicator") === "Yes",
+  },
+  {
+    selector: [
+      "#applyNewCreditYes",
+      "#applyNewCreditNo",
+    ],
+    value: (node) => getText(node, "UndisclosedCreditApplicationIndicator") === "Yes",
+  },
+  {
+    selector: [
+      "#isBorDecalredBankruptPastYearsYes",
+      "#isBorDecalredBankruptPastYearsNo",
+    ],
+    value: (node) => getText(node, "BankruptcyIndicator") === "true",
   },
   {
     selector: [
@@ -414,15 +429,51 @@ const borrowerConfig = [
       "#isAnyBorOutstandingJudgementsNo",
     ],
     value: (node) =>
-      getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
+      getText(node, "OutstandingJudgmentsIndicator") === "true",
   },
   {
     selector: ["#hasBorAnyActiveLawsuitsYes", "#hasBorAnyActiveLawsuitsNo"],
     value: (node) => getText(node, "PartyToLawsuitIndicator") === "true",
   },
   {
+    selector: [
+      "#hasBorObligatedInForeclosureYes",
+      "#hasBorObligatedInForeclosureNo",
+    ],
+    value: (node) =>
+      getText(node, "PriorPropertyDeedInLieuConveyedIndicator") === "true",
+  },
+  {
     selector: ["#isBorPresenltyDelinquentYes", "#isBorPresenltyDelinquentNo"],
-    value: (node) => getText(node, "PresentlyDelinquentIndicator") === "true",
+    value: (node) =>
+      getText(node, "PresentlyDelinquentIndicator") === "true",
+  },
+  {
+    selector: "#completedPreForecloseYes",
+    value: (node) =>
+      getText(node, "PriorPropertyShortSaleCompletedIndicator") === "true",
+    exportTo: "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PriorPropertyShortSaleCompletedIndicator",
+  },
+  {
+    selector: "#completedPreForecloseNo",
+    value: (node) =>
+      getText(node, "PriorPropertyShortSaleCompletedIndicator") === "false",
+    exportTo: "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PriorPropertyShortSaleCompletedIndicator",
+  },
+  {
+    selector: ["#hasBorBeenForeclosedYes", "#hasBorBeenForeclosedNo"],
+    value: (node) =>
+      getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
+  },
+  {
+    selector: "#hasBorBeenForeclosedYes",
+    value: (node) =>
+      getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
+  },
+  {
+    selector: "#hasBorBeenForeclosedNo",
+    value: (node) =>
+      getText(node, "PriorPropertyForeclosureCompletedIndicator") === "false",
   },
   {
     selector: "#borResidedPresentAddrNo",
@@ -465,26 +516,6 @@ const borrowerConfig = [
   {
     selector: "#BRace6",
     value: (node) => getText(node, "HMDARaceRefusalIndicator") === "true",
-  },
-  {
-    selector: "#previouslyHadShortSaleYes",
-    value: (node) =>
-      getText(node, "PriorPropertyShortSaleCompletedIndicator") === "true",
-  },
-  {
-    selector: "#previouslyHadShortSaleNo",
-    value: (node) =>
-      getText(node, "PriorPropertyShortSaleCompletedIndicator") === "false",
-  },
-  {
-    selector: "#hasBorBeenForeclosedYes",
-    value: (node) =>
-      getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
-  },
-  {
-    selector: "#hasBorBeenForeclosedNo",
-    value: (node) =>
-      getText(node, "PriorPropertyForeclosureCompletedIndicator") !== "false",
   },
   {
     selector: "#grossIncome1",
@@ -1772,6 +1803,12 @@ function handleExportClick(e) {
           case "#isServicingMember_2":
             xmlNode.find(c => c.node.nodeValue) ? null :
               xmlNode.txt(document.querySelector("input[name='isServicingMember']:checked")?.value)
+            break;
+
+          case "#completedPreForecloseYes":
+          case "#completedPreForecloseNo":
+            xmlNode.find(c => c.node.nodeValue) ? null :
+              xmlNode.txt(document.querySelector("input[name='completedPreForeclose']:checked")?.value)
             break;
 
           default:
