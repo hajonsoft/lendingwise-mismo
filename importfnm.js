@@ -395,6 +395,7 @@ const borrowerConfig = [
       getText(node, "PropertyProposedCleanEnergyLienIndicator") === "true",
     exportTo:
       "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PropertyProposedCleanEnergyLienIndicator",
+    exportValues: ["true", "false"],
   },
   {
     selector: [
@@ -402,28 +403,69 @@ const borrowerConfig = [
       "#isBorIntendToOccupyPropAsPRINo",
     ],
     value: (node) => getText(node, "IntentToOccupyType") === "Yes",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL IntentToOccupyType",
+    exportValues: ["Yes", "No"],
+  },
+  {
+    selector: [
+      "#haveOwnershipInterestYes",
+      "#haveOwnershipInterestNo",
+    ],
+    value: (node) => getText(node, "HomeownerPastThreeYearsType") === "Yes",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL HomeownerPastThreeYearsType",
+    exportValues: ["Yes", "No"],
+  },
+  {
+    selector: "#typePropOwned",
+    value: (node) => getText(node, "DECLARATION_DETAIL PriorPropertyUsageType"),
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PriorPropertyUsageType",
+  },
+  {
+    selector: "#titleType",
+    value: (node) => getText(node, "DECLARATION_DETAIL PriorPropertyTitleType"),
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PriorPropertyTitleType",
   },
   {
     selector: ["#borrowingMoneyYes", "#borrowingMoneyNo"],
     value: (node) =>
       getText(node, "UndisclosedBorrowedFundsIndicator") === "Yes",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL UndisclosedBorrowedFundsIndicator",
+    exportValues: ["true", "false"],
   },
-  // {
-  //   selector: [
-  //     "#famBizAffilYes",
-  //     "#famBizAffilNo",
-  //   ],
-  //   value: (node) => getText(node, "ULAD\:SpecialBorrowerSellerRelationshipIndicator") === "Yes",
-  // },
+  {
+    selector: "#borrowedAmt",
+    value: (node) => getText(node, "DECLARATION_DETAIL UndisclosedBorrowedFundsAmount"),
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL UndisclosedBorrowedFundsAmount",
+  },
+  {
+    selector: [
+      "#famBizAffilYes",
+      "#famBizAffilNo",
+    ],
+    value: (node) => getText(node, `ULAD:SpecialBorrowerSellerRelationshipIndicator`) === "Yes",
+    exportTo: `ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL EXTENSION OTHER ULAD:DECLARATION_DETAIL_EXTENSION ULAD:SpecialBorrowerSellerRelationshipIndicator`,
+  },
   {
     selector: ["#applyOtherLoanYes", "#applyOtherLoanNo"],
     value: (node) =>
       getText(node, "UndisclosedMortgageApplicationIndicator") === "Yes",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL UndisclosedMortgageApplicationIndicator",
+    exportValues: ["true", "false"],
   },
   {
     selector: ["#applyNewCreditYes", "#applyNewCreditNo"],
     value: (node) =>
       getText(node, "UndisclosedCreditApplicationIndicator") === "Yes",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL UndisclosedCreditApplicationIndicator",
+    exportValues: ["true", "false"],
   },
   {
     selector: [
@@ -431,17 +473,33 @@ const borrowerConfig = [
       "#isBorDecalredBankruptPastYearsNo",
     ],
     value: (node) => getText(node, "BankruptcyIndicator") === "true",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL BankruptcyIndicator",
+    exportValues: ["true", "false"],
   },
+  {
+    selector: "#bankruptcyTypes",
+    value: (node) => getText(node, "BANKRUPTCIES BANKRUPTCIE BANKRUPTCY_DETAIL BankruptcyChapterType"),
+    exportTo:
+      "ROLES ROLE BORROWER BANKRUPTCIES BANKRUPTCIE BANKRUPTCY_DETAIL BankruptcyChapterType",
+  },
+
   {
     selector: [
       "#isAnyBorOutstandingJudgementsYes",
       "#isAnyBorOutstandingJudgementsNo",
     ],
     value: (node) => getText(node, "OutstandingJudgmentsIndicator") === "true",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL OutstandingJudgmentsIndicator",
+    exportValues: ["true", "false"],
   },
   {
     selector: ["#hasBorAnyActiveLawsuitsYes", "#hasBorAnyActiveLawsuitsNo"],
     value: (node) => getText(node, "PartyToLawsuitIndicator") === "true",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PartyToLawsuitIndicator",
+    exportValues: ["true", "false"],
   },
   {
     selector: [
@@ -450,24 +508,24 @@ const borrowerConfig = [
     ],
     value: (node) =>
       getText(node, "PriorPropertyDeedInLieuConveyedIndicator") === "true",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PriorPropertyDeedInLieuConveyedIndicator",
+    exportValues: ["true", "false"],
   },
   {
     selector: ["#isBorPresenltyDelinquentYes", "#isBorPresenltyDelinquentNo"],
     value: (node) => getText(node, "PresentlyDelinquentIndicator") === "true",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PresentlyDelinquentIndicator",
+    exportValues: ["true", "false"],
   },
   {
-    selector: "#completedPreForecloseYes",
+    selector: ["#completedPreForecloseYes", "#completedPreForecloseNo"],
     value: (node) =>
       getText(node, "PriorPropertyShortSaleCompletedIndicator") === "true",
     exportTo:
       "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PriorPropertyShortSaleCompletedIndicator",
-  },
-  {
-    selector: "#completedPreForecloseNo",
-    value: (node) =>
-      getText(node, "PriorPropertyShortSaleCompletedIndicator") === "false",
-    exportTo:
-      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PriorPropertyShortSaleCompletedIndicator",
+    exportValues: ["true", "false"],
   },
   {
     selector: ["#hasBorBeenForeclosedYes", "#hasBorBeenForeclosedNo"],
@@ -1008,7 +1066,7 @@ const assetConfig = [
     value: (asset) =>
       getLWAssetType(
         asset.querySelector("assettype")?.textContent ||
-          asset.querySelector("PurchaseCreditType")?.textContent
+        asset.querySelector("PurchaseCreditType")?.textContent
       ),
   },
   {
@@ -1473,9 +1531,8 @@ function getSubjectProperty() {
 function createAssetFields(assets) {
   for (let i = 0; i < assets.length - 1; i++) {
     setTimeout(() => {
-      const addNewSelector = `#financeAndSecuritie${
-        i === 0 ? "" : "_" + i
-      } > div:nth-child(4) > div:nth-child(5) > div > span > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
+      const addNewSelector = `#financeAndSecuritie${i === 0 ? "" : "_" + i
+        } > div:nth-child(4) > div:nth-child(5) > div > span > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
       document.querySelector(addNewSelector)?.click();
     }, 1000 * i);
   }
@@ -1829,8 +1886,8 @@ function exportElementToXML(config, borrowerPartyNode, hardcodedValue) {
         xmlNode.txt(
           document.getElementById("mailingAddrAsPresent").value === "1"
             ? document.getElementById(
-                config.selector.replace("#mailing", "present")
-              ).value
+              config.selector.replace("#mailing", "present")
+            ).value
             : eleVal
         );
         xmlNode = xmlNode.up();
@@ -1854,45 +1911,26 @@ function exportElementToXML(config, borrowerPartyNode, hardcodedValue) {
       case "#maritalStatus_1":
       case "#maritalStatus_2":
       case "#maritalStatus_3":
-        xmlNode.find((c) => c.node.nodeValue)
-          ? null
-          : xmlNode.txt(
-              document.querySelector("input[name='maritalStatus']:checked")
-                ?.value
-            );
-        break;
-
       case "#borrowerCitizenship_0":
       case "#borrowerCitizenship_1":
       case "#borrowerCitizenship_3":
-        xmlNode.find((c) => c.node.nodeValue)
-          ? null
-          : xmlNode.txt(
-              document.querySelector(
-                "input[name='borrowerCitizenship']:checked"
-              )?.value
-            );
-        break;
-
       case "#isServicingMember_1":
       case "#isServicingMember_2":
         xmlNode.find((c) => c.node.nodeValue)
           ? null
           : xmlNode.txt(
-              document.querySelector("input[name='isServicingMember']:checked")
-                ?.value
-            );
+            document.querySelector(`${config.selector}:checked`)
+              ?.value
+          );
         break;
 
-      case "#completedPreForecloseYes":
-      case "#completedPreForecloseNo":
-        xmlNode.find((c) => c.node.nodeValue)
-          ? null
-          : xmlNode.txt(
-              document.querySelector(
-                "input[name='completedPreForeclose']:checked"
-              )?.value
-            );
+      case "#bankruptcyTypes":
+        const multiSelect = document.querySelector(config.selector);
+        for (var i = 0; i < multiSelect.options.length; i++) {
+          if (multiSelect.options[i].selected)
+            xmlNode = xmlNode.txt(multiSelect.options[i].value).up().ele("BankruptcyChapterType")
+          };
+          xmlNode.remove();
         break;
 
       default:
