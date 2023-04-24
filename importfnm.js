@@ -524,7 +524,7 @@ const borrowerConfig = [
     exportValues: ["true", "false"],
   },
   {
-    selector: ["#completedPreForecloseYes", "#completedPreForecloseNo"],
+    selector: ["#previouslyHadShortSaleYes", "#previouslyHadShortSaleNo"],
     value: (node) =>
       getText(node, "PriorPropertyShortSaleCompletedIndicator") === "true",
     exportTo:
@@ -532,7 +532,7 @@ const borrowerConfig = [
     exportValues: ["true", "false"],
   },
   {
-    selector: ["#hasBorBeenForeclosedYes", "#hasBorBeenForeclosedNo"],
+    selector: ["#completedPreForecloseYes", "#completedPreForecloseNo"],
     value: (node) =>
       getText(node, "PriorPropertyForeclosureCompletedIndicator") === "true",
     exportTo:
@@ -547,6 +547,27 @@ const borrowerConfig = [
     selector: "#PublishBInfoYes",
     value: (node) => true,
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL`,
+  },
+  {
+    selector: "#BEthnicityH",
+    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+      `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
+    mismoValue: "HispanicOrLatino"
+  },
+  {
+    selector: "#BEthnicityNH",
+    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+      `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
+    mismoValue: "NotHispanicOrLatino"
+  },
+  {
+    selector: "#BEthnicityND",
+    value: (node) => getText(node, "HMDAEthnicityRefusalIndicator") === "true",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+      `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
+    mismoValue: "NotApplicable"
   },
   {
     selector: "#BRace1",
@@ -604,37 +625,11 @@ const borrowerConfig = [
   {
     selector: "#BGenderNotDis",
     value: (node) =>
-      xmlText.includes(`<ULAD:HMDAGenderType>NotApplicable</ULAD:HMDAGenderType>`),
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
-      `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
-    mismoValue: "NotApplicable"
-  },
-  {
-    selector: "#BGenderNotDis",
-    value: (node) =>
       getText(node, "HMDAGenderRefusalIndicator") === "true" &&
       !xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`) &&
       !xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
-  },
-  {
-    selector: "#BEthnicityH",
-    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
-      `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
-    mismoValue: "HispanicOrLatino"
-  },
-  {
-    selector: "#BEthnicityNH",
-    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
-      `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
-    mismoValue: "NotHispanicOrLatino"
-  },
-  {
-    selector: "#BEthnicityND",
-    value: (node) => getText(node, "HMDAEthnicityRefusalIndicator") === "true",
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
-      `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+      `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
     mismoValue: "NotApplicable"
   },
   {
@@ -648,6 +643,10 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "Base"
   },
   {
     selector: "#commissionOrBonus1",
@@ -660,19 +659,39 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "Bonus"
   },
   {
-    selector: "#otherHouseHold1",
+    selector: "#militaryIncome1",
     value: (node) => {
       const filtered = getWhere(
         node,
         "CURRENT_INCOME_ITEM",
         "IncomeType",
-        "Other"
+        "MilitaryBasePay"
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "MilitaryBasePay"
   },
+  // {
+  //   selector: "#militaryIncome1",
+  //   value: (node) => {
+  //     const filtered = getWhere(
+  //       node,
+  //       "CURRENT_INCOME_ITEM",
+  //       "IncomeType",
+  //       "MilitaryBasePay"
+  //     );
+  //     return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+  //   },
+  // },
   {
     selector: "#overtime1",
     value: (node) => {
@@ -684,31 +703,12 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "Overtime"
   },
-  {
-    selector: "#militaryIncome1",
-    value: (node) => {
-      const filtered = getWhere(
-        node,
-        "CURRENT_INCOME_ITEM",
-        "IncomeType",
-        "MilitaryBasePay"
-      );
-      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
-    },
-  },
-  {
-    selector: "#militaryIncome1",
-    value: (node) => {
-      const filtered = getWhere(
-        node,
-        "CURRENT_INCOME_ITEM",
-        "IncomeType",
-        "MilitaryBasePay"
-      );
-      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
-    },
-  },
+
   {
     selector: "#netRental1",
     value: (node) => {
@@ -720,6 +720,10 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "NetRentalIncome"
   },
   {
     selector: "#netEarnedInterest1",
@@ -732,6 +736,60 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "DividendsInterest"
+  },
+  {
+    selector: "#capitalGains1",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "CapitalGains"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "CapitalGains"
+  },
+  {
+    selector: "#partnership1",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "SelfEmploymentIncome"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    //Not sure about this incomeType
+    incomeType: "SelfEmploymentIncome"
+  },
+
+  {
+    selector: "#otherHouseHold1",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "Other"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "Other"
   },
   {
     selector: "#isHouseProperty",
@@ -984,8 +1042,298 @@ const coBorrowerConfig = [
     value: (node) => getText(node, "MaritalStatusType") === "Separated",
     exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL MaritalStatusType",
   },
+  {
+    selector: "#PublishCBInfo2",
+    value: (node) => true,
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL`,
+  },
+  {
+    selector: "#CBEthnicity2",
+    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+      `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
+    mismoValue: "HispanicOrLatino"
+  },
+  {
+    selector: "#CBEthnicity1",
+    value: (node) => getText(node, "HMDAEthnicityOriginType") === "NotMexican",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+      `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
+    mismoValue: "NotHispanicOrLatino"
+  },
+  {
+    selector: "#CBEthnicity3",
+    value: (node) => getText(node, "HMDAEthnicityRefusalIndicator") === "NA",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+      `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
+    mismoValue: "NotApplicable"
+  },
+  {
+    selector: "#CBRace1",
+    value: (node) => getText(node, "HMDARaceType") === "White",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
+    mismoValue: "AmericanIndianOrAlaskaNative"
+  },
+  {
+    selector: "#CBRace2",
+    value: (node) => getText(node, "HMDARaceType") === "White",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
+    mismoValue: "Asian"
+  },
+  {
+    selector: "#CBRace3",
+    value: (node) => getText(node, "HMDARaceType") === "White",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
+    mismoValue: "BlackOrAfricanAmerican"
+  },
+  {
+    selector: "#CBRace4",
+    value: (node) => getText(node, "HMDARaceType") === "White",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
+    mismoValue: "NativeHawaiianOrOtherPacificIslander"
+  },
+  {
+    selector: "#CBRace5",
+    value: (node) => getText(node, "HMDARaceType") === "White",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
+    mismoValue: "White"
+  },
+  {
+    selector: "#CBRace6",
+    value: (node) => getText(node, "HMDARaceType") === "White",
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
+    mismoValue: "NotApplicable"
+  },
+  {
+    selector: "#CBGender2",
+    // value: (node) => getText(node, "HMDAGenderType") === "Male",
+    value: (node) =>
+      xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`),
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
+      `ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
+    mismoValue: "Male",
+  },
+  {
+    selector: "#CBGender1",
+    value: (node) =>
+      xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
+      `ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
+    mismoValue: "Female",
+  },
+  {
+    selector: "#CBGender3",
+    value: (node) =>
+      xmlText.includes(`<ULAD:HMDAGenderType>NotApplicable</ULAD:HMDAGenderType>`),
+    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
+      `ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
+    mismoValue: "NotApplicable",
+  },
+  {
+    selector: "#isCoBorUSCitizenYes",
+    value: (node) => getText(node, "CitizenshipResidencyType") === "USCitizen",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
+  },
+  {
+    selector: "#isCoBorUSCitizenNo",
+    value: (node) => getText(node, "CitizenshipResidencyType") === "NotUSCitizen",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
+  },
+  {
+    selector: [
+      "#isCoBorDecalredBankruptPastYears_1",
+      "#isCoBorDecalredBankruptPastYears_2",
+    ],
+    value: (node) => getText(node, "BankruptcyIndicator") === "true",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL BankruptcyIndicator",
+    exportValues: ["true", "false"],
+  },
+  {
+    selector: [
+      "#isAnyCoBorOutstandingJudgements_1",
+      "#isAnyCoBorOutstandingJudgements_2",
+    ],
+    value: (node) => getText(node, "OutstandingJudgmentsIndicator") === "true",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL OutstandingJudgmentsIndicator",
+    exportValues: ["true", "false"],
+  },
+  {
+    selector: ["#hasCoBorAnyActiveLawsuitsYes", "#hasCoBorAnyActiveLawsuitsNo"],
+    value: (node) => getText(node, "PartyToLawsuitIndicator") === "true",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PartyToLawsuitIndicator",
+    exportValues: ["true", "false"],
+  },
+  {
+    selector: [
+      "#hasCoBorObligatedInForeclosureYes",
+      "#hasCoBorObligatedInForeclosureNo",
+    ],
+    value: (node) =>
+      getText(node, "PriorPropertyDeedInLieuConveyedIndicator") === "true",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PriorPropertyDeedInLieuConveyedIndicator",
+    exportValues: ["true", "false"],
+  },
+  {
+    selector: ["#isCoBorPresenltyDelinquentYes", "#isCoBorPresenltyDelinquentNo"],
+    value: (node) => getText(node, "PresentlyDelinquentIndicator") === "true",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PresentlyDelinquentIndicator",
+    exportValues: ["true", "false"],
+  },
 
+  {
+    selector: "#grossIncome2",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "Base"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "Base"
+  },
+  {
+    selector: "#commissionOrBonus2",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "Bonus"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "Bonus"
+  },
+  // {
+  //   selector: "#militaryIncome1",
+  //   value: (node) => {
+  //     const filtered = getWhere(
+  //       node,
+  //       "CURRENT_INCOME_ITEM",
+  //       "IncomeType",
+  //       "MilitaryBasePay"
+  //     );
+  //     return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+  //   },
+  //   exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+  //     `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+  //   newTag: "CURRENT_INCOME_ITEM",
+  //   incomeType: "MilitaryBasePay"
+  // },
+  {
+    selector: "#overtime2",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "Overtime"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "Overtime"
+  },
 
+  {
+    selector: "#netRental2",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "NetRentalIncome"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "NetRentalIncome"
+  },
+  {
+    selector: "#netEarnedInterest2",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "DividendsInterest"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "DividendsInterest"
+  },
+  {
+    selector: "#capitalGains2",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "CapitalGains"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "CapitalGains"
+  },
+  {
+    selector: "#partnership2",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "SelfEmploymentIncome"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    //Not sure about this incomeType
+    incomeType: "SelfEmploymentIncome"
+  },
+
+  {
+    selector: "#otherHouseHold2",
+    value: (node) => {
+      const filtered = getWhere(
+        node,
+        "CURRENT_INCOME_ITEM",
+        "IncomeType",
+        "Other"
+      );
+      return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
+    },
+    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+      `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
+    newTag: "CURRENT_INCOME_ITEM",
+    incomeType: "Other"
+  },
 ];
 
 
@@ -1114,6 +1462,7 @@ const assetsConfig = [
   {
     selector: "#assetCash",
     value: (data) => getAssetTotal(data, "CashOnHand"),
+    exportTo: "ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM CURRENT_INCOME_ITEM_DETAIL PresentlyDelinquentIndicator",
   },
   {
     selector: "#networthOfBusinessOwned",
@@ -1357,6 +1706,8 @@ const liabilitiesConfig = [
     selector: "#accountNo",
     value: (liability) =>
       liability?.querySelector("LiabilityAccountIdentifier")?.textContent,
+    exportTo: "LIABILITY LIABILITY_DETAIL LiabilityAccountIdentifier",
+    newTag: "LIABILITY"
   },
   {
     selector: "#liabilityAccType",
@@ -1364,27 +1715,32 @@ const liabilitiesConfig = [
       getLWLiabilityType(
         liability?.querySelector("LiabilityType")?.textContent
       ),
+    exportTo: "LIABILITY LIABILITY_DETAIL LiabilityType",
   },
   {
     selector: "#nameAddrOfCompany",
     value: (liability) =>
       liability?.querySelector("LIABILITY_HOLDER FullName")?.textContent,
+    // exportTo: "LIABILITY LIABILITY_DETAIL LIABILITY_HOLDER FullName",
   },
   {
     selector: "#monthlyPaymentExpenses",
     value: (liability) =>
       liability?.querySelector("LiabilityMonthlyPaymentAmount")?.textContent,
+    // exportTo: "LIABILITY LIABILITY_DETAIL LiabilityMonthlyPaymentAmount",
   },
   {
     selector: "#monthsLeftToPays",
     value: (liability) =>
       liability?.querySelector("LiabilityRemainingTermMonthsCount")
         ?.textContent,
+    // exportTo: "LIABILITY LIABILITY_DETAIL LiabilityRemainingTermMonthsCount",
   },
   {
     selector: "#unpaidBalanceExpenses",
     value: (liability) =>
       liability?.querySelector("LiabilityUnpaidBalanceAmount")?.textContent,
+    // exportTo: "LIABILITY LIABILITY_DETAIL unpaidBalanceExpenses",
   },
 ];
 const collateralsConfig = [];
@@ -1928,7 +2284,7 @@ function handleExportClick(e) {
           exportElementToXML(
             { ...config, selector },
             borrowerPartyNode,
-            config.exportValues?.[index]
+            config.exportValues?.[index],
           );
         }
       });
@@ -1952,32 +2308,71 @@ function handleExportClick(e) {
             exportElementToXML(
               { ...config, selector },
               coborrowerPartyNode,
-              config.exportValues?.[index]
+              config.exportValues?.[index],
             );
           }
         });
       }
     });
   }
+
+  //Liabilities
+  const liabilityStartNode = borrowerPartyNode.up().up().com("Liabilities").ele("LIABILITIES");
+  const liab = document.getElementsByName("liabilityAccType[]");
+  const liabs = [];
+  let newal = [];
+  for (let i = 0; i < liab.length; i++) {
+    newal = liabilitiesConfig.map(tt => {
+      return { ...tt, selector: `${tt.selector}_${i + 1}` }
+    })
+    liabs.push(newal)
+  }
+
+  liabs.forEach((lia, index) => {
+    lia.forEach(config => {
+      if (!config.exportTo) {
+        return;
+      }
+      exportElementToXML(
+        config,
+        liabilityStartNode,
+        null,
+        index + 1,
+      );
+    });
+  })
+
   const xml = doc.end({ prettyPrint: true });
   console.log(xml);
 }
 global.handleImportChange = handleImportChange;
 global.handleExportClick = handleExportClick;
 
-function exportElementToXML(config, borrowerPartyNode, hardcodedValue) {
+function exportElementToXML(config, startNode, hardcodedValue, index) {
   const element = document.querySelector(config.selector);
   const eleVal = element.value;
-  let xmlNode = borrowerPartyNode;
+  let xmlNode = startNode;
+  let mainIndex = index || null;
   if (element) {
     config.exportTo.split(" ").forEach((tagName) => {
       const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
       if (foundNode && config?.newTag != tagName) {
         xmlNode = foundNode;
-      } else {
+      } else if (index && config.newTag === tagName) {
+        xmlNode = xmlNode.ele(tagName).att("Sequence", index);
+      } else if (index && config.newTag != tagName) {
+        if (index === mainIndex){
+          xmlNode = xmlNode.ele(tagName);
+          console.log(xmlNode.node.nodeName,"ook",index,mainIndex)
+        }else {
+          xmlNode = xmlNode.ele(tagName); 
+          console.log(xmlNode.node.nodeName,"diff",index,mainIndex)
+
+        }       
+      } else
         xmlNode = xmlNode.ele(tagName);
-      }
-    });
+    })
+
     switch (config.selector) {
       case "#phoneNumber":
       case "#cellNo":
@@ -2050,6 +2445,7 @@ function exportElementToXML(config, borrowerPartyNode, hardcodedValue) {
 
       case "#borrowerCitizenship_0":
       case "#coBorrowerCitizenship_1":
+      case "#isCoBorUSCitizenYes":
         document.querySelector(`${config.selector}:checked`) ? xmlNode.txt("USCitizen") : null
         break;
 
@@ -2061,6 +2457,10 @@ function exportElementToXML(config, borrowerPartyNode, hardcodedValue) {
       case "#borrowerCitizenship_3":
       case "#coBorrowerCitizenship_3":
         document.querySelector(`${config.selector}:checked`) ? xmlNode.txt("NonPermanentResidentAlien") : null
+        break;
+
+      case "#isCoBorUSCitizenNo":
+        document.querySelector(`${config.selector}:checked`) ? xmlNode.txt("Unknown") : null
         break;
 
       case "#maritalStatus_1":
@@ -2083,21 +2483,7 @@ function exportElementToXML(config, borrowerPartyNode, hardcodedValue) {
         xmlNode.remove();
         break;
 
-      case "#BGendeMale":
-      case "#BGenderFE":
-      case "#BGenderNotDis":
-        if (!xmlNode.find((c) => c.node.nodeValue) && document.querySelector(`${config.selector}:checked`))
-          xmlNode.txt(config.mismoValue)
-
-        const appMT = document.querySelector(`#bDemoInfo1:checked`) ? "FaceToFace" :
-          document.querySelector(`#bDemoInfo2:checked`) ? "Telephone" :
-            document.querySelector(`#bDemoInfo3:checked`) ? "Fax" :
-              document.querySelector(`#bDemoInfo4:checked`) ? "Email" : "";
-        xmlNode = xmlNode.up()
-        xmlNode.find((c) => c.node.nodeName === `ULAD:ApplicationTakeMethodType`) ? null :
-          xmlNode.ele(`ULAD:ApplicationTakeMethodType`).txt(appMT);
-        break;
-
+      //Borrower HDMA
       case "#PublishBInfoYes":
         if (document.querySelector(`${config.selector}:checked`)) {
           xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("false")
@@ -2138,6 +2524,22 @@ function exportElementToXML(config, borrowerPartyNode, hardcodedValue) {
         }
         break;
 
+      case "#BGendeMale":
+      case "#BGenderFE":
+      case "#BGenderNotDis":
+
+        if (!xmlNode.find((c) => c.node.nodeValue) && document.querySelector(`${config.selector}:checked`))
+          xmlNode.txt(config.mismoValue)
+
+        const appMTBor = document.querySelector(`#bDemoInfo1:checked`) ? "FaceToFace" :
+          document.querySelector(`#bDemoInfo2:checked`) ? "Telephone" :
+            document.querySelector(`#bDemoInfo3:checked`) ? "Fax" :
+              document.querySelector(`#bDemoInfo4:checked`) ? "Email" : "";
+        xmlNode = xmlNode.up()
+        xmlNode.find((c) => c.node.nodeName === `ULAD:ApplicationTakeMethodType`) ? null :
+          xmlNode.ele(`ULAD:ApplicationTakeMethodType`).txt(appMTBor);
+        break;
+
       case "#BRace1":
       case "#BRace2":
       case "#BRace3":
@@ -2147,9 +2549,10 @@ function exportElementToXML(config, borrowerPartyNode, hardcodedValue) {
       case "#BEthnicityH":
       case "#BEthnicityNH":
       case "#BEthnicityND":
+
         if (!xmlNode.find((c) => c.node.nodeValue) && document.querySelector(`${config.selector}:checked`))
           xmlNode.txt(config.mismoValue);
-          
+
         if (config.selector === "#BEthnicityH" && document.querySelector(`#BEthnicityH:checked`)) {
           const ethnicities = document.getElementsByName(`bFiEthnicitySub`)
           ethnicities.forEach(ethnicity => {
@@ -2165,11 +2568,120 @@ function exportElementToXML(config, borrowerPartyNode, hardcodedValue) {
         }
         break;
 
+      //CoBorrower HDMA
+      case "#PublishCBInfo2":
+        if (document.querySelector(`${config.selector}:checked`)) {
+          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("false")
+          xmlNode.ele("HMDAGenderRefusalIndicator").txt("false")
+          xmlNode.ele("HMDARaceRefusalIndicator").txt("false")
+        } else if (document.querySelector(`#PublishCBInfo1:checked`)) {
+          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("true")
+          xmlNode.ele("HMDAGenderRefusalIndicator").txt("true")
+          xmlNode.ele("HMDARaceRefusalIndicator").txt("true")
+        } else {
+          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("")
+          xmlNode.ele("HMDAGenderRefusalIndicator").txt("")
+          xmlNode.ele("HMDARaceRefusalIndicator").txt("")
+        }
+
+        if (document.querySelector(`#CBFiEthnicityYes:checked`)) {
+          xmlNode.ele("HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator").txt("true")
+        } else if (document.querySelector(`#CBFiEthnicityNo:checked`)) {
+          xmlNode.ele("HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator").txt("false")
+        } else {
+          xmlNode.ele("HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator").txt("")
+        }
+
+        if (document.querySelector(`#CBFiGenderYes:checked`)) {
+          xmlNode.ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator").txt("true")
+        } else if (document.querySelector(`#CBFiGenderNo:checked`)) {
+          xmlNode.ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator").txt("false")
+        } else {
+          xmlNode.ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator").txt("")
+        }
+
+        if (document.querySelector(`#CBFiRaceYes:checked`)) {
+          xmlNode.ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator").txt("true")
+        } else if (document.querySelector(`#CBFiRaceNo:checked`)) {
+          xmlNode.ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator").txt("false")
+        } else {
+          xmlNode.ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator").txt("")
+        }
+        break;
+
+      case "#CBGender2":
+      case "#CBGender1":
+      case "#CBGender3":
+
+        if (!xmlNode.find((c) => c.node.nodeValue) && document.querySelector(`${config.selector}:checked`))
+          xmlNode.txt(config.mismoValue)
+
+        const appMTCoBor = document.querySelector(`#CBDDemoInfo1:checked`) ? "FaceToFace" :
+          document.querySelector(`#CBDDemoInfo2:checked`) ? "Telephone" :
+            document.querySelector(`#CBDDemoInfo3:checked`) ? "Fax" :
+              document.querySelector(`#CBDDemoInfo4:checked`) ? "Email" : "";
+        xmlNode = xmlNode.up()
+        xmlNode.find((c) => c.node.nodeName === `ULAD:ApplicationTakeMethodType`) ? null :
+          xmlNode.ele(`ULAD:ApplicationTakeMethodType`).txt(appMTCoBor);
+        break;
+
+      case "#CBRace1":
+      case "#CBRace2":
+      case "#CBRace3":
+      case "#CBRace4":
+      case "#CBRace5":
+      case "#CBRace6":
+      case "#CBEthnicity1":
+      case "#CBEthnicity2":
+      case "#CBEthnicity3":
+
+        if (!xmlNode.find((c) => c.node.nodeValue) && document.querySelector(`${config.selector}:checked`))
+          xmlNode.txt(config.mismoValue);
+
+        if (config.selector === "#CBEthnicity2" && document.querySelector(`#CBEthnicity2:checked`)) {
+          const ethnicitiesCo = document.getElementsByName(`CBEthnicitySub`)
+          ethnicitiesCo.forEach(ethnicity => {
+            if (document.querySelector(`#${ethnicity.id}:checked`)) {
+              const valArrCo = ["Mexican", "PuertoRican", "Cuban", "Other"]
+              xmlNode = xmlNode.up().up().up().up().up().up();
+              xmlNode.ele("HMDA_ETHNICITY_ORIGINS")
+                .ele("HMDA_ETHNICITY_ORIGIN")
+                .ele("HMDAEthnicityOriginType")
+                .txt(valArrCo[ethnicity.value - 1]);
+            }
+          })
+        }
+        break;
+
+      case "#grossIncome1":
+      case "#commissionOrBonus1":
+      case "#militaryIncome1":
+      case "#overtime1":
+      case "#netRental1":
+      case "#netEarnedInterest1":
+      case "#capitalGains1":
+      case "#partnership1":
+      case "#otherHouseHold1":
+      case "#grossIncome2":
+      case "#commissionOrBonus2":
+      // case "#militaryIncome1":
+      case "#overtime2":
+      case "#netRental2":
+      case "#netEarnedInterest2":
+      case "#capitalGains2":
+      case "#partnership2":
+      case "#otherHouseHold2":
+
+        xmlNode.txt(eleVal)
+          .up().ele("IncomeType").txt(config.incomeType)
+          .up().ele("EmploymentIncomeIndicator").txt("true")
+        break;
+
       default:
         xmlNode.txt(hardcodedValue || eleVal);
     }
     if (config.dependency) {
-      xmlNode = borrowerPartyNode;
+      xmlNode = startNode;
       config?.dependency.tag
         .split(" ")
         .forEach(_child => {

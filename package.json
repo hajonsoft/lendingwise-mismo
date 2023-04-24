@@ -12,10 +12,10 @@
   "dependencies": {
     "moment": "^2.29.1",
     "xml2json": "^0.12.0",
-    "xmlbuilder2": "^2.4.0"
+    "xmlbuilder2": "^2.4.1"
   },
   "repository": {
-      "url":"https://github.com/hajonsoft/lendingwise-mismo.git"
+    "url": "https://github.com/hajonsoft/lendingwise-mismo.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@hajonsoft"
