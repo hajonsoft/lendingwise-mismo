@@ -71,6 +71,7 @@ const borrowerConfig = [
     dependency: {
       tag: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_DETAIL ContactPointRoleType",
       value: "Home",
+      duplicate: "CONTACT_POINT_DETAIL",
     },
   },
   {
@@ -90,6 +91,7 @@ const borrowerConfig = [
     dependency: {
       tag: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_DETAIL ContactPointRoleType",
       value: "Mobile",
+      duplicate: "CONTACT_POINT_DETAIL",
     },
   },
   {
@@ -109,6 +111,7 @@ const borrowerConfig = [
     dependency: {
       tag: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_DETAIL ContactPointRoleType",
       value: "Work",
+      duplicate: "CONTACT_POINT_DETAIL",
     },
   },
 
@@ -1394,6 +1397,7 @@ const subjectPropertyConfig = [
   {
     selector: "#propertyAddress",
     value: (node) => getText(node, "AddressLineText"),
+    exportTo: "SUBJECT_PROPERTY ADDRESS AddressLineText"
   },
   // {
   //   selector: "#propertyUnit",
@@ -1402,47 +1406,45 @@ const subjectPropertyConfig = [
   {
     selector: "#propertyCity",
     value: (node) => getText(node, "CityName"),
+    exportTo: "SUBJECT_PROPERTY ADDRESS CityName"
   },
   {
     selector: "#propertyState",
     value: (node) => getText(node, "StateCode"),
+    exportTo: "SUBJECT_PROPERTY ADDRESS StateCode"
   },
   {
     selector: "#propertyZip",
     value: (node) => getText(node, "PostalCode"),
+    exportTo: "SUBJECT_PROPERTY ADDRESS PostalCode"
   },
   {
     selector: "#propertyCountry",
     value: (node) => "US",
+    exportTo: "SUBJECT_PROPERTY ADDRESS CountryCode"
   },
-  // TODO: map property type
+  // TODO: map property type 
   {
     selector: "#propertyType",
     value: (node) => getText(node, "AttachmentType"),
+    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL AttachmentType"
   },
   {
     selector: "#noUnitsOccupied",
     value: (node) => getText(node, "FinancedUnitCount"),
+    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL FinancedUnitCount"
   },
   {
     selector: "#propertyValue",
     value: (node) => getText(node, "PropertyEstimatedValueAmount"),
+    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyEstimatedValueAmount"
   },
   {
     selector: "#presentOccupancy",
     value: (node) => getText(node, "PropertyUsageType"),
+    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyUsageType"
   },
 ];
-let xmlText = "";
-function handleImportChange(e) {
-  let file = e.files[0];
-  var reader = new FileReader();
-  reader.onload = function (e) {
-    xmlText = reader.result;
-    importToPage(reader.result);
-  };
-  reader.readAsText(file);
-}
 
 const adminConfig = [];
 
@@ -1531,24 +1533,27 @@ const assetConfig = [
     selector: "#account",
     value: (asset) =>
       asset.querySelector("assetaccountidentifier")?.textContent || "",
+    exportTo: "ASSET_DETAIL AssetAccountIdentifier",
   },
   {
     selector: "#accountType",
     value: (asset) =>
       getLWAssetType(
-        asset.querySelector("assettype")?.textContent ||
-        asset.querySelector("PurchaseCreditType")?.textContent
-      ),
+        asset.querySelector("assetType")?.textContent ||
+        asset.querySelector("PurchaseCreditType")?.textContent),
+    exportTo: "ASSET_DETAIL AssetType"
   },
   {
     selector: "#nameofInstitution",
     value: (asset) => asset.querySelector("fullname")?.textContent || "",
+    exportTo: "ASSET_HOLDER FullName"
   },
   {
     selector: "#balanceValue",
     value: (asset) =>
       asset.querySelector("assetcashormarketvalueamount")?.textContent ||
       asset.querySelector("PurchaseCreditAmount")?.textContent,
+    exportTo: "ASSET_DETAIL AssetCashOrMarketValueAmount"
   },
 ];
 
@@ -1556,22 +1561,27 @@ const reoConfig = [
   {
     selector: "#schedulePropAddr",
     value: (asset) => asset.querySelector("AddressLineText")?.textContent || "",
+    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS AddressLineText"
   },
   {
     selector: "#schedulePropCity",
     value: (asset) => asset.querySelector("CityName")?.textContent || "",
+    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS CityName"
   },
   {
     selector: "#schedulePropZip",
     value: (asset) => asset.querySelector("PostalCode")?.textContent || "",
+    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS PostalCode"
   },
   {
     selector: "#schedulePropState",
     value: (asset) => asset.querySelector("StateCode")?.textContent || "",
+    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS StateCode"
   },
   {
     selector: "#schedulePropCountry",
     value: () => "US",
+    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS CountryCode"
   },
   {
     selector: "#propType",
@@ -1579,16 +1589,19 @@ const reoConfig = [
       getLWPropertyType(
         asset.querySelector("propcurrentusagetype")?.textContent
       ),
+    exportTo: "OWNED_PROPERTY PROPERTY PROPERTY_DETAIL PropertyCurrentUsageType"
   },
   {
     selector: "#presentMarketValue",
     value: (asset) =>
       asset.querySelector("PropertyEstimatedValueAmount")?.textContent || "",
+    exportTo: "OWNED_PROPERTY PROPERTY PROPERTY_DETAIL PropertyEstimatedValueAmount"
   },
   {
     selector: "#grossRentalIncome",
     value: (asset) =>
       asset.querySelector("OwnedPropertyRentalIncomeNetAmount")?.textContent,
+    exportTo: "OWNED_PROPERTY OWNED_PROPERTY_DETAIL OwnedPropertyRentalIncomeNetAmount"
   },
 ];
 
@@ -1597,6 +1610,7 @@ const currentEmployerConfig = [
     selector: "#occupation1",
     value: (node) =>
       node?.querySelector("EmploymentPositionDescription")?.textContent,
+    exportTo: "EMPLOYER EMPLOYMENT EmploymentPositionDescription"
   },
   {
     selector: "#borrowerHireDate",
@@ -1604,36 +1618,43 @@ const currentEmployerConfig = [
       const hireDate = node?.querySelector("EmploymentStartDate")?.textContent;
       return hireDate ? formatDate(hireDate) : "";
     },
+    exportTo: "EMPLOYER EMPLOYMENT EmploymentStartDate"
   },
   {
     selector: "#employer1",
     value: (employer) =>
       employer?.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
+    exportTo: "EMPLOYER LEGAL_ENTITY LEGAL_ENTITY_DETAIL FullName"
   },
   {
     selector: "#employer1Add",
     value: (employer) =>
       employer?.querySelector("address AddressLineText")?.textContent,
+    exportTo: "EMPLOYER ADDRESS AddressLineText"
   },
   {
     selector: "#employer1City",
     value: (employer) =>
       employer?.querySelector("address CityName")?.textContent,
+    exportTo: "EMPLOYER ADDRESS CityName"
   },
   {
     selector: "#employer1Zip",
     value: (employer) =>
       employer?.querySelector("address PostalCode")?.textContent?.substr(0, 5),
+    exportTo: "EMPLOYER ADDRESS PostalCode"
   },
   {
     selector: "#employer1State",
     value: (employer) =>
       employer?.querySelector("address StateCode")?.textContent,
+    exportTo: "EMPLOYER ADDRESS StateCode"
   },
   {
     selector: "#employerPhone1",
     value: (employer) =>
       employer?.querySelector("ContactPointTelephoneValue")?.textContent,
+    exportTo: "EMPLOYER LEGAL_ENTITY CONTACTS CONTACT CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue"
   },
 ];
 
@@ -1641,32 +1662,38 @@ const prevEmployerConfig = [
   {
     selector: "#AddiontalEmplInfo_{counter}_addOrPrevJob",
     value: () => "previous",
+    exportTo: "EMPLOYER EMPLOYMENT EmploymentStatusType"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_nameOfEmployer",
     value: (employer) =>
       employer?.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
+    exportTo: "EMPLOYER LEGAL_ENTITY LEGAL_ENTITY_DETAIL FullName"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_addrOfEmployer",
     value: (employer) =>
       employer?.querySelector("address AddressLineText")?.textContent,
+    exportTo: "EMPLOYER ADDRESS AddressLineText"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_cityOfEmployer",
     value: (employer) =>
       employer?.querySelector("address CityName")?.textContent,
+    exportTo: "EMPLOYER ADDRESS CityName"
   },
   // Get the correct selector for the zip code and state
   {
     selector: "#AddiontalEmplInfo_{counter}_zipOfEmployer",
     value: (employer) =>
       employer?.querySelector("address PostalCode")?.textContent,
+    exportTo: "EMPLOYER ADDRESS PostalCode"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_stateOfEmployer",
     value: (employer) =>
       employer?.querySelector("address StateCode")?.textContent,
+    exportTo: "EMPLOYER ADDRESS StateCode"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_employedFrom",
@@ -1677,27 +1704,32 @@ const prevEmployerConfig = [
         return formatDate(hireDate);
       }
     },
+    exportTo: "EMPLOYER EMPLOYMENT EmploymentStartDate"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_monthlyIncome",
     value: (employer) =>
       employer?.querySelector("EmploymentMonthlyIncomeAmount")?.textContent,
+    exportTo: "EMPLOYER EMPLOYMENT EmploymentMonthlyIncomeAmount"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_employedByOtherParty",
     value: (employer) =>
       employer?.querySelector("SpecialBorrowerEmployerRelationshipIndicator")
         ?.textContent === "true",
+    exportTo: "EMPLOYER EMPLOYMENT SpecialBorrowerEmployerRelationshipIndicator"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_position",
     value: (employer) =>
       employer?.querySelector("EmploymentPositionDescription")?.textContent,
+    exportTo: "EMPLOYER EMPLOYMENT EmploymentPositionDescription"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_businessPhone",
     value: (employer) =>
       employer?.querySelector("ContactPointTelephoneValue")?.textContent,
+    exportTo: "EMPLOYER LEGAL_ENTITY CONTACTS CONTACT CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue"
   },
 ];
 
@@ -1706,8 +1738,7 @@ const liabilitiesConfig = [
     selector: "#accountNo",
     value: (liability) =>
       liability?.querySelector("LiabilityAccountIdentifier")?.textContent,
-    exportTo: "LIABILITY LIABILITY_DETAIL LiabilityAccountIdentifier",
-    newTag: "LIABILITY"
+    exportTo: "LIABILITY_DETAIL LiabilityAccountIdentifier",
   },
   {
     selector: "#liabilityAccType",
@@ -1715,32 +1746,32 @@ const liabilitiesConfig = [
       getLWLiabilityType(
         liability?.querySelector("LiabilityType")?.textContent
       ),
-    exportTo: "LIABILITY LIABILITY_DETAIL LiabilityType",
+    exportTo: "LIABILITY_DETAIL LiabilityType",
   },
   {
     selector: "#nameAddrOfCompany",
     value: (liability) =>
       liability?.querySelector("LIABILITY_HOLDER FullName")?.textContent,
-    // exportTo: "LIABILITY LIABILITY_DETAIL LIABILITY_HOLDER FullName",
+    exportTo: "LIABILITY_DETAIL LIABILITY_HOLDER FullName",
   },
   {
     selector: "#monthlyPaymentExpenses",
     value: (liability) =>
       liability?.querySelector("LiabilityMonthlyPaymentAmount")?.textContent,
-    // exportTo: "LIABILITY LIABILITY_DETAIL LiabilityMonthlyPaymentAmount",
+    exportTo: "LIABILITY_DETAIL LiabilityMonthlyPaymentAmount",
   },
   {
     selector: "#monthsLeftToPays",
     value: (liability) =>
       liability?.querySelector("LiabilityRemainingTermMonthsCount")
         ?.textContent,
-    // exportTo: "LIABILITY LIABILITY_DETAIL LiabilityRemainingTermMonthsCount",
+    exportTo: "LIABILITY_DETAIL LiabilityRemainingTermMonthsCount",
   },
   {
     selector: "#unpaidBalanceExpenses",
     value: (liability) =>
       liability?.querySelector("LiabilityUnpaidBalanceAmount")?.textContent,
-    // exportTo: "LIABILITY LIABILITY_DETAIL unpaidBalanceExpenses",
+    exportTo: "LIABILITY_DETAIL unpaidBalanceExpenses",
   },
 ];
 const collateralsConfig = [];
@@ -1835,9 +1866,11 @@ function getLWAssetType(assetType, isImport = true) {
     { xml: "Other", dom: "Other" },
   ];
   if (isImport) {
-    return mapping.find((item) => item.xml === assetType);
+    const found = mapping.find((item) => item.xml === assetType);
+    return found ? found.dom : "Other";
   }
-  return mapping.find((item) => item.dom === assetType);
+  const found = mapping.find((item) => item.dom === assetType) || "Other";
+  return found ? found.dom : "Other";
 }
 
 function getLWPropertyType(propType, isImport = true) {
@@ -2052,6 +2085,17 @@ function createEmployerFields(employers) {
   }
 }
 
+let xmlText = "";
+function handleImportChange(e) {
+  let file = e.files[0];
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    xmlText = reader.result;
+    importToPage(reader.result);
+  };
+  reader.readAsText(file);
+}
+
 function publishConfigItems(config, items, selectorFunction) {
   for (let i = 0; i < items.length; i++) {
     setTimeout(() => {
@@ -2260,14 +2304,107 @@ function handleExportClick(e) {
     .up()
     .up();
 
-  const borrowerPartyNode = doc
+  const dealNode = doc
     .ele("DEAL_SETS")
     .ele("DEAL_SET")
     .ele("DEALS")
     .ele("DEAL")
+
+  const borrowerPartyNode = dealNode
     .ele("PARTIES")
     .com("First Borrower")
     .ele("PARTY");
+
+
+  //Assets
+  const assetStartNode = dealNode.com("Assets").ele("ASSETS");
+  const domAssets = document.getElementsByName("accountType[]");
+  for (let i = 0; i < domAssets.length; i++) {
+    const thisNode1 = assetStartNode.ele("ASSET").att("Sequence", i + 1)
+
+    assetConfig.forEach(lConfig => {
+      const thisConfig1 = { ...lConfig, selector: `${lConfig.selector}_${i}` }
+      if (thisConfig1.exportTo) {
+        if (lConfig.selector === "#accountType") {
+          const domAccountType = document.querySelector(thisConfig1.selector);
+          const xmlAccountValue = getLWAssetType(domAccountType.value, false);
+          exportElementToXML(thisConfig1, thisNode1, xmlAccountValue)
+        } else {
+          exportElementToXML(thisConfig1, thisNode1, null)
+        }
+      }
+    });
+  }
+
+  //Assets Real State Owned Properties
+  const domReo = document.getElementsByName("schedulePropAddr[]");
+  for (let i = 0; i < domReo.length; i++) {
+    const thisNode1 = assetStartNode.ele("ASSET").att("Sequence", domAssets.length + i + 1)
+
+    reoConfig.forEach(lConfig => {
+      const thisConfig1 = { ...lConfig, selector: `${lConfig.selector}_${i}` }
+      if (thisConfig1.exportTo) {
+        if (lConfig.selector === "#propType") {
+          const domAccountType = document.querySelector(thisConfig1.selector);
+          const xmlAccountValue = getLWPropertyType(domAccountType.value, false);
+          exportElementToXML(thisConfig1, thisNode1, xmlAccountValue)
+        } else {
+          exportElementToXML(thisConfig1, thisNode1, null)
+        }
+      }
+    });
+  }
+
+  //Collaterals (Subject Property)
+  const subjectNode = dealNode.com("Collateral").ele("COLLATERALS").ele("COLLATERAL");
+
+  subjectPropertyConfig.forEach((config) => {
+    if (!config.exportTo) {
+      return;
+    }
+
+    if (!Array.isArray(config.selector)) {
+      exportElementToXML(config, subjectNode);
+    } else {
+      config.selector.forEach((selector, index) => {
+        const elementChecked = document.querySelector(`${selector}:checked`);
+        if (elementChecked) {
+          exportElementToXML(
+            { ...config, selector },
+            subjectNode,
+            config.exportValues?.[index],
+          );
+        }
+      });
+    }
+  });
+
+
+  //Liabilities
+  const liabilityStartNode = dealNode.com("Liabilities").ele("LIABILITIES");
+  const domLiabilities = document.getElementsByName("liabilityAccType[]");
+  for (let i = 0; i < domLiabilities.length; i++) {
+    const thisNode = liabilityStartNode.ele("LIABILITY").att("Sequence", i + 1)
+
+    liabilitiesConfig.forEach(lConfig => {
+      const thisConfig = { ...lConfig, selector: `${lConfig.selector}_${i + 1}` }
+      if (thisConfig.exportTo) {
+        if (lConfig.selector === "#liabilityAccType") {
+          const domLiabilityType = document.querySelector(thisConfig.selector);
+          const xmlLiabilityValue = getLWLiabilityType(domLiabilityType.value, false);
+          exportElementToXML(thisConfig, thisNode, xmlLiabilityValue)
+        } else if (lConfig.selector === "#accountNo") {
+          const domAccType = document.querySelector(thisConfig.selector);
+          const accFormat = domAccType.value.replace(/[^0-9]/g, "")
+          exportElementToXML(thisConfig, thisNode, accFormat)
+        }
+        else {
+          exportElementToXML(thisConfig, thisNode, null)
+        }
+      }
+    })
+  }
+
 
   // Borrower
   borrowerConfig.forEach((config) => {
@@ -2291,6 +2428,53 @@ function handleExportClick(e) {
     }
   });
 
+  // Employment Info - Borrower
+  const employmentNode = borrowerPartyNode.ele("EMPLOYERS").com("Employers")
+  currentEmployerConfig.forEach((config) => {
+    if (!config.exportTo) {
+      return;
+    }
+
+    if (!Array.isArray(config.selector)) {
+      exportElementToXML(config, employmentNode);
+    } else {
+      config.selector.forEach((selector, index) => {
+        const elementChecked = document.querySelector(`${selector}:checked`);
+        if (elementChecked) {
+          exportElementToXML(
+            { ...config, selector },
+            employmentNode,
+            config.exportValues?.[index],
+          );
+        }
+      });
+    }
+  });
+
+  // Employment Info - Borrower
+  const employmentPrevNode = borrowerPartyNode.ele("EMPLOYERS").com("Employers")
+  prevEmployerConfig.forEach((config) => {
+    if (!config.exportTo) {
+      return;
+    }
+    config.selector = config.selector.replace("{counter}", 1)
+    if (!Array.isArray(config.selector)) {
+      exportElementToXML(config, employmentPrevNode);
+    } else {
+      config.selector.forEach((selector, index) => {
+        const elementChecked = document.querySelector(`${selector}:checked`);
+        if (elementChecked) {
+          exportElementToXML(
+            { ...config, selector },
+            employmentPrevNode,
+            config.exportValues?.[index],
+          );
+        }
+      });
+    }
+  });
+
+  // CoBorrower
   if (document.querySelector("#isCoBorrower").value === "1") {
     const coborrowerPartyNode = borrowerPartyNode.up().com("Second Borrower").ele("PARTY");
     // CoBorrower
@@ -2316,35 +2500,10 @@ function handleExportClick(e) {
     });
   }
 
-  //Liabilities
-  const liabilityStartNode = borrowerPartyNode.up().up().com("Liabilities").ele("LIABILITIES");
-  const liab = document.getElementsByName("liabilityAccType[]");
-  const liabs = [];
-  let newal = [];
-  for (let i = 0; i < liab.length; i++) {
-    newal = liabilitiesConfig.map(tt => {
-      return { ...tt, selector: `${tt.selector}_${i + 1}` }
-    })
-    liabs.push(newal)
-  }
-
-  liabs.forEach((lia, index) => {
-    lia.forEach(config => {
-      if (!config.exportTo) {
-        return;
-      }
-      exportElementToXML(
-        config,
-        liabilityStartNode,
-        null,
-        index + 1,
-      );
-    });
-  })
-
   const xml = doc.end({ prettyPrint: true });
   console.log(xml);
 }
+
 global.handleImportChange = handleImportChange;
 global.handleExportClick = handleExportClick;
 
@@ -2352,7 +2511,7 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
   const element = document.querySelector(config.selector);
   const eleVal = element.value;
   let xmlNode = startNode;
-  let mainIndex = index || null;
+
   if (element) {
     config.exportTo.split(" ").forEach((tagName) => {
       const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
@@ -2360,15 +2519,6 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
         xmlNode = foundNode;
       } else if (index && config.newTag === tagName) {
         xmlNode = xmlNode.ele(tagName).att("Sequence", index);
-      } else if (index && config.newTag != tagName) {
-        if (index === mainIndex){
-          xmlNode = xmlNode.ele(tagName);
-          console.log(xmlNode.node.nodeName,"ook",index,mainIndex)
-        }else {
-          xmlNode = xmlNode.ele(tagName); 
-          console.log(xmlNode.node.nodeName,"diff",index,mainIndex)
-
-        }       
       } else
         xmlNode = xmlNode.ele(tagName);
     })
@@ -2379,6 +2529,7 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
       case "#coBPhoneNumber":
       case "#coBCellNumber":
       case "#coBFax":
+      case "#employerPhone1":
 
         xmlNode.txt(eleVal.replace(/[^0-9]/g, ""));
         break;
@@ -2693,4 +2844,3 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
     }
   }
 }
-
