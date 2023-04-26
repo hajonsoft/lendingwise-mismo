@@ -1356,6 +1356,12 @@ const loanOriginatorConfig = [
       getText(node, "INDIVIDUAL NAME FirstName") +
       " " +
       getText(node, "INDIVIDUAL NAME LastName"),
+    exportTo: "PARTY LEGAL_ENTITY LEGAL_ENTITY_DETAIL FullName",
+    newTag: "PARTY",
+    dependency: {
+      tag: "PARTY ROLES ROLE ROLE_DETAIL PartyRoleType",
+      value: "LoanOriginationCompany"
+    }
   },
   {
     selector: "#loOriginatorEmail",
@@ -1392,6 +1398,7 @@ const loanOriginatorConfig = [
         getText(filtered?.[0], "PostalCode")
       );
     },
+    exportTo: "PARTY ADDRESSES ADDRESS AddressLineText",
   },
 ];
 
@@ -1664,38 +1671,38 @@ const prevEmployerConfig = [
   {
     selector: "#AddiontalEmplInfo_{counter}_addOrPrevJob",
     value: () => "previous",
-    exportTo: "EMPLOYER EMPLOYMENT EmploymentStatusType"
+    exportTo: "EMPLOYMENT EmploymentStatusType"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_nameOfEmployer",
     value: (employer) =>
       employer?.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
-    exportTo: "EMPLOYER LEGAL_ENTITY LEGAL_ENTITY_DETAIL FullName"
+    exportTo: "LEGAL_ENTITY LEGAL_ENTITY_DETAIL FullName"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_addrOfEmployer",
     value: (employer) =>
       employer?.querySelector("address AddressLineText")?.textContent,
-    exportTo: "EMPLOYER ADDRESS AddressLineText"
+    exportTo: "ADDRESS AddressLineText"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_cityOfEmployer",
     value: (employer) =>
       employer?.querySelector("address CityName")?.textContent,
-    exportTo: "EMPLOYER ADDRESS CityName"
+    exportTo: "ADDRESS CityName"
   },
   // Get the correct selector for the zip code and state
   {
     selector: "#AddiontalEmplInfo_{counter}_zipOfEmployer",
     value: (employer) =>
       employer?.querySelector("address PostalCode")?.textContent,
-    exportTo: "EMPLOYER ADDRESS PostalCode"
+    exportTo: "ADDRESS PostalCode"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_stateOfEmployer",
     value: (employer) =>
       employer?.querySelector("address StateCode")?.textContent,
-    exportTo: "EMPLOYER ADDRESS StateCode"
+    exportTo: "ADDRESS StateCode"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_employedFrom",
@@ -1706,32 +1713,32 @@ const prevEmployerConfig = [
         return formatDate(hireDate);
       }
     },
-    exportTo: "EMPLOYER EMPLOYMENT EmploymentStartDate"
+    exportTo: "EMPLOYMENT EmploymentStartDate"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_monthlyIncome",
     value: (employer) =>
       employer?.querySelector("EmploymentMonthlyIncomeAmount")?.textContent,
-    exportTo: "EMPLOYER EMPLOYMENT EmploymentMonthlyIncomeAmount"
+    exportTo: "EMPLOYMENT EmploymentMonthlyIncomeAmount"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_employedByOtherParty",
     value: (employer) =>
       employer?.querySelector("SpecialBorrowerEmployerRelationshipIndicator")
         ?.textContent === "true",
-    exportTo: "EMPLOYER EMPLOYMENT SpecialBorrowerEmployerRelationshipIndicator"
+    exportTo: "EMPLOYMENT SpecialBorrowerEmployerRelationshipIndicator"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_position",
     value: (employer) =>
       employer?.querySelector("EmploymentPositionDescription")?.textContent,
-    exportTo: "EMPLOYER EMPLOYMENT EmploymentPositionDescription"
+    exportTo: "EMPLOYMENT EmploymentPositionDescription"
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_businessPhone",
     value: (employer) =>
       employer?.querySelector("ContactPointTelephoneValue")?.textContent,
-    exportTo: "EMPLOYER LEGAL_ENTITY CONTACTS CONTACT CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue"
+    exportTo: "LEGAL_ENTITY CONTACTS CONTACT CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue"
   },
 ];
 
@@ -2338,7 +2345,7 @@ function handleExportClick(e) {
     });
   }
 
-  //Assets Real State Owned Properties
+  //Assets Real Estate Owned Properties
   const domReo = document.getElementsByName("schedulePropAddr[]");
   for (let i = 0; i < domReo.length; i++) {
     const thisNode1 = assetStartNode.ele("ASSET").att("Sequence", domAssets.length + i + 1)
@@ -2431,7 +2438,7 @@ function handleExportClick(e) {
   });
 
   // Employment Info - Borrower
-  const employmentNode = borrowerPartyNode.ele("EMPLOYERS").com("Employers")
+  const employmentNode = borrowerPartyNode.com("Employers").ele("EMPLOYERS")
   currentEmployerConfig.forEach((config) => {
     if (!config.exportTo) {
       return;
@@ -2453,28 +2460,34 @@ function handleExportClick(e) {
     }
   });
 
-  // Employment Info - Borrower
-  const employmentPrevNode = borrowerPartyNode.ele("EMPLOYERS").com("Employers")
-  prevEmployerConfig.forEach((config) => {
-    if (!config.exportTo) {
-      return;
-    }
-    config.selector = config.selector.replace("{counter}", 1)
-    if (!Array.isArray(config.selector)) {
-      exportElementToXML(config, employmentPrevNode);
-    } else {
-      config.selector.forEach((selector, index) => {
-        const elementChecked = document.querySelector(`${selector}:checked`);
-        if (elementChecked) {
-          exportElementToXML(
-            { ...config, selector },
-            employmentPrevNode,
-            config.exportValues?.[index],
-          );
-        }
-      });
-    }
-  });
+  // Prev Employment Info - Borrower
+  const employmentPrevNode = borrowerPartyNode.com("Prev Employers").ele("EMPLOYERS")
+  const preEmploymentArr = document.querySelectorAll('input[id$="nameOfEmployer"][id^="AddiontalEmplInfo"]');
+  for (let i = 0; i < preEmploymentArr.length; i++) {
+    const thisNode = employmentPrevNode.ele("EMPLOYER").att("Sequence", i + 1)
+
+    prevEmployerConfig.forEach((config) => {
+      if (!config.exportTo) {
+        return;
+      }
+
+      config = { ...config, selector: config.selector.replace("{counter}", i + 1) }
+
+      if ((config.selector.match("#AddiontalEmplInfo")) && (config.selector.match("employedByOtherParty"))) {
+        const empIndicator = document.querySelector(`${config.selector}:checked`);
+        empIndicator ? exportElementToXML(config, thisNode, "true") : exportElementToXML(config, thisNode, "false");
+
+      } else if ((config.selector.match("#AddiontalEmplInfo")) && (config.selector.match("businessPhone"))) {
+        const phoneValue = document.querySelector(config.selector).value;
+        const empPhone = phoneValue.substr(0,phoneValue.search("Ext"))
+        const empPhoneformated = empPhone.replace(/[^0-9]/g,"")
+        exportElementToXML(config, thisNode, empPhoneformated) 
+
+      } else
+        exportElementToXML(config, thisNode);
+
+    });
+  }
 
   // CoBorrower
   if (document.querySelector("#isCoBorrower").value === "1") {
@@ -2500,7 +2513,29 @@ function handleExportClick(e) {
         });
       }
     });
-  }
+  };
+
+
+  // borrowerPartyNode.com("Loan Organization")
+  loanOriginatorConfig.forEach((config) => {
+    if (!config.exportTo) {
+      return;
+    }
+    if (!Array.isArray(config.selector)) {
+      exportElementToXML(config, borrowerPartyNode);
+    } else {
+      config.selector.forEach((selector, index) => {
+        const elementChecked = document.querySelector(`${selector}:checked`);
+        if (elementChecked) {
+          exportElementToXML(
+            { ...config, selector },
+            borrowerPartyNode,
+            config.exportValues?.[index],
+          );
+        }
+      });
+    }
+  });
 
   const xml = doc.end({ prettyPrint: true });
   console.log(xml);
@@ -2511,16 +2546,16 @@ global.handleExportClick = handleExportClick;
 
 function exportElementToXML(config, startNode, hardcodedValue, index) {
   const element = document.querySelector(config.selector);
-  const eleVal = element.value;
   let xmlNode = startNode;
 
   if (element) {
+    const eleVal = element.value;
     config.exportTo.split(" ").forEach((tagName) => {
       const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
       if (foundNode && config?.newTag != tagName) {
         xmlNode = foundNode;
-      } else if (index && config.newTag === tagName) {
-        xmlNode = xmlNode.ele(tagName).att("Sequence", index);
+        // } else if (index && config.newTag === tagName) {
+        //   xmlNode = xmlNode.ele(tagName).att("Sequence", index);
       } else
         xmlNode = xmlNode.ele(tagName);
     })
