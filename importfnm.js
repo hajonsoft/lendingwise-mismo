@@ -455,7 +455,7 @@ const borrowerConfig = [
       "#famBizAffilYes",
       "#famBizAffilNo",
     ],
-    value: (node) => getText(node, `ULAD:SpecialBorrowerSellerRelationshipIndicator`) === "Yes",
+    value: (node) => getText(node, `ULADSpecialBorrowerSellerRelationshipIndicator`) === "Yes",
     exportTo: `ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL EXTENSION OTHER ULAD:DECLARATION_DETAIL_EXTENSION ULAD:SpecialBorrowerSellerRelationshipIndicator`,
   },
   {
@@ -1433,8 +1433,8 @@ const subjectPropertyConfig = [
   // TODO: map property type 
   {
     selector: "#propertyType",
-    value: (node) => getText(node, "AttachmentType"),
-    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL AttachmentType"
+    value: (node) => getText(node, "PropertyUsageType"),
+    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyUsageType"
   },
   {
     selector: "#noUnitsOccupied",
@@ -1448,8 +1448,8 @@ const subjectPropertyConfig = [
   },
   {
     selector: "#presentOccupancy",
-    value: (node) => getText(node, "PropertyUsageType"),
-    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyUsageType"
+    value: (node) => getText(node, "PropertyCurrentUsageType"),
+    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyCurrentUsageType"
   },
 ];
 
@@ -1897,6 +1897,22 @@ function getLWPropertyType(propType, isImport = true) {
   return found ? found.xml : "Other";
 }
 
+function getLWSubjPropertyType(propType, isImport = true) {
+  const mapping = [
+    { xml: "PrimaryResidence", dom: "1" },
+    { xml: "Investment", dom: "77" },
+    { xml: "Other", dom: "Other" },
+  ];
+
+  if (isImport) {
+    const found = mapping.find((item) => item.xml === propType);
+    return found ? found.dom : "Other";
+  }
+
+  const found = mapping.find((item) => item.dom === propType);
+  return found ? found.xml : "Other";
+}
+
 function getLWOccupancy(propType, isImport = true) {
   const mapping = [
     { xml: "BorrowerPrimaryHome", dom: "Owner Occupied" },
@@ -2050,7 +2066,9 @@ function createAssetFields(assets) {
   for (let i = 0; i < assets.length - 1; i++) {
     setTimeout(() => {
       const addNewSelector = `#financeAndSecuritie${i === 0 ? "" : "_" + i
-        } > div:nth-child(4) > div:nth-child(5) > div > span > a.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
+        } > div:nth-child(4) > div:nth-child(6) > div > span > span.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass.cursor-pointer`;
+        // span.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
+        // btn btn-sm btn-success btn-text-primary  btn-icon ml-2 tooltipClass cursor-pointer
       document.querySelector(addNewSelector)?.click();
     }, 1000 * i);
   }
@@ -2371,7 +2389,12 @@ function handleExportClick(e) {
     }
 
     if (!Array.isArray(config.selector)) {
-      exportElementToXML(config, subjectNode);
+      if (config.selector === "#propertyType" || config.selector === "#presentOccupancy") {
+        const domAccountType = document.querySelector(config.selector);
+        const xmlAccountValue = getLWSubjPropertyType(domAccountType.value, false);
+        exportElementToXML(config, subjectNode, xmlAccountValue);
+      } else
+        exportElementToXML(config, subjectNode);
     } else {
       config.selector.forEach((selector, index) => {
         const elementChecked = document.querySelector(`${selector}:checked`);
