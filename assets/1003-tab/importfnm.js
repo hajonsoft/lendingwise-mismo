@@ -2479,9 +2479,9 @@ function handleExportClick(e) {
 
       } else if ((config.selector.match("#AddiontalEmplInfo")) && (config.selector.match("businessPhone"))) {
         const phoneValue = document.querySelector(config.selector).value;
-        const empPhone = phoneValue.substr(0,phoneValue.search("Ext"))
-        const empPhoneformated = empPhone.replace(/[^0-9]/g,"")
-        exportElementToXML(config, thisNode, empPhoneformated) 
+        const empPhone = phoneValue.substr(0, phoneValue.search("Ext"))
+        const empPhoneformated = empPhone.replace(/[^0-9]/g, "")
+        exportElementToXML(config, thisNode, empPhoneformated)
 
       } else
         exportElementToXML(config, thisNode);
@@ -2539,6 +2539,14 @@ function handleExportClick(e) {
 
   const xml = doc.end({ prettyPrint: true });
   console.log(xml);
+  var a = document.createElement("a");
+  blob = new Blob([doc], { type: "application/xml" }),
+    url = window.URL.createObjectURL(blob);
+  a.href = url;
+  a.download = "mismoExport";
+  a.click();
+  window.URL.revokeObjectURL(url);
+  return true
 }
 
 global.handleImportChange = handleImportChange;
