@@ -1787,18 +1787,21 @@ const loansConfig = [
     selector: "#loanNumber",
     type: "text",
     value: (data) => data?.querySelector("LoanIdentifier")?.textContent,
+    exportTo: "LOAN LOAN_IDENTIFIERS LOAN_IDENTIFIER LoanIdentifier"
   },
   {
-    selector: "amortizationTypeFixed",
+    selector: "#amortizationTypeFixed",
     type: "radio",
     value: (data) =>
       data?.querySelector("AmortizationType")?.textContent === "Fixed",
+    exportTo: "LOAN AMORTIZATION AMORTIZATION_RULE AmortizationType"
   },
   {
-    selector: "amortizationTypeAdjust",
+    selector: "#amortizationTypeAdjust",
     type: "radio",
     value: (data) =>
       data?.querySelector("AmortizationType")?.textContent !== "Adjustable",
+    exportTo: "LOAN AMORTIZATION AMORTIZATION_RULE AmortizationType"
   },
   {
     selector: "#lien1Terms",
@@ -1814,6 +1817,7 @@ const loansConfig = [
       }
       return period;
     },
+    exportTo: "LOAN LOAN_IDENTIFIERS LOAN_IDENTIFIER LoanAmortizationPeriodCount"
   },
   {
     selector: "#otherMortgage1",
@@ -2402,7 +2406,6 @@ function handleExportClick(e) {
     }
   });
 
-
   //Liabilities
   const liabilityStartNode = dealNode.com("Liabilities").ele("LIABILITIES");
   const domLiabilities = document.getElementsByName("liabilityAccType[]");
@@ -2428,10 +2431,26 @@ function handleExportClick(e) {
     })
   }
 
+  //Loans
+  const loansStartNode = dealNode.com("Loans").ele("LOANS");
+  loansConfig.forEach((config) => {
+    if (!config.exportTo) {
+      return;
+    }
+    const amorType = document.querySelector(`${config.selector}:checked`)
+    if (config.selector === "#amortizationTypeFixed")
+      amorType ? exportElementToXML(config, loansStartNode) : null;
+    else if (config.selector === "#amortizationTypeAdjust")
+      amorType ? exportElementToXML(config, loansStartNode, "AdjustableRate") : null;
+    else
+      exportElementToXML(config, loansStartNode);
+  });
+
+
   const borrowerPartyNode = dealNode
-  .ele("PARTIES")
-  .com("First Borrower")
-  .ele("PARTY");
+    .ele("PARTIES")
+    .com("First Borrower")
+    .ele("PARTY");
 
   // Borrower
   borrowerConfig.forEach((config) => {
@@ -2894,6 +2913,16 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
       case "#occupation1":
         xmlNode.txt(eleVal)
           .up().ele("EmploymentStatusType").txt("Current")
+        break;
+
+      case "#lien1Terms":
+        const period = document.querySelector(config.selector).value;
+        if (period) 
+        xmlNode.txt(period.replace(/[^0-9]/gi, ""));
+
+        const periodType = period.match(/day|month|year|quarter|week/i);
+        if (periodType)  
+        xmlNode.up().ele("LoanAmortizationPeriodType").txt(periodType[0]); 
         break;
 
       default:
