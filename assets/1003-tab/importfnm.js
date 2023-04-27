@@ -1548,7 +1548,7 @@ const assetConfig = [
     selector: "#accountType",
     value: (asset) =>
       getLWAssetType(
-        asset.querySelector("assetType")?.textContent ||
+        asset.querySelector("AssetType")?.textContent ||
         asset.querySelector("PurchaseCreditType")?.textContent),
     exportTo: "ASSET_DETAIL AssetType"
   },
@@ -1878,8 +1878,8 @@ function getLWAssetType(assetType, isImport = true) {
     const found = mapping.find((item) => item.xml === assetType);
     return found ? found.dom : "Other";
   }
-  const found = mapping.find((item) => item.dom === assetType) || "Other";
-  return found ? found.dom : "Other";
+  const found = mapping.find((item) => item.dom === assetType);
+  return found ? found.xml : "Other";
 }
 
 function getLWPropertyType(propType, isImport = true) {
@@ -2069,8 +2069,8 @@ function createAssetFields(assets) {
     setTimeout(() => {
       const addNewSelector = `#financeAndSecuritie${i === 0 ? "" : "_" + i
         } > div:nth-child(4) > div:nth-child(6) > div > span > span.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass.cursor-pointer`;
-        // span.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
-        // btn btn-sm btn-success btn-text-primary  btn-icon ml-2 tooltipClass cursor-pointer
+      // span.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
+      // btn btn-sm btn-success btn-text-primary  btn-icon ml-2 tooltipClass cursor-pointer
       document.querySelector(addNewSelector)?.click();
     }, 1000 * i);
   }
@@ -2123,37 +2123,6 @@ function handleImportChange(e) {
   reader.readAsText(file);
 }
 
-function publishConfigItems(config, items, selectorFunction) {
-  for (let i = 0; i < items.length; i++) {
-    setTimeout(() => {
-      const item = items[i];
-      for (const configItem of config) {
-        let selector;
-        if (selectorFunction) {
-          selector = selectorFunction(i, configItem.selector);
-        } else {
-          selector = `${configItem.selector}_${i}`;
-        }
-        const value = configItem.value(item);
-        if (!value) continue;
-        const type = configItem.type ?? "text";
-        console.log(item, selector, value, type);
-        const element = document.querySelector(selector);
-        if (element) {
-          if (type === "text") {
-            element.value = value;
-          } else if (type === "select") {
-            element.value = value;
-            element.dispatchEvent(new Event("change"));
-          }
-        } else {
-          console.log("element not found", selector);
-        }
-      }
-    }, 1000 * i);
-  }
-}
-
 function importToPage(fnmFile) {
   attachXml(fnmFile);
   const borrower = getBorrowerParty();
@@ -2198,24 +2167,22 @@ function importToPage(fnmFile) {
   }
 
   const assets = getAssets();
-
   createAssetFields(assets);
   publishConfigItems(assetConfig, assets);
+  publishConfig(assetsConfig, assets);
+
   // Employers
   const employers = getEmployers(borrower);
   const currentEmployer = employers.filter(
-    (employer) => getText(employer, "EmploymentStatusType") === "Current"
-  )[0];
+    (employer) => getText(employer, "EmploymentStatusType") === "Current")[0];
   const previousEmployers = employers.filter(
-    (employer) => getText(employer, "EmploymentStatusType") !== "Current"
-  );
+    (employer) => getText(employer, "EmploymentStatusType") !== "Current");
   createEmployerFields(employers);
   publishConfig(currentEmployerConfig, currentEmployer);
   publishConfigItems(prevEmployerConfig, previousEmployers, (i, selector) =>
     selector.replace("{counter}", i + 1)
   );
 
-  publishConfig(assetsConfig, assets);
   const loan = getLoan();
   publishConfig(loansConfig, loan);
 
@@ -2233,6 +2200,37 @@ function attachXml(fnmFile) {
     "#loanModForm > div.borrowerInfoSection > div > div.card-header.card-header-tabs-line.bg-gray-100 > div.card-title > h3"
   ).parentElement;
   parentElem.insertBefore(divElement, parentElem.firstChild);
+}
+
+function publishConfigItems(config, items, selectorFunction) {
+  for (let i = 0; i < items.length; i++) {
+    setTimeout(() => {
+      const item = items[i];
+      for (const configItem of config) {
+        let selector;
+        if (selectorFunction) {
+          selector = selectorFunction(i, configItem.selector);
+        } else {
+          selector = `${configItem.selector}_${i}`;
+        }
+        const value = configItem.value(item);
+        if (!value) continue;
+        const type = configItem.type ?? "text";
+        const element = document.querySelector(selector);
+        console.log(item, selector, value, type);
+        if (element) {
+          if (type === "text") {
+            element.value = value;
+          } else if (type === "select") {
+            element.value = value;
+            element.dispatchEvent(new Event("change"));
+          }
+        } else {
+          console.log("element not found", selector);
+        }
+      }
+    }, 1000 * i);
+  }
 }
 
 function publishConfig(config, data) {
@@ -2337,11 +2335,6 @@ function handleExportClick(e) {
     .ele("DEALS")
     .ele("DEAL")
 
-  const borrowerPartyNode = dealNode
-    .ele("PARTIES")
-    .com("First Borrower")
-    .ele("PARTY");
-
 
   //Assets
   const assetStartNode = dealNode.com("Assets").ele("ASSETS");
@@ -2437,6 +2430,10 @@ function handleExportClick(e) {
     })
   }
 
+  const borrowerPartyNode = dealNode
+  .ele("PARTIES")
+  .com("First Borrower")
+  .ele("PARTY");
 
   // Borrower
   borrowerConfig.forEach((config) => {
@@ -2894,6 +2891,11 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
         xmlNode.txt(eleVal)
           .up().ele("IncomeType").txt(config.incomeType)
           .up().ele("EmploymentIncomeIndicator").txt("true")
+        break;
+
+      case "#occupation1":
+        xmlNode.txt(eleVal)
+          .up().ele("EmploymentStatusType").txt("Current")
         break;
 
       default:
