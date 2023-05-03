@@ -31,7 +31,7 @@
   "resolved" "https://registry.npmjs.org/@oozcitak/util/-/util-8.3.8.tgz"
   "version" "8.3.8"
 
-"@types/node@14.6.2":
+"@types/node@*":
   "integrity" "sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-14.6.2.tgz"
   "version" "14.6.2"
@@ -143,13 +143,13 @@
     "joi" "^13.1.2"
     "node-expat" "^2.3.18"
 
-"xmlbuilder2@^2.4.0":
-  "integrity" "sha512-KrOVUGD65xTQ7ZA+GMQGdBSpe1Ufu5ylCQSYVk6QostySDkxPmAQ0WWIu7dR3JjLfVbF22RFQX7KyrZ6VTLcQg=="
-  "resolved" "https://registry.npmjs.org/xmlbuilder2/-/xmlbuilder2-2.4.0.tgz"
-  "version" "2.4.0"
+"xmlbuilder2@^2.4.1":
+  "integrity" "sha512-vliUplZsk5vJnhxXN/mRcij/AE24NObTUm/Zo4vkLusgayO6s3Et5zLEA14XZnY1c3hX5o1ToR0m0BJOPy0UvQ=="
+  "resolved" "https://registry.npmjs.org/xmlbuilder2/-/xmlbuilder2-2.4.1.tgz"
+  "version" "2.4.1"
   dependencies:
     "@oozcitak/dom" "1.15.8"
     "@oozcitak/infra" "1.0.8"
     "@oozcitak/util" "8.3.8"
-    "@types/node" "14.6.2"
+    "@types/node" "*"
     "js-yaml" "3.14.0"

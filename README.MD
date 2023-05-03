@@ -40,6 +40,7 @@ https://www.youtube.com/watch?v=-3LGsHOSTec
 
 npm i -g browserify
 browserify index.js -o build/lw_mismo_converter.js
+browserify importfnm.js -o assets/1003-tab/importfnm.js
 
 Learning resources
 https://singlefamily.fanniemae.com/learning-center/uniform-residential-loan-application
@@ -64,3 +65,10 @@ update package.json (name, repository, registry)
 npm login --registry https://npm.pkg.github.com  
 login with hajonsoft and a token ex. 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
 npm publish
+
+# Test strategy
+For all dave-comments files test using the following 
+1- Import a file
+2- Export the same file
+3- Compare the original file with the exported file, save both of them to a separate folder
+
