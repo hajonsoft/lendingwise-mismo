@@ -2114,23 +2114,15 @@ function createEmployerFields(employers) {
   }
 }
 
-let xmlText = "";
-function handleImportChange(e) {
-  let file = e.files[0];
-  var reader = new FileReader();
-  reader.onload = function (e) {
-    xmlText = reader.result;
-    importToPage(reader.result);
-  };
-  reader.readAsText(file);
-}
-
 function importToPage(fnmFile) {
   attachXml(fnmFile);
+
+  //Borrower
   const borrower = getBorrowerParty();
   publishConfig(borrowerConfig, borrower);
   publishConfig(moreBorrowerConfig, borrower);
 
+  //Co-Borrower
   const coBorrower = getCoBorrowerParty();
   if (coBorrower) {
     document.querySelector("#isCoBo").click();
@@ -2138,26 +2130,43 @@ function importToPage(fnmFile) {
     publishConfig(moreCoBorrowerConfig, coBorrower);
   }
 
+  //Loan Originator
   const loanOriginator = getLoanOriginatorParty();
   publishConfig(loanOriginatorConfig, loanOriginator);
 
-  const reos = getREO();
-  createReoFields(reos);
-  publishConfigItems(reoConfig, reos);
+  //Loan
+  const loan = getLoan();
+  publishConfig(loansConfig, loan);
 
+  //Subject Property
+  const subjectProperty = getSubjectProperty();
+  publishConfig(subjectPropertyConfig, subjectProperty);
+
+  const assets = getAssets();
+  const reos = getREO();
   const liabilities = getLiabilities();
+  const employers = getEmployers(borrower);
+  var duration = Math.max(employers.length || 0, assets.length || 0, liabilities.length || 0, reos.length || 0)
+
+  //Real Estate Owned
+  createReoFields(reos);
+  publishConfigItems(reoConfig, reos, null, duration);
+
+  //Liabilities
   createLiabilityFields(liabilities);
   publishConfigItems(
     liabilitiesConfig,
     liabilities,
-    (i, selector) => `${selector}_${i + 1}`
-  );
+    (i, selector) => `${selector}_${i + 1}`,
+    duration);
 
+  //collaterals
   const collaterals = getCollaterals();
   if (collaterals.length > 0) {
     const yesElement = document.querySelector("#isBlanketLoanMirrorYes");
     if (yesElement) {
       yesElement.click();
+      createAssetFields(assets);
       document.querySelector("#noOfPropertiesAcquiring_mirror").value =
         collaterals.length;
     }
@@ -2168,28 +2177,38 @@ function importToPage(fnmFile) {
     }
   }
 
-  const assets = getAssets();
-  createAssetFields(assets);
-  publishConfigItems(assetConfig, assets);
+  //Assets
+  publishConfigItems(assetConfig, assets, null, duration);
   publishConfig(assetsConfig, assets);
 
   // Employers
-  const employers = getEmployers(borrower);
   const currentEmployer = employers.filter(
     (employer) => getText(employer, "EmploymentStatusType") === "Current")[0];
   const previousEmployers = employers.filter(
     (employer) => getText(employer, "EmploymentStatusType") !== "Current");
   createEmployerFields(employers);
   publishConfig(currentEmployerConfig, currentEmployer);
-  publishConfigItems(prevEmployerConfig, previousEmployers, (i, selector) =>
-    selector.replace("{counter}", i + 1)
+  publishConfigItems(prevEmployerConfig,
+    previousEmployers,
+    (i, selector) => selector.replace("{counter}", i + 1),
+    duration
   );
+}
 
-  const loan = getLoan();
-  publishConfig(loansConfig, loan);
+let xmlText = "";
 
-  const subjectProperty = getSubjectProperty();
-  publishConfig(subjectPropertyConfig, subjectProperty);
+function handleImportChange(e) {
+  let file = e.files[0];
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    xmlText = reader.result;
+    document.querySelector("#importAlert").style.display = "block"
+    document.querySelector("#importAlert").style.color = "white"
+    document.querySelector("#importAlert").innerHTML = "Importing ... Please wait"
+    document.querySelector("#importAlert").style.backgroundColor = "red"
+    importToPage(reader.result)
+  }
+  reader.readAsText(file)
 }
 
 function attachXml(fnmFile) {
@@ -2204,7 +2223,7 @@ function attachXml(fnmFile) {
   parentElem.insertBefore(divElement, parentElem.firstChild);
 }
 
-function publishConfigItems(config, items, selectorFunction) {
+function publishConfigItems(config, items, selectorFunction, duration) {
   for (let i = 0; i < items.length; i++) {
     setTimeout(() => {
       const item = items[i];
@@ -2230,6 +2249,19 @@ function publishConfigItems(config, items, selectorFunction) {
         } else {
           console.log("element not found", selector);
         }
+      }
+      if (i + 1 == items.length && i + 1 == duration) {
+        setTimeout(() => {
+          document.querySelector("#importAlert").innerHTML = "Completed."
+          document.querySelector("#importAlert").style.backgroundColor = "#16ff54"
+          document.querySelector("#importAlert").style.color = "black"
+          document.querySelector("#importAlert").style.borderStyle = "none"
+          console.log('📢 [importfnm.js:2263]', "Importing Finished.");
+        }, 1000);
+        setTimeout(() => {
+          document.querySelector("#importAlert").style.display = "none"
+        }, 3000)
+        
       }
     }, 1000 * i);
   }
@@ -2595,6 +2627,8 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
 
   if (element) {
     const eleVal = element.value;
+    // console.log(config.selector);
+    // console.log(config.exportTo);
     config.exportTo.split(" ").forEach((tagName) => {
       const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
       if (foundNode && config?.newTag != tagName) {
@@ -2917,12 +2951,12 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
 
       case "#lien1Terms":
         const period = document.querySelector(config.selector).value;
-        if (period) 
-        xmlNode.txt(period.replace(/[^0-9]/gi, ""));
+        if (period)
+          xmlNode.txt(period.replace(/[^0-9]/gi, ""));
 
         const periodType = period.match(/day|month|year|quarter|week/i);
-        if (periodType)  
-        xmlNode.up().ele("LoanAmortizationPeriodType").txt(periodType[0]); 
+        if (periodType)
+          xmlNode.up().ele("LoanAmortizationPeriodType").txt(periodType[0]);
         break;
 
       default:
