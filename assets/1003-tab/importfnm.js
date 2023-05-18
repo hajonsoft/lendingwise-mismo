@@ -2204,10 +2204,11 @@ function handleImportChange(e) {
   var reader = new FileReader();
   reader.onload = function (e) {
     xmlText = reader.result;
+    // document.querySelector("#importAlert").style.display = "block"
+    // document.querySelector("#importAlert").style.color = "white"
+    // document.querySelector("#importAlert").innerHTML = "Importing ... Please wait"
+    // document.querySelector("#importAlert").style.backgroundColor = "red"
     document.querySelector("#importAlert").style.display = "block"
-    document.querySelector("#importAlert").style.color = "white"
-    document.querySelector("#importAlert").innerHTML = "Importing ... Please wait"
-    document.querySelector("#importAlert").style.backgroundColor = "red"
     importToPage(reader.result)
   }
   reader.readAsText(file)
@@ -2254,14 +2255,17 @@ function publishConfigItems(config, items, selectorFunction, duration) {
       }
       if (i + 1 == items.length && i + 1 == duration) {
         setTimeout(() => {
-          document.querySelector("#importAlert").innerHTML = "Completed."
-          document.querySelector("#importAlert").style.backgroundColor = "#16ff54"
-          document.querySelector("#importAlert").style.color = "black"
-          document.querySelector("#importAlert").style.borderStyle = "none"
+          // document.querySelector("#importAlert").innerHTML = "Completed."
+          // document.querySelector("#importAlert").style.backgroundColor = "#16ff54"
+          // document.querySelector("#importAlert").style.color = "black"
+          // document.querySelector("#importAlert").style.borderStyle = "none"
+          document.querySelector("#importAlert").style.display = "none"
+          document.querySelector("#importAlertf").style.display = "block"
+          
           console.log('📢 [importfnm.js:2263]', "Importing Finished.");
         }, 1000);
         setTimeout(() => {
-          document.querySelector("#importAlert").style.display = "none"
+          document.querySelector("#importAlertf").style.display = "none"
         }, 3000)
         
       }
