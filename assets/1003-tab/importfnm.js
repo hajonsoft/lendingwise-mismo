@@ -7,36 +7,6 @@ const debug = false;
 
 const borrowerConfig = [
   {
-    selector: "#borrowerFName",
-    value: (node) => getText(node, "INDIVIDUAL NAME FirstName"),
-    exportTo: "INDIVIDUAL NAME FirstName",
-  },
-  {
-    selector: "#borrowerLName",
-    value: (node) => getText(node, "INDIVIDUAL NAME LastName"),
-    exportTo: "INDIVIDUAL NAME LastName",
-  },
-  {
-    selector: "#borrowerMName",
-    value: (node) => getText(node, "INDIVIDUAL NAME MiddleName"),
-    exportTo: "INDIVIDUAL NAME MiddleName",
-  },
-  {
-    selector: "#alternateFName_1",
-    value: (node) => getText(node, "INDIVIDUAL ALIAS FirstName"),
-    exportTo: "INDIVIDUAL ALIASES ALIAS NAME FirstName",
-  },
-  {
-    selector: "#alternateLName_1",
-    value: (node) => getText(node, "INDIVIDUAL ALIAS LastName"),
-    exportTo: "INDIVIDUAL ALIASES ALIAS NAME LastName",
-  },
-  {
-    selector: "#alternateMName_1",
-    value: (node) => getText(node, "INDIVIDUAL ALIAS MiddleName"),
-    exportTo: "INDIVIDUAL ALIASES ALIAS NAME MiddelName",
-  },
-  {
     selector: "#ssn",
     value: (node) =>
       getText(
@@ -69,9 +39,9 @@ const borrowerConfig = [
     },
     exportTo:
       "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
-    newTag: "CONTACT_POINT_TELEPHONE",
+    newTag: "CONTACT_POINT",
     dependency: {
-      tag: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_DETAIL ContactPointRoleType",
+      tag: "CONTACT_POINT_DETAIL ContactPointRoleType",
       value: "Home",
       duplicate: "CONTACT_POINT_DETAIL",
     },
@@ -89,9 +59,9 @@ const borrowerConfig = [
     },
     exportTo:
       "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
-    newTag: "CONTACT_POINT_TELEPHONE",
+    newTag: "CONTACT_POINT",
     dependency: {
-      tag: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_DETAIL ContactPointRoleType",
+      tag: "CONTACT_POINT_DETAIL ContactPointRoleType",
       value: "Mobile",
       duplicate: "CONTACT_POINT_DETAIL",
     },
@@ -109,12 +79,42 @@ const borrowerConfig = [
     },
     exportTo:
       "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
-    newTag: "CONTACT_POINT_TELEPHONE",
+    newTag: "CONTACT_POINT",
     dependency: {
-      tag: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_DETAIL ContactPointRoleType",
+      tag: "CONTACT_POINT_DETAIL ContactPointRoleType",
       value: "Work",
       duplicate: "CONTACT_POINT_DETAIL",
     },
+  },
+  {
+    selector: "#borrowerFName",
+    value: (node) => getText(node, "INDIVIDUAL NAME FirstName"),
+    exportTo: "INDIVIDUAL NAME FirstName",
+  },
+  {
+    selector: "#borrowerLName",
+    value: (node) => getText(node, "INDIVIDUAL NAME LastName"),
+    exportTo: "INDIVIDUAL NAME LastName",
+  },
+  {
+    selector: "#borrowerMName",
+    value: (node) => getText(node, "INDIVIDUAL NAME MiddleName"),
+    exportTo: "INDIVIDUAL NAME MiddleName",
+  },
+  {
+    selector: "#alternateFName_1",
+    value: (node) => getText(node, "INDIVIDUAL ALIAS FirstName"),
+    exportTo: "INDIVIDUAL ALIASES ALIAS NAME FirstName",
+  },
+  {
+    selector: "#alternateLName_1",
+    value: (node) => getText(node, "INDIVIDUAL ALIAS LastName"),
+    exportTo: "INDIVIDUAL ALIASES ALIAS NAME LastName",
+  },
+  {
+    selector: "#alternateMName_1",
+    value: (node) => getText(node, "INDIVIDUAL ALIAS MiddleName"),
+    exportTo: "INDIVIDUAL ALIASES ALIAS NAME MiddelName",
   },
 
   {
@@ -246,7 +246,8 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "RESIDENCES RESIDENCE Address",
+        // "RESIDENCES RESIDENCE Address",
+        "ADDRESSES ADDRESS",
         "AddressType",
         "Mailing"
       );
@@ -259,7 +260,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "RESIDENCES RESIDENCE Address",
+        "ADDRESSES ADDRESS",
         "AddressType",
         "Mailing"
       );
@@ -272,7 +273,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "RESIDENCES RESIDENCE Address",
+        "ADDRESSES ADDRESS",
         "AddressType",
         "Mailing"
       );
@@ -285,7 +286,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "RESIDENCES RESIDENCE ADDRESS",
+        "ADDRESSES ADDRESS",
         "AddressType",
         "Mailing"
       );
@@ -298,7 +299,7 @@ const borrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "RESIDENCES RESIDENCE ADDRESS",
+        "ADDRESSES ADDRESS",
         "AddressType",
         "Mailing"
       );
@@ -321,6 +322,7 @@ const borrowerConfig = [
 
       if (dob) {
         return formatDate(dob);
+        // return dob;
       }
     },
     exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL BorrowerBirthDate",
@@ -417,10 +419,7 @@ const borrowerConfig = [
     exportValues: ["Yes", "No"],
   },
   {
-    selector: [
-      "#haveOwnershipInterestYes",
-      "#haveOwnershipInterestNo",
-    ],
+    selector: ["#haveOwnershipInterestYes", "#haveOwnershipInterestNo"],
     value: (node) => getText(node, "HomeownerPastThreeYearsType") === "Yes",
     exportTo:
       "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL HomeownerPastThreeYearsType",
@@ -448,16 +447,15 @@ const borrowerConfig = [
   },
   {
     selector: "#borrowedAmt",
-    value: (node) => getText(node, "DECLARATION_DETAIL UndisclosedBorrowedFundsAmount"),
+    value: (node) =>
+      getText(node, "DECLARATION_DETAIL UndisclosedBorrowedFundsAmount"),
     exportTo:
       "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL UndisclosedBorrowedFundsAmount",
   },
   {
-    selector: [
-      "#famBizAffilYes",
-      "#famBizAffilNo",
-    ],
-    value: (node) => getText(node, `ULADSpecialBorrowerSellerRelationshipIndicator`) === "Yes",
+    selector: ["#famBizAffilYes", "#famBizAffilNo"],
+    value: (node) =>
+      getText(node, `ULADSpecialBorrowerSellerRelationshipIndicator`) === "Yes",
     exportTo: `ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL EXTENSION OTHER ULAD:DECLARATION_DETAIL_EXTENSION ULAD:SpecialBorrowerSellerRelationshipIndicator`,
   },
   {
@@ -488,7 +486,11 @@ const borrowerConfig = [
   },
   {
     selector: "#bankruptcyTypes",
-    value: (node) => getText(node, "BANKRUPTCIES BANKRUPTCIE BANKRUPTCY_DETAIL BankruptcyChapterType"),
+    value: (node) =>
+      getText(
+        node,
+        "BANKRUPTCIES BANKRUPTCIE BANKRUPTCY_DETAIL BankruptcyChapterType"
+      ),
     exportTo:
       "ROLES ROLE BORROWER BANKRUPTCIES BANKRUPTCIE BANKRUPTCY_DETAIL BankruptcyChapterType",
   },
@@ -549,83 +551,89 @@ const borrowerConfig = [
     value: (node) => true,
   },
   {
-    selector: "#PublishBInfoYes",
-    value: (node) => true,
+    selector: ["#PublishBInfoYes", "#PublishBInfoNo"],
+    // value: (node) => true,
+    value: (node) => getText(node, "HMDAEthnicityRefusalIndicator") === "false",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL`,
+    exportValues: ["false", "true"],
   },
   {
     selector: "#BEthnicityH",
     value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
-    mismoValue: "HispanicOrLatino"
+    mismoValue: "HispanicOrLatino",
   },
   {
     selector: "#BEthnicityNH",
     value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
-    mismoValue: "NotHispanicOrLatino"
+    mismoValue: "NotHispanicOrLatino",
   },
   {
     selector: "#BEthnicityND",
     value: (node) => getText(node, "HMDAEthnicityRefusalIndicator") === "true",
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
-    mismoValue: "NotApplicable"
+    mismoValue: "NotApplicable",
   },
   {
     selector: "#BRace1",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "AmericanIndianOrAlaskaNative"
+    mismoValue: "AmericanIndianOrAlaskaNative",
   },
   {
     selector: "#BRace2",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "Asian"
+    mismoValue: "Asian",
   },
   {
     selector: "#BRace3",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "BlackOrAfricanAmerican"
+    mismoValue: "BlackOrAfricanAmerican",
   },
   {
     selector: "#BRace4",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "NativeHawaiianOrOtherPacificIslander"
+    mismoValue: "NativeHawaiianOrOtherPacificIslander",
   },
   {
     selector: "#BRace5",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "White"
+    mismoValue: "White",
   },
   {
     selector: "#BRace6",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "NotApplicable"
+    mismoValue: "NotApplicable",
   },
   {
     selector: "#BGendeMale",
-    // value: (node) => getText(node, "HMDAGenderType") === "Male",
-    value: (node) =>
-      xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`),
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+    value: (node) => getText(node, "hmdagendertype") === "Male",
+    // value: (node) => xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
       `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
-    mismoValue: "Male"
+    mismoValue: "Male",
   },
   {
     selector: "#BGenderFE",
-    value: (node) =>
-      xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+    value: (node) => getText(node, "hmdagendertype") === "Female",
+    // xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
       `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
-    mismoValue: "Female"
+    mismoValue: "Female",
   },
   {
     selector: "#BGenderNotDis",
@@ -633,9 +641,10 @@ const borrowerConfig = [
       getText(node, "HMDAGenderRefusalIndicator") === "true" &&
       !xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`) &&
       !xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
       `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
-    mismoValue: "NotApplicable"
+    mismoValue: "NotApplicable",
   },
   {
     selector: "#grossIncome1",
@@ -648,10 +657,11 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "Base"
+    incomeType: "Base",
   },
   {
     selector: "#commissionOrBonus1",
@@ -664,10 +674,11 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "Bonus"
+    incomeType: "Bonus",
   },
   {
     selector: "#militaryIncome1",
@@ -680,10 +691,11 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "MilitaryBasePay"
+    incomeType: "MilitaryBasePay",
   },
   // {
   //   selector: "#militaryIncome1",
@@ -708,10 +720,11 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "Overtime"
+    incomeType: "Overtime",
   },
 
   {
@@ -725,10 +738,11 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "NetRentalIncome"
+    incomeType: "NetRentalIncome",
   },
   {
     selector: "#netEarnedInterest1",
@@ -741,10 +755,11 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "DividendsInterest"
+    incomeType: "DividendsInterest",
   },
   {
     selector: "#capitalGains1",
@@ -757,10 +772,11 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "CapitalGains"
+    incomeType: "CapitalGains",
   },
   {
     selector: "#partnership1",
@@ -773,11 +789,12 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
     //Not sure about this incomeType
-    incomeType: "SelfEmploymentIncome"
+    incomeType: "SelfEmploymentIncome",
   },
 
   {
@@ -791,10 +808,11 @@ const borrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "Other"
+    incomeType: "Other",
   },
   {
     selector: "#isHouseProperty",
@@ -817,7 +835,7 @@ const coBorrowerConfig = [
     dependency: {
       tag: "ROLES ROLE ROLE_DETAIL PartyRoleType",
       value: "Borrower",
-    }
+    },
   },
   {
     selector: "#coBorrowerLName",
@@ -834,6 +852,7 @@ const coBorrowerConfig = [
 
       if (dob) {
         return formatDate(dob);
+        // return dob;
       }
     },
     exportTo: "ROLES ROLE BORROWER BORROWER_DETAIL BorrowerBirthDate",
@@ -849,12 +868,14 @@ const coBorrowerConfig = [
         node,
         "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierValue"
       ),
-    exportTo: "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierValue",
+    exportTo:
+      "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierValue",
   },
   {
     selector: "#coBorrowerEmail",
     value: (node) => getText(node, "ContactPointEmailValue"),
-    exportTo: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_EMAIL ContactPointEmailValue",
+    exportTo:
+      "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_EMAIL ContactPointEmailValue",
   },
   {
     selector: "#coBPhoneNumber",
@@ -867,13 +888,14 @@ const coBorrowerConfig = [
       );
       return getText(filtered?.[0], "ContactPointTelephoneValue");
     },
-    exportTo: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
-    newTag: "CONTACT_POINT_TELEPHONE",
+    exportTo:
+      "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
+    newTag: "CONTACT_POINT",
     dependency: {
-      tag: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_DETAIL ContactPointRoleType",
+      tag: "CONTACT_POINT_DETAIL ContactPointRoleType",
       value: "Home",
       duplicate: "CONTACT_POINT_DETAIL",
-    }
+    },
   },
   {
     selector: "#coBCellNumber",
@@ -886,13 +908,14 @@ const coBorrowerConfig = [
       );
       return getText(filtered?.[0], "ContactPointTelephoneValue");
     },
-    exportTo: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
-    newTag: "CONTACT_POINT_TELEPHONE",
+    exportTo:
+      "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
+    newTag: "CONTACT_POINT",
     dependency: {
-      tag: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_DETAIL ContactPointRoleType",
+      tag: "CONTACT_POINT_DETAIL ContactPointRoleType",
       value: "Mobile",
       duplicate: "CONTACT_POINT_DETAIL",
-    }
+    },
   },
   {
     selector: "#coBFax",
@@ -905,13 +928,14 @@ const coBorrowerConfig = [
       );
       return getText(filtered?.[0], "ContactPointTelephoneValue");
     },
-    exportTo: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
-    newTag: "CONTACT_POINT_TELEPHONE",
+    exportTo:
+      "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
+    newTag: "CONTACT_POINT",
     dependency: {
-      tag: "INDIVIDUAL CONTACT_POINTS CONTACT_POINT CONTACT_POINT_DETAIL ContactPointRoleType",
+      tag: "CONTACT_POINT_DETAIL ContactPointRoleType",
       value: "Fax",
       duplicate: "CONTACT_POINT_DETAIL",
-    }
+    },
   },
   {
     selector: "#coBPresentAddress",
@@ -970,7 +994,7 @@ const coBorrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "RESIDENCES RESIDENCE Address",
+        "ADDRESSES ADDRESS",
         "AddressType",
         "Mailing"
       );
@@ -983,7 +1007,7 @@ const coBorrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "RESIDENCES RESIDENCE Address",
+        "ADDRESSES ADDRESS",
         "AddressType",
         "Mailing"
       );
@@ -996,7 +1020,7 @@ const coBorrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "RESIDENCES RESIDENCE ADDRESS",
+        "ADDRESSES ADDRESS",
         "AddressType",
         "Mailing"
       );
@@ -1009,7 +1033,7 @@ const coBorrowerConfig = [
     value: (node) => {
       const filtered = getWhere(
         node,
-        "RESIDENCES RESIDENCE ADDRESS",
+        "ADDRESSES ADDRESS",
         "AddressType",
         "Mailing"
       );
@@ -1020,17 +1044,22 @@ const coBorrowerConfig = [
   {
     selector: "#coBorrowerCitizenship_1",
     value: (node) => getText(node, "MaritalStatusType") === "USCitizen",
-    exportTo: "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
   },
   {
     selector: "#coBorrowerCitizenship_2",
-    value: (node) => getText(node, "MaritalStatusType") === "PermanentResidentAlien",
-    exportTo: "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
+    value: (node) =>
+      getText(node, "MaritalStatusType") === "PermanentResidentAlien",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
   },
   {
     selector: "#coBorrowerCitizenship_3",
-    value: (node) => getText(node, "CitizenshipResidencyType") === "NonPermanentResidentAlien",
-    exportTo: "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
+    value: (node) =>
+      getText(node, "CitizenshipResidencyType") === "NonPermanentResidentAlien",
+    exportTo:
+      "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
   },
   {
     selector: "#maritalStatusCoBor_1",
@@ -1055,66 +1084,70 @@ const coBorrowerConfig = [
   {
     selector: "#CBEthnicity2",
     value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
-    mismoValue: "HispanicOrLatino"
+    mismoValue: "HispanicOrLatino",
   },
   {
     selector: "#CBEthnicity1",
     value: (node) => getText(node, "HMDAEthnicityOriginType") === "NotMexican",
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
-    mismoValue: "NotHispanicOrLatino"
+    mismoValue: "NotHispanicOrLatino",
   },
   {
     selector: "#CBEthnicity3",
     value: (node) => getText(node, "HMDAEthnicityRefusalIndicator") === "NA",
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
-    mismoValue: "NotApplicable"
+    mismoValue: "NotApplicable",
   },
   {
     selector: "#CBRace1",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "AmericanIndianOrAlaskaNative"
+    mismoValue: "AmericanIndianOrAlaskaNative",
   },
   {
     selector: "#CBRace2",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "Asian"
+    mismoValue: "Asian",
   },
   {
     selector: "#CBRace3",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "BlackOrAfricanAmerican"
+    mismoValue: "BlackOrAfricanAmerican",
   },
   {
     selector: "#CBRace4",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "NativeHawaiianOrOtherPacificIslander"
+    mismoValue: "NativeHawaiianOrOtherPacificIslander",
   },
   {
     selector: "#CBRace5",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "White"
+    mismoValue: "White",
   },
   {
     selector: "#CBRace6",
     value: (node) => getText(node, "HMDARaceType") === "White",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
-    mismoValue: "NotApplicable"
+    mismoValue: "NotApplicable",
   },
   {
     selector: "#CBGender2",
-    // value: (node) => getText(node, "HMDAGenderType") === "Male",
-    value: (node) =>
-      xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`),
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
+    value: (node) => getText(node, "HMDAGenderType") === "Male",
+    // value: (node) =>
+    //   xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
       `ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
     mismoValue: "Male",
   },
@@ -1122,15 +1155,19 @@ const coBorrowerConfig = [
     selector: "#CBGender1",
     value: (node) =>
       xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
       `ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
     mismoValue: "Female",
   },
   {
     selector: "#CBGender3",
     value: (node) =>
-      xmlText.includes(`<ULAD:HMDAGenderType>NotApplicable</ULAD:HMDAGenderType>`),
-    exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
+      xmlText.includes(
+        `<ULAD:HMDAGenderType>NotApplicable</ULAD:HMDAGenderType>`
+      ),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
       `ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
     mismoValue: "NotApplicable",
   },
@@ -1142,7 +1179,8 @@ const coBorrowerConfig = [
   },
   {
     selector: "#isCoBorUSCitizenNo",
-    value: (node) => getText(node, "CitizenshipResidencyType") === "NotUSCitizen",
+    value: (node) =>
+      getText(node, "CitizenshipResidencyType") === "NotUSCitizen",
     exportTo:
       "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL CitizenshipResidencyType",
   },
@@ -1185,7 +1223,10 @@ const coBorrowerConfig = [
     exportValues: ["true", "false"],
   },
   {
-    selector: ["#isCoBorPresenltyDelinquentYes", "#isCoBorPresenltyDelinquentNo"],
+    selector: [
+      "#isCoBorPresenltyDelinquentYes",
+      "#isCoBorPresenltyDelinquentNo",
+    ],
     value: (node) => getText(node, "PresentlyDelinquentIndicator") === "true",
     exportTo:
       "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL PresentlyDelinquentIndicator",
@@ -1203,10 +1244,11 @@ const coBorrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "Base"
+    incomeType: "Base",
   },
   {
     selector: "#commissionOrBonus2",
@@ -1219,10 +1261,11 @@ const coBorrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "Bonus"
+    incomeType: "Bonus",
   },
   // {
   //   selector: "#militaryIncome1",
@@ -1251,10 +1294,11 @@ const coBorrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "Overtime"
+    incomeType: "Overtime",
   },
 
   {
@@ -1268,10 +1312,11 @@ const coBorrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "NetRentalIncome"
+    incomeType: "NetRentalIncome",
   },
   {
     selector: "#netEarnedInterest2",
@@ -1284,10 +1329,11 @@ const coBorrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "DividendsInterest"
+    incomeType: "DividendsInterest",
   },
   {
     selector: "#capitalGains2",
@@ -1300,10 +1346,11 @@ const coBorrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "CapitalGains"
+    incomeType: "CapitalGains",
   },
   {
     selector: "#partnership2",
@@ -1316,11 +1363,12 @@ const coBorrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
     //Not sure about this incomeType
-    incomeType: "SelfEmploymentIncome"
+    incomeType: "SelfEmploymentIncome",
   },
 
   {
@@ -1334,13 +1382,13 @@ const coBorrowerConfig = [
       );
       return getText(filtered, "CurrentIncomeMonthlyTotalAmount");
     },
-    exportTo: `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
+    exportTo:
+      `ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM ` +
       `CURRENT_INCOME_ITEM_DETAIL CurrentIncomeMonthlyTotalAmount`,
     newTag: "CURRENT_INCOME_ITEM",
-    incomeType: "Other"
+    incomeType: "Other",
   },
 ];
-
 
 const moreCoBorrowerConfig = [
   {
@@ -1360,8 +1408,8 @@ const loanOriginatorConfig = [
     newTag: "PARTY",
     dependency: {
       tag: "PARTY ROLES ROLE ROLE_DETAIL PartyRoleType",
-      value: "LoanOriginationCompany"
-    }
+      value: "LoanOriginationCompany",
+    },
   },
   {
     selector: "#loOriginatorEmail",
@@ -1406,7 +1454,7 @@ const subjectPropertyConfig = [
   {
     selector: "#propertyAddress",
     value: (node) => getText(node, "AddressLineText"),
-    exportTo: "SUBJECT_PROPERTY ADDRESS AddressLineText"
+    exportTo: "SUBJECT_PROPERTY ADDRESS AddressLineText",
   },
   // {
   //   selector: "#propertyUnit",
@@ -1415,44 +1463,44 @@ const subjectPropertyConfig = [
   {
     selector: "#propertyCity",
     value: (node) => getText(node, "CityName"),
-    exportTo: "SUBJECT_PROPERTY ADDRESS CityName"
+    exportTo: "SUBJECT_PROPERTY ADDRESS CityName",
   },
   {
     selector: "#propertyState",
     value: (node) => getText(node, "StateCode"),
-    exportTo: "SUBJECT_PROPERTY ADDRESS StateCode"
+    exportTo: "SUBJECT_PROPERTY ADDRESS StateCode",
   },
   {
     selector: "#propertyZip",
     value: (node) => getText(node, "PostalCode"),
-    exportTo: "SUBJECT_PROPERTY ADDRESS PostalCode"
+    exportTo: "SUBJECT_PROPERTY ADDRESS PostalCode",
   },
   {
     selector: "#propertyCountry",
     value: (node) => "US",
-    exportTo: "SUBJECT_PROPERTY ADDRESS CountryCode"
+    exportTo: "SUBJECT_PROPERTY ADDRESS CountryCode",
   },
-  // TODO: map property type 
+  // TODO: map property type
   {
     selector: "#propertyType",
     value: (node) => getText(node, "PropertyUsageType"),
-    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyUsageType"
+    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyUsageType",
   },
   {
     selector: "#noUnitsOccupied",
     value: (node) => getText(node, "FinancedUnitCount"),
-    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL FinancedUnitCount"
+    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL FinancedUnitCount",
   },
   {
     selector: "#propertyValue",
     value: (node) => getText(node, "PropertyEstimatedValueAmount"),
-    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyEstimatedValueAmount"
+    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyEstimatedValueAmount",
   },
-  {
-    selector: "#presentOccupancy",
-    value: (node) => getText(node, "PropertyCurrentUsageType"),
-    exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyCurrentUsageType"
-  },
+  // {
+  //   selector: "#presentOccupancy",
+  //   value: (node) => getText(node, "PropertyCurrentUsageType"),
+  //   exportTo: "SUBJECT_PROPERTY PROPERTY_DETAIL PropertyCurrentUsageType"
+  // },
 ];
 
 const adminConfig = [];
@@ -1473,7 +1521,8 @@ const assetsConfig = [
   {
     selector: "#assetCash",
     value: (data) => getAssetTotal(data, "CashOnHand"),
-    exportTo: "ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM CURRENT_INCOME_ITEM_DETAIL PresentlyDelinquentIndicator",
+    exportTo:
+      "ROLES ROLE BORROWER CURRENT_INCOME CURRENT_INCOME_ITEMS CURRENT_INCOME_ITEM CURRENT_INCOME_ITEM_DETAIL PresentlyDelinquentIndicator",
   },
   {
     selector: "#networthOfBusinessOwned",
@@ -1549,20 +1598,21 @@ const assetConfig = [
     value: (asset) =>
       getLWAssetType(
         asset.querySelector("AssetType")?.textContent ||
-        asset.querySelector("PurchaseCreditType")?.textContent),
-    exportTo: "ASSET_DETAIL AssetType"
+          asset.querySelector("PurchaseCreditType")?.textContent
+      ),
+    exportTo: "ASSET_DETAIL AssetType",
   },
   {
     selector: "#nameofInstitution",
     value: (asset) => asset.querySelector("fullname")?.textContent || "",
-    exportTo: "ASSET_HOLDER FullName"
+    exportTo: "ASSET_HOLDER NAME FullName",
   },
   {
     selector: "#balanceValue",
     value: (asset) =>
       asset.querySelector("assetcashormarketvalueamount")?.textContent ||
       asset.querySelector("PurchaseCreditAmount")?.textContent,
-    exportTo: "ASSET_DETAIL AssetCashOrMarketValueAmount"
+    exportTo: "ASSET_DETAIL AssetCashOrMarketValueAmount",
   },
 ];
 
@@ -1570,27 +1620,27 @@ const reoConfig = [
   {
     selector: "#schedulePropAddr",
     value: (asset) => asset.querySelector("AddressLineText")?.textContent || "",
-    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS AddressLineText"
+    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS AddressLineText",
   },
   {
     selector: "#schedulePropCity",
     value: (asset) => asset.querySelector("CityName")?.textContent || "",
-    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS CityName"
+    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS CityName",
   },
   {
     selector: "#schedulePropZip",
     value: (asset) => asset.querySelector("PostalCode")?.textContent || "",
-    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS PostalCode"
+    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS PostalCode",
   },
   {
     selector: "#schedulePropState",
     value: (asset) => asset.querySelector("StateCode")?.textContent || "",
-    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS StateCode"
+    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS StateCode",
   },
   {
     selector: "#schedulePropCountry",
     value: () => "US",
-    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS CountryCode"
+    exportTo: "OWNED_PROPERTY PROPERTY ADDRESS CountryCode",
   },
   {
     selector: "#propType",
@@ -1598,19 +1648,22 @@ const reoConfig = [
       getLWPropertyType(
         asset.querySelector("propcurrentusagetype")?.textContent
       ),
-    exportTo: "OWNED_PROPERTY PROPERTY PROPERTY_DETAIL PropertyCurrentUsageType"
+    exportTo:
+      "OWNED_PROPERTY PROPERTY PROPERTY_DETAIL PropertyCurrentUsageType",
   },
   {
     selector: "#presentMarketValue",
     value: (asset) =>
       asset.querySelector("PropertyEstimatedValueAmount")?.textContent || "",
-    exportTo: "OWNED_PROPERTY PROPERTY PROPERTY_DETAIL PropertyEstimatedValueAmount"
+    exportTo:
+      "OWNED_PROPERTY PROPERTY PROPERTY_DETAIL PropertyEstimatedValueAmount",
   },
   {
     selector: "#grossRentalIncome",
     value: (asset) =>
       asset.querySelector("OwnedPropertyRentalIncomeNetAmount")?.textContent,
-    exportTo: "OWNED_PROPERTY OWNED_PROPERTY_DETAIL OwnedPropertyRentalIncomeNetAmount"
+    exportTo:
+      "OWNED_PROPERTY OWNED_PROPERTY_DETAIL OwnedPropertyRentalIncomeNetAmount",
   },
 ];
 
@@ -1619,7 +1672,7 @@ const currentEmployerConfig = [
     selector: "#occupation1",
     value: (node) =>
       node?.querySelector("EmploymentPositionDescription")?.textContent,
-    exportTo: "EMPLOYER EMPLOYMENT EmploymentPositionDescription"
+    exportTo: "EMPLOYER EMPLOYMENT EmploymentPositionDescription",
   },
   {
     selector: "#borrowerHireDate",
@@ -1627,43 +1680,44 @@ const currentEmployerConfig = [
       const hireDate = node?.querySelector("EmploymentStartDate")?.textContent;
       return hireDate ? formatDate(hireDate) : "";
     },
-    exportTo: "EMPLOYER EMPLOYMENT EmploymentStartDate"
+    exportTo: "EMPLOYER EMPLOYMENT EmploymentStartDate",
   },
   {
     selector: "#employer1",
     value: (employer) =>
       employer?.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
-    exportTo: "EMPLOYER LEGAL_ENTITY LEGAL_ENTITY_DETAIL FullName"
+    exportTo: "EMPLOYER LEGAL_ENTITY LEGAL_ENTITY_DETAIL FullName",
   },
   {
     selector: "#employer1Add",
     value: (employer) =>
       employer?.querySelector("address AddressLineText")?.textContent,
-    exportTo: "EMPLOYER ADDRESS AddressLineText"
+    exportTo: "EMPLOYER ADDRESS AddressLineText",
   },
   {
     selector: "#employer1City",
     value: (employer) =>
       employer?.querySelector("address CityName")?.textContent,
-    exportTo: "EMPLOYER ADDRESS CityName"
+    exportTo: "EMPLOYER ADDRESS CityName",
   },
   {
     selector: "#employer1Zip",
     value: (employer) =>
       employer?.querySelector("address PostalCode")?.textContent?.substr(0, 5),
-    exportTo: "EMPLOYER ADDRESS PostalCode"
+    exportTo: "EMPLOYER ADDRESS PostalCode",
   },
   {
     selector: "#employer1State",
     value: (employer) =>
       employer?.querySelector("address StateCode")?.textContent,
-    exportTo: "EMPLOYER ADDRESS StateCode"
+    exportTo: "EMPLOYER ADDRESS StateCode",
   },
   {
     selector: "#employerPhone1",
     value: (employer) =>
       employer?.querySelector("ContactPointTelephoneValue")?.textContent,
-    exportTo: "EMPLOYER LEGAL_ENTITY CONTACTS CONTACT CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue"
+    exportTo:
+      "EMPLOYER LEGAL_ENTITY CONTACTS CONTACT CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
   },
 ];
 
@@ -1671,38 +1725,38 @@ const prevEmployerConfig = [
   {
     selector: "#AddiontalEmplInfo_{counter}_addOrPrevJob",
     value: () => "previous",
-    exportTo: "EMPLOYMENT EmploymentStatusType"
+    exportTo: "EMPLOYMENT EmploymentStatusType",
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_nameOfEmployer",
     value: (employer) =>
       employer?.querySelector("LEGAL_ENTITY_DETAIL FullName")?.textContent,
-    exportTo: "LEGAL_ENTITY LEGAL_ENTITY_DETAIL FullName"
+    exportTo: "LEGAL_ENTITY LEGAL_ENTITY_DETAIL FullName",
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_addrOfEmployer",
     value: (employer) =>
       employer?.querySelector("address AddressLineText")?.textContent,
-    exportTo: "ADDRESS AddressLineText"
+    exportTo: "ADDRESS AddressLineText",
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_cityOfEmployer",
     value: (employer) =>
       employer?.querySelector("address CityName")?.textContent,
-    exportTo: "ADDRESS CityName"
+    exportTo: "ADDRESS CityName",
   },
   // Get the correct selector for the zip code and state
   {
     selector: "#AddiontalEmplInfo_{counter}_zipOfEmployer",
     value: (employer) =>
       employer?.querySelector("address PostalCode")?.textContent,
-    exportTo: "ADDRESS PostalCode"
+    exportTo: "ADDRESS PostalCode",
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_stateOfEmployer",
     value: (employer) =>
       employer?.querySelector("address StateCode")?.textContent,
-    exportTo: "ADDRESS StateCode"
+    exportTo: "ADDRESS StateCode",
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_employedFrom",
@@ -1713,32 +1767,33 @@ const prevEmployerConfig = [
         return formatDate(hireDate);
       }
     },
-    exportTo: "EMPLOYMENT EmploymentStartDate"
+    exportTo: "EMPLOYMENT EmploymentStartDate",
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_monthlyIncome",
     value: (employer) =>
       employer?.querySelector("EmploymentMonthlyIncomeAmount")?.textContent,
-    exportTo: "EMPLOYMENT EmploymentMonthlyIncomeAmount"
+    exportTo: "EMPLOYMENT EmploymentMonthlyIncomeAmount",
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_employedByOtherParty",
     value: (employer) =>
       employer?.querySelector("SpecialBorrowerEmployerRelationshipIndicator")
         ?.textContent === "true",
-    exportTo: "EMPLOYMENT SpecialBorrowerEmployerRelationshipIndicator"
+    exportTo: "EMPLOYMENT SpecialBorrowerEmployerRelationshipIndicator",
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_position",
     value: (employer) =>
       employer?.querySelector("EmploymentPositionDescription")?.textContent,
-    exportTo: "EMPLOYMENT EmploymentPositionDescription"
+    exportTo: "EMPLOYMENT EmploymentPositionDescription",
   },
   {
     selector: "#AddiontalEmplInfo_{counter}_businessPhone",
     value: (employer) =>
       employer?.querySelector("ContactPointTelephoneValue")?.textContent,
-    exportTo: "LEGAL_ENTITY CONTACTS CONTACT CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue"
+    exportTo:
+      "LEGAL_ENTITY CONTACTS CONTACT CONTACT_POINTS CONTACT_POINT CONTACT_POINT_TELEPHONE ContactPointTelephoneValue",
   },
 ];
 
@@ -1758,12 +1813,6 @@ const liabilitiesConfig = [
     exportTo: "LIABILITY_DETAIL LiabilityType",
   },
   {
-    selector: "#nameAddrOfCompany",
-    value: (liability) =>
-      liability?.querySelector("LIABILITY_HOLDER FullName")?.textContent,
-    exportTo: "LIABILITY_DETAIL LIABILITY_HOLDER FullName",
-  },
-  {
     selector: "#monthlyPaymentExpenses",
     value: (liability) =>
       liability?.querySelector("LiabilityMonthlyPaymentAmount")?.textContent,
@@ -1780,7 +1829,13 @@ const liabilitiesConfig = [
     selector: "#unpaidBalanceExpenses",
     value: (liability) =>
       liability?.querySelector("LiabilityUnpaidBalanceAmount")?.textContent,
-    exportTo: "LIABILITY_DETAIL unpaidBalanceExpenses",
+    exportTo: "LIABILITY_DETAIL LiabilityUnpaidBalanceAmount",
+  },
+  {
+    selector: "#nameAddrOfCompany",
+    value: (liability) =>
+      liability?.querySelector("LIABILITY_HOLDER FullName")?.textContent,
+    exportTo: "LIABILITY_DETAIL LIABILITY_HOLDER NAME FullName",
   },
 ];
 const collateralsConfig = [];
@@ -1789,21 +1844,21 @@ const loansConfig = [
     selector: "#loanNumber",
     type: "text",
     value: (data) => data?.querySelector("LoanIdentifier")?.textContent,
-    exportTo: "LOAN LOAN_IDENTIFIERS LOAN_IDENTIFIER LoanIdentifier"
+    exportTo: "LOAN LOAN_IDENTIFIERS LOAN_IDENTIFIER LoanIdentifier",
   },
   {
     selector: "#amortizationTypeFixed",
     type: "radio",
     value: (data) =>
       data?.querySelector("AmortizationType")?.textContent === "Fixed",
-    exportTo: "LOAN AMORTIZATION AMORTIZATION_RULE AmortizationType"
+    exportTo: "LOAN AMORTIZATION AMORTIZATION_RULE AmortizationType",
   },
   {
     selector: "#amortizationTypeAdjust",
     type: "radio",
     value: (data) =>
-      data?.querySelector("AmortizationType")?.textContent !== "Adjustable",
-    exportTo: "LOAN AMORTIZATION AMORTIZATION_RULE AmortizationType"
+      data?.querySelector("AmortizationType")?.textContent === "Adjustable",
+    exportTo: "LOAN AMORTIZATION AMORTIZATION_RULE AmortizationType",
   },
   {
     selector: "#lien1Terms",
@@ -1819,7 +1874,7 @@ const loansConfig = [
       }
       return period;
     },
-    exportTo: "LOAN LOAN_IDENTIFIERS LOAN_IDENTIFIER LoanAmortizationPeriodCount"
+    exportTo: "LOAN AMORTIZATION AMORTIZATION_RULE LoanAmortizationPeriodCount",
   },
   {
     selector: "#otherMortgage1",
@@ -1956,6 +2011,11 @@ function formatDate(date) {
   return `${month}/${day}/${year}`;
 }
 
+function unformatDate(date) {
+  const [month, day, year] = date.split("/");
+  return `${year}-${month}-${day}`;
+}
+
 function getText(node, path) {
   if (!node) {
     return "";
@@ -2071,8 +2131,9 @@ function getSubjectProperty() {
 function createAssetFields(assets) {
   for (let i = 0; i < assets.length - 1; i++) {
     setTimeout(() => {
-      const addNewSelector = `#financeAndSecuritie${i === 0 ? "" : "_" + i
-        } > div:nth-child(4) > div:nth-child(6) > div > span > span.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass.cursor-pointer`;
+      const addNewSelector = `#financeAndSecuritie${
+        i === 0 ? "" : "_" + i
+      } > div:nth-child(4) > div:nth-child(6) > div > span > span.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass.cursor-pointer`;
       // span.btn.btn-sm.btn-success.btn-text-primary.btn-icon.ml-2.tooltipClass`;
       // btn btn-sm btn-success btn-text-primary  btn-icon ml-2 tooltipClass cursor-pointer
       document.querySelector(addNewSelector)?.click();
@@ -2148,7 +2209,12 @@ function importToPage(fnmFile) {
   const reos = getREO();
   const liabilities = getLiabilities();
   const employers = getEmployers(borrower);
-  var duration = Math.max(employers.length || 0, assets.length || 0, liabilities.length || 0, reos.length || 0)
+  var duration = Math.max(
+    employers.length || 0,
+    assets.length || 0,
+    liabilities.length || 0,
+    reos.length || 0
+  );
 
   //Real Estate Owned
   createReoFields(reos);
@@ -2160,7 +2226,8 @@ function importToPage(fnmFile) {
     liabilitiesConfig,
     liabilities,
     (i, selector) => `${selector}_${i + 1}`,
-    duration);
+    duration
+  );
 
   //collaterals
   const collaterals = getCollaterals();
@@ -2185,12 +2252,15 @@ function importToPage(fnmFile) {
 
   // Employers
   const currentEmployer = employers.filter(
-    (employer) => getText(employer, "EmploymentStatusType") === "Current")[0];
+    (employer) => getText(employer, "EmploymentStatusType") === "Current"
+  )[0];
   const previousEmployers = employers.filter(
-    (employer) => getText(employer, "EmploymentStatusType") !== "Current");
+    (employer) => getText(employer, "EmploymentStatusType") !== "Current"
+  );
   createEmployerFields(employers);
   publishConfig(currentEmployerConfig, currentEmployer);
-  publishConfigItems(prevEmployerConfig,
+  publishConfigItems(
+    prevEmployerConfig,
     previousEmployers,
     (i, selector) => selector.replace("{counter}", i + 1),
     duration
@@ -2204,14 +2274,14 @@ function handleImportChange(e) {
   var reader = new FileReader();
   reader.onload = function (e) {
     xmlText = reader.result;
-    // document.querySelector("#importAlert").style.display = "block"
-    // document.querySelector("#importAlert").style.color = "white"
-    // document.querySelector("#importAlert").innerHTML = "Importing ... Please wait"
-    // document.querySelector("#importAlert").style.backgroundColor = "red"
-    document.querySelector("#importAlert").style.display = "block"
-    importToPage(reader.result)
-  }
-  reader.readAsText(file)
+    document.querySelector("#importAlert").style.display = "block";
+    document.querySelector("#importAlert").style.color = "white";
+    document.querySelector("#importAlert").innerHTML =
+      "Importing ... Please wait";
+    document.querySelector("#importAlert").style.backgroundColor = "red";
+    importToPage(reader.result);
+  };
+  reader.readAsText(file);
 }
 
 function attachXml(fnmFile) {
@@ -2255,19 +2325,16 @@ function publishConfigItems(config, items, selectorFunction, duration) {
       }
       if (i + 1 == items.length && i + 1 == duration) {
         setTimeout(() => {
-          // document.querySelector("#importAlert").innerHTML = "Completed."
-          // document.querySelector("#importAlert").style.backgroundColor = "#16ff54"
-          // document.querySelector("#importAlert").style.color = "black"
-          // document.querySelector("#importAlert").style.borderStyle = "none"
-          document.querySelector("#importAlert").style.display = "none"
-          document.querySelector("#importAlertf").style.display = "block"
-          
-          console.log('📢 [importfnm.js:2263]', "Importing Finished.");
+          document.querySelector("#importAlert").innerHTML = "Completed.";
+          document.querySelector("#importAlert").style.backgroundColor =
+            "#16ff54";
+          document.querySelector("#importAlert").style.color = "black";
+          document.querySelector("#importAlert").style.borderStyle = "none";
+          console.log("📢 [importfnm.js:2263]", "Importing Finished.");
         }, 1000);
         setTimeout(() => {
-          document.querySelector("#importAlertf").style.display = "none"
-        }, 3000)
-        
+          document.querySelector("#importAlert").style.display = "none";
+        }, 3000);
       }
     }, 1000 * i);
   }
@@ -2373,24 +2440,23 @@ function handleExportClick(e) {
     .ele("DEAL_SETS")
     .ele("DEAL_SET")
     .ele("DEALS")
-    .ele("DEAL")
-
+    .ele("DEAL");
 
   //Assets
   const assetStartNode = dealNode.com("Assets").ele("ASSETS");
   const domAssets = document.getElementsByName("accountType[]");
   for (let i = 0; i < domAssets.length; i++) {
-    const thisNode1 = assetStartNode.ele("ASSET").att("Sequence", i + 1)
+    const thisNode1 = assetStartNode.ele("ASSET").att("Sequence", i + 1);
 
-    assetConfig.forEach(lConfig => {
-      const thisConfig1 = { ...lConfig, selector: `${lConfig.selector}_${i}` }
+    assetConfig.forEach((lConfig) => {
+      const thisConfig1 = { ...lConfig, selector: `${lConfig.selector}_${i}` };
       if (thisConfig1.exportTo) {
         if (lConfig.selector === "#accountType") {
           const domAccountType = document.querySelector(thisConfig1.selector);
           const xmlAccountValue = getLWAssetType(domAccountType.value, false);
-          exportElementToXML(thisConfig1, thisNode1, xmlAccountValue)
+          exportElementToXML(thisConfig1, thisNode1, xmlAccountValue);
         } else {
-          exportElementToXML(thisConfig1, thisNode1, null)
+          exportElementToXML(thisConfig1, thisNode1, null);
         }
       }
     });
@@ -2399,24 +2465,32 @@ function handleExportClick(e) {
   //Assets Real Estate Owned Properties
   const domReo = document.getElementsByName("schedulePropAddr[]");
   for (let i = 0; i < domReo.length; i++) {
-    const thisNode1 = assetStartNode.ele("ASSET").att("Sequence", domAssets.length + i + 1)
+    const thisNode1 = assetStartNode
+      .ele("ASSET")
+      .att("Sequence", domAssets.length + i + 1);
 
-    reoConfig.forEach(lConfig => {
-      const thisConfig1 = { ...lConfig, selector: `${lConfig.selector}_${i}` }
+    reoConfig.forEach((lConfig) => {
+      const thisConfig1 = { ...lConfig, selector: `${lConfig.selector}_${i}` };
       if (thisConfig1.exportTo) {
         if (lConfig.selector === "#propType") {
           const domAccountType = document.querySelector(thisConfig1.selector);
-          const xmlAccountValue = getLWPropertyType(domAccountType.value, false);
-          exportElementToXML(thisConfig1, thisNode1, xmlAccountValue)
+          const xmlAccountValue = getLWPropertyType(
+            domAccountType.value,
+            false
+          );
+          exportElementToXML(thisConfig1, thisNode1, xmlAccountValue);
         } else {
-          exportElementToXML(thisConfig1, thisNode1, null)
+          exportElementToXML(thisConfig1, thisNode1, null);
         }
       }
     });
   }
 
   //Collaterals (Subject Property)
-  const subjectNode = dealNode.com("Collateral").ele("COLLATERALS").ele("COLLATERAL");
+  const subjectNode = dealNode
+    .com("Collateral")
+    .ele("COLLATERALS")
+    .ele("COLLATERAL");
 
   subjectPropertyConfig.forEach((config) => {
     if (!config.exportTo) {
@@ -2424,12 +2498,17 @@ function handleExportClick(e) {
     }
 
     if (!Array.isArray(config.selector)) {
-      if (config.selector === "#propertyType" || config.selector === "#presentOccupancy") {
+      if (
+        config.selector === "#propertyType" ||
+        config.selector === "#presentOccupancy"
+      ) {
         const domAccountType = document.querySelector(config.selector);
-        const xmlAccountValue = getLWSubjPropertyType(domAccountType.value, false);
+        const xmlAccountValue = getLWSubjPropertyType(
+          domAccountType.value,
+          false
+        );
         exportElementToXML(config, subjectNode, xmlAccountValue);
-      } else
-        exportElementToXML(config, subjectNode);
+      } else exportElementToXML(config, subjectNode);
     } else {
       config.selector.forEach((selector, index) => {
         const elementChecked = document.querySelector(`${selector}:checked`);
@@ -2437,7 +2516,7 @@ function handleExportClick(e) {
           exportElementToXML(
             { ...config, selector },
             subjectNode,
-            config.exportValues?.[index],
+            config.exportValues?.[index]
           );
         }
       });
@@ -2448,25 +2527,30 @@ function handleExportClick(e) {
   const liabilityStartNode = dealNode.com("Liabilities").ele("LIABILITIES");
   const domLiabilities = document.getElementsByName("liabilityAccType[]");
   for (let i = 0; i < domLiabilities.length; i++) {
-    const thisNode = liabilityStartNode.ele("LIABILITY").att("Sequence", i + 1)
+    const thisNode = liabilityStartNode.ele("LIABILITY").att("Sequence", i + 1);
 
-    liabilitiesConfig.forEach(lConfig => {
-      const thisConfig = { ...lConfig, selector: `${lConfig.selector}_${i + 1}` }
+    liabilitiesConfig.forEach((lConfig) => {
+      const thisConfig = {
+        ...lConfig,
+        selector: `${lConfig.selector}_${i + 1}`,
+      };
       if (thisConfig.exportTo) {
         if (lConfig.selector === "#liabilityAccType") {
           const domLiabilityType = document.querySelector(thisConfig.selector);
-          const xmlLiabilityValue = getLWLiabilityType(domLiabilityType.value, false);
-          exportElementToXML(thisConfig, thisNode, xmlLiabilityValue)
+          const xmlLiabilityValue = getLWLiabilityType(
+            domLiabilityType.value,
+            false
+          );
+          exportElementToXML(thisConfig, thisNode, xmlLiabilityValue);
         } else if (lConfig.selector === "#accountNo") {
           const domAccType = document.querySelector(thisConfig.selector);
-          const accFormat = domAccType.value.replace(/[^0-9]/g, "")
-          exportElementToXML(thisConfig, thisNode, accFormat)
-        }
-        else {
-          exportElementToXML(thisConfig, thisNode, null)
+          const accFormat = domAccType.value.replace(/[^0-9]/g, "");
+          exportElementToXML(thisConfig, thisNode, accFormat);
+        } else {
+          exportElementToXML(thisConfig, thisNode, null);
         }
       }
-    })
+    });
   }
 
   //Loans
@@ -2475,15 +2559,15 @@ function handleExportClick(e) {
     if (!config.exportTo) {
       return;
     }
-    const amorType = document.querySelector(`${config.selector}:checked`)
+    const amorType = document.querySelector(`${config.selector}:checked`);
     if (config.selector === "#amortizationTypeFixed")
       amorType ? exportElementToXML(config, loansStartNode) : null;
     else if (config.selector === "#amortizationTypeAdjust")
-      amorType ? exportElementToXML(config, loansStartNode, "AdjustableRate") : null;
-    else
-      exportElementToXML(config, loansStartNode);
+      amorType
+        ? exportElementToXML(config, loansStartNode, "AdjustableRate")
+        : null;
+    else exportElementToXML(config, loansStartNode);
   });
-
 
   const borrowerPartyNode = dealNode
     .ele("PARTIES")
@@ -2505,7 +2589,7 @@ function handleExportClick(e) {
           exportElementToXML(
             { ...config, selector },
             borrowerPartyNode,
-            config.exportValues?.[index],
+            config.exportValues?.[index]
           );
         }
       });
@@ -2513,7 +2597,7 @@ function handleExportClick(e) {
   });
 
   // Employment Info - Borrower
-  const employmentNode = borrowerPartyNode.com("Employers").ele("EMPLOYERS")
+  const employmentNode = borrowerPartyNode.com("Employers").ele("EMPLOYERS");
   currentEmployerConfig.forEach((config) => {
     if (!config.exportTo) {
       return;
@@ -2528,7 +2612,7 @@ function handleExportClick(e) {
           exportElementToXML(
             { ...config, selector },
             employmentNode,
-            config.exportValues?.[index],
+            config.exportValues?.[index]
           );
         }
       });
@@ -2536,37 +2620,53 @@ function handleExportClick(e) {
   });
 
   // Prev Employment Info - Borrower
-  const employmentPrevNode = borrowerPartyNode.com("Prev Employers").ele("EMPLOYERS")
-  const preEmploymentArr = document.querySelectorAll('input[id$="nameOfEmployer"][id^="AddiontalEmplInfo"]');
+  const employmentPrevNode = borrowerPartyNode
+    .com("Prev Employers")
+    .ele("EMPLOYERS");
+  const preEmploymentArr = document.querySelectorAll(
+    'input[id$="nameOfEmployer"][id^="AddiontalEmplInfo"]'
+  );
   for (let i = 0; i < preEmploymentArr.length; i++) {
-    const thisNode = employmentPrevNode.ele("EMPLOYER").att("Sequence", i + 1)
+    const thisNode = employmentPrevNode.ele("EMPLOYER").att("Sequence", i + 1);
 
     prevEmployerConfig.forEach((config) => {
       if (!config.exportTo) {
         return;
       }
 
-      config = { ...config, selector: config.selector.replace("{counter}", i + 1) }
+      config = {
+        ...config,
+        selector: config.selector.replace("{counter}", i + 1),
+      };
 
-      if ((config.selector.match("#AddiontalEmplInfo")) && (config.selector.match("employedByOtherParty"))) {
-        const empIndicator = document.querySelector(`${config.selector}:checked`);
-        empIndicator ? exportElementToXML(config, thisNode, "true") : exportElementToXML(config, thisNode, "false");
-
-      } else if ((config.selector.match("#AddiontalEmplInfo")) && (config.selector.match("businessPhone"))) {
+      if (
+        config.selector.match("#AddiontalEmplInfo") &&
+        config.selector.match("employedByOtherParty")
+      ) {
+        const empIndicator = document.querySelector(
+          `${config.selector}:checked`
+        );
+        empIndicator
+          ? exportElementToXML(config, thisNode, "true")
+          : exportElementToXML(config, thisNode, "false");
+      } else if (
+        config.selector.match("#AddiontalEmplInfo") &&
+        config.selector.match("businessPhone")
+      ) {
         const phoneValue = document.querySelector(config.selector).value;
-        const empPhone = phoneValue.substr(0, phoneValue.search("Ext"))
-        const empPhoneformated = empPhone.replace(/[^0-9]/g, "")
-        exportElementToXML(config, thisNode, empPhoneformated)
-
-      } else
-        exportElementToXML(config, thisNode);
-
+        const empPhone = phoneValue.substr(0, phoneValue.search("Ext"));
+        const empPhoneformated = empPhone.replace(/[^0-9]/g, "");
+        exportElementToXML(config, thisNode, empPhoneformated);
+      } else exportElementToXML(config, thisNode);
     });
   }
 
   // CoBorrower
   if (document.querySelector("#isCoBorrower").value === "1") {
-    const coborrowerPartyNode = borrowerPartyNode.up().com("Second Borrower").ele("PARTY");
+    const coborrowerPartyNode = borrowerPartyNode
+      .up()
+      .com("Second Borrower")
+      .ele("PARTY");
     // CoBorrower
     coBorrowerConfig.forEach((config) => {
       if (!config.exportTo) {
@@ -2582,14 +2682,13 @@ function handleExportClick(e) {
             exportElementToXML(
               { ...config, selector },
               coborrowerPartyNode,
-              config.exportValues?.[index],
+              config.exportValues?.[index]
             );
           }
         });
       }
     });
-  };
-
+  }
 
   // borrowerPartyNode.com("Loan Organization")
   loanOriginatorConfig.forEach((config) => {
@@ -2605,7 +2704,7 @@ function handleExportClick(e) {
           exportElementToXML(
             { ...config, selector },
             borrowerPartyNode,
-            config.exportValues?.[index],
+            config.exportValues?.[index]
           );
         }
       });
@@ -2615,13 +2714,13 @@ function handleExportClick(e) {
   const xml = doc.end({ prettyPrint: true });
   console.log(xml);
   var a = document.createElement("a");
-  blob = new Blob([doc], { type: "application/xml" }),
-    url = window.URL.createObjectURL(blob);
+  (blob = new Blob([doc], { type: "application/xml" })),
+    (url = window.URL.createObjectURL(blob));
   a.href = url;
   a.download = "mismoExport";
   a.click();
   window.URL.revokeObjectURL(url);
-  return true
+  return true;
 }
 
 global.handleImportChange = handleImportChange;
@@ -2635,15 +2734,16 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
     const eleVal = element.value;
     // console.log(config.selector);
     // console.log(config.exportTo);
-    config.exportTo.split(" ").forEach((tagName) => {
-      const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
-      if (foundNode && config?.newTag != tagName) {
-        xmlNode = foundNode;
-        // } else if (index && config.newTag === tagName) {
-        //   xmlNode = xmlNode.ele(tagName).att("Sequence", index);
-      } else
-        xmlNode = xmlNode.ele(tagName);
-    })
+    if (eleVal || hardcodedValue) {
+      config.exportTo.split(" ").forEach((tagName) => {
+        const foundNode = xmlNode.find((n) => n.node.nodeName === tagName);
+        if (foundNode && config?.newTag != tagName) {
+          xmlNode = foundNode;
+          // } else if (index && config.newTag === tagName) {
+          //   xmlNode = xmlNode.ele(tagName).att("Sequence", index);
+        } else xmlNode = xmlNode.ele(tagName);
+      });
+    
 
     switch (config.selector) {
       case "#phoneNumber":
@@ -2652,8 +2752,8 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
       case "#coBCellNumber":
       case "#coBFax":
       case "#employerPhone1":
-
         xmlNode.txt(eleVal.replace(/[^0-9]/g, ""));
+        startNode = xmlNode.up().up();
         break;
 
       case "#workNumber":
@@ -2664,6 +2764,7 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
           .up()
           .ele("ContactPointTelephoneExtensionValue")
           .txt(eleVal.slice(-4).replace(/[^0-9]/g, ""));
+        startNode = xmlNode.up().up();
         break;
 
       case "#mailingAddress":
@@ -2675,8 +2776,8 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
         xmlNode.txt(
           document.getElementById("mailingAddrAsPresent").value === "1"
             ? document.getElementById(
-              config.selector.replace("#mailing", "present")
-            ).value
+                config.selector.replace("#mailing", "present")
+              ).value
             : eleVal
         );
         xmlNode = xmlNode.up();
@@ -2688,19 +2789,19 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
       case "#coBorrowerMailingCity":
       case "#coBorrowerMailingZip":
       case "#coBorrowerMailingState":
-
         xmlNode.txt(
           document.getElementById("mailingAddressAsBorrower").value === "1"
             ? document.getElementById(
-              config.selector.replace("#coBorrowerMailing", "coBPresent")
-            ).value
+                config.selector.replace("#coBorrowerMailing", "coBPresent")
+              ).value
             : eleVal
         );
         xmlNode = xmlNode.up();
-        const addTypeCo = xmlNode.find((c) => c.node.nodeName === "AddressType");
+        const addTypeCo = xmlNode.find(
+          (c) => c.node.nodeName === "AddressType"
+        );
         if (!addTypeCo) xmlNode.ele("AddressType").txt("Mailing");
         break;
-
 
       case "#ssn":
       case "#coBSsnNumber":
@@ -2719,21 +2820,29 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
       case "#borrowerCitizenship_0":
       case "#coBorrowerCitizenship_1":
       case "#isCoBorUSCitizenYes":
-        document.querySelector(`${config.selector}:checked`) ? xmlNode.txt("USCitizen") : null
+        document.querySelector(`${config.selector}:checked`)
+          ? xmlNode.txt("USCitizen")
+          : null;
         break;
 
       case "#borrowerCitizenship_1":
       case "#coBorrowerCitizenship_2":
-        document.querySelector(`${config.selector}:checked`) ? xmlNode.txt("PermanentResidentAlien") : null
+        document.querySelector(`${config.selector}:checked`)
+          ? xmlNode.txt("PermanentResidentAlien")
+          : null;
         break;
 
       case "#borrowerCitizenship_3":
       case "#coBorrowerCitizenship_3":
-        document.querySelector(`${config.selector}:checked`) ? xmlNode.txt("NonPermanentResidentAlien") : null
+        document.querySelector(`${config.selector}:checked`)
+          ? xmlNode.txt("NonPermanentResidentAlien")
+          : null;
         break;
 
       case "#isCoBorUSCitizenNo":
-        document.querySelector(`${config.selector}:checked`) ? xmlNode.txt("Unknown") : null
+        document.querySelector(`${config.selector}:checked`)
+          ? xmlNode.txt("Unknown")
+          : null;
         break;
 
       case "#maritalStatus_1":
@@ -2742,75 +2851,127 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
       case "#maritalStatusCoBor_1":
       case "#maritalStatusCoBor_2":
       case "#maritalStatusCoBor_3":
+        xmlNode.find((c) => c.node.nodeValue)
+          ? null
+          : xmlNode.txt(
+              document.querySelector(`${config.selector}:checked`)?.value
+            );
+        break;
+
       case "#isServicingMember_1":
       case "#isServicingMember_2":
-        xmlNode.find((c) => c.node.nodeValue) ? null : xmlNode.txt(document.querySelector(`${config.selector}:checked`)?.value);
+        xmlNode.find((c) => c.node.nodeValue)
+          ? null
+          : document.querySelector(`${config.selector}:checked`)
+          ? xmlNode.txt(true)
+          : xmlNode.txt(false);
         break;
 
       case "#bankruptcyTypes":
         const multiSelect = document.querySelector(config.selector);
         for (var i = 0; i < multiSelect.options.length; i++) {
           if (multiSelect.options[i].selected)
-            xmlNode = xmlNode.txt(multiSelect.options[i].value).up().ele("BankruptcyChapterType")
-        };
+            xmlNode = xmlNode
+              .txt(multiSelect.options[i].value)
+              .up()
+              .ele("BankruptcyChapterType");
+        }
         xmlNode.remove();
         break;
 
       //Borrower HDMA
       case "#PublishBInfoYes":
-        if (document.querySelector(`${config.selector}:checked`)) {
-          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("false")
-          xmlNode.ele("HMDAGenderRefusalIndicator").txt("false")
-          xmlNode.ele("HMDARaceRefusalIndicator").txt("false")
-        } else if (document.querySelector(`#PublishBInfoNo:checked`)) {
-          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("true")
-          xmlNode.ele("HMDAGenderRefusalIndicator").txt("true")
-          xmlNode.ele("HMDARaceRefusalIndicator").txt("true")
-        } else {
-          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("")
-          xmlNode.ele("HMDAGenderRefusalIndicator").txt("")
-          xmlNode.ele("HMDARaceRefusalIndicator").txt("")
-        }
+      case "#PublishBInfoNo":
+        xmlNode.ele("HMDAEthnicityRefusalIndicator").txt(hardcodedValue);
+        xmlNode.ele("HMDAGenderRefusalIndicator").txt(hardcodedValue);
+        xmlNode.ele("HMDARaceRefusalIndicator").txt(hardcodedValue);
+        // if (document.querySelector(`${config.selector}:checked`)) {
+        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("false");
+        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("false");
+        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("false");
+        // } else if (document.querySelector(`#PublishBInfoNo:checked`)) {
+        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("true");
+        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("true");
+        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("true");
+        // } else {
+        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("");
+        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("");
+        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("");
+        // }
 
         if (document.querySelector(`#bFiEthnicityYes:checked`)) {
-          xmlNode.ele("HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator").txt("true")
+          xmlNode
+            .ele(
+              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+            )
+            .txt("true");
         } else if (document.querySelector(`#bFiEthnicityNo:checked`)) {
-          xmlNode.ele("HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator").txt("false")
+          xmlNode
+            .ele(
+              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+            )
+            .txt("false");
         } else {
-          xmlNode.ele("HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator").txt("")
+          xmlNode
+            .ele(
+              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+            )
+            .txt("");
         }
 
         if (document.querySelector(`#bFiSexYes:checked`)) {
-          xmlNode.ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator").txt("true")
+          xmlNode
+            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+            .txt("true");
         } else if (document.querySelector(`#bFiEthnicityNo:checked`)) {
-          xmlNode.ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator").txt("false")
+          xmlNode
+            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+            .txt("false");
         } else {
-          xmlNode.ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator").txt("")
+          xmlNode
+            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+            .txt("");
         }
 
         if (document.querySelector(`#bFiRaceYes:checked`)) {
-          xmlNode.ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator").txt("true")
+          xmlNode
+            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
+            .txt("true");
         } else if (document.querySelector(`#bFiEthnicityNo:checked`)) {
-          xmlNode.ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator").txt("false")
+          xmlNode
+            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
+            .txt("false");
         } else {
-          xmlNode.ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator").txt("")
+          xmlNode
+            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
+            .txt("");
         }
         break;
 
       case "#BGendeMale":
       case "#BGenderFE":
       case "#BGenderNotDis":
+        if (
+          !xmlNode.find((c) => c.node.nodeValue) &&
+          document.querySelector(`${config.selector}:checked`)
+        )
+          xmlNode.txt(config.mismoValue);
 
-        if (!xmlNode.find((c) => c.node.nodeValue) && document.querySelector(`${config.selector}:checked`))
-          xmlNode.txt(config.mismoValue)
-
-        const appMTBor = document.querySelector(`#bDemoInfo1:checked`) ? "FaceToFace" :
-          document.querySelector(`#bDemoInfo2:checked`) ? "Telephone" :
-            document.querySelector(`#bDemoInfo3:checked`) ? "Fax" :
-              document.querySelector(`#bDemoInfo4:checked`) ? "Email" : "";
-        xmlNode = xmlNode.up()
-        xmlNode.find((c) => c.node.nodeName === `ULAD:ApplicationTakeMethodType`) ? null :
-          xmlNode.ele(`ULAD:ApplicationTakeMethodType`).txt(appMTBor);
+        const appMTBor = document.querySelector(`#bDemoInfo1:checked`)
+          ? "FaceToFace"
+          : document.querySelector(`#bDemoInfo2:checked`)
+          ? "Telephone"
+          : document.querySelector(`#bDemoInfo3:checked`)
+          ? "Fax"
+          : document.querySelector(`#bDemoInfo4:checked`)
+          ? "Email"
+          : "";
+        xmlNode = xmlNode.up();
+        xmlNode.find(
+          (c) => c.node.nodeName === `ULAD:ApplicationTakeMethodType`
+        )
+          ? null
+          : xmlNode.ele(`ULAD:ApplicationTakeMethodType`).txt(appMTBor);
         break;
 
       case "#BRace1":
@@ -2822,80 +2983,125 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
       case "#BEthnicityH":
       case "#BEthnicityNH":
       case "#BEthnicityND":
-
-        if (!xmlNode.find((c) => c.node.nodeValue) && document.querySelector(`${config.selector}:checked`))
+        if (
+          !xmlNode.find((c) => c.node.nodeValue) &&
+          document.querySelector(`${config.selector}:checked`)
+        )
           xmlNode.txt(config.mismoValue);
 
-        if (config.selector === "#BEthnicityH" && document.querySelector(`#BEthnicityH:checked`)) {
-          const ethnicities = document.getElementsByName(`bFiEthnicitySub`)
-          ethnicities.forEach(ethnicity => {
+        if (
+          config.selector === "#BEthnicityH" &&
+          document.querySelector(`#BEthnicityH:checked`)
+        ) {
+          const ethnicities = document.getElementsByName(`bFiEthnicitySub`);
+          ethnicities.forEach((ethnicity) => {
             if (document.querySelector(`#${ethnicity.id}:checked`)) {
-              const valArr = ["Mexican", "PuertoRican", "Cuban", "Other"]
+              const valArr = ["Mexican", "PuertoRican", "Cuban", "Other"];
               xmlNode = xmlNode.up().up().up().up().up().up();
-              xmlNode.ele("HMDA_ETHNICITY_ORIGINS")
+              xmlNode
+                .ele("HMDA_ETHNICITY_ORIGINS")
                 .ele("HMDA_ETHNICITY_ORIGIN")
                 .ele("HMDAEthnicityOriginType")
                 .txt(valArr[ethnicity.value - 1]);
             }
-          })
+          });
         }
         break;
 
       //CoBorrower HDMA
+      case "#PublishCBInfo1":
       case "#PublishCBInfo2":
-        if (document.querySelector(`${config.selector}:checked`)) {
-          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("false")
-          xmlNode.ele("HMDAGenderRefusalIndicator").txt("false")
-          xmlNode.ele("HMDARaceRefusalIndicator").txt("false")
-        } else if (document.querySelector(`#PublishCBInfo1:checked`)) {
-          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("true")
-          xmlNode.ele("HMDAGenderRefusalIndicator").txt("true")
-          xmlNode.ele("HMDARaceRefusalIndicator").txt("true")
-        } else {
-          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("")
-          xmlNode.ele("HMDAGenderRefusalIndicator").txt("")
-          xmlNode.ele("HMDARaceRefusalIndicator").txt("")
-        }
+        xmlNode.ele("HMDAEthnicityRefusalIndicator").txt(hardcodedValue);
+        xmlNode.ele("HMDAGenderRefusalIndicator").txt(hardcodedValue);
+        xmlNode.ele("HMDARaceRefusalIndicator").txt(hardcodedValue);
+
+        // if (document.querySelector(`${config.selector}:checked`)) {
+        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("false");
+        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("false");
+        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("false");
+        // } else if (document.querySelector(`#PublishCBInfo1:checked`)) {
+        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("true");
+        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("true");
+        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("true");
+        // } else {
+        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("");
+        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("");
+        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("");
+        // }
 
         if (document.querySelector(`#CBFiEthnicityYes:checked`)) {
-          xmlNode.ele("HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator").txt("true")
+          xmlNode
+            .ele(
+              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+            )
+            .txt("true");
         } else if (document.querySelector(`#CBFiEthnicityNo:checked`)) {
-          xmlNode.ele("HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator").txt("false")
+          xmlNode
+            .ele(
+              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+            )
+            .txt("false");
         } else {
-          xmlNode.ele("HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator").txt("")
+          xmlNode
+            .ele(
+              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+            )
+            .txt("");
         }
 
         if (document.querySelector(`#CBFiGenderYes:checked`)) {
-          xmlNode.ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator").txt("true")
+          xmlNode
+            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+            .txt("true");
         } else if (document.querySelector(`#CBFiGenderNo:checked`)) {
-          xmlNode.ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator").txt("false")
+          xmlNode
+            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+            .txt("false");
         } else {
-          xmlNode.ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator").txt("")
+          xmlNode
+            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+            .txt("");
         }
 
         if (document.querySelector(`#CBFiRaceYes:checked`)) {
-          xmlNode.ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator").txt("true")
+          xmlNode
+            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
+            .txt("true");
         } else if (document.querySelector(`#CBFiRaceNo:checked`)) {
-          xmlNode.ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator").txt("false")
+          xmlNode
+            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
+            .txt("false");
         } else {
-          xmlNode.ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator").txt("")
+          xmlNode
+            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
+            .txt("");
         }
         break;
 
       case "#CBGender2":
       case "#CBGender1":
       case "#CBGender3":
+        if (
+          !xmlNode.find((c) => c.node.nodeValue) &&
+          document.querySelector(`${config.selector}:checked`)
+        )
+          xmlNode.txt(config.mismoValue);
 
-        if (!xmlNode.find((c) => c.node.nodeValue) && document.querySelector(`${config.selector}:checked`))
-          xmlNode.txt(config.mismoValue)
-
-        const appMTCoBor = document.querySelector(`#CBDDemoInfo1:checked`) ? "FaceToFace" :
-          document.querySelector(`#CBDDemoInfo2:checked`) ? "Telephone" :
-            document.querySelector(`#CBDDemoInfo3:checked`) ? "Fax" :
-              document.querySelector(`#CBDDemoInfo4:checked`) ? "Email" : "";
-        xmlNode = xmlNode.up()
-        xmlNode.find((c) => c.node.nodeName === `ULAD:ApplicationTakeMethodType`) ? null :
-          xmlNode.ele(`ULAD:ApplicationTakeMethodType`).txt(appMTCoBor);
+        const appMTCoBor = document.querySelector(`#CBDDemoInfo1:checked`)
+          ? "FaceToFace"
+          : document.querySelector(`#CBDDemoInfo2:checked`)
+          ? "Telephone"
+          : document.querySelector(`#CBDDemoInfo3:checked`)
+          ? "Fax"
+          : document.querySelector(`#CBDDemoInfo4:checked`)
+          ? "Email"
+          : "";
+        xmlNode = xmlNode.up();
+        xmlNode.find(
+          (c) => c.node.nodeName === `ULAD:ApplicationTakeMethodType`
+        )
+          ? null
+          : xmlNode.ele(`ULAD:ApplicationTakeMethodType`).txt(appMTCoBor);
         break;
 
       case "#CBRace1":
@@ -2907,22 +3113,28 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
       case "#CBEthnicity1":
       case "#CBEthnicity2":
       case "#CBEthnicity3":
-
-        if (!xmlNode.find((c) => c.node.nodeValue) && document.querySelector(`${config.selector}:checked`))
+        if (
+          !xmlNode.find((c) => c.node.nodeValue) &&
+          document.querySelector(`${config.selector}:checked`)
+        )
           xmlNode.txt(config.mismoValue);
 
-        if (config.selector === "#CBEthnicity2" && document.querySelector(`#CBEthnicity2:checked`)) {
-          const ethnicitiesCo = document.getElementsByName(`CBEthnicitySub`)
-          ethnicitiesCo.forEach(ethnicity => {
+        if (
+          config.selector === "#CBEthnicity2" &&
+          document.querySelector(`#CBEthnicity2:checked`)
+        ) {
+          const ethnicitiesCo = document.getElementsByName(`CBEthnicitySub`);
+          ethnicitiesCo.forEach((ethnicity) => {
             if (document.querySelector(`#${ethnicity.id}:checked`)) {
-              const valArrCo = ["Mexican", "PuertoRican", "Cuban", "Other"]
+              const valArrCo = ["Mexican", "PuertoRican", "Cuban", "Other"];
               xmlNode = xmlNode.up().up().up().up().up().up();
-              xmlNode.ele("HMDA_ETHNICITY_ORIGINS")
+              xmlNode
+                .ele("HMDA_ETHNICITY_ORIGINS")
                 .ele("HMDA_ETHNICITY_ORIGIN")
                 .ele("HMDAEthnicityOriginType")
                 .txt(valArrCo[ethnicity.value - 1]);
             }
-          })
+          });
         }
         break;
 
@@ -2944,25 +3156,35 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
       case "#capitalGains2":
       case "#partnership2":
       case "#otherHouseHold2":
-
-        xmlNode.txt(eleVal)
-          .up().ele("IncomeType").txt(config.incomeType)
-          .up().ele("EmploymentIncomeIndicator").txt("true")
+        xmlNode
+          .txt(eleVal)
+          .up()
+          .ele("IncomeType")
+          .txt(config.incomeType)
+          .up()
+          .ele("EmploymentIncomeIndicator")
+          .txt("true");
         break;
 
       case "#occupation1":
-        xmlNode.txt(eleVal)
-          .up().ele("EmploymentStatusType").txt("Current")
+        xmlNode.txt(eleVal).up().ele("EmploymentStatusType").txt("Current");
         break;
 
       case "#lien1Terms":
         const period = document.querySelector(config.selector).value;
-        if (period)
-          xmlNode.txt(period.replace(/[^0-9]/gi, ""));
-
         const periodType = period.match(/day|month|year|quarter|week/i);
-        if (periodType)
+        if (periodType[0].toLowerCase() === "year") {
+          if (period) xmlNode.txt(period.replace(/[^0-9]/gi, "") * 12);
+          xmlNode.up().ele("LoanAmortizationPeriodType").txt("Month");
+        } else {
+          xmlNode.txt(period.replace(/[^0-9]/gi, ""));
           xmlNode.up().ele("LoanAmortizationPeriodType").txt(periodType[0]);
+        }
+        break;
+
+        case("#borrowerDOB"):
+        case("#coBorrowerDOB"):
+        xmlNode.txt(unformatDate(eleVal));
         break;
 
       default:
@@ -2970,17 +3192,17 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
     }
     if (config.dependency) {
       xmlNode = startNode;
-      config?.dependency.tag
-        .split(" ")
-        .forEach(_child => {
-          const foundNodeDep = xmlNode.find((n) => n.node.nodeName === _child);
-          if (foundNodeDep && config.dependency?.duplicate != _child) xmlNode = foundNodeDep;
-          else xmlNode = xmlNode.ele(_child);
-        })
+      config?.dependency.tag.split(" ").forEach((_child) => {
+        const foundNodeDep = xmlNode.find((n) => n.node.nodeName === _child);
+        if (foundNodeDep && config.dependency?.duplicate != _child)
+          xmlNode = foundNodeDep;
+        else xmlNode = xmlNode.ele(_child);
+      });
       xmlNode.txt(config?.dependency.value);
-    }
-  }
-}
+    };
+  };
+}};
+
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"moment":2,"xmlbuilder2":3}],2:[function(require,module,exports){
 //! moment.js
