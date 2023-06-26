@@ -7,14 +7,11 @@ const borrowerConfig = [
   {
     selector: "#ssn",
     value: (node) =>
-      getText(
-        node,
-        "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierType"
-      ) === "SocialSecurityNumber" &&
-      getText(
-        node,
-        "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierValue"
-      ),
+      // getText(
+      //   node,
+      //   "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierType"
+      // ) === "SocialSecurityNumber" &&
+      getText(node, "TaxpayerIdentifierValue"),
     exportTo:
       "TAXPAYER_IDENTIFIERS TAXPAYER_IDENTIFIER TaxpayerIdentifierValue",
   },
@@ -86,7 +83,8 @@ const borrowerConfig = [
   },
   {
     selector: "#borrowerFName",
-    value: (node) => getText(node, "INDIVIDUAL NAME FirstName"),
+    value: (node) => getText(node, "FirstName"), // this is can be used for short
+    // value: (node) => getText(node, "INDIVIDUAL NAME FirstName"), //this is the old
     exportTo: "INDIVIDUAL NAME FirstName",
   },
   {
@@ -451,10 +449,28 @@ const borrowerConfig = [
       "ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL UndisclosedBorrowedFundsAmount",
   },
   {
-    selector: ["#famBizAffilYes", "#famBizAffilNo"],
-    value: (node) =>
-      getText(node, `ULADSpecialBorrowerSellerRelationshipIndicator`) === "Yes",
+    selector: "#famBizAffilYes",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:SpecialBorrowerSellerRelationshipIndicator>true</ULAD:SpecialBorrowerSellerRelationshipIndicator>",
+        0
+      ),
     exportTo: `ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL EXTENSION OTHER ULAD:DECLARATION_DETAIL_EXTENSION ULAD:SpecialBorrowerSellerRelationshipIndicator`,
+    mismoValue: "true",
+  },
+  {
+    selector: "#famBizAffilNo",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:SpecialBorrowerSellerRelationshipIndicator>false</ULAD:SpecialBorrowerSellerRelationshipIndicator>",
+        0
+      ),
+    exportTo: `ROLES ROLE BORROWER DECLARATION DECLARATION_DETAIL EXTENSION OTHER ULAD:DECLARATION_DETAIL_EXTENSION ULAD:SpecialBorrowerSellerRelationshipIndicator`,
+    mismoValue: "false",
   },
   {
     selector: ["#applyOtherLoanYes", "#applyOtherLoanNo"],
@@ -557,7 +573,13 @@ const borrowerConfig = [
   },
   {
     selector: "#BEthnicityH",
-    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAEthnicityType>HispanicOrLatino</ULAD:HMDAEthnicityType>",
+        0
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
@@ -565,7 +587,13 @@ const borrowerConfig = [
   },
   {
     selector: "#BEthnicityNH",
-    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAEthnicityType>NotHispanicOrLatino</ULAD:HMDAEthnicityType>",
+        0
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
@@ -573,7 +601,13 @@ const borrowerConfig = [
   },
   {
     selector: "#BEthnicityND",
-    value: (node) => getText(node, "HMDAEthnicityRefusalIndicator") === "true",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAEthnicityType>NotApplicable</ULAD:HMDAEthnicityType>",
+        0
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
@@ -581,25 +615,27 @@ const borrowerConfig = [
   },
   {
     selector: "#BRace1",
-    value: (node) => getText(node, "HMDARaceType") === "White",
+    value: (node) =>
+      getText(node, "HMDARaceType") === "AmericanIndianOrAlaskaNative",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
     mismoValue: "AmericanIndianOrAlaskaNative",
   },
   {
     selector: "#BRace2",
-    value: (node) => getText(node, "HMDARaceType") === "White",
+    value: (node) => getText(node, "HMDARaceType") === "Asian",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
     mismoValue: "Asian",
   },
   {
     selector: "#BRace3",
-    value: (node) => getText(node, "HMDARaceType") === "White",
+    value: (node) => getText(node, "HMDARaceType") === "BlackOrAfricanAmerican",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
     mismoValue: "BlackOrAfricanAmerican",
   },
   {
     selector: "#BRace4",
-    value: (node) => getText(node, "HMDARaceType") === "White",
+    value: (node) =>
+      getText(node, "HMDARaceType") === "NativeHawaiianOrOtherPacificIslander",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
     mismoValue: "NativeHawaiianOrOtherPacificIslander",
   },
@@ -611,14 +647,19 @@ const borrowerConfig = [
   },
   {
     selector: "#BRace6",
-    value: (node) => getText(node, "HMDARaceType") === "White",
+    value: (node) => getText(node, "HMDARaceType") === "NotApplicable",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
     mismoValue: "NotApplicable",
   },
   {
     selector: "#BGendeMale",
-    value: (node) => getText(node, "hmdagendertype") === "Male",
-    // value: (node) => xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`),
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>",
+        0
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
       `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
@@ -626,8 +667,13 @@ const borrowerConfig = [
   },
   {
     selector: "#BGenderFE",
-    value: (node) => getText(node, "hmdagendertype") === "Female",
-    // xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>",
+        0
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
       `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
@@ -635,15 +681,75 @@ const borrowerConfig = [
   },
   {
     selector: "#BGenderNotDis",
-    value: (node) =>
-      getText(node, "HMDAGenderRefusalIndicator") === "true" &&
-      !xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`) &&
-      !xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAGenderType>InformationNotProvidedUnknown</ULAD:HMDAGenderType>",
+        0
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
       `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
-    mismoValue: "NotApplicable",
+    mismoValue: "InformationNotProvidedUnknown",
   },
+  {
+    selector: "#bDemoInfo1",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:ApplicationTakenMethodType>FaceToFace</ULAD:ApplicationTakenMethodType>",
+        0
+      ),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+      `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:ApplicationTakenMethodType`,
+    mismoValue: "FaceToFace",
+  },
+  {
+    selector: "#bDemoInfo2",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:ApplicationTakenMethodType>Telephone</ULAD:ApplicationTakenMethodType>",
+        0
+      ),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+      `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:ApplicationTakenMethodType`,
+    mismoValue: "Telephone",
+  },
+  {
+    selector: "#bDemoInfo3",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:ApplicationTakenMethodType>Mail</ULAD:ApplicationTakenMethodType>",
+        0
+      ),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+      `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:ApplicationTakenMethodType`,
+    mismoValue: "Mail",
+  },
+  {
+    selector: "#bDemoInfo4",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:ApplicationTakenMethodType>Internet</ULAD:ApplicationTakenMethodType>",
+        0
+      ),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+      `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:ApplicationTakenMethodType`,
+    mismoValue: "Internet",
+  },
+
   {
     selector: "#grossIncome1",
     value: (node) => {
@@ -1081,7 +1187,13 @@ const coBorrowerConfig = [
   },
   {
     selector: "#CBEthnicity2",
-    value: (node) => getText(node, "HMDAEthnicityOriginType") === "Mexican",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAEthnicityType>HispanicOrLatino</ULAD:HMDAEthnicityType>",
+        1,
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
@@ -1089,7 +1201,13 @@ const coBorrowerConfig = [
   },
   {
     selector: "#CBEthnicity1",
-    value: (node) => getText(node, "HMDAEthnicityOriginType") === "NotMexican",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAEthnicityType>NotHispanicOrLatino</ULAD:HMDAEthnicityType>",
+        1,
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
@@ -1097,7 +1215,13 @@ const coBorrowerConfig = [
   },
   {
     selector: "#CBEthnicity3",
-    value: (node) => getText(node, "HMDAEthnicityRefusalIndicator") === "NA",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAEthnicityType>NotApplicable</ULAD:HMDAEthnicityType>",
+        1,
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
       `ULAD:HMDA_ETHNICITIES ULAD:HMDA_ETHNICITY ULAD:HMDAEthnicityType`,
@@ -1105,25 +1229,27 @@ const coBorrowerConfig = [
   },
   {
     selector: "#CBRace1",
-    value: (node) => getText(node, "HMDARaceType") === "White",
+    value: (node) =>
+      getText(node, "HMDARaceType") === "AmericanIndianOrAlaskaNative",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
     mismoValue: "AmericanIndianOrAlaskaNative",
   },
   {
     selector: "#CBRace2",
-    value: (node) => getText(node, "HMDARaceType") === "White",
+    value: (node) => getText(node, "HMDARaceType") === "Asian",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
     mismoValue: "Asian",
   },
   {
     selector: "#CBRace3",
-    value: (node) => getText(node, "HMDARaceType") === "White",
+    value: (node) => getText(node, "HMDARaceType") === "BlackOrAfricanAmerican",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
     mismoValue: "BlackOrAfricanAmerican",
   },
   {
     selector: "#CBRace4",
-    value: (node) => getText(node, "HMDARaceType") === "White",
+    value: (node) =>
+      getText(node, "HMDARaceType") === "NativeHawaiianOrOtherPacificIslander",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
     mismoValue: "NativeHawaiianOrOtherPacificIslander",
   },
@@ -1135,15 +1261,19 @@ const coBorrowerConfig = [
   },
   {
     selector: "#CBRace6",
-    value: (node) => getText(node, "HMDARaceType") === "White",
+    value: (node) => getText(node, "HMDARaceType") === "NotApplicable",
     exportTo: `ROLES ROLE BORROWER GOVERNMENT_MONITORING HMDA_RACES HMDA_RACE HMDA_RACE_DETAIL HMDARaceType`,
     mismoValue: "NotApplicable",
   },
   {
     selector: "#CBGender2",
-    value: (node) => getText(node, "HMDAGenderType") === "Male",
-    // value: (node) =>
-    //   xmlText.includes(`<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>`),
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAGenderType>Male</ULAD:HMDAGenderType>",
+        1
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
       `ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
@@ -1151,8 +1281,13 @@ const coBorrowerConfig = [
   },
   {
     selector: "#CBGender1",
-    value: (node) =>
-      xmlText.includes(`<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>`),
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>",
+        1
+      ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
       `ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
@@ -1160,14 +1295,73 @@ const coBorrowerConfig = [
   },
   {
     selector: "#CBGender3",
-    value: (node) =>
-      xmlText.includes(
-        `<ULAD:HMDAGenderType>NotApplicable</ULAD:HMDAGenderType>`
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:HMDAGenderType>InformationNotProvidedUnknown</ULAD:HMDAGenderType>",
+        1
       ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION OTHER ` +
       `ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:HMDAGenderType`,
-    mismoValue: "NotApplicable",
+    mismoValue: "InformationNotProvidedUnknown",
+  },
+  {
+    selector: "#CBDDemoInfo1",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:ApplicationTakenMethodType>FaceToFace</ULAD:ApplicationTakenMethodType>",
+        1
+      ),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+      `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:ApplicationTakenMethodType`,
+    mismoValue: "FaceToFace",
+  },
+  {
+    selector: "#CBDDemoInfo2",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:ApplicationTakenMethodType>Telephone</ULAD:ApplicationTakenMethodType>",
+        1
+      ),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+      `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:ApplicationTakenMethodType`,
+    mismoValue: "Telephone",
+  },
+  {
+    selector: "#CBDDemoInfo3",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:ApplicationTakenMethodType>Mail</ULAD:ApplicationTakenMethodType>",
+        1
+      ),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+      `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:ApplicationTakenMethodType`,
+    mismoValue: "Mail",
+  },
+  {
+    selector: "#CBDDemoInfo4",
+    value: () =>
+      getTextOfNamespace(
+        "<PARTY>",
+        "</PARTY>",
+        "<ULAD:ApplicationTakenMethodType>Internet</ULAD:ApplicationTakenMethodType>",
+        1
+      ),
+    exportTo:
+      `ROLES ROLE BORROWER GOVERNMENT_MONITORING GOVERNMENT_MONITORING_DETAIL EXTENSION ` +
+      `OTHER ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION ULAD:ApplicationTakenMethodType`,
+    mismoValue: "Internet",
   },
   {
     selector: "#isCoBorUSCitizenYes",
@@ -2384,6 +2578,17 @@ function publishConfig(config, data) {
   });
 }
 
+function getTextOfNamespace(tagPartStart, tagPartEnd, tagToFind, level) {
+  var tagStart = xmlText.indexOf(tagPartStart);
+  var tagEnd = xmlText.indexOf(tagPartEnd);
+  if (level > 0) {
+    tagStart = tagEnd + 1;
+    tagEnd = xmlText.length - 1;
+  }
+  const val = xmlText.substring(tagStart, tagEnd).match(tagToFind);
+  return val ? true : false;
+}
+
 function writeCode(config, data) {
   console.log("config", config);
   console.log("data", data);
@@ -2741,462 +2946,459 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
           //   xmlNode = xmlNode.ele(tagName).att("Sequence", index);
         } else xmlNode = xmlNode.ele(tagName);
       });
-    
 
-    switch (config.selector) {
-      case "#phoneNumber":
-      case "#cellNo":
-      case "#coBPhoneNumber":
-      case "#coBCellNumber":
-      case "#coBFax":
-      case "#employerPhone1":
-        xmlNode.txt(eleVal.replace(/[^0-9]/g, ""));
-        startNode = xmlNode.up().up();
-        break;
+      switch (config.selector) {
+        case "#phoneNumber":
+        case "#cellNo":
+        case "#coBPhoneNumber":
+        case "#coBCellNumber":
+        case "#coBFax":
+        case "#employerPhone1":
+          xmlNode.txt(eleVal.replace(/[^0-9]/g, ""));
+          startNode = xmlNode.up().up();
+          break;
 
-      case "#workNumber":
-        xmlNode.txt(
-          eleVal.substr(0, eleVal.search("Ext")).replace(/[^0-9]/g, "")
-        );
-        xmlNode
-          .up()
-          .ele("ContactPointTelephoneExtensionValue")
-          .txt(eleVal.slice(-4).replace(/[^0-9]/g, ""));
-        startNode = xmlNode.up().up();
-        break;
-
-      case "#mailingAddress":
-      case "#mailingZip":
-      case "#mailingUnit":
-      case "#mailingState":
-      case "#mailingCity":
-      case "#mailingCountry":
-        xmlNode.txt(
-          document.getElementById("mailingAddrAsPresent").value === "1"
-            ? document.getElementById(
-                config.selector.replace("#mailing", "present")
-              ).value
-            : eleVal
-        );
-        xmlNode = xmlNode.up();
-        const addType = xmlNode.find((c) => c.node.nodeName === "AddressType");
-        if (!addType) xmlNode.ele("AddressType").txt("Mailing");
-        break;
-
-      case "#coBorrowerMailingAddress":
-      case "#coBorrowerMailingCity":
-      case "#coBorrowerMailingZip":
-      case "#coBorrowerMailingState":
-        xmlNode.txt(
-          document.getElementById("mailingAddressAsBorrower").value === "1"
-            ? document.getElementById(
-                config.selector.replace("#coBorrowerMailing", "coBPresent")
-              ).value
-            : eleVal
-        );
-        xmlNode = xmlNode.up();
-        const addTypeCo = xmlNode.find(
-          (c) => c.node.nodeName === "AddressType"
-        );
-        if (!addTypeCo) xmlNode.ele("AddressType").txt("Mailing");
-        break;
-
-      case "#ssn":
-      case "#coBSsnNumber":
-        xmlNode.txt(eleVal.replace(/[^0-9]/g, ""));
-        xmlNode.up().ele("TaxpayerIdentifierType").txt("SocialSecurityNumber");
-        break;
-
-      case "#currentRPM":
-        xmlNode.txt(
-          document.getElementById("borPresentPropType").value === "Rent"
-            ? eleVal
-            : null
-        );
-        break;
-
-      case "#borrowerCitizenship_0":
-      case "#coBorrowerCitizenship_1":
-      case "#isCoBorUSCitizenYes":
-        document.querySelector(`${config.selector}:checked`)
-          ? xmlNode.txt("USCitizen")
-          : null;
-        break;
-
-      case "#borrowerCitizenship_1":
-      case "#coBorrowerCitizenship_2":
-        document.querySelector(`${config.selector}:checked`)
-          ? xmlNode.txt("PermanentResidentAlien")
-          : null;
-        break;
-
-      case "#borrowerCitizenship_3":
-      case "#coBorrowerCitizenship_3":
-        document.querySelector(`${config.selector}:checked`)
-          ? xmlNode.txt("NonPermanentResidentAlien")
-          : null;
-        break;
-
-      case "#isCoBorUSCitizenNo":
-        document.querySelector(`${config.selector}:checked`)
-          ? xmlNode.txt("Unknown")
-          : null;
-        break;
-
-      case "#maritalStatus_1":
-      case "#maritalStatus_2":
-      case "#maritalStatus_3":
-      case "#maritalStatusCoBor_1":
-      case "#maritalStatusCoBor_2":
-      case "#maritalStatusCoBor_3":
-        xmlNode.find((c) => c.node.nodeValue)
-          ? null
-          : xmlNode.txt(
-              document.querySelector(`${config.selector}:checked`)?.value
-            );
-        break;
-
-      case "#isServicingMember_1":
-      case "#isServicingMember_2":
-        xmlNode.find((c) => c.node.nodeValue)
-          ? null
-          : document.querySelector(`${config.selector}:checked`)
-          ? xmlNode.txt(true)
-          : xmlNode.txt(false);
-        break;
-
-      case "#bankruptcyTypes":
-        const multiSelect = document.querySelector(config.selector);
-        for (var i = 0; i < multiSelect.options.length; i++) {
-          if (multiSelect.options[i].selected)
-            xmlNode = xmlNode
-              .txt(multiSelect.options[i].value)
-              .up()
-              .ele("BankruptcyChapterType");
-        }
-        xmlNode.remove();
-        break;
-
-      //Borrower HDMA
-      case "#PublishBInfoYes":
-      case "#PublishBInfoNo":
-        xmlNode.ele("HMDAEthnicityRefusalIndicator").txt(hardcodedValue);
-        xmlNode.ele("HMDAGenderRefusalIndicator").txt(hardcodedValue);
-        xmlNode.ele("HMDARaceRefusalIndicator").txt(hardcodedValue);
-        // if (document.querySelector(`${config.selector}:checked`)) {
-        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("false");
-        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("false");
-        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("false");
-        // } else if (document.querySelector(`#PublishBInfoNo:checked`)) {
-        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("true");
-        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("true");
-        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("true");
-        // } else {
-        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("");
-        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("");
-        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("");
-        // }
-
-        if (document.querySelector(`#bFiEthnicityYes:checked`)) {
+        case "#workNumber":
+          xmlNode.txt(
+            eleVal.substr(0, eleVal.search("Ext")).replace(/[^0-9]/g, "")
+          );
           xmlNode
-            .ele(
-              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
-            )
-            .txt("true");
-        } else if (document.querySelector(`#bFiEthnicityNo:checked`)) {
-          xmlNode
-            .ele(
-              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
-            )
-            .txt("false");
-        } else {
-          xmlNode
-            .ele(
-              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
-            )
-            .txt("");
-        }
+            .up()
+            .ele("ContactPointTelephoneExtensionValue")
+            .txt(eleVal.slice(-4).replace(/[^0-9]/g, ""));
+          startNode = xmlNode.up().up();
+          break;
 
-        if (document.querySelector(`#bFiSexYes:checked`)) {
-          xmlNode
-            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
-            .txt("true");
-        } else if (document.querySelector(`#bFiEthnicityNo:checked`)) {
-          xmlNode
-            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
-            .txt("false");
-        } else {
-          xmlNode
-            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
-            .txt("");
-        }
+        case "#mailingAddress":
+        case "#mailingZip":
+        case "#mailingUnit":
+        case "#mailingState":
+        case "#mailingCity":
+        case "#mailingCountry":
+          xmlNode.txt(
+            document.getElementById("mailingAddrAsPresent").value === "1"
+              ? document.getElementById(
+                  config.selector.replace("#mailing", "present")
+                ).value
+              : eleVal
+          );
+          xmlNode = xmlNode.up();
+          const addType = xmlNode.find(
+            (c) => c.node.nodeName === "AddressType"
+          );
+          if (!addType) xmlNode.ele("AddressType").txt("Mailing");
+          break;
 
-        if (document.querySelector(`#bFiRaceYes:checked`)) {
-          xmlNode
-            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
-            .txt("true");
-        } else if (document.querySelector(`#bFiEthnicityNo:checked`)) {
-          xmlNode
-            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
-            .txt("false");
-        } else {
-          xmlNode
-            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
-            .txt("");
-        }
-        break;
+        case "#coBorrowerMailingAddress":
+        case "#coBorrowerMailingCity":
+        case "#coBorrowerMailingZip":
+        case "#coBorrowerMailingState":
+          xmlNode.txt(
+            document.getElementById("mailingAddressAsBorrower").value === "1"
+              ? document.getElementById(
+                  config.selector.replace("#coBorrowerMailing", "coBPresent")
+                ).value
+              : eleVal
+          );
+          xmlNode = xmlNode.up();
+          const addTypeCo = xmlNode.find(
+            (c) => c.node.nodeName === "AddressType"
+          );
+          if (!addTypeCo) xmlNode.ele("AddressType").txt("Mailing");
+          break;
 
-      case "#BGendeMale":
-      case "#BGenderFE":
-      case "#BGenderNotDis":
-        if (
-          !xmlNode.find((c) => c.node.nodeValue) &&
+        case "#ssn":
+        case "#coBSsnNumber":
+          xmlNode.txt(eleVal.replace(/[^0-9]/g, ""));
+          xmlNode
+            .up()
+            .ele("TaxpayerIdentifierType")
+            .txt("SocialSecurityNumber");
+          break;
+
+        case "#currentRPM":
+          xmlNode.txt(
+            document.getElementById("borPresentPropType").value === "Rent"
+              ? eleVal
+              : null
+          );
+          break;
+
+        case "#borrowerCitizenship_0":
+        case "#coBorrowerCitizenship_1":
+        case "#isCoBorUSCitizenYes":
           document.querySelector(`${config.selector}:checked`)
-        )
-          xmlNode.txt(config.mismoValue);
+            ? xmlNode.txt("USCitizen")
+            : null;
+          break;
 
-        const appMTBor = document.querySelector(`#bDemoInfo1:checked`)
-          ? "FaceToFace"
-          : document.querySelector(`#bDemoInfo2:checked`)
-          ? "Telephone"
-          : document.querySelector(`#bDemoInfo3:checked`)
-          ? "Fax"
-          : document.querySelector(`#bDemoInfo4:checked`)
-          ? "Email"
-          : "";
-        xmlNode = xmlNode.up();
-        xmlNode.find(
-          (c) => c.node.nodeName === `ULAD:ApplicationTakeMethodType`
-        )
-          ? null
-          : xmlNode.ele(`ULAD:ApplicationTakeMethodType`).txt(appMTBor);
-        break;
-
-      case "#BRace1":
-      case "#BRace2":
-      case "#BRace3":
-      case "#BRace4":
-      case "#BRace5":
-      case "#BRace6":
-      case "#BEthnicityH":
-      case "#BEthnicityNH":
-      case "#BEthnicityND":
-        if (
-          !xmlNode.find((c) => c.node.nodeValue) &&
+        case "#borrowerCitizenship_1":
+        case "#coBorrowerCitizenship_2":
           document.querySelector(`${config.selector}:checked`)
-        )
-          xmlNode.txt(config.mismoValue);
+            ? xmlNode.txt("PermanentResidentAlien")
+            : null;
+          break;
 
-        if (
-          config.selector === "#BEthnicityH" &&
-          document.querySelector(`#BEthnicityH:checked`)
-        ) {
-          const ethnicities = document.getElementsByName(`bFiEthnicitySub`);
-          ethnicities.forEach((ethnicity) => {
-            if (document.querySelector(`#${ethnicity.id}:checked`)) {
-              const valArr = ["Mexican", "PuertoRican", "Cuban", "Other"];
-              xmlNode = xmlNode.up().up().up().up().up().up();
-              xmlNode
-                .ele("HMDA_ETHNICITY_ORIGINS")
-                .ele("HMDA_ETHNICITY_ORIGIN")
-                .ele("HMDAEthnicityOriginType")
-                .txt(valArr[ethnicity.value - 1]);
-            }
-          });
-        }
-        break;
-
-      //CoBorrower HDMA
-      case "#PublishCBInfo1":
-      case "#PublishCBInfo2":
-        xmlNode.ele("HMDAEthnicityRefusalIndicator").txt(hardcodedValue);
-        xmlNode.ele("HMDAGenderRefusalIndicator").txt(hardcodedValue);
-        xmlNode.ele("HMDARaceRefusalIndicator").txt(hardcodedValue);
-
-        // if (document.querySelector(`${config.selector}:checked`)) {
-        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("false");
-        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("false");
-        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("false");
-        // } else if (document.querySelector(`#PublishCBInfo1:checked`)) {
-        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("true");
-        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("true");
-        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("true");
-        // } else {
-        //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("");
-        //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("");
-        //   xmlNode.ele("HMDARaceRefusalIndicator").txt("");
-        // }
-
-        if (document.querySelector(`#CBFiEthnicityYes:checked`)) {
-          xmlNode
-            .ele(
-              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
-            )
-            .txt("true");
-        } else if (document.querySelector(`#CBFiEthnicityNo:checked`)) {
-          xmlNode
-            .ele(
-              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
-            )
-            .txt("false");
-        } else {
-          xmlNode
-            .ele(
-              "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
-            )
-            .txt("");
-        }
-
-        if (document.querySelector(`#CBFiGenderYes:checked`)) {
-          xmlNode
-            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
-            .txt("true");
-        } else if (document.querySelector(`#CBFiGenderNo:checked`)) {
-          xmlNode
-            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
-            .txt("false");
-        } else {
-          xmlNode
-            .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
-            .txt("");
-        }
-
-        if (document.querySelector(`#CBFiRaceYes:checked`)) {
-          xmlNode
-            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
-            .txt("true");
-        } else if (document.querySelector(`#CBFiRaceNo:checked`)) {
-          xmlNode
-            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
-            .txt("false");
-        } else {
-          xmlNode
-            .ele("HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator")
-            .txt("");
-        }
-        break;
-
-      case "#CBGender2":
-      case "#CBGender1":
-      case "#CBGender3":
-        if (
-          !xmlNode.find((c) => c.node.nodeValue) &&
+        case "#borrowerCitizenship_3":
+        case "#coBorrowerCitizenship_3":
           document.querySelector(`${config.selector}:checked`)
-        )
-          xmlNode.txt(config.mismoValue);
+            ? xmlNode.txt("NonPermanentResidentAlien")
+            : null;
+          break;
 
-        const appMTCoBor = document.querySelector(`#CBDDemoInfo1:checked`)
-          ? "FaceToFace"
-          : document.querySelector(`#CBDDemoInfo2:checked`)
-          ? "Telephone"
-          : document.querySelector(`#CBDDemoInfo3:checked`)
-          ? "Fax"
-          : document.querySelector(`#CBDDemoInfo4:checked`)
-          ? "Email"
-          : "";
-        xmlNode = xmlNode.up();
-        xmlNode.find(
-          (c) => c.node.nodeName === `ULAD:ApplicationTakeMethodType`
-        )
-          ? null
-          : xmlNode.ele(`ULAD:ApplicationTakeMethodType`).txt(appMTCoBor);
-        break;
-
-      case "#CBRace1":
-      case "#CBRace2":
-      case "#CBRace3":
-      case "#CBRace4":
-      case "#CBRace5":
-      case "#CBRace6":
-      case "#CBEthnicity1":
-      case "#CBEthnicity2":
-      case "#CBEthnicity3":
-        if (
-          !xmlNode.find((c) => c.node.nodeValue) &&
+        case "#isCoBorUSCitizenNo":
           document.querySelector(`${config.selector}:checked`)
-        )
-          xmlNode.txt(config.mismoValue);
+            ? xmlNode.txt("Unknown")
+            : null;
+          break;
 
-        if (
-          config.selector === "#CBEthnicity2" &&
-          document.querySelector(`#CBEthnicity2:checked`)
-        ) {
-          const ethnicitiesCo = document.getElementsByName(`CBEthnicitySub`);
-          ethnicitiesCo.forEach((ethnicity) => {
-            if (document.querySelector(`#${ethnicity.id}:checked`)) {
-              const valArrCo = ["Mexican", "PuertoRican", "Cuban", "Other"];
-              xmlNode = xmlNode.up().up().up().up().up().up();
-              xmlNode
-                .ele("HMDA_ETHNICITY_ORIGINS")
-                .ele("HMDA_ETHNICITY_ORIGIN")
-                .ele("HMDAEthnicityOriginType")
-                .txt(valArrCo[ethnicity.value - 1]);
-            }
-          });
-        }
-        break;
+        case "#maritalStatus_1":
+        case "#maritalStatus_2":
+        case "#maritalStatus_3":
+        case "#maritalStatusCoBor_1":
+        case "#maritalStatusCoBor_2":
+        case "#maritalStatusCoBor_3":
+          xmlNode.find((c) => c.node.nodeValue)
+            ? null
+            : xmlNode.txt(
+                document.querySelector(`${config.selector}:checked`)?.value
+              );
+          break;
 
-      case "#grossIncome1":
-      case "#commissionOrBonus1":
-      case "#militaryIncome1":
-      case "#overtime1":
-      case "#netRental1":
-      case "#netEarnedInterest1":
-      case "#capitalGains1":
-      case "#partnership1":
-      case "#otherHouseHold1":
-      case "#grossIncome2":
-      case "#commissionOrBonus2":
-      // case "#militaryIncome1":
-      case "#overtime2":
-      case "#netRental2":
-      case "#netEarnedInterest2":
-      case "#capitalGains2":
-      case "#partnership2":
-      case "#otherHouseHold2":
-        xmlNode
-          .txt(eleVal)
-          .up()
-          .ele("IncomeType")
-          .txt(config.incomeType)
-          .up()
-          .ele("EmploymentIncomeIndicator")
-          .txt("true");
-        break;
+        case "#isServicingMember_1":
+        case "#isServicingMember_2":
+          xmlNode.find((c) => c.node.nodeValue)
+            ? null
+            : document.querySelector(`${config.selector}:checked`)
+            ? xmlNode.txt(true)
+            : xmlNode.txt(false);
+          break;
 
-      case "#occupation1":
-        xmlNode.txt(eleVal).up().ele("EmploymentStatusType").txt("Current");
-        break;
+        case "#bankruptcyTypes":
+          const multiSelect = document.querySelector(config.selector);
+          for (var i = 0; i < multiSelect.options.length; i++) {
+            if (multiSelect.options[i].selected)
+              xmlNode = xmlNode
+                .txt(multiSelect.options[i].value)
+                .up()
+                .ele("BankruptcyChapterType");
+          }
+          xmlNode.remove();
+          break;
 
-      case "#lien1Terms":
-        const period = document.querySelector(config.selector).value;
-        const periodType = period.match(/day|month|year|quarter|week/i);
-        if (periodType[0].toLowerCase() === "year") {
-          if (period) xmlNode.txt(period.replace(/[^0-9]/gi, "") * 12);
-          xmlNode.up().ele("LoanAmortizationPeriodType").txt("Month");
-        } else {
-          xmlNode.txt(period.replace(/[^0-9]/gi, ""));
-          xmlNode.up().ele("LoanAmortizationPeriodType").txt(periodType[0]);
-        }
-        break;
+        //Borrower HDMA
+        case "#PublishBInfoYes":
+        case "#PublishBInfoNo":
+          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt(hardcodedValue);
+          xmlNode.ele("HMDAGenderRefusalIndicator").txt(hardcodedValue);
+          xmlNode.ele("HMDARaceRefusalIndicator").txt(hardcodedValue);
+          // if (document.querySelector(`${config.selector}:checked`)) {
+          //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("false");
+          //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("false");
+          //   xmlNode.ele("HMDARaceRefusalIndicator").txt("false");
+          // } else if (document.querySelector(`#PublishBInfoNo:checked`)) {
+          //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("true");
+          //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("true");
+          //   xmlNode.ele("HMDARaceRefusalIndicator").txt("true");
+          // } else {
+          //   xmlNode.ele("HMDAEthnicityRefusalIndicator").txt("");
+          //   xmlNode.ele("HMDAGenderRefusalIndicator").txt("");
+          //   xmlNode.ele("HMDARaceRefusalIndicator").txt("");
+          // }
 
-        case("#borrowerDOB"):
-        case("#coBorrowerDOB"):
-        xmlNode.txt(unformatDate(eleVal));
-        break;
+          if (document.querySelector(`#bFiEthnicityYes:checked`)) {
+            xmlNode
+              .ele(
+                "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("true");
+          } else if (document.querySelector(`#bFiEthnicityNo:checked`)) {
+            xmlNode
+              .ele(
+                "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("false");
+          } else {
+            xmlNode
+              .ele(
+                "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("");
+          }
 
-      default:
-        xmlNode.txt(hardcodedValue || eleVal);
+          if (document.querySelector(`#bFiSexYes:checked`)) {
+            xmlNode
+              .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+              .txt("true");
+          } else if (document.querySelector(`#bFiEthnicityNo:checked`)) {
+            xmlNode
+              .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+              .txt("false");
+          } else {
+            xmlNode
+              .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+              .txt("");
+          }
+
+          if (document.querySelector(`#bFiRaceYes:checked`)) {
+            xmlNode
+              .ele(
+                "HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("true");
+          } else if (document.querySelector(`#bFiEthnicityNo:checked`)) {
+            xmlNode
+              .ele(
+                "HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("false");
+          } else {
+            xmlNode
+              .ele(
+                "HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("");
+          }
+          break;
+
+        case "#BGendeMale":
+        case "#BGenderFE":
+        case "#BGenderNotDis":
+        case "#bDemoInfo1":
+        case "#bDemoInfo2":
+        case "#bDemoInfo3":
+        case "#bDemoInfo4":
+        case "#famBizAffilYes":
+        case "#famBizAffilNo":
+          if (
+            !xmlNode.find((c) => c.node.nodeValue) &&
+            document.querySelector(`${config.selector}:checked`)
+          )
+            xmlNode.txt(config.mismoValue);
+          break;
+
+        case "#BRace1":
+        case "#BRace2":
+        case "#BRace3":
+        case "#BRace4":
+        case "#BRace5":
+        case "#BRace6":
+        case "#BEthnicityH":
+        case "#BEthnicityNH":
+        case "#BEthnicityND":
+          if (
+            !xmlNode.find((c) => c.node.nodeValue) &&
+            document.querySelector(`${config.selector}:checked`)
+          )
+            xmlNode.txt(config.mismoValue);
+
+          if (
+            config.selector === "#BEthnicityH" &&
+            document.querySelector(`#BEthnicityH:checked`)
+          ) {
+            const ethnicities = document.getElementsByName(`bFiEthnicitySub`);
+            ethnicities.forEach((ethnicity) => {
+              if (document.querySelector(`#${ethnicity.id}:checked`)) {
+                const valArr = ["Mexican", "PuertoRican", "Cuban", "Other"];
+                xmlNode = xmlNode.up().up().up().up().up().up();
+                xmlNode
+                  .ele("HMDA_ETHNICITY_ORIGINS")
+                  .ele("HMDA_ETHNICITY_ORIGIN")
+                  .ele("HMDAEthnicityOriginType")
+                  .txt(valArr[ethnicity.value - 1]);
+              }
+            });
+          }
+          break;
+
+        //CoBorrower HDMA
+        case "#PublishCBInfo1":
+        case "#PublishCBInfo2":
+          xmlNode.ele("HMDAEthnicityRefusalIndicator").txt(hardcodedValue);
+          xmlNode.ele("HMDAGenderRefusalIndicator").txt(hardcodedValue);
+          xmlNode.ele("HMDARaceRefusalIndicator").txt(hardcodedValue);
+
+          if (document.querySelector(`#CBFiEthnicityYes:checked`)) {
+            xmlNode
+              .ele(
+                "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("true");
+          } else if (document.querySelector(`#CBFiEthnicityNo:checked`)) {
+            xmlNode
+              .ele(
+                "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("false");
+          } else {
+            xmlNode
+              .ele(
+                "HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("");
+          }
+
+          if (document.querySelector(`#CBFiGenderYes:checked`)) {
+            xmlNode
+              .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+              .txt("true");
+          } else if (document.querySelector(`#CBFiGenderNo:checked`)) {
+            xmlNode
+              .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+              .txt("false");
+          } else {
+            xmlNode
+              .ele("HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator")
+              .txt("");
+          }
+
+          if (document.querySelector(`#CBFiRaceYes:checked`)) {
+            xmlNode
+              .ele(
+                "HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("true");
+          } else if (document.querySelector(`#CBFiRaceNo:checked`)) {
+            xmlNode
+              .ele(
+                "HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("false");
+          } else {
+            xmlNode
+              .ele(
+                "HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator"
+              )
+              .txt("");
+          }
+          break;
+
+        case "#CBGender2":
+        case "#CBGender3":
+        case "#CBGender1":
+        case "#CBDDemoInfo2":
+        case "#CBDDemoInfo1":
+        case "#CBDDemoInfo3":
+        case "#CBDDemoInfo4":
+          if (
+            !xmlNode.find((c) => c.node.nodeValue) &&
+            document.querySelector(`${config.selector}:checked`)
+          )
+            xmlNode.txt(config.mismoValue);
+
+          // const appMTCoBor = document.querySelector(`#CBDDemoInfo1:checked`)
+          //   ? "FaceToFace"
+          //   : document.querySelector(`#CBDDemoInfo2:checked`)
+          //   ? "Telephone"
+          //   : document.querySelector(`#CBDDemoInfo3:checked`)
+          //   ? "Fax"
+          //   : document.querySelector(`#CBDDemoInfo4:checked`)
+          //   ? "Email"
+          //   : "";
+          // xmlNode = xmlNode.up();
+          // xmlNode.find(
+          //   (c) => c.node.nodeName === `ULAD:ApplicationTakeMethodType`
+          // )
+          //   ? null
+          //   : xmlNode.ele(`ULAD:ApplicationTakeMethodType`).txt(appMTCoBor);
+          break;
+
+        case "#CBRace1":
+        case "#CBRace2":
+        case "#CBRace3":
+        case "#CBRace4":
+        case "#CBRace5":
+        case "#CBRace6":
+        case "#CBEthnicity1":
+        case "#CBEthnicity2":
+        case "#CBEthnicity3":
+          if (
+            !xmlNode.find((c) => c.node.nodeValue) &&
+            document.querySelector(`${config.selector}:checked`)
+          )
+            xmlNode.txt(config.mismoValue);
+
+          if (
+            config.selector === "#CBEthnicity2" &&
+            document.querySelector(`#CBEthnicity2:checked`)
+          ) {
+            const ethnicitiesCo = document.getElementsByName(`CBEthnicitySub`);
+            ethnicitiesCo.forEach((ethnicity) => {
+              if (document.querySelector(`#${ethnicity.id}:checked`)) {
+                const valArrCo = ["Mexican", "PuertoRican", "Cuban", "Other"];
+                xmlNode = xmlNode.up().up().up().up().up().up();
+                xmlNode
+                  .ele("HMDA_ETHNICITY_ORIGINS")
+                  .ele("HMDA_ETHNICITY_ORIGIN")
+                  .ele("HMDAEthnicityOriginType")
+                  .txt(valArrCo[ethnicity.value - 1]);
+              }
+            });
+          }
+          break;
+
+        case "#grossIncome1":
+        case "#commissionOrBonus1":
+        case "#militaryIncome1":
+        case "#overtime1":
+        case "#netRental1":
+        case "#netEarnedInterest1":
+        case "#capitalGains1":
+        case "#partnership1":
+        case "#otherHouseHold1":
+        case "#grossIncome2":
+        case "#commissionOrBonus2":
+        // case "#militaryIncome1":
+        case "#overtime2":
+        case "#netRental2":
+        case "#netEarnedInterest2":
+        case "#capitalGains2":
+        case "#partnership2":
+        case "#otherHouseHold2":
+          xmlNode
+            .txt(eleVal)
+            .up()
+            .ele("IncomeType")
+            .txt(config.incomeType)
+            .up()
+            .ele("EmploymentIncomeIndicator")
+            .txt("true");
+          break;
+
+        case "#occupation1":
+          xmlNode.txt(eleVal).up().ele("EmploymentStatusType").txt("Current");
+          break;
+
+        case "#lien1Terms":
+          const period = document.querySelector(config.selector).value;
+          const periodType = period.match(/day|month|year|quarter|week/i);
+          if (periodType[0].toLowerCase() === "year") {
+            if (period) xmlNode.txt(period.replace(/[^0-9]/gi, "") * 12);
+            xmlNode.up().ele("LoanAmortizationPeriodType").txt("Month");
+          } else {
+            xmlNode.txt(period.replace(/[^0-9]/gi, ""));
+            xmlNode.up().ele("LoanAmortizationPeriodType").txt(periodType[0]);
+          }
+          break;
+
+        case "#borrowerDOB":
+        case "#coBorrowerDOB":
+          xmlNode.txt(unformatDate(eleVal));
+          break;
+
+        default:
+          xmlNode.txt(hardcodedValue || eleVal);
+      }
+      if (config.dependency) {
+        xmlNode = startNode;
+        config?.dependency.tag.split(" ").forEach((_child) => {
+          const foundNodeDep = xmlNode.find((n) => n.node.nodeName === _child);
+          if (foundNodeDep && config.dependency?.duplicate != _child)
+            xmlNode = foundNodeDep;
+          else xmlNode = xmlNode.ele(_child);
+        });
+        xmlNode.txt(config?.dependency.value);
+      }
     }
-    if (config.dependency) {
-      xmlNode = startNode;
-      config?.dependency.tag.split(" ").forEach((_child) => {
-        const foundNodeDep = xmlNode.find((n) => n.node.nodeName === _child);
-        if (foundNodeDep && config.dependency?.duplicate != _child)
-          xmlNode = foundNodeDep;
-        else xmlNode = xmlNode.ele(_child);
-      });
-      xmlNode.txt(config?.dependency.value);
-    };
-  };
-}};
+  }
+}
