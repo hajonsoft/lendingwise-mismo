@@ -1192,7 +1192,7 @@ const coBorrowerConfig = [
         "<PARTY>",
         "</PARTY>",
         "<ULAD:HMDAEthnicityType>HispanicOrLatino</ULAD:HMDAEthnicityType>",
-        1,
+        1
       ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
@@ -1206,7 +1206,7 @@ const coBorrowerConfig = [
         "<PARTY>",
         "</PARTY>",
         "<ULAD:HMDAEthnicityType>NotHispanicOrLatino</ULAD:HMDAEthnicityType>",
-        1,
+        1
       ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
@@ -1220,7 +1220,7 @@ const coBorrowerConfig = [
         "<PARTY>",
         "</PARTY>",
         "<ULAD:HMDAEthnicityType>NotApplicable</ULAD:HMDAEthnicityType>",
-        1,
+        1
       ),
     exportTo:
       `ROLES ROLE BORROWER GOVERNMENT_MONITORING EXTENSION OTHER ULAD:GOVERNMENT_MONITORING_EXTENSION ` +
@@ -1962,6 +1962,17 @@ const prevEmployerConfig = [
     exportTo: "EMPLOYMENT EmploymentStartDate",
   },
   {
+    selector: "#AddiontalEmplInfo_{counter}_employedTo",
+    value: (employer) => {
+      const hireDate = getText(employer, "EmploymentEndDate");
+
+      if (hireDate) {
+        return formatDate(hireDate);
+      }
+    },
+    exportTo: "EMPLOYMENT EmploymentEndDate",
+  },
+  {
     selector: "#AddiontalEmplInfo_{counter}_monthlyIncome",
     value: (employer) =>
       employer?.querySelector("EmploymentMonthlyIncomeAmount")?.textContent,
@@ -2033,7 +2044,8 @@ const liabilitiesConfig = [
 const collateralsConfig = [];
 const loansConfig = [
   {
-    selector: "#loanNumber",
+    // selector: "#loanNumber",
+    selector: "#_3rdPartyFileId",
     type: "text",
     value: (data) => data?.querySelector("LoanIdentifier")?.textContent,
     exportTo: "LOAN LOAN_IDENTIFIERS LOAN_IDENTIFIER LoanIdentifier",
@@ -2049,7 +2061,7 @@ const loansConfig = [
     selector: "#amortizationTypeAdjust",
     type: "radio",
     value: (data) =>
-      data?.querySelector("AmortizationType")?.textContent === "Adjustable",
+      data?.querySelector("AmortizationType")?.textContent === "AdjustableRate",
     exportTo: "LOAN AMORTIZATION AMORTIZATION_RULE AmortizationType",
   },
   {
@@ -2064,6 +2076,10 @@ const loansConfig = [
       if (period && periodType === "Month") {
         return `${parseInt(period) / 12} Years`;
       }
+      const interest = data?.querySelector(
+        "InterestOnlyIndicator"
+      )?.textContent;
+      if (interest) return "Interest Only";
       return period;
     },
     exportTo: "LOAN AMORTIZATION AMORTIZATION_RULE LoanAmortizationPeriodCount",
@@ -2204,8 +2220,8 @@ function formatDate(date) {
 }
 
 function unformatDate(date) {
-  const [month, day, year] = date.split("/");
-  return `${year}-${month}-${day}`;
+    const [month, day, year] = date.split("/");
+  return date ? `${year}-${month}-${day}` : "";
 }
 
 function getText(node, path) {
@@ -2460,17 +2476,19 @@ function importToPage(fnmFile) {
 }
 
 let xmlText = "";
+let importDivAlert = document.querySelector("#importAlert");
 
 function handleImportChange(e) {
   let file = e.files[0];
   var reader = new FileReader();
   reader.onload = function (e) {
     xmlText = reader.result;
-    document.querySelector("#importAlert").style.display = "block";
-    document.querySelector("#importAlert").style.color = "white";
-    document.querySelector("#importAlert").innerHTML =
-      "Importing ... Please wait";
-    document.querySelector("#importAlert").style.backgroundColor = "red";
+    if (importDivAlert) {
+      importDivAlert.style.display = "block";
+      importDivAlert.style.color = "white";
+      importDivAlert.style.backgroundColor = "red";
+      importDivAlert.innerHTML = "Importing ... Please wait";
+    } else console.log("[importfnm.js:2478]", "No alert div existed!");
     importToPage(reader.result);
   };
   reader.readAsText(file);
@@ -2516,17 +2534,22 @@ function publishConfigItems(config, items, selectorFunction, duration) {
         }
       }
       if (i + 1 == items.length && i + 1 == duration) {
-        setTimeout(() => {
-          document.querySelector("#importAlert").innerHTML = "Completed.";
-          document.querySelector("#importAlert").style.backgroundColor =
-            "#16ff54";
-          document.querySelector("#importAlert").style.color = "black";
-          document.querySelector("#importAlert").style.borderStyle = "none";
-          console.log("📢 [importfnm.js:2263]", "Importing Finished.");
-        }, 1000);
-        setTimeout(() => {
-          document.querySelector("#importAlert").style.display = "none";
-        }, 3000);
+        if (importDivAlert) {
+          setTimeout(() => {
+            importDivAlert.innerHTML = "Completed.";
+            importDivAlert.style.backgroundColor = "#16ff54";
+            importDivAlert.style.color = "black";
+            importDivAlert.style.borderStyle = "none";
+            console.log("[importfnm.js:2263]", "Importing Finished.");
+          }, 1000);
+          setTimeout(() => {
+            importDivAlert.style.display = "none";
+          }, 3000);
+        } else
+          console.log(
+            "[importfnm.js:2535]",
+            "Importing finished without alert div!"
+          );
       }
     }, 1000 * i);
   }
@@ -2762,14 +2785,15 @@ function handleExportClick(e) {
     if (!config.exportTo) {
       return;
     }
-    const amorType = document.querySelector(`${config.selector}:checked`);
-    if (config.selector === "#amortizationTypeFixed")
-      amorType ? exportElementToXML(config, loansStartNode) : null;
-    else if (config.selector === "#amortizationTypeAdjust")
-      amorType
-        ? exportElementToXML(config, loansStartNode, "AdjustableRate")
-        : null;
-    else exportElementToXML(config, loansStartNode);
+    if (document.querySelector(config.selector).type === "radio") {
+      const amorType = document.querySelector(`${config.selector}:checked`);
+      if (config.selector === "#amortizationTypeFixed")
+        amorType ? exportElementToXML(config, loansStartNode) : null;
+      else if (config.selector === "#amortizationTypeAdjust")
+        amorType
+          ? exportElementToXML(config, loansStartNode, "AdjustableRate")
+          : null;
+    } else exportElementToXML(config, loansStartNode);
   });
 
   const borrowerPartyNode = dealNode
@@ -2842,24 +2866,27 @@ function handleExportClick(e) {
         selector: config.selector.replace("{counter}", i + 1),
       };
 
-      if (
-        config.selector.match("#AddiontalEmplInfo") &&
-        config.selector.match("employedByOtherParty")
-      ) {
+      if (config.selector.includes("AddiontalEmplInfo") && config.selector.includes("employedByOtherParty")) {
         const empIndicator = document.querySelector(
           `${config.selector}:checked`
         );
         empIndicator
           ? exportElementToXML(config, thisNode, "true")
           : exportElementToXML(config, thisNode, "false");
-      } else if (
-        config.selector.match("#AddiontalEmplInfo") &&
-        config.selector.match("businessPhone")
-      ) {
+      } else if (config.selector.includes("AddiontalEmplInfo") && config.selector.includes("businessPhone")) {
         const phoneValue = document.querySelector(config.selector).value;
         const empPhone = phoneValue.substr(0, phoneValue.search("Ext"));
         const empPhoneformated = empPhone.replace(/[^0-9]/g, "");
         exportElementToXML(config, thisNode, empPhoneformated);
+      } else if (
+        (config.selector.includes("AddiontalEmplInfo") && config.selector.includes("employedTo")) ||
+        (config.selector.includes("AddiontalEmplInfo") && config.selector.includes("employedFrom"))
+      ) {
+        exportElementToXML(
+          config,
+          thisNode,
+          unformatDate(document.querySelector(config.selector).value)
+        );
       } else exportElementToXML(config, thisNode);
     });
   }
@@ -3372,17 +3399,24 @@ function exportElementToXML(config, startNode, hardcodedValue, index) {
         case "#lien1Terms":
           const period = document.querySelector(config.selector).value;
           const periodType = period.match(/day|month|year|quarter|week/i);
-          if (periodType[0].toLowerCase() === "year") {
+          console.log(periodType, "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+          if (periodType && periodType[0].toLowerCase() === "year") {
             if (period) xmlNode.txt(period.replace(/[^0-9]/gi, "") * 12);
             xmlNode.up().ele("LoanAmortizationPeriodType").txt("Month");
-          } else {
+          } else if (periodType && periodType[0].toLowerCase() !== "year") {
             xmlNode.txt(period.replace(/[^0-9]/gi, ""));
             xmlNode.up().ele("LoanAmortizationPeriodType").txt(periodType[0]);
+          } else {
+            xmlNode.txt("");
+            xmlNode.up().ele("LoanAmortizationPeriodType").txt("");
           }
+          if (period === "Interest Only") xmlNode.up().up().up().ele("LOAN_DETAIL").ele("InterestOnlyIndicator").txt("true")
           break;
 
         case "#borrowerDOB":
+        case "#borrowerHireDate":
         case "#coBorrowerDOB":
+        case "#coBorrowerHireDate":
           xmlNode.txt(unformatDate(eleVal));
           break;
 
