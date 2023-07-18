@@ -1,6 +1,11 @@
 # Overview
 
-This project converts a lendingWise loan to MISMO format and import MISMO into web page.
+This project converts a lendingWise loan to MISMO format and vice versa, for code walkthrough please watch these videos
+
+https://drive.google.com/file/d/14kSFTDopqmqOS07400SbxqTgcJgIQGbm/view?usp=sharing
+
+
+
 
 # Getting Started
 
@@ -39,7 +44,9 @@ Mixing php and javascript
 https://www.youtube.com/watch?v=-3LGsHOSTec
 
 npm i -g browserify
+
 browserify index.js -o build/lw_mismo_converter.js
+
 browserify importfnm.js -o assets/1003-tab/importfnm.js
 
 Learning resources
