@@ -4,6 +4,7 @@ This project converts a lendingWise loan to MISMO format and vice versa, for cod
 
 https://drive.google.com/file/d/14kSFTDopqmqOS07400SbxqTgcJgIQGbm/view?usp=sharing
 
+https://drive.google.com/file/d/11y04BvkUvjjKCuiOqxXs0LQVSlf9-55s/view?usp=sharing
 
 
 
